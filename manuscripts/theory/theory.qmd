@@ -1,0 +1,84 @@
+---
+title: "Behavioral Insight Design: A Psychological Framework for Designing Data-Driven Decision Support Systems"
+subtitle: Behavioral Insight Design
+author:
+  - name: Jeremy R. Winget
+    email: contact@jrwinget.com
+    affiliations: 
+        - id: some-tech
+          name: Some Institute of Technology
+          department: Department Name
+          address: Street Address
+          city: City
+          state: State
+          postal-code: Postal Code
+    attributes:
+        corresponding: true
+    note: This is the first author footnote.
+  - name: Milena Eickhoff
+    email: m.eickhoff@skimgroup.com
+    affiliations:
+        - id: another-u
+          name: Another University
+          department: Department Name
+          address: Street Address
+          city: City
+          state: State
+          postal-code: Postal Code
+    note: |
+      Another author footnote, this is a very long footnote and it should be a really long footnote. But this footnote is not yet sufficiently long enough to make two lines of footnote text.
+abstract: |
+  This is the abstract. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum augue turpis, dictum non malesuada a, volutpat eget velit. Nam placerat turpis purus, eu tristique ex tincidunt et. Mauris sed augue eget turpis ultrices tincidunt. Sed et mi in leo porta egestas. Aliquam non laoreet velit. Nunc quis ex vitae eros aliquet auctor nec ac libero. Duis laoreet sapien eu mi luctus, in bibendum leo molestie. Sed hendrerit diam diam, ac dapibus nisl volutpat vitae. Aliquam bibendum varius libero, eu efficitur justo rutrum at. Sed at tempus elit.
+keywords: 
+  - keyword1
+  - keyword2
+date: last-modified
+bibliography: bibliography.bib
+format:
+  elsevier-pdf:
+    keep-tex: true
+    journal:
+      name: Journal Name
+      formatting: preprint
+      # model: 3p # Don't set a model with preprint
+      cite-style: authoryear
+---
+
+# Abstract 
+- Define the Behavioral Insight Design (BID) framework. 
+- Highlight theoretical foundations (cognitive psychology, behavioral economics, dual-process theories). 
+- Emphasize its operationalization of psychological theory into practical design principles. 
+- State its interdisciplinary value between psychology and UX/HCI. 
+
+# Introduction 
+- Motivation: increased cognitive demands in data-rich environments. 
+- Identify the gap: lack of structured psychological frameworks in UX/HCI. 
+- Introduce BID as a synthesis of established psychological theories. 
+
+# Theoretical Background 
+Summarize foundational theories relevant to BID: 
+- Cognitive Load Theory (Sweller, 1988) 
+- Dual-Process Theory (Kahneman & Tversky) 
+- Cognitive Biases (Anchoring, Framing, Confirmation Bias) 
+- Information Processing and Visual Perception (Gestalt principles, Tufte) 
+- Peak–End Rule & Aesthetic–Usability Effect (Dion et al., 1972; Norman, 2002) 
+
+# The Behavioral Insight Design (BID) Framework 
+Outline BID’s 5-stage model explicitly mapping psychological theories to each: 
+- Stage 1: Notice (Cognitive Load, Hick’s Law, Visual Hierarchy) 
+- Stage 2: Interpret (Data Storytelling, Processing Fluency, Emotional Framing) 
+- Stage 3: Structure (Gestalt Principles, Dual-Processing, Default Effects) 
+- Stage 4: Anticipate (Anchoring, Framing, Confirmation Bias, Risk Perception) 
+- Stage 5: Validate & Empower (Peak–End Rule, Beautiful-is-Good, Cooperation & Coordination) 
+
+# Discussion: Theoretical Implications & Innovations 
+- How BID operationalizes psychological concepts into UX steps. 
+- Novelty in explicitly anticipating and mitigating biases within design phases. 
+- Potential as a tool for cognitive/behavioral psychology experimentation. 
+
+# Future Directions 
+- Propose empirical studies testing BID-derived predictions. 
+- Suggest deeper investigations into psychological mechanisms influencing dashboard efficacy (e.g., cognitive load, memory retention, decision accuracy). 
+
+# Conclusion
+- Restate BID’s theoretical contribution as a coherent synthesis of psychology into design methodology. 
