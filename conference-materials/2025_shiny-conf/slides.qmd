@@ -1,0 +1,432 @@
+---
+title: "Death By Dropdown?"
+subtitle: "A Developer's Guide To Building Dashboards That Won't Fry Your Client's Brain"
+author: "Milena Eickhoff & Jeremy Winget, PhD"
+format: 
+  revealjs:
+    theme: simple
+    slide-number: true
+    footer: "ShinyConf 2025 | The BID Framework"
+    incremental: true
+    transition: slide
+    background-transition: fade
+    highlight-style: github
+    code-block-background: true
+---
+
+## The Problem {.center background-color="#4682B4"}
+
+:::: {.columns}
+::: {.column width="60%"}
+<h3>Ever felt like this?</h3>
+
+- Endless dropdown menus
+- Overwhelming complexity
+- Users disengaged
+- Delayed decision-making
+- "Dashboard rot"
+:::
+
+::: {.column width="40%"}
+![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzhmY2YwMDA5MWFjOTlmN2Y0MGE2YjQzNmI5YTEzZDE3MWE1ZDIwNSZlcD12MV9pbnRlcm5hbF9naWZ5X2dpZiZjdD1n/32mC2kXYWCsg0/giphy.gif)
+:::
+::::
+
+## It Doesn't Have To Be This Way {.center}
+
+<br>
+
+::: {.r-fit-text}
+By shifting the focus from <span style="color:#D55E00">**cramming data**</span> to <span style="color:#009E73">**crafting stories**</span>
+:::
+
+::: {.fragment}
+<br>
+::: {.r-fit-text}
+We can guide users effortlessly to insights
+:::
+:::
+
+## The BID Framework {background-color="#E6F0FF"}
+
+::: {.r-fit-text}
+A 5-Stage Behavior Insight Design Framework
+:::
+
+::: {.nonincremental}
+1. **Notice** the Problem
+2. **Interpret** the User's Need
+3. **Structure** the Dashboard
+4. **Anticipate** User Behavior
+5. **Validate** & Empower the User
+:::
+
+::: {.notes}
+- This framework distills psychological principles into actionable steps
+- Each stage builds on the previous one
+- The framework is grounded in behavioral science, communication theory, and UX design
+:::
+
+## Where BID Fits In {background-color="#F0F0F0"}
+
+::: {.nonincremental}
+- Builds on established UX heuristics and theories
+- Incorporates data storytelling frameworks
+- Systematically integrates cognitive bias mitigation
+- Cross-disciplinary synthesis (UX, data viz, behavioral economics)
+- Stage-based process rather than heuristic lists
+- Specifically tailored for analytics dashboards
+:::
+
+::: {.notes}
+- BID doesn't reinvent the wheel but packages existing knowledge into a structured process
+- Makes bias anticipation an explicit step for designers
+- Brings together multiple disciplines to create a comprehensive framework
+:::
+
+## Stage 1: Notice the Problem {background-color="#FFE6E6"}
+
+:::: {.columns}
+::: {.column width="60%"}
+### Detect high cognitive friction points
+
+- **Cognitive Load Theory** (Sweller, 1988)
+- **Hick's Law** (Hick, 1952) 
+- **Visual Hierarchies** (Tufte, 1983)
+:::
+
+::: {.column width="40%"}
+![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzkyZWQ1ZWJkNDk0NzFjMDMyNmE4ZjBkMWZmYmQ0Mjk3M2FmZGZjNCZlcD12MV9pbnRlcm5hbF9naWZ5X2dpZiZjdD1n/3o7TKCNxTFSY5psUUw/giphy.gif)
+:::
+::::
+
+::: {.fragment}
+### Actionable Example:
+```r
+# Instead of:
+selectInput("var1", "Select Variable:", choices = names(data))
+selectInput("var2", "Select Variable:", choices = names(data))
+selectInput("var3", "Select Variable:", choices = names(data))
+
+# Consider:
+radioButtons("primaryVar", "Primary Metric:", 
+             choices = c("Revenue", "Conversion", "Engagement"))
+```
+:::
+
+## Stage 2: Interpret the User's Need {background-color="#E6F0E6"}
+
+:::: {.columns}
+::: {.column width="50%"}
+### Understand the story users need
+
+- **Data Storytelling Framework** (Matei & Hunter, 2021)
+- **Processing Fluency** (Alter & Oppenheimer, 2009)
+- **Emotion & Fluency Effects** (Song & Schwarz, 2009)
+:::
+
+::: {.column width="50%"}
+### Ask key questions:
+- What insight are they trying to gain?
+- What decisions need to be made?
+- What is the *simplest* way to present this information?
+:::
+::::
+
+::: {.fragment}
+### Actionable Example:
+```r
+# Instead of showing all data at once, guide the user:
+fluidRow(
+  box(title = "Key Business Question", 
+      "Are we on track to meet Q2 targets?",
+      status = "primary"),
+  box(valueBoxOutput("mainKPI"))
+)
+```
+:::
+
+## Stage 3: Structure the Dashboard {background-color="#E6F0F0"}
+
+### Build with intentional structure
+
+- **Principle of Proximity** (Gestalt)
+- **Dual-Processing Theory** (System 1 & 2)
+- **Default Effect** (Johnson & Goldstein, 2003)
+- **Aesthetic-Usability Effect** (Norman, 2002)
+
+::: {.fragment}
+### In Practice:
+- Group related elements visually
+- Provide quick summary cues AND detailed views
+- Use smart defaults to reduce friction
+- Ensure visual consistency and appeal
+:::
+
+## Stage 3: Structure In Action {background-color="#E6F0F0"}
+
+```r
+library(reactable)
+
+# Applying Gestalt principles and defaults
+reactable(
+  data,
+  defaultPageSize = 5,
+  defaultSorted = list(revenue = "desc"),
+  groupBy = "department",
+  columns = list(
+    revenue = colDef(
+      format = colFormat(prefix = "$", separators = TRUE),
+      style = function(value) {
+        # System 1 color cues
+        if (value > 1000000) {
+          color <- "#008000"  # Green for good
+        } else if (value < 500000) {
+          color <- "#B22222"  # Red for concerning
+        } else {
+          color <- "#000000"  # Default
+        }
+        list(color = color, fontWeight = "bold")
+      }
+    )
+  )
+)
+```
+
+## Stage 4: Anticipate User Behavior {background-color="#F0E6F0"}
+
+:::: {.columns}
+::: {.column width="50%"}
+### Consider biases & heuristics
+
+- **Anchoring Effect** (Tversky & Kahneman, 1974)
+- **Framing & Loss Aversion** (Tversky & Kahneman, 1981)
+- **Confirmation Bias** (Nickerson, 1998)
+- **Belief Perseverance** (Ross & Lepper, 1980)
+:::
+
+::: {.column width="50%"}
+### Mitigation strategies:
+- Provide context for all numbers
+- Frame data positively when appropriate
+- Show alternative views/analyses
+- Include "disconfirming" visualizations
+:::
+::::
+
+## Stage 4: Anticipate In Action {background-color="#F0E6F0"}
+
+```r
+# Dealing with anchoring and framing
+tabsetPanel(
+  tabPanel("Performance", 
+    fluidRow(
+      box(
+        title = "Sales Performance",
+        plotOutput("salesPlot")
+      ),
+      box(
+        title = "Context",
+        # Provide context to prevent anchoring
+        "Industry average: $1.2M",
+        "Company target: $1.5M",
+        "Historical range: $0.9M - $1.8M"
+      )
+    ),
+    # Alternative view to combat confirmation bias
+    checkboxInput("showAlternative", "Show alternative analysis")
+  ),
+  tabPanel("What If?", 
+    # Encourage exploration of contrary hypotheses
+    sliderInput("scenario", "If market drops by:", min = 0, max = 30, value = 10),
+    plotOutput("scenarioPlot")
+  )
+)
+```
+
+## Stage 5: Validate & Empower {background-color="#F0F0E6"}
+
+:::: {.columns}
+::: {.column width="50%"}
+### Close the loop with clarity
+
+- **Peak-End Rule** (Kahneman et al., 1993)
+- **Beautiful-Is-Good Stereotype** (Dion et al., 1972)
+- **Cooperation & Coordination** (Tindale & Kluwe, 2015)
+:::
+
+::: {.column width="50%"}
+### Implementation:
+- Strong, clear summary sections
+- Visually appealing final views
+- Collaborative features for teams
+- Exportable insights
+:::
+::::
+
+## Stage 5: Validate In Action {background-color="#F0F0E6"}
+
+```r
+# Peak-End Rule and Beautiful-Is-Good implementation
+fluidRow(
+  box(
+    title = "Key Insights",
+    status = "primary", 
+    solidHeader = TRUE,
+    width = 12,
+    # Provide clear summary
+    HTML("<h3>3 Key Takeaways:</h3>
+         <ol>
+           <li>Revenue is up 12% against target</li>
+           <li>Western region showing 3x growth</li>
+           <li>Product X is underperforming by 8%</li>
+         </ol>"),
+    # Enable collaboration
+    actionButton("share", "Share Report", icon = icon("share")),
+    downloadButton("downloadReport", "Export PDF")
+  )
+)
+```
+
+## Bringing It All Together {background-color="#FFFFFF"}
+
+:::: {.columns}
+::: {.column width="50%"}
+### Before BID:
+- Information overload
+- No clear story
+- Cognitive friction
+- Unused features
+- Unclear next steps
+:::
+
+::: {.column width="50%"}
+### After BID:
+- Focused on key user needs
+- Clear narrative structure
+- Reduced cognitive load
+- Bias-aware design
+- Actionable insights
+:::
+::::
+
+::: {.fragment}
+### The outcome:
+Users make faster, better decisions with less cognitive effort
+:::
+
+## Practical Examples {background-color="#E6F0FF"}
+
+### Death By Dropdown ➡️ Decision By Design
+
+::: {.nonincremental}
+- **Grouped Headers**: Organize complex data into logical hierarchies
+- **Dynamic Drilldowns**: Start with big picture, then reveal details
+- **Inverse Color Scales**: Draw attention to what matters most
+- **Narrative Pathways**: Guide users through a data story
+:::
+
+## Implementation Demo {background-color="#F0F0F0"}
+
+```r
+library(reactable)
+library(echarts4r)
+
+# Before: Overwhelming dropdown experience
+# selectInput("region", "Region:", choices = regions)
+# selectInput("product", "Product:", choices = products)
+# selectInput("timeframe", "Time:", choices = timeframes)
+# selectInput("segment", "Segment:", choices = segments)
+# selectInput("metric", "Metric:", choices = metrics)
+
+# After: Dynamic exploration with narrative focus
+reactable(
+  data,
+  groupBy = "category",
+  defaultExpanded = TRUE,
+  columns = list(
+    value = colDef(
+      name = "Performance",
+      cell = function(value, index) {
+        # Contextual visualization
+        sparklinePlot <- sparkline(data$trend[index], 
+                                   lineColor = ifelse(value > target, "#28a745", "#dc3545"))
+        div(sparklinePlot, style = "width: 100px; height: 30px;")
+      }
+    )
+  ),
+  details = function(index) {
+    # Drill-down with context
+    htmltools::div(
+      echarts4r::e_charts(detail_data[detail_data$id == data$id[index], ]) |>
+        e_line(x = "date", y = "value") |>
+        e_tooltip() |>
+        e_title(paste("Detailed View:", data$name[index]))
+    )
+  }
+)
+```
+
+## Key Takeaways {background-color="#4682B4" .center}
+
+::: {.nonincremental}
+1. **Notice** where users struggle with cognitive load
+2. **Interpret** the story they need, not just the data they have
+3. **Structure** dashboards to guide attention and reduce friction
+4. **Anticipate** biases and heuristics that affect decisions
+5. **Validate** with clear summaries and next steps
+:::
+
+## Resources {background-color="#F0F0F0"}
+
+### Tools to implement BID principles:
+
+::: {.nonincremental}
+- **{reactable}**: Advanced tables with grouped headers and dynamic drill-downs
+- **{echarts4r}**: Interactive visualizations with narrative capabilities
+- **{bslib}**: Create cohesive, branded dashboards
+- **{shinysurveys}**: Gather user feedback to refine your approach
+:::
+
+::: {.fragment}
+### Learn more:
+- Code examples: [github.com/eickhoff-winget/BID-examples](https://github.com)
+- Documentation: [bid-framework.org](https://example.com)
+:::
+
+## Thank You! {background-color="#4682B4" .center}
+
+::: {.r-fit-text}
+Questions?
+:::
+
+<br>
+
+Milena Eickhoff & Jeremy Winget, PhD
+
+<br>
+
+@eickhoff_ux | @jwinget_data
+
+## References {.scrollable}
+
+- Alter, A. L., & Oppenheimer, D. M. (2009). Uniting the tribes of fluency. *Personality and Social Psychology Review, 13*(3), 219-235.
+- Dion, K., Berscheid, E., & Walster, E. (1972). What is beautiful is good. *Journal of Personality and Social Psychology, 24*(3), 285-290.
+- Hick, W. E. (1952). On the rate of gain of information. *Quarterly Journal of Experimental Psychology, 4*(1), 11-26.
+- Johnson, E. J., & Goldstein, D. (2003). Do defaults save lives? *Science, 302*(5649), 1338-1339.
+- Kahneman, D., Fredrickson, B. L., Schreiber, C. A., & Redelmeier, D. A. (1993). When more pain is preferred to less: Adding a better end. *Psychological Science, 4*(6), 401-405.
+- Lockton, D., Harrison, D., & Stanton, N. A. (2010). The Design with Intent Method: A design tool for influencing user behaviour. *Applied Ergonomics, 41*(3), 382-392.
+- Matei, S. A., & Hunter, J. L. (2021). Data storytelling is not storytelling with data. *The Information Society, 37*(5), 310-325.
+- Nickerson, R. S. (1998). Confirmation bias: A ubiquitous phenomenon in many guises. *Review of General Psychology, 2*(2), 175-220.
+- Norman, D. A. (2002). *The Design of Everyday Things.* Basic Books.
+- Oinas-Kukkonen, H., & Harjumaa, M. (2009). Persuasive systems design: Key issues, process model, and system features. Communications of the Association for Information Systems, 24(1), 28.
+- Ross, L., & Lepper, M. (1980). The persistence of inflated causal judgments. Journal of Personality and Social Psychology, 39(3), 341-352.
+- Slovic, P. (1987). Perception of risk. Science, 236(4799), 280-285.
+- Song, H., & Schwarz, N. (2009). If it's hard to read, does that mean it's less true? Psychological Science, 20(9), 1117-1120.
+- Sweller, J. (1988). Cognitive load during problem solving: Effects on learning. Cognitive Science, 12(2), 257-285.
+- Tindale, R. S., & Kluwe, K. (2015). Decision making in groups and organizations. APA Handbook of Personality and Social Psychology, 2, 603-623.
+- Tufte, E. R. (1983). The Visual Display of Quantitative Information. Graphics Press.
+- Tversky, A., & Kahneman, D. (1974). Judgment under uncertainty: Heuristics and biases. Science, 185(4157), 1124-1131.
+- Tversky, A., & Kahneman, D. (1979). Prospect theory: An analysis of decision under risk. Econometrica, 47(2), 263-291.
+- Tversky, A., & Kahneman, D. (1981). The framing of decisions and the psychology of choice. Science, 211(4481), 453-458.
+- Vessey, I. (1991). Cognitive fit: A theory-based analysis of the graphs versus tables literature. Decision Sciences, 22(2), 219-240.
