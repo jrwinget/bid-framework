@@ -229,9 +229,11 @@ Ever felt like this?
 <p>By shifting the focus from <span style="color:#D55E00"><strong>cramming data</strong></span> to <span style="color:#009E73"><strong>crafting stories</strong></span></p>
 </div>
 <div class="fragment">
-<p><br> ::: {.r-fit-text} We can guide users effortlessly to insights</p>
+<p><br></p>
+<div class="r-fit-text">
+<p>We can guide users effortlessly to insights</p>
 </div>
-<p>:::</p>
+</div>
 </section>
 <section id="the-bid-framework" class="slide level2" data-background-color="#E6F0FF">
 <h2>The BID Framework</h2>
@@ -247,6 +249,9 @@ Ever felt like this?
 <li><strong>Validate</strong> &amp; Empower the User</li>
 </ol>
 </div>
+<blockquote>
+<p><em>(placeholder for BID framework visual)</em></p>
+</blockquote>
 <aside class="notes">
 <ul>
 <li>This framework distills psychological principles into actionable steps</li>
@@ -277,218 +282,9 @@ Ever felt like this?
 <li>Specifically tailored for analytics dashboards</li>
 </ul>
 </div>
-<aside class="notes">
-<ul>
-<li>BID doesn’t reinvent the wheel but packages existing knowledge into a structured process</li>
-<li>Makes bias anticipation an explicit step for designers</li>
-<li>Brings together multiple disciplines to create a comprehensive framework</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
-<section id="stage-1-notice-the-problem" class="slide level2" data-background-color="#FFE6E6">
-<h2>Stage 1: Notice the Problem</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<h3 id="detect-high-cognitive-friction-points">Detect high cognitive friction points</h3>
-<ul>
-<li class="fragment"><strong>Cognitive Load Theory</strong> (Sweller, 1988)</li>
-<li class="fragment"><strong>Hick’s Law</strong> (Hick, 1952)</li>
-<li class="fragment"><strong>Visual Hierarchies</strong> (Tufte, 1983)</li>
-</ul>
-</div><div class="column" style="width:40%;">
-<p><img data-src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzkyZWQ1ZWJkNDk0NzFjMDMyNmE4ZjBkMWZmYmQ0Mjk3M2FmZGZjNCZlcD12MV9pbnRlcm5hbF9naWZ5X2dpZiZjdD1n/3o7TKCNxTFSY5psUUw/giphy.gif"></p>
-</div></div>
-<div class="fragment">
-<h3 id="actionable-example">Actionable Example:</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="co"># Instead of:</span></span>
-<span id="cb1-2"><a href=""></a><span class="fu">selectInput</span>(<span class="st">"var1"</span>, <span class="st">"Select Variable:"</span>, <span class="at">choices =</span> <span class="fu">names</span>(data))</span>
-<span id="cb1-3"><a href=""></a><span class="fu">selectInput</span>(<span class="st">"var2"</span>, <span class="st">"Select Variable:"</span>, <span class="at">choices =</span> <span class="fu">names</span>(data))</span>
-<span id="cb1-4"><a href=""></a><span class="fu">selectInput</span>(<span class="st">"var3"</span>, <span class="st">"Select Variable:"</span>, <span class="at">choices =</span> <span class="fu">names</span>(data))</span>
-<span id="cb1-5"><a href=""></a></span>
-<span id="cb1-6"><a href=""></a><span class="co"># Consider:</span></span>
-<span id="cb1-7"><a href=""></a><span class="fu">radioButtons</span>(<span class="st">"primaryVar"</span>, <span class="st">"Primary Metric:"</span>, </span>
-<span id="cb1-8"><a href=""></a>             <span class="at">choices =</span> <span class="fu">c</span>(<span class="st">"Revenue"</span>, <span class="st">"Conversion"</span>, <span class="st">"Engagement"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="stage-2-interpret-the-users-need" class="slide level2" data-background-color="#E6F0E6">
-<h2>Stage 2: Interpret the User’s Need</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="understand-the-story-users-need">Understand the story users need</h3>
-<ul>
-<li class="fragment"><strong>Data Storytelling Framework</strong> (Matei &amp; Hunter, 2021)</li>
-<li class="fragment"><strong>Processing Fluency</strong> (Alter &amp; Oppenheimer, 2009)</li>
-<li class="fragment"><strong>Emotion &amp; Fluency Effects</strong> (Song &amp; Schwarz, 2009)</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<h3 id="ask-key-questions">Ask key questions:</h3>
-<ul>
-<li class="fragment">What insight are they trying to gain?</li>
-<li class="fragment">What decisions need to be made?</li>
-<li class="fragment">What is the <em>simplest</em> way to present this information?</li>
-</ul>
-</div></div>
-<div class="fragment">
-<h3 id="actionable-example-1">Actionable Example:</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="co"># Instead of showing all data at once, guide the user:</span></span>
-<span id="cb2-2"><a href=""></a><span class="fu">fluidRow</span>(</span>
-<span id="cb2-3"><a href=""></a>  <span class="fu">box</span>(<span class="at">title =</span> <span class="st">"Key Business Question"</span>, </span>
-<span id="cb2-4"><a href=""></a>      <span class="st">"Are we on track to meet Q2 targets?"</span>,</span>
-<span id="cb2-5"><a href=""></a>      <span class="at">status =</span> <span class="st">"primary"</span>),</span>
-<span id="cb2-6"><a href=""></a>  <span class="fu">box</span>(<span class="fu">valueBoxOutput</span>(<span class="st">"mainKPI"</span>))</span>
-<span id="cb2-7"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="stage-3-structure-the-dashboard" class="slide level2" data-background-color="#E6F0F0">
-<h2>Stage 3: Structure the Dashboard</h2>
-<h3 id="build-with-intentional-structure">Build with intentional structure</h3>
-<ul>
-<li class="fragment"><strong>Principle of Proximity</strong> (Gestalt)</li>
-<li class="fragment"><strong>Dual-Processing Theory</strong> (System 1 &amp; 2)</li>
-<li class="fragment"><strong>Default Effect</strong> (Johnson &amp; Goldstein, 2003)</li>
-<li class="fragment"><strong>Aesthetic-Usability Effect</strong> (Norman, 2002)</li>
-</ul>
-<div class="fragment">
-<h3 id="in-practice">In Practice:</h3>
-<ul>
-<li class="fragment">Group related elements visually</li>
-<li class="fragment">Provide quick summary cues AND detailed views</li>
-<li class="fragment">Use smart defaults to reduce friction</li>
-<li class="fragment">Ensure visual consistency and appeal</li>
-</ul>
-</div>
-</section>
-<section id="stage-3-structure-in-action" class="slide level2" data-background-color="#E6F0F0">
-<h2>Stage 3: Structure In Action</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">library</span>(reactable)</span>
-<span id="cb3-2"><a href=""></a></span>
-<span id="cb3-3"><a href=""></a><span class="co"># Applying Gestalt principles and defaults</span></span>
-<span id="cb3-4"><a href=""></a><span class="fu">reactable</span>(</span>
-<span id="cb3-5"><a href=""></a>  data,</span>
-<span id="cb3-6"><a href=""></a>  <span class="at">defaultPageSize =</span> <span class="dv">5</span>,</span>
-<span id="cb3-7"><a href=""></a>  <span class="at">defaultSorted =</span> <span class="fu">list</span>(<span class="at">revenue =</span> <span class="st">"desc"</span>),</span>
-<span id="cb3-8"><a href=""></a>  <span class="at">groupBy =</span> <span class="st">"department"</span>,</span>
-<span id="cb3-9"><a href=""></a>  <span class="at">columns =</span> <span class="fu">list</span>(</span>
-<span id="cb3-10"><a href=""></a>    <span class="at">revenue =</span> <span class="fu">colDef</span>(</span>
-<span id="cb3-11"><a href=""></a>      <span class="at">format =</span> <span class="fu">colFormat</span>(<span class="at">prefix =</span> <span class="st">"$"</span>, <span class="at">separators =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb3-12"><a href=""></a>      <span class="at">style =</span> <span class="cf">function</span>(value) {</span>
-<span id="cb3-13"><a href=""></a>        <span class="co"># System 1 color cues</span></span>
-<span id="cb3-14"><a href=""></a>        <span class="cf">if</span> (value <span class="sc">&gt;</span> <span class="dv">1000000</span>) {</span>
-<span id="cb3-15"><a href=""></a>          color <span class="ot">&lt;-</span> <span class="st">"#008000"</span>  <span class="co"># Green for good</span></span>
-<span id="cb3-16"><a href=""></a>        } <span class="cf">else</span> <span class="cf">if</span> (value <span class="sc">&lt;</span> <span class="dv">500000</span>) {</span>
-<span id="cb3-17"><a href=""></a>          color <span class="ot">&lt;-</span> <span class="st">"#B22222"</span>  <span class="co"># Red for concerning</span></span>
-<span id="cb3-18"><a href=""></a>        } <span class="cf">else</span> {</span>
-<span id="cb3-19"><a href=""></a>          color <span class="ot">&lt;-</span> <span class="st">"#000000"</span>  <span class="co"># Default</span></span>
-<span id="cb3-20"><a href=""></a>        }</span>
-<span id="cb3-21"><a href=""></a>        <span class="fu">list</span>(<span class="at">color =</span> color, <span class="at">fontWeight =</span> <span class="st">"bold"</span>)</span>
-<span id="cb3-22"><a href=""></a>      }</span>
-<span id="cb3-23"><a href=""></a>    )</span>
-<span id="cb3-24"><a href=""></a>  )</span>
-<span id="cb3-25"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="stage-4-anticipate-user-behavior" class="slide level2" data-background-color="#F0E6F0">
-<h2>Stage 4: Anticipate User Behavior</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="consider-biases-heuristics">Consider biases &amp; heuristics</h3>
-<ul>
-<li class="fragment"><strong>Anchoring Effect</strong> (Tversky &amp; Kahneman, 1974)</li>
-<li class="fragment"><strong>Framing &amp; Loss Aversion</strong> (Tversky &amp; Kahneman, 1981)</li>
-<li class="fragment"><strong>Confirmation Bias</strong> (Nickerson, 1998)</li>
-<li class="fragment"><strong>Belief Perseverance</strong> (Ross &amp; Lepper, 1980)</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<h3 id="mitigation-strategies">Mitigation strategies:</h3>
-<ul>
-<li class="fragment">Provide context for all numbers</li>
-<li class="fragment">Frame data positively when appropriate</li>
-<li class="fragment">Show alternative views/analyses</li>
-<li class="fragment">Include “disconfirming” visualizations</li>
-</ul>
-</div></div>
-</section>
-<section id="stage-4-anticipate-in-action" class="slide level2" data-background-color="#F0E6F0">
-<h2>Stage 4: Anticipate In Action</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="co"># Dealing with anchoring and framing</span></span>
-<span id="cb4-2"><a href=""></a><span class="fu">tabsetPanel</span>(</span>
-<span id="cb4-3"><a href=""></a>  <span class="fu">tabPanel</span>(<span class="st">"Performance"</span>, </span>
-<span id="cb4-4"><a href=""></a>    <span class="fu">fluidRow</span>(</span>
-<span id="cb4-5"><a href=""></a>      <span class="fu">box</span>(</span>
-<span id="cb4-6"><a href=""></a>        <span class="at">title =</span> <span class="st">"Sales Performance"</span>,</span>
-<span id="cb4-7"><a href=""></a>        <span class="fu">plotOutput</span>(<span class="st">"salesPlot"</span>)</span>
-<span id="cb4-8"><a href=""></a>      ),</span>
-<span id="cb4-9"><a href=""></a>      <span class="fu">box</span>(</span>
-<span id="cb4-10"><a href=""></a>        <span class="at">title =</span> <span class="st">"Context"</span>,</span>
-<span id="cb4-11"><a href=""></a>        <span class="co"># Provide context to prevent anchoring</span></span>
-<span id="cb4-12"><a href=""></a>        <span class="st">"Industry average: $1.2M"</span>,</span>
-<span id="cb4-13"><a href=""></a>        <span class="st">"Company target: $1.5M"</span>,</span>
-<span id="cb4-14"><a href=""></a>        <span class="st">"Historical range: $0.9M - $1.8M"</span></span>
-<span id="cb4-15"><a href=""></a>      )</span>
-<span id="cb4-16"><a href=""></a>    ),</span>
-<span id="cb4-17"><a href=""></a>    <span class="co"># Alternative view to combat confirmation bias</span></span>
-<span id="cb4-18"><a href=""></a>    <span class="fu">checkboxInput</span>(<span class="st">"showAlternative"</span>, <span class="st">"Show alternative analysis"</span>)</span>
-<span id="cb4-19"><a href=""></a>  ),</span>
-<span id="cb4-20"><a href=""></a>  <span class="fu">tabPanel</span>(<span class="st">"What If?"</span>, </span>
-<span id="cb4-21"><a href=""></a>    <span class="co"># Encourage exploration of contrary hypotheses</span></span>
-<span id="cb4-22"><a href=""></a>    <span class="fu">sliderInput</span>(<span class="st">"scenario"</span>, <span class="st">"If market drops by:"</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">30</span>, <span class="at">value =</span> <span class="dv">10</span>),</span>
-<span id="cb4-23"><a href=""></a>    <span class="fu">plotOutput</span>(<span class="st">"scenarioPlot"</span>)</span>
-<span id="cb4-24"><a href=""></a>  )</span>
-<span id="cb4-25"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="stage-5-validate-empower" class="slide level2" data-background-color="#F0F0E6">
-<h2>Stage 5: Validate &amp; Empower</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="close-the-loop-with-clarity">Close the loop with clarity</h3>
-<ul>
-<li class="fragment"><strong>Peak-End Rule</strong> (Kahneman et al., 1993)</li>
-<li class="fragment"><strong>Beautiful-Is-Good Stereotype</strong> (Dion et al., 1972)</li>
-<li class="fragment"><strong>Cooperation &amp; Coordination</strong> (Tindale &amp; Kluwe, 2015)</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<h3 id="implementation">Implementation:</h3>
-<ul>
-<li class="fragment">Strong, clear summary sections</li>
-<li class="fragment">Visually appealing final views</li>
-<li class="fragment">Collaborative features for teams</li>
-<li class="fragment">Exportable insights</li>
-</ul>
-</div></div>
-</section>
-<section id="stage-5-validate-in-action" class="slide level2" data-background-color="#F0F0E6">
-<h2>Stage 5: Validate In Action</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="co"># Peak-End Rule and Beautiful-Is-Good implementation</span></span>
-<span id="cb5-2"><a href=""></a><span class="fu">fluidRow</span>(</span>
-<span id="cb5-3"><a href=""></a>  <span class="fu">box</span>(</span>
-<span id="cb5-4"><a href=""></a>    <span class="at">title =</span> <span class="st">"Key Insights"</span>,</span>
-<span id="cb5-5"><a href=""></a>    <span class="at">status =</span> <span class="st">"primary"</span>, </span>
-<span id="cb5-6"><a href=""></a>    <span class="at">solidHeader =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb5-7"><a href=""></a>    <span class="at">width =</span> <span class="dv">12</span>,</span>
-<span id="cb5-8"><a href=""></a>    <span class="co"># Provide clear summary</span></span>
-<span id="cb5-9"><a href=""></a>    <span class="fu">HTML</span>(<span class="st">"&lt;h3&gt;3 Key Takeaways:&lt;/h3&gt;</span></span>
-<span id="cb5-10"><a href=""></a><span class="st">         &lt;ol&gt;</span></span>
-<span id="cb5-11"><a href=""></a><span class="st">           &lt;li&gt;Revenue is up 12% against target&lt;/li&gt;</span></span>
-<span id="cb5-12"><a href=""></a><span class="st">           &lt;li&gt;Western region showing 3x growth&lt;/li&gt;</span></span>
-<span id="cb5-13"><a href=""></a><span class="st">           &lt;li&gt;Product X is underperforming by 8%&lt;/li&gt;</span></span>
-<span id="cb5-14"><a href=""></a><span class="st">         &lt;/ol&gt;"</span>),</span>
-<span id="cb5-15"><a href=""></a>    <span class="co"># Enable collaboration</span></span>
-<span id="cb5-16"><a href=""></a>    <span class="fu">actionButton</span>(<span class="st">"share"</span>, <span class="st">"Share Report"</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">"share"</span>)),</span>
-<span id="cb5-17"><a href=""></a>    <span class="fu">downloadButton</span>(<span class="st">"downloadReport"</span>, <span class="st">"Export PDF"</span>)</span>
-<span id="cb5-18"><a href=""></a>  )</span>
-<span id="cb5-19"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="bringing-it-all-together" class="slide level2" data-background-color="#FFFFFF">
-<h2>Bringing It All Together</h2>
+<section id="real-world-patterns-not-just-theory" class="slide level2 center" data-background-color="#FFFFFF">
+<h2>Real-World Patterns, Not Just Theory</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <h3 id="before-bid">Before BID:</h3>
@@ -514,86 +310,70 @@ Ever felt like this?
 <p>Users make faster, better decisions with less cognitive effort</p>
 </div>
 </section>
-<section id="practical-examples" class="slide level2" data-background-color="#E6F0FF">
-<h2>Practical Examples</h2>
-<h3 id="death-by-dropdown-decision-by-design">Death By Dropdown ➡️ Decision By Design</h3>
-<div>
-<ul>
-<li><strong>Grouped Headers</strong>: Organize complex data into logical hierarchies</li>
-<li><strong>Dynamic Drilldowns</strong>: Start with big picture, then reveal details</li>
-<li><strong>Inverse Color Scales</strong>: Draw attention to what matters most</li>
-<li><strong>Narrative Pathways</strong>: Guide users through a data story</li>
-</ul>
+<section id="bid-in-action" class="slide level2 center" data-background-color="#F0F0F0">
+<h2>BID In Action</h2>
+<div class="r-fit-text">
+<p><strong>Screenshots</strong>: Before &amp; After applying BID framework across stages</p>
 </div>
+<blockquote>
+<p><em>(placeholder for visual comparison of UI examples)</em></p>
+</blockquote>
 </section>
-<section id="implementation-demo" class="slide level2" data-background-color="#F0F0F0">
+<section id="implementation-demo" class="slide level2 center" data-background-color="#F9F9F9">
 <h2>Implementation Demo</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">library</span>(reactable)</span>
-<span id="cb6-2"><a href=""></a><span class="fu">library</span>(echarts4r)</span>
-<span id="cb6-3"><a href=""></a></span>
-<span id="cb6-4"><a href=""></a><span class="co"># Before: Overwhelming dropdown experience</span></span>
-<span id="cb6-5"><a href=""></a><span class="co"># selectInput("region", "Region:", choices = regions)</span></span>
-<span id="cb6-6"><a href=""></a><span class="co"># selectInput("product", "Product:", choices = products)</span></span>
-<span id="cb6-7"><a href=""></a><span class="co"># selectInput("timeframe", "Time:", choices = timeframes)</span></span>
-<span id="cb6-8"><a href=""></a><span class="co"># selectInput("segment", "Segment:", choices = segments)</span></span>
-<span id="cb6-9"><a href=""></a><span class="co"># selectInput("metric", "Metric:", choices = metrics)</span></span>
-<span id="cb6-10"><a href=""></a></span>
-<span id="cb6-11"><a href=""></a><span class="co"># After: Dynamic exploration with narrative focus</span></span>
-<span id="cb6-12"><a href=""></a><span class="fu">reactable</span>(</span>
-<span id="cb6-13"><a href=""></a>  data,</span>
-<span id="cb6-14"><a href=""></a>  <span class="at">groupBy =</span> <span class="st">"category"</span>,</span>
-<span id="cb6-15"><a href=""></a>  <span class="at">defaultExpanded =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb6-16"><a href=""></a>  <span class="at">columns =</span> <span class="fu">list</span>(</span>
-<span id="cb6-17"><a href=""></a>    <span class="at">value =</span> <span class="fu">colDef</span>(</span>
-<span id="cb6-18"><a href=""></a>      <span class="at">name =</span> <span class="st">"Performance"</span>,</span>
-<span id="cb6-19"><a href=""></a>      <span class="at">cell =</span> <span class="cf">function</span>(value, index) {</span>
-<span id="cb6-20"><a href=""></a>        <span class="co"># Contextual visualization</span></span>
-<span id="cb6-21"><a href=""></a>        sparklinePlot <span class="ot">&lt;-</span> <span class="fu">sparkline</span>(data<span class="sc">$</span>trend[index], </span>
-<span id="cb6-22"><a href=""></a>                                   <span class="at">lineColor =</span> <span class="fu">ifelse</span>(value <span class="sc">&gt;</span> target, <span class="st">"#28a745"</span>, <span class="st">"#dc3545"</span>))</span>
-<span id="cb6-23"><a href=""></a>        <span class="fu">div</span>(sparklinePlot, <span class="at">style =</span> <span class="st">"width: 100px; height: 30px;"</span>)</span>
-<span id="cb6-24"><a href=""></a>      }</span>
-<span id="cb6-25"><a href=""></a>    )</span>
-<span id="cb6-26"><a href=""></a>  ),</span>
-<span id="cb6-27"><a href=""></a>  <span class="at">details =</span> <span class="cf">function</span>(index) {</span>
-<span id="cb6-28"><a href=""></a>    <span class="co"># Drill-down with context</span></span>
-<span id="cb6-29"><a href=""></a>    htmltools<span class="sc">::</span><span class="fu">div</span>(</span>
-<span id="cb6-30"><a href=""></a>      echarts4r<span class="sc">::</span><span class="fu">e_charts</span>(detail_data[detail_data<span class="sc">$</span>id <span class="sc">==</span> data<span class="sc">$</span>id[index], ]) <span class="sc">|&gt;</span></span>
-<span id="cb6-31"><a href=""></a>        <span class="fu">e_line</span>(<span class="at">x =</span> <span class="st">"date"</span>, <span class="at">y =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb6-32"><a href=""></a>        <span class="fu">e_tooltip</span>() <span class="sc">|&gt;</span></span>
-<span id="cb6-33"><a href=""></a>        <span class="fu">e_title</span>(<span class="fu">paste</span>(<span class="st">"Detailed View:"</span>, data<span class="sc">$</span>name[index]))</span>
-<span id="cb6-34"><a href=""></a>    )</span>
-<span id="cb6-35"><a href=""></a>  }</span>
-<span id="cb6-36"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="r-fit-text">
+<p>Hands-on example using <code>{reactable}</code> + <code>{echarts4r}</code> to implement Stages 1–5</p>
+</div>
+<blockquote>
+<p><em>(placeholder for staged code walkthrough or animated screen recording)</em></p>
+</blockquote>
+</section>
+<section id="from-framework-to-workflow" class="slide level2 center" data-background-color="#E6F0FF">
+<h2>From Framework to Workflow</h2>
+<div class="r-fit-text">
+<p>Meet <code>{bidux}</code>: Your BID Assistant for Shiny</p>
+</div>
+<ul>
+<li class="fragment">🧠 Five structured helpers: <code>bid_notice()</code> to <code>bid_validate()</code></li>
+<li class="fragment">📚 Concept browser: <code>bid_concept("processing_fluency")</code></li>
+<li class="fragment">📄 Built-in documentation + report generation</li>
+<li class="fragment">🔌 Works with <code>{rhino}</code> and your existing apps</li>
+</ul>
+<blockquote>
+<p><em>(placeholder screenshot: console usage or UI screen of <code>{bidux}</code> helpers)</em></p>
+</blockquote>
+</section>
+<section id="what-bidux-looks-like-.background-colorf9f9f9" class="slide level2">
+<h2>What bidux Looks Like {.background-color=“#F9F9F9”}</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">library</span>(bidux)</span>
+<span id="cb1-2"><a href=""></a></span>
+<span id="cb1-3"><a href=""></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb1-4"><a href=""></a>  <span class="fu">bid_structure</span>(</span>
+<span id="cb1-5"><a href=""></a>    <span class="at">layout =</span> <span class="st">"dual_process"</span>,</span>
+<span id="cb1-6"><a href=""></a>    <span class="at">concepts =</span> <span class="fu">c</span>(<span class="st">"default_effect"</span>, <span class="st">"principle_of_proximity"</span>)</span>
+<span id="cb1-7"><a href=""></a>  )</span>
+<span id="cb1-8"><a href=""></a>)</span>
+<span id="cb1-9"><a href=""></a></span>
+<span id="cb1-10"><a href=""></a>ui <span class="ot">&lt;-</span> <span class="fu">bid_anticipate</span>(</span>
+<span id="cb1-11"><a href=""></a>  ui,</span>
+<span id="cb1-12"><a href=""></a>  <span class="at">bias_mitigations =</span> <span class="fu">list</span>(</span>
+<span id="cb1-13"><a href=""></a>    <span class="at">anchoring =</span> bid_components<span class="sc">$</span><span class="fu">context_aware_reference</span>(<span class="st">"sales_baseline"</span>),</span>
+<span id="cb1-14"><a href=""></a>    <span class="at">framing =</span> bid_components<span class="sc">$</span><span class="fu">framing_toggle</span>(<span class="st">"performance_view"</span>, <span class="st">"Progress"</span>, <span class="st">"Gap"</span>)</span>
+<span id="cb1-15"><a href=""></a>  )</span>
+<span id="cb1-16"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>More at: <a href="https://github.com">github.com/bidux</a></p>
+</div>
 </section>
 <section id="key-takeaways" class="slide level2 center" data-background-color="#4682B4">
 <h2>Key Takeaways</h2>
 <div>
 <ol type="1">
-<li><strong>Notice</strong> where users struggle with cognitive load</li>
-<li><strong>Interpret</strong> the story they need, not just the data they have</li>
-<li><strong>Structure</strong> dashboards to guide attention and reduce friction</li>
-<li><strong>Anticipate</strong> biases and heuristics that affect decisions</li>
-<li><strong>Validate</strong> with clear summaries and next steps</li>
+<li><strong>BID</strong> helps reduce friction and improve decisions</li>
+<li><strong>Reactable + echarts4r</strong> bring BID to life</li>
+<li><strong><code>bidux</code></strong> supports you in applying BID at every stage</li>
+<li>Build dashboards that guide — not overwhelm — your users</li>
 </ol>
-</div>
-</section>
-<section id="resources" class="slide level2" data-background-color="#F0F0F0">
-<h2>Resources</h2>
-<h3 id="tools-to-implement-bid-principles">Tools to implement BID principles:</h3>
-<div>
-<ul>
-<li><strong>{reactable}</strong>: Advanced tables with grouped headers and dynamic drill-downs</li>
-<li><strong>{echarts4r}</strong>: Interactive visualizations with narrative capabilities</li>
-<li><strong>{bslib}</strong>: Create cohesive, branded dashboards</li>
-<li><strong>{shinysurveys}</strong>: Gather user feedback to refine your approach</li>
-</ul>
-</div>
-<div class="fragment">
-<h3 id="learn-more">Learn more:</h3>
-<ul>
-<li class="fragment">Code examples: <a href="https://github.com">github.com/eickhoff-winget/BID-examples</a></li>
-<li class="fragment">Documentation: <a href="https://example.com">bid-framework.org</a></li>
-</ul>
 </div>
 </section>
 <section id="thank-you" class="slide level2 center" data-background-color="#4682B4">
@@ -601,35 +381,7 @@ Ever felt like this?
 <div class="r-fit-text">
 <p>Questions?</p>
 </div>
-<p><br></p>
 <p>Milena Eickhoff &amp; Jeremy Winget, PhD</p>
-<p><br></p>
-<p><span class="citation" data-cites="eickhoff_ux">@eickhoff_ux</span> | <span class="citation" data-cites="jwinget_data">@jwinget_data</span></p>
-</section>
-<section id="references" class="slide level2 scrollable">
-<h2>References</h2>
-<ul>
-<li class="fragment">Alter, A. L., &amp; Oppenheimer, D. M. (2009). Uniting the tribes of fluency. <em>Personality and Social Psychology Review, 13</em>(3), 219-235.</li>
-<li class="fragment">Dion, K., Berscheid, E., &amp; Walster, E. (1972). What is beautiful is good. <em>Journal of Personality and Social Psychology, 24</em>(3), 285-290.</li>
-<li class="fragment">Hick, W. E. (1952). On the rate of gain of information. <em>Quarterly Journal of Experimental Psychology, 4</em>(1), 11-26.</li>
-<li class="fragment">Johnson, E. J., &amp; Goldstein, D. (2003). Do defaults save lives? <em>Science, 302</em>(5649), 1338-1339.</li>
-<li class="fragment">Kahneman, D., Fredrickson, B. L., Schreiber, C. A., &amp; Redelmeier, D. A. (1993). When more pain is preferred to less: Adding a better end. <em>Psychological Science, 4</em>(6), 401-405.</li>
-<li class="fragment">Lockton, D., Harrison, D., &amp; Stanton, N. A. (2010). The Design with Intent Method: A design tool for influencing user behaviour. <em>Applied Ergonomics, 41</em>(3), 382-392.</li>
-<li class="fragment">Matei, S. A., &amp; Hunter, J. L. (2021). Data storytelling is not storytelling with data. <em>The Information Society, 37</em>(5), 310-325.</li>
-<li class="fragment">Nickerson, R. S. (1998). Confirmation bias: A ubiquitous phenomenon in many guises. <em>Review of General Psychology, 2</em>(2), 175-220.</li>
-<li class="fragment">Norman, D. A. (2002). <em>The Design of Everyday Things.</em> Basic Books.</li>
-<li class="fragment">Oinas-Kukkonen, H., &amp; Harjumaa, M. (2009). Persuasive systems design: Key issues, process model, and system features. Communications of the Association for Information Systems, 24(1), 28.</li>
-<li class="fragment">Ross, L., &amp; Lepper, M. (1980). The persistence of inflated causal judgments. Journal of Personality and Social Psychology, 39(3), 341-352.</li>
-<li class="fragment">Slovic, P. (1987). Perception of risk. Science, 236(4799), 280-285.</li>
-<li class="fragment">Song, H., &amp; Schwarz, N. (2009). If it’s hard to read, does that mean it’s less true? Psychological Science, 20(9), 1117-1120.</li>
-<li class="fragment">Sweller, J. (1988). Cognitive load during problem solving: Effects on learning. Cognitive Science, 12(2), 257-285.</li>
-<li class="fragment">Tindale, R. S., &amp; Kluwe, K. (2015). Decision making in groups and organizations. APA Handbook of Personality and Social Psychology, 2, 603-623.</li>
-<li class="fragment">Tufte, E. R. (1983). The Visual Display of Quantitative Information. Graphics Press.</li>
-<li class="fragment">Tversky, A., &amp; Kahneman, D. (1974). Judgment under uncertainty: Heuristics and biases. Science, 185(4157), 1124-1131.</li>
-<li class="fragment">Tversky, A., &amp; Kahneman, D. (1979). Prospect theory: An analysis of decision under risk. Econometrica, 47(2), 263-291.</li>
-<li class="fragment">Tversky, A., &amp; Kahneman, D. (1981). The framing of decisions and the psychology of choice. Science, 211(4481), 453-458.</li>
-<li class="fragment">Vessey, I. (1991). Cognitive fit: A theory-based analysis of the graphs versus tables literature. Decision Sciences, 22(2), 219-240.</li>
-</ul>
 
 </section>
     </div>
