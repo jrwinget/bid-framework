@@ -6,8 +6,8 @@
 <script src="slides_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting-697306ee647f3aecb60be57249203282.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.37">
+<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting-de84f8d6bb715db06a919283c2d1e787.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Milena Eickhoff &amp; Jeremy Winget, PhD">
   <title>Death By Dropdown?</title>
@@ -94,7 +94,7 @@
     code span.vs { color: #032f62; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-423d414d36ce366a9d05f36d06304417.css">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-8f3eebe07241f08526c91a7e9cbef8fd.css">
   <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -219,7 +219,7 @@ Ever felt like this?
 <li class="fragment">“Dashboard rot”</li>
 </ul>
 </div><div class="column" style="width:40%;">
-<p><img data-src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzhmY2YwMDA5MWFjOTlmN2Y0MGE2YjQzNmI5YTEzZDE3MWE1ZDIwNSZlcD12MV9pbnRlcm5hbF9naWZ5X2dpZiZjdD1n/32mC2kXYWCsg0/giphy.gif"></p>
+<p><img data-src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzVhM3d3MjJvYTNyc3puM2E0cmduZjFweXhrczNwcXI0b3FhN203aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l44Q5OXJ6qaNr838Q/giphy.gif"></p>
 </div></div>
 </section>
 <section id="it-doesnt-have-to-be-this-way" class="slide level2 center">
@@ -240,6 +240,7 @@ Ever felt like this?
 <div class="r-fit-text">
 <p>A 5-Stage Behavior Insight Design Framework</p>
 </div>
+<div class="column" style="width:60%;">
 <div>
 <ol type="1">
 <li><strong>Notice</strong> the Problem</li>
@@ -249,10 +250,14 @@ Ever felt like this?
 <li><strong>Validate</strong> &amp; Empower the User</li>
 </ol>
 </div>
-<blockquote>
-<p><em>(placeholder for BID framework visual)</em></p>
-</blockquote>
-<aside class="notes">
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="The_BID_framework.png"></p>
+<figcaption>The BID Framework</figcaption>
+</figure>
+</div>
+</div><aside class="notes">
 <ul>
 <li>This framework distills psychological principles into actionable steps</li>
 <li>Each stage builds on the previous one</li>
@@ -322,10 +327,80 @@ Ever felt like this?
 <section id="implementation-demo" class="slide level2 center" data-background-color="#F9F9F9">
 <h2>Implementation Demo</h2>
 <div class="r-fit-text">
-<p>Hands-on example using <code>{reactable}</code> + <code>{echarts4r}</code> to implement Stages 1–5</p>
+<p>Hands-on example using <code>{reactable}</code> to implement Stages 1–3</p>
+</div>
+<div class="r-stack">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Screenshot_examples_main_1.png" style="width:50.0%"></p>
+<figcaption>Example Stages 1-3</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Screenshot_examples_main_2.png" class="fragment" style="width:50.0%"></p>
+<figcaption>Example Stages 1-3</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Screenshot_examples_main_3.png" class="fragment" style="width:50.0%"></p>
+<figcaption>Example Stages 1-3</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Screenshot_examples_main_4.png" class="fragment" style="width:50.0%"></p>
+<figcaption>Example Stages 1-3</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="implementation-demo-1" class="slide level2 scrollable" data-background-color="#F9F9F9">
+<h2>Implementation Demo</h2>
+<div class="r-fit-text">
+<p>Hands-on example using <code>{reactable}</code> to implement Stages 1–3</p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="code_example_bar_graph_full.png" style="height:100.0%"></p>
+<figcaption>Example Stages 1-3</figcaption>
+</figure>
+</div>
+</section>
+<section id="implementation-demo-2" class="slide level2 center" data-background-color="#F9F9F9">
+<h2>Implementation Demo</h2>
+<div class="r-fit-text">
+<p>Hands-on example using <code>{echarts4r}</code> to implement Stages 4 &amp; 5</p>
+</div>
+<div class="r-stack">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Screenshot_examples_Deep_Dives_1.png" style="width:50.0%"></p>
+<figcaption>Example Stages 4 &amp; 5</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Screenshot_examples_Deep_Dives_2.png" class="fragment" style="width:50.0%"></p>
+<figcaption>Example Stages 4 &amp; 5</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Screenshot_examples_Deep_Dives_3.png" class="fragment" style="width:50.0%"></p>
+<figcaption>Example Stages 4 &amp; 5</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="implementation-demo-3" class="slide level2 center" data-background-color="#F9F9F9">
+<h2>Implementation Demo</h2>
+<div class="r-fit-text">
+<p>Hands-on example using <code>{echarts4r}</code> to implement Stages 4&amp;5</p>
 </div>
 <blockquote>
-<p><em>(placeholder for staged code walkthrough or animated screen recording)</em></p>
+<p>Placeholder for code example</p>
 </blockquote>
 </section>
 <section id="from-framework-to-workflow" class="slide level2 center" data-background-color="#E6F0FF">

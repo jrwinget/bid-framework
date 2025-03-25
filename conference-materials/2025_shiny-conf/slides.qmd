@@ -28,7 +28,7 @@ format:
 :::
 
 ::: {.column width="40%"}
-![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzhmY2YwMDA5MWFjOTlmN2Y0MGE2YjQzNmI5YTEzZDE3MWE1ZDIwNSZlcD12MV9pbnRlcm5hbF9naWZ5X2dpZiZjdD1n/32mC2kXYWCsg0/giphy.gif)
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzVhM3d3MjJvYTNyc3puM2E0cmduZjFweXhrczNwcXI0b3FhN203aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l44Q5OXJ6qaNr838Q/giphy.gif)
 :::
 ::::
 
@@ -55,6 +55,7 @@ We can guide users effortlessly to insights
 A 5-Stage Behavior Insight Design Framework
 :::
 
+::: {.column width="60%"}
 ::: {.nonincremental}
 1. **Notice** the Problem
 2. **Interpret** the User's Need
@@ -62,8 +63,11 @@ A 5-Stage Behavior Insight Design Framework
 4. **Anticipate** User Behavior
 5. **Validate** & Empower the User
 :::
+::: 
 
-> _(placeholder for BID framework visual)_
+::: {.column width="40%"}
+![The BID Framework](The_BID_framework.png)
+:::
 
 ::: {.notes}
 - This framework distills psychological principles into actionable steps
@@ -120,10 +124,48 @@ Users make faster, better decisions with less cognitive effort
 ## Implementation Demo {.center background-color="#F9F9F9"}
 
 ::: {.r-fit-text}
-Hands-on example using `{reactable}` + `{echarts4r}` to implement Stages 1–5
+Hands-on example using `{reactable}` to implement Stages 1–3
 :::
 
-> _(placeholder for staged code walkthrough or animated screen recording)_
+::: {.r-stack}
+![Example Stages 1-3](Screenshot_examples_main_1.png){width="50%"}
+
+![Example Stages 1-3](Screenshot_examples_main_2.png){.fragment width="50%"}
+
+![Example Stages 1-3](Screenshot_examples_main_3.png){.fragment width="50%"}
+
+![Example Stages 1-3](Screenshot_examples_main_4.png){.fragment width="50%"}
+:::
+
+## Implementation Demo {.scrollable background-color="#F9F9F9"}
+
+::: {.r-fit-text}
+Hands-on example using `{reactable}` to implement Stages 1–3
+:::
+
+![Example Stages 1-3](code_example_bar_graph_full.png){height="100%"}
+
+## Implementation Demo {.center background-color="#F9F9F9"}
+
+::: {.r-fit-text}
+Hands-on example using `{echarts4r}` to implement Stages 4 & 5
+:::
+
+::: {.r-stack}
+![Example Stages 4 & 5](Screenshot_examples_Deep_Dives_1.png){width="50%"}
+
+![Example Stages 4 & 5](Screenshot_examples_Deep_Dives_2.png){.fragment width="50%"}
+
+![Example Stages 4 & 5](Screenshot_examples_Deep_Dives_3.png){.fragment width="50%"}
+:::
+
+## Implementation Demo {.center background-color="#F9F9F9"}
+
+::: {.r-fit-text}
+Hands-on example using `{echarts4r}` to implement Stages 4&5
+:::
+
+> Placeholder for code example
 
 ## From Framework to Workflow {.center background-color="#E6F0FF"}
 
