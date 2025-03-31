@@ -6,8 +6,8 @@
 <script src="slides_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting-de84f8d6bb715db06a919283c2d1e787.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.42">
+<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting-697306ee647f3aecb60be57249203282.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.37">
 
   <meta name="author" content="Milena Eickhoff &amp; Jeremy Winget, PhD">
   <title>Death By Dropdown?</title>
@@ -94,7 +94,7 @@
     code span.vs { color: #032f62; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-8f3eebe07241f08526c91a7e9cbef8fd.css">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-423d414d36ce366a9d05f36d06304417.css">
   <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -228,28 +228,55 @@ Ever felt like this?
 <div class="r-fit-text">
 <p>By shifting the focus from <span style="color:#D55E00"><strong>cramming data</strong></span> to <span style="color:#009E73"><strong>crafting stories</strong></span></p>
 </div>
-<div class="fragment">
+<div class="columns fragment">
+<div class="column" style="width:60%;">
 <p><br></p>
+<p>SoundPulse’s market research team was drowning in data, unable to extract meaningful insights from their complex dashboards.</p>
+</div><div class="column" style="width:40%;">
+<p><br></p>
+<p><img data-src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXFwNHV6N3B4cmIzaTY3ajYwYTRkNG95ZWtxdjB5cTE1djRibGRydCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT0BKiK5sOCVdBUhiM/giphy.gif" style="width:90.0%"></p>
+</div></div>
+</section>
+<section id="bid-in-action" class="slide level2 center" data-background-color="#F0F0F0">
+<h2>BID In Action</h2>
 <div class="r-fit-text">
-<p>We can guide users effortlessly to insights</p>
+<p><strong>SoundPulse Market Research Dashboard Transformation</strong></p>
 </div>
-</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="before-bid">Before BID:</h3>
+<!-- Dashboard with overwhelming filters and complex tables -->
+<p><img data-src="img/before_bid_dashboard.png" style="width:95.0%"></p>
+<ul>
+<li class="fragment">14 dropdown filters</li>
+<li class="fragment">8 tabs of dense data tables</li>
+<li class="fragment">No clear hierarchy of information</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="after-bid">After BID:</h3>
+<!-- Streamlined dashboard with clear information hierarchy -->
+<p><img data-src="img/after_bid_dashboard.png" style="width:95.0%"></p>
+<ul>
+<li class="fragment">Guided narrative pathway</li>
+<li class="fragment">Focused insights by segment</li>
+<li class="fragment">Progressive disclosure of details</li>
+</ul>
+</div></div>
 </section>
 <section id="the-bid-framework" class="slide level2" data-background-color="#E6F0FF">
 <h2>The BID Framework</h2>
 <div class="r-fit-text">
 <p>A 5-Stage Behavior Insight Design Framework</p>
 </div>
+<div class="columns">
 <div class="column" style="width:60%;">
-<div>
 <ol type="1">
-<li><strong>Notice</strong> the Problem</li>
-<li><strong>Interpret</strong> the User’s Need</li>
-<li><strong>Structure</strong> the Dashboard</li>
-<li><strong>Anticipate</strong> User Behavior</li>
-<li><strong>Validate</strong> &amp; Empower the User</li>
+<li class="fragment"><strong>Notice</strong> the Problem</li>
+<li class="fragment"><strong>Interpret</strong> the User’s Need</li>
+<li class="fragment"><strong>Structure</strong> the Dashboard</li>
+<li class="fragment"><strong>Anticipate</strong> User Behavior</li>
+<li class="fragment"><strong>Validate</strong> &amp; Empower the User</li>
 </ol>
-</div>
 </div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -257,7 +284,8 @@ Ever felt like this?
 <figcaption>The BID Framework</figcaption>
 </figure>
 </div>
-</div><aside class="notes">
+</div></div>
+<aside class="notes">
 <ul>
 <li>This framework distills psychological principles into actionable steps</li>
 <li>Each stage builds on the previous one</li>
@@ -288,165 +316,460 @@ Ever felt like this?
 </ul>
 </div>
 </section>
-<section id="real-world-patterns-not-just-theory" class="slide level2 center" data-background-color="#FFFFFF">
-<h2>Real-World Patterns, Not Just Theory</h2>
+<section id="case-study-stage-1---notice" class="slide level2" data-background-color="#F9F9F9">
+<h2>Case Study: Stage 1 - Notice</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<h3 id="before-bid">Before BID:</h3>
+<h3 id="soundpulses-pain-points">SoundPulse’s Pain Points:</h3>
 <ul>
-<li class="fragment">Information overload</li>
-<li class="fragment">No clear story</li>
-<li class="fragment">Cognitive friction</li>
-<li class="fragment">Unused features</li>
-<li class="fragment">Unclear next steps</li>
+<li class="fragment">Users spent 4+ minutes configuring filters</li>
+<li class="fragment">72% of users reported feeling overwhelmed</li>
+<li class="fragment">Key insights buried in complex tables</li>
+<li class="fragment">Decision-making delayed by confusion</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<h3 id="after-bid">After BID:</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="co"># Documenting the problem</span></span>
+<span id="cb1-2"><a href=""></a>problem_data <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb1-3"><a href=""></a>  <span class="at">problem =</span> <span class="st">"Users overwhelmed by filtering options"</span>,</span>
+<span id="cb1-4"><a href=""></a>  <span class="at">evidence =</span> <span class="st">"User testing showed 72% reported feeling confused by interface"</span></span>
+<span id="cb1-5"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- image of filtering confusion UI example -->
+<p><img data-src="img/filtering_confusion.png" style="width:90.0%"></p>
+</div></div>
+<aside class="notes">
 <ul>
-<li class="fragment">Focused on key user needs</li>
-<li class="fragment">Clear narrative structure</li>
-<li class="fragment">Reduced cognitive load</li>
-<li class="fragment">Bias-aware design</li>
-<li class="fragment">Actionable insights</li>
+<li>Explain the purpose of documenting problem like this
+<ul>
+<li>Setting up to show a way to integrate into dev workflows at the end</li>
+</ul></li>
+<li>Applied BID Principles with <code>{reactable}</code>
+<ul>
+<li><strong>Cognitive Load Theory</strong>: Reduced extraneous processing</li>
+<li><strong>Hick’s Law</strong>: Simplified choice architecture</li>
+<li><strong>Visual Hierarchies</strong>: Created clear information priority</li>
+</ul></li>
 </ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="implementation-demo-stages-1-3" class="slide level2" data-background-color="#F9F9F9">
+<h2>Implementation Demo: Stages 1-3</h2>
+<div class="r-stack">
+<!-- Example showing grouped bars (Cognitive Load Theory) -->
+<p><img data-src="img/reactable_example_1.png" style="width:75.0%"> <!-- Example showing dynamic legend (Hick's Law) --> <img data-src="img/reactable_example_2.png" class="fragment" style="width:75.0%"> <!-- Example showing color coding (Processing Fluency) --> <img data-src="img/reactable_example_3.png" class="fragment" style="width:75.0%"> <!-- Example showing grouped elements (Principle of Proximity) --> <img data-src="img/reactable_example_4.png" class="fragment" style="width:75.0%"></p>
+<!-- Commenting to show suggestion placeholders -->
+<!-- ![](img/Screenshot_examples_main_1.png){width="75%"}
+![](img/Screenshot_examples_main_2.png){.fragment width="75%"}
+![](img/Screenshot_examples_main_3.png){.fragment width="75%"}
+![](img/Screenshot_examples_main_4.png){.fragment width="75%"} -->
+</div>
+<aside class="notes">
+<ul>
+<li>Using <code>{reactable}</code> to implement key BID principles</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="implementation-code-stages-1-3" class="slide level2 scrollable" data-background-color="#F9F9F9">
+<h2>Implementation Code: Stages 1-3</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="co"># Implementing BID principles in reactable</span></span>
+<span id="cb2-2"><a href=""></a><span class="fu">library</span>(reactable)</span>
+<span id="cb2-3"><a href=""></a></span>
+<span id="cb2-4"><a href=""></a><span class="fu">reactable</span>(</span>
+<span id="cb2-5"><a href=""></a>  soundpulse_data,</span>
+<span id="cb2-6"><a href=""></a>  <span class="co"># Stage 1: Cognitive Load Theory - Grouped structure reduces complexity</span></span>
+<span id="cb2-7"><a href=""></a>  <span class="at">groupBy =</span> <span class="st">"Claim"</span>,</span>
+<span id="cb2-8"><a href=""></a>  <span class="co"># Stage 2: Processing Fluency - Color coding for instant insights</span></span>
+<span id="cb2-9"><a href=""></a>  <span class="at">columns =</span> <span class="fu">list</span>(</span>
+<span id="cb2-10"><a href=""></a>    <span class="at">Metric1 =</span> <span class="fu">colDef</span>(</span>
+<span id="cb2-11"><a href=""></a>      <span class="at">style =</span> <span class="cf">function</span>(value) {</span>
+<span id="cb2-12"><a href=""></a>        <span class="co"># Color coding enhances processing fluency</span></span>
+<span id="cb2-13"><a href=""></a>        <span class="cf">if</span> (value <span class="sc">&gt;</span> <span class="dv">50</span>) {</span>
+<span id="cb2-14"><a href=""></a>          <span class="fu">list</span>(</span>
+<span id="cb2-15"><a href=""></a>            <span class="at">background =</span> <span class="st">"rgba(0, 128, 128, 0.2)"</span>, </span>
+<span id="cb2-16"><a href=""></a>            <span class="at">color =</span> <span class="st">"#006666"</span>,</span>
+<span id="cb2-17"><a href=""></a>            <span class="at">fontWeight =</span> <span class="st">"bold"</span></span>
+<span id="cb2-18"><a href=""></a>          )</span>
+<span id="cb2-19"><a href=""></a>        } <span class="cf">else</span> <span class="cf">if</span> (value <span class="sc">&lt;</span> <span class="dv">30</span>) {</span>
+<span id="cb2-20"><a href=""></a>          <span class="fu">list</span>(</span>
+<span id="cb2-21"><a href=""></a>            <span class="at">background =</span> <span class="st">"rgba(255, 140, 0, 0.2)"</span>, </span>
+<span id="cb2-22"><a href=""></a>            <span class="at">color =</span> <span class="st">"#DD8500"</span>,</span>
+<span id="cb2-23"><a href=""></a>            <span class="at">fontWeight =</span> <span class="st">"bold"</span></span>
+<span id="cb2-24"><a href=""></a>          )</span>
+<span id="cb2-25"><a href=""></a>        }</span>
+<span id="cb2-26"><a href=""></a>      }</span>
+<span id="cb2-27"><a href=""></a>    )</span>
+<span id="cb2-28"><a href=""></a>  ),</span>
+<span id="cb2-29"><a href=""></a>  <span class="co"># Stage 3: Principle of Proximity - Group related elements visually</span></span>
+<span id="cb2-30"><a href=""></a>  <span class="at">columnGroups =</span> <span class="fu">list</span>(</span>
+<span id="cb2-31"><a href=""></a>    <span class="fu">colGroup</span>(</span>
+<span id="cb2-32"><a href=""></a>      <span class="at">name =</span> <span class="st">"System 1 - Quick Insights"</span>, </span>
+<span id="cb2-33"><a href=""></a>      <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"Metric1"</span>, <span class="st">"Metric2"</span>)</span>
+<span id="cb2-34"><a href=""></a>    ),</span>
+<span id="cb2-35"><a href=""></a>    <span class="fu">colGroup</span>(</span>
+<span id="cb2-36"><a href=""></a>      <span class="at">name =</span> <span class="st">"System 2 - Detailed Analysis"</span>, </span>
+<span id="cb2-37"><a href=""></a>      <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"Metric3"</span>, <span class="st">"Metric4"</span>)</span>
+<span id="cb2-38"><a href=""></a>    )</span>
+<span id="cb2-39"><a href=""></a>  ),</span>
+<span id="cb2-40"><a href=""></a>  <span class="co"># Progressive disclosure supports Cognitive Load Theory</span></span>
+<span id="cb2-41"><a href=""></a>  <span class="at">details =</span> <span class="cf">function</span>(index) {</span>
+<span id="cb2-42"><a href=""></a>    <span class="co"># Only show details when requested</span></span>
+<span id="cb2-43"><a href=""></a>    detailed_data <span class="ot">&lt;-</span> segment_details[</span>
+<span id="cb2-44"><a href=""></a>      segment_details<span class="sc">$</span>claim_id <span class="sc">==</span> soundpulse_data<span class="sc">$</span>Claim[index], </span>
+<span id="cb2-45"><a href=""></a>    ]</span>
+<span id="cb2-46"><a href=""></a>    <span class="fu">div</span>(</span>
+<span id="cb2-47"><a href=""></a>      <span class="at">style =</span> <span class="st">"padding: 1rem"</span>,</span>
+<span id="cb2-48"><a href=""></a>      <span class="fu">reactable</span>(detailed_data, <span class="at">outlined =</span> <span class="cn">TRUE</span>, <span class="at">striped =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-49"><a href=""></a>    )</span>
+<span id="cb2-50"><a href=""></a>  }</span>
+<span id="cb2-51"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="case-study-stages-4-5" class="slide level2" data-background-color="#F9F9F9">
+<h2>Case Study: Stages 4-5</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="soundpulses-challenge">SoundPulse’s Challenge:</h3>
+<ul>
+<li class="fragment">Executives comparing metrics without proper context</li>
+<li class="fragment">Product teams focusing on negative gaps over positive progress</li>
+<li class="fragment">Insights lost after meetings due to lack of summary</li>
+<li class="fragment">No clear path to team collaboration</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="co"># Documenting biases to address:</span></span>
+<span id="cb3-2"><a href=""></a>challenges_data <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb3-3"><a href=""></a>  <span class="st">"Metrics compared without baseline"</span>,</span>
+<span id="cb3-4"><a href=""></a>  <span class="st">"Focus on gaps rather than progress"</span>,</span>
+<span id="cb3-5"><a href=""></a>  <span class="st">"Teams seeking data that confirms beliefs"</span></span>
+<span id="cb3-6"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- image of anchoring UI example -->
+<p><img data-src="img/anchoring_example.png" style="width:90.0%"></p>
+</div></div>
+<aside class="notes">
+<ul>
+<li>Explain the purpose of documenting challenges/biases like this
+<ul>
+<li>Setting up to show a way to integrate into dev workflows at the end</li>
+</ul></li>
+<li>Applied BID Principles:
+<ul>
+<li><strong>Anchoring Effect</strong>: Added clear reference benchmarks</li>
+<li><strong>Framing &amp; Loss Aversion</strong>: Created positive/negative toggle views</li>
+<li><strong>Peak-End Rule</strong>: Implemented summary insights panel</li>
+</ul></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="implementation-demo-stages-4-5" class="slide level2" data-background-color="#F9F9F9">
+<h2>Implementation Demo: Stages 4-5</h2>
+<div class="r-stack">
+<!-- Example showing reference bands for Anchoring Effect -->
+<p><img data-src="img/echarts_example_1.png" style="width:75.0%"> <!-- Example showing framing toggle (Framing & Loss Aversion) --> <img data-src="img/echarts_example_2.png" class="fragment" style="width:75.0%"> <!-- Example showing summary cards (Peak-End Rule) --> <img data-src="img/echarts_example_3.png" class="fragment" style="width:75.0%"></p>
+<!-- Commenting to show suggestion placeholders -->
+<!-- ![](img/Screenshot_examples_Deep_Dives_1.png){width="75%"}
+![](img/Screenshot_examples_Deep_Dives_2.png){.fragment width="75%"}
+![](img/Screenshot_examples_Deep_Dives_3.png){.fragment width="75%"} -->
+</div>
+<aside class="notes">
+<ul>
+<li>Using <code>{echarts4r}</code> to implement Stages 4 &amp; 5</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="implementation-code-stages-4-5" class="slide level2 scrollable" data-background-color="#F9F9F9">
+<h2>Implementation Code: Stages 4-5</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="co"># Implementing BID principles in echarts4r</span></span>
+<span id="cb4-2"><a href=""></a><span class="fu">library</span>(echarts4r)</span>
+<span id="cb4-3"><a href=""></a><span class="fu">library</span>(shiny)</span>
+<span id="cb4-4"><a href=""></a></span>
+<span id="cb4-5"><a href=""></a><span class="co"># UI Component with framing toggle (Framing &amp; Loss Aversion)</span></span>
+<span id="cb4-6"><a href=""></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb4-7"><a href=""></a>  <span class="co"># Stage 4: Anticipate User Behavior</span></span>
+<span id="cb4-8"><a href=""></a>  <span class="fu">radioButtons</span>(</span>
+<span id="cb4-9"><a href=""></a>    <span class="st">"framing"</span>, <span class="st">"Display View:"</span>, </span>
+<span id="cb4-10"><a href=""></a>    <span class="at">choices =</span> <span class="fu">c</span>(</span>
+<span id="cb4-11"><a href=""></a>      <span class="st">"Progress View"</span> <span class="ot">=</span> <span class="st">"progress"</span>,</span>
+<span id="cb4-12"><a href=""></a>      <span class="st">"Gap View"</span> <span class="ot">=</span> <span class="st">"gap"</span></span>
+<span id="cb4-13"><a href=""></a>      ),</span>
+<span id="cb4-14"><a href=""></a>      <span class="at">selected =</span> <span class="st">"progress"</span>, </span>
+<span id="cb4-15"><a href=""></a>      <span class="at">inline =</span> <span class="cn">TRUE</span></span>
+<span id="cb4-16"><a href=""></a>    ),</span>
+<span id="cb4-17"><a href=""></a>  <span class="co"># Charts will respond to framing selection</span></span>
+<span id="cb4-18"><a href=""></a>  <span class="fu">echarts4rOutput</span>(<span class="st">"metricsChart"</span>),</span>
+<span id="cb4-19"><a href=""></a>  <span class="co"># Stage 5: Peak-End Rule summary panel</span></span>
+<span id="cb4-20"><a href=""></a>  <span class="fu">div</span>(</span>
+<span id="cb4-21"><a href=""></a>    <span class="at">class =</span> <span class="st">"summary-panel"</span>,</span>
+<span id="cb4-22"><a href=""></a>    <span class="at">style =</span> <span class="st">"</span></span>
+<span id="cb4-23"><a href=""></a><span class="st">      border: 1px solid #ddd;</span></span>
+<span id="cb4-24"><a href=""></a><span class="st">      padding: 15px;</span></span>
+<span id="cb4-25"><a href=""></a><span class="st">      border-radius: 5px;</span></span>
+<span id="cb4-26"><a href=""></a><span class="st">      background-color: #f9f9f9;</span></span>
+<span id="cb4-27"><a href=""></a><span class="st">      margin-top: 20px;</span></span>
+<span id="cb4-28"><a href=""></a><span class="st">    "</span>,</span>
+<span id="cb4-29"><a href=""></a>    <span class="fu">h4</span>(<span class="st">"Key Insights Summary"</span>),</span>
+<span id="cb4-30"><a href=""></a>    <span class="fu">uiOutput</span>(<span class="st">"keySummary"</span>)</span>
+<span id="cb4-31"><a href=""></a>  )</span>
+<span id="cb4-32"><a href=""></a>)</span>
+<span id="cb4-33"><a href=""></a></span>
+<span id="cb4-34"><a href=""></a><span class="co"># Server logic</span></span>
+<span id="cb4-35"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb4-36"><a href=""></a>  output<span class="sc">$</span>metricsChart <span class="ot">&lt;-</span> <span class="fu">renderEcharts4r</span>({</span>
+<span id="cb4-37"><a href=""></a>    <span class="co"># Base chart</span></span>
+<span id="cb4-38"><a href=""></a>    chart <span class="ot">&lt;-</span> soundpulse_metrics <span class="sc">|&gt;</span></span>
+<span id="cb4-39"><a href=""></a>      <span class="fu">e_charts</span>(<span class="at">x =</span> category)</span>
+<span id="cb4-40"><a href=""></a></span>
+<span id="cb4-41"><a href=""></a>    <span class="co"># Apply framing based on user selection</span></span>
+<span id="cb4-42"><a href=""></a>    <span class="cf">if</span>(input<span class="sc">$</span>framing <span class="sc">==</span> <span class="st">"progress"</span>) {</span>
+<span id="cb4-43"><a href=""></a>      <span class="co"># Positive framing - emphasize progress</span></span>
+<span id="cb4-44"><a href=""></a>      chart <span class="sc">|&gt;</span></span>
+<span id="cb4-45"><a href=""></a>        <span class="fu">e_bar</span>(progress, <span class="at">name =</span> <span class="st">"Progress to Target"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-46"><a href=""></a>        <span class="fu">e_color</span>(<span class="fu">c</span>(<span class="st">"#3CB371"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb4-47"><a href=""></a>        <span class="co"># Stage 4: Anchoring Effect - clear reference point</span></span>
+<span id="cb4-48"><a href=""></a>        <span class="fu">e_mark_line</span>(</span>
+<span id="cb4-49"><a href=""></a>          <span class="at">data =</span> <span class="fu">list</span>(</span>
+<span id="cb4-50"><a href=""></a>            <span class="fu">list</span>(</span>
+<span id="cb4-51"><a href=""></a>              <span class="at">name =</span> <span class="st">"Average"</span>, </span>
+<span id="cb4-52"><a href=""></a>              <span class="at">yAxis =</span> <span class="fu">mean</span>(soundpulse_metrics<span class="sc">$</span>progress),</span>
+<span id="cb4-53"><a href=""></a>              <span class="at">lineStyle =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">"#5470c6"</span>, <span class="at">type =</span> <span class="st">"dashed"</span>)</span>
+<span id="cb4-54"><a href=""></a>            )</span>
+<span id="cb4-55"><a href=""></a>          )</span>
+<span id="cb4-56"><a href=""></a>        ) <span class="sc">|&gt;</span></span>
+<span id="cb4-57"><a href=""></a>        <span class="co"># Narrative annotations for Data Storytelling</span></span>
+<span id="cb4-58"><a href=""></a>        <span class="fu">e_mark_point</span>(</span>
+<span id="cb4-59"><a href=""></a>          <span class="at">data =</span> <span class="fu">list</span>(</span>
+<span id="cb4-60"><a href=""></a>            <span class="fu">list</span>(</span>
+<span id="cb4-61"><a href=""></a>              <span class="at">name =</span> <span class="st">"Key Insight"</span>, </span>
+<span id="cb4-62"><a href=""></a>              <span class="at">coord =</span> <span class="fu">c</span>(<span class="st">"CategoryA"</span>, <span class="dv">76</span>), </span>
+<span id="cb4-63"><a href=""></a>              <span class="at">value =</span> <span class="st">"76% - Exceeds goal"</span>,</span>
+<span id="cb4-64"><a href=""></a>              <span class="at">symbolSize =</span> <span class="dv">60</span></span>
+<span id="cb4-65"><a href=""></a>            )</span>
+<span id="cb4-66"><a href=""></a>          )</span>
+<span id="cb4-67"><a href=""></a>        )</span>
+<span id="cb4-68"><a href=""></a>    } <span class="cf">else</span> {</span>
+<span id="cb4-69"><a href=""></a>      <span class="co"># Negative framing - emphasize gap</span></span>
+<span id="cb4-70"><a href=""></a>      chart <span class="sc">|&gt;</span></span>
+<span id="cb4-71"><a href=""></a>        <span class="fu">e_bar</span>(gap, <span class="at">name =</span> <span class="st">"Gap to Target"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-72"><a href=""></a>        <span class="fu">e_color</span>(<span class="fu">c</span>(<span class="st">"#E95420"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb4-73"><a href=""></a>        <span class="fu">e_mark_line</span>(</span>
+<span id="cb4-74"><a href=""></a>          <span class="at">data =</span> <span class="fu">list</span>(</span>
+<span id="cb4-75"><a href=""></a>            <span class="fu">list</span>(</span>
+<span id="cb4-76"><a href=""></a>              <span class="at">name =</span> <span class="st">"Average Gap"</span>, </span>
+<span id="cb4-77"><a href=""></a>              <span class="at">yAxis =</span> <span class="fu">mean</span>(soundpulse_metrics<span class="sc">$</span>gap),</span>
+<span id="cb4-78"><a href=""></a>              <span class="at">lineStyle =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">"#5470c6"</span>, <span class="at">type =</span> <span class="st">"dashed"</span>)</span>
+<span id="cb4-79"><a href=""></a>            )</span>
+<span id="cb4-80"><a href=""></a>          )</span>
+<span id="cb4-81"><a href=""></a>        ) <span class="sc">|&gt;</span></span>
+<span id="cb4-82"><a href=""></a>        <span class="fu">e_mark_point</span>(</span>
+<span id="cb4-83"><a href=""></a>          <span class="at">data =</span> <span class="fu">list</span>(</span>
+<span id="cb4-84"><a href=""></a>            <span class="fu">list</span>(</span>
+<span id="cb4-85"><a href=""></a>              <span class="at">name =</span> <span class="st">"Key Concern"</span>, </span>
+<span id="cb4-86"><a href=""></a>              <span class="at">coord =</span> <span class="fu">c</span>(<span class="st">"CategoryC"</span>, <span class="dv">34</span>), </span>
+<span id="cb4-87"><a href=""></a>              <span class="at">value =</span> <span class="st">"34% Gap - Priority Area"</span>,</span>
+<span id="cb4-88"><a href=""></a>              <span class="at">symbolSize =</span> <span class="dv">60</span></span>
+<span id="cb4-89"><a href=""></a>            )</span>
+<span id="cb4-90"><a href=""></a>          )</span>
+<span id="cb4-91"><a href=""></a>        )</span>
+<span id="cb4-92"><a href=""></a>    }</span>
+<span id="cb4-93"><a href=""></a>  })</span>
+<span id="cb4-94"><a href=""></a></span>
+<span id="cb4-95"><a href=""></a>  <span class="co"># Peak-End Rule implementation - leave users with clear summary</span></span>
+<span id="cb4-96"><a href=""></a>  output<span class="sc">$</span>keySummary <span class="ot">&lt;-</span> <span class="fu">renderUI</span>({</span>
+<span id="cb4-97"><a href=""></a>    <span class="cf">if</span>(input<span class="sc">$</span>framing <span class="sc">==</span> <span class="st">"progress"</span>) {</span>
+<span id="cb4-98"><a href=""></a>      <span class="fu">tagList</span>(</span>
+<span id="cb4-99"><a href=""></a>        <span class="fu">p</span>(<span class="st">"• Category A shows highest progress at 76%"</span>),</span>
+<span id="cb4-100"><a href=""></a>        <span class="fu">p</span>(<span class="st">"• Categories B &amp; D exceed average performance"</span>),</span>
+<span id="cb4-101"><a href=""></a>        <span class="fu">p</span>(<span class="st">"• All segments show improved trajectory from previous quarter"</span>)</span>
+<span id="cb4-102"><a href=""></a>      )</span>
+<span id="cb4-103"><a href=""></a>    } <span class="cf">else</span> {</span>
+<span id="cb4-104"><a href=""></a>      <span class="fu">tagList</span>(</span>
+<span id="cb4-105"><a href=""></a>        <span class="fu">p</span>(<span class="st">"• Category C has critical gap of 34%"</span>),</span>
+<span id="cb4-106"><a href=""></a>        <span class="fu">p</span>(<span class="st">"• Categories E &amp; F show increasing gaps"</span>),</span>
+<span id="cb4-107"><a href=""></a>        <span class="fu">p</span>(<span class="st">"• Immediate attention needed for demographic 25-34"</span>)</span>
+<span id="cb4-108"><a href=""></a>      )</span>
+<span id="cb4-109"><a href=""></a>    }</span>
+<span id="cb4-110"><a href=""></a>  })</span>
+<span id="cb4-111"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="interactive-demonstration" class="slide level2" data-background-color="#E6F0FF">
+<h2>Interactive Demonstration</h2>
+<h3 id="how-framing-affects-perception-decision-making">How Framing Affects Perception &amp; Decision-Making</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h4 id="progress-framing">Progress Framing:</h4>
+<!-- Chart showing 65% progress toward goal -->
+<p><img data-src="img/progress_framing.png" style="width:90.0%"></p>
+</div><div class="column" style="width:50%;">
+<h4 id="gap-framing">Gap Framing:</h4>
+<!-- Chart showing 35% gap to goal -->
+<p><img data-src="img/gap_framing.png" style="width:90.0%"></p>
 </div></div>
 <div class="fragment">
-<h3 id="the-outcome">The outcome:</h3>
-<p>Users make faster, better decisions with less cognitive effort</p>
+<p><strong>SoundPulse Results:</strong> Marketing team preferred progress framing for stakeholder presentations, while product teams found gap framing more actionable for development priorities.</p>
 </div>
-</section>
-<section id="bid-in-action" class="slide level2 center" data-background-color="#F0F0F0">
-<h2>BID In Action</h2>
-<div class="r-fit-text">
-<p><strong>Screenshots</strong>: Before &amp; After applying BID framework across stages</p>
-</div>
-<blockquote>
-<p><em>(placeholder for visual comparison of UI examples)</em></p>
-</blockquote>
-</section>
-<section id="implementation-demo" class="slide level2 center" data-background-color="#F9F9F9">
-<h2>Implementation Demo</h2>
-<div class="r-fit-text">
-<p>Hands-on example using <code>{reactable}</code> to implement Stages 1–3</p>
-</div>
-<div class="r-stack">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="Screenshot_examples_main_1.png" style="width:50.0%"></p>
-<figcaption>Example Stages 1-3</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="Screenshot_examples_main_2.png" class="fragment" style="width:50.0%"></p>
-<figcaption>Example Stages 1-3</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="Screenshot_examples_main_3.png" class="fragment" style="width:50.0%"></p>
-<figcaption>Example Stages 1-3</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="Screenshot_examples_main_4.png" class="fragment" style="width:50.0%"></p>
-<figcaption>Example Stages 1-3</figcaption>
-</figure>
-</div>
-</div>
-</section>
-<section id="implementation-demo-1" class="slide level2 scrollable" data-background-color="#F9F9F9">
-<h2>Implementation Demo</h2>
-<div class="r-fit-text">
-<p>Hands-on example using <code>{reactable}</code> to implement Stages 1–3</p>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="code_example_bar_graph_full.png" style="height:100.0%"></p>
-<figcaption>Example Stages 1-3</figcaption>
-</figure>
-</div>
-</section>
-<section id="implementation-demo-2" class="slide level2 center" data-background-color="#F9F9F9">
-<h2>Implementation Demo</h2>
-<div class="r-fit-text">
-<p>Hands-on example using <code>{echarts4r}</code> to implement Stages 4 &amp; 5</p>
-</div>
-<div class="r-stack">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="Screenshot_examples_Deep_Dives_1.png" style="width:50.0%"></p>
-<figcaption>Example Stages 4 &amp; 5</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="Screenshot_examples_Deep_Dives_2.png" class="fragment" style="width:50.0%"></p>
-<figcaption>Example Stages 4 &amp; 5</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="Screenshot_examples_Deep_Dives_3.png" class="fragment" style="width:50.0%"></p>
-<figcaption>Example Stages 4 &amp; 5</figcaption>
-</figure>
-</div>
-</div>
-</section>
-<section id="implementation-demo-3" class="slide level2 center" data-background-color="#F9F9F9">
-<h2>Implementation Demo</h2>
-<div class="r-fit-text">
-<p>Hands-on example using <code>{echarts4r}</code> to implement Stages 4&amp;5</p>
-</div>
-<blockquote>
-<p>Placeholder for code example</p>
-</blockquote>
-</section>
-<section id="from-framework-to-workflow" class="slide level2 center" data-background-color="#E6F0FF">
-<h2>From Framework to Workflow</h2>
-<div class="r-fit-text">
-<p>Meet <code>{bidux}</code>: Your BID Assistant for Shiny</p>
-</div>
+<aside class="notes">
 <ul>
-<li class="fragment">🧠 Five structured helpers: <code>bid_notice()</code> to <code>bid_validate()</code></li>
-<li class="fragment">📚 Concept browser: <code>bid_concept("processing_fluency")</code></li>
-<li class="fragment">📄 Built-in documentation + report generation</li>
-<li class="fragment">🔌 Works with <code>{rhino}</code> and your existing apps</li>
+<li>Progress Framing:
+<ul>
+<li>Motivates by highlighting achievement</li>
+<li>Creates positive momentum</li>
+<li>Supports incremental improvement</li>
+</ul></li>
+<li>Gap Framing:
+<ul>
+<li>Creates urgency to address shortfall</li>
+<li>Highlights areas needing improvement</li>
+<li>May trigger risk-avoidance behaviors</li>
+</ul></li>
 </ul>
-<blockquote>
-<p><em>(placeholder screenshot: console usage or UI screen of <code>{bidux}</code> helpers)</em></p>
-</blockquote>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="what-bidux-looks-like-.background-colorf9f9f9" class="slide level2">
-<h2>What bidux Looks Like {.background-color=“#F9F9F9”}</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">library</span>(bidux)</span>
-<span id="cb1-2"><a href=""></a></span>
-<span id="cb1-3"><a href=""></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
-<span id="cb1-4"><a href=""></a>  <span class="fu">bid_structure</span>(</span>
-<span id="cb1-5"><a href=""></a>    <span class="at">layout =</span> <span class="st">"dual_process"</span>,</span>
-<span id="cb1-6"><a href=""></a>    <span class="at">concepts =</span> <span class="fu">c</span>(<span class="st">"default_effect"</span>, <span class="st">"principle_of_proximity"</span>)</span>
-<span id="cb1-7"><a href=""></a>  )</span>
-<span id="cb1-8"><a href=""></a>)</span>
-<span id="cb1-9"><a href=""></a></span>
-<span id="cb1-10"><a href=""></a>ui <span class="ot">&lt;-</span> <span class="fu">bid_anticipate</span>(</span>
-<span id="cb1-11"><a href=""></a>  ui,</span>
-<span id="cb1-12"><a href=""></a>  <span class="at">bias_mitigations =</span> <span class="fu">list</span>(</span>
-<span id="cb1-13"><a href=""></a>    <span class="at">anchoring =</span> bid_components<span class="sc">$</span><span class="fu">context_aware_reference</span>(<span class="st">"sales_baseline"</span>),</span>
-<span id="cb1-14"><a href=""></a>    <span class="at">framing =</span> bid_components<span class="sc">$</span><span class="fu">framing_toggle</span>(<span class="st">"performance_view"</span>, <span class="st">"Progress"</span>, <span class="st">"Gap"</span>)</span>
-<span id="cb1-15"><a href=""></a>  )</span>
-<span id="cb1-16"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="from-framework-to-workflow-introducing-bidux" class="slide level2 center" data-background-color="#E6F0FF">
+<h2>From Framework to Workflow: Introducing {bidux}</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><code>{bidux}</code> is our new R package currently in <strong>Phase 1 development</strong> that helps implement the BID framework:</p>
+<ul>
+<li class="fragment"><strong>Current Features:</strong>
+<ul>
+<li class="fragment">📚 Concept browser: <code>bid_concept("processing_fluency")</code></li>
+<li class="fragment">🧠 Documentation functions: <code>bid_notice()</code> to <code>bid_validate()</code></li>
+</ul></li>
+<li class="fragment"><strong>Coming Soon (Phase 2-4):</strong>
+<ul>
+<li class="fragment">🛠️ UI Component Library</li>
+<li class="fragment">🤖 LLM Integration</li>
+<li class="fragment">📊 Testing and Validation Tools</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<!-- Console screenshot showing bid_concept output -->
+<p><img data-src="img/bidux_console.png" style="width:95.0%"></p>
+</div></div>
+</section>
+<section id="what-bidux-looks-like-today" class="slide level2" data-background-color="#F9F9F9">
+<h2>What {bidux} Looks Like Today</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">library</span>(bidux)</span>
+<span id="cb5-2"><a href=""></a></span>
+<span id="cb5-3"><a href=""></a><span class="co"># Currently available:</span></span>
+<span id="cb5-4"><a href=""></a><span class="co"># 1. Concept dictionary functionality</span></span>
+<span id="cb5-5"><a href=""></a>concepts <span class="ot">&lt;-</span> <span class="fu">bid_concepts</span>()</span>
+<span id="cb5-6"><a href=""></a><span class="fu">print</span>(concepts)</span>
+<span id="cb5-7"><a href=""></a></span>
+<span id="cb5-8"><a href=""></a>processing_fluency <span class="ot">&lt;-</span> <span class="fu">bid_concept</span>(<span class="st">"Processing Fluency"</span>)</span>
+<span id="cb5-9"><a href=""></a><span class="fu">print</span>(processing_fluency)</span>
+<span id="cb5-10"><a href=""></a></span>
+<span id="cb5-11"><a href=""></a><span class="co"># 2. Stage documentation (piped workflow)</span></span>
+<span id="cb5-12"><a href=""></a>project_docs <span class="ot">&lt;-</span> <span class="fu">bid_notice</span>(</span>
+<span id="cb5-13"><a href=""></a>  <span class="at">problem =</span> <span class="st">"Dashboard overload"</span>, </span>
+<span id="cb5-14"><a href=""></a>  <span class="at">theory =</span> <span class="st">"Cognitive Load Theory"</span>,</span>
+<span id="cb5-15"><a href=""></a>  <span class="at">evidence =</span> <span class="st">"User testing results"</span></span>
+<span id="cb5-16"><a href=""></a>) <span class="sc">|&gt;</span></span>
+<span id="cb5-17"><a href=""></a>  <span class="fu">bid_interpret</span>(</span>
+<span id="cb5-18"><a href=""></a>    <span class="at">central_question =</span> <span class="st">"How to simplify?"</span>,</span>
+<span id="cb5-19"><a href=""></a>    <span class="at">data_story =</span> <span class="fu">list</span>(<span class="at">hook =</span> <span class="st">"Too complex"</span>, <span class="at">context =</span> <span class="st">"Many tabs"</span>)</span>
+<span id="cb5-20"><a href=""></a>  )</span>
+<span id="cb5-21"><a href=""></a></span>
+<span id="cb5-22"><a href=""></a><span class="co"># Coming in Phase 2: UI component library with templates</span></span>
+<span id="cb5-23"><a href=""></a><span class="co"># ui &lt;- bid_structure(</span></span>
+<span id="cb5-24"><a href=""></a><span class="co">#   layout = "dual_process",</span></span>
+<span id="cb5-25"><a href=""></a><span class="co">#   concepts = c("default_effect", "principle_of_proximity")</span></span>
+<span id="cb5-26"><a href=""></a><span class="co"># )</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <p>More at: <a href="https://github.com">github.com/bidux</a></p>
 </div>
+</section>
+<section id="bidux-roadmap-development-plan" class="slide level2" data-background-color="#F9F9F9">
+<h2>{bidux} Roadmap &amp; Development Plan</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="current-phase-1-core-docs">Current: Phase 1 (Core &amp; Docs)</h3>
+<ul>
+<li class="fragment">✅ Core package structure</li>
+<li class="fragment">✅ Stage documentation functions</li>
+<li class="fragment">✅ Comprehensive concept dictionary</li>
+<li class="fragment">✅ Integration with dplyr/tibble</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="future-development">Future Development:</h3>
+<ul>
+<li class="fragment"><strong>Phase 2:</strong> UI Component Library</li>
+<li class="fragment"><strong>Phase 3:</strong> LLM Integration with <code>{ellmer}</code></li>
+<li class="fragment"><strong>Phase 4:</strong> Testing &amp; Validation Tools</li>
+</ul>
+</div></div>
+</section>
+<section id="soundpulse-results" class="slide level2 center" data-background-color="#4682B4">
+<h2>SoundPulse Results</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="measurable-improvements">Measurable Improvements:</h3>
+<ul>
+<li class="fragment">Decision time reduced by 43%</li>
+<li class="fragment">Insights per session increased by 67%</li>
+<li class="fragment">Stakeholder satisfaction improved from 5.2/10 to 8.7/10</li>
+<li class="fragment">Implementation time for new metrics reduced by 30%</li>
+</ul>
+</div><div class="column fragment" style="width:50%;">
+<h3 id="team-feedback">Team Feedback:</h3>
+<p>“The BID framework transformed how we approach dashboards. What once took weeks of refinement now has clear direction from day one.”</p>
+<p>— Maya Chen, SoundPulse Research Director</p>
+</div></div>
 </section>
 <section id="key-takeaways" class="slide level2 center" data-background-color="#4682B4">
 <h2>Key Takeaways</h2>
 <div>
 <ol type="1">
 <li><strong>BID</strong> helps reduce friction and improve decisions</li>
-<li><strong>Reactable + echarts4r</strong> bring BID to life</li>
-<li><strong><code>bidux</code></strong> supports you in applying BID at every stage</li>
+<li><strong><code>{reactable}</code> + <code>{echarts4r}</code></strong> help bring BID to life</li>
+<li><strong><code>{bidux}</code></strong> supports you in applying BID at every stage (try it today!)</li>
 <li>Build dashboards that guide — not overwhelm — your users</li>
 </ol>
 </div>
