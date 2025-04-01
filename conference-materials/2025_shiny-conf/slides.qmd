@@ -75,9 +75,9 @@ SoundPulse's market research team was drowning in data, unable to extract meanin
 - When the GIF appears, pause briefly - people will laugh at the "drowning in paper" visual
 :::
 
-## BID In Action: Dashboard Transformation {.center background-color="#F0F0F0"}
+## BID In Action: Dashboard Transformation {.center background-color="#F2F2F2"}
 
-::: {.fragment}
+::: {.absolute top="80%" left="12%" width="80%"}
 <!-- TODO: exchange for gif -->
 ![](img/before-bid.png)
 :::
@@ -94,19 +94,26 @@ SoundPulse's market research team was drowning in data, unable to extract meanin
 
 ## Behavior Insight Design (BID) Framework {background-color="#E6F0FF"}
 
+::: {.absolute left="7%" width="90%"}
 ![](img/bid-framework.png)
+:::
 
-:::: {.columns}
-::: {.column width="45%"}
+:::: {.columns .absolute top="58%"}
+
+::: {.column width="27%"}
 1. **Notice** the Problem
+:::
+
+::: {.column width="46%"}
 2. **Interpret** the User's Need
 3. **Structure** the Dashboard
-::: 
-
-::: {.column width="45%"}
 4. **Anticipate** User Behavior
+:::
+
+::: {.column width="27%"}
 5. **Validate** & Empower the User
-::: 
+:::
+
 ::::
 
 ::: {.notes}
@@ -120,7 +127,7 @@ SoundPulse's market research team was drowning in data, unable to extract meanin
 - Personal anecdote: "We developed this framework after seeing the same patterns of dashboard failure across industries"
 :::
 
-## Where BID Fits In {background-color="#F0F0F0"}
+## Where BID Fits In {background-color="#F2F2F2"}
 
 ::: {.nonincremental}
 - Builds on established UX heuristics and theories
