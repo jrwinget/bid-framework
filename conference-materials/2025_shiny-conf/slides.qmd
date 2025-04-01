@@ -599,11 +599,11 @@ tags$script(HTML("
 - Transition: "Now let's talk about how we're making these principles accessible to every developer..."
 :::
 
-## From Framework to Workflow: Introducing {bidux} {.center background-color="#e6f0ff"}
+## From Framework to Workflow: {bidux} {.center background-color="#e6f0ff"}
 
-:::: {.columns}
-::: {.column width="48%"}
+:::: {.columns .r-fit-text}
 
+::: {.column width="56%" .nonincremental .fragment}
 - **Current Features (Phase 1):**
   * 📚 Concept browser
     * `bid_concept("processing fluency")`
@@ -611,13 +611,13 @@ tags$script(HTML("
     * `bid_notice()` to `bid_validate()`
 :::
 
-::: {.column width="48%"}
-
+::: {.column width="42%" .nonincremental .fragment}
 - **Coming Soon (Phases 2-4):**
   * 🤖 LLM Integration 
   * 🛠️ UI Component Library
   * 📊 Testing and Validation Tools
 :::
+
 ::::
 
 ::: {.notes}
@@ -629,8 +629,7 @@ tags$script(HTML("
 - Current features focus on documentation and knowledge
 - Future features will include ready-to-use UI components with BID principles built in
 - "The LLM integration will let you describe what you want in plain language"
-- "Think of {bidux} as your behavioral science assistant for dashboard development"
-- "This is in active development - and not quite stable yet, but please stay tuned"
+- "Think of {bidux} as your behavioral science assistant for Shiny app development"
 :::
 
 ## What {bidux} Looks Like Today {background-color="#f9f9f9"}
@@ -638,15 +637,15 @@ tags$script(HTML("
 ```r
 library(bidux)
 
-# 1. Concept dictionary functionality
-processing_fluency <- bid_concept("Processing Fluency")
+# concept dictionary functionality
+processing_fluency <- bid_concept("processing fluency")
 print(processing_fluency)
 
-# 2. Stage documentation (piped workflow)
+# BID stage documentation functionality (piped workflow)
 project_docs <- bid_notice(
-  problem = "Dashboard overload", 
-  theory = "Cognitive Load Theory",
-  evidence = "User testing results"
+  problem = "users overwhelmed by filtering options", 
+  theory = "cognitive load theory", # use if wanting to apply specific concept; leave blank if unsure
+  evidence = c("user feedback results", "dashboard telemetry data")
 ) |>
   bid_interpret(
     central_question = "How to simplify?",
@@ -663,9 +662,9 @@ More at: [github.com/jrwinget/bidux](https://github.com/jrwinget/bidux)
 **Code Example**: Show practical usage of the package.
 
 - "The concept dictionary gives you instant access to behavioral principles"
-- "Each concept includes definition, code examples, and empirical evidence"
+  * "Each concept includes definition, code examples, and empirical evidence"
 - "The stage documentation functions help structure your design thinking"
-- "These functions integrate with dplyr workflows via pipes"
+  * "These functions are designed to work together via pipes (cf, tidyverse)"
 - "Documentation becomes part of your development process, not separate"
 - Point out the commented future code to generate excitement
 - "In Phase 2, you'll be able to ..."
@@ -712,7 +711,7 @@ More at: [github.com/jrwinget/bidux](https://github.com/jrwinget/bidux)
 ::: {.nonincremental}
 1. **BID** helps reduce friction and improve decisions
 2. **`{reactable}` + `{echarts4r}`** help bring BID to life
-3. **`{bidux}`** supports you in applying BID at every stage (try it today!)
+3. **`{bidux}`** supports you in applying BID at every stage<br>(try it today!)
 4. Build dashboards that guide — not fry — your users
 :::
 

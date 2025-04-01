@@ -892,7 +892,7 @@ Ever felt like this?
 <p><img data-src="img/progress-frame.png" style="width:90.0%"></p>
 <div>
 <ul>
-<li><strong>Progress Framing:</strong>
+<li><strong>Progress (gain) Framing:</strong>
 <ul>
 <li>Motivates by highlighting achievement</li>
 <li>Creates positive momentum</li>
@@ -904,7 +904,7 @@ Ever felt like this?
 <p><img data-src="img/gap-frame.png" style="width:90.0%"></p>
 <div>
 <ul>
-<li><strong>Gap Framing:</strong>
+<li><strong>Gap (loss) Framing:</strong>
 <ul>
 <li>Creates urgency to address shortfall</li>
 <li>Highlights areas needing improvement</li>
@@ -944,30 +944,30 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="from-framework-to-workflow-introducing-bidux" class="slide level2 center" data-background-color="#e6f0ff">
-<h2>From Framework to Workflow: Introducing {bidux}</h2>
-<div class="columns">
-<div class="column" style="width:48%;">
+<section id="from-framework-to-workflow-bidux" class="slide level2 center" data-background-color="#e6f0ff">
+<h2>From Framework to Workflow: {bidux}</h2>
+<div class="columns r-fit-text">
+<div class="column fragment" style="width:56%;">
 <ul>
-<li class="fragment"><strong>Current Features (Phase 1):</strong>
+<li><strong>Current Features (Phase 1):</strong>
 <ul>
-<li class="fragment">📚 Concept browser
+<li>📚 Concept browser
 <ul>
-<li class="fragment"><code>bid_concept("processing fluency")</code></li>
+<li><code>bid_concept("processing fluency")</code></li>
 </ul></li>
-<li class="fragment">🧠 BID stage functions
+<li>🧠 BID stage functions
 <ul>
-<li class="fragment"><code>bid_notice()</code> to <code>bid_validate()</code></li>
+<li><code>bid_notice()</code> to <code>bid_validate()</code></li>
 </ul></li>
 </ul></li>
 </ul>
-</div><div class="column" style="width:48%;">
+</div><div class="column fragment" style="width:42%;">
 <ul>
-<li class="fragment"><strong>Coming Soon (Phases 2-4):</strong>
+<li><strong>Coming Soon (Phases 2-4):</strong>
 <ul>
-<li class="fragment">🤖 LLM Integration</li>
-<li class="fragment">🛠️ UI Component Library</li>
-<li class="fragment">📊 Testing and Validation Tools</li>
+<li>🤖 LLM Integration</li>
+<li>🛠️ UI Component Library</li>
+<li>📊 Testing and Validation Tools</li>
 </ul></li>
 </ul>
 </div></div>
@@ -980,8 +980,7 @@ Ever felt like this?
 <li>Current features focus on documentation and knowledge</li>
 <li>Future features will include ready-to-use UI components with BID principles built in</li>
 <li>“The LLM integration will let you describe what you want in plain language”</li>
-<li>“Think of {bidux} as your behavioral science assistant for dashboard development”</li>
-<li>“This is in active development - and not quite stable yet, but please stay tuned”</li>
+<li>“Think of {bidux} as your behavioral science assistant for Shiny app development”</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -999,15 +998,15 @@ Ever felt like this?
 <h2>What {bidux} Looks Like Today</h2>
 <div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">library</span>(bidux)</span>
 <span id="cb6-2"><a href=""></a></span>
-<span id="cb6-3"><a href=""></a><span class="co"># 1. Concept dictionary functionality</span></span>
-<span id="cb6-4"><a href=""></a>processing_fluency <span class="ot">&lt;-</span> <span class="fu">bid_concept</span>(<span class="st">"Processing Fluency"</span>)</span>
+<span id="cb6-3"><a href=""></a><span class="co"># concept dictionary functionality</span></span>
+<span id="cb6-4"><a href=""></a>processing_fluency <span class="ot">&lt;-</span> <span class="fu">bid_concept</span>(<span class="st">"processing fluency"</span>)</span>
 <span id="cb6-5"><a href=""></a><span class="fu">print</span>(processing_fluency)</span>
 <span id="cb6-6"><a href=""></a></span>
-<span id="cb6-7"><a href=""></a><span class="co"># 2. Stage documentation (piped workflow)</span></span>
+<span id="cb6-7"><a href=""></a><span class="co"># BID stage documentation functionality (piped workflow)</span></span>
 <span id="cb6-8"><a href=""></a>project_docs <span class="ot">&lt;-</span> <span class="fu">bid_notice</span>(</span>
-<span id="cb6-9"><a href=""></a>  <span class="at">problem =</span> <span class="st">"Dashboard overload"</span>, </span>
-<span id="cb6-10"><a href=""></a>  <span class="at">theory =</span> <span class="st">"Cognitive Load Theory"</span>,</span>
-<span id="cb6-11"><a href=""></a>  <span class="at">evidence =</span> <span class="st">"User testing results"</span></span>
+<span id="cb6-9"><a href=""></a>  <span class="at">problem =</span> <span class="st">"users overwhelmed by filtering options"</span>, </span>
+<span id="cb6-10"><a href=""></a>  <span class="at">theory =</span> <span class="st">"cognitive load theory"</span>, <span class="co"># use if wanting to apply specific concept; leave blank if unsure</span></span>
+<span id="cb6-11"><a href=""></a>  <span class="at">evidence =</span> <span class="fu">c</span>(<span class="st">"user feedback results"</span>, <span class="st">"dashboard telemetry data"</span>)</span>
 <span id="cb6-12"><a href=""></a>) <span class="sc">|&gt;</span></span>
 <span id="cb6-13"><a href=""></a>  <span class="fu">bid_interpret</span>(</span>
 <span id="cb6-14"><a href=""></a>    <span class="at">central_question =</span> <span class="st">"How to simplify?"</span>,</span>
@@ -1020,10 +1019,14 @@ Ever felt like this?
 <aside class="notes">
 <p><strong>Code Example</strong>: Show practical usage of the package.</p>
 <ul>
-<li>“The concept dictionary gives you instant access to behavioral principles”</li>
+<li>“The concept dictionary gives you instant access to behavioral principles”
+<ul>
 <li>“Each concept includes definition, code examples, and empirical evidence”</li>
-<li>“The stage documentation functions help structure your design thinking”</li>
-<li>“These functions integrate with dplyr workflows via pipes”</li>
+</ul></li>
+<li>“The stage documentation functions help structure your design thinking”
+<ul>
+<li>“These functions are designed to work together via pipes (cf, tidyverse)”</li>
+</ul></li>
 <li>“Documentation becomes part of your development process, not separate”</li>
 <li>Point out the commented future code to generate excitement</li>
 <li>“In Phase 2, you’ll be able to …”</li>
@@ -1089,7 +1092,7 @@ Ever felt like this?
 <ol type="1">
 <li><strong>BID</strong> helps reduce friction and improve decisions</li>
 <li><strong><code>{reactable}</code> + <code>{echarts4r}</code></strong> help bring BID to life</li>
-<li><strong><code>{bidux}</code></strong> supports you in applying BID at every stage (try it today!)</li>
+<li><strong><code>{bidux}</code></strong> supports you in applying BID at every stage<br>(try it today!)</li>
 <li>Build dashboards that guide — not fry — your users</li>
 </ol>
 </div>
