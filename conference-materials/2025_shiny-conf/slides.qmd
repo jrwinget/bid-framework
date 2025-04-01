@@ -81,21 +81,21 @@ SoundPulse's market research team was drowning in data, unable to extract meanin
 **SoundPulse Market Research Dashboard Transformation**
 :::
 
-:::: {.columns}
+:::: {.columns .nonincremental .fragment}
 ::: {.column width="50%"}
 ### Before BID:
 <!-- Dashboard with overwhelming filters and complex tables -->
-![](img/before_bid_dashboard.png){width="95%"}
+![](img/before-bid.png){width="95%"}
 
 - 14 dropdown filters
 - 8 tabs of dense data tables
 - No clear hierarchy of information
 :::
 
-::: {.column width="50%"}
+::: {.column width="50%" .fragment}
 ### After BID:
 <!-- Streamlined dashboard with clear information hierarchy -->
-![](img/after_bid_dashboard.png){width="95%"}
+![](img/after-bid.png){width="95%"}
 
 - Guided narrative pathway
 - Focused insights by segment
@@ -124,15 +124,15 @@ A 5-Stage Behavior Insight Design Framework
 
 :::: {.columns}
 ::: {.column width="60%"}
+![](img/bid-framework.png)
+:::
+
+::: {.column width="40%"}
 1. **Notice** the Problem
 2. **Interpret** the User's Need
 3. **Structure** the Dashboard
 4. **Anticipate** User Behavior
 5. **Validate** & Empower the User
-:::
-
-::: {.column width="40%"}
-![The BID Framework](img/The_BID_framework.png)
 ::: 
 ::::
 
@@ -312,6 +312,12 @@ reactable(
 ![](img/reactable_example_2.png){.fragment width="75%"}
 ![](img/reactable_example_3.png){.fragment width="75%"}
 ![](img/reactable_example_4.png){.fragment width="75%"}
+
+<!-- Commenting to show suggestion placeholders -->
+<!-- ![](img/Screenshot_examples_main_1.png){width="75%"}
+![](img/Screenshot_examples_main_2.png){.fragment width="75%"}
+![](img/Screenshot_examples_main_3.png){.fragment width="75%"}
+![](img/Screenshot_examples_main_4.png){.fragment width="75%"} -->
 :::
 
 ::: {.notes}
@@ -606,6 +612,11 @@ Complete Dashboard with Multiple BID Principles
 ![](img/echarts_example_1.png){width="75%"}
 ![](img/echarts_example_2.png){.fragment width="75%"}
 ![](img/echarts_example_3.png){.fragment width="75%"}
+
+<!-- Commenting to show suggestion placeholders -->
+<!-- ![](img/Screenshot_examples_Deep_Dives_1.png){width="75%"}
+![](img/Screenshot_examples_Deep_Dives_2.png){.fragment width="75%"}
+![](img/Screenshot_examples_Deep_Dives_3.png){.fragment width="75%"} -->
 :::
 
 ::: {.notes}
@@ -628,20 +639,26 @@ Complete Dashboard with Multiple BID Principles
 ### How Framing Affects Perception & Decision-Making
 
 :::: {.columns .nonincremental}
-::: {.column width="50%"}
+::: {.column width="50%" .fragment}
 #### Progress Framing:
-![](img/progress_framing.png){width="90%"}
+<!-- going to change these screenshots to be more focused on a single bar -->
+![](img/progress-frame.png){width="90%"}
+
+- Motivates by highlighting achievement
+- Creates positive momentum
+- Supports incremental improvement
 :::
 
-::: {.column width="50%"}
+::: {.column width="50%" .fragment}
 #### Gap Framing:
-![](img/gap_framing.png){width="90%"}
+<!-- going to change these screenshots to be more focused on a single bar -->
+![](img/gap-frame.png){width="90%"}
+
+- Creates urgency to address shortfall
+- Highlights areas needing improvement
+- May trigger risk-avoidance behaviors
 :::
 ::::
-
-::: {.fragment}
-**SoundPulse Results:** Marketing team preferred progress framing for stakeholder presentations, while product teams found gap framing more actionable for development priorities.
-:::
 
 ::: {.notes}
 **Framing Effect**: Emphasize psychological impact.
@@ -651,7 +668,8 @@ Complete Dashboard with Multiple BID Principles
 - "Gap framing creates urgency and focuses on what remains to be done - '35% still to go!'"
 - "This psychological principle has been demonstrated in countless studies"
 - "Present a 90% survival rate vs. a 10% mortality rate - people react completely differently"
-- When the results fragment appears: "At SoundPulse, this had real organizational impact"
+- "At SoundPulse, this had real organizational impact"
+    - Marketing team preferred progress framing for stakeholder presentations, while product teams found gap framing more actionable for development priorities.
 - "Marketing needed to show progress to build confidence with stakeholders"
 - "Product teams needed to focus on gaps to prioritize development resources"
 - "The toggle feature meant both teams could use the same dashboard for different purposes"
@@ -670,15 +688,15 @@ Complete Dashboard with Multiple BID Principles
   - 📚 Concept browser: `bid_concept("processing_fluency")`
   - 🧠 Documentation functions: `bid_notice()` to `bid_validate()`
   
-- **Coming Soon (Phase 2-4):**
+- **Coming Soon (Phases 2-4):**
   - 🛠️ UI Component Library
   - 🤖 LLM Integration 
   - 📊 Testing and Validation Tools
 :::
 
 ::: {.column width="40%"}
-<!-- Console screenshot showing bid_concept output -->
-![](img/bidux_console.png){width="95%"}
+<!-- need to either update image or replace with something like the repo README -->
+![](img/bid_concept-output.png){width="95%"}
 :::
 ::::
 
@@ -691,7 +709,7 @@ Complete Dashboard with Multiple BID Principles
 - Current features focus on documentation and knowledge
 - Future features will include ready-to-use UI components with BID principles built in
 - "The LLM integration will let you describe what you want in plain language"
-- "Think of {bidux} as your behavioral science co-pilot for dashboard development"
+- "Think of {bidux} as your behavioral science assistant for dashboard development"
 - "This is in active development - we welcome contributors and collaborators"
 :::
 
@@ -700,11 +718,7 @@ Complete Dashboard with Multiple BID Principles
 ```r
 library(bidux)
 
-# Currently available:
 # 1. Concept dictionary functionality
-concepts <- bid_concepts()
-print(concepts)
-
 processing_fluency <- bid_concept("Processing Fluency")
 print(processing_fluency)
 
@@ -718,12 +732,7 @@ project_docs <- bid_notice(
     central_question = "How to simplify?",
     data_story = list(hook = "Too complex", context = "Many tabs")
   )
-
-# Coming in Phase 2: UI component library with templates
-# ui <- bid_structure(
-#   layout = "dual_process",
-#   concepts = c("default_effect", "principle_of_proximity")
-# )
+print(processing_fluency)
 ```
 
 ::: {.fragment}
