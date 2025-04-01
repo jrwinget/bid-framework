@@ -75,62 +75,35 @@ SoundPulse's market research team was drowning in data, unable to extract meanin
 - When the GIF appears, pause briefly - people will laugh at the "drowning in paper" visual
 :::
 
-## BID In Action {.center background-color="#F0F0F0"}
+## BID In Action: Dashboard Transformation {.center background-color="#F0F0F0"}
 
-::: {.r-fit-text}
-**SoundPulse Market Research Dashboard Transformation**
+::: {.fragment}
+<!-- TODO: exchange for gif -->
+![](img/before-bid.png)
 :::
-
-:::: {.columns .nonincremental .fragment}
-::: {.column width="50%"}
-### Before BID:
-<!-- Dashboard with overwhelming filters and complex tables -->
-![](img/before-bid.png){width="95%"}
-
-- 14 dropdown filters
-- 8 tabs of dense data tables
-- No clear hierarchy of information
-:::
-
-::: {.column width="50%" .fragment}
-### After BID:
-<!-- Streamlined dashboard with clear information hierarchy -->
-![](img/after-bid.png){width="95%"}
-
-- Guided narrative pathway
-- Focused insights by segment
-- Progressive disclosure of details
-:::
-::::
 
 ::: {.notes}
-**Show Impact**: Use before/after contrast to demonstrate value.
+**Show Impact**: Build up intuition of annoyance/frustration using "before" dashboard.
 
 - Walk through the key issues with the "before" dashboard:
   * "Look at all those filters - users had to make decisions before seeing ANY data"
+  * 8 tabs of dense data tables...need to know what you want to figure out in advance
   * "No guidance on where to start - cognitive overload from the beginning"
-- Highlight transformative elements in the "after" version:
-  * "Notice how there's a clear path through the data"
-  * "Progressive disclosure - you see what you need first, then can dig deeper"
-  * "The interface itself tells a story about what matters most"
-- Mention that this resulted in 43% faster decision-making (preview of results)
+  * No one wants to use a dashboard like this...and no one will...UIs like this are a major contributor to dashboard rot
 :::
 
-## The BID Framework {background-color="#E6F0FF"}
+## Behavior Insight Design (BID) Framework {background-color="#E6F0FF"}
 
-::: {.r-fit-text}
-A 5-Stage Behavior Insight Design Framework
-:::
+![](img/bid-framework.png)
 
 :::: {.columns}
-::: {.column width="60%"}
-![](img/bid-framework.png)
-:::
-
-::: {.column width="40%"}
+::: {.column width="45%"}
 1. **Notice** the Problem
 2. **Interpret** the User's Need
 3. **Structure** the Dashboard
+::: 
+
+::: {.column width="45%"}
 4. **Anticipate** User Behavior
 5. **Validate** & Empower the User
 ::: 
@@ -169,48 +142,37 @@ A 5-Stage Behavior Insight Design Framework
 - Quickly mention some influences: "Edward Tufte's data visualization principles, Nielsen's heuristics, and Kahneman's work on cognitive biases"
 :::
 
-## Case Study: Stages 1-3 {background-color="#F9F9F9"}
+## SoundPulse Case Study: BID Stages 1-3 {background-color="#F9F9F9"}
 
 :::: {.columns}
 ::: {.column width="50%"}
-### SoundPulse's Challenges:
-
 - **Stage 1: Notice**
-    - Complex filtering overwhelmed users
-    - 72% reported feeling confused
+  * Complex filtering overwhelmed users (Cognitive Load)
+  * 72% users reported confusion (Hick's Law)
+
 - **Stage 2: Interpret**
-    - Users couldn't quickly process information
-    - Key insights buried in text and numbers
-- **Stage 3: Structure**
-    - Related elements scattered throughout UI
-    - No prioritization of important metrics
+  * Intuitive visualizations (Processing Fluency)
+  * Clearer key insights (Data Storytelling)
 :::
 
 ::: {.column width="50%"}
-### BID Principles Applied:
-
-- **Stage 1: Notice**
-    - Cognitive Load Theory
-    - Hick's Law
-- **Stage 2: Interpret**
-    - Processing Fluency
-    - Data Storytelling Framework
 - **Stage 3: Structure**
-    - Principle of Proximity
-    - Default Effect
-    - Dual-Processing Theory
+  * Group related elements (Principle of Proximity)
+  * Prioritization of metrics (Dual-Processing Theory)
+
+<!-- TODO: consider adding a visual? otherwise, clean up text more -->
+<!-- ![](img/small-dashboard-snippet.png){width="80%"} -->
 :::
 ::::
 
 ::: {.notes}
 **Case Study Setup**: Establish context for upcoming code examples.
 
-- "Let's see how SoundPulse applied the first three stages of the BID framework"
+- "Let's see how we assessed some of the challenges SoundPulse faced and how we applied the first 3 stages of the BID framework to address them"
 - For Stage 1 (Notice): "They identified how filtering complexity was causing cognitive overload"
 - For Stage 2 (Interpret): "They discovered users needed to process key metrics instantly"
 - For Stage 3 (Structure): "They needed to group related elements and establish clear visual hierarchy"
-- "Now let's look at how they implemented these principles using {reactable}"
-- Transition: "We'll start with a basic implementation and build up to more advanced features"
+- "Now let's look at how we implemented these principles using {reactable}..."
 :::
 
 ## {reactable} Implementation: Visual Result {background-color="#F9F9F9"}
@@ -333,60 +295,35 @@ reactable(
 - Transition: "Now let's see how these principles look in the final implementation..."
 :::
 
-## {reactable} Implementation: Team Collaboration {background-color="#F9F9F9"}
+## SoundPulse Case Study: BID Stages 4-5 {background-color="#F9F9F9"}
 
-```r
-# Comments and annotation feature for Stage 5: Validate & Empower
-columns = list(
-  # Other columns as before
-  comments = colDef(
-    name = "Comments",
-    cell = function(value, index) {
-      comment_id <- paste0("comment-", index)
-      tags$div(
-        class = "comment-container",
-        tags$textarea(
-          id = comment_id,
-          class = "form-control comment-box",
-          rows = "2",
-          placeholder = "Add a comment...",
-          value = value,
-          onchange = sprintf("saveComment(%s, this.value)", index)
-        ),
-        tags$div(
-          class = "comment-buttons mt-1",
-          tags$button(
-            type = "button", 
-            class = "btn btn-sm btn-outline-primary me-1",
-            onclick = sprintf("addHighlight(%s)", index),
-            "Highlight"
-          ),
-          tags$button(
-            type = "button",
-            class = "btn btn-sm btn-outline-secondary",
-            onclick = sprintf("clearComment(%s)", index),
-            "Clear"
-          )
-        )
-      )
-    },
-    html = TRUE,
-    width = 250
-  )
-)
-```
+:::: {.columns}
+::: {.column width="50%"}
+
+- **Stage 4: Anticipate**
+  * Executives comparing metrics without context (Anchoring Effect)
+  * Teams interpreting data differently (Confirmation Bias)
+  * Different perspectives needed for different teams (Framing & Loss Aversion)
+:::
+
+::: {.column width="50%"}
+- **Stage 5: Validate**
+  * Teams needed actionable summaries (Peak-End Rule)
+  * No clear path to consensus (Cooperation & Coordination)
+
+<!-- TODO: consider adding a visual? otherwise, reorganize text -->
+<!-- ![](img/small-dashboard-snippet2.png){width="80%"} -->
+:::
+::::
 
 ::: {.notes}
-**Collaboration Features**: Connect to later BID stages.
+**Advanced Stages Case Study**: Set up context for echarts4r examples.
 
-- "This example actually implements principles from Stage 5: Validate & Empower through collaboration"
-- **WOW MOMENT #4**: "The comment and highlight functionality allows team members to collaborate directly within the dashboard"
-- "This addresses the Cooperation & Coordination principle from Stage 5"
-- "Notice how we're using custom HTML within reactable cells to create a mini application"
-- "The onchange and onclick handlers connect to JavaScript functions for saving comments and highlighting rows"
-- "This transforms the dashboard from a static display to a collaborative decision-making tool"
-- "Similar features in tools like Google Sheets have transformed how teams work - we can bring that same power to Shiny"
-- Transition: "Now that we've seen how to implement Stages 1-3 with reactable, let's move to Stages 4-5..."
+- "Now we'll look at how we tackled the later stages of the BID framework in SoundPulse's dashboard..."
+- For Stage 4 (Anticipate): "We needed to address how cognitive biases were affecting their interpretations of the data"
+- For Stage 5 (Validate): "We needed to create lasting impressions and facilitate team consensus"
+- "These stages address the subtler psychological aspects of data interpretation"
+- "Now let's see how we implemented these principles using {echarts4r}"
 :::
 
 ## {echarts4r} Implementation: Visual Result {background-color="#F9F9F9"}
@@ -418,47 +355,6 @@ Complete Dashboard with Multiple BID Principles
 - "Every element in this dashboard has a specific psychological purpose"
 - "This is what we mean by behavior-informed design - intentional choices based on how humans think"
 - Transition: "Now let's look at how framing affects decision-making in more detail..."
-:::
-
-## Case Study: Stages 4-5 {background-color="#F9F9F9"}
-
-:::: {.columns}
-::: {.column width="50%"}
-### SoundPulse's Challenges:
-
-- **Stage 4: Anticipate**
-    - Executives comparing metrics without context
-    - Teams interpreting data through confirmation bias
-    - Different perspectives needed for different teams
-- **Stage 5: Validate**
-    - Insights lost after dashboard sessions
-    - No clear path to consensus
-    - Teams needed actionable summaries
-:::
-
-::: {.column width="50%"}
-### BID Principles Applied:
-
-- **Stage 4: Anticipate**
-    - Anchoring Effect
-    - Framing & Loss Aversion
-    - Confirmation Bias
-- **Stage 5: Validate**
-    - Peak-End Rule
-    - Cooperation & Coordination
-    - Beautiful-Is-Good Stereotype
-:::
-::::
-
-::: {.notes}
-**Advanced Stages**: Set up context for echarts4r examples.
-
-- "Now we'll look at how SoundPulse tackled the later stages of the BID framework"
-- For Stage 4 (Anticipate): "They needed to address how cognitive biases were affecting interpretation"
-- For Stage 5 (Validate): "They needed to create lasting impressions and facilitate team consensus"
-- "These stages address the subtler psychological aspects of data interpretation"
-- "Now let's see how they implemented these principles using {echarts4r}"
-- "We'll start with basic chart implementation and build up to more interactive features"
 :::
 
 ## Implementation Demo: {echarts4r} Basics {background-color="#F9F9F9"}
@@ -679,22 +575,21 @@ tags$script(HTML("
 ## From Framework to Workflow: Introducing {bidux} {.center background-color="#E6F0FF"}
 
 :::: {.columns}
-::: {.column width="60%"}
-`{bidux}` is our new R package currently in **Phase 1 development** that helps implement the BID framework:
+::: {.column width="48%"}
 
-- **Current Features:**
-  - 📚 Concept browser: `bid_concept("processing_fluency")`
-  - 🧠 Documentation functions: `bid_notice()` to `bid_validate()`
-  
-- **Coming Soon (Phases 2-4):**
-  - 🛠️ UI Component Library
-  - 🤖 LLM Integration 
-  - 📊 Testing and Validation Tools
+- **Current Features (Phase 1):**
+  * 📚 Concept browser
+    * `bid_concept("processing fluency")`
+  * 🧠 BID stage functions
+    * `bid_notice()` to `bid_validate()`
 :::
 
-::: {.column width="40%"}
-<!-- need to either update image or replace with something like the repo README -->
-![](img/bid_concept-output.png){width="95%"}
+::: {.column width="48%"}
+
+- **Coming Soon (Phases 2-4):**
+  * 🤖 LLM Integration 
+  * 🛠️ UI Component Library
+  * 📊 Testing and Validation Tools
 :::
 ::::
 
@@ -702,13 +597,13 @@ tags$script(HTML("
 **Package Introduction**: Generate excitement about the tooling.
 
 - "We're not just sharing a framework - we're building tools to make it easy to adopt"
+- "We're excited to introduce `{bidux}`...our new R package currently in **Phase 1 development** that helps implement the BID framework with your workflows"
 - "Our goal is to make these psychological principles accessible to every R developer"
-- Emphasize this is open source - "We want this to become a community resource"
 - Current features focus on documentation and knowledge
 - Future features will include ready-to-use UI components with BID principles built in
 - "The LLM integration will let you describe what you want in plain language"
 - "Think of {bidux} as your behavioral science assistant for dashboard development"
-- "This is in active development - we welcome contributors and collaborators"
+- "This is in active development - and not quite stable yet, but please stay tuned"
 :::
 
 ## What {bidux} Looks Like Today {background-color="#F9F9F9"}
@@ -730,11 +625,11 @@ project_docs <- bid_notice(
     central_question = "How to simplify?",
     data_story = list(hook = "Too complex", context = "Many tabs")
   )
-print(processing_fluency)
+print(project_docs)
 ```
 
 ::: {.fragment}
-More at: [github.com/bidux](https://github.com)
+More at: [github.com/jrwinget/bidux](https://github.com/jrwinget/bidux)
 :::
 
 ::: {.notes}
@@ -746,7 +641,7 @@ More at: [github.com/bidux](https://github.com)
 - "These functions integrate with dplyr workflows via pipes"
 - "Documentation becomes part of your development process, not separate"
 - Point out the commented future code to generate excitement
-- "In Phase 2, you'll be able to generate UI templates with BID principles built in"
+- "In Phase 2, you'll be able to ..."
 - When the link appears: "We're launching this at ShinyConf today - check out the repo"
 :::
 
@@ -754,12 +649,12 @@ More at: [github.com/bidux](https://github.com)
 
 :::: {.columns}
 ::: {.column width="50%"}
-### Measurable Improvements:
+### Real-World Impact:
 
-- Decision time reduced by 43%
-- Insights per session increased by 67%
-- Stakeholder satisfaction improved from 5.2/10 to 8.7/10
-- Implementation time for new metrics reduced by 30%
+- Dramatically faster decision-making
+- Substantial increase in insights per session
+- Stakeholder satisfaction transformed from frustration to enthusiasm
+- Significantly streamlined implementation of new metrics
 :::
 
 ::: {.column width="50%" .fragment}
@@ -774,14 +669,13 @@ More at: [github.com/bidux](https://github.com)
 ::: {.notes}
 **Results Summary**: Emphasize concrete benefits.
 
-- "These aren't just theoretical improvements - SoundPulse measured real results"
-- "43% faster decision-making means real business value"
-- "67% more insights per session means better ROI on analytics investments"
-- "Satisfaction scores jumped from mediocre to excellent"
-- "30% faster implementation means developers saved time too"
+- These outcomes reflect consistent feedback across client organizations that have embraced our framework. The qualitative data tells a compelling story:
+  * (PAUSE) Teams are making decisions with much greater speed and confidence
+  * (PAUSE) Users are discovering more actionable insights in each session
+  * (PAUSE) And perhaps most telling—stakeholders have shifted from being skeptical to becoming advocates
+- We're currently building telemetry into our dashboards to gather more precise measurements...but the message from our users is already clear: this framework is changing how teams interact with their data
 - When the testimonial appears: "This kind of transformation is what BID is all about"
-- "Maya's team went from dreading dashboard development to using it as a competitive advantage"
-- "Remember, this wasn't just visual changes - this was a fundamental approach shift"
+- "Remember, this wasn't just visual changes - this was a fundamental shift in how our users...and developers...approached the dashboard"
 :::
 
 ## Key Takeaways {.center background-color="#4682B4"}

@@ -6,8 +6,8 @@
 <script src="slides_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting-de84f8d6bb715db06a919283c2d1e787.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.42">
+<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting-697306ee647f3aecb60be57249203282.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.37">
 
   <meta name="author" content="Milena Eickhoff &amp; Jeremy Winget, PhD">
   <title>Death By Dropdown?</title>
@@ -94,7 +94,7 @@
     code span.vs { color: #032f62; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-8f3eebe07241f08526c91a7e9cbef8fd.css">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-423d414d36ce366a9d05f36d06304417.css">
   <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -278,46 +278,22 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="bid-in-action" class="slide level2 center" data-background-color="#F0F0F0">
-<h2>BID In Action</h2>
-<div class="r-fit-text">
-<p><strong>SoundPulse Market Research Dashboard Transformation</strong></p>
+<section id="bid-in-action-dashboard-transformation" class="slide level2 center" data-background-color="#F0F0F0">
+<h2>BID In Action: Dashboard Transformation</h2>
+<div class="fragment">
+<!-- TODO: exchange for gif -->
+<p><img data-src="img/before-bid.png"></p>
 </div>
-<div class="columns fragment">
-<div class="column" style="width:50%;">
-<h3 id="before-bid">Before BID:</h3>
-<!-- Dashboard with overwhelming filters and complex tables -->
-<p><img data-src="img/before-bid.png" style="width:95.0%"></p>
-<ul>
-<li class="fragment">14 dropdown filters</li>
-<li class="fragment">8 tabs of dense data tables</li>
-<li class="fragment">No clear hierarchy of information</li>
-</ul>
-</div><div class="column fragment" style="width:50%;">
-<h3 id="after-bid">After BID:</h3>
-<!-- Streamlined dashboard with clear information hierarchy -->
-<p><img data-src="img/after-bid.png" style="width:95.0%"></p>
-<ul>
-<li class="fragment">Guided narrative pathway</li>
-<li class="fragment">Focused insights by segment</li>
-<li class="fragment">Progressive disclosure of details</li>
-</ul>
-</div></div>
 <aside class="notes">
-<p><strong>Show Impact</strong>: Use before/after contrast to demonstrate value.</p>
+<p><strong>Show Impact</strong>: Build up intuition of annoyance/frustration using “before” dashboard.</p>
 <ul>
 <li>Walk through the key issues with the “before” dashboard:
 <ul>
 <li>“Look at all those filters - users had to make decisions before seeing ANY data”</li>
+<li>8 tabs of dense data tables…need to know what you want to figure out in advance</li>
 <li>“No guidance on where to start - cognitive overload from the beginning”</li>
+<li>No one wants to use a dashboard like this…and no one will…UIs like this are a major contributor to dashboard rot</li>
 </ul></li>
-<li>Highlight transformative elements in the “after” version:
-<ul>
-<li>“Notice how there’s a clear path through the data”</li>
-<li>“Progressive disclosure - you see what you need first, then can dig deeper”</li>
-<li>“The interface itself tells a story about what matters most”</li>
-</ul></li>
-<li>Mention that this resulted in 43% faster decision-making (preview of results)</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -331,19 +307,18 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="the-bid-framework" class="slide level2" data-background-color="#E6F0FF">
-<h2>The BID Framework</h2>
-<div class="r-fit-text">
-<p>A 5-Stage Behavior Insight Design Framework</p>
-</div>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p><img data-src="img/bid-framework.png"></p>
-</div><div class="column" style="width:40%;">
+<section id="behavior-insight-design-bid-framework" class="slide level2" data-background-color="#E6F0FF">
+<h2>Behavior Insight Design (BID) Framework</h2>
+
+<img data-src="img/bid-framework.png" class="r-stretch"><div class="columns">
+<div class="column" style="width:45%;">
 <ol type="1">
 <li class="fragment"><strong>Notice</strong> the Problem</li>
 <li class="fragment"><strong>Interpret</strong> the User’s Need</li>
 <li class="fragment"><strong>Structure</strong> the Dashboard</li>
+</ol>
+</div><div class="column" style="width:45%;">
+<ol start="4" type="1">
 <li class="fragment"><strong>Anticipate</strong> User Behavior</li>
 <li class="fragment"><strong>Validate</strong> &amp; Empower the User</li>
 </ol>
@@ -404,58 +379,41 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="case-study-stages-1-3" class="slide level2" data-background-color="#F9F9F9">
-<h2>Case Study: Stages 1-3</h2>
+<section id="soundpulse-case-study-bid-stages-1-3" class="slide level2" data-background-color="#F9F9F9">
+<h2>SoundPulse Case Study: BID Stages 1-3</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<h3 id="soundpulses-challenges">SoundPulse’s Challenges:</h3>
 <ul>
 <li class="fragment"><strong>Stage 1: Notice</strong>
 <ul>
-<li class="fragment">Complex filtering overwhelmed users</li>
-<li class="fragment">72% reported feeling confused</li>
+<li class="fragment">Complex filtering overwhelmed users (Cognitive Load)</li>
+<li class="fragment">72% users reported confusion (Hick’s Law)</li>
 </ul></li>
 <li class="fragment"><strong>Stage 2: Interpret</strong>
 <ul>
-<li class="fragment">Users couldn’t quickly process information</li>
-<li class="fragment">Key insights buried in text and numbers</li>
-</ul></li>
-<li class="fragment"><strong>Stage 3: Structure</strong>
-<ul>
-<li class="fragment">Related elements scattered throughout UI</li>
-<li class="fragment">No prioritization of important metrics</li>
+<li class="fragment">Intuitive visualizations (Processing Fluency)</li>
+<li class="fragment">Clearer key insights (Data Storytelling)</li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:50%;">
-<h3 id="bid-principles-applied">BID Principles Applied:</h3>
 <ul>
-<li class="fragment"><strong>Stage 1: Notice</strong>
-<ul>
-<li class="fragment">Cognitive Load Theory</li>
-<li class="fragment">Hick’s Law</li>
-</ul></li>
-<li class="fragment"><strong>Stage 2: Interpret</strong>
-<ul>
-<li class="fragment">Processing Fluency</li>
-<li class="fragment">Data Storytelling Framework</li>
-</ul></li>
 <li class="fragment"><strong>Stage 3: Structure</strong>
 <ul>
-<li class="fragment">Principle of Proximity</li>
-<li class="fragment">Default Effect</li>
-<li class="fragment">Dual-Processing Theory</li>
+<li class="fragment">Group related elements (Principle of Proximity)</li>
+<li class="fragment">Prioritization of metrics (Dual-Processing Theory)</li>
 </ul></li>
 </ul>
+<!-- TODO: consider adding a visual? otherwise, clean up text more -->
+<!-- ![](img/small-dashboard-snippet.png){width="80%"} -->
 </div></div>
 <aside class="notes">
 <p><strong>Case Study Setup</strong>: Establish context for upcoming code examples.</p>
 <ul>
-<li>“Let’s see how SoundPulse applied the first three stages of the BID framework”</li>
+<li>“Let’s see how we assessed some of the challenges SoundPulse faced and how we applied the first 3 stages of the BID framework to address them”</li>
 <li>For Stage 1 (Notice): “They identified how filtering complexity was causing cognitive overload”</li>
 <li>For Stage 2 (Interpret): “They discovered users needed to process key metrics instantly”</li>
 <li>For Stage 3 (Structure): “They needed to group related elements and establish clear visual hierarchy”</li>
-<li>“Now let’s look at how they implemented these principles using {reactable}”</li>
-<li>Transition: “We’ll start with a basic implementation and build up to more advanced features”</li>
+<li>“Now let’s look at how we implemented these principles using {reactable}…”</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -611,57 +569,37 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="reactable-implementation-team-collaboration" class="slide level2" data-background-color="#F9F9F9">
-<h2>{reactable} Implementation: Team Collaboration</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="co"># Comments and annotation feature for Stage 5: Validate &amp; Empower</span></span>
-<span id="cb3-2"><a href=""></a>columns <span class="ot">=</span> <span class="fu">list</span>(</span>
-<span id="cb3-3"><a href=""></a>  <span class="co"># Other columns as before</span></span>
-<span id="cb3-4"><a href=""></a>  <span class="at">comments =</span> <span class="fu">colDef</span>(</span>
-<span id="cb3-5"><a href=""></a>    <span class="at">name =</span> <span class="st">"Comments"</span>,</span>
-<span id="cb3-6"><a href=""></a>    <span class="at">cell =</span> <span class="cf">function</span>(value, index) {</span>
-<span id="cb3-7"><a href=""></a>      comment_id <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"comment-"</span>, index)</span>
-<span id="cb3-8"><a href=""></a>      tags<span class="sc">$</span><span class="fu">div</span>(</span>
-<span id="cb3-9"><a href=""></a>        <span class="at">class =</span> <span class="st">"comment-container"</span>,</span>
-<span id="cb3-10"><a href=""></a>        tags<span class="sc">$</span><span class="fu">textarea</span>(</span>
-<span id="cb3-11"><a href=""></a>          <span class="at">id =</span> comment_id,</span>
-<span id="cb3-12"><a href=""></a>          <span class="at">class =</span> <span class="st">"form-control comment-box"</span>,</span>
-<span id="cb3-13"><a href=""></a>          <span class="at">rows =</span> <span class="st">"2"</span>,</span>
-<span id="cb3-14"><a href=""></a>          <span class="at">placeholder =</span> <span class="st">"Add a comment..."</span>,</span>
-<span id="cb3-15"><a href=""></a>          <span class="at">value =</span> value,</span>
-<span id="cb3-16"><a href=""></a>          <span class="at">onchange =</span> <span class="fu">sprintf</span>(<span class="st">"saveComment(%s, this.value)"</span>, index)</span>
-<span id="cb3-17"><a href=""></a>        ),</span>
-<span id="cb3-18"><a href=""></a>        tags<span class="sc">$</span><span class="fu">div</span>(</span>
-<span id="cb3-19"><a href=""></a>          <span class="at">class =</span> <span class="st">"comment-buttons mt-1"</span>,</span>
-<span id="cb3-20"><a href=""></a>          tags<span class="sc">$</span><span class="fu">button</span>(</span>
-<span id="cb3-21"><a href=""></a>            <span class="at">type =</span> <span class="st">"button"</span>, </span>
-<span id="cb3-22"><a href=""></a>            <span class="at">class =</span> <span class="st">"btn btn-sm btn-outline-primary me-1"</span>,</span>
-<span id="cb3-23"><a href=""></a>            <span class="at">onclick =</span> <span class="fu">sprintf</span>(<span class="st">"addHighlight(%s)"</span>, index),</span>
-<span id="cb3-24"><a href=""></a>            <span class="st">"Highlight"</span></span>
-<span id="cb3-25"><a href=""></a>          ),</span>
-<span id="cb3-26"><a href=""></a>          tags<span class="sc">$</span><span class="fu">button</span>(</span>
-<span id="cb3-27"><a href=""></a>            <span class="at">type =</span> <span class="st">"button"</span>,</span>
-<span id="cb3-28"><a href=""></a>            <span class="at">class =</span> <span class="st">"btn btn-sm btn-outline-secondary"</span>,</span>
-<span id="cb3-29"><a href=""></a>            <span class="at">onclick =</span> <span class="fu">sprintf</span>(<span class="st">"clearComment(%s)"</span>, index),</span>
-<span id="cb3-30"><a href=""></a>            <span class="st">"Clear"</span></span>
-<span id="cb3-31"><a href=""></a>          )</span>
-<span id="cb3-32"><a href=""></a>        )</span>
-<span id="cb3-33"><a href=""></a>      )</span>
-<span id="cb3-34"><a href=""></a>    },</span>
-<span id="cb3-35"><a href=""></a>    <span class="at">html =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb3-36"><a href=""></a>    <span class="at">width =</span> <span class="dv">250</span></span>
-<span id="cb3-37"><a href=""></a>  )</span>
-<span id="cb3-38"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<aside class="notes">
-<p><strong>Collaboration Features</strong>: Connect to later BID stages.</p>
+<section id="soundpulse-case-study-bid-stages-4-5" class="slide level2" data-background-color="#F9F9F9">
+<h2>SoundPulse Case Study: BID Stages 4-5</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <ul>
-<li>“This example actually implements principles from Stage 5: Validate &amp; Empower through collaboration”</li>
-<li><strong>WOW MOMENT #4</strong>: “The comment and highlight functionality allows team members to collaborate directly within the dashboard”</li>
-<li>“This addresses the Cooperation &amp; Coordination principle from Stage 5”</li>
-<li>“Notice how we’re using custom HTML within reactable cells to create a mini application”</li>
-<li>“The onchange and onclick handlers connect to JavaScript functions for saving comments and highlighting rows”</li>
-<li>“This transforms the dashboard from a static display to a collaborative decision-making tool”</li>
-<li>“Similar features in tools like Google Sheets have transformed how teams work - we can bring that same power to Shiny”</li>
-<li>Transition: “Now that we’ve seen how to implement Stages 1-3 with reactable, let’s move to Stages 4-5…”</li>
+<li class="fragment"><strong>Stage 4: Anticipate</strong>
+<ul>
+<li class="fragment">Executives comparing metrics without context (Anchoring Effect)</li>
+<li class="fragment">Teams interpreting data differently (Confirmation Bias)</li>
+<li class="fragment">Different perspectives needed for different teams (Framing &amp; Loss Aversion)</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><strong>Stage 5: Validate</strong>
+<ul>
+<li class="fragment">Teams needed actionable summaries (Peak-End Rule)</li>
+<li class="fragment">No clear path to consensus (Cooperation &amp; Coordination)</li>
+</ul></li>
+</ul>
+<!-- TODO: consider adding a visual? otherwise, reorganize text -->
+<!-- ![](img/small-dashboard-snippet2.png){width="80%"} -->
+</div></div>
+<aside class="notes">
+<p><strong>Advanced Stages Case Study</strong>: Set up context for echarts4r examples.</p>
+<ul>
+<li>“Now we’ll look at how we tackled the later stages of the BID framework in SoundPulse’s dashboard…”</li>
+<li>For Stage 4 (Anticipate): “We needed to address how cognitive biases were affecting their interpretations of the data”</li>
+<li>For Stage 5 (Validate): “We needed to create lasting impressions and facilitate team consensus”</li>
+<li>“These stages address the subtler psychological aspects of data interpretation”</li>
+<li>“Now let’s see how we implemented these principles using {echarts4r}”</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -714,100 +652,42 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="case-study-stages-4-5" class="slide level2" data-background-color="#F9F9F9">
-<h2>Case Study: Stages 4-5</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="soundpulses-challenges-1">SoundPulse’s Challenges:</h3>
-<ul>
-<li class="fragment"><strong>Stage 4: Anticipate</strong>
-<ul>
-<li class="fragment">Executives comparing metrics without context</li>
-<li class="fragment">Teams interpreting data through confirmation bias</li>
-<li class="fragment">Different perspectives needed for different teams</li>
-</ul></li>
-<li class="fragment"><strong>Stage 5: Validate</strong>
-<ul>
-<li class="fragment">Insights lost after dashboard sessions</li>
-<li class="fragment">No clear path to consensus</li>
-<li class="fragment">Teams needed actionable summaries</li>
-</ul></li>
-</ul>
-</div><div class="column" style="width:50%;">
-<h3 id="bid-principles-applied-1">BID Principles Applied:</h3>
-<ul>
-<li class="fragment"><strong>Stage 4: Anticipate</strong>
-<ul>
-<li class="fragment">Anchoring Effect</li>
-<li class="fragment">Framing &amp; Loss Aversion</li>
-<li class="fragment">Confirmation Bias</li>
-</ul></li>
-<li class="fragment"><strong>Stage 5: Validate</strong>
-<ul>
-<li class="fragment">Peak-End Rule</li>
-<li class="fragment">Cooperation &amp; Coordination</li>
-<li class="fragment">Beautiful-Is-Good Stereotype</li>
-</ul></li>
-</ul>
-</div></div>
-<aside class="notes">
-<p><strong>Advanced Stages</strong>: Set up context for echarts4r examples.</p>
-<ul>
-<li>“Now we’ll look at how SoundPulse tackled the later stages of the BID framework”</li>
-<li>For Stage 4 (Anticipate): “They needed to address how cognitive biases were affecting interpretation”</li>
-<li>For Stage 5 (Validate): “They needed to create lasting impressions and facilitate team consensus”</li>
-<li>“These stages address the subtler psychological aspects of data interpretation”</li>
-<li>“Now let’s see how they implemented these principles using {echarts4r}”</li>
-<li>“We’ll start with basic chart implementation and build up to more interactive features”</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
 <section id="implementation-demo-echarts4r-basics" class="slide level2" data-background-color="#F9F9F9">
 <h2>Implementation Demo: {echarts4r} Basics</h2>
 <div class="r-fit-text">
 <p>Using <code>{echarts4r}</code> to implement Stages 4-5</p>
 </div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="co"># Create a static gauge chart</span></span>
-<span id="cb4-2"><a href=""></a>create_static_gauge <span class="ot">&lt;-</span> <span class="cf">function</span>(value, column_name, <span class="at">tooltip_text =</span> <span class="cn">NULL</span>) {</span>
-<span id="cb4-3"><a href=""></a>  chart <span class="ot">&lt;-</span> <span class="fu">e_charts</span>() <span class="sc">|&gt;</span></span>
-<span id="cb4-4"><a href=""></a>    <span class="fu">e_gauge</span>(</span>
-<span id="cb4-5"><a href=""></a>      value,</span>
-<span id="cb4-6"><a href=""></a>      <span class="at">startAngle =</span> <span class="dv">180</span>,</span>
-<span id="cb4-7"><a href=""></a>      <span class="at">endAngle =</span> <span class="dv">0</span>,</span>
-<span id="cb4-8"><a href=""></a>      <span class="at">detail =</span> <span class="fu">list</span>(<span class="at">formatter =</span> <span class="st">"{value}%"</span>, <span class="at">fontSize =</span> <span class="dv">14</span>),</span>
-<span id="cb4-9"><a href=""></a>      <span class="at">pointer =</span> <span class="fu">list</span>(<span class="at">show =</span> <span class="cn">FALSE</span>),</span>
-<span id="cb4-10"><a href=""></a>      <span class="at">axisLine =</span> <span class="fu">list</span>(</span>
-<span id="cb4-11"><a href=""></a>        <span class="at">lineStyle =</span> <span class="fu">list</span>(</span>
-<span id="cb4-12"><a href=""></a>          <span class="at">color =</span> <span class="fu">list</span>(</span>
-<span id="cb4-13"><a href=""></a>            <span class="fu">c</span>(<span class="fu">round</span>(value <span class="sc">/</span> <span class="dv">100</span>, <span class="dv">2</span>), <span class="st">"#1c6d7d"</span>),</span>
-<span id="cb4-14"><a href=""></a>            <span class="fu">c</span>(<span class="dv">1</span>, <span class="st">"#d2d2d2"</span>)</span>
-<span id="cb4-15"><a href=""></a>          ),</span>
-<span id="cb4-16"><a href=""></a>          <span class="at">width =</span> <span class="dv">50</span></span>
-<span id="cb4-17"><a href=""></a>        )</span>
-<span id="cb4-18"><a href=""></a>      )</span>
-<span id="cb4-19"><a href=""></a>    ) <span class="sc">|&gt;</span></span>
-<span id="cb4-20"><a href=""></a>    <span class="fu">e_title</span>(column_name)</span>
-<span id="cb4-21"><a href=""></a>    </span>
-<span id="cb4-22"><a href=""></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(tooltip_text)) {</span>
-<span id="cb4-23"><a href=""></a>    chart <span class="ot">&lt;-</span> chart <span class="sc">|&gt;</span> <span class="fu">e_tooltip</span>(</span>
-<span id="cb4-24"><a href=""></a>      <span class="at">formatter =</span> htmlwidgets<span class="sc">::</span><span class="fu">JS</span>(</span>
-<span id="cb4-25"><a href=""></a>        <span class="fu">sprintf</span>(<span class="st">"function(params) { return '%s'; }"</span>, tooltip_text)</span>
-<span id="cb4-26"><a href=""></a>      )</span>
-<span id="cb4-27"><a href=""></a>    )</span>
-<span id="cb4-28"><a href=""></a>  }</span>
-<span id="cb4-29"><a href=""></a>  </span>
-<span id="cb4-30"><a href=""></a>  <span class="fu">return</span>(chart)</span>
-<span id="cb4-31"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="co"># Create a static gauge chart</span></span>
+<span id="cb3-2"><a href=""></a>create_static_gauge <span class="ot">&lt;-</span> <span class="cf">function</span>(value, column_name, <span class="at">tooltip_text =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb3-3"><a href=""></a>  chart <span class="ot">&lt;-</span> <span class="fu">e_charts</span>() <span class="sc">|&gt;</span></span>
+<span id="cb3-4"><a href=""></a>    <span class="fu">e_gauge</span>(</span>
+<span id="cb3-5"><a href=""></a>      value,</span>
+<span id="cb3-6"><a href=""></a>      <span class="at">startAngle =</span> <span class="dv">180</span>,</span>
+<span id="cb3-7"><a href=""></a>      <span class="at">endAngle =</span> <span class="dv">0</span>,</span>
+<span id="cb3-8"><a href=""></a>      <span class="at">detail =</span> <span class="fu">list</span>(<span class="at">formatter =</span> <span class="st">"{value}%"</span>, <span class="at">fontSize =</span> <span class="dv">14</span>),</span>
+<span id="cb3-9"><a href=""></a>      <span class="at">pointer =</span> <span class="fu">list</span>(<span class="at">show =</span> <span class="cn">FALSE</span>),</span>
+<span id="cb3-10"><a href=""></a>      <span class="at">axisLine =</span> <span class="fu">list</span>(</span>
+<span id="cb3-11"><a href=""></a>        <span class="at">lineStyle =</span> <span class="fu">list</span>(</span>
+<span id="cb3-12"><a href=""></a>          <span class="at">color =</span> <span class="fu">list</span>(</span>
+<span id="cb3-13"><a href=""></a>            <span class="fu">c</span>(<span class="fu">round</span>(value <span class="sc">/</span> <span class="dv">100</span>, <span class="dv">2</span>), <span class="st">"#1c6d7d"</span>),</span>
+<span id="cb3-14"><a href=""></a>            <span class="fu">c</span>(<span class="dv">1</span>, <span class="st">"#d2d2d2"</span>)</span>
+<span id="cb3-15"><a href=""></a>          ),</span>
+<span id="cb3-16"><a href=""></a>          <span class="at">width =</span> <span class="dv">50</span></span>
+<span id="cb3-17"><a href=""></a>        )</span>
+<span id="cb3-18"><a href=""></a>      )</span>
+<span id="cb3-19"><a href=""></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb3-20"><a href=""></a>    <span class="fu">e_title</span>(column_name)</span>
+<span id="cb3-21"><a href=""></a>    </span>
+<span id="cb3-22"><a href=""></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(tooltip_text)) {</span>
+<span id="cb3-23"><a href=""></a>    chart <span class="ot">&lt;-</span> chart <span class="sc">|&gt;</span> <span class="fu">e_tooltip</span>(</span>
+<span id="cb3-24"><a href=""></a>      <span class="at">formatter =</span> htmlwidgets<span class="sc">::</span><span class="fu">JS</span>(</span>
+<span id="cb3-25"><a href=""></a>        <span class="fu">sprintf</span>(<span class="st">"function(params) { return '%s'; }"</span>, tooltip_text)</span>
+<span id="cb3-26"><a href=""></a>      )</span>
+<span id="cb3-27"><a href=""></a>    )</span>
+<span id="cb3-28"><a href=""></a>  }</span>
+<span id="cb3-29"><a href=""></a>  </span>
+<span id="cb3-30"><a href=""></a>  <span class="fu">return</span>(chart)</span>
+<span id="cb3-31"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside class="notes">
 <p><strong>Gauge Charts</strong>: Start with visually impactful elements.</p>
 <ul>
@@ -837,33 +717,33 @@ Ever felt like this?
 <div class="r-fit-text">
 <p>Adding Benchmark References to Address Anchoring Effect</p>
 </div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="co"># Create a static bar chart with benchmark</span></span>
-<span id="cb5-2"><a href=""></a>create_static_bar <span class="ot">&lt;-</span> <span class="cf">function</span>(</span>
-<span id="cb5-3"><a href=""></a>  value, column_name, <span class="at">benchmark =</span> <span class="cn">NULL</span>, </span>
-<span id="cb5-4"><a href=""></a>  <span class="at">tooltip_text =</span> <span class="cn">NULL</span>, <span class="at">frame_type =</span> <span class="st">"progress"</span>) {</span>
-<span id="cb5-5"><a href=""></a>  <span class="co"># Chart creation code...</span></span>
-<span id="cb5-6"><a href=""></a>  </span>
-<span id="cb5-7"><a href=""></a>  <span class="co"># Add benchmark line if provided</span></span>
-<span id="cb5-8"><a href=""></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(benchmark)) {</span>
-<span id="cb5-9"><a href=""></a>    chart <span class="ot">&lt;-</span> chart <span class="sc">|&gt;</span></span>
-<span id="cb5-10"><a href=""></a>      <span class="fu">e_mark_line</span>(</span>
-<span id="cb5-11"><a href=""></a>        <span class="at">data =</span> <span class="fu">list</span>(<span class="at">xAxis =</span> benchmark, <span class="at">name =</span> <span class="st">"Benchmark"</span>),</span>
-<span id="cb5-12"><a href=""></a>        <span class="at">symbol =</span> <span class="st">"none"</span>,</span>
-<span id="cb5-13"><a href=""></a>        <span class="at">lineStyle =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">"#ff9000"</span>, <span class="at">width =</span> <span class="dv">2</span>, <span class="at">type =</span> <span class="st">"dashed"</span>),</span>
-<span id="cb5-14"><a href=""></a>        <span class="at">label =</span> <span class="fu">list</span>(<span class="at">show =</span> <span class="cn">TRUE</span>, <span class="at">formatter =</span> <span class="st">"{b}: {c}%"</span>)</span>
-<span id="cb5-15"><a href=""></a>      )</span>
-<span id="cb5-16"><a href=""></a>  }</span>
-<span id="cb5-17"><a href=""></a>  </span>
-<span id="cb5-18"><a href=""></a>  <span class="fu">return</span>(chart)</span>
-<span id="cb5-19"><a href=""></a>}</span>
-<span id="cb5-20"><a href=""></a></span>
-<span id="cb5-21"><a href=""></a><span class="co"># Usage in layout</span></span>
-<span id="cb5-22"><a href=""></a><span class="fu">layout_columns</span>(</span>
-<span id="cb5-23"><a href=""></a>  <span class="at">col_widths =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>),</span>
-<span id="cb5-24"><a href=""></a>  <span class="fu">div</span>(<span class="fu">create_static_bar</span>(<span class="dv">65</span>, <span class="st">"KPI 1"</span>, <span class="dv">50</span>, <span class="st">"Benchmark is industry average"</span>)),</span>
-<span id="cb5-25"><a href=""></a>  <span class="fu">div</span>(<span class="fu">create_static_bar</span>(<span class="dv">45</span>, <span class="st">"KPI 2"</span>, <span class="dv">50</span>, <span class="st">"Benchmark is industry average"</span>)),</span>
-<span id="cb5-26"><a href=""></a>  <span class="fu">div</span>(<span class="fu">create_static_bar</span>(<span class="dv">72</span>, <span class="st">"KPI 3"</span>, <span class="dv">50</span>, <span class="st">"Benchmark is industry average"</span>))</span>
-<span id="cb5-27"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="co"># Create a static bar chart with benchmark</span></span>
+<span id="cb4-2"><a href=""></a>create_static_bar <span class="ot">&lt;-</span> <span class="cf">function</span>(</span>
+<span id="cb4-3"><a href=""></a>  value, column_name, <span class="at">benchmark =</span> <span class="cn">NULL</span>, </span>
+<span id="cb4-4"><a href=""></a>  <span class="at">tooltip_text =</span> <span class="cn">NULL</span>, <span class="at">frame_type =</span> <span class="st">"progress"</span>) {</span>
+<span id="cb4-5"><a href=""></a>  <span class="co"># Chart creation code...</span></span>
+<span id="cb4-6"><a href=""></a>  </span>
+<span id="cb4-7"><a href=""></a>  <span class="co"># Add benchmark line if provided</span></span>
+<span id="cb4-8"><a href=""></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(benchmark)) {</span>
+<span id="cb4-9"><a href=""></a>    chart <span class="ot">&lt;-</span> chart <span class="sc">|&gt;</span></span>
+<span id="cb4-10"><a href=""></a>      <span class="fu">e_mark_line</span>(</span>
+<span id="cb4-11"><a href=""></a>        <span class="at">data =</span> <span class="fu">list</span>(<span class="at">xAxis =</span> benchmark, <span class="at">name =</span> <span class="st">"Benchmark"</span>),</span>
+<span id="cb4-12"><a href=""></a>        <span class="at">symbol =</span> <span class="st">"none"</span>,</span>
+<span id="cb4-13"><a href=""></a>        <span class="at">lineStyle =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">"#ff9000"</span>, <span class="at">width =</span> <span class="dv">2</span>, <span class="at">type =</span> <span class="st">"dashed"</span>),</span>
+<span id="cb4-14"><a href=""></a>        <span class="at">label =</span> <span class="fu">list</span>(<span class="at">show =</span> <span class="cn">TRUE</span>, <span class="at">formatter =</span> <span class="st">"{b}: {c}%"</span>)</span>
+<span id="cb4-15"><a href=""></a>      )</span>
+<span id="cb4-16"><a href=""></a>  }</span>
+<span id="cb4-17"><a href=""></a>  </span>
+<span id="cb4-18"><a href=""></a>  <span class="fu">return</span>(chart)</span>
+<span id="cb4-19"><a href=""></a>}</span>
+<span id="cb4-20"><a href=""></a></span>
+<span id="cb4-21"><a href=""></a><span class="co"># Usage in layout</span></span>
+<span id="cb4-22"><a href=""></a><span class="fu">layout_columns</span>(</span>
+<span id="cb4-23"><a href=""></a>  <span class="at">col_widths =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>),</span>
+<span id="cb4-24"><a href=""></a>  <span class="fu">div</span>(<span class="fu">create_static_bar</span>(<span class="dv">65</span>, <span class="st">"KPI 1"</span>, <span class="dv">50</span>, <span class="st">"Benchmark is industry average"</span>)),</span>
+<span id="cb4-25"><a href=""></a>  <span class="fu">div</span>(<span class="fu">create_static_bar</span>(<span class="dv">45</span>, <span class="st">"KPI 2"</span>, <span class="dv">50</span>, <span class="st">"Benchmark is industry average"</span>)),</span>
+<span id="cb4-26"><a href=""></a>  <span class="fu">div</span>(<span class="fu">create_static_bar</span>(<span class="dv">72</span>, <span class="st">"KPI 3"</span>, <span class="dv">50</span>, <span class="st">"Benchmark is industry average"</span>))</span>
+<span id="cb4-27"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside class="notes">
 <p><strong>Reference Lines</strong>: Highlight the Anchoring Effect implementation.</p>
 <ul>
@@ -893,51 +773,51 @@ Ever felt like this?
 <div class="r-fit-text">
 <p>Implementing Framing &amp; Loss Aversion Principles with Interactive Toggle</p>
 </div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="co"># Frame toggle UI</span></span>
-<span id="cb6-2"><a href=""></a>frame_toggle <span class="ot">&lt;-</span> <span class="fu">div</span>(</span>
-<span id="cb6-3"><a href=""></a>  <span class="at">class =</span> <span class="st">"frame-toggle-container"</span>,</span>
-<span id="cb6-4"><a href=""></a>  <span class="fu">span</span>(<span class="at">class =</span> <span class="st">"frame-toggle-label"</span>, <span class="st">"Framing:"</span>),</span>
-<span id="cb6-5"><a href=""></a>  <span class="fu">div</span>(</span>
-<span id="cb6-6"><a href=""></a>    <span class="at">class =</span> <span class="st">"btn-group"</span>,</span>
-<span id="cb6-7"><a href=""></a>    <span class="at">role =</span> <span class="st">"group"</span>,</span>
-<span id="cb6-8"><a href=""></a>    <span class="st">`</span><span class="at">aria-label</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"Framing toggle"</span>,</span>
-<span id="cb6-9"><a href=""></a>    tags<span class="sc">$</span><span class="fu">button</span>(</span>
-<span id="cb6-10"><a href=""></a>      <span class="at">id =</span> <span class="st">"progress-btn"</span>,</span>
-<span id="cb6-11"><a href=""></a>      <span class="at">class =</span> <span class="st">"btn btn-sm btn-primary active"</span>,</span>
-<span id="cb6-12"><a href=""></a>      <span class="at">type =</span> <span class="st">"button"</span>,</span>
-<span id="cb6-13"><a href=""></a>      <span class="st">"Progress"</span></span>
-<span id="cb6-14"><a href=""></a>    ),</span>
-<span id="cb6-15"><a href=""></a>    tags<span class="sc">$</span><span class="fu">button</span>(</span>
-<span id="cb6-16"><a href=""></a>      <span class="at">id =</span> <span class="st">"gap-btn"</span>,</span>
-<span id="cb6-17"><a href=""></a>      <span class="at">class =</span> <span class="st">"btn btn-sm btn-outline-primary"</span>,</span>
-<span id="cb6-18"><a href=""></a>      <span class="at">type =</span> <span class="st">"button"</span>,</span>
-<span id="cb6-19"><a href=""></a>      <span class="st">"Gap"</span></span>
-<span id="cb6-20"><a href=""></a>    )</span>
-<span id="cb6-21"><a href=""></a>  )</span>
-<span id="cb6-22"><a href=""></a>)</span>
-<span id="cb6-23"><a href=""></a></span>
-<span id="cb6-24"><a href=""></a><span class="co"># JavaScript for toggling</span></span>
-<span id="cb6-25"><a href=""></a>tags<span class="sc">$</span><span class="fu">script</span>(<span class="fu">HTML</span>(<span class="st">"</span></span>
-<span id="cb6-26"><a href=""></a><span class="st">  function toggleFraming(framingType) {</span></span>
-<span id="cb6-27"><a href=""></a><span class="st">    if (framingType === 'progress') {</span></span>
-<span id="cb6-28"><a href=""></a><span class="st">      // Show progress charts, hide gap charts</span></span>
-<span id="cb6-29"><a href=""></a><span class="st">      document.querySelectorAll('.framing-chart:nth-child(1)').forEach(function(chart) {</span></span>
-<span id="cb6-30"><a href=""></a><span class="st">        chart.classList.remove('hidden-chart');</span></span>
-<span id="cb6-31"><a href=""></a><span class="st">      });</span></span>
-<span id="cb6-32"><a href=""></a><span class="st">      document.querySelectorAll('.framing-chart:nth-child(2)').forEach(function(chart) {</span></span>
-<span id="cb6-33"><a href=""></a><span class="st">        chart.classList.add('hidden-chart');</span></span>
-<span id="cb6-34"><a href=""></a><span class="st">      });</span></span>
-<span id="cb6-35"><a href=""></a><span class="st">    } else {</span></span>
-<span id="cb6-36"><a href=""></a><span class="st">      // Show gap charts, hide progress charts</span></span>
-<span id="cb6-37"><a href=""></a><span class="st">      document.querySelectorAll('.framing-chart:nth-child(1)').forEach(function(chart) {</span></span>
-<span id="cb6-38"><a href=""></a><span class="st">        chart.classList.add('hidden-chart');</span></span>
-<span id="cb6-39"><a href=""></a><span class="st">      });</span></span>
-<span id="cb6-40"><a href=""></a><span class="st">      document.querySelectorAll('.framing-chart:nth-child(2)').forEach(function(chart) {</span></span>
-<span id="cb6-41"><a href=""></a><span class="st">        chart.classList.remove('hidden-chart');</span></span>
-<span id="cb6-42"><a href=""></a><span class="st">      });</span></span>
-<span id="cb6-43"><a href=""></a><span class="st">    }</span></span>
-<span id="cb6-44"><a href=""></a><span class="st">  }</span></span>
-<span id="cb6-45"><a href=""></a><span class="st">"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="co"># Frame toggle UI</span></span>
+<span id="cb5-2"><a href=""></a>frame_toggle <span class="ot">&lt;-</span> <span class="fu">div</span>(</span>
+<span id="cb5-3"><a href=""></a>  <span class="at">class =</span> <span class="st">"frame-toggle-container"</span>,</span>
+<span id="cb5-4"><a href=""></a>  <span class="fu">span</span>(<span class="at">class =</span> <span class="st">"frame-toggle-label"</span>, <span class="st">"Framing:"</span>),</span>
+<span id="cb5-5"><a href=""></a>  <span class="fu">div</span>(</span>
+<span id="cb5-6"><a href=""></a>    <span class="at">class =</span> <span class="st">"btn-group"</span>,</span>
+<span id="cb5-7"><a href=""></a>    <span class="at">role =</span> <span class="st">"group"</span>,</span>
+<span id="cb5-8"><a href=""></a>    <span class="st">`</span><span class="at">aria-label</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"Framing toggle"</span>,</span>
+<span id="cb5-9"><a href=""></a>    tags<span class="sc">$</span><span class="fu">button</span>(</span>
+<span id="cb5-10"><a href=""></a>      <span class="at">id =</span> <span class="st">"progress-btn"</span>,</span>
+<span id="cb5-11"><a href=""></a>      <span class="at">class =</span> <span class="st">"btn btn-sm btn-primary active"</span>,</span>
+<span id="cb5-12"><a href=""></a>      <span class="at">type =</span> <span class="st">"button"</span>,</span>
+<span id="cb5-13"><a href=""></a>      <span class="st">"Progress"</span></span>
+<span id="cb5-14"><a href=""></a>    ),</span>
+<span id="cb5-15"><a href=""></a>    tags<span class="sc">$</span><span class="fu">button</span>(</span>
+<span id="cb5-16"><a href=""></a>      <span class="at">id =</span> <span class="st">"gap-btn"</span>,</span>
+<span id="cb5-17"><a href=""></a>      <span class="at">class =</span> <span class="st">"btn btn-sm btn-outline-primary"</span>,</span>
+<span id="cb5-18"><a href=""></a>      <span class="at">type =</span> <span class="st">"button"</span>,</span>
+<span id="cb5-19"><a href=""></a>      <span class="st">"Gap"</span></span>
+<span id="cb5-20"><a href=""></a>    )</span>
+<span id="cb5-21"><a href=""></a>  )</span>
+<span id="cb5-22"><a href=""></a>)</span>
+<span id="cb5-23"><a href=""></a></span>
+<span id="cb5-24"><a href=""></a><span class="co"># JavaScript for toggling</span></span>
+<span id="cb5-25"><a href=""></a>tags<span class="sc">$</span><span class="fu">script</span>(<span class="fu">HTML</span>(<span class="st">"</span></span>
+<span id="cb5-26"><a href=""></a><span class="st">  function toggleFraming(framingType) {</span></span>
+<span id="cb5-27"><a href=""></a><span class="st">    if (framingType === 'progress') {</span></span>
+<span id="cb5-28"><a href=""></a><span class="st">      // Show progress charts, hide gap charts</span></span>
+<span id="cb5-29"><a href=""></a><span class="st">      document.querySelectorAll('.framing-chart:nth-child(1)').forEach(function(chart) {</span></span>
+<span id="cb5-30"><a href=""></a><span class="st">        chart.classList.remove('hidden-chart');</span></span>
+<span id="cb5-31"><a href=""></a><span class="st">      });</span></span>
+<span id="cb5-32"><a href=""></a><span class="st">      document.querySelectorAll('.framing-chart:nth-child(2)').forEach(function(chart) {</span></span>
+<span id="cb5-33"><a href=""></a><span class="st">        chart.classList.add('hidden-chart');</span></span>
+<span id="cb5-34"><a href=""></a><span class="st">      });</span></span>
+<span id="cb5-35"><a href=""></a><span class="st">    } else {</span></span>
+<span id="cb5-36"><a href=""></a><span class="st">      // Show gap charts, hide progress charts</span></span>
+<span id="cb5-37"><a href=""></a><span class="st">      document.querySelectorAll('.framing-chart:nth-child(1)').forEach(function(chart) {</span></span>
+<span id="cb5-38"><a href=""></a><span class="st">        chart.classList.add('hidden-chart');</span></span>
+<span id="cb5-39"><a href=""></a><span class="st">      });</span></span>
+<span id="cb5-40"><a href=""></a><span class="st">      document.querySelectorAll('.framing-chart:nth-child(2)').forEach(function(chart) {</span></span>
+<span id="cb5-41"><a href=""></a><span class="st">        chart.classList.remove('hidden-chart');</span></span>
+<span id="cb5-42"><a href=""></a><span class="st">      });</span></span>
+<span id="cb5-43"><a href=""></a><span class="st">    }</span></span>
+<span id="cb5-44"><a href=""></a><span class="st">  }</span></span>
+<span id="cb5-45"><a href=""></a><span class="st">"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside class="notes">
 <p><strong>Framing Toggle</strong>: Demonstrate psychological impact of framing.</p>
 <ul>
@@ -1021,36 +901,41 @@ Ever felt like this?
 <section id="from-framework-to-workflow-introducing-bidux" class="slide level2 center" data-background-color="#E6F0FF">
 <h2>From Framework to Workflow: Introducing {bidux}</h2>
 <div class="columns">
-<div class="column" style="width:60%;">
-<p><code>{bidux}</code> is our new R package currently in <strong>Phase 1 development</strong> that helps implement the BID framework:</p>
+<div class="column" style="width:48%;">
 <ul>
-<li class="fragment"><strong>Current Features:</strong>
+<li class="fragment"><strong>Current Features (Phase 1):</strong>
 <ul>
-<li class="fragment">📚 Concept browser: <code>bid_concept("processing_fluency")</code></li>
-<li class="fragment">🧠 Documentation functions: <code>bid_notice()</code> to <code>bid_validate()</code></li>
+<li class="fragment">📚 Concept browser
+<ul>
+<li class="fragment"><code>bid_concept("processing fluency")</code></li>
 </ul></li>
+<li class="fragment">🧠 BID stage functions
+<ul>
+<li class="fragment"><code>bid_notice()</code> to <code>bid_validate()</code></li>
+</ul></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:48%;">
+<ul>
 <li class="fragment"><strong>Coming Soon (Phases 2-4):</strong>
 <ul>
-<li class="fragment">🛠️ UI Component Library</li>
 <li class="fragment">🤖 LLM Integration</li>
+<li class="fragment">🛠️ UI Component Library</li>
 <li class="fragment">📊 Testing and Validation Tools</li>
 </ul></li>
 </ul>
-</div><div class="column" style="width:40%;">
-<!-- need to either update image or replace with something like the repo README -->
-<p><img data-src="img/bid_concept-output.png" style="width:95.0%"></p>
 </div></div>
 <aside class="notes">
 <p><strong>Package Introduction</strong>: Generate excitement about the tooling.</p>
 <ul>
 <li>“We’re not just sharing a framework - we’re building tools to make it easy to adopt”</li>
+<li>“We’re excited to introduce <code>{bidux}</code>…our new R package currently in <strong>Phase 1 development</strong> that helps implement the BID framework with your workflows”</li>
 <li>“Our goal is to make these psychological principles accessible to every R developer”</li>
-<li>Emphasize this is open source - “We want this to become a community resource”</li>
 <li>Current features focus on documentation and knowledge</li>
 <li>Future features will include ready-to-use UI components with BID principles built in</li>
 <li>“The LLM integration will let you describe what you want in plain language”</li>
 <li>“Think of {bidux} as your behavioral science assistant for dashboard development”</li>
-<li>“This is in active development - we welcome contributors and collaborators”</li>
+<li>“This is in active development - and not quite stable yet, but please stay tuned”</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1066,25 +951,25 @@ Ever felt like this?
 </section>
 <section id="what-bidux-looks-like-today" class="slide level2" data-background-color="#F9F9F9">
 <h2>What {bidux} Looks Like Today</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">library</span>(bidux)</span>
-<span id="cb7-2"><a href=""></a></span>
-<span id="cb7-3"><a href=""></a><span class="co"># 1. Concept dictionary functionality</span></span>
-<span id="cb7-4"><a href=""></a>processing_fluency <span class="ot">&lt;-</span> <span class="fu">bid_concept</span>(<span class="st">"Processing Fluency"</span>)</span>
-<span id="cb7-5"><a href=""></a><span class="fu">print</span>(processing_fluency)</span>
-<span id="cb7-6"><a href=""></a></span>
-<span id="cb7-7"><a href=""></a><span class="co"># 2. Stage documentation (piped workflow)</span></span>
-<span id="cb7-8"><a href=""></a>project_docs <span class="ot">&lt;-</span> <span class="fu">bid_notice</span>(</span>
-<span id="cb7-9"><a href=""></a>  <span class="at">problem =</span> <span class="st">"Dashboard overload"</span>, </span>
-<span id="cb7-10"><a href=""></a>  <span class="at">theory =</span> <span class="st">"Cognitive Load Theory"</span>,</span>
-<span id="cb7-11"><a href=""></a>  <span class="at">evidence =</span> <span class="st">"User testing results"</span></span>
-<span id="cb7-12"><a href=""></a>) <span class="sc">|&gt;</span></span>
-<span id="cb7-13"><a href=""></a>  <span class="fu">bid_interpret</span>(</span>
-<span id="cb7-14"><a href=""></a>    <span class="at">central_question =</span> <span class="st">"How to simplify?"</span>,</span>
-<span id="cb7-15"><a href=""></a>    <span class="at">data_story =</span> <span class="fu">list</span>(<span class="at">hook =</span> <span class="st">"Too complex"</span>, <span class="at">context =</span> <span class="st">"Many tabs"</span>)</span>
-<span id="cb7-16"><a href=""></a>  )</span>
-<span id="cb7-17"><a href=""></a><span class="fu">print</span>(processing_fluency)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">library</span>(bidux)</span>
+<span id="cb6-2"><a href=""></a></span>
+<span id="cb6-3"><a href=""></a><span class="co"># 1. Concept dictionary functionality</span></span>
+<span id="cb6-4"><a href=""></a>processing_fluency <span class="ot">&lt;-</span> <span class="fu">bid_concept</span>(<span class="st">"Processing Fluency"</span>)</span>
+<span id="cb6-5"><a href=""></a><span class="fu">print</span>(processing_fluency)</span>
+<span id="cb6-6"><a href=""></a></span>
+<span id="cb6-7"><a href=""></a><span class="co"># 2. Stage documentation (piped workflow)</span></span>
+<span id="cb6-8"><a href=""></a>project_docs <span class="ot">&lt;-</span> <span class="fu">bid_notice</span>(</span>
+<span id="cb6-9"><a href=""></a>  <span class="at">problem =</span> <span class="st">"Dashboard overload"</span>, </span>
+<span id="cb6-10"><a href=""></a>  <span class="at">theory =</span> <span class="st">"Cognitive Load Theory"</span>,</span>
+<span id="cb6-11"><a href=""></a>  <span class="at">evidence =</span> <span class="st">"User testing results"</span></span>
+<span id="cb6-12"><a href=""></a>) <span class="sc">|&gt;</span></span>
+<span id="cb6-13"><a href=""></a>  <span class="fu">bid_interpret</span>(</span>
+<span id="cb6-14"><a href=""></a>    <span class="at">central_question =</span> <span class="st">"How to simplify?"</span>,</span>
+<span id="cb6-15"><a href=""></a>    <span class="at">data_story =</span> <span class="fu">list</span>(<span class="at">hook =</span> <span class="st">"Too complex"</span>, <span class="at">context =</span> <span class="st">"Many tabs"</span>)</span>
+<span id="cb6-16"><a href=""></a>  )</span>
+<span id="cb6-17"><a href=""></a><span class="fu">print</span>(project_docs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
-<p>More at: <a href="https://github.com">github.com/bidux</a></p>
+<p>More at: <a href="https://github.com/jrwinget/bidux">github.com/jrwinget/bidux</a></p>
 </div>
 <aside class="notes">
 <p><strong>Code Example</strong>: Show practical usage of the package.</p>
@@ -1095,7 +980,7 @@ Ever felt like this?
 <li>“These functions integrate with dplyr workflows via pipes”</li>
 <li>“Documentation becomes part of your development process, not separate”</li>
 <li>Point out the commented future code to generate excitement</li>
-<li>“In Phase 2, you’ll be able to generate UI templates with BID principles built in”</li>
+<li>“In Phase 2, you’ll be able to …”</li>
 <li>When the link appears: “We’re launching this at ShinyConf today - check out the repo”</li>
 </ul>
 <style type="text/css">
@@ -1114,12 +999,12 @@ Ever felt like this?
 <h2>SoundPulse Results</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<h3 id="measurable-improvements">Measurable Improvements:</h3>
+<h3 id="real-world-impact">Real-World Impact:</h3>
 <ul>
-<li class="fragment">Decision time reduced by 43%</li>
-<li class="fragment">Insights per session increased by 67%</li>
-<li class="fragment">Stakeholder satisfaction improved from 5.2/10 to 8.7/10</li>
-<li class="fragment">Implementation time for new metrics reduced by 30%</li>
+<li class="fragment">Dramatically faster decision-making</li>
+<li class="fragment">Substantial increase in insights per session</li>
+<li class="fragment">Stakeholder satisfaction transformed from frustration to enthusiasm</li>
+<li class="fragment">Significantly streamlined implementation of new metrics</li>
 </ul>
 </div><div class="column fragment" style="width:50%;">
 <h3 id="team-feedback">Team Feedback:</h3>
@@ -1129,14 +1014,15 @@ Ever felt like this?
 <aside class="notes">
 <p><strong>Results Summary</strong>: Emphasize concrete benefits.</p>
 <ul>
-<li>“These aren’t just theoretical improvements - SoundPulse measured real results”</li>
-<li>“43% faster decision-making means real business value”</li>
-<li>“67% more insights per session means better ROI on analytics investments”</li>
-<li>“Satisfaction scores jumped from mediocre to excellent”</li>
-<li>“30% faster implementation means developers saved time too”</li>
+<li>These outcomes reflect consistent feedback across client organizations that have embraced our framework. The qualitative data tells a compelling story:
+<ul>
+<li>(PAUSE) Teams are making decisions with much greater speed and confidence</li>
+<li>(PAUSE) Users are discovering more actionable insights in each session</li>
+<li>(PAUSE) And perhaps most telling—stakeholders have shifted from being skeptical to becoming advocates</li>
+</ul></li>
+<li>We’re currently building telemetry into our dashboards to gather more precise measurements…but the message from our users is already clear: this framework is changing how teams interact with their data</li>
 <li>When the testimonial appears: “This kind of transformation is what BID is all about”</li>
-<li>“Maya’s team went from dreading dashboard development to using it as a competitive advantage”</li>
-<li>“Remember, this wasn’t just visual changes - this was a fundamental approach shift”</li>
+<li>“Remember, this wasn’t just visual changes - this was a fundamental shift in how our users…and developers…approached the dashboard”</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
