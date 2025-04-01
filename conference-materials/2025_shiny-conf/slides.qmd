@@ -85,6 +85,8 @@ SoundPulse's market research team was drowning in data, unable to extract meanin
 ::: {.notes}
 **Show Impact**: Build up intuition of annoyance/frustration using "before" dashboard.
 
+- Even thought SoundPulse is a composite client...this UI is actually a fair representation of what many of our market research clients have come to expect from their dashboards
+  * We didn't just pick the worst dashboard we could find...we again, put a composite together to give you a representative idea of the kinds of challenges we've faced as devs trying to help our clients with the products we deliver
 - Walk through the key issues with the "before" dashboard:
   * "Look at all those filters - users had to make decisions before seeing ANY data"
   * 8 tabs of dense data tables...need to know what you want to figure out in advance
@@ -129,24 +131,37 @@ SoundPulse's market research team was drowning in data, unable to extract meanin
 
 ## Where BID Fits In {background-color="#F2F2F2"}
 
-::: {.nonincremental}
-- Builds on established UX heuristics and theories
-- Incorporates data storytelling frameworks
-- Systematically integrates cognitive bias mitigation
-- Cross-disciplinary synthesis (UX, data viz, behavioral economics)
-- Stage-based process rather than heuristic lists
-- Specifically tailored for analytics dashboards
+::: {.d-flex .align-items-center}
+![](img/newton-portrait.jpg){width="15%" style="float:left; margin-right:15px;"}
+
+> "If I have seen further, it is by standing on the shoulders of giants."
+>
+> — Isaac Newton
 :::
+
+:::: {.columns}
+
+::: {.column}
+- **UX Design**: Beyond heuristic lists to guided process
+- **Data Storytelling**: From data dumps to meaningful narratives
+:::
+
+::: {.column}
+- **Psychological Science**: Evidence-based cognitive principles
+- **Visual Communication**: Optimized for information perception
+:::
+
+::::
 
 ::: {.notes}
 **Context Setting**: Position the framework within the broader field.
 
 - Acknowledge that this builds on existing work - "We're standing on the shoulders of giants"
-- Emphasize the unique integration of disciplines - behavioral economics + UX + data viz
+- Emphasize the unique integration of fields - psychology, UX, data & visual communication
+  * Quickly mention some influences: "Edward Tufte's data visualization principles, Kahneman's work on cognitive biases, etc."
 - Key difference from other approaches: process-oriented vs. checklist approach
-- "What makes BID different is that it's specifically designed for analytics dashboards"
-- This is important context before diving into the stages in detail
-- Quickly mention some influences: "Edward Tufte's data visualization principles, Nielsen's heuristics, and Kahneman's work on cognitive biases"
+- "What makes BID different is that it's specifically designed for analytic applications (like dashboards)"
+  * The ultimate goal of the BID framework is to helping end users gain clearer insights from dashboards...while giving developers a structured approach to building more effective applications
 :::
 
 ## SoundPulse Case Study: BID Stages 1-3 {background-color="#F9F9F9"}
