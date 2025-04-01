@@ -308,20 +308,15 @@ reactable(
 ## {reactable} Implementation: Visual Result {background-color="#F9F9F9"}
 
 ::: {.r-stack style="text-align:center"}
-<!-- ![](img/reactable_example_1.png){width="75%"}
-![](img/reactable_example_2.png){.fragment width="75%"}
-![](img/reactable_example_3.png){.fragment width="75%"}
-![](img/reactable_example_4.png){.fragment width="75%"} -->
+![](img/Screenshot_examples_reactable_1.png){width="100%"}
 
-![](img/Screenshot_examples_main_1.png){width="100%"}
+![](img/Screenshot_examples_reactable_2.png){.fragment width="100%"}
 
-![](img/Screenshot_examples_main_2.png){.fragment width="100%"}
+![](img/Screenshot_examples_reactable_3.png){.fragment width="100%"}
 
-![](img/Screenshot_examples_main_3.png){.fragment width="100%"}
+![](img/Screenshot_examples_reactable_4.png){.fragment width="100%"}
 
-![](img/Screenshot_examples_main_4.png){.fragment width="100%"}
-
-![](img/Screenshot_examples_main_5.png){.fragment width="100%"}
+![](img/Screenshot_examples_reactable_5.png){.fragment width="100%"}
 :::
 
 ::: {.notes}
@@ -612,15 +607,14 @@ tags$script(HTML("
 Complete Dashboard with Multiple BID Principles
 :::
 
-::: {.r-stack}
-![](img/echarts_example_1.png){width="75%"}
-![](img/echarts_example_2.png){.fragment width="75%"}
-![](img/echarts_example_3.png){.fragment width="75%"}
+::: {.r-stack style="text-align:center"}
+![](img/Screenshot_examples_echarts4r_1.png){width="75%"}
 
-<!-- Commenting to show suggestion placeholders -->
-<!-- ![](img/Screenshot_examples_Deep_Dives_1.png){width="75%"}
-![](img/Screenshot_examples_Deep_Dives_2.png){.fragment width="75%"}
-![](img/Screenshot_examples_Deep_Dives_3.png){.fragment width="75%"} -->
+![](img/Screenshot_examples_echarts4r_2.png){.fragment width="75%"}
+
+![](img/Screenshot_examples_echarts4r_3.png){.fragment width="75%"}
+
+![](img/Screenshot_examples_echarts4r_4.png){.fragment width="75%"}
 :::
 
 ::: {.notes}
