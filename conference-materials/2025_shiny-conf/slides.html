@@ -432,7 +432,7 @@ Ever felt like this?
 <p><img data-src="img/bid-framework.png"></p>
 </div>
 <aside class="notes">
-<p><strong>Case Study Introduction (1-1.5 min):</strong></p>
+<p><strong>Case Study Introduction:</strong></p>
 <ul>
 <li>“So…let’s take a look at how we used this framework to help SoundPulse refactor their dashboard.”</li>
 <li><strong>Stage 1 (Notice):</strong> The first thing we noticed…as I’m sure you all of you did as well…was that users were overwhelmed with options - dropdown menus and complex tables
@@ -478,7 +478,7 @@ Ever felt like this?
 <p><img data-src="img/reactable-ex5.png" class="fragment" style="width:100.0%"></p>
 </div>
 <aside class="notes">
-<p><strong>Visual Impact</strong>: Connect code to visual results.</p>
+<p><strong>Visual Impact</strong>: Connect UI to stages/concepts just mentioned.</p>
 <ul>
 <li>“Here’s what our reactable implementation looks like in practice”</li>
 <li>For each image as it appears:
@@ -490,7 +490,6 @@ Ever felt like this?
 </ul></li>
 <li>“Each of these visual elements directly ties to a principle from the BID framework”</li>
 <li>“This is the power of intentional design - every element has a psychological purpose”</li>
-<li>Transition: “Now let’s look at our final reactable example with team collaboration features…”</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -504,11 +503,8 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="implementation-demo-reactable-basics" class="slide level2" data-background-color="#f9f9f9">
-<h2>Implementation Demo: {reactable} Basics</h2>
-<div class="r-fit-text">
-<p>Using <code>{reactable}</code> to implement Stages 1-3</p>
-</div>
+<section id="reactable-implementation-basics" class="slide level2" data-background-color="#f9f9f9">
+<h2>{reactable} Implementation: Basics</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">reactable</span>(</span>
 <span id="cb1-2"><a href=""></a>  soundpulse_data,</span>
 <span id="cb1-3"><a href=""></a>  <span class="co"># Stage 1: Cognitive Load Theory - Grouped structure reduces complexity</span></span>
@@ -520,16 +516,22 @@ Ever felt like this?
 <span id="cb1-9"><a href=""></a>      <span class="at">style =</span> <span class="cf">function</span>(value) {</span>
 <span id="cb1-10"><a href=""></a>        <span class="co"># Color coding enhances processing fluency</span></span>
 <span id="cb1-11"><a href=""></a>        <span class="cf">if</span> (value <span class="sc">&gt;</span> <span class="dv">50</span>) {</span>
-<span id="cb1-12"><a href=""></a>          <span class="fu">list</span>(<span class="at">background =</span> <span class="st">"rgba(0, 128, 128, 0.2)"</span>, </span>
-<span id="cb1-13"><a href=""></a>               <span class="at">color =</span> <span class="st">"#006666"</span>, <span class="at">fontWeight =</span> <span class="st">"bold"</span>)</span>
-<span id="cb1-14"><a href=""></a>        } <span class="cf">else</span> <span class="cf">if</span> (value <span class="sc">&lt;</span> <span class="dv">30</span>) {</span>
-<span id="cb1-15"><a href=""></a>          <span class="fu">list</span>(<span class="at">background =</span> <span class="st">"rgba(255, 140, 0, 0.2)"</span>, </span>
-<span id="cb1-16"><a href=""></a>               <span class="at">color =</span> <span class="st">"#dd8500"</span>, <span class="at">fontWeight =</span> <span class="st">"bold"</span>)</span>
-<span id="cb1-17"><a href=""></a>        }</span>
-<span id="cb1-18"><a href=""></a>      }</span>
-<span id="cb1-19"><a href=""></a>    )</span>
-<span id="cb1-20"><a href=""></a>  )</span>
-<span id="cb1-21"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-12"><a href=""></a>          <span class="fu">list</span>(</span>
+<span id="cb1-13"><a href=""></a>            <span class="at">background =</span> <span class="st">"rgba(0, 128, 128, 0.2)"</span>, </span>
+<span id="cb1-14"><a href=""></a>            <span class="at">color =</span> <span class="st">"#006666"</span>,</span>
+<span id="cb1-15"><a href=""></a>            <span class="at">fontWeight =</span> <span class="st">"bold"</span></span>
+<span id="cb1-16"><a href=""></a>          )</span>
+<span id="cb1-17"><a href=""></a>        } <span class="cf">else</span> <span class="cf">if</span> (value <span class="sc">&lt;</span> <span class="dv">30</span>) {</span>
+<span id="cb1-18"><a href=""></a>          <span class="fu">list</span>(</span>
+<span id="cb1-19"><a href=""></a>            <span class="at">background =</span> <span class="st">"rgba(255, 140, 0, 0.2)"</span>, </span>
+<span id="cb1-20"><a href=""></a>            <span class="at">color =</span> <span class="st">"#dd8500"</span>,</span>
+<span id="cb1-21"><a href=""></a>            <span class="at">fontWeight =</span> <span class="st">"bold"</span></span>
+<span id="cb1-22"><a href=""></a>          )</span>
+<span id="cb1-23"><a href=""></a>        }</span>
+<span id="cb1-24"><a href=""></a>      }</span>
+<span id="cb1-25"><a href=""></a>    )</span>
+<span id="cb1-26"><a href=""></a>  )</span>
+<span id="cb1-27"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside class="notes">
 <p><strong>Basic Implementation</strong>: Start with the foundational elements.</p>
 <ul>
@@ -552,40 +554,42 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="implementation-demo-reactable-advanced" class="slide level2" data-background-color="#f9f9f9">
-<h2>Implementation Demo: {reactable} Advanced</h2>
-<div class="r-fit-text">
-<p>Enhanced Implementation with Bar Charts, Grouping, and Progressive Disclosure</p>
-</div>
+<section id="reactable-implementation-advanced" class="slide level2" data-background-color="#f9f9f9">
+<h2>{reactable} Implementation: Advanced</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">reactable</span>(</span>
 <span id="cb2-2"><a href=""></a>  soundpulse_data,</span>
 <span id="cb2-3"><a href=""></a>  <span class="co"># Stage 3: Principle of Proximity - Group related elements visually</span></span>
 <span id="cb2-4"><a href=""></a>  <span class="at">columnGroups =</span> <span class="fu">list</span>(</span>
-<span id="cb2-5"><a href=""></a>    <span class="fu">colGroup</span>(<span class="at">name =</span> <span class="st">"System 1 - Quick Insights"</span>, </span>
-<span id="cb2-6"><a href=""></a>             <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"Metric1"</span>, <span class="st">"Metric2"</span>)),</span>
-<span id="cb2-7"><a href=""></a>    <span class="fu">colGroup</span>(<span class="at">name =</span> <span class="st">"System 2 - Detailed Analysis"</span>, </span>
-<span id="cb2-8"><a href=""></a>             <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"Metric3"</span>, <span class="st">"Metric4"</span>))</span>
-<span id="cb2-9"><a href=""></a>  ),</span>
-<span id="cb2-10"><a href=""></a>  </span>
-<span id="cb2-11"><a href=""></a>  <span class="co"># Stage 2 &amp; 3: Enhanced Processing Fluency with bar charts</span></span>
-<span id="cb2-12"><a href=""></a>  <span class="at">columns =</span> <span class="fu">list</span>(</span>
-<span id="cb2-13"><a href=""></a>    <span class="at">Metric1 =</span> <span class="fu">colDef</span>(</span>
-<span id="cb2-14"><a href=""></a>      <span class="at">cell =</span> <span class="cf">function</span>(value) <span class="fu">create_bar_chart_cell</span>(value, <span class="st">"metric1"</span>),</span>
-<span id="cb2-15"><a href=""></a>      <span class="at">html =</span> <span class="cn">TRUE</span></span>
-<span id="cb2-16"><a href=""></a>    )</span>
-<span id="cb2-17"><a href=""></a>  ),</span>
-<span id="cb2-18"><a href=""></a>  </span>
-<span id="cb2-19"><a href=""></a>  <span class="co"># Progressive disclosure supports Cognitive Load Theory</span></span>
-<span id="cb2-20"><a href=""></a>  <span class="at">details =</span> <span class="cf">function</span>(index) {</span>
-<span id="cb2-21"><a href=""></a>    <span class="co"># Only show details when requested</span></span>
-<span id="cb2-22"><a href=""></a>    detailed_data <span class="ot">&lt;-</span> segment_details[segment_details<span class="sc">$</span>claim_id <span class="sc">==</span> </span>
-<span id="cb2-23"><a href=""></a>                                     soundpulse_data<span class="sc">$</span>Claim[index], ]</span>
-<span id="cb2-24"><a href=""></a>    <span class="fu">div</span>(</span>
-<span id="cb2-25"><a href=""></a>      <span class="at">style =</span> <span class="st">"padding: 1rem"</span>,</span>
-<span id="cb2-26"><a href=""></a>      <span class="fu">reactable</span>(detailed_data, <span class="at">outlined =</span> <span class="cn">TRUE</span>, <span class="at">striped =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb2-27"><a href=""></a>    )</span>
-<span id="cb2-28"><a href=""></a>  }</span>
-<span id="cb2-29"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-5"><a href=""></a>    <span class="fu">colGroup</span>(</span>
+<span id="cb2-6"><a href=""></a>      <span class="at">name =</span> <span class="st">"System 1 - Quick Insights"</span>, </span>
+<span id="cb2-7"><a href=""></a>      <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"Metric1"</span>, <span class="st">"Metric2"</span>)</span>
+<span id="cb2-8"><a href=""></a>    ),</span>
+<span id="cb2-9"><a href=""></a>    <span class="fu">colGroup</span>(</span>
+<span id="cb2-10"><a href=""></a>      <span class="at">name =</span> <span class="st">"System 2 - Detailed Analysis"</span>, </span>
+<span id="cb2-11"><a href=""></a>      <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"Metric3"</span>, <span class="st">"Metric4"</span>)</span>
+<span id="cb2-12"><a href=""></a>    )</span>
+<span id="cb2-13"><a href=""></a>  ),</span>
+<span id="cb2-14"><a href=""></a>  </span>
+<span id="cb2-15"><a href=""></a>  <span class="co"># Stage 2 &amp; 3: Enhanced Processing Fluency with bar charts</span></span>
+<span id="cb2-16"><a href=""></a>  <span class="at">columns =</span> <span class="fu">list</span>(</span>
+<span id="cb2-17"><a href=""></a>    <span class="at">Metric1 =</span> <span class="fu">colDef</span>(</span>
+<span id="cb2-18"><a href=""></a>      <span class="at">cell =</span> <span class="cf">function</span>(value) <span class="fu">create_bar_chart_cell</span>(value, <span class="st">"metric1"</span>),</span>
+<span id="cb2-19"><a href=""></a>      <span class="at">html =</span> <span class="cn">TRUE</span></span>
+<span id="cb2-20"><a href=""></a>    )</span>
+<span id="cb2-21"><a href=""></a>  ),</span>
+<span id="cb2-22"><a href=""></a>  </span>
+<span id="cb2-23"><a href=""></a>  <span class="co"># Progressive disclosure supports Cognitive Load Theory</span></span>
+<span id="cb2-24"><a href=""></a>  <span class="at">details =</span> <span class="cf">function</span>(index) {</span>
+<span id="cb2-25"><a href=""></a>    <span class="co"># Only show details when requested</span></span>
+<span id="cb2-26"><a href=""></a>    detailed_data <span class="ot">&lt;-</span> segment_details[</span>
+<span id="cb2-27"><a href=""></a>      segment_details<span class="sc">$</span>claim_id <span class="sc">==</span> soundpulse_data<span class="sc">$</span>Claim[index], </span>
+<span id="cb2-28"><a href=""></a>    ]</span>
+<span id="cb2-29"><a href=""></a>    <span class="fu">div</span>(</span>
+<span id="cb2-30"><a href=""></a>      <span class="at">style =</span> <span class="st">"padding: 1rem"</span>,</span>
+<span id="cb2-31"><a href=""></a>      <span class="fu">reactable</span>(detailed_data, <span class="at">outlined =</span> <span class="cn">TRUE</span>, <span class="at">striped =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-32"><a href=""></a>    )</span>
+<span id="cb2-33"><a href=""></a>  }</span>
+<span id="cb2-34"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside class="notes">
 <p><strong>Advanced Features</strong>: Highlight sophisticated techniques.</p>
 <ul>
@@ -664,9 +668,6 @@ Ever felt like this?
 </section>
 <section id="echarts4r-implementation-visual-result" class="slide level2" data-background-color="#f9f9f9">
 <h2>{echarts4r} Implementation: Visual Result</h2>
-<div class="r-fit-text">
-<p>Complete Dashboard with Multiple BID Principles</p>
-</div>
 <div class="r-stack" style="text-align:center">
 <p><img data-src="img/echarts4r-ex1.png" style="width:75.0%"></p>
 <p><img data-src="img/echarts4r-ex2.png" class="fragment" style="width:75.0%"></p>
@@ -701,11 +702,8 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="implementation-demo-echarts4r-basics" class="slide level2" data-background-color="#f9f9f9">
-<h2>Implementation Demo: {echarts4r} Basics</h2>
-<div class="r-fit-text">
-<p>Using <code>{echarts4r}</code> to implement Stages 4-5</p>
-</div>
+<section id="echarts4r-implementation-gauge-chart" class="slide level2" data-background-color="#f9f9f9">
+<h2>{echarts4r} Implementation: Gauge Chart</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="co"># Create a static gauge chart</span></span>
 <span id="cb3-2"><a href=""></a>create_static_gauge <span class="ot">&lt;-</span> <span class="cf">function</span>(value, column_name, <span class="at">tooltip_text =</span> <span class="cn">NULL</span>) {</span>
 <span id="cb3-3"><a href=""></a>  chart <span class="ot">&lt;-</span> <span class="fu">e_charts</span>() <span class="sc">|&gt;</span></span>
@@ -761,11 +759,8 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="implementation-demo-echarts4r-reference-lines" class="slide level2" data-background-color="#f9f9f9">
-<h2>Implementation Demo: {echarts4r} Reference Lines</h2>
-<div class="r-fit-text">
-<p>Adding Benchmark References to Address Anchoring Effect</p>
-</div>
+<section id="echarts4r-implementation-context" class="slide level2" data-background-color="#f9f9f9">
+<h2>{echarts4r} Implementation: Context</h2>
 <div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="co"># Create a static bar chart with benchmark</span></span>
 <span id="cb4-2"><a href=""></a>create_static_bar <span class="ot">&lt;-</span> <span class="cf">function</span>(</span>
 <span id="cb4-3"><a href=""></a>  value, column_name, <span class="at">benchmark =</span> <span class="cn">NULL</span>, </span>
@@ -817,11 +812,8 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="implementation-demo-echarts4r-framing-toggle" class="slide level2" data-background-color="#f9f9f9">
-<h2>Implementation Demo: {echarts4r} Framing Toggle</h2>
-<div class="r-fit-text">
-<p>Implementing Framing &amp; Loss Aversion Principles with Interactive Toggle</p>
-</div>
+<section id="echarts4r-implementation-framing" class="slide level2" data-background-color="#f9f9f9">
+<h2>{echarts4r} Implementation: Framing</h2>
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="co"># Frame toggle UI</span></span>
 <span id="cb5-2"><a href=""></a>frame_toggle <span class="ot">&lt;-</span> <span class="fu">div</span>(</span>
 <span id="cb5-3"><a href=""></a>  <span class="at">class =</span> <span class="st">"frame-toggle-container"</span>,</span>
@@ -893,28 +885,33 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="interactive-demonstration-framing-effect" class="slide level2" data-background-color="#e6f0ff">
-<h2>Interactive Demonstration: Framing Effect</h2>
-<h3 id="how-framing-affects-perception-decision-making">How Framing Affects Perception &amp; Decision-Making</h3>
+<section id="how-framing-affects-decision-making" class="slide level2" data-background-color="#e6f0ff">
+<h2>How Framing Affects Decision Making</h2>
 <div class="columns">
-<div class="column fragment" style="width:50%;">
-<h4 id="progress-framing">Progress Framing:</h4>
-<!-- going to change these screenshots to be more focused on a single bar -->
+<div class="column r-fit-text fragment">
 <p><img data-src="img/progress-frame.png" style="width:90.0%"></p>
+<div>
 <ul>
-<li class="fragment">Motivates by highlighting achievement</li>
-<li class="fragment">Creates positive momentum</li>
-<li class="fragment">Supports incremental improvement</li>
+<li><strong>Progress Framing:</strong>
+<ul>
+<li>Motivates by highlighting achievement</li>
+<li>Creates positive momentum</li>
+<li>Supports incremental improvement</li>
+</ul></li>
 </ul>
-</div><div class="column fragment" style="width:50%;">
-<h4 id="gap-framing">Gap Framing:</h4>
-<!-- going to change these screenshots to be more focused on a single bar -->
+</div>
+</div><div class="column r-fit-text fragment">
 <p><img data-src="img/gap-frame.png" style="width:90.0%"></p>
+<div>
 <ul>
-<li class="fragment">Creates urgency to address shortfall</li>
-<li class="fragment">Highlights areas needing improvement</li>
-<li class="fragment">May trigger risk-avoidance behaviors</li>
+<li><strong>Gap Framing:</strong>
+<ul>
+<li>Creates urgency to address shortfall</li>
+<li>Highlights areas needing improvement</li>
+<li>May trigger risk-avoidance behaviors</li>
+</ul></li>
 </ul>
+</div>
 </div></div>
 <aside class="notes">
 <p><strong>Framing Effect</strong>: Emphasize psychological impact.</p>
