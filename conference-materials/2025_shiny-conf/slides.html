@@ -204,7 +204,7 @@ Milena Eickhoff &amp; Jeremy Winget, PhD
 </div>
 
 </section>
-<section id="the-problem" class="slide level2 center" data-background-color="#4682B4">
+<section id="the-problem" class="slide level2 center" data-background-color="#4682b4">
 <h2>The Problem</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
@@ -246,7 +246,7 @@ Ever felt like this?
 <h2>It Doesn’t Have To Be This Way</h2>
 <p><br></p>
 <div class="r-fit-text">
-<p>By shifting the focus from <span style="color:#D55E00"><strong>cramming data</strong></span> to <span style="color:#009E73"><strong>crafting stories</strong></span></p>
+<p>By shifting the focus from <span style="color:#d55e00"><strong>cramming data</strong></span> to <span style="color:#009e73"><strong>crafting stories</strong></span></p>
 </div>
 <div class="columns fragment">
 <div class="column" style="width:60%;">
@@ -278,10 +278,9 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="bid-in-action-dashboard-transformation" class="slide level2 center" data-background-color="#F2F2F2">
+<section id="bid-in-action-dashboard-transformation" class="slide level2 center" data-background-color="#f2f2f2">
 <h2>BID In Action: Dashboard Transformation</h2>
 <div class="absolute" style="top: 80%; left: 12%; width: 80%; ">
-<!-- TODO: exchange for gif? -->
 <p><img data-src="img/before-bid.png"></p>
 </div>
 <aside class="notes">
@@ -311,7 +310,7 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="behavior-insight-design-bid-framework" class="slide level2" data-background-color="#E6F0FF">
+<section id="behavior-insight-design-bid-framework" class="slide level2" data-background-color="#e6f0ff">
 <h2>Behavior Insight Design (BID) Framework</h2>
 <div class="absolute" style="left: 7%; width: 90%; ">
 <p><img data-src="img/bid-framework.png"></p>
@@ -354,7 +353,7 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="where-bid-fits-in" class="slide level2" data-background-color="#F2F2F2">
+<section id="where-bid-fits-in" class="slide level2" data-background-color="#f2f2f2">
 <h2>Where BID Fits In</h2>
 <div class="d-flex align-items-center">
 <p><img data-src="img/newton-portrait.jpg" style="float:left; margin-right:15px;;width:15.0%"></p>
@@ -401,41 +400,61 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="soundpulse-case-study-bid-stages-1-3" class="slide level2" data-background-color="#F9F9F9">
+<section id="soundpulse-case-study-bid-stages-1-3" class="slide level2" data-background-color="#f9f9f9">
 <h2>SoundPulse Case Study: BID Stages 1-3</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
+<div class="columns r-fit-text">
+<div class="column" style="width:32%;">
 <ul>
-<li class="fragment"><strong>Stage 1: Notice</strong>
+<li class="fragment"><span style="color:#1c6d7d"><strong>Stage 1: Notice</strong></span>
 <ul>
-<li class="fragment">Complex filtering overwhelmed users (Cognitive Load)</li>
-<li class="fragment">72% users reported confusion (Hick’s Law)</li>
-</ul></li>
-<li class="fragment"><strong>Stage 2: Interpret</strong>
-<ul>
-<li class="fragment">Intuitive visualizations (Processing Fluency)</li>
-<li class="fragment">Clearer key insights (Data Storytelling)</li>
+<li class="fragment">Complex filtering overwhelmed users (<em>Cognitive Load</em>)</li>
+<li class="fragment">72% users reported confusion (<em>Hick’s Law</em>)</li>
 </ul></li>
 </ul>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:32%;">
 <ul>
-<li class="fragment"><strong>Stage 3: Structure</strong>
+<li class="fragment"><span style="color:#35a4ae"><strong>Stage 2: Interpret</strong></span>
 <ul>
-<li class="fragment">Group related elements (Principle of Proximity)</li>
-<li class="fragment">Prioritization of metrics (Dual-Processing Theory)</li>
+<li class="fragment">Intuitive visualizations (<em>Processing Fluency</em>)</li>
+<li class="fragment">Clearer key insights<br>(<em>Data Storytelling</em>)</li>
 </ul></li>
 </ul>
-<!-- TODO: consider adding a visual? otherwise, clean up text more -->
-<!-- ![](img/small-dashboard-snippet.png){width="80%"} -->
+</div><div class="column" style="width:32%;">
+<ul>
+<li class="fragment"><span style="color:#ff9000"><strong>Stage 3: Structure</strong></span>
+<ul>
+<li class="fragment">Group related elements (<em>Principle of Proximity</em>)</li>
+<li class="fragment">Prioritization of metrics (<em>Dual-Processing Theory</em>)</li>
+</ul></li>
+</ul>
 </div></div>
+<div class="absolute" style="left: 15%; bottom: 15%; width: 70%; height: 30%; ">
+<p><img data-src="img/bid-framework.png"></p>
+</div>
 <aside class="notes">
-<p><strong>Case Study Setup</strong>: Establish context for upcoming code examples.</p>
+<p><strong>Case Study Introduction (1-1.5 min):</strong></p>
 <ul>
-<li>“Let’s see how we assessed some of the challenges SoundPulse faced and how we applied the first 3 stages of the BID framework to address them”</li>
-<li>For Stage 1 (Notice): “They identified how filtering complexity was causing cognitive overload”</li>
-<li>For Stage 2 (Interpret): “They discovered users needed to process key metrics instantly”</li>
-<li>For Stage 3 (Structure): “They needed to group related elements and establish clear visual hierarchy”</li>
-<li>“Now let’s look at how we implemented these principles using {reactable}…”</li>
+<li>“So…let’s take a look at how we used this framework to help SoundPulse refactor their dashboard.”</li>
+<li><strong>Stage 1 (Notice):</strong> The first thing we noticed…as I’m sure you all of you did as well…was that users were overwhelmed with options - dropdown menus and complex tables
+<ul>
+<li>This is what we call ‘cognitive load’ - when the brain gets overtaxed with information.</li>
+<li>We also identified a violation of Hick’s Law, which simply means that more choices lead to longer decision times and confusion.</li>
+</ul></li>
+<li><strong>Stage 2 (Interpret):</strong> Once we identified these issues, we focused on something called ‘Processing Fluency’ - making information easier to digest.
+<ul>
+<li>This meant using color-coding and visual patterns that the brain can process instantly without conscious effort.</li>
+<li>You’ll see in our code examples in a moment just how we implemented this with color scales in reactable.</li>
+</ul></li>
+<li><strong>Stage 3 (Structure):</strong> “We then restructured using the ‘Principle of Proximity’ - which is a fancy way of saying we started grouping related elements.
+<ul>
+<li>Now there are a ton of ways you can do this</li>
+<li>As you’ll see in our code example, we redesigned the layout to visually group metrics that belong together, and highlight the metrics that mattered most to create a natural flow through the data</li>
+</ul></li>
+<li>Now you don’t need to know all of these concepts to use the framework…we’ll come back to that
+<ul>
+<li>Don’t need to be a psychologist to use the framework</li>
+</ul></li>
+<li>But first Milena is going to show you <em>how</em> we translated these concepts into code…</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -449,7 +468,7 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="reactable-implementation-visual-result" class="slide level2" data-background-color="#F9F9F9">
+<section id="reactable-implementation-visual-result" class="slide level2" data-background-color="#f9f9f9">
 <h2>{reactable} Implementation: Visual Result</h2>
 <div class="r-stack" style="text-align:center">
 <p><img data-src="img/reactable-ex1.png" style="width:100.0%"></p>
@@ -485,7 +504,7 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="implementation-demo-reactable-basics" class="slide level2" data-background-color="#F9F9F9">
+<section id="implementation-demo-reactable-basics" class="slide level2" data-background-color="#f9f9f9">
 <h2>Implementation Demo: {reactable} Basics</h2>
 <div class="r-fit-text">
 <p>Using <code>{reactable}</code> to implement Stages 1-3</p>
@@ -505,7 +524,7 @@ Ever felt like this?
 <span id="cb1-13"><a href=""></a>               <span class="at">color =</span> <span class="st">"#006666"</span>, <span class="at">fontWeight =</span> <span class="st">"bold"</span>)</span>
 <span id="cb1-14"><a href=""></a>        } <span class="cf">else</span> <span class="cf">if</span> (value <span class="sc">&lt;</span> <span class="dv">30</span>) {</span>
 <span id="cb1-15"><a href=""></a>          <span class="fu">list</span>(<span class="at">background =</span> <span class="st">"rgba(255, 140, 0, 0.2)"</span>, </span>
-<span id="cb1-16"><a href=""></a>               <span class="at">color =</span> <span class="st">"#DD8500"</span>, <span class="at">fontWeight =</span> <span class="st">"bold"</span>)</span>
+<span id="cb1-16"><a href=""></a>               <span class="at">color =</span> <span class="st">"#dd8500"</span>, <span class="at">fontWeight =</span> <span class="st">"bold"</span>)</span>
 <span id="cb1-17"><a href=""></a>        }</span>
 <span id="cb1-18"><a href=""></a>      }</span>
 <span id="cb1-19"><a href=""></a>    )</span>
@@ -533,7 +552,7 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="implementation-demo-reactable-advanced" class="slide level2" data-background-color="#F9F9F9">
+<section id="implementation-demo-reactable-advanced" class="slide level2" data-background-color="#f9f9f9">
 <h2>Implementation Demo: {reactable} Advanced</h2>
 <div class="r-fit-text">
 <p>Enhanced Implementation with Bar Charts, Grouping, and Progressive Disclosure</p>
@@ -591,37 +610,45 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="soundpulse-case-study-bid-stages-4-5" class="slide level2" data-background-color="#F9F9F9">
+<section id="soundpulse-case-study-bid-stages-4-5" class="slide level2" data-background-color="#f9f9f9">
 <h2>SoundPulse Case Study: BID Stages 4-5</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
+<div class="columns r-fit-text">
+<div class="column" style="width:48%;">
 <ul>
-<li class="fragment"><strong>Stage 4: Anticipate</strong>
+<li class="fragment"><span style="color:#ffca90"><strong>Stage 4: Anticipate</strong></span>
 <ul>
-<li class="fragment">Executives comparing metrics without context (Anchoring Effect)</li>
-<li class="fragment">Teams interpreting data differently (Confirmation Bias)</li>
-<li class="fragment">Different perspectives needed for different teams (Framing &amp; Loss Aversion)</li>
+<li class="fragment">Executives comparing metrics without context (<em>Anchoring Effect</em>)</li>
+<li class="fragment">Teams interpreting data differently (<em>Confirmation Bias</em>)</li>
+<li class="fragment">Different perspectives needed for different teams (<em>Framing &amp; Loss Aversion</em>)</li>
 </ul></li>
 </ul>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:48%;">
 <ul>
-<li class="fragment"><strong>Stage 5: Validate</strong>
+<li class="fragment"><span style="color:#98d3ca"><strong>Stage 5: Validate</strong></span>
 <ul>
-<li class="fragment">Teams needed actionable summaries (Peak-End Rule)</li>
-<li class="fragment">No clear path to consensus (Cooperation &amp; Coordination)</li>
+<li class="fragment">Teams needed actionable summaries (<em>Peak-End Rule</em>)</li>
+<li class="fragment">No clear path to consensus<br>(<em>Cooperation &amp; Coordination</em>)</li>
 </ul></li>
 </ul>
-<!-- TODO: consider adding a visual? otherwise, reorganize text -->
-<!-- ![](img/small-dashboard-snippet2.png){width="80%"} -->
 </div></div>
+<div class="absolute" style="left: 15%; bottom: 15%; width: 70%; height: 30%; ">
+<p><img data-src="img/bid-framework.png"></p>
+</div>
 <aside class="notes">
-<p><strong>Advanced Stages Case Study</strong>: Set up context for echarts4r examples.</p>
+<p><strong>Later stages:</strong> Setup for echarts examples</p>
 <ul>
-<li>“Now we’ll look at how we tackled the later stages of the BID framework in SoundPulse’s dashboard…”</li>
-<li>For Stage 4 (Anticipate): “We needed to address how cognitive biases were affecting their interpretations of the data”</li>
-<li>For Stage 5 (Validate): “We needed to create lasting impressions and facilitate team consensus”</li>
-<li>“These stages address the subtler psychological aspects of data interpretation”</li>
-<li>“Now let’s see how we implemented these principles using {echarts4r}”</li>
+<li>“For the later stages of the BID framework, we addressed more subtle psychological factors that affect how users interpret and act on data.”</li>
+<li><strong>Stage 4 (Anticipate):</strong> “We noticed executives were making flawed comparisons without proper context.
+<ul>
+<li>This relates to the ‘Anchoring Effect’ - where people rely too heavily on the first piece of information they see</li>
+<li>As you’ll see in our echarts4r example, we added dynamic benchmark lines to provide meaningful context</li>
+<li>We also implemented a ‘Framing Toggle’ to address how different teams focus on different perspectives on the same data.”</li>
+</ul></li>
+<li><strong>Stage 5 (Validate):</strong> “Finally, we applied the ‘Peak-End Rule’ - the principle that people judge experiences mainly by their most intense point and how they end.
+<ul>
+<li>Our code example shows how we created summary cards that highlight key takeaways, ensuring users walk away with the most important insights.”</li>
+</ul></li>
+<li>Let’s take a closer look at that code now…</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -635,7 +662,7 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="echarts4r-implementation-visual-result" class="slide level2" data-background-color="#F9F9F9">
+<section id="echarts4r-implementation-visual-result" class="slide level2" data-background-color="#f9f9f9">
 <h2>{echarts4r} Implementation: Visual Result</h2>
 <div class="r-fit-text">
 <p>Complete Dashboard with Multiple BID Principles</p>
@@ -674,7 +701,7 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="implementation-demo-echarts4r-basics" class="slide level2" data-background-color="#F9F9F9">
+<section id="implementation-demo-echarts4r-basics" class="slide level2" data-background-color="#f9f9f9">
 <h2>Implementation Demo: {echarts4r} Basics</h2>
 <div class="r-fit-text">
 <p>Using <code>{echarts4r}</code> to implement Stages 4-5</p>
@@ -734,7 +761,7 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="implementation-demo-echarts4r-reference-lines" class="slide level2" data-background-color="#F9F9F9">
+<section id="implementation-demo-echarts4r-reference-lines" class="slide level2" data-background-color="#f9f9f9">
 <h2>Implementation Demo: {echarts4r} Reference Lines</h2>
 <div class="r-fit-text">
 <p>Adding Benchmark References to Address Anchoring Effect</p>
@@ -790,7 +817,7 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="implementation-demo-echarts4r-framing-toggle" class="slide level2" data-background-color="#F9F9F9">
+<section id="implementation-demo-echarts4r-framing-toggle" class="slide level2" data-background-color="#f9f9f9">
 <h2>Implementation Demo: {echarts4r} Framing Toggle</h2>
 <div class="r-fit-text">
 <p>Implementing Framing &amp; Loss Aversion Principles with Interactive Toggle</p>
@@ -866,7 +893,7 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="interactive-demonstration-framing-effect" class="slide level2" data-background-color="#E6F0FF">
+<section id="interactive-demonstration-framing-effect" class="slide level2" data-background-color="#e6f0ff">
 <h2>Interactive Demonstration: Framing Effect</h2>
 <h3 id="how-framing-affects-perception-decision-making">How Framing Affects Perception &amp; Decision-Making</h3>
 <div class="columns">
@@ -920,7 +947,7 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="from-framework-to-workflow-introducing-bidux" class="slide level2 center" data-background-color="#E6F0FF">
+<section id="from-framework-to-workflow-introducing-bidux" class="slide level2 center" data-background-color="#e6f0ff">
 <h2>From Framework to Workflow: Introducing {bidux}</h2>
 <div class="columns">
 <div class="column" style="width:48%;">
@@ -971,7 +998,7 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="what-bidux-looks-like-today" class="slide level2" data-background-color="#F9F9F9">
+<section id="what-bidux-looks-like-today" class="slide level2" data-background-color="#f9f9f9">
 <h2>What {bidux} Looks Like Today</h2>
 <div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">library</span>(bidux)</span>
 <span id="cb6-2"><a href=""></a></span>
@@ -1017,7 +1044,7 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="soundpulse-results" class="slide level2 center" data-background-color="#4682B4">
+<section id="soundpulse-results" class="slide level2 center" data-background-color="#4682b4">
 <h2>SoundPulse Results</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -1036,15 +1063,16 @@ Ever felt like this?
 <aside class="notes">
 <p><strong>Results Summary</strong>: Emphasize concrete benefits.</p>
 <ul>
-<li>These outcomes reflect consistent feedback across client organizations that have embraced our framework. The qualitative data tells a compelling story:
+<li><p>These outcomes reflect consistent feedback across client organizations that have embraced our framework. The qualitative data tells a compelling story:</p>
 <ul>
 <li>(PAUSE) Teams are making decisions with much greater speed and confidence</li>
 <li>(PAUSE) Users are discovering more actionable insights in each session</li>
 <li>(PAUSE) And perhaps most telling—stakeholders have shifted from being skeptical to becoming advocates</li>
 </ul></li>
-<li>We’re currently building telemetry into our dashboards to gather more precise measurements…but the message from our users is already clear: this framework is changing how teams interact with their data</li>
-<li>When the testimonial appears: “This kind of transformation is what BID is all about”</li>
-<li>“Remember, this wasn’t just visual changes - this was a fundamental shift in how our users…and developers…approached the dashboard”</li>
+<li><p>We’re currently building telemetry into our dashboards to gather more precise measurements…but the message from our users is already clear: this framework is changing how teams interact with their data</p></li>
+<li><p>When the testimonial appears: “This kind of transformation is what BID is all about”</p></li>
+<li><p>“Remember, this wasn’t just visual changes - this was a fundamental shift in how our users…and developers…approached the dashboard”</p></li>
+<li><p>“While we didn’t collect formal metrics before and after implementation, the qualitative feedback was tremendous. SoundPulse reported dramatically faster decision-making, more insights per session, and a complete transformation in stakeholder satisfaction - from frustration to enthusiasm.”</p></li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1058,7 +1086,7 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="key-takeaways" class="slide level2 center" data-background-color="#4682B4">
+<section id="key-takeaways" class="slide level2 center" data-background-color="#4682b4">
 <h2>Key Takeaways</h2>
 <div>
 <ol type="1">
@@ -1092,7 +1120,7 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="thank-you" class="slide level2 center" data-background-color="#4682B4">
+<section id="thank-you" class="slide level2 center" data-background-color="#4682b4">
 <h2>Thank You!</h2>
 <div class="r-fit-text">
 <p>Questions?</p>

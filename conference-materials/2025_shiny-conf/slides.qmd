@@ -14,7 +14,7 @@ format:
     code-block-background: true
 ---
 
-## The Problem {.center background-color="#4682B4"}
+## The Problem {.center background-color="#4682b4"}
 
 :::: {.columns}
 ::: {.column .nonincremental width="60%"}
@@ -47,7 +47,7 @@ format:
 <br>
 
 ::: {.r-fit-text}
-By shifting the focus from <span style="color:#D55E00">**cramming data**</span> to <span style="color:#009E73">**crafting stories**</span>
+By shifting the focus from <span style="color:#d55e00">**cramming data**</span> to <span style="color:#009e73">**crafting stories**</span>
 :::
 
 :::: {.columns .fragment}
@@ -75,10 +75,9 @@ SoundPulse's market research team was drowning in data, unable to extract meanin
 - When the GIF appears, pause briefly - people will laugh at the "drowning in paper" visual
 :::
 
-## BID In Action: Dashboard Transformation {.center background-color="#F2F2F2"}
+## BID In Action: Dashboard Transformation {.center background-color="#f2f2f2"}
 
 ::: {.absolute top="80%" left="12%" width="80%"}
-<!-- TODO: exchange for gif? -->
 ![](img/before-bid.png)
 :::
 
@@ -94,7 +93,7 @@ SoundPulse's market research team was drowning in data, unable to extract meanin
   * No one wants to use a dashboard like this...and no one will...UIs like this are a major contributor to dashboard rot
 :::
 
-## Behavior Insight Design (BID) Framework {background-color="#E6F0FF"}
+## Behavior Insight Design (BID) Framework {background-color="#e6f0ff"}
 
 ::: {.absolute left="7%" width="90%"}
 ![](img/bid-framework.png)
@@ -129,7 +128,7 @@ SoundPulse's market research team was drowning in data, unable to extract meanin
 - Personal anecdote: "We developed this framework after seeing the same patterns of dashboard failure across industries"
 :::
 
-## Where BID Fits In {background-color="#F2F2F2"}
+## Where BID Fits In {background-color="#f2f2f2"}
 
 ::: {.d-flex .align-items-center}
 ![](img/newton-portrait.jpg){width="15%" style="float:left; margin-right:15px;"}
@@ -164,40 +163,53 @@ SoundPulse's market research team was drowning in data, unable to extract meanin
   * The ultimate goal of the BID framework is to helping end users gain clearer insights from dashboards...while giving developers a structured approach to building more effective applications
 :::
 
-## SoundPulse Case Study: BID Stages 1-3 {background-color="#F9F9F9"}
+## SoundPulse Case Study: BID Stages 1-3 {background-color="#f9f9f9"}
 
-:::: {.columns}
-::: {.column width="50%"}
-- **Stage 1: Notice**
-  * Complex filtering overwhelmed users (Cognitive Load)
-  * 72% users reported confusion (Hick's Law)
+:::: {.columns .nonincremental .r-fit-text}
 
-- **Stage 2: Interpret**
-  * Intuitive visualizations (Processing Fluency)
-  * Clearer key insights (Data Storytelling)
+::: {.column width="32%"}
+- <span style="color:#1c6d7d">**Stage 1: Notice**</span>
+  * Complex filtering overwhelmed users (*Cognitive Load*)
+  * 72% users reported confusion (*Hick's Law*)
 :::
 
-::: {.column width="50%"}
-- **Stage 3: Structure**
-  * Group related elements (Principle of Proximity)
-  * Prioritization of metrics (Dual-Processing Theory)
-
-<!-- TODO: consider adding a visual? otherwise, clean up text more -->
-<!-- ![](img/small-dashboard-snippet.png){width="80%"} -->
+::: {.column width="32%"}
+- <span style="color:#35a4ae">**Stage 2: Interpret**</span>
+  * Intuitive visualizations (*Processing Fluency*)
+  * Clearer key insights<br>(*Data Storytelling*)
 :::
+
+::: {.column width="32%"}
+- <span style="color:#ff9000">**Stage 3: Structure**</span>
+  * Group related elements (*Principle of Proximity*)
+  * Prioritization of metrics (*Dual-Processing Theory*)
+:::
+
 ::::
 
-::: {.notes}
-**Case Study Setup**: Establish context for upcoming code examples.
-
-- "Let's see how we assessed some of the challenges SoundPulse faced and how we applied the first 3 stages of the BID framework to address them"
-- For Stage 1 (Notice): "They identified how filtering complexity was causing cognitive overload"
-- For Stage 2 (Interpret): "They discovered users needed to process key metrics instantly"
-- For Stage 3 (Structure): "They needed to group related elements and establish clear visual hierarchy"
-- "Now let's look at how we implemented these principles using {reactable}..."
+::: {.absolute bottom="15%" left="15%" width="70%" height="30%"}
+![](img/bid-framework.png)
 :::
 
-## {reactable} Implementation: Visual Result {background-color="#F9F9F9"}
+::: {.notes}
+**Case Study Introduction (1-1.5 min):**
+
+- "So...let's take a look at how we used this framework to help SoundPulse refactor their dashboard."
+- **Stage 1 (Notice):** The first thing we noticed...as I'm sure you all of you did as well...was that users were overwhelmed with options - dropdown menus and complex tables
+  * This is what we call 'cognitive load' - when the brain gets overtaxed with information.
+  * We also identified a violation of Hick's Law, which simply means that more choices lead to longer decision times and confusion.
+- **Stage 2 (Interpret):** Once we identified these issues, we focused on something called 'Processing Fluency' - making information easier to digest.
+  * This meant using color-coding and visual patterns that the brain can process instantly without conscious effort.
+  * You'll see in our code examples in a moment just how we implemented this with color scales in reactable.
+- **Stage 3 (Structure):** "We then restructured using the 'Principle of Proximity' - which is a fancy way of saying we started grouping related elements. 
+  * Now there are a ton of ways you can do this
+  * As you'll see in our code example, we redesigned the layout to visually group metrics that belong together, and highlight the metrics that mattered most to create a natural flow through the data
+- Now you don't need to know all of these concepts to use the framework...we'll come back to that
+  * Don't need to be a psychologist to use the framework
+- But first Milena is going to show you *how* we translated these concepts into code...
+:::
+
+## {reactable} Implementation: Visual Result {background-color="#f9f9f9"}
 
 ::: {.r-stack style="text-align:center"}
 ![](img/reactable-ex1.png){width="100%"}
@@ -225,7 +237,7 @@ SoundPulse's market research team was drowning in data, unable to extract meanin
 - Transition: "Now let's look at our final reactable example with team collaboration features..."
 :::
 
-## Implementation Demo: {reactable} Basics {background-color="#F9F9F9"}
+## Implementation Demo: {reactable} Basics {background-color="#f9f9f9"}
 
 ::: {.r-fit-text}
 Using `{reactable}` to implement Stages 1-3
@@ -247,7 +259,7 @@ reactable(
                color = "#006666", fontWeight = "bold")
         } else if (value < 30) {
           list(background = "rgba(255, 140, 0, 0.2)", 
-               color = "#DD8500", fontWeight = "bold")
+               color = "#dd8500", fontWeight = "bold")
         }
       }
     )
@@ -266,7 +278,7 @@ reactable(
 - Transition: "Now let's add more advanced features to handle Stage 3 principles..."
 :::
 
-## Implementation Demo: {reactable} Advanced {background-color="#F9F9F9"}
+## Implementation Demo: {reactable} Advanced {background-color="#f9f9f9"}
 
 ::: {.r-fit-text}
 Enhanced Implementation with Bar Charts, Grouping, and Progressive Disclosure
@@ -317,38 +329,42 @@ reactable(
 - Transition: "Now let's see how these principles look in the final implementation..."
 :::
 
-## SoundPulse Case Study: BID Stages 4-5 {background-color="#F9F9F9"}
+## SoundPulse Case Study: BID Stages 4-5 {background-color="#f9f9f9"}
 
-:::: {.columns}
-::: {.column width="50%"}
+:::: {.columns .nonincremental .r-fit-text}
 
-- **Stage 4: Anticipate**
-  * Executives comparing metrics without context (Anchoring Effect)
-  * Teams interpreting data differently (Confirmation Bias)
-  * Different perspectives needed for different teams (Framing & Loss Aversion)
+::: {.column width="48%"}
+- <span style="color:#ffca90">**Stage 4: Anticipate**</span>
+  * Executives comparing metrics without context (*Anchoring Effect*)
+  * Teams interpreting data differently (*Confirmation Bias*)
+  * Different perspectives needed for different teams (*Framing & Loss Aversion*)
 :::
 
-::: {.column width="50%"}
-- **Stage 5: Validate**
-  * Teams needed actionable summaries (Peak-End Rule)
-  * No clear path to consensus (Cooperation & Coordination)
-
-<!-- TODO: consider adding a visual? otherwise, reorganize text -->
-<!-- ![](img/small-dashboard-snippet2.png){width="80%"} -->
+::: {.column width="48%"}
+- <span style="color:#98d3ca">**Stage 5: Validate**</span>
+  * Teams needed actionable summaries (*Peak-End Rule*)
+  * No clear path to consensus<br>(*Cooperation & Coordination*)
 :::
 ::::
 
-::: {.notes}
-**Advanced Stages Case Study**: Set up context for echarts4r examples.
-
-- "Now we'll look at how we tackled the later stages of the BID framework in SoundPulse's dashboard..."
-- For Stage 4 (Anticipate): "We needed to address how cognitive biases were affecting their interpretations of the data"
-- For Stage 5 (Validate): "We needed to create lasting impressions and facilitate team consensus"
-- "These stages address the subtler psychological aspects of data interpretation"
-- "Now let's see how we implemented these principles using {echarts4r}"
+::: {.absolute bottom="15%" left="15%" width="70%" height="30%"}
+![](img/bid-framework.png)
 :::
 
-## {echarts4r} Implementation: Visual Result {background-color="#F9F9F9"}
+::: {.notes}
+**Later stages:** Setup for echarts examples
+
+- "For the later stages of the BID framework, we addressed more subtle psychological factors that affect how users interpret and act on data."
+- **Stage 4 (Anticipate):** "We noticed executives were making flawed comparisons without proper context.
+  * This relates to the 'Anchoring Effect' - where people rely too heavily on the first piece of information they see
+  * As you'll see in our echarts4r example, we added dynamic benchmark lines to provide meaningful context
+  * We also implemented a 'Framing Toggle' to address how different teams focus on different perspectives on the same data."
+- **Stage 5 (Validate):** "Finally, we applied the 'Peak-End Rule' - the principle that people judge experiences mainly by their most intense point and how they end.
+  * Our code example shows how we created summary cards that highlight key takeaways, ensuring users walk away with the most important insights."
+- Let's take a closer look at that code now...
+:::
+
+## {echarts4r} Implementation: Visual Result {background-color="#f9f9f9"}
 
 ::: {.r-fit-text}
 Complete Dashboard with Multiple BID Principles
@@ -379,7 +395,7 @@ Complete Dashboard with Multiple BID Principles
 - Transition: "Now let's look at how framing affects decision-making in more detail..."
 :::
 
-## Implementation Demo: {echarts4r} Basics {background-color="#F9F9F9"}
+## Implementation Demo: {echarts4r} Basics {background-color="#f9f9f9"}
 
 ::: {.r-fit-text}
 Using `{echarts4r}` to implement Stages 4-5
@@ -432,7 +448,7 @@ create_static_gauge <- function(value, column_name, tooltip_text = NULL) {
 - Transition: "Now let's add reference benchmarks to address the Anchoring Effect..."
 :::
 
-## Implementation Demo: {echarts4r} Reference Lines {background-color="#F9F9F9"}
+## Implementation Demo: {echarts4r} Reference Lines {background-color="#f9f9f9"}
 
 ::: {.r-fit-text}
 Adding Benchmark References to Address Anchoring Effect
@@ -481,7 +497,7 @@ layout_columns(
 - Transition: "Now let's look at our most sophisticated implementation - the framing toggle..."
 :::
 
-## Implementation Demo: {echarts4r} Framing Toggle {background-color="#F9F9F9"}
+## Implementation Demo: {echarts4r} Framing Toggle {background-color="#f9f9f9"}
 
 ::: {.r-fit-text}
 Implementing Framing & Loss Aversion Principles with Interactive Toggle
@@ -550,7 +566,7 @@ tags$script(HTML("
 - Transition: "Now let's see how these elements come together in the complete dashboard..."
 :::
 
-## Interactive Demonstration: Framing Effect {background-color="#E6F0FF"}
+## Interactive Demonstration: Framing Effect {background-color="#e6f0ff"}
 
 ### How Framing Affects Perception & Decision-Making
 
@@ -594,7 +610,7 @@ tags$script(HTML("
 - Transition: "Now let's talk about how we're making these principles accessible to every developer..."
 :::
 
-## From Framework to Workflow: Introducing {bidux} {.center background-color="#E6F0FF"}
+## From Framework to Workflow: Introducing {bidux} {.center background-color="#e6f0ff"}
 
 :::: {.columns}
 ::: {.column width="48%"}
@@ -628,7 +644,7 @@ tags$script(HTML("
 - "This is in active development - and not quite stable yet, but please stay tuned"
 :::
 
-## What {bidux} Looks Like Today {background-color="#F9F9F9"}
+## What {bidux} Looks Like Today {background-color="#f9f9f9"}
 
 ```r
 library(bidux)
@@ -667,7 +683,7 @@ More at: [github.com/jrwinget/bidux](https://github.com/jrwinget/bidux)
 - When the link appears: "We're launching this at ShinyConf today - check out the repo"
 :::
 
-## SoundPulse Results {.center background-color="#4682B4"}
+## SoundPulse Results {.center background-color="#4682b4"}
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -698,9 +714,11 @@ More at: [github.com/jrwinget/bidux](https://github.com/jrwinget/bidux)
 - We're currently building telemetry into our dashboards to gather more precise measurements...but the message from our users is already clear: this framework is changing how teams interact with their data
 - When the testimonial appears: "This kind of transformation is what BID is all about"
 - "Remember, this wasn't just visual changes - this was a fundamental shift in how our users...and developers...approached the dashboard"
+
+- "While we didn't collect formal metrics before and after implementation, the qualitative feedback was tremendous. SoundPulse reported dramatically faster decision-making, more insights per session, and a complete transformation in stakeholder satisfaction - from frustration to enthusiasm."
 :::
 
-## Key Takeaways {.center background-color="#4682B4"}
+## Key Takeaways {.center background-color="#4682b4"}
 
 ::: {.nonincremental}
 1. **BID** helps reduce friction and improve decisions
@@ -722,7 +740,7 @@ More at: [github.com/jrwinget/bidux](https://github.com/jrwinget/bidux)
 - Transition: "Thank you for your attention - we're excited to take your questions"
 :::
 
-## Thank You! {.center background-color="#4682B4"}
+## Thank You! {.center background-color="#4682b4"}
 
 ::: {.r-fit-text}
 Questions?
