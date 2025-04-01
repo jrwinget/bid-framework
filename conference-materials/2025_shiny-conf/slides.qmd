@@ -60,7 +60,7 @@ SoundPulse's market research team was drowning in data, unable to extract meanin
 ::: {.column width="40%"}
 <br>
 
-![](img/SoundPulseLogo.png){width="100%"}
+![](img/soundpulse-logo.png){width="100%"}
 :::
 ::::
 
@@ -78,7 +78,7 @@ SoundPulse's market research team was drowning in data, unable to extract meanin
 ## BID In Action: Dashboard Transformation {.center background-color="#F2F2F2"}
 
 ::: {.absolute top="80%" left="12%" width="80%"}
-<!-- TODO: exchange for gif -->
+<!-- TODO: exchange for gif? -->
 ![](img/before-bid.png)
 :::
 
@@ -185,15 +185,15 @@ SoundPulse's market research team was drowning in data, unable to extract meanin
 ## {reactable} Implementation: Visual Result {background-color="#F9F9F9"}
 
 ::: {.r-stack style="text-align:center"}
-![](img/Screenshot_examples_reactable_1.png){width="100%"}
+![](img/reactable-ex1.png){width="100%"}
 
-![](img/Screenshot_examples_reactable_2.png){.fragment width="100%"}
+![](img/reactable-ex2.png){.fragment width="100%"}
 
-![](img/Screenshot_examples_reactable_3.png){.fragment width="100%"}
+![](img/reactable-ex3.png){.fragment width="100%"}
 
-![](img/Screenshot_examples_reactable_4.png){.fragment width="100%"}
+![](img/reactable-ex4.png){.fragment width="100%"}
 
-![](img/Screenshot_examples_reactable_5.png){.fragment width="100%"}
+![](img/reactable-ex5.png){.fragment width="100%"}
 :::
 
 ::: {.notes}
@@ -340,13 +340,13 @@ Complete Dashboard with Multiple BID Principles
 :::
 
 ::: {.r-stack style="text-align:center"}
-![](img/Screenshot_examples_echarts4r_1.png){width="75%"}
+![](img/echarts4r-ex1.png){width="75%"}
 
-![](img/Screenshot_examples_echarts4r_2.png){.fragment width="75%"}
+![](img/echarts4r-ex2.png){.fragment width="75%"}
 
-![](img/Screenshot_examples_echarts4r_3.png){.fragment width="75%"}
+![](img/echarts4r-ex3.png){.fragment width="75%"}
 
-![](img/Screenshot_examples_echarts4r_4.png){.fragment width="75%"}
+![](img/echarts4r-ex4.png){.fragment width="75%"}
 :::
 
 ::: {.notes}
