@@ -17,7 +17,7 @@ format:
 ## The Problem {.center background-color="#4682B4"}
 
 :::: {.columns}
-::: {.column width="60%"}
+::: {.column .nonincremental width="60%"}
 <h3>Ever felt like this?</h3>
 
 - Endless dropdown menus
@@ -60,7 +60,7 @@ SoundPulse's market research team was drowning in data, unable to extract meanin
 ::: {.column width="40%"}
 <br>
 
-![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXFwNHV6N3B4cmIzaTY3ajYwYTRkNG95ZWtxdjB5cTE1djRibGRydCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT0BKiK5sOCVdBUhiM/giphy.gif){width="90%"}
+![](img/SoundPulseLogo.png){width="100%"}
 :::
 ::::
 
@@ -213,6 +213,34 @@ A 5-Stage Behavior Insight Design Framework
 - Transition: "We'll start with a basic implementation and build up to more advanced features"
 :::
 
+## {reactable} Implementation: Visual Result {background-color="#F9F9F9"}
+
+::: {.r-stack style="text-align:center"}
+![](img/Screenshot_examples_reactable_1.png){width="100%"}
+
+![](img/Screenshot_examples_reactable_2.png){.fragment width="100%"}
+
+![](img/Screenshot_examples_reactable_3.png){.fragment width="100%"}
+
+![](img/Screenshot_examples_reactable_4.png){.fragment width="100%"}
+
+![](img/Screenshot_examples_reactable_5.png){.fragment width="100%"}
+:::
+
+::: {.notes}
+**Visual Impact**: Connect code to visual results.
+
+- "Here's what our reactable implementation looks like in practice"
+- For each image as it appears:
+  * First image: "Notice how the grouped bars implement Stage 1 principles by reducing cognitive load"
+  * Second image: "The dynamic legend addresses Hick's Law by simplifying choices"
+  * Third image: "Color coding enhances processing fluency from Stage 2"
+  * Fourth image: "The grouping clearly implements the Principle of Proximity from Stage 3"
+- "Each of these visual elements directly ties to a principle from the BID framework"
+- "This is the power of intentional design - every element has a psychological purpose"
+- Transition: "Now let's look at our final reactable example with team collaboration features..."
+:::
+
 ## Implementation Demo: {reactable} Basics {background-color="#F9F9F9"}
 
 ::: {.r-fit-text}
@@ -305,34 +333,6 @@ reactable(
 - Transition: "Now let's see how these principles look in the final implementation..."
 :::
 
-## {reactable} Implementation: Visual Result {background-color="#F9F9F9"}
-
-::: {.r-stack style="text-align:center"}
-![](img/Screenshot_examples_reactable_1.png){width="100%"}
-
-![](img/Screenshot_examples_reactable_2.png){.fragment width="100%"}
-
-![](img/Screenshot_examples_reactable_3.png){.fragment width="100%"}
-
-![](img/Screenshot_examples_reactable_4.png){.fragment width="100%"}
-
-![](img/Screenshot_examples_reactable_5.png){.fragment width="100%"}
-:::
-
-::: {.notes}
-**Visual Impact**: Connect code to visual results.
-
-- "Here's what our reactable implementation looks like in practice"
-- For each image as it appears:
-  * First image: "Notice how the grouped bars implement Stage 1 principles by reducing cognitive load"
-  * Second image: "The dynamic legend addresses Hick's Law by simplifying choices"
-  * Third image: "Color coding enhances processing fluency from Stage 2"
-  * Fourth image: "The grouping clearly implements the Principle of Proximity from Stage 3"
-- "Each of these visual elements directly ties to a principle from the BID framework"
-- "This is the power of intentional design - every element has a psychological purpose"
-- Transition: "Now let's look at our final reactable example with team collaboration features..."
-:::
-
 ## {reactable} Implementation: Team Collaboration {background-color="#F9F9F9"}
 
 ```r
@@ -387,6 +387,37 @@ columns = list(
 - "This transforms the dashboard from a static display to a collaborative decision-making tool"
 - "Similar features in tools like Google Sheets have transformed how teams work - we can bring that same power to Shiny"
 - Transition: "Now that we've seen how to implement Stages 1-3 with reactable, let's move to Stages 4-5..."
+:::
+
+## {echarts4r} Implementation: Visual Result {background-color="#F9F9F9"}
+
+::: {.r-fit-text}
+Complete Dashboard with Multiple BID Principles
+:::
+
+::: {.r-stack style="text-align:center"}
+![](img/Screenshot_examples_echarts4r_1.png){width="75%"}
+
+![](img/Screenshot_examples_echarts4r_2.png){.fragment width="75%"}
+
+![](img/Screenshot_examples_echarts4r_3.png){.fragment width="75%"}
+
+![](img/Screenshot_examples_echarts4r_4.png){.fragment width="75%"}
+:::
+
+::: {.notes}
+**Complete Dashboard**: Show the integrated result.
+
+- "Here's the complete dashboard implementing multiple BID principles with echarts4r"
+- For each image as it appears:
+  * First image: "The gauge charts provide instant comprehension while reference lines provide anchoring"
+  * Second image: "The framing toggle allows different perspectives on the same data"
+  * Third image: "The summary cards implement the Peak-End Rule from Stage 5"
+- "Notice how the consistent visual design implements the Beautiful-Is-Good Stereotype from Stage 5"
+- "The card-based layout creates clear visual hierarchy and reduces cognitive load"
+- "Every element in this dashboard has a specific psychological purpose"
+- "This is what we mean by behavior-informed design - intentional choices based on how humans think"
+- Transition: "Now let's look at how framing affects decision-making in more detail..."
 :::
 
 ## Case Study: Stages 4-5 {background-color="#F9F9F9"}
@@ -599,37 +630,6 @@ tags$script(HTML("
 - "This is a powerful example of how design choices influence decision-making"
 - Interactive moment: "Let me show you how this works in practice..." (if possible, demonstrate live)
 - Transition: "Now let's see how these elements come together in the complete dashboard..."
-:::
-
-## {echarts4r} Implementation: Visual Result {background-color="#F9F9F9"}
-
-::: {.r-fit-text}
-Complete Dashboard with Multiple BID Principles
-:::
-
-::: {.r-stack style="text-align:center"}
-![](img/Screenshot_examples_echarts4r_1.png){width="75%"}
-
-![](img/Screenshot_examples_echarts4r_2.png){.fragment width="75%"}
-
-![](img/Screenshot_examples_echarts4r_3.png){.fragment width="75%"}
-
-![](img/Screenshot_examples_echarts4r_4.png){.fragment width="75%"}
-:::
-
-::: {.notes}
-**Complete Dashboard**: Show the integrated result.
-
-- "Here's the complete dashboard implementing multiple BID principles with echarts4r"
-- For each image as it appears:
-  * First image: "The gauge charts provide instant comprehension while reference lines provide anchoring"
-  * Second image: "The framing toggle allows different perspectives on the same data"
-  * Third image: "The summary cards implement the Peak-End Rule from Stage 5"
-- "Notice how the consistent visual design implements the Beautiful-Is-Good Stereotype from Stage 5"
-- "The card-based layout creates clear visual hierarchy and reduces cognitive load"
-- "Every element in this dashboard has a specific psychological purpose"
-- "This is what we mean by behavior-informed design - intentional choices based on how humans think"
-- Transition: "Now let's look at how framing affects decision-making in more detail..."
 :::
 
 ## Interactive Demonstration: Framing Effect {background-color="#E6F0FF"}
