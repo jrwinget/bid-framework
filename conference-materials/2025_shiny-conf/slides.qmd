@@ -238,33 +238,34 @@ SoundPulse's market research team was drowning in data, unable to extract meanin
 
 ## {reactable} Implementation: Basics {background-color="#f9f9f9"}
 
-```r
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "4-5|6-18|19-23"
+
+# Packages: reactable, dplyr, bslib
 reactable(
   soundpulse_data,
-  # Stage 1: Cognitive Load Theory - Grouped structure reduces complexity
-  groupBy = "Claim",
-  
-  # Stage 2: Processing Fluency - Color coding for instant insights
+  # Stage 1: Reduce cognitive load with grouped structure
+  groupBy = "Song",
+  # Stage 2: Enhance processing fluency with color coding
   columns = list(
-    Metric1 = colDef(
+    `Metric 1` = colDef(
       style = function(value) {
-        # Color coding enhances processing fluency
-        if (value > 50) {
-          list(
-            background = "rgba(0, 128, 128, 0.2)", 
-            color = "#006666",
-            fontWeight = "bold"
-          )
-        } else if (value < 30) {
-          list(
-            background = "rgba(255, 140, 0, 0.2)", 
-            color = "#dd8500",
-            fontWeight = "bold"
-          )
-        }
+        # Color coding for instant comprehension
+        case_when(
+          value > 60 ~ list(background = "#1c6d7d", color = "white"),
+          value > 40 ~ list(background = "#35a4ae", color = "white"),
+          TRUE ~ list(background = "#ffca90", color = "black")
+        )
       }
     )
-  )
+  ),
+  # Stage 1: Progressive disclosure reduces overload
+  details = function(index) {
+    song_details <- filter(details_data, song_id == soundpulse_data$Song[index])
+    card(reactable(song_details, outlined = TRUE))
+  }
 )
 ```
 
@@ -281,40 +282,60 @@ reactable(
 
 ## {reactable} Implementation: Advanced {background-color="#f9f9f9"}
 
-```r
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "4-14|15-49"
+
+# Packages: reactable, dplyr, bslib
 reactable(
   soundpulse_data,
-  # Stage 3: Principle of Proximity - Group related elements visually
+  # Stage 3: Group related elements (Principle of Proximity)
   columnGroups = list(
     colGroup(
-      name = "System 1 - Quick Insights", 
-      columns = c("Metric1", "Metric2")
+      name = "Core Metrics",
+      columns = c("Metric 1", "Metric 2", "Metric 3", "Metric 4")
     ),
     colGroup(
-      name = "System 2 - Detailed Analysis", 
-      columns = c("Metric3", "Metric4")
+      name = "Key Performance",
+      columns = c("KPI 1", "KPI 2", "KPI 3")
     )
   ),
-  
-  # Stage 2 & 3: Enhanced Processing Fluency with bar charts
+  # Stage 1: Dynamic legend reduces choice complexity (Hick's Law)
+  defaultColDef = colDef(
+    header = function(value) {
+      layout_inline(
+        value,
+        span(
+          style = css(
+            display = "inline-block",
+            margin_left = "5px",
+            height = "10px", 
+            width = "10px",
+            border_radius = "50%",
+            background_color = "#1c6d7d"
+          )
+        )
+      )
+    }
+  ),
+  # Combine multiple visual elements for age groups
   columns = list(
-    Metric1 = colDef(
-      cell = function(value) create_bar_chart_cell(value, "metric1"),
-      html = TRUE
+    Age = colDef(
+      cell = function(value) {
+        colors <- c(
+          "18-24" = "#1c6d7d",
+          "25-34" = "#35a4ae", 
+          "35-44" = "#98d3ca",
+          "45-54" = "#ffca90",
+          "55-64" = "#1c6d7d",
+          "65-74" = "#dd8500"
+          )
+        
+        span(value, style = css(color = colors[value], font_weight = "bold"))
+      }
     )
-  ),
-  
-  # Progressive disclosure supports Cognitive Load Theory
-  details = function(index) {
-    # Only show details when requested
-    detailed_data <- segment_details[
-      segment_details$claim_id == soundpulse_data$Claim[index], 
-    ]
-    div(
-      style = "padding: 1rem",
-      reactable(detailed_data, outlined = TRUE, striped = TRUE)
-    )
-  }
+  )
 )
 ```
 
@@ -395,38 +416,41 @@ reactable(
 
 ## {echarts4r} Implementation: Gauge Chart {background-color="#f9f9f9"}
 
-```r
-# Create a static gauge chart
-create_static_gauge <- function(value, column_name, tooltip_text = NULL) {
-  chart <- e_charts() |>
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "2-21|23-30"
+
+# Packages: echarts4r, bslib
+# Create intuitive gauge chart (Stage 2: Processing Fluency)
+create_gauge_chart <- function(value, title) {
+  e_charts() |>
+    e_title(title) |>
     e_gauge(
       value,
       startAngle = 180,
       endAngle = 0,
-      detail = list(formatter = "{value}%", fontSize = 14),
-      pointer = list(show = FALSE),
+      detail = list(formatter = "{value}%"),
       axisLine = list(
         lineStyle = list(
           color = list(
-            c(round(value / 100, 2), "#1c6d7d"),
-            c(1, "#d2d2d2")
+            c(value/100, "#1c6d7d"),  # Filled portion
+            c(1, "#e9e9e9")           # Empty portion
           ),
-          width = 50
+          width = 30
         )
       )
-    ) |>
-    e_title(column_name)
-    
-  if (!is.null(tooltip_text)) {
-    chart <- chart |> e_tooltip(
-      formatter = htmlwidgets::JS(
-        sprintf("function(params) { return '%s'; }", tooltip_text)
-      )
     )
-  }
-  
-  return(chart)
 }
+
+# Usage in dashboard (or use purrr::map)
+layout_column_wrap(
+  width = 1 / 4,
+  create_gauge_chart(mean(music_data$`Metric 1`), "Metric 1"),
+  create_gauge_chart(mean(music_data$`Metric 2`), "Metric 2"),
+  create_gauge_chart(mean(music_data$`Metric 3`), "Metric 3"),
+  create_gauge_chart(mean(music_data$`Metric 4`), "Metric 4")
+)
 ```
 
 ::: {.notes}
@@ -444,33 +468,39 @@ create_static_gauge <- function(value, column_name, tooltip_text = NULL) {
 
 ## {echarts4r} Implementation: Context {background-color="#f9f9f9"}
 
-```r
-# Create a static bar chart with benchmark
-create_static_bar <- function(
-  value, column_name, benchmark = NULL, 
-  tooltip_text = NULL, frame_type = "progress") {
-  # Chart creation code...
-  
-  # Add benchmark line if provided
-  if (!is.null(benchmark)) {
-    chart <- chart |>
-      e_mark_line(
-        data = list(xAxis = benchmark, name = "Benchmark"),
-        symbol = "none",
-        lineStyle = list(color = "#ff9000", width = 2, type = "dashed"),
-        label = list(show = TRUE, formatter = "{b}: {c}%")
-      )
-  }
-  
-  return(chart)
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "2-21|23-29"
+
+# Packages: echarts4r, bslib
+# Create benchmark bar (Stage 4: Anchoring Effect)
+create_benchmark_bar <- function(value, title, benchmark = 50) {
+  e_charts() |>
+    e_title(title) |>
+    e_bar(
+      value,
+      legend = list(show = FALSE),
+      showBackground = TRUE,
+    ) |>
+    e_flip_coords() |>
+    e_labels(position = "inside") |>
+    e_y_axis(show = FALSE) |>
+    e_x_axis(show = FALSE, min = 0, max = 100) |>
+    e_hide_grid_lines() |>
+    e_mark_line(
+      data = list(yAxis = benchmark),
+      lineStyle = list(color = "#dd8500", type = "dashed", width = 2),
+      label = list(show = TRUE, formatter = "Benchmark")
+    )
 }
 
-# Usage in layout
+# Usage in dashboard (or use purrr::map)
 layout_columns(
-  col_widths = c(4, 4, 4),
-  div(create_static_bar(65, "KPI 1", 50, "Benchmark is industry average")),
-  div(create_static_bar(45, "KPI 2", 50, "Benchmark is industry average")),
-  div(create_static_bar(72, "KPI 3", 50, "Benchmark is industry average"))
+  width = 1 / 3,
+  card(create_benchmark_bar(mean(music_data$popularity), "Popularity")),
+  card(create_benchmark_bar(mean(music_data$danceability), "Danceability")),
+  card(create_benchmark_bar(mean(music_data$energy), "Energy"))
 )
 ```
 
@@ -489,52 +519,71 @@ layout_columns(
 
 ## {echarts4r} Implementation: Framing {background-color="#f9f9f9"}
 
-```r
-# Frame toggle UI
-frame_toggle <- div(
-  class = "frame-toggle-container",
-  span(class = "frame-toggle-label", "Framing:"),
-  div(
-    class = "btn-group",
-    role = "group",
-    `aria-label` = "Framing toggle",
-    tags$button(
-      id = "progress-btn",
-      class = "btn btn-sm btn-primary active",
-      type = "button",
-      "Progress"
-    ),
-    tags$button(
-      id = "gap-btn",
-      class = "btn btn-sm btn-outline-primary",
-      type = "button",
-      "Gap"
-    )
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "2-3|6-12|14-20|23-24|25-40|42-43|45-59"
+
+# Packages: shiny, echarts4r, dplyr, purrr, bslib
+# UI with framing toggle (Stage 4: Framing & Loss Aversion)
+ui <- fluidPage(
+  titlePanel("SoundPulse Dashboard"),
+  
+  # Stage 4: Framing toggle
+  radioButtons(
+    "framing", "Framing:", 
+    choices = c("Progress" = "progress", "Gap" = "gap"),
+    selected = "progress",
+    inline = TRUE
+  ),
+  
+  # Layout for charts using programmatically generated outputs
+  layout_column_wrap(
+    width = 1 / 3,
+    card(echarts4rOutput("chart_popularity")),
+    card(echarts4rOutput("chart_danceability")),
+    card(echarts4rOutput("chart_energy"))
   )
 )
 
-# JavaScript for toggling
-tags$script(HTML("
-  function toggleFraming(framingType) {
-    if (framingType === 'progress') {
-      // Show progress charts, hide gap charts
-      document.querySelectorAll('.framing-chart:nth-child(1)').forEach(function(chart) {
-        chart.classList.remove('hidden-chart');
-      });
-      document.querySelectorAll('.framing-chart:nth-child(2)').forEach(function(chart) {
-        chart.classList.add('hidden-chart');
-      });
-    } else {
-      // Show gap charts, hide progress charts
-      document.querySelectorAll('.framing-chart:nth-child(1)').forEach(function(chart) {
-        chart.classList.add('hidden-chart');
-      });
-      document.querySelectorAll('.framing-chart:nth-child(2)').forEach(function(chart) {
-        chart.classList.remove('hidden-chart');
-      });
-    }
-  }
-"))
+# Server logic
+server <- function(input, output, session) {
+  # Reactive expression for framed data
+  framed_data <- reactive({
+    soundpulse_data |>
+      mutate(
+        display_value = if_else(
+          input$framing == "progress",
+          value,
+          abs(benchmark - value)
+        ),
+        title = if_else(
+          input$framing == "progress",
+          metric,
+          paste0(metric, " Gap")
+        )
+      )
+  })
+  
+  # Grab KPI column names
+  kpi_col_names <- c("popularity", "danceability", "energy")
+  
+  # Generate all chart outputs dynamically
+  walk(kpi_col_names, function(kpi_col) {
+    output_id <- paste0("chart_", kpi_col)
+    
+    output[[output_id]] <- renderEcharts4r({
+      metric_data <- filter(framed_data(), metric == kpi_col)
+      
+      # Function from previous slide
+      create_benchmark_bar(
+        metric_data$display_value,
+        metric_data$title,
+        metric_data$benchmark
+      )
+    })
+  })
+}
 ```
 
 ::: {.notes}
