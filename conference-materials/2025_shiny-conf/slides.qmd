@@ -765,6 +765,8 @@ Questions?
 
 Milena Eickhoff & Jeremy Winget, PhD
 
+![](img/qr_codes_shinyconf.png){.absolute top=-120 right=-60 width="auto" height="250"}
+
 ::: {.notes}
 **Q&A Setup**: Prepare for questions.
 
