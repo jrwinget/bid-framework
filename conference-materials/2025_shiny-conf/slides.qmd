@@ -683,24 +683,44 @@ server <- function(input, output, session) {
 
 ## What {bidux} Looks Like Today {background-color="#f9f9f9"}
 
-```r
-library(bidux)
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "1-2|4-6|8-13|14-24|25-28|30-31|32|33"
 
-# concept dictionary functionality
-processing_fluency <- bid_concept("processing fluency")
-print(processing_fluency)
+# Concept dictionary with fuzzy searching and case-insensitive lookup
+bid_concept("processing fluency")
 
-# BID stage documentation functionality (piped workflow)
+# Search for concepts across UI/UX, psychology, and data viz domains
+viz_concepts <- bid_concepts("visual") 
+paste("Found", nrow(viz_concepts), "visualization-related concepts")
+
+# BID stage documentation and guided suggestions
 project_docs <- bid_notice(
-  problem = "users overwhelmed by filtering options", 
-  theory = "cognitive load theory", # use if wanting to apply specific concept; leave blank if unsure
-  evidence = c("user feedback results", "dashboard telemetry data")
+  problem = "Users overwhelmed by filtering options and dropdown menus",
+  # Theory parameter is optional - will auto-suggest appropriate theory if empty
+  evidence = "Feedback shows 65% of users abandon the dashboard after first use"
 ) |>
   bid_interpret(
-    central_question = "How to simplify?",
-    data_story = list(hook = "Too complex", context = "Many tabs")
+    central_question = "How can we simplify the filtering experience?",
+    # More details are better, but the function will offer suggestions if needed
+    data_story = list(
+      hook = "Dashboard abandonment hurts decision-making",
+      context = "Current UI requires too many decisions before seeing results",
+      resolution = "Simplify filter UI with smart defaults",
+      audience = "Marketing team",
+      metrics = c("Time to insight", "Filter usage")
+    )
+  ) |>
+  bid_structure(
+    layout = "dual_process",
+    concepts = c("Principle of Proximity", "Default Effect")
   )
-print(project_docs)
+
+# Get component suggestions based on your BID analysis
+ui_suggestions <- bid_suggest_components(project_docs, package = "bslib")
+ui_suggestions$component[1]
+ui_suggestions$description[1]
 ```
 
 ::: {.fragment}
@@ -708,15 +728,18 @@ More at: [github.com/jrwinget/bidux](https://github.com/jrwinget/bidux)
 :::
 
 ::: {.notes}
-**Code Example**: Show practical usage of the package.
+**Code Example**: {bidux} introduction
 
-- "The concept dictionary gives you instant access to behavioral principles"
-  * "Each concept includes definition, code examples, and empirical evidence"
-- "The stage documentation functions help structure your design thinking"
-  * "These functions are designed to work together via pipes (cf, tidyverse)"
-- "Documentation becomes part of your development process, not separate"
-- Point out the commented future code to generate excitement
-- "In Phase 2, you'll be able to ..."
+- Let's look at our Phase 1 implementation of the {bidux} package, which we're releasing today.
+- The concept dictionary provides case-insensitive lookups with implementation tips - not just theory, but practical advice on applying each concept.
+- You can search across psychology, UI/UX, and data visualization concepts to find what's most relevant to your problem.
+- The core of the package is a pipeline of functions that guide you through the 5 BID stages:
+  * `bid_notice()` now auto-suggests appropriate theories based on your problem description
+  * `bid_interpret()` helps structure your data story with enhanced details
+  * `bid_structure()` documents your layout decisions and related concepts
+  * Each function provides helpful suggestions as you work
+- When we add the upcoming component suggestion system, you'll get tailored UI recommendations based on your BID analysis - showing exactly how to implement these principles in your Shiny code.
+- This is just Phase 1 - in Phases 2-4, we'll be adding LLM integration and ready-to-use UI components.
 - When the link appears: "We're launching this at ShinyConf today - check out the repo"
 :::
 

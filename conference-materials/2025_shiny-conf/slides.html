@@ -1035,40 +1035,59 @@ Ever felt like this?
 </section>
 <section id="what-bidux-looks-like-today" class="slide level2" data-background-color="#f9f9f9">
 <h2>What {bidux} Looks Like Today</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">library</span>(bidux)</span>
-<span id="cb6-2"><a href=""></a></span>
-<span id="cb6-3"><a href=""></a><span class="co"># concept dictionary functionality</span></span>
-<span id="cb6-4"><a href=""></a>processing_fluency <span class="ot">&lt;-</span> <span class="fu">bid_concept</span>(<span class="st">"processing fluency"</span>)</span>
-<span id="cb6-5"><a href=""></a><span class="fu">print</span>(processing_fluency)</span>
-<span id="cb6-6"><a href=""></a></span>
-<span id="cb6-7"><a href=""></a><span class="co"># BID stage documentation functionality (piped workflow)</span></span>
-<span id="cb6-8"><a href=""></a>project_docs <span class="ot">&lt;-</span> <span class="fu">bid_notice</span>(</span>
-<span id="cb6-9"><a href=""></a>  <span class="at">problem =</span> <span class="st">"users overwhelmed by filtering options"</span>, </span>
-<span id="cb6-10"><a href=""></a>  <span class="at">theory =</span> <span class="st">"cognitive load theory"</span>, <span class="co"># use if wanting to apply specific concept; leave blank if unsure</span></span>
-<span id="cb6-11"><a href=""></a>  <span class="at">evidence =</span> <span class="fu">c</span>(<span class="st">"user feedback results"</span>, <span class="st">"dashboard telemetry data"</span>)</span>
-<span id="cb6-12"><a href=""></a>) <span class="sc">|&gt;</span></span>
-<span id="cb6-13"><a href=""></a>  <span class="fu">bid_interpret</span>(</span>
-<span id="cb6-14"><a href=""></a>    <span class="at">central_question =</span> <span class="st">"How to simplify?"</span>,</span>
-<span id="cb6-15"><a href=""></a>    <span class="at">data_story =</span> <span class="fu">list</span>(<span class="at">hook =</span> <span class="st">"Too complex"</span>, <span class="at">context =</span> <span class="st">"Many tabs"</span>)</span>
-<span id="cb6-16"><a href=""></a>  )</span>
-<span id="cb6-17"><a href=""></a><span class="fu">print</span>(project_docs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6" data-code-line-numbers="1-2|4-6|8-13|14-24|25-28|30-31|32|33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="co"># Concept dictionary with fuzzy searching and case-insensitive lookup</span></span>
+<span id="cb6-2"><a href=""></a><span class="fu">bid_concept</span>(<span class="st">"processing fluency"</span>)</span>
+<span id="cb6-3"><a href=""></a></span>
+<span id="cb6-4"><a href=""></a><span class="co"># Search for concepts across UI/UX, psychology, and data viz domains</span></span>
+<span id="cb6-5"><a href=""></a>viz_concepts <span class="ot">&lt;-</span> <span class="fu">bid_concepts</span>(<span class="st">"visual"</span>) </span>
+<span id="cb6-6"><a href=""></a><span class="fu">paste</span>(<span class="st">"Found"</span>, <span class="fu">nrow</span>(viz_concepts), <span class="st">"visualization-related concepts"</span>)</span>
+<span id="cb6-7"><a href=""></a></span>
+<span id="cb6-8"><a href=""></a><span class="co"># BID stage documentation with automatic theory suggestion</span></span>
+<span id="cb6-9"><a href=""></a>project_docs <span class="ot">&lt;-</span> <span class="fu">bid_notice</span>(</span>
+<span id="cb6-10"><a href=""></a>  <span class="at">problem =</span> <span class="st">"Users overwhelmed by filtering options and dropdown menus"</span>,</span>
+<span id="cb6-11"><a href=""></a>  <span class="co"># Theory parameter is optional - will auto-suggest appropriate theory if empty</span></span>
+<span id="cb6-12"><a href=""></a>  <span class="at">evidence =</span> <span class="st">"Feedback shows 65% of users abandon the dashboard after first use"</span></span>
+<span id="cb6-13"><a href=""></a>) <span class="sc">|&gt;</span></span>
+<span id="cb6-14"><a href=""></a>  <span class="fu">bid_interpret</span>(</span>
+<span id="cb6-15"><a href=""></a>    <span class="at">central_question =</span> <span class="st">"How can we simplify the filtering experience?"</span>,</span>
+<span id="cb6-16"><a href=""></a>    <span class="co"># More details are better, but the function will offer suggestions if needed</span></span>
+<span id="cb6-17"><a href=""></a>    <span class="at">data_story =</span> <span class="fu">list</span>(</span>
+<span id="cb6-18"><a href=""></a>      <span class="at">hook =</span> <span class="st">"Dashboard abandonment hurts decision-making"</span>,</span>
+<span id="cb6-19"><a href=""></a>      <span class="at">context =</span> <span class="st">"Current UI requires too many decisions before seeing results"</span>,</span>
+<span id="cb6-20"><a href=""></a>      <span class="at">resolution =</span> <span class="st">"Simplify filter UI with smart defaults"</span>,</span>
+<span id="cb6-21"><a href=""></a>      <span class="at">audience =</span> <span class="st">"Marketing team"</span>,</span>
+<span id="cb6-22"><a href=""></a>      <span class="at">metrics =</span> <span class="fu">c</span>(<span class="st">"Time to insight"</span>, <span class="st">"Filter usage"</span>)</span>
+<span id="cb6-23"><a href=""></a>    )</span>
+<span id="cb6-24"><a href=""></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb6-25"><a href=""></a>  <span class="fu">bid_structure</span>(</span>
+<span id="cb6-26"><a href=""></a>    <span class="at">layout =</span> <span class="st">"dual_process"</span>,</span>
+<span id="cb6-27"><a href=""></a>    <span class="at">concepts =</span> <span class="fu">c</span>(<span class="st">"Principle of Proximity"</span>, <span class="st">"Default Effect"</span>)</span>
+<span id="cb6-28"><a href=""></a>  )</span>
+<span id="cb6-29"><a href=""></a></span>
+<span id="cb6-30"><a href=""></a><span class="co"># Get component suggestions based on your BID analysis</span></span>
+<span id="cb6-31"><a href=""></a>ui_suggestions <span class="ot">&lt;-</span> <span class="fu">bid_suggest_components</span>(project_docs, <span class="at">package =</span> <span class="st">"bslib"</span>)</span>
+<span id="cb6-32"><a href=""></a>ui_suggestions<span class="sc">$</span>component[<span class="dv">1</span>]</span>
+<span id="cb6-33"><a href=""></a>ui_suggestions<span class="sc">$</span>description[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="fragment">
 <p>More at: <a href="https://github.com/jrwinget/bidux">github.com/jrwinget/bidux</a></p>
 </div>
 <aside class="notes">
-<p><strong>Code Example</strong>: Show practical usage of the package.</p>
+<p><strong>Code Example</strong>: {bidux} introduction</p>
 <ul>
-<li>“The concept dictionary gives you instant access to behavioral principles”
+<li>Let’s look at our Phase 1 implementation of the {bidux} package, which we’re releasing today.</li>
+<li>The concept dictionary provides case-insensitive lookups with implementation tips - not just theory, but practical advice on applying each concept.</li>
+<li>You can search across psychology, UI/UX, and data visualization concepts to find what’s most relevant to your problem.</li>
+<li>The core of the package is a pipeline of functions that guide you through the 5 BID stages:
 <ul>
-<li>“Each concept includes definition, code examples, and empirical evidence”</li>
+<li><code>bid_notice()</code> now auto-suggests appropriate theories based on your problem description</li>
+<li><code>bid_interpret()</code> helps structure your data story with enhanced details</li>
+<li><code>bid_structure()</code> documents your layout decisions and related concepts</li>
+<li>Each function provides helpful suggestions as you work</li>
 </ul></li>
-<li>“The stage documentation functions help structure your design thinking”
-<ul>
-<li>“These functions are designed to work together via pipes (cf, tidyverse)”</li>
-</ul></li>
-<li>“Documentation becomes part of your development process, not separate”</li>
-<li>Point out the commented future code to generate excitement</li>
-<li>“In Phase 2, you’ll be able to …”</li>
+<li>When we add the upcoming component suggestion system, you’ll get tailored UI recommendations based on your BID analysis - showing exactly how to implement these principles in your Shiny code.</li>
+<li>This is just Phase 1 - in Phases 2-4, we’ll be adding LLM integration and ready-to-use UI components.</li>
 <li>When the link appears: “We’re launching this at ShinyConf today - check out the repo”</li>
 </ul>
 <style type="text/css">
