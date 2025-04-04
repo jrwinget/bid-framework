@@ -5,8 +5,8 @@ author: "Milena Eickhoff & Jeremy Winget, PhD"
 format: 
   revealjs:
     theme: simple
-    slide-number: true
-    footer: "ShinyConf 2025 | The BID Framework"
+    slide-number: false
+    footer: "ShinyConf 2025 | Death By Dropdown?"
     incremental: true
     transition: slide
     background-transition: fade
@@ -96,20 +96,21 @@ SoundPulse's market research team was drowning in data, unable to extract meanin
 ![](img/bid-framework.png)
 :::
 
-:::: {.columns .absolute top="58%"}
 
-::: {.column width="27%"}
-1. **Notice** the Problem
+:::: {.columns .absolute top="65%" left="4%" .r-fit-text}
+
+::: {.column width="38%"}
+1. <span style="color:#1c6d7d">**Notice**</span> the Problem
 :::
 
 ::: {.column width="46%"}
-2. **Interpret** the User's Need
-3. **Structure** the Dashboard
-4. **Anticipate** User Behavior
+2. <span style="color:#35a4ae">**Interpret**</span> the User's Need
+3. <span style="color:#ff9000">**Structure**</span> the Dashboard
+4. <span style="color:#ffca90">**Anticipate**</span> User Behavior
 :::
 
-::: {.column width="27%"}
-5. **Validate** & Empower the User
+::: {.column width="16%"}
+5. <span style="color:#98d3ca">**Validate**</span> & Empower the User
 :::
 
 ::::
@@ -122,6 +123,7 @@ SoundPulse's market research team was drowning in data, unable to extract meanin
 - "Each stage translates psychological principles into practical developer actions"
 - "This isn't just theory - it's a step-by-step process you can implement today"
 - "These stages are iterative - you'll often revisit earlier stages as you discover new insights"
+  * Any order
 :::
 
 ## Where BID Fits In {background-color="#f2f2f2"}
@@ -148,10 +150,15 @@ SoundPulse's market research team was drowning in data, unable to extract meanin
 
 ::::
 
+::: {.callout-note .mt-3}
+**Key Differentiator**: Process-oriented framework vs. typical checklist approach
+:::
+
 ::: {.notes}
 **Context Setting**: Position the framework within the broader fields.
 
 - "BID integrates existing best practices from multiple disciplines"..."We're truly standing on the shoulders of giants here"
+  * Click through example fields...UX, data storytelling, psych science, data/visual communication
 - Key differentiator: "But what makes BID unique is its process-oriented framework vs. a typical checklist approach"
 - "The goal is helping users gain clearer insights while giving developers a tool to use in their workflows"
 - "Even though there's a lot of theory, you don't need a psychology degree to apply these principles effectively"
@@ -757,15 +764,28 @@ More at: [github.com/jrwinget/bidux](https://github.com/jrwinget/bidux)
 - "This is about making your users successful, not just making dashboards"
 :::
 
-## Thank You! {.center background-color="#4682b4"}
+## {data-background-image="img/thank-you.png" data-background-size="100% 100%"}
 
-::: {.r-fit-text}
-Questions?
+<!-- TODO: replace background image with css and brand elements in img -->
+
+<br>
+<br>
+
+:::: {.columns}
+::: {.column width="55%" .r-fit-text}
+### Milena Eickhoff {style="color: white;"}
+![](img/headshot-eickhoff.jpg){width="80px" height="80px" style="border-radius: 50%;"}
+![](img/qr-linkedin-eickhoff.svg){width="80px" height="80px"}
+
+### Jeremy Winget, PhD {style="color: white;"}
+![](img/headshot-winget.jpg){width="80px" height="80px" style="border-radius: 50%;"}
+![](img/qr-linkedin-winget.svg){width="80px" height="80px"}
+
+
+![](img/lets-connect.png){width="50%"}
 :::
+::::
 
-Milena Eickhoff & Jeremy Winget, PhD
-
-![](img/qr_codes_shinyconf.png){.absolute top=-120 right=-60 width="auto" height="250"}
 
 ::: {.notes}
 **Q&A Setup**: Prepare for questions.
