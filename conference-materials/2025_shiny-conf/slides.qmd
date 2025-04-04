@@ -657,24 +657,89 @@ server <- function(input, output, session) {
 
 ## What {bidux} Looks Like Today {background-color="#f9f9f9"}
 
+::: {.panel-tabset}
+
+### Concepts
+
+::: {.r-stack}
+::: {.fragment .fade-out}
 ```{r}
-#| eval: false
 #| echo: true
-#| code-line-numbers: "1-2|4-6|8-13|14-24|25-28|30-31|32|33"
+library(bidux)
 
 # Concept dictionary with fuzzy searching and case-insensitive lookup
 bid_concept("processing fluency")
+```
+:::
 
-# Search for concepts across UI/UX, psychology, and data viz domains
-viz_concepts <- bid_concepts("visual") 
+::: {.fragment .fade-in-then-out}
+```{r}
+#| echo: true
+
+# Concept dictionary with fuzzy searching and case-insensitive lookup
+bid_concept("processing fluency")$description
+bid_concept("processing fluency")$implementation_tips
+```
+:::
+
+::: {.fragment}
+```{r}
+#| echo: true
+
+# Concept dictionary with fuzzy searching and case-insensitive lookup
+viz_concepts <- bid_concepts("vis") 
 paste("Found", nrow(viz_concepts), "visualization-related concepts")
+```
+:::
+:::
 
-# BID stage documentation and guided suggestions
-project_docs <- bid_notice(
+### Notice
+
+::: {.r-stack}
+::: {.fragment .fade-out}
+```{r}
+#| echo: true
+
+# BID Notice stage
+notice_stage <- bid_notice(
   problem = "Users overwhelmed by filtering options and dropdown menus",
   # Theory parameter is optional - will auto-suggest appropriate theory if empty
   evidence = "Feedback shows 65% of users abandon the dashboard after first use"
-) |>
+)
+
+notice_stage
+notice_stage$theory
+notice_stage$suggestions
+```
+:::
+
+::: {.fragment}
+```{r}
+#| echo: true
+
+# BID Notice stage
+notice_stage <- bid_notice(
+  problem = "Users overwhelmed by filtering options and dropdown menus",
+  theory = "cognitive load",
+  evidence = "Feedback shows 65% of users abandon the dashboard after first use"
+)
+
+notice_stage
+notice_stage$theory
+notice_stage$suggestions
+```
+:::
+:::
+
+### Chained Stages
+
+::: {.r-stack}
+::: {.fragment .fade-out}
+```{r}
+#| echo: true
+
+# BID chained stages
+project_docs <- notice_stage |>
   bid_interpret(
     central_question = "How can we simplify the filtering experience?",
     # More details are better, but the function will offer suggestions if needed
@@ -690,12 +755,46 @@ project_docs <- bid_notice(
     layout = "dual_process",
     concepts = c("Principle of Proximity", "Default Effect")
   )
-
-# Get component suggestions based on your BID analysis
-ui_suggestions <- bid_suggest_components(project_docs, package = "bslib")
-ui_suggestions$component[1]
-ui_suggestions$description[1]
 ```
+:::
+
+::: {.fragment}
+```{r}
+#| echo: true
+
+# BID chained stages output
+project_docs
+project_docs$suggestions
+```
+:::
+:::
+
+### Components
+
+::: {.r-stack}
+::: {.fragment .fade-out}
+```{r}
+#| echo: true
+
+# Get component suggestions based on your BID application
+ui_suggestions <- bid_suggest_components(project_docs, package = "bslib")
+ui_suggestions
+```
+:::
+
+::: {.fragment .fade-in}
+```{r}
+#| echo: true
+
+# Component suggestions output
+ui_suggestions$component
+ui_suggestions$description
+ui_suggestions$code_example
+```
+:::
+:::
+
+:::
 
 ::: {.fragment}
 More at: [github.com/jrwinget/bidux](https://github.com/jrwinget/bidux)
@@ -713,24 +812,20 @@ More at: [github.com/jrwinget/bidux](https://github.com/jrwinget/bidux)
 - When the link appears: "We're launching this at ShinyConf today - check out the repo for full documentation"
 :::
 
-## SoundPulse Results {.center background-color="#4682b4"}
+## Real-World Impact: SoundPulse Results {.center background-color="#4682b4"}
 
 :::: {.columns}
-::: {.column width="50%"}
-### Real-World Impact:
+::: {.column width="50%" .fragment}
+> "The BID framework transformed how we approach our dashboards. What once took weeks of refinement now has clear direction from day one."
+> 
+> — Maya Chen, SoundPulse Research Director
+:::
 
+::: {.column width="50%" .nonincremental .fragment}
 - Dramatically faster decision-making
 - Substantial increase in insights per session
 - Stakeholder satisfaction transformed from frustration to enthusiasm
 - Significantly streamlined implementation of new metrics
-:::
-
-::: {.column width="50%" .fragment}
-### Team Feedback:
-
-"The BID framework transformed how we approach dashboards. What once took weeks of refinement now has clear direction from day one."
-
-— Maya Chen, SoundPulse Research Director
 :::
 ::::
 
@@ -748,7 +843,7 @@ More at: [github.com/jrwinget/bidux](https://github.com/jrwinget/bidux)
 ## Key Takeaways {.center background-color="#4682b4"}
 
 ::: {.nonincremental}
-1. **BID** helps reduce friction and improve decisions
+1. **BID** helps reduce friction and improve decision-making
 2. **`{reactable}` + `{echarts4r}`** help bring BID to life
 3. **`{bidux}`** supports you in applying BID at every stage<br>(try it today!)
 4. Build dashboards that guide — not fry — your users

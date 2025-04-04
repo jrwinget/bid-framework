@@ -1025,40 +1025,184 @@ Ever felt like this?
 </section>
 <section id="what-bidux-looks-like-today" class="slide level2" data-background-color="#f9f9f9">
 <h2>What {bidux} Looks Like Today</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Concepts</a></li><li><a href="#tabset-1-2">Notice</a></li><li><a href="#tabset-1-3">Chained Stages</a></li><li><a href="#tabset-1-4">Components</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="r-stack">
+<div class="fragment fade-out">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6" data-code-line-numbers="1-2|4-6|8-13|14-24|25-28|30-31|32|33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="co"># Concept dictionary with fuzzy searching and case-insensitive lookup</span></span>
-<span id="cb6-2"><a href=""></a><span class="fu">bid_concept</span>(<span class="st">"processing fluency"</span>)</span>
-<span id="cb6-3"><a href=""></a></span>
-<span id="cb6-4"><a href=""></a><span class="co"># Search for concepts across UI/UX, psychology, and data viz domains</span></span>
-<span id="cb6-5"><a href=""></a>viz_concepts <span class="ot">&lt;-</span> <span class="fu">bid_concepts</span>(<span class="st">"visual"</span>) </span>
-<span id="cb6-6"><a href=""></a><span class="fu">paste</span>(<span class="st">"Found"</span>, <span class="fu">nrow</span>(viz_concepts), <span class="st">"visualization-related concepts"</span>)</span>
-<span id="cb6-7"><a href=""></a></span>
-<span id="cb6-8"><a href=""></a><span class="co"># BID stage documentation and guided suggestions</span></span>
-<span id="cb6-9"><a href=""></a>project_docs <span class="ot">&lt;-</span> <span class="fu">bid_notice</span>(</span>
-<span id="cb6-10"><a href=""></a>  <span class="at">problem =</span> <span class="st">"Users overwhelmed by filtering options and dropdown menus"</span>,</span>
-<span id="cb6-11"><a href=""></a>  <span class="co"># Theory parameter is optional - will auto-suggest appropriate theory if empty</span></span>
-<span id="cb6-12"><a href=""></a>  <span class="at">evidence =</span> <span class="st">"Feedback shows 65% of users abandon the dashboard after first use"</span></span>
-<span id="cb6-13"><a href=""></a>) <span class="sc">|&gt;</span></span>
-<span id="cb6-14"><a href=""></a>  <span class="fu">bid_interpret</span>(</span>
-<span id="cb6-15"><a href=""></a>    <span class="at">central_question =</span> <span class="st">"How can we simplify the filtering experience?"</span>,</span>
-<span id="cb6-16"><a href=""></a>    <span class="co"># More details are better, but the function will offer suggestions if needed</span></span>
-<span id="cb6-17"><a href=""></a>    <span class="at">data_story =</span> <span class="fu">list</span>(</span>
-<span id="cb6-18"><a href=""></a>      <span class="at">hook =</span> <span class="st">"Dashboard abandonment hurts decision-making"</span>,</span>
-<span id="cb6-19"><a href=""></a>      <span class="at">context =</span> <span class="st">"Current UI requires too many decisions before seeing results"</span>,</span>
-<span id="cb6-20"><a href=""></a>      <span class="at">resolution =</span> <span class="st">"Simplify filter UI with smart defaults"</span>,</span>
-<span id="cb6-21"><a href=""></a>      <span class="at">audience =</span> <span class="st">"Marketing team"</span>,</span>
-<span id="cb6-22"><a href=""></a>      <span class="at">metrics =</span> <span class="fu">c</span>(<span class="st">"Time to insight"</span>, <span class="st">"Filter usage"</span>)</span>
-<span id="cb6-23"><a href=""></a>    )</span>
-<span id="cb6-24"><a href=""></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb6-25"><a href=""></a>  <span class="fu">bid_structure</span>(</span>
-<span id="cb6-26"><a href=""></a>    <span class="at">layout =</span> <span class="st">"dual_process"</span>,</span>
-<span id="cb6-27"><a href=""></a>    <span class="at">concepts =</span> <span class="fu">c</span>(<span class="st">"Principle of Proximity"</span>, <span class="st">"Default Effect"</span>)</span>
-<span id="cb6-28"><a href=""></a>  )</span>
-<span id="cb6-29"><a href=""></a></span>
-<span id="cb6-30"><a href=""></a><span class="co"># Get component suggestions based on your BID analysis</span></span>
-<span id="cb6-31"><a href=""></a>ui_suggestions <span class="ot">&lt;-</span> <span class="fu">bid_suggest_components</span>(project_docs, <span class="at">package =</span> <span class="st">"bslib"</span>)</span>
-<span id="cb6-32"><a href=""></a>ui_suggestions<span class="sc">$</span>component[<span class="dv">1</span>]</span>
-<span id="cb6-33"><a href=""></a>ui_suggestions<span class="sc">$</span>description[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">library</span>(bidux)</span>
+<span id="cb6-2"><a href=""></a></span>
+<span id="cb6-3"><a href=""></a><span class="co"># Concept dictionary with fuzzy searching and case-insensitive lookup</span></span>
+<span id="cb6-4"><a href=""></a><span class="fu">bid_concept</span>(<span class="st">"processing fluency"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 7
+  concept            description  category reference example implementation_tips
+  &lt;chr&gt;              &lt;chr&gt;        &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;              
+1 Processing Fluency The ease wi… Stage 2  Alter &amp; … Using … Use clean, consist…
+# ℹ 1 more variable: recommendations &lt;chr&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment fade-in-then-out">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="co"># Concept dictionary with fuzzy searching and case-insensitive lookup</span></span>
+<span id="cb8-2"><a href=""></a><span class="fu">bid_concept</span>(<span class="st">"processing fluency"</span>)<span class="sc">$</span>description</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The ease with which information is processed, affecting comprehension and trust."</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="fu">bid_concept</span>(<span class="st">"processing fluency"</span>)<span class="sc">$</span>implementation_tips</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Use clean, consistent typography and simple chart types."</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="co"># Concept dictionary with fuzzy searching and case-insensitive lookup</span></span>
+<span id="cb12-2"><a href=""></a>viz_concepts <span class="ot">&lt;-</span> <span class="fu">bid_concepts</span>(<span class="st">"vis"</span>) </span>
+<span id="cb12-3"><a href=""></a><span class="fu">paste</span>(<span class="st">"Found"</span>, <span class="fu">nrow</span>(viz_concepts), <span class="st">"visualization-related concepts"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Found 5 visualization-related concepts"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="r-stack">
+<div class="fragment fade-out">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a><span class="co"># BID Notice stage</span></span>
+<span id="cb14-2"><a href=""></a>notice_stage <span class="ot">&lt;-</span> <span class="fu">bid_notice</span>(</span>
+<span id="cb14-3"><a href=""></a>  <span class="at">problem =</span> <span class="st">"Users overwhelmed by filtering options and dropdown menus"</span>,</span>
+<span id="cb14-4"><a href=""></a>  <span class="co"># Theory parameter is optional - will auto-suggest appropriate theory if empty</span></span>
+<span id="cb14-5"><a href=""></a>  <span class="at">evidence =</span> <span class="st">"Feedback shows 65% of users abandon the dashboard after first use"</span></span>
+<span id="cb14-6"><a href=""></a>)</span>
+<span id="cb14-7"><a href=""></a></span>
+<span id="cb14-8"><a href=""></a>notice_stage</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 6
+  stage  problem                 theory evidence suggestions timestamp          
+  &lt;chr&gt;  &lt;chr&gt;                   &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;       &lt;dttm&gt;             
+1 Notice Users overwhelmed by f… Hick'… Feedbac… Reduce dro… 2025-04-04 17:13:50</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a>notice_stage<span class="sc">$</span>theory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Hick's Law"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a>notice_stage<span class="sc">$</span>suggestions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Reduce dropdown options or use hierarchical menus for better organization."</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a><span class="co"># BID Notice stage</span></span>
+<span id="cb20-2"><a href=""></a>notice_stage <span class="ot">&lt;-</span> <span class="fu">bid_notice</span>(</span>
+<span id="cb20-3"><a href=""></a>  <span class="at">problem =</span> <span class="st">"Users overwhelmed by filtering options and dropdown menus"</span>,</span>
+<span id="cb20-4"><a href=""></a>  <span class="at">theory =</span> <span class="st">"cognitive load"</span>,</span>
+<span id="cb20-5"><a href=""></a>  <span class="at">evidence =</span> <span class="st">"Feedback shows 65% of users abandon the dashboard after first use"</span></span>
+<span id="cb20-6"><a href=""></a>)</span>
+<span id="cb20-7"><a href=""></a></span>
+<span id="cb20-8"><a href=""></a>notice_stage</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 6
+  stage  problem                 theory evidence suggestions timestamp          
+  &lt;chr&gt;  &lt;chr&gt;                   &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;       &lt;dttm&gt;             
+1 Notice Users overwhelmed by f… cogni… Feedbac… Use tabs o… 2025-04-04 17:13:50</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a>notice_stage<span class="sc">$</span>theory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "cognitive load"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a>notice_stage<span class="sc">$</span>suggestions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Use tabs or collapsible sections to organize complex information."</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-3">
+<div class="r-stack">
+<div class="fragment fade-out">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href=""></a><span class="co"># BID chained stages</span></span>
+<span id="cb26-2"><a href=""></a>project_docs <span class="ot">&lt;-</span> notice_stage <span class="sc">|&gt;</span></span>
+<span id="cb26-3"><a href=""></a>  <span class="fu">bid_interpret</span>(</span>
+<span id="cb26-4"><a href=""></a>    <span class="at">central_question =</span> <span class="st">"How can we simplify the filtering experience?"</span>,</span>
+<span id="cb26-5"><a href=""></a>    <span class="co"># More details are better, but the function will offer suggestions if needed</span></span>
+<span id="cb26-6"><a href=""></a>    <span class="at">data_story =</span> <span class="fu">list</span>(</span>
+<span id="cb26-7"><a href=""></a>      <span class="at">hook =</span> <span class="st">"Dashboard abandonment hurts decision-making"</span>,</span>
+<span id="cb26-8"><a href=""></a>      <span class="at">context =</span> <span class="st">"Current UI requires too many decisions before seeing results"</span>,</span>
+<span id="cb26-9"><a href=""></a>      <span class="at">resolution =</span> <span class="st">"Simplify filter UI with smart defaults"</span>,</span>
+<span id="cb26-10"><a href=""></a>      <span class="at">audience =</span> <span class="st">"Marketing team"</span>,</span>
+<span id="cb26-11"><a href=""></a>      <span class="at">metrics =</span> <span class="fu">c</span>(<span class="st">"Time to insight"</span>, <span class="st">"Filter usage"</span>)</span>
+<span id="cb26-12"><a href=""></a>    )</span>
+<span id="cb26-13"><a href=""></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb26-14"><a href=""></a>  <span class="fu">bid_structure</span>(</span>
+<span id="cb26-15"><a href=""></a>    <span class="at">layout =</span> <span class="st">"dual_process"</span>,</span>
+<span id="cb26-16"><a href=""></a>    <span class="at">concepts =</span> <span class="fu">c</span>(<span class="st">"Principle of Proximity"</span>, <span class="st">"Default Effect"</span>)</span>
+<span id="cb26-17"><a href=""></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a><span class="co"># BID chained stages output</span></span>
+<span id="cb27-2"><a href=""></a>project_docs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 7
+  stage     layout    concepts previous_question previous_story_hook suggestions
+  &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;             &lt;chr&gt;               &lt;chr&gt;      
+1 Structure dual_pro… Princip… How can we simpl… Dashboard abandonm… Consider s…
+# ℹ 1 more variable: timestamp &lt;dttm&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a>project_docs<span class="sc">$</span>suggestions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Consider separating quick insights (System 1) from detailed analysis (System 2). Place related controls and visualizations in proximity to each other. Pre-select the most useful timeframe or metrics for initial view."</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-4">
+<div class="r-stack">
+<div class="fragment fade-out">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a><span class="co"># Get component suggestions based on your BID application</span></span>
+<span id="cb31-2"><a href=""></a>ui_suggestions <span class="ot">&lt;-</span> <span class="fu">bid_suggest_components</span>(project_docs, <span class="at">package =</span> <span class="st">"bslib"</span>)</span>
+<span id="cb31-3"><a href=""></a>ui_suggestions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 4
+  stage     component       description                            code_example 
+  &lt;chr&gt;     &lt;chr&gt;           &lt;chr&gt;                                  &lt;chr&gt;        
+1 Structure navset_card_tab Create tabbed interfaces within a card "navset_card…</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment fade-in">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href=""></a><span class="co"># Component suggestions output</span></span>
+<span id="cb33-2"><a href=""></a>ui_suggestions<span class="sc">$</span>component</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "navset_card_tab"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href=""></a>ui_suggestions<span class="sc">$</span>description</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Create tabbed interfaces within a card"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href=""></a>ui_suggestions<span class="sc">$</span>code_example</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "navset_card_tab(nav_panel(\"Overview\", plotOutput(\"main_plot\")), nav_panel(\"Details\", dataTableOutput(\"data_table\")))"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="fragment">
 <p>More at: <a href="https://github.com/jrwinget/bidux">github.com/jrwinget/bidux</a></p>
@@ -1086,21 +1230,21 @@ Ever felt like this?
           display:block!important;
       }</style></aside>
 </section>
-<section id="soundpulse-results" class="slide level2 center" data-background-color="#4682b4">
-<h2>SoundPulse Results</h2>
+<section id="real-world-impact-soundpulse-results" class="slide level2 center" data-background-color="#4682b4">
+<h2>Real-World Impact: SoundPulse Results</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="real-world-impact">Real-World Impact:</h3>
-<ul>
-<li class="fragment">Dramatically faster decision-making</li>
-<li class="fragment">Substantial increase in insights per session</li>
-<li class="fragment">Stakeholder satisfaction transformed from frustration to enthusiasm</li>
-<li class="fragment">Significantly streamlined implementation of new metrics</li>
-</ul>
-</div><div class="column fragment" style="width:50%;">
-<h3 id="team-feedback">Team Feedback:</h3>
-<p>“The BID framework transformed how we approach dashboards. What once took weeks of refinement now has clear direction from day one.”</p>
+<div class="column fragment" style="width:50%;">
+<blockquote>
+<p>“The BID framework transformed how we approach our dashboards. What once took weeks of refinement now has clear direction from day one.”</p>
 <p>— Maya Chen, SoundPulse Research Director</p>
+</blockquote>
+</div><div class="column fragment" style="width:50%;">
+<ul>
+<li>Dramatically faster decision-making</li>
+<li>Substantial increase in insights per session</li>
+<li>Stakeholder satisfaction transformed from frustration to enthusiasm</li>
+<li>Significantly streamlined implementation of new metrics</li>
+</ul>
 </div></div>
 <aside class="notes">
 <p><strong>Results Summary</strong>: Emphasize real-world impact.</p>
@@ -1128,7 +1272,7 @@ Ever felt like this?
 <h2>Key Takeaways</h2>
 <div>
 <ol type="1">
-<li><strong>BID</strong> helps reduce friction and improve decisions</li>
+<li><strong>BID</strong> helps reduce friction and improve decision-making</li>
 <li><strong><code>{reactable}</code> + <code>{echarts4r}</code></strong> help bring BID to life</li>
 <li><strong><code>{bidux}</code></strong> supports you in applying BID at every stage<br>(try it today!)</li>
 <li>Build dashboards that guide — not fry — your users</li>
