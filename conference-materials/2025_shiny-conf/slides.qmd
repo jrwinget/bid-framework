@@ -136,23 +136,22 @@ SoundPulse's market research team was drowning in data, unable to extract meanin
 > — Isaac Newton
 :::
 
-:::: {.columns}
+:::: {.columns .absolute top="50%" .r-fit-text}
 
-::: {.column}
-- **UX Design**: Beyond heuristic lists to guided process
+::: {.column .fragment }
+- **UX Design**: Established best practices
 - **Data Storytelling**: From data dumps to meaningful narratives
-:::
-
-::: {.column}
 - **Psychological Science**: Evidence-based cognitive principles
 - **Visual Communication**: Optimized for information perception
 :::
 
-::::
+::: {.column .callout-tip .fragment}
+### Key Differentiator
 
-::: {.callout-note .mt-3}
-**Key Differentiator**: Process-oriented framework vs. typical checklist approach
+Process-oriented framework vs. broad checklist approach
 :::
+
+::::
 
 ::: {.notes}
 **Context Setting**: Position the framework within the broader fields.
