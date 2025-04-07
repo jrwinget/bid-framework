@@ -148,7 +148,7 @@ SoundPulse's market research team was drowning in data, unable to extract meanin
 ::: {.column .callout-tip .fragment}
 ### Key Differentiator
 
-Process-oriented framework vs. broad checklist approach
+Systematic integration of behavioral science within the natural dashboard development workflow
 :::
 
 ::::
@@ -156,10 +156,11 @@ Process-oriented framework vs. broad checklist approach
 ::: {.notes}
 **Context Setting**: Position the framework within the broader fields.
 
-- "BID integrates existing best practices from multiple disciplines"..."We're truly standing on the shoulders of giants here"
+- "BID integrates existing best practices from multiple disciplines"..."We are truly standing on the shoulders of giants here"
   * Click through example fields...UX, data storytelling, psych science, data/visual communication
-- Key differentiator: "But what makes BID unique is its process-oriented framework vs. a typical checklist approach"
-- "The goal is helping users gain clearer insights while giving developers a tool to use in their workflows"
+- Key differentiator: "But what makes BID uniquely powerful is how it systematically connects psychological principles to specific coding decisions at each stage of development"
+- "Unlike checklists that tell you what to do, BID guides how you think about your dashboard from psychological first principles"
+- "The framework bridges theory and practice - showing not just what principles matter, but exactly when and how to apply them in your development workflow"
 - "Even though there's a lot of theory, you don't need a psychology degree to apply these principles effectively"
 - "To demonstrate...let's take a closer look at how we connected these stages to SoundPulse's dashboard."
 :::
