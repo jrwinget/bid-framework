@@ -33,11 +33,12 @@ format:
 ::::
 
 ::: {.notes}
-**Opening Hook**: Begin with energy! Make eye contact across the room.
+**Opening Hook**: Begin with energy!
 
 - "Raise your hand if you've ever encountered a dashboard that looked like this..." (gesture to image)
 - "Dashboard rot" = dashboards built but never used - costing real development time and money
 - Ask: "How many of you have abandoned using a dashboard because it was too complex?" (engage audience)
+- "UI/UX is often the most overlooked part of Shiny development, yet it's the part users interact with most directly"
 :::
 
 ## It Doesn't Have To Be This Way {.center}
@@ -67,7 +68,7 @@ SoundPulse's market research team was drowning in data, unable to extract meanin
 
 - Key message: "The answer isn't more data - it's better storytelling with data"
 - "SoundPulse, a music streaming analytics team, faced this exact problem"
-  * They're a composite client
+  * They're a composite client based on our experiences with multiple market research clients
 - Their market research team needed to present competitor analysis to executives
   * Typically involves turning tons of complex analyses into non-technical insights
 - "We're going to show you exactly how psychological principles transformed their dashboard - with approaches and code you can use immediately"
@@ -82,12 +83,13 @@ SoundPulse's market research team was drowning in data, unable to extract meanin
 ::: {.notes}
 **Show Impact**: Build frustration recognition with the "before" dashboard.
 
-- Even though SoundPulse is a composite client...this is representative of real dashboards we've seen across the market research industry
+- Even though SoundPulse is a composite client...this is representative of many dashboards we've seen across the market research industry
 - Point out key issues:
   * "Filter overload before seeing ANY insights"
   * "Multiple tabs with no clear starting point"
   * "Complete cognitive overload"
 - "This is why dashboards get abandoned - nobody wants this experience"
+- "Throughout the presentation, we'll show you the transformation process and the principles that guided our decisions"
 :::
 
 ## Behavior Insight Design (BID) Framework {background-color="#e6f0ff"}
@@ -116,14 +118,17 @@ SoundPulse's market research team was drowning in data, unable to extract meanin
 ::::
 
 ::: {.notes}
-**Framework Introduction**: Slow down here - this is the core methodology.
+**Framework Introduction**: Slow slightly to introduce - but drive home in next slide.
 
 - "The 5 stages form an easy workflow: Notice → Interpret → Structure → Anticipate → Validate"
-  * Click through each
-- "Each stage translates psychological principles into practical developer actions"
-- "This isn't just theory - it's a step-by-step process you can implement today"
+  * Click through
+- "Notice is about identifying objective friction points - where users struggle with the interface"
+- "Interpret goes deeper to understand what story or insight users truly need - moving from symptoms to diagnosis"
+- "Structure focuses on organizing information in ways that align with how our brains process information"
+- "Anticipate considers how cognitive biases might affect data interpretation"
+- "Validate ensures users leave with clear takeaways and a positive final impression"
 - "These stages are iterative - you'll often revisit earlier stages as you discover new insights"
-  * Any order
+- "This diagram will serve as our roadmap throughout the presentation"
 :::
 
 ## Where BID Fits In {background-color="#f2f2f2"}
@@ -196,15 +201,18 @@ Systematic integration of behavioral science within the natural dashboard develo
 ::: {.notes}
 **Case Study Introduction:** Keep energy high while introducing concepts.
 
-- **Stage 1 (Notice):** The first thing was users were overwhelmed with options
-  * This is what we call 'cognitive load' - when the brain gets overtaxed with information
-  * We was a violation of Hick's Law, which simply means that more choices lead to longer decision times and confusion
-- **Stage 2 (Interpret):** We then focused on something called 'Processing Fluency' - making the information easier to digest
-  * For example, using color to create a visual hierarchy of information so the brain can process it more easily
-- **Stage 3 (Structure):** "We then restructured the UI using the 'Principle of Proximity' - which is a fancy way of saying we started grouping related elements together. 
-  * Now there are a ton of ways you can do this...
-  * But as you'll see in our code example, we created groups of primary and secondary metrics to create a natural flow through the data
-- Now we'll show you the actual code implementation of these principles
+- **Stage 1 (Notice):** Users were overwhelmed with options
+  * This is related to 'cognitive load' - which is the mental effort needed to process information
+  * When the brain gets overtaxed, comprehension drops
+  * Hick's Law also shows decision time increases logarithmically with the number of choices 
+  * So more options, means exponentially more confusion
+- **Stage 2 (Interpret):** Taking this to the next step helped us interpret what the user needed: Increased Processing Fluency
+  * Processing fluency is the ease with which information is processed - when something is easy to process, people find it more credible and trustworthy
+  * We also identified the key story the executives needed to understand...rather than showing all possible data
+- **Stage 3 (Structure):** Moving to the Structuring stage...applied the 'Principle of Proximity' - which is a fancy way of saying we started grouping related elements together. 
+  * Dual-Processing Theory distinguishes between fast, intuitive thinking and slower, deliberative thinking - we designed for both
+  * We created groups of primary and secondary metrics to create a natural flow through the data
+- "Now we'll show you the actual code implementation of these principles"
 :::
 
 ## {reactable} Implementation: Visual Result {background-color="#f9f9f9"}
@@ -230,6 +238,7 @@ Systematic integration of behavioral science within the natural dashboard develo
   * Third image: "Color coding creates instant visual processing"
   * Fourth image: "Proximity principles group related metrics"
 - "This is the power of intentional design - every element has a psychological purpose"
+- "These examples demonstrate the end result we achieved with SoundPulse. The code examples coming up show the core concepts we used, simplified for presentation clarity."
 :::
 
 ## {reactable} Implementation: Basics {background-color="#f9f9f9"}
@@ -268,12 +277,13 @@ reactable(
 ::: {.notes}
 **Basic Implementation**: Highlight the simplicity of applying BID.
 
-- "This first example shows how just a few lines implement powerful BID principles"
+- "These examples demonstrate core concepts that translate to what we implemented with SoundPulse. While simplified for clarity, they use the same packages and techniques."
 - "groupBy reduces cognitive load while creating visual hierarchy"
 - "Color coding isn't just aesthetic - it creates instant processing fluency"
 - "Progressive disclosure means users only see details when needed"
 - "These three techniques alone dramatically improve dashboard usability"
-- "This simple implementation already reduces cognitive load and enhances processing - but we can do more"
+- "When implementing these techniques, consider your data volume and complexity. For larger applications, you might need to balance visual richness with performance."
+- "For implementation specifics beyond what we can cover today, feel free to connect with us afterward."
 :::
 
 ## {reactable} Implementation: Advanced {background-color="#f9f9f9"}
@@ -281,7 +291,7 @@ reactable(
 ```{r}
 #| eval: false
 #| echo: true
-#| code-line-numbers: "4-14|15-49"
+#| code-line-numbers: "4-14|15-50"
 
 # Packages: reactable, dplyr, bslib
 reactable(
@@ -297,7 +307,8 @@ reactable(
       columns = c("KPI 1", "KPI 2", "KPI 3")
     )
   ),
-  # Stage 1: Dynamic legend reduces choice complexity (Hick's Law)
+  # Stage 1: Visual indicators for headers 
+  # (simplification of Hick's Law dynamic legend)
   defaultColDef = colDef(
     header = function(value) {
       layout_inline(
@@ -341,7 +352,8 @@ reactable(
 - "columnGroups implements Principle of Proximity - grouping primary and secondary metrics together"
 - "The dynamic legend reduces choice complexity - addressing Hick's Law"
 - "Color coding by demographic creates instant pattern recognition"
-- "Notice how each feature directly maps to a BID principle"
+- "Notice how each feature directly maps to a BID principle - this is intentional design, not just aesthetics"
+- "Start with simpler implementations and add complexity as needed. We've layered these features progressively."
 - Ask: "How many have used columnGroups in reactable before?" (engagement opportunity)
   * If not many...great, we taught something!
   * If a lot...could also mention (quickly) how to extend with legend/div
@@ -354,14 +366,12 @@ reactable(
 ::: {.column width="48%"}
 - <span style="color:#ffca90">**Stage 4: Anticipate**</span>
   * Executives comparing metrics without context (*Anchoring Effect*)
-  * Teams interpreting data differently (*Confirmation Bias*)
   * Different perspectives needed for different teams (*Framing & Loss Aversion*)
 :::
 
 ::: {.column width="48%"}
 - <span style="color:#98d3ca">**Stage 5: Validate**</span>
   * Teams needed actionable summaries (*Peak-End Rule*)
-  * No clear path to consensus<br>(*Cooperation & Coordination*)
 :::
 ::::
 
@@ -376,8 +386,8 @@ reactable(
 - **Stage 4 (Anticipate):** We noticed executives were making flawed comparisons without proper context.
   * This relates to the 'Anchoring Effect' - where people rely too heavily on the first piece of information they see
   * We also saw teams struggling to interpret the data in the same way, so we addressed this with something called a "framing toggle"...more on that in just a moment
-- **Stage 5 (Validate):** Finally, we applied the 'Peak-End Rule' - the idea that people judge experiences mainly by their most intense point and how they end
-  * We leveraged this by creating summary cards that highlight key takeaways, increasing the chances that users leave the app with a clear, memorable impression of the most important insights
+- **Stage 5 (Validate):** Finally, we applied the 'Peak-End Rule' - the idea that people judge experiences mainly by their most intense moment and ending
+  * We created summary cards highlighting key takeaways so users leave with a clear, memorable impression
 :::
 
 ## {echarts4r} Implementation: Visual Result {background-color="#f9f9f9"}
@@ -395,13 +405,15 @@ reactable(
 ::: {.notes}
 **Complete Dashboard**: Show integration of multiple principles
 
-- For each image as it appears:
-  * First image: "Gauge charts provide instant comprehension"
-  * Second image: "The framing toggle changes perspective while maintaining data integrity"
-  * Third image: ""Summary cards implement the Peak-End Rule"
+- For each image, as it appears:
+  * First image: "Gauge charts provide instant comprehension through visual metaphor"
+  * Second image: "To help with the 'Anchoring Effect', we added reference lines to provide more accurate anchoring points"
+  * Third image: "The framing toggle changes perspective while maintaining data integrity"
+  * Fourth image: "Summary cards implement the Peak-End Rule, ensuring users leave with key insights"
 - "Also, the card-based layout creates clear visual hierarchy and reduces cognitive load"
 - "Every element in this dashboard has a specific psychological purpose"
 - "This is what we mean by behavior-informed design - intentional choices based on how humans think"
+- "These visuals represent our final implementation with SoundPulse, which we'll now break down into code components"
 :::
 
 ## {echarts4r} Implementation: Gauge Chart {background-color="#f9f9f9"}
@@ -494,11 +506,12 @@ layout_columns(
 ::: {.notes}
 **Reference Lines**: Highlight the Anchoring Effect implementation.
 
-- This directly addresses the Anchoring Effect from Stage 4"
+- "This directly addresses the Anchoring Effect from Stage 4"
+- "The Anchoring Effect occurs when people rely too heavily on the first piece of information encountered - in data visualization, this often means making judgments without proper context"
 - "Without reference lines, metrics like '65%' lack meaning - is it good or bad?"
 - "Benchmarks provide the context users need for proper interpretation...and helps with alignment across users"
 - "The distinctive orange dashed line creates visual separation from the data"
-- "This simple addition dramatically improves decision quality"
+- "This simple addition dramatically improves decision quality by providing a meaningful anchor point"
 :::
 
 ## {echarts4r} Implementation: Framing {background-color="#f9f9f9"}
@@ -574,9 +587,10 @@ server <- function(input, output, session) {
 **Framing Toggle**: Emphasize the powerful psychological effect.
 
 - "This implementation shows how framing affects perception - same data, different decisions"
+- "The code shows both UI and server components working together to implement framing"
+- "While this is a simplified example, it demonstrates the core concept we implemented in the SoundPulse dashboard"
 - "The 'Progress' frame emphasizes achievement - how far we've come"
 - "The 'Gap' frame emphasizes what remains - how far we still need to go"
-- "Different teams at SoundPulse used different frames - marketing used Progress, product used Gap"
 - "The server-side code dynamically recalculates values based on the framing perspective"
 - "This is psychological design directly impacting business decisions"
 :::
@@ -613,13 +627,13 @@ server <- function(input, output, session) {
 ::: {.notes}
 **Framing Effect**: Drive home the practical impact.
 
-- This is a great example to illustrate the theory behind these concepts
-- "In this case we are showing the *Same exact data*...but users experience completely different psychological impact"
+- "This is a great example to illustrate the theory behind these concepts"
+- "In this case we are showing the *Same exact data*...but users experience completely different psychological state"
 - "Progress framing creates motivation and highlights achievement"
   - "Marketing preferred progress framing to build stakeholder confidence"
 - "Gap framing creates urgency and focuses on what remains to be done"
   - "Product teams used gap framing to prioritize development"
-- "This isn't just theory - a classic JDM study presented a 90% survival rate vs. a 10% mortality rate - people react completely differently"
+- "This isn't just theory - a classic study in the Judgment and Decision Making literature presented identical medical treatment outcomes as either a 90% survival rate or a 10% mortality rate - people react completely differently to these framings"
 - "This is why understanding psychological principles is so powerful for dashboard design"
 - "Think about your own dashboards - are you framing data in a way that drives the right decisions?"
 :::
@@ -649,9 +663,11 @@ server <- function(input, output, session) {
 **Package Introduction**: Generate excitement about practical tools.
 
 - "We're not just sharing a framework or theories - we're giving you tools to implement it immediately"
-- "The `{bidux}` package makes these principles accessible to every R developer"
-- "Phase 1 is available today on GitHub"
-- Future phases will include LLM integration and ready-to-use UI components"
+- "The `{bidux}` package directly implements the 5-stage BID framework we've discussed today"
+- "Each function maps to a specific stage and guides your thinking through that part of the development process"
+- "Phase 1 is available today on GitHub - it provides the conceptual foundation and workflow guidance"
+- "Future phases will include LLM integration to suggest specific implementations based on your needs"
+- "We're also developing a UI component library with pre-built elements that embody these principles"
 - "Think of `{bidux}` as your behavioral science assistant for Shiny app development"
 :::
 
@@ -809,6 +825,8 @@ More at: [github.com/jrwinget/bidux](https://github.com/jrwinget/bidux)
 - "The workflow functions guide you through each BID stage"
 - "Auto-suggestion of theories based on your problem description"
 - "Component suggestions provide concrete UI implementation ideas"
+- "The package helps connect psychological principles to specific suggestions and components"
+- "While we don't have time to go through a complete workflow demonstration, the package documentation on GitHub provides detailed examples"
 - When the link appears: "We're launching this at ShinyConf today - check out the repo for full documentation"
 :::
 
@@ -833,9 +851,10 @@ More at: [github.com/jrwinget/bidux](https://github.com/jrwinget/bidux)
 **Results Summary**: Emphasize real-world impact.
 
 - "The results speak for themselves"
+- "While our quantitative metrics are still being collected through new telemetry systems we're implementing, qualitative feedback has been overwhelmingly positive"
 - "Users who previously abandoned the dashboard now rely on it daily"
 - "Decisions that took days now happen in minutes"
-- We're currently building telemetry into our dashboards to gather more precise measurements...but the message from our users is already clear: this framework is changing how teams interact with their data
+- It's still early, but the emerging message from our clients is clear: this framework is changing how teams interact with their data
 - When testimonial appears: "This transformation is what BID delivers"
 - "Remember, this wasn't just about visual improvements - this was a fundamental shift in how our users...and developers...approached the dashboard"
 :::
@@ -852,11 +871,13 @@ More at: [github.com/jrwinget/bidux](https://github.com/jrwinget/bidux)
 ::: {.notes}
 **Wrap-Up**: Reinforce key messages with energy.
 
-- "BID reduces friction between users and insights"
-- "The tools we've shown today give you everything you need to get started"
-- "`{bidux}` is available now to help structure your implementation"
-- "Every dropdown you eliminate helps someone make a better decision"
+- "BID reduces friction between users and insights by applying psychological principles in a systematic way"
+- "The tools we've shown today - reactable and echarts4r - give you everything you need to get started"
+- "The bidux package makes these principles accessible to every R developer, guiding you through each stage"
+- "Start with small implementations of these principles - even one or two can dramatically improve your dashboard"
+- "Every dropdown you eliminate or visual cue you add helps someone make a better decision"
 - "This is about making your users successful, not just making dashboards"
+- "UI/UX is often the most overlooked part of Shiny development, yet it's where behavioral science can have the greatest impact"
 :::
 
 ## {data-background-image="img/thank-you.png" data-background-size="100% 100%"}
@@ -887,9 +908,10 @@ More at: [github.com/jrwinget/bidux](https://github.com/jrwinget/bidux)
 
 - We'd love to hear about your dashboard challenges"
 - "Don't forget to follow us on LinkedIn/GitHub for updates on {bidux} development"
-- "Feel free to connect with us for any questions or deeper discussions!"
+- "Feel free to connect with us for any questions or deeper discussions about implementation details we couldn't cover today"
 - Quick answers to likely questions:
-  * "How do you measure success?" → "Start with user testing and session analytics"
-  * "Does this work for technical audiences?" → "Absolutely, technical users appreciate clarity too"
-  * "How long does implementation take?" → "Start small - even one principle makes a difference"
+  * "How do you measure success?" → "Start with user testing and session analytics; we're building telemetry tools to help quantify impact"
+  * "Does this work for technical audiences?" → "Absolutely, technical users appreciate clarity too - in fact, they often have the highest cognitive load due to the complexity of their work"
+  * "How long does implementation take?" → "Start small - even one principle makes a difference. A complete BID implementation can take 1-2 sprints depending on dashboard complexity"
+  * "How does this apply to domains beyond music?" → "We've successfully applied these principles in healthcare, finance, and retail dashboards - the psychological principles are universal"
 :::
