@@ -6,8 +6,8 @@
 <script src="slides_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting-697306ee647f3aecb60be57249203282.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.37">
+<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting-de84f8d6bb715db06a919283c2d1e787.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Milena Eickhoff &amp; Jeremy Winget, PhD">
   <title>Death By Dropdown?</title>
@@ -94,7 +94,7 @@
     code span.vs { color: #032f62; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-423d414d36ce366a9d05f36d06304417.css">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-8f3eebe07241f08526c91a7e9cbef8fd.css">
   <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -223,12 +223,9 @@ Ever felt like this?
 <p><img data-src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzVhM3d3MjJvYTNyc3puM2E0cmduZjFweXhrczNwcXI0b3FhN203aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l44Q5OXJ6qaNr838Q/giphy.gif"></p>
 </div></div>
 <aside class="notes">
-<p><strong>Opening Hook</strong>: Begin with energy!</p>
 <ul>
-<li>“Raise your hand if you’ve ever encountered a dashboard that looked like this…” (gesture to image)</li>
-<li>“Dashboard rot” = dashboards built but never used - costing real development time and money</li>
-<li>Ask: “How many of you have abandoned using a dashboard because it was too complex?” (engage audience)</li>
-<li>“UI/UX is often the most overlooked part of Shiny development, yet it’s the part users interact with most directly”</li>
+<li>Have you ever felt like this? You were asked to develop a dashboard with endless dropdown menus, overwhelming complecity, that you know would leave users disengaged and searching for answers?</li>
+<li>Send us an emoji if you have felt like this. How many of you have even abandoned a dashboard because it was too complex?</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -259,16 +256,9 @@ Ever felt like this?
 <aside class="notes">
 <p><strong>Transition to Solution</strong>: Shift to a hopeful, inspiring tone here.</p>
 <ul>
-<li>Key message: “The answer isn’t more data - it’s better storytelling with data”</li>
-<li>“SoundPulse, a music streaming analytics team, faced this exact problem”
-<ul>
-<li>They’re a composite client based on our experiences with multiple market research clients</li>
-</ul></li>
-<li>Their market research team needed to present competitor analysis to executives
-<ul>
-<li>Typically involves turning tons of complex analyses into non-technical insights</li>
-</ul></li>
-<li>“We’re going to show you exactly how psychological principles transformed their dashboard - with approaches and code you can use immediately”</li>
+<li>Don’t worry. It doesn’t have to be this way! We will give you a guide for crafting stories with data. The focus will not be on the data analysis itself but how you can update your ui to create dashboards that engage and empower the user.</li>
+<li>Let’s take SoundPulse for example, a composite client of us (a mix of different experiences we had with clients). It is a music streaming service, whos marketing team was faced with the exact same problem of too much data and too complex dashboards.</li>
+<li>Let’s see how we can update their dashboards using the framework we developed and how you can implement our recommendations right away into your next project.</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -494,15 +484,14 @@ Ever felt like this?
 <aside class="notes">
 <p><strong>Visual Impact</strong>: Connect visuals to principles just mentioned.</p>
 <ul>
-<li>For each image as it appears:
+<li>This is how we could transform the dashboard for SoundPulse using stages 1-3 of our framework. Here SoundPulse wanted us to display several metrics and KPIs for different songs and display them per subgroup – in this case age.
 <ul>
-<li>First image: “Notice how grouping reduces cognitive load”</li>
-<li>Second image: “The consistent legend simplifies comprehension”</li>
-<li>Third image: “Color coding creates instant visual processing”</li>
-<li>Fourth image: “Proximity principles group related metrics”</li>
+<li>Notice how the grouped bars reduce cognitive load and the consistent legend simplifies comprehension.</li>
+<li>Notice how color-coding instantly distinguishes the different subgroups.</li>
+<li>Notice how the different shapes of metrics (bar charts) and KPIs (circles) instantly distinguishes the two groups.</li>
+<li>And if a user wants to know more information drilldowns can be used for progressive disclosure.</li>
 </ul></li>
-<li>“This is the power of intentional design - every element has a psychological purpose”</li>
-<li>“These examples demonstrate the end result we achieved with SoundPulse. The code examples coming up show the core concepts we used, simplified for presentation clarity.”</li>
+<li>This is the power of intentional design. Every element has a psychological purpose.</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -547,13 +536,15 @@ Ever felt like this?
 <aside class="notes">
 <p><strong>Basic Implementation</strong>: Highlight the simplicity of applying BID.</p>
 <ul>
-<li>“These examples demonstrate core concepts that translate to what we implemented with SoundPulse. While simplified for clarity, they use the same packages and techniques.”</li>
-<li>“groupBy reduces cognitive load while creating visual hierarchy”</li>
-<li>“Color coding isn’t just aesthetic - it creates instant processing fluency”</li>
-<li>“Progressive disclosure means users only see details when needed”</li>
-<li>“These three techniques alone dramatically improve dashboard usability”</li>
-<li>“When implementing these techniques, consider your data volume and complexity. For larger applications, you might need to balance visual richness with performance.”</li>
-<li>“For implementation specifics beyond what we can cover today, feel free to connect with us afterward.”</li>
+<li>We promised you a guide on how you can implement our framework in your next project – so here it comes.</li>
+<li>A package we can recommend for your next dashboard is reactable (also in combination with reactable formatter).</li>
+<li>As a web developer I am scared of tables so I am glad to have a package that builds them for me and allows me to modify them easily.
+<ul>
+<li>An option you can easily modify yourself is the groupBy function – as we could see before grouping data variables on the dashboard reduces cognitive load while creating visual hierarchy that is easy to follow.</li>
+<li>Using the columns option (gives you a named list of column definitions where you can easily modify individual columns) you can easily color-code your table, for example depending on the value. It is not just aesthetic but creates instant processing fluency.</li>
+<li>You can use the details option for progressive disclosure (the dynamic drilldowns on the previous slide). This code creates a bslib card component which encompasses a reactable that can be opened and closed.</li>
+</ul></li>
+<li>This simple implementation already reduces cognitive load and enhances processing fluency but while those options are very easy to use we also want to go into more advanced options the reactable package gives you.</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -633,11 +624,12 @@ Ever felt like this?
 <aside class="notes">
 <p><strong>Advanced Features</strong>: Highlight sophisticated techniques of package, but balance with BID principles.</p>
 <ul>
-<li>“columnGroups implements Principle of Proximity - grouping primary and secondary metrics together”</li>
-<li>“The dynamic legend reduces choice complexity - addressing Hick’s Law”</li>
-<li>“Color coding by demographic creates instant pattern recognition”</li>
-<li>“Notice how each feature directly maps to a BID principle - this is intentional design, not just aesthetics”</li>
-<li>“Start with simpler implementations and add complexity as needed. We’ve layered these features progressively.”</li>
+<li>In the more advanced example we will show you how you can group columns and create a dynamic legend.
+<ul>
+<li>First, we create a vector that stores the colors we want to use to distinguish the subgroups.</li>
+<li>Then we create the reactable. You can use the columnGroups option to group primary and secondary metrics together (example of the principle of proximity) – it creates a header above the columns.</li>
+<li>Below we create a container for the dynamic legend and map over the colors and age groups using a function from the purrr package. The dynamic legend reduces choice complexity for the user.</li>
+</ul></li>
 <li>Ask: “How many have used columnGroups in reactable before?” (engagement opportunity)
 <ul>
 <li>If not many…great, we taught something!</li>
@@ -715,17 +707,12 @@ Ever felt like this?
 <aside class="notes">
 <p><strong>Complete Dashboard</strong>: Show integration of multiple principles</p>
 <ul>
-<li>For each image, as it appears:
+<li>For this dashboard SoundPulse wanted to visualize the statistics of different songs in more detail. Like the song Will it crash or run? By the Shiny Band. You might not have heard of that song yet but I’m sure you know what it’s about.
 <ul>
-<li>First image: “Gauge charts provide instant comprehension through visual metaphor”</li>
-<li>Second image: “To help with the ‘Anchoring Effect’, we added reference lines to provide more accurate anchoring points”</li>
-<li>Third image: “The framing toggle changes perspective while maintaining data integrity”</li>
-<li>Fourth image: “Summary cards implement the Peak-End Rule, ensuring users leave with key insights”</li>
+<li>We implemented benchmark lines to help with the anchoring effect, this value can easily be used by the user for comparison.</li>
+<li>We included a framing toggle button so that the SoundPulse marketing team can decide if they want to display their progress towards the benchmark or how much they are still missing to catch up with the benchmark. This button easily changes perspective while maintaining data integrity.</li>
+<li>Lastly, the summary card (that you could create yourself using a large language model) ensures that users leave with key insights.</li>
 </ul></li>
-<li>“Also, the card-based layout creates clear visual hierarchy and reduces cognitive load”</li>
-<li>“Every element in this dashboard has a specific psychological purpose”</li>
-<li>“This is what we mean by behavior-informed design - intentional choices based on how humans think”</li>
-<li>“These visuals represent our final implementation with SoundPulse, which we’ll now break down into code components”</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -776,11 +763,14 @@ Ever felt like this?
 <aside class="notes">
 <p><strong>Gauge Charts</strong>: Focus on visual processing benefits.</p>
 <ul>
-<li>“Gauge charts implement processing fluency perfectly”</li>
-<li>“We’re customizing the gauge to eliminate unnecessary complexity”</li>
-<li>“The color gradient visually reinforces the value”</li>
-<li>“This visual simplicity reduces cognitive load while maintaining information richness”</li>
-<li>“The function encapsulates this pattern for consistent application”</li>
+<li>Another package we recommend for different graphs is the echarts4r package which provides a large selection of graphs that can be easily customized.</li>
+<li>Gauge charts implement processing fluency perfectly and as you can see here you can modify the e_gauge function in many ways.
+<ul>
+<li>We’re customizing the gauge to eliminate unnecessary complexity.</li>
+<li>The color gradient visually reinforces the value</li>
+<li>the detail function here gives you another option to further customize your chart.</li>
+<li>Layout_column_wrap by bslib can be used to display multiple graphs in a neat and adaptable way.</li>
+</ul></li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -830,12 +820,11 @@ Ever felt like this?
 <aside class="notes">
 <p><strong>Reference Lines</strong>: Highlight the Anchoring Effect implementation.</p>
 <ul>
-<li>“This directly addresses the Anchoring Effect from Stage 4”</li>
-<li>“The Anchoring Effect occurs when people rely too heavily on the first piece of information encountered - in data visualization, this often means making judgments without proper context”</li>
-<li>“Without reference lines, metrics like ‘65%’ lack meaning - is it good or bad?”</li>
-<li>“Benchmarks provide the context users need for proper interpretation…and helps with alignment across users”</li>
-<li>“The distinctive orange dashed line creates visual separation from the data”</li>
-<li>“This simple addition dramatically improves decision quality by providing a meaningful anchor point”</li>
+<li>We implement the benchmark bar with an e_bar function that has only one value and add an e_mark_line.
+<ul>
+<li>Here you can decide the width and color of the line and if it should be dashed or solid for example. The benchmarks provide the context users need for proper interpretation and creates visual separation from the data. This simple addition dramatically improves decision quality.</li>
+<li>Again, the layout columns from bslib can be used to align the graphs.</li>
+</ul></li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -916,13 +905,10 @@ Ever felt like this?
 <aside class="notes">
 <p><strong>Framing Toggle</strong>: Emphasize the powerful psychological effect.</p>
 <ul>
-<li>“This implementation shows how framing affects perception - same data, different decisions”</li>
-<li>“The code shows both UI and server components working together to implement framing”</li>
-<li>“While this is a simplified example, it demonstrates the core concept we implemented in the SoundPulse dashboard”</li>
-<li>“The ‘Progress’ frame emphasizes achievement - how far we’ve come”</li>
-<li>“The ‘Gap’ frame emphasizes what remains - how far we still need to go”</li>
-<li>“The server-side code dynamically recalculates values based on the framing perspective”</li>
-<li>“This is psychological design directly impacting business decisions”</li>
+<li>For the framing toggle we use radio buttons that trigger the server-side code to dynamically recalculate the values based on the framing perspective. Different teams at SoundPulse used different frames - marketing used Progress, product used Gap. This is psychological design directly impacting business decisions .
+<ul>
+<li>In the last part we loop over the different kpi columns (using a function from the purrr package) and update all charts dynamically with the function from the previous page.</li>
+</ul></li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1106,7 +1092,7 @@ Ever felt like this?
 <pre><code># A tibble: 1 × 6
   stage  problem                 theory evidence suggestions timestamp          
   &lt;chr&gt;  &lt;chr&gt;                   &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;       &lt;dttm&gt;             
-1 Notice Users overwhelmed by f… Hick'… Feedbac… Reduce dro… 2025-04-07 19:44:11</code></pre>
+1 Notice Users overwhelmed by f… Hick'… Feedbac… Reduce dro… 2025-04-08 12:04:15</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a>notice_stage<span class="sc">$</span>theory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1132,7 +1118,7 @@ Ever felt like this?
 <pre><code># A tibble: 1 × 6
   stage  problem                 theory evidence suggestions timestamp          
   &lt;chr&gt;  &lt;chr&gt;                   &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;       &lt;dttm&gt;             
-1 Notice Users overwhelmed by f… cogni… Feedbac… Use tabs o… 2025-04-07 19:44:12</code></pre>
+1 Notice Users overwhelmed by f… cogni… Feedbac… Use tabs o… 2025-04-08 12:04:15</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a>notice_stage<span class="sc">$</span>theory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">

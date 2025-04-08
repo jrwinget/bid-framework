@@ -38,12 +38,8 @@ format:
 ::::
 
 ::: {.notes}
-**Opening Hook**: Begin with energy!
-
-- "Raise your hand if you've ever encountered a dashboard that looked like this..." (gesture to image)
-- "Dashboard rot" = dashboards built but never used - costing real development time and money
-- Ask: "How many of you have abandoned using a dashboard because it was too complex?" (engage audience)
-- "UI/UX is often the most overlooked part of Shiny development, yet it's the part users interact with most directly"
+- Have you ever felt like this? You were asked to develop a dashboard with endless dropdown menus, overwhelming complecity, that you know would leave users disengaged and searching for answers? 
+-	Send us an emoji if you have felt like this. How many of you have even abandoned a dashboard because it was too complex?
 :::
 
 ## It Doesn't Have To Be This Way {.center}
@@ -71,12 +67,9 @@ SoundPulse's market research team was drowning in data, unable to extract meanin
 ::: {.notes}
 **Transition to Solution**: Shift to a hopeful, inspiring tone here.
 
-- Key message: "The answer isn't more data - it's better storytelling with data"
-- "SoundPulse, a music streaming analytics team, faced this exact problem"
-  * They're a composite client based on our experiences with multiple market research clients
-- Their market research team needed to present competitor analysis to executives
-  * Typically involves turning tons of complex analyses into non-technical insights
-- "We're going to show you exactly how psychological principles transformed their dashboard - with approaches and code you can use immediately"
+- Don’t worry. It doesn’t have to be this way! We will give you a guide for crafting stories with data. The focus will not be on the data analysis itself but how you can update your ui to create dashboards that engage and empower the user.
+- Let’s take SoundPulse for example, a composite client of us (a mix of different experiences we had with clients). It is a music streaming service, whos marketing team was faced with the exact same problem of too much data and too complex dashboards. 
+- Let’s see how we can update their dashboards using the framework we developed and how you can implement our recommendations right away into your next project.
 :::
 
 ## BID In Action: Dashboard Transformation {.center background-color="#f2f2f2"}
@@ -237,13 +230,13 @@ Systematic integration of behavioral science within the natural dashboard develo
 ::: {.notes}
 **Visual Impact**: Connect visuals to principles just mentioned.
 
-- For each image as it appears:
-  * First image: "Notice how grouping reduces cognitive load"
-  * Second image: "The consistent legend simplifies comprehension"
-  * Third image: "Color coding creates instant visual processing"
-  * Fourth image: "Proximity principles group related metrics"
-- "This is the power of intentional design - every element has a psychological purpose"
-- "These examples demonstrate the end result we achieved with SoundPulse. The code examples coming up show the core concepts we used, simplified for presentation clarity."
+- This is how we could transform the dashboard for SoundPulse using stages 1-3 of our framework. Here SoundPulse wanted us to display several metrics and KPIs for different songs and display them per subgroup – in this case age. 
+  *	Notice how the grouped bars reduce cognitive load and the consistent legend simplifies comprehension. 
+  *	Notice how color-coding instantly distinguishes the different subgroups. 
+  *	Notice how the different shapes of metrics (bar charts) and KPIs (circles) instantly distinguishes the two groups. 
+  *	And if a user wants to know more information drilldowns can be used for progressive disclosure. 
+- This is the power of intentional design. Every element has a psychological purpose.  
+
 :::
 
 ## {reactable} Implementation: Basics {background-color="#f9f9f9"}
@@ -282,13 +275,13 @@ reactable(
 ::: {.notes}
 **Basic Implementation**: Highlight the simplicity of applying BID.
 
-- "These examples demonstrate core concepts that translate to what we implemented with SoundPulse. While simplified for clarity, they use the same packages and techniques."
-- "groupBy reduces cognitive load while creating visual hierarchy"
-- "Color coding isn't just aesthetic - it creates instant processing fluency"
-- "Progressive disclosure means users only see details when needed"
-- "These three techniques alone dramatically improve dashboard usability"
-- "When implementing these techniques, consider your data volume and complexity. For larger applications, you might need to balance visual richness with performance."
-- "For implementation specifics beyond what we can cover today, feel free to connect with us afterward."
+- We promised you a guide on how you can implement our framework in your next project – so here it comes. 
+- A package we can recommend for your next dashboard is reactable (also in combination with reactable formatter). 
+- As a web developer I am scared of tables so I am glad to have a package that builds them for me and allows me to modify them easily. 
+  * An option you can easily modify yourself is the groupBy  function – as we could see before grouping data variables on the dashboard reduces cognitive load while creating visual hierarchy that is easy to follow. 
+  * Using the columns option (gives you a named list of column definitions where you can easily modify individual columns) you can easily color-code your table, for example depending on the value. It is not just aesthetic but creates instant processing fluency. 
+  * You can use the details  option for progressive disclosure (the dynamic drilldowns on the previous slide). This code creates a bslib card component which encompasses a reactable that can be opened and closed. 
+- This simple implementation already reduces cognitive load and enhances processing fluency but while those options are very easy to use we also want to go into more advanced options the reactable package gives you. 
 :::
 
 ## {reactable} Implementation: Advanced {background-color="#f9f9f9"}
@@ -362,14 +355,14 @@ div(
 ::: {.notes}
 **Advanced Features**: Highlight sophisticated techniques of package, but balance with BID principles.
 
-- "columnGroups implements Principle of Proximity - grouping primary and secondary metrics together"
-- "The dynamic legend reduces choice complexity - addressing Hick's Law"
-- "Color coding by demographic creates instant pattern recognition"
-- "Notice how each feature directly maps to a BID principle - this is intentional design, not just aesthetics"
-- "Start with simpler implementations and add complexity as needed. We've layered these features progressively."
-- Ask: "How many have used columnGroups in reactable before?" (engagement opportunity)
-  * If not many...great, we taught something!
-  * If a lot...could also mention (quickly) how to extend with legend/div
+- In the more advanced example we will show you how you can group columns and create a dynamic legend.
+  * First, we create a vector that stores the colors we want to use to distinguish the subgroups. 
+  * Then we create the reactable. You can use the columnGroups   option to group primary and secondary metrics together (example of the principle of proximity) – it creates a header above the columns. 
+  * Below we create a container for the dynamic legend and map over the colors and age groups using a function from the purrr package. The dynamic legend reduces choice complexity for the user.
+- Ask: “How many have used columnGroups in reactable before?” (engagement opportunity) 
+  * If not many…great, we taught something!
+  * If a lot…could also mention (quickly) how to extend with legend/div
+
 :::
 
 ## SoundPulse Case Study: BID Stages 4-5 {background-color="#f9f9f9"}
@@ -418,15 +411,10 @@ div(
 ::: {.notes}
 **Complete Dashboard**: Show integration of multiple principles
 
-- For each image, as it appears:
-  * First image: "Gauge charts provide instant comprehension through visual metaphor"
-  * Second image: "To help with the 'Anchoring Effect', we added reference lines to provide more accurate anchoring points"
-  * Third image: "The framing toggle changes perspective while maintaining data integrity"
-  * Fourth image: "Summary cards implement the Peak-End Rule, ensuring users leave with key insights"
-- "Also, the card-based layout creates clear visual hierarchy and reduces cognitive load"
-- "Every element in this dashboard has a specific psychological purpose"
-- "This is what we mean by behavior-informed design - intentional choices based on how humans think"
-- "These visuals represent our final implementation with SoundPulse, which we'll now break down into code components"
+- For this dashboard SoundPulse wanted to visualize the statistics of different songs in more detail. Like the song Will it crash or run? By the Shiny Band. You might not have heard of that song yet but I’m sure you know what it’s about.  
+  * We implemented benchmark lines to help with the anchoring effect, this value can easily be used by the user for comparison. 
+  * We included a framing toggle button so that the SoundPulse marketing team can decide if they want to display their progress towards the benchmark or how much they are still missing to catch up with the benchmark. This button easily changes perspective while maintaining data integrity. 
+  * Lastly, the summary card (that you could create yourself using a large language model) ensures that users leave with key insights. 
 :::
 
 ## {echarts4r} Implementation: Gauge Chart {background-color="#f9f9f9"}
@@ -471,11 +459,12 @@ layout_column_wrap(
 ::: {.notes}
 **Gauge Charts**: Focus on visual processing benefits.
 
-- "Gauge charts implement processing fluency perfectly"
-- "We're customizing the gauge to eliminate unnecessary complexity"
-- "The color gradient visually reinforces the value"
-- "This visual simplicity reduces cognitive load while maintaining information richness"
-- "The function encapsulates this pattern for consistent application"
+- Another package we recommend for different graphs is the echarts4r package which provides a large selection of graphs that can be easily customized. 
+- Gauge charts implement processing fluency perfectly and as you can see here you can modify the e_gauge function in many ways. 
+  * We’re customizing the gauge to eliminate unnecessary complexity. 
+  * The color gradient visually reinforces the value 
+  * the detail function here gives you another option to further customize your chart. 
+  * Layout_column_wrap by bslib can be used to display multiple graphs in a neat and adaptable way. 
 :::
 
 ## {echarts4r} Implementation: Context {background-color="#f9f9f9"}
@@ -519,12 +508,9 @@ layout_columns(
 ::: {.notes}
 **Reference Lines**: Highlight the Anchoring Effect implementation.
 
-- "This directly addresses the Anchoring Effect from Stage 4"
-- "The Anchoring Effect occurs when people rely too heavily on the first piece of information encountered - in data visualization, this often means making judgments without proper context"
-- "Without reference lines, metrics like '65%' lack meaning - is it good or bad?"
-- "Benchmarks provide the context users need for proper interpretation...and helps with alignment across users"
-- "The distinctive orange dashed line creates visual separation from the data"
-- "This simple addition dramatically improves decision quality by providing a meaningful anchor point"
+- We implement the benchmark bar with an e_bar function that has only one value and add an e_mark_line. 
+  * Here you can decide the width and color of the line and if it should be dashed or solid for example. The benchmarks provide the context users need for proper interpretation and creates visual separation from the data. This simple addition dramatically improves decision quality. 
+  * Again, the layout columns from bslib can be used to align the graphs.
 :::
 
 ## {echarts4r} Implementation: Framing {background-color="#f9f9f9"}
@@ -599,13 +585,8 @@ server <- function(input, output, session) {
 ::: {.notes}
 **Framing Toggle**: Emphasize the powerful psychological effect.
 
-- "This implementation shows how framing affects perception - same data, different decisions"
-- "The code shows both UI and server components working together to implement framing"
-- "While this is a simplified example, it demonstrates the core concept we implemented in the SoundPulse dashboard"
-- "The 'Progress' frame emphasizes achievement - how far we've come"
-- "The 'Gap' frame emphasizes what remains - how far we still need to go"
-- "The server-side code dynamically recalculates values based on the framing perspective"
-- "This is psychological design directly impacting business decisions"
+- For the framing toggle we use radio buttons that trigger the server-side code to dynamically recalculate the values based on the framing perspective. Different teams at SoundPulse used different frames - marketing used Progress, product used Gap. This is psychological design directly impacting business decisions . 
+  * In the last part we loop over the different kpi columns (using a function from the purrr package) and update all charts dynamically with the function from the previous page.
 :::
 
 ## How Framing Affects Decision Making {background-color="#e6f0ff"}
@@ -890,7 +871,6 @@ More at: [github.com/jrwinget/bidux](https://github.com/jrwinget/bidux)
 - "Start with small implementations of these principles - even one or two can dramatically improve your dashboard"
 - "Every dropdown you eliminate or visual cue you add helps someone make a better decision"
 - "This is about making your users successful, not just making dashboards"
-- "UI/UX is often the most overlooked part of Shiny development, yet it's where behavioral science can have the greatest impact"
 :::
 
 ## {data-background-image="img/thank-you.png" data-background-size="100% 100%"}
