@@ -206,6 +206,7 @@ Milena Eickhoff &amp; Jeremy Winget, PhD
 </section>
 <section id="the-problem" class="slide level2 center" data-background-color="#4682b4">
 <h2>The Problem</h2>
+<!-- TODO: replace title background image with css and brand elements -->
 <div class="columns">
 <div class="column" style="width:60%;">
 <h3>
@@ -569,57 +570,65 @@ Ever felt like this?
 <section id="reactable-implementation-advanced" class="slide level2" data-background-color="#f9f9f9">
 <h2>{reactable} Implementation: Advanced</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2" data-code-line-numbers="4-14|15-50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="co"># Packages: reactable, dplyr, bslib</span></span>
-<span id="cb2-2"><a href=""></a><span class="fu">reactable</span>(</span>
-<span id="cb2-3"><a href=""></a>  soundpulse_data,</span>
-<span id="cb2-4"><a href=""></a>  <span class="co"># Stage 3: Group related elements (Principle of Proximity)</span></span>
-<span id="cb2-5"><a href=""></a>  <span class="at">columnGroups =</span> <span class="fu">list</span>(</span>
-<span id="cb2-6"><a href=""></a>    <span class="fu">colGroup</span>(</span>
-<span id="cb2-7"><a href=""></a>      <span class="at">name =</span> <span class="st">"Core Metrics"</span>,</span>
-<span id="cb2-8"><a href=""></a>      <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"Metric 1"</span>, <span class="st">"Metric 2"</span>, <span class="st">"Metric 3"</span>, <span class="st">"Metric 4"</span>)</span>
-<span id="cb2-9"><a href=""></a>    ),</span>
-<span id="cb2-10"><a href=""></a>    <span class="fu">colGroup</span>(</span>
-<span id="cb2-11"><a href=""></a>      <span class="at">name =</span> <span class="st">"Key Performance"</span>,</span>
-<span id="cb2-12"><a href=""></a>      <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"KPI 1"</span>, <span class="st">"KPI 2"</span>, <span class="st">"KPI 3"</span>)</span>
-<span id="cb2-13"><a href=""></a>    )</span>
-<span id="cb2-14"><a href=""></a>  ),</span>
-<span id="cb2-15"><a href=""></a>  <span class="co"># Stage 1: Visual indicators for headers </span></span>
-<span id="cb2-16"><a href=""></a>  <span class="co"># (simplification of Hick's Law dynamic legend)</span></span>
-<span id="cb2-17"><a href=""></a>  <span class="at">defaultColDef =</span> <span class="fu">colDef</span>(</span>
-<span id="cb2-18"><a href=""></a>    <span class="at">header =</span> <span class="cf">function</span>(value) {</span>
-<span id="cb2-19"><a href=""></a>      <span class="fu">layout_inline</span>(</span>
-<span id="cb2-20"><a href=""></a>        value,</span>
-<span id="cb2-21"><a href=""></a>        <span class="fu">span</span>(</span>
-<span id="cb2-22"><a href=""></a>          <span class="at">style =</span> <span class="fu">css</span>(</span>
-<span id="cb2-23"><a href=""></a>            <span class="at">display =</span> <span class="st">"inline-block"</span>,</span>
-<span id="cb2-24"><a href=""></a>            <span class="at">margin_left =</span> <span class="st">"5px"</span>,</span>
-<span id="cb2-25"><a href=""></a>            <span class="at">height =</span> <span class="st">"10px"</span>, </span>
-<span id="cb2-26"><a href=""></a>            <span class="at">width =</span> <span class="st">"10px"</span>,</span>
-<span id="cb2-27"><a href=""></a>            <span class="at">border_radius =</span> <span class="st">"50%"</span>,</span>
-<span id="cb2-28"><a href=""></a>            <span class="at">background_color =</span> <span class="st">"#1c6d7d"</span></span>
-<span id="cb2-29"><a href=""></a>          )</span>
-<span id="cb2-30"><a href=""></a>        )</span>
-<span id="cb2-31"><a href=""></a>      )</span>
-<span id="cb2-32"><a href=""></a>    }</span>
-<span id="cb2-33"><a href=""></a>  ),</span>
-<span id="cb2-34"><a href=""></a>  <span class="co"># Combine multiple visual elements for age groups</span></span>
-<span id="cb2-35"><a href=""></a>  <span class="at">columns =</span> <span class="fu">list</span>(</span>
-<span id="cb2-36"><a href=""></a>    <span class="at">Age =</span> <span class="fu">colDef</span>(</span>
-<span id="cb2-37"><a href=""></a>      <span class="at">cell =</span> <span class="cf">function</span>(value) {</span>
-<span id="cb2-38"><a href=""></a>        colors <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb2-39"><a href=""></a>          <span class="st">"18-24"</span> <span class="ot">=</span> <span class="st">"#1c6d7d"</span>,</span>
-<span id="cb2-40"><a href=""></a>          <span class="st">"25-34"</span> <span class="ot">=</span> <span class="st">"#35a4ae"</span>, </span>
-<span id="cb2-41"><a href=""></a>          <span class="st">"35-44"</span> <span class="ot">=</span> <span class="st">"#98d3ca"</span>,</span>
-<span id="cb2-42"><a href=""></a>          <span class="st">"45-54"</span> <span class="ot">=</span> <span class="st">"#ffca90"</span>,</span>
-<span id="cb2-43"><a href=""></a>          <span class="st">"55-64"</span> <span class="ot">=</span> <span class="st">"#1c6d7d"</span>,</span>
-<span id="cb2-44"><a href=""></a>          <span class="st">"65-74"</span> <span class="ot">=</span> <span class="st">"#dd8500"</span></span>
-<span id="cb2-45"><a href=""></a>          )</span>
-<span id="cb2-46"><a href=""></a>        </span>
-<span id="cb2-47"><a href=""></a>        <span class="fu">span</span>(value, <span class="at">style =</span> <span class="fu">css</span>(<span class="at">color =</span> colors[value], <span class="at">font_weight =</span> <span class="st">"bold"</span>))</span>
-<span id="cb2-48"><a href=""></a>      }</span>
-<span id="cb2-49"><a href=""></a>    )</span>
-<span id="cb2-50"><a href=""></a>  )</span>
-<span id="cb2-51"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2" data-code-line-numbers="2-10|12-16|17-27|29-38|39|40-56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="co"># Packages: reactable, purrr</span></span>
+<span id="cb2-2"><a href=""></a><span class="co"># Define age group colors for consistency</span></span>
+<span id="cb2-3"><a href=""></a>age_colors <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb2-4"><a href=""></a>  <span class="st">"18-24"</span> <span class="ot">=</span> <span class="st">"#1c6d7d"</span>,</span>
+<span id="cb2-5"><a href=""></a>  <span class="st">"25-34"</span> <span class="ot">=</span> <span class="st">"#35a4ae"</span>, </span>
+<span id="cb2-6"><a href=""></a>  <span class="st">"35-44"</span> <span class="ot">=</span> <span class="st">"#98d3ca"</span>,</span>
+<span id="cb2-7"><a href=""></a>  <span class="st">"45-54"</span> <span class="ot">=</span> <span class="st">"#ffca90"</span>,</span>
+<span id="cb2-8"><a href=""></a>  <span class="st">"55-64"</span> <span class="ot">=</span> <span class="st">"#1c6d7d"</span>,</span>
+<span id="cb2-9"><a href=""></a>  <span class="st">"65-74"</span> <span class="ot">=</span> <span class="st">"#dd8500"</span></span>
+<span id="cb2-10"><a href=""></a>)</span>
+<span id="cb2-11"><a href=""></a></span>
+<span id="cb2-12"><a href=""></a><span class="co"># Create the table with dynamic legend component</span></span>
+<span id="cb2-13"><a href=""></a><span class="fu">div</span>(</span>
+<span id="cb2-14"><a href=""></a>  <span class="co"># Main table component</span></span>
+<span id="cb2-15"><a href=""></a>  <span class="fu">reactable</span>(</span>
+<span id="cb2-16"><a href=""></a>    soundpulse_data,</span>
+<span id="cb2-17"><a href=""></a>    <span class="co"># Stage 3: Group related elements (Principle of Proximity)</span></span>
+<span id="cb2-18"><a href=""></a>    <span class="at">columnGroups =</span> <span class="fu">list</span>(</span>
+<span id="cb2-19"><a href=""></a>      <span class="fu">colGroup</span>(</span>
+<span id="cb2-20"><a href=""></a>        <span class="at">name =</span> <span class="st">"Core Metrics"</span>,</span>
+<span id="cb2-21"><a href=""></a>        <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"Metric 1"</span>, <span class="st">"Metric 2"</span>, <span class="st">"Metric 3"</span>, <span class="st">"Metric 4"</span>)</span>
+<span id="cb2-22"><a href=""></a>      ),</span>
+<span id="cb2-23"><a href=""></a>      <span class="fu">colGroup</span>(</span>
+<span id="cb2-24"><a href=""></a>        <span class="at">name =</span> <span class="st">"Key Performance"</span>,</span>
+<span id="cb2-25"><a href=""></a>        <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"KPI 1"</span>, <span class="st">"KPI 2"</span>, <span class="st">"KPI 3"</span>)</span>
+<span id="cb2-26"><a href=""></a>      )</span>
+<span id="cb2-27"><a href=""></a>    )</span>
+<span id="cb2-28"><a href=""></a>  ),</span>
+<span id="cb2-29"><a href=""></a>  <span class="co"># Stage 1: Dynamic legend (Hick's Law - reduces choice complexity)</span></span>
+<span id="cb2-30"><a href=""></a>  <span class="fu">div</span>(</span>
+<span id="cb2-31"><a href=""></a>    <span class="at">style =</span> <span class="fu">css</span>(</span>
+<span id="cb2-32"><a href=""></a>      <span class="at">display =</span> <span class="st">"flex"</span>,</span>
+<span id="cb2-33"><a href=""></a>      <span class="at">align_items =</span> <span class="st">"center"</span>,</span>
+<span id="cb2-34"><a href=""></a>      <span class="at">margin_top =</span> <span class="st">"10px"</span>,</span>
+<span id="cb2-35"><a href=""></a>      <span class="at">padding =</span> <span class="st">"8px"</span>,</span>
+<span id="cb2-36"><a href=""></a>      <span class="at">border_radius =</span> <span class="st">"4px"</span>,</span>
+<span id="cb2-37"><a href=""></a>      <span class="at">background_color =</span> <span class="st">"#f9f9f9"</span></span>
+<span id="cb2-38"><a href=""></a>    ),</span>
+<span id="cb2-39"><a href=""></a>    <span class="fu">map</span>(<span class="fu">names</span>(age_colors), <span class="cf">function</span>(age_group) {</span>
+<span id="cb2-40"><a href=""></a>      <span class="fu">div</span>(</span>
+<span id="cb2-41"><a href=""></a>        <span class="at">style =</span> <span class="fu">css</span>(</span>
+<span id="cb2-42"><a href=""></a>          <span class="at">display =</span> <span class="st">"flex"</span>, </span>
+<span id="cb2-43"><a href=""></a>          <span class="at">align_items =</span> <span class="st">"center"</span>, </span>
+<span id="cb2-44"><a href=""></a>          <span class="at">margin_right =</span> <span class="st">"15px"</span></span>
+<span id="cb2-45"><a href=""></a>        ),</span>
+<span id="cb2-46"><a href=""></a>        <span class="fu">div</span>(</span>
+<span id="cb2-47"><a href=""></a>          <span class="at">style =</span> <span class="fu">css</span>(</span>
+<span id="cb2-48"><a href=""></a>            <span class="at">width =</span> <span class="st">"10px"</span>, </span>
+<span id="cb2-49"><a href=""></a>            <span class="at">height =</span> <span class="st">"10px"</span>, </span>
+<span id="cb2-50"><a href=""></a>            <span class="at">border_radius =</span> <span class="st">"50%"</span>, </span>
+<span id="cb2-51"><a href=""></a>            <span class="at">background_color =</span> age_colors[age_group],</span>
+<span id="cb2-52"><a href=""></a>            <span class="at">margin_right =</span> <span class="st">"5px"</span></span>
+<span id="cb2-53"><a href=""></a>          )</span>
+<span id="cb2-54"><a href=""></a>        ),</span>
+<span id="cb2-55"><a href=""></a>        <span class="fu">span</span>(age_group)</span>
+<span id="cb2-56"><a href=""></a>      )</span>
+<span id="cb2-57"><a href=""></a>    })</span>
+<span id="cb2-58"><a href=""></a>  )</span>
+<span id="cb2-59"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes">
 <p><strong>Advanced Features</strong>: Highlight sophisticated techniques of package, but balance with BID principles.</p>
@@ -1097,7 +1106,7 @@ Ever felt like this?
 <pre><code># A tibble: 1 × 6
   stage  problem                 theory evidence suggestions timestamp          
   &lt;chr&gt;  &lt;chr&gt;                   &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;       &lt;dttm&gt;             
-1 Notice Users overwhelmed by f… Hick'… Feedbac… Reduce dro… 2025-04-07 19:11:54</code></pre>
+1 Notice Users overwhelmed by f… Hick'… Feedbac… Reduce dro… 2025-04-07 19:44:11</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a>notice_stage<span class="sc">$</span>theory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1123,7 +1132,7 @@ Ever felt like this?
 <pre><code># A tibble: 1 × 6
   stage  problem                 theory evidence suggestions timestamp          
   &lt;chr&gt;  &lt;chr&gt;                   &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;       &lt;dttm&gt;             
-1 Notice Users overwhelmed by f… cogni… Feedbac… Use tabs o… 2025-04-07 19:11:54</code></pre>
+1 Notice Users overwhelmed by f… cogni… Feedbac… Use tabs o… 2025-04-07 19:44:12</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a>notice_stage<span class="sc">$</span>theory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
