@@ -4,6 +4,9 @@ subtitle: "A Developer's Guide To Building Dashboards That Won't Fry Your Client
 author: "Milena Eickhoff & Jeremy Winget, PhD"
 format: 
   revealjs:
+    title-slide-attributes:
+      data-background-image: "img/title.png"
+      data-background-size: "100% 100%"
     theme: simple
     slide-number: false
     footer: "ShinyConf 2025 | Death By Dropdown?"
