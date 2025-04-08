@@ -81,13 +81,10 @@ SoundPulse's market research team was drowning in data, unable to extract meanin
 ::: {.notes}
 **Show Impact**: Build frustration recognition with the "before" dashboard.
 
-- Even though SoundPulse is a composite client...this is representative of many dashboards we've seen across the market research industry
-- Point out key issues:
-  * "Filter overload before seeing ANY insights"
-  * "Multiple tabs with no clear starting point"
-  * "Complete cognitive overload"
-- "This is why dashboards get abandoned - nobody wants this experience"
-- "Throughout the presentation, we'll show you the transformation process and the principles that guided our decisions"
+- Even though SoundPulse is a composite client...this dashboard from SoundPulse represents many we've seen across industries
+- Notice the key issues: filter overload before any insights, multiple tabs with no clear starting point, and complete cognitive overload
+- This is precisely why dashboards get abandoned - nobody wants this experience
+- To solve these problems, we developed a systematic approach that addresses both user experience and the psychological aspects of data interpretation
 :::
 
 ## Behavior Insight Design (BID) Framework {background-color="#e6f0ff"}
@@ -118,15 +115,14 @@ SoundPulse's market research team was drowning in data, unable to extract meanin
 ::: {.notes}
 **Framework Introduction**: Slow slightly to introduce - but drive home in next slide.
 
-- "The 5 stages form an easy workflow: Notice → Interpret → Structure → Anticipate → Validate"
+- Our framework flows through 5 stages: Notice → Interpret → Structure → Anticipate → Validate
   * Click through
-- "Notice is about identifying objective friction points - where users struggle with the interface"
-- "Interpret goes deeper to understand what story or insight users truly need - moving from symptoms to diagnosis"
-- "Structure focuses on organizing information in ways that align with how our brains process information"
-- "Anticipate considers how cognitive biases might affect data interpretation"
-- "Validate ensures users leave with clear takeaways and a positive final impression"
-- "These stages are iterative - you'll often revisit earlier stages as you discover new insights"
-- "This diagram will serve as our roadmap throughout the presentation"
+- Notice identifies friction points where users struggle with the interface
+- Interpret uncovers what story users truly need - moving from symptoms to diagnosis
+- Structure organizes information in ways that align with how our brains process information
+- Anticipate considers cognitive biases affecting data interpretation
+- Validate ensures users leave with clear takeaways and a positive impression
+- Remember, these stages are iterative - you'll often revisit earlier stages as you discover new insights
 :::
 
 ## Where BID Fits In {background-color="#f2f2f2"}
@@ -159,13 +155,13 @@ Systematic integration of behavioral science within the natural dashboard develo
 ::: {.notes}
 **Context Setting**: Position the framework within the broader fields.
 
-- "BID integrates existing best practices from multiple disciplines"..."We are truly standing on the shoulders of giants here"
+- BID integrates established best practices from multiple disciplines - we're truly standing on the shoulders of giants
   * Click through example fields...UX, data storytelling, psych science, data/visual communication
-- Key differentiator: "But what makes BID uniquely powerful is how it systematically connects psychological principles to specific coding decisions at each stage of development"
-- "Unlike checklists that tell you what to do, BID guides how you think about your dashboard from psychological first principles"
-- "The framework bridges theory and practice - showing not just what principles matter, but exactly when and how to apply them in your development workflow"
-- "Even though there's a lot of theory, you don't need a psychology degree to apply these principles effectively"
-- "To demonstrate...let's take a closer look at how we connected these stages to SoundPulse's dashboard."
+- What makes BID uniquely powerful is how it systematically connects psychological principles to specific coding decisions at each development stage
+- Unlike typical checklists, BID guides how you think about dashboards from psychological first principles
+- The framework bridges theory and practice - showing when and how to apply principles in your workflow
+- You don't need a psychology degree to apply these effectively
+- Let's see how these stages transformed SoundPulse's dashboard
 :::
 
 ## SoundPulse Case Study: BID Stages 1-3 {background-color="#f9f9f9"}
@@ -200,17 +196,16 @@ Systematic integration of behavioral science within the natural dashboard develo
 **Case Study Introduction:** Keep energy high while introducing concepts.
 
 - **Stage 1 (Notice):** Users were overwhelmed with options
-  * This is related to 'cognitive load' - which is the mental effort needed to process information
+  * This relates to 'cognitive load' - the mental effort needed to process information
   * When the brain gets overtaxed, comprehension drops
-  * Hick's Law also shows decision time increases logarithmically with the number of choices 
-  * So more options, means exponentially more confusion
-- **Stage 2 (Interpret):** Taking this to the next step helped us interpret what the user needed: Increased Processing Fluency
-  * Processing fluency is the ease with which information is processed - when something is easy to process, people find it more credible and trustworthy
-  * We also identified the key story the executives needed to understand...rather than showing all possible data
+  * Hick's Law shows decision time increases logarithmically with more choices
+- **Stage 2 (Interpret):** We identified what users needed - increased Processing Fluency
+  * When information is easy to process, people find it more credible
+  * We focused on the key story executives needed, not showing all possible data
 - **Stage 3 (Structure):** Moving to the Structuring stage...applied the 'Principle of Proximity' - which is a fancy way of saying we started grouping related elements together. 
   * Dual-Processing Theory distinguishes between fast, intuitive thinking and slower, deliberative thinking - we designed for both
-  * We created groups of primary and secondary metrics to create a natural flow through the data
-- "Now we'll show you the actual code implementation of these principles"
+  * We created logical groupings of metrics for natural data flow
+- Now let's look at the code implementation
 :::
 
 ## {reactable} Implementation: Visual Result {background-color="#f9f9f9"}
@@ -388,11 +383,11 @@ div(
 ::: {.notes}
 **Later stages:** Set up the psychological depth of later stages
 
-- "For the later stages of the BID framework, we addressed more subtle psychological factors that affect how users interpret and act on data."
-- **Stage 4 (Anticipate):** We noticed executives were making flawed comparisons without proper context.
+- For the later BID stages, we addressed subtler psychological factors affecting interpretation and action
+- **Stage 4 (Anticipate):** We expected some folks to make flawed comparisons if they didn't have proper context.
   * This relates to the 'Anchoring Effect' - where people rely too heavily on the first piece of information they see
   * We also saw teams struggling to interpret the data in the same way, so we addressed this with something called a "framing toggle"...more on that in just a moment
-- **Stage 5 (Validate):** Finally, we applied the 'Peak-End Rule' - the idea that people judge experiences mainly by their most intense moment and ending
+- **Stage 5 (Validate):** Finally, we applied the 'Peak-End Rule' - the idea that people judge experiences by their most intense moment and ending
   * We created summary cards highlighting key takeaways so users leave with a clear, memorable impression
 :::
 
@@ -621,15 +616,11 @@ server <- function(input, output, session) {
 ::: {.notes}
 **Framing Effect**: Drive home the practical impact.
 
-- "This is a great example to illustrate the theory behind these concepts"
-- "In this case we are showing the *Same exact data*...but users experience completely different psychological state"
-- "Progress framing creates motivation and highlights achievement"
-  - "Marketing preferred progress framing to build stakeholder confidence"
-- "Gap framing creates urgency and focuses on what remains to be done"
-  - "Product teams used gap framing to prioritize development"
-- "This isn't just theory - a classic study in the Judgment and Decision Making literature presented identical medical treatment outcomes as either a 90% survival rate or a 10% mortality rate - people react completely differently to these framings"
-- "This is why understanding psychological principles is so powerful for dashboard design"
-- "Think about your own dashboards - are you framing data in a way that drives the right decisions?"
+- This illustrates the powerful psychological principles at work...we're showing identical data but creating completely different mental states
+- Progress framing highlights achievement and builds confidence...marketing team preferred this approach
+- Gap framing creates urgency and focuses on improvements needed - product teams used this view
+- "This isn't just theory - a classic study showed that people react completely differently when presenting identical medical treatment outcomes as either a 90% survival rate or a 10% mortality rate ... even though it's the same data"
+- Consider how framing in your dashboards might drive different decisions
 :::
 
 ## From Framework to Workflow: {bidux} {.center background-color="#e6f0ff"}
@@ -656,13 +647,13 @@ server <- function(input, output, session) {
 ::: {.notes}
 **Package Introduction**: Generate excitement about practical tools.
 
-- "We're not just sharing a framework or theories - we're giving you tools to implement it immediately"
-- "The `{bidux}` package directly implements the 5-stage BID framework we've discussed today"
-- "Each function maps to a specific stage and guides your thinking through that part of the development process"
-- "Phase 1 is available today on GitHub - it provides the conceptual foundation and workflow guidance"
-- "Future phases will include LLM integration to suggest specific implementations based on your needs"
-- "We're also developing a UI component library with pre-built elements that embody these principles"
-- "Think of `{bidux}` as your behavioral science assistant for Shiny app development"
+- We're not just sharing theories - we're giving you practical tools for immediate implementation
+- The `{bidux}` package directly implements our 5-stage framework
+- Each function maps to a specific stage and guides your thinking
+- Phase 1 is available today on GitHub with the conceptual foundation
+- Future phases will include LLM integration for suggesting implementations
+- We're also developing pre-built UI components embodying these principles
+- Think of `{bidux}` as your behavioral science assistant for Shiny development
 :::
 
 ## What {bidux} Looks Like Today {background-color="#f9f9f9"}
@@ -819,8 +810,6 @@ More at: [github.com/jrwinget/bidux](https://github.com/jrwinget/bidux)
 - "The workflow functions guide you through each BID stage"
 - "Auto-suggestion of theories based on your problem description"
 - "Component suggestions provide concrete UI implementation ideas"
-- "The package helps connect psychological principles to specific suggestions and components"
-- "While we don't have time to go through a complete workflow demonstration, the package documentation on GitHub provides detailed examples"
 - When the link appears: "We're launching this at ShinyConf today - check out the repo for full documentation"
 :::
 
@@ -844,12 +833,11 @@ More at: [github.com/jrwinget/bidux](https://github.com/jrwinget/bidux)
 ::: {.notes}
 **Results Summary**: Emphasize real-world impact.
 
-- "The results speak for themselves"
-- "While our quantitative metrics are still being collected through new telemetry systems we're implementing, qualitative feedback has been overwhelmingly positive"
-- "Users who previously abandoned the dashboard now rely on it daily"
-- "Decisions that took days now happen in minutes"
-- It's still early, but the emerging message from our clients is clear: this framework is changing how teams interact with their data
-- When testimonial appears: "This transformation is what BID delivers"
+- The results speak for themselves
+- While quantitative metrics are still being collected, qualitative feedback has been overwhelmingly positive
+- Users who previously abandoned dashboards now rely on them daily
+- Decisions that took days now happen in minutes
+- When testimonial appears: The emerging message is clear: this framework transforms how teams interact with their data
 - "Remember, this wasn't just about visual improvements - this was a fundamental shift in how our users...and developers...approached the dashboard"
 :::
 
@@ -900,8 +888,8 @@ More at: [github.com/jrwinget/bidux](https://github.com/jrwinget/bidux)
 **Q&A Setup**: Prepare for questions.
 
 - We'd love to hear about your dashboard challenges"
-- "Don't forget to follow us on LinkedIn/GitHub for updates on {bidux} development"
-- "Feel free to connect with us for any questions or deeper discussions about implementation details we couldn't cover today"
+- Connect with us on LinkedIn/GitHub for updates on {bidux} development
+- Feel free to reach out for questions or deeper discussions
 - Quick answers to likely questions:
   * "How do you measure success?" → "Start with user testing and session analytics; we're building telemetry tools to help quantify impact"
   * "Does this work for technical audiences?" → "Absolutely, technical users appreciate clarity too - in fact, they often have the highest cognitive load due to the complexity of their work"

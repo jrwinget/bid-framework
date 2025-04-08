@@ -6,8 +6,8 @@
 <script src="slides_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting-de84f8d6bb715db06a919283c2d1e787.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.42">
+<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting-697306ee647f3aecb60be57249203282.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.37">
 
   <meta name="author" content="Milena Eickhoff &amp; Jeremy Winget, PhD">
   <title>Death By Dropdown?</title>
@@ -94,7 +94,7 @@
     code span.vs { color: #032f62; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-8f3eebe07241f08526c91a7e9cbef8fd.css">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-423d414d36ce366a9d05f36d06304417.css">
   <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -280,15 +280,10 @@ Ever felt like this?
 <aside class="notes">
 <p><strong>Show Impact</strong>: Build frustration recognition with the “before” dashboard.</p>
 <ul>
-<li>Even though SoundPulse is a composite client…this is representative of many dashboards we’ve seen across the market research industry</li>
-<li>Point out key issues:
-<ul>
-<li>“Filter overload before seeing ANY insights”</li>
-<li>“Multiple tabs with no clear starting point”</li>
-<li>“Complete cognitive overload”</li>
-</ul></li>
-<li>“This is why dashboards get abandoned - nobody wants this experience”</li>
-<li>“Throughout the presentation, we’ll show you the transformation process and the principles that guided our decisions”</li>
+<li>Even though SoundPulse is a composite client…this dashboard from SoundPulse represents many we’ve seen across industries</li>
+<li>Notice the key issues: filter overload before any insights, multiple tabs with no clear starting point, and complete cognitive overload</li>
+<li>This is precisely why dashboards get abandoned - nobody wants this experience</li>
+<li>To solve these problems, we developed a systematic approach that addresses both user experience and the psychological aspects of data interpretation</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -326,17 +321,16 @@ Ever felt like this?
 <aside class="notes">
 <p><strong>Framework Introduction</strong>: Slow slightly to introduce - but drive home in next slide.</p>
 <ul>
-<li>“The 5 stages form an easy workflow: Notice → Interpret → Structure → Anticipate → Validate”
+<li>Our framework flows through 5 stages: Notice → Interpret → Structure → Anticipate → Validate
 <ul>
 <li>Click through</li>
 </ul></li>
-<li>“Notice is about identifying objective friction points - where users struggle with the interface”</li>
-<li>“Interpret goes deeper to understand what story or insight users truly need - moving from symptoms to diagnosis”</li>
-<li>“Structure focuses on organizing information in ways that align with how our brains process information”</li>
-<li>“Anticipate considers how cognitive biases might affect data interpretation”</li>
-<li>“Validate ensures users leave with clear takeaways and a positive final impression”</li>
-<li>“These stages are iterative - you’ll often revisit earlier stages as you discover new insights”</li>
-<li>“This diagram will serve as our roadmap throughout the presentation”</li>
+<li>Notice identifies friction points where users struggle with the interface</li>
+<li>Interpret uncovers what story users truly need - moving from symptoms to diagnosis</li>
+<li>Structure organizes information in ways that align with how our brains process information</li>
+<li>Anticipate considers cognitive biases affecting data interpretation</li>
+<li>Validate ensures users leave with clear takeaways and a positive impression</li>
+<li>Remember, these stages are iterative - you’ll often revisit earlier stages as you discover new insights</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -385,15 +379,15 @@ Ever felt like this?
 <aside class="notes">
 <p><strong>Context Setting</strong>: Position the framework within the broader fields.</p>
 <ul>
-<li>“BID integrates existing best practices from multiple disciplines”…“We are truly standing on the shoulders of giants here”
+<li>BID integrates established best practices from multiple disciplines - we’re truly standing on the shoulders of giants
 <ul>
 <li>Click through example fields…UX, data storytelling, psych science, data/visual communication</li>
 </ul></li>
-<li>Key differentiator: “But what makes BID uniquely powerful is how it systematically connects psychological principles to specific coding decisions at each stage of development”</li>
-<li>“Unlike checklists that tell you what to do, BID guides how you think about your dashboard from psychological first principles”</li>
-<li>“The framework bridges theory and practice - showing not just what principles matter, but exactly when and how to apply them in your development workflow”</li>
-<li>“Even though there’s a lot of theory, you don’t need a psychology degree to apply these principles effectively”</li>
-<li>“To demonstrate…let’s take a closer look at how we connected these stages to SoundPulse’s dashboard.”</li>
+<li>What makes BID uniquely powerful is how it systematically connects psychological principles to specific coding decisions at each development stage</li>
+<li>Unlike typical checklists, BID guides how you think about dashboards from psychological first principles</li>
+<li>The framework bridges theory and practice - showing when and how to apply principles in your workflow</li>
+<li>You don’t need a psychology degree to apply these effectively</li>
+<li>Let’s see how these stages transformed SoundPulse’s dashboard</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -443,22 +437,21 @@ Ever felt like this?
 <ul>
 <li><strong>Stage 1 (Notice):</strong> Users were overwhelmed with options
 <ul>
-<li>This is related to ‘cognitive load’ - which is the mental effort needed to process information</li>
+<li>This relates to ‘cognitive load’ - the mental effort needed to process information</li>
 <li>When the brain gets overtaxed, comprehension drops</li>
-<li>Hick’s Law also shows decision time increases logarithmically with the number of choices</li>
-<li>So more options, means exponentially more confusion</li>
+<li>Hick’s Law shows decision time increases logarithmically with more choices</li>
 </ul></li>
-<li><strong>Stage 2 (Interpret):</strong> Taking this to the next step helped us interpret what the user needed: Increased Processing Fluency
+<li><strong>Stage 2 (Interpret):</strong> We identified what users needed - increased Processing Fluency
 <ul>
-<li>Processing fluency is the ease with which information is processed - when something is easy to process, people find it more credible and trustworthy</li>
-<li>We also identified the key story the executives needed to understand…rather than showing all possible data</li>
+<li>When information is easy to process, people find it more credible</li>
+<li>We focused on the key story executives needed, not showing all possible data</li>
 </ul></li>
 <li><strong>Stage 3 (Structure):</strong> Moving to the Structuring stage…applied the ‘Principle of Proximity’ - which is a fancy way of saying we started grouping related elements together.
 <ul>
 <li>Dual-Processing Theory distinguishes between fast, intuitive thinking and slower, deliberative thinking - we designed for both</li>
-<li>We created groups of primary and secondary metrics to create a natural flow through the data</li>
+<li>We created logical groupings of metrics for natural data flow</li>
 </ul></li>
-<li>“Now we’ll show you the actual code implementation of these principles”</li>
+<li>Now let’s look at the code implementation</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -673,13 +666,13 @@ Ever felt like this?
 <aside class="notes">
 <p><strong>Later stages:</strong> Set up the psychological depth of later stages</p>
 <ul>
-<li>“For the later stages of the BID framework, we addressed more subtle psychological factors that affect how users interpret and act on data.”</li>
-<li><strong>Stage 4 (Anticipate):</strong> We noticed executives were making flawed comparisons without proper context.
+<li>For the later BID stages, we addressed subtler psychological factors affecting interpretation and action</li>
+<li><strong>Stage 4 (Anticipate):</strong> We expected some folks to make flawed comparisons if they didn’t have proper context.
 <ul>
 <li>This relates to the ‘Anchoring Effect’ - where people rely too heavily on the first piece of information they see</li>
 <li>We also saw teams struggling to interpret the data in the same way, so we addressed this with something called a “framing toggle”…more on that in just a moment</li>
 </ul></li>
-<li><strong>Stage 5 (Validate):</strong> Finally, we applied the ‘Peak-End Rule’ - the idea that people judge experiences mainly by their most intense moment and ending
+<li><strong>Stage 5 (Validate):</strong> Finally, we applied the ‘Peak-End Rule’ - the idea that people judge experiences by their most intense moment and ending
 <ul>
 <li>We created summary cards highlighting key takeaways so users leave with a clear, memorable impression</li>
 </ul></li>
@@ -953,19 +946,11 @@ Ever felt like this?
 <aside class="notes">
 <p><strong>Framing Effect</strong>: Drive home the practical impact.</p>
 <ul>
-<li>“This is a great example to illustrate the theory behind these concepts”</li>
-<li>“In this case we are showing the <em>Same exact data</em>…but users experience completely different psychological state”</li>
-<li>“Progress framing creates motivation and highlights achievement”
-<ul>
-<li>“Marketing preferred progress framing to build stakeholder confidence”</li>
-</ul></li>
-<li>“Gap framing creates urgency and focuses on what remains to be done”
-<ul>
-<li>“Product teams used gap framing to prioritize development”</li>
-</ul></li>
-<li>“This isn’t just theory - a classic study in the Judgment and Decision Making literature presented identical medical treatment outcomes as either a 90% survival rate or a 10% mortality rate - people react completely differently to these framings”</li>
-<li>“This is why understanding psychological principles is so powerful for dashboard design”</li>
-<li>“Think about your own dashboards - are you framing data in a way that drives the right decisions?”</li>
+<li>This illustrates the powerful psychological principles at work…we’re showing identical data but creating completely different mental states</li>
+<li>Progress framing highlights achievement and builds confidence…marketing team preferred this approach</li>
+<li>Gap framing creates urgency and focuses on improvements needed - product teams used this view</li>
+<li>“This isn’t just theory - a classic study showed that people react completely differently when presenting identical medical treatment outcomes as either a 90% survival rate or a 10% mortality rate … even though it’s the same data”</li>
+<li>Consider how framing in your dashboards might drive different decisions</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1009,13 +994,13 @@ Ever felt like this?
 <aside class="notes">
 <p><strong>Package Introduction</strong>: Generate excitement about practical tools.</p>
 <ul>
-<li>“We’re not just sharing a framework or theories - we’re giving you tools to implement it immediately”</li>
-<li>“The <code>{bidux}</code> package directly implements the 5-stage BID framework we’ve discussed today”</li>
-<li>“Each function maps to a specific stage and guides your thinking through that part of the development process”</li>
-<li>“Phase 1 is available today on GitHub - it provides the conceptual foundation and workflow guidance”</li>
-<li>“Future phases will include LLM integration to suggest specific implementations based on your needs”</li>
-<li>“We’re also developing a UI component library with pre-built elements that embody these principles”</li>
-<li>“Think of <code>{bidux}</code> as your behavioral science assistant for Shiny app development”</li>
+<li>We’re not just sharing theories - we’re giving you practical tools for immediate implementation</li>
+<li>The <code>{bidux}</code> package directly implements our 5-stage framework</li>
+<li>Each function maps to a specific stage and guides your thinking</li>
+<li>Phase 1 is available today on GitHub with the conceptual foundation</li>
+<li>Future phases will include LLM integration for suggesting implementations</li>
+<li>We’re also developing pre-built UI components embodying these principles</li>
+<li>Think of <code>{bidux}</code> as your behavioral science assistant for Shiny development</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1092,7 +1077,7 @@ Ever felt like this?
 <pre><code># A tibble: 1 × 6
   stage  problem                 theory evidence suggestions timestamp          
   &lt;chr&gt;  &lt;chr&gt;                   &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;       &lt;dttm&gt;             
-1 Notice Users overwhelmed by f… Hick'… Feedbac… Reduce dro… 2025-04-08 12:04:15</code></pre>
+1 Notice Users overwhelmed by f… Hick'… Feedbac… Reduce dro… 2025-04-08 05:59:21</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a>notice_stage<span class="sc">$</span>theory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1118,7 +1103,7 @@ Ever felt like this?
 <pre><code># A tibble: 1 × 6
   stage  problem                 theory evidence suggestions timestamp          
   &lt;chr&gt;  &lt;chr&gt;                   &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;       &lt;dttm&gt;             
-1 Notice Users overwhelmed by f… cogni… Feedbac… Use tabs o… 2025-04-08 12:04:15</code></pre>
+1 Notice Users overwhelmed by f… cogni… Feedbac… Use tabs o… 2025-04-08 05:59:21</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a>notice_stage<span class="sc">$</span>theory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1222,8 +1207,6 @@ Ever felt like this?
 <li>“The workflow functions guide you through each BID stage”</li>
 <li>“Auto-suggestion of theories based on your problem description”</li>
 <li>“Component suggestions provide concrete UI implementation ideas”</li>
-<li>“The package helps connect psychological principles to specific suggestions and components”</li>
-<li>“While we don’t have time to go through a complete workflow demonstration, the package documentation on GitHub provides detailed examples”</li>
 <li>When the link appears: “We’re launching this at ShinyConf today - check out the repo for full documentation”</li>
 </ul>
 <style type="text/css">
@@ -1257,12 +1240,11 @@ Ever felt like this?
 <aside class="notes">
 <p><strong>Results Summary</strong>: Emphasize real-world impact.</p>
 <ul>
-<li>“The results speak for themselves”</li>
-<li>“While our quantitative metrics are still being collected through new telemetry systems we’re implementing, qualitative feedback has been overwhelmingly positive”</li>
-<li>“Users who previously abandoned the dashboard now rely on it daily”</li>
-<li>“Decisions that took days now happen in minutes”</li>
-<li>It’s still early, but the emerging message from our clients is clear: this framework is changing how teams interact with their data</li>
-<li>When testimonial appears: “This transformation is what BID delivers”</li>
+<li>The results speak for themselves</li>
+<li>While quantitative metrics are still being collected, qualitative feedback has been overwhelmingly positive</li>
+<li>Users who previously abandoned dashboards now rely on them daily</li>
+<li>Decisions that took days now happen in minutes</li>
+<li>When testimonial appears: The emerging message is clear: this framework transforms how teams interact with their data</li>
 <li>“Remember, this wasn’t just about visual improvements - this was a fundamental shift in how our users…and developers…approached the dashboard”</li>
 </ul>
 <style type="text/css">
@@ -1296,7 +1278,6 @@ Ever felt like this?
 <li>“Start with small implementations of these principles - even one or two can dramatically improve your dashboard”</li>
 <li>“Every dropdown you eliminate or visual cue you add helps someone make a better decision”</li>
 <li>“This is about making your users successful, not just making dashboards”</li>
-<li>“UI/UX is often the most overlooked part of Shiny development, yet it’s where behavioral science can have the greatest impact”</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1326,8 +1307,8 @@ Ever felt like this?
 <p><strong>Q&amp;A Setup</strong>: Prepare for questions.</p>
 <ul>
 <li>We’d love to hear about your dashboard challenges”</li>
-<li>“Don’t forget to follow us on LinkedIn/GitHub for updates on {bidux} development”</li>
-<li>“Feel free to connect with us for any questions or deeper discussions about implementation details we couldn’t cover today”</li>
+<li>Connect with us on LinkedIn/GitHub for updates on {bidux} development</li>
+<li>Feel free to reach out for questions or deeper discussions</li>
 <li>Quick answers to likely questions:
 <ul>
 <li>“How do you measure success?” → “Start with user testing and session analytics; we’re building telemetry tools to help quantify impact”</li>
