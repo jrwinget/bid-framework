@@ -887,6 +887,8 @@ More at: [github.com/jrwinget/bidux](https://github.com/jrwinget/bidux)
 
 
 ![](img/lets-connect.png){width="50%"}
+
+<span style="color:white">Slides available at</span> <a href="https://github.com/jrwinget/bid-framework/tree/main/conference-materials/2025_shiny-conf" style="color: #d55e00;">our GitHub repo</a>
 :::
 ::::
 
