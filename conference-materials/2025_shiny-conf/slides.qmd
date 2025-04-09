@@ -202,10 +202,9 @@ Systematic integration of behavioral science within the natural dashboard develo
 - **Stage 2 (Interpret):** We identified what users needed - increased Processing Fluency
   * When information is easy to process, people find it more credible
   * We focused on the key story executives needed, not showing all possible data
-- **Stage 3 (Structure):** Moving to the Structuring stage...applied the 'Principle of Proximity' - which is a fancy way of saying we started grouping related elements together. 
-  * Dual-Processing Theory distinguishes between fast, intuitive thinking and slower, deliberative thinking - we designed for both
-  * We created logical groupings of metrics for natural data flow
-- Now let's look at the code implementation
+- **Stage 3 (Structure):** We applied the 'Principle of Proximity' in the structure stage...which is about grouping related elements together
+  * We also make use of Dual-Processing Theory (which distinguishes between fast, intuitive thinking and slower, deliberative thinking) in the design to create logical groupings of metrics for more intuitive workflows
+- Now let's see how we brought these concepts to life
 :::
 
 ## {reactable} Implementation: Visual Result {background-color="#f9f9f9"}
@@ -384,11 +383,12 @@ div(
 **Later stages:** Set up the psychological depth of later stages
 
 - For the later BID stages, we addressed subtler psychological factors affecting interpretation and action
-- **Stage 4 (Anticipate):** We expected some folks to make flawed comparisons if they didn't have proper context.
-  * This relates to the 'Anchoring Effect' - where people rely too heavily on the first piece of information they see
-  * We also saw teams struggling to interpret the data in the same way, so we addressed this with something called a "framing toggle"...more on that in just a moment
-- **Stage 5 (Validate):** Finally, we applied the 'Peak-End Rule' - the idea that people judge experiences by their most intense moment and ending
-  * We created summary cards highlighting key takeaways so users leave with a clear, memorable impression
+- **Stage 4 (Anticipate):** We expected some folks to make flawed comparisons without proper context
+  * This relates to the 'Anchoring Effect'...where people rely too heavily on the first piece of information they see
+  * We also saw teams struggling to interpret the data in the same way, which connects to 'Framing & Loss Aversion'...how the presentation of identical data as a "gain" or a "loss" significantly affects decisions
+- **Stage 5 (Validate):** Finally, we applied the 'Peak-End Rule'...the idea that people judge experiences by their most intense moment and ending
+  * This helped us understand why users needed clear, memorable takeaways to conclude their dashboard experience
+- These psychological principles guided our approach to the remaining implementation
 :::
 
 ## {echarts4r} Implementation: Visual Result {background-color="#f9f9f9"}
@@ -660,13 +660,32 @@ server <- function(input, output, session) {
 
 ::: {.panel-tabset}
 
+### Notice
+
+::: {.fragment}
+```{r}
+#| echo: true
+library(bidux)
+
+# BID Notice stage
+notice_stage <- bid_notice(
+  problem = "Users overwhelmed by filtering options and dropdown menus",
+  # Theory parameter is optional - will auto-suggest appropriate theory if empty
+  evidence = "Feedback shows 65% of users abandon the dashboard after first use"
+)
+
+notice_stage
+notice_stage$theory
+notice_stage$suggestions
+```
+:::
+
 ### Concepts
 
 ::: {.r-stack}
 ::: {.fragment .fade-out}
 ```{r}
 #| echo: true
-library(bidux)
 
 # Concept dictionary with fuzzy searching and case-insensitive lookup
 bid_concept("processing fluency")
@@ -683,34 +702,13 @@ bid_concept("processing fluency")$implementation_tips
 ```
 :::
 
-::: {.fragment}
+::: {.fragment .fade-in-then-out}
 ```{r}
 #| echo: true
 
 # Concept dictionary with fuzzy searching and case-insensitive lookup
-viz_concepts <- bid_concepts("vis") 
-paste("Found", nrow(viz_concepts), "visualization-related concepts")
-```
-:::
-:::
-
-### Notice
-
-::: {.r-stack}
-::: {.fragment .fade-out}
-```{r}
-#| echo: true
-
-# BID Notice stage
-notice_stage <- bid_notice(
-  problem = "Users overwhelmed by filtering options and dropdown menus",
-  # Theory parameter is optional - will auto-suggest appropriate theory if empty
-  evidence = "Feedback shows 65% of users abandon the dashboard after first use"
-)
-
-notice_stage
-notice_stage$theory
-notice_stage$suggestions
+cog_concepts <- bid_concepts("cog")
+paste("Found", nrow(cog_concepts), "cog-related concepts")
 ```
 :::
 
@@ -718,10 +716,10 @@ notice_stage$suggestions
 ```{r}
 #| echo: true
 
-# BID Notice stage
+# BID Notice stage targeting cognitive load theory
 notice_stage <- bid_notice(
   problem = "Users overwhelmed by filtering options and dropdown menus",
-  theory = "cognitive load",
+  theory = "Cognitive Load Theory",
   evidence = "Feedback shows 65% of users abandon the dashboard after first use"
 )
 
@@ -804,13 +802,21 @@ More at: [github.com/jrwinget/bidux](https://github.com/jrwinget/bidux)
 ::: {.notes}
 **Code Example**: Show practical usage of the package
 
-- "Let's look at what {bidux} offers today"
-- "The concept dictionary provides implementation advice, not just theory"
-- "You can search across psychology, UI/UX, and data visualization fields...and more!"
-- "The workflow functions guide you through each BID stage"
-- "Auto-suggestion of theories based on your problem description"
-- "Component suggestions provide concrete UI implementation ideas"
-- When the link appears: "We're launching this at ShinyConf today - check out the repo for full documentation"
+- Currently, `{bidux}` has helper functions for all 5 stages of the BID framework [CLICK]
+- **Notice tab**
+  * `bid_notice` let's you begin by documenting user problems
+  * Here we document user problems like "overwhelming dropdown menus" leading to high dashboard abandonment
+  * Without specifying a theory, the package suggests one and provides actionable recommendations [SWITCH ON PRESENTATION SCREEN]
+- **Concepts tab**
+  * If you're unfamiliar with the concept or theory, you can use `bid_concepts` to look them up...[CLICK]...[CLICK]...[CLICK]...or search broadly (like "cog" for cognitive concepts)
+  * Maybe you want to update your project to use a difference concept (e.g, cognitive load theory) [CLICK]
+  * If so, you can go back and apply them directly in your workflow for new recommendations [SWITCH ON PRESENTATION SCREEN]
+- **Chained Stages tab**
+  * The real power though is piping through the entire framework
+  * We start with our noticed problem, interpret the user's needs, then structure the solution...[CLICK]...[CLICK]...all while getting tailored suggestions at each stage [SWITCH ON PRESENTATION SCREEN]
+- **Components tab**
+  * And finally, depending on the unique needs of your project, `bid_suggest_components` bridges theory to code with UI component recommendations and implementation examples...[CLICK]...[CLICK]
+- This is Phase 1 we're launching at ShinyConf today...[CLICK]...check our GitHub repo for updates
 :::
 
 ## Real-World Impact: SoundPulse Results {.center background-color="#4682b4"}
@@ -837,7 +843,7 @@ More at: [github.com/jrwinget/bidux](https://github.com/jrwinget/bidux)
 - While quantitative metrics are still being collected, qualitative feedback has been overwhelmingly positive
 - Users who previously abandoned dashboards now rely on them daily
 - Decisions that took days now happen in minutes
-- When testimonial appears: The emerging message is clear: this framework transforms how teams interact with their data
+- The emerging message is clear: this framework transforms how teams interact with their data
 - "Remember, this wasn't just about visual improvements - this was a fundamental shift in how our users...and developers...approached the dashboard"
 :::
 
@@ -856,9 +862,8 @@ More at: [github.com/jrwinget/bidux](https://github.com/jrwinget/bidux)
 - "BID reduces friction between users and insights by applying psychological principles in a systematic way"
 - "The tools we've shown today - reactable and echarts4r - give you everything you need to get started"
 - "The bidux package makes these principles accessible to every R developer, guiding you through each stage"
-- "Start with small implementations of these principles - even one or two can dramatically improve your dashboard"
+- Build dashboards that guide — not fry — your users
 - "Every dropdown you eliminate or visual cue you add helps someone make a better decision"
-- "This is about making your users successful, not just making dashboards"
 :::
 
 ## {data-background-image="img/thank-you.png" data-background-size="100% 100%"}
