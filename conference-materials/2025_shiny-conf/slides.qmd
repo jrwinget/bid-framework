@@ -616,11 +616,13 @@ server <- function(input, output, session) {
 ::: {.notes}
 **Framing Effect**: Drive home the practical impact.
 
-- This illustrates the powerful psychological principles at work...we're showing identical data but creating completely different mental states
-- Progress framing highlights achievement and builds confidence...marketing team preferred this approach
-- Gap framing creates urgency and focuses on improvements needed - product teams used this view
-- "This isn't just theory - a classic study showed that people react completely differently when presenting identical medical treatment outcomes as either a 90% survival rate or a 10% mortality rate ... even though it's the same data"
-- Consider how framing in your dashboards might drive different decisions
+- This illustrates powerful psychological principles in action...we're showing identical underlying data but creating completely different mental states [CLICK]
+- In this example, progress (gain) framing shows the *relative difference* between the raw value and the benchmark...highlighting achievement and building confidence
+  * SoundPulse's marketing team preferred this approach for stakeholder presentations and showing the progress made [CLICK]
+- BUT...the gap (loss) framing shows the raw values vs. the benchmark...creating urgency and focusing on improvements needed 
+  * Their product teams used this view to prioritize development
+- This isn't just theory - classic research shows people react completely differently to identical medical outcomes presented as either a "90% survival rate" or a "10% mortality rate"
+- Think about your own dashboards - how might framing choices drive different decisions for your users?
 :::
 
 ## From Framework to Workflow: {bidux} {.center background-color="#e6f0ff"}
