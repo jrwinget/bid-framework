@@ -1,0 +1,884 @@
+---
+title: "Death By Dropdown?"
+subtitle: "A Developer's Guide To Building Dashboards That Won't Fry Your Client's Brain"
+author: "Milena Eickhoff & Jeremy Winget, PhD"
+format: 
+  revealjs:
+    title-slide-attributes:
+      data-background-image: "img/title.png"
+      data-background-size: "100% 100%"
+    theme: simple
+    slide-number: false
+    footer: "ShinyConf 2025 | Death By Dropdown?"
+    incremental: true
+    transition: slide
+    background-transition: fade
+    highlight-style: github
+    code-block-background: true
+execute: 
+  echo: true
+---
+
+## The Problem {.center background-color="#4682b4"}
+
+<!-- TODO: replace title background image with css and brand elements -->
+
+:::: {.columns}
+::: {.column .nonincremental width="60%"}
+<h3>Ever felt like this?</h3>
+
+- Endless dropdown menus
+- Overwhelming complexity
+- Users disengaged
+- Delayed decision-making
+- "Dashboard rot"
+:::
+
+::: {.column width="40%"}
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzVhM3d3MjJvYTNyc3puM2E0cmduZjFweXhrczNwcXI0b3FhN203aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l44Q5OXJ6qaNr838Q/giphy.gif)
+:::
+::::
+
+::: {.notes}
+- Have you ever felt like this? You were asked to develop a dashboard with endless dropdown menus, overwhelming complexity, that you know would leave users disengaged and searching for answers? 
+-	Take a second to respond to our poll in the chat if you have felt like this
+  * [Take a look if you want to engage; Jeremy will publish this one as soon as the session starts and message in the chat about it]
+  * How many of you have even abandoned a dashboard because it was too complex?
+:::
+
+## It Doesn't Have To Be This Way {.center}
+
+<br>
+
+::: {.r-fit-text}
+By shifting the focus from <span style="color:#d55e00">**cramming data**</span> to <span style="color:#009e73">**crafting stories**</span>
+:::
+
+:::: {.columns .fragment}
+::: {.column width="60%"}
+<br>
+
+SoundPulse's market research team was drowning in data, unable to extract meaningful insights from their complex dashboards.
+:::
+
+::: {.column width="40%"}
+<br>
+
+![](img/soundpulse-logo.png){width="100%"}
+:::
+::::
+
+::: {.notes}
+**Transition to Solution**: Shift to a hopeful, inspiring tone here.
+
+- Don’t worry. It doesn’t have to be this way! We will give you a guide for crafting stories with data. The focus will not be on the data analysis itself but how you can update your ui to create dashboards that engage and empower the user.
+- Let’s take SoundPulse for example, a composite client of us (a mix of different experiences we had with clients). It is a music streaming service, whos marketing team was faced with the exact same problem of too much data and too complex dashboards. 
+- Let’s see how we can update their dashboards using the framework we developed and how you can implement our recommendations right away into your next project.
+:::
+
+## BID In Action: Dashboard Transformation {.center background-color="#f2f2f2"}
+
+::: {.absolute top="80%" left="12%" width="80%"}
+![](img/before-bid.png)
+:::
+
+::: {.notes}
+**Show Impact**: Build frustration recognition with the "before" dashboard.
+
+- Even though SoundPulse is a composite client...this dashboard from SoundPulse represents many we've seen across industries
+- Notice the key issues: filter overload before any insights, multiple tabs with no clear starting point, and complete cognitive overload
+- This is precisely why dashboards get abandoned - nobody wants this experience
+- To solve these problems, we developed a systematic approach that addresses both user experience and the psychological aspects of data interpretation
+:::
+
+## Behavior Insight Design (BID) Framework {background-color="#e6f0ff"}
+
+::: {.absolute left="7%" width="90%"}
+![](img/bid-framework.png)
+:::
+
+
+:::: {.columns .absolute top="65%" left="4%" .r-fit-text}
+
+::: {.column width="38%"}
+1. <span style="color:#1c6d7d">**Notice**</span> the Problem
+:::
+
+::: {.column width="46%"}
+2. <span style="color:#35a4ae">**Interpret**</span> the User's Need
+3. <span style="color:#ff9000">**Structure**</span> the Dashboard
+4. <span style="color:#ffca90">**Anticipate**</span> User Behavior
+:::
+
+::: {.column width="16%"}
+5. <span style="color:#98d3ca">**Validate**</span> & Empower the User
+:::
+
+::::
+
+::: {.notes}
+**Framework Introduction**: Slow slightly to introduce - but drive home in next slide.
+
+- The Behavior Insight Design framework flows through the 5 stages shown here: Notice → Interpret → Structure → Anticipate → Validate
+- [CLICK] **Notice the problem** identifies friction points where users struggle with the interface
+- [CLICK] **Interpret the User's Need** uncovers what story users truly need - moving from symptoms to diagnosis
+- [CLICK] **Structure the Dashboard** organizes information in ways that align with how our brains process information
+- [CLICK] **Anticipate User Behavior** considers cognitive biases affecting data interpretation
+- [CLICK] And **Validate & Empower the User** ensures users leave with clear takeaways and a positive impression
+- As you can see, the Behavior Insight Design framework is designed to be flexible...you can move between stages as your understanding evolves
+:::
+
+## Where BID Fits In {background-color="#f2f2f2"}
+
+::: {.d-flex .align-items-center}
+![](img/newton-portrait.jpg){width="15%" style="float:left; margin-right:15px;"}
+
+> "If I have seen further, it is by standing on the shoulders of giants."
+>
+> — Isaac Newton
+:::
+
+:::: {.columns .absolute top="50%" .r-fit-text}
+
+::: {.column  .nonincremental .fragment}
+- **UX Design**: Established best practices
+- **Data Storytelling**: From data dumps to meaningful narratives
+- **Psychological Science**: Evidence-based cognitive principles
+- **Visual Communication**: Optimized for information perception
+:::
+
+::: {.column .callout-tip .fragment}
+### Key Differentiator
+
+Systematic integration of behavioral science within the natural dashboard development workflow
+:::
+
+::::
+
+::: {.notes}
+**Context Setting**: Position the framework within the broader fields.
+
+- The Behavior Insight Design framework integrates established best practices from multiple disciplines - we're truly standing on the shoulders of giants
+  * [CLICK]...UX, data storytelling, psych science, data/visual communication
+- What makes BID uniquely powerful is how it systematically connects psychological principles to specific coding decisions at each development stage
+- Unlike typical checklists, the Behavior Insight Design framework guides how you think about dashboards from psychological first principles
+- The framework bridges theory and practice - showing when and how to apply principles in your workflow
+- You don't need a psychology degree to apply these effectively
+- Let's see how these stages transformed SoundPulse's dashboard
+:::
+
+## SoundPulse Case Study: BID Stages 1-3 {background-color="#f9f9f9"}
+
+:::: {.columns .nonincremental .r-fit-text}
+
+::: {.column width="32%"}
+- <span style="color:#1c6d7d">**Stage 1: Notice**</span>
+  * Complex filtering overwhelmed users (*Cognitive Load*)
+  * 72% users reported confusion (*Hick's Law*)
+:::
+
+::: {.column width="32%"}
+- <span style="color:#35a4ae">**Stage 2: Interpret**</span>
+  * Intuitive visualizations (*Processing Fluency*)
+  * Clearer key insights<br>(*Data Storytelling*)
+:::
+
+::: {.column width="32%"}
+- <span style="color:#ff9000">**Stage 3: Structure**</span>
+  * Group related elements (*Principle of Proximity*)
+  * Prioritization of metrics (*Dual-Processing Theory*)
+:::
+
+::::
+
+::: {.absolute bottom="15%" left="15%" width="70%" height="30%"}
+![](img/bid-framework.png)
+:::
+
+::: {.notes}
+**Case Study Introduction:** Keep energy high while introducing concepts.
+
+- **Stage 1 (Notice):** [CLICK] Users were overwhelmed with options
+  * [CLICK] This relates to 'cognitive load' - the mental effort needed to process information
+  * When the brain gets overtaxed, comprehension drops
+  * [CLICK] We also relied on Hick's Law here, which shows decision time increases logarithmically with more choices
+- **Stage 2 (Interpret):** [CLICK] We used these concepts in client discussions to help us identify what users needed - increased Processing Fluency [CLICK]
+  * When information is easy to process, people find it more credible
+  * And we leveraged this to focused on the key story [CLICK] executives needed...not just showing all possible data and letting users make their own choices
+- **Stage 3 (Structure):** [CLICK] We applied the 'Principle of Proximity' in the structure stage [CLICK]...which is about grouping related elements together
+  * [CLICK] And we made use of Dual-Processing Theory...which distinguishes between fast, intuitive thinking and slower, deliberative thinking...in the design to create logical groupings of metrics for more intuitive workflows
+- Remember, the specific concepts can vary...it's the framework's stages that provide consistent guidance
+- So...let's take a look at how we used the framework to apply these concepts in our app
+:::
+
+## {reactable} Implementation: Visual Result {background-color="#f9f9f9"}
+
+::: {.r-stack style="text-align:center"}
+![](img/reactable-ex1.png){width="100%"}
+
+![](img/reactable-ex2.png){.fragment width="100%"}
+
+![](img/reactable-ex3.png){.fragment width="100%"}
+
+![](img/reactable-ex4.png){.fragment width="100%"}
+
+![](img/reactable-ex5.png){.fragment width="100%"}
+:::
+
+::: {.notes}
+**Visual Impact**: Connect visuals to principles just mentioned.
+
+- This is how we could transform the dashboard for SoundPulse using stages 1-3 of our framework. Here SoundPulse wanted us to display several metrics and KPIs for different songs and display them per subgroup – in this case age. 
+  *	Notice how the grouped bars reduce cognitive load and the consistent legend simplifies comprehension. 
+  *	Notice how color-coding instantly distinguishes the different subgroups. 
+  *	Notice how the different shapes of metrics (bar charts) and KPIs (circles) instantly distinguishes the two groups. 
+  *	And if a user wants to know more information drilldowns can be used for progressive disclosure. 
+- This is the power of intentional design. Every element has a psychological purpose.  
+
+:::
+
+## {reactable} Implementation: Basics {background-color="#f9f9f9"}
+
+```{r}
+#| eval: false
+#| code-line-numbers: "4-5|6-18|19-23"
+
+# Packages: reactable, dplyr, bslib
+reactable(
+  soundpulse_data,
+  # Stage 1: Reduce cognitive load with grouped structure
+  groupBy = "Song",
+  # Stage 2: Enhance processing fluency with color coding
+  columns = list(
+    `Metric 1` = colDef(
+      style = function(value) {
+        # Color coding for instant comprehension
+        case_when(
+          value > 60 ~ list(background = "#1c6d7d", color = "white"),
+          value > 40 ~ list(background = "#35a4ae", color = "white"),
+          TRUE ~ list(background = "#ffca90", color = "black")
+        )
+      }
+    )
+  ),
+  # Stage 1: Progressive disclosure reduces overload
+  details = function(index) {
+    song_details <- filter(details_data, song_id == soundpulse_data$Song[index])
+    card(reactable(song_details, outlined = TRUE))
+  }
+)
+```
+
+::: {.notes}
+**Basic Implementation**: Highlight the simplicity of applying BID.
+
+- We promised you a guide on how you can implement our framework in your next project – so here it comes. 
+- A package we can recommend for your next dashboard is reactable (also in combination with reactable formatter). 
+- As a web developer I am scared of tables so I am glad to have a package that builds them for me and allows me to modify them easily. 
+  * An option you can easily modify yourself is the groupBy  function – as we could see before grouping data variables on the dashboard reduces cognitive load while creating visual hierarchy that is easy to follow. 
+  * Using the columns option (gives you a named list of column definitions where you can easily modify individual columns) you can easily color-code your table, for example depending on the value. It is not just aesthetic but creates instant processing fluency. 
+  * You can use the details  option for progressive disclosure (the dynamic drilldowns on the previous slide). This code creates a bslib card component which encompasses a reactable that can be opened and closed. 
+- This simple implementation already reduces cognitive load and enhances processing fluency but while those options are very easy to use we also want to go into more advanced options the reactable package gives you. 
+:::
+
+## {reactable} Implementation: Advanced {background-color="#f9f9f9"}
+
+```{r}
+#| eval: false
+#| code-line-numbers: "2-10|12-16|17-27|29-38|39|40-56"
+
+# Packages: reactable, purrr
+# Define age group colors for consistency
+age_colors <- c(
+  "18-24" = "#1c6d7d",
+  "25-34" = "#35a4ae", 
+  "35-44" = "#98d3ca",
+  "45-54" = "#ffca90",
+  "55-64" = "#1c6d7d",
+  "65-74" = "#dd8500"
+)
+
+# Create the table with dynamic legend component
+div(
+  # Main table component
+  reactable(
+    soundpulse_data,
+    # Stage 3: Group related elements (Principle of Proximity)
+    columnGroups = list(
+      colGroup(
+        name = "Core Metrics",
+        columns = c("Metric 1", "Metric 2", "Metric 3", "Metric 4")
+      ),
+      colGroup(
+        name = "Key Performance",
+        columns = c("KPI 1", "KPI 2", "KPI 3")
+      )
+    )
+  ),
+  # Stage 1: Dynamic legend (Hick's Law - reduces choice complexity)
+  div(
+    style = css(
+      display = "flex",
+      align_items = "center",
+      margin_top = "10px",
+      padding = "8px",
+      border_radius = "4px",
+      background_color = "#f9f9f9"
+    ),
+    map(names(age_colors), function(age_group) {
+      div(
+        style = css(
+          display = "flex", 
+          align_items = "center", 
+          margin_right = "15px"
+        ),
+        div(
+          style = css(
+            width = "10px", 
+            height = "10px", 
+            border_radius = "50%", 
+            background_color = age_colors[age_group],
+            margin_right = "5px"
+          )
+        ),
+        span(age_group)
+      )
+    })
+  )
+)
+```
+
+::: {.notes}
+**Advanced Features**: Highlight sophisticated techniques of package, but balance with BID principles.
+
+- In the more advanced example we will show you how you can group columns and create a dynamic legend.
+  * First, we create a vector that stores the colors we want to use to distinguish the subgroups. 
+  * Then we create the reactable. You can use the columnGroups   option to group primary and secondary metrics together (example of the principle of proximity) – it creates a header above the columns. 
+  * Below we create a container for the dynamic legend and map over the colors and age groups using a function from the purrr package. The dynamic legend reduces choice complexity for the user.
+- "We have another poll in the chat...How many have used columnGroups in reactable before?"
+  * [Take a look if you want to engage; Jeremy will publish this one 1-2 slides earlier]
+  * If not many…great, we taught something!
+  * If a lot…could also mention (quickly) how to extend with legend/div
+:::
+
+## SoundPulse Case Study: BID Stages 4-5 {background-color="#f9f9f9"}
+
+:::: {.columns .nonincremental .r-fit-text}
+
+::: {.column width="48%"}
+- <span style="color:#ffca90">**Stage 4: Anticipate**</span>
+  * Executives comparing metrics without context (*Anchoring Effect*)
+  * Different perspectives needed for different teams (*Framing & Loss Aversion*)
+:::
+
+::: {.column width="48%"}
+- <span style="color:#98d3ca">**Stage 5: Validate**</span>
+  * Teams needed actionable summaries (*Peak-End Rule*)
+:::
+::::
+
+::: {.absolute bottom="15%" left="15%" width="70%" height="30%"}
+![](img/bid-framework.png)
+:::
+
+::: {.notes}
+**Later stages:** Set up the psychological depth of later stages
+
+- For the later Behavior Insight Design stages, we addressed subtler psychological factors affecting interpretation and action
+- **Stage 4 (Anticipate):** We expected some folks to make flawed comparisons without proper context
+  * This relates to the 'Anchoring Effect'...where people rely too heavily on the first piece of information they see
+  * We also saw teams struggling to interpret the data in the same way, which connects to 'Framing & Loss Aversion'...how the presentation of identical data as a "gain" or a "loss" significantly affects decisions
+- **Stage 5 (Validate):** Finally, we applied the 'Peak-End Rule'...the idea that people judge experiences by their most intense moment and ending
+  * This helped us understand why users needed clear, memorable takeaways to conclude their dashboard experience
+- These psychological principles guided our approach to the remaining implementation
+:::
+
+## {echarts4r} Implementation: Visual Result {background-color="#f9f9f9"}
+
+::: {.r-stack style="text-align:center"}
+![](img/echarts4r-ex1.png){width="75%"}
+
+![](img/echarts4r-ex2.png){.fragment width="75%"}
+
+![](img/echarts4r-ex3.png){.fragment width="75%"}
+
+![](img/echarts4r-ex4.png){.fragment width="75%"}
+:::
+
+::: {.notes}
+**Complete Dashboard**: Show integration of multiple principles
+
+- For this dashboard SoundPulse wanted to visualize the statistics of different songs in more detail. Like the song Will it crash or run? By the Shiny Band. You might not have heard of that song yet but I’m sure you know what it’s about.  
+  * We implemented benchmark lines to help with the anchoring effect, this value can easily be used by the user for comparison. 
+  * We included a framing toggle button so that the SoundPulse marketing team can decide if they want to display their progress towards the benchmark or how much they are still missing to catch up with the benchmark. This button easily changes perspective while maintaining data integrity. 
+  * Lastly, the summary card (that you could create yourself using a large language model) ensures that users leave with key insights. 
+:::
+
+## {echarts4r} Implementation: Gauge Chart {background-color="#f9f9f9"}
+
+```{r}
+#| eval: false
+#| code-line-numbers: "2-21|23-30"
+
+# Packages: echarts4r, bslib
+# Create intuitive gauge chart (Stage 2: Processing Fluency)
+create_gauge_chart <- function(value, title) {
+  e_charts() |>
+    e_title(title) |>
+    e_gauge(
+      value,
+      startAngle = 180,
+      endAngle = 0,
+      detail = list(formatter = "{value}%"),
+      axisLine = list(
+        lineStyle = list(
+          color = list(
+            c(value/100, "#1c6d7d"),  # Filled portion
+            c(1, "#e9e9e9")           # Empty portion
+          ),
+          width = 30
+        )
+      )
+    )
+}
+
+# Usage in dashboard (or use purrr::map)
+layout_column_wrap(
+  width = 1 / 4,
+  create_gauge_chart(mean(music_data$`Metric 1`), "Metric 1"),
+  create_gauge_chart(mean(music_data$`Metric 2`), "Metric 2"),
+  create_gauge_chart(mean(music_data$`Metric 3`), "Metric 3"),
+  create_gauge_chart(mean(music_data$`Metric 4`), "Metric 4")
+)
+```
+
+::: {.notes}
+**Gauge Charts**: Focus on visual processing benefits.
+
+- Another package we recommend for different graphs is the echarts4r package which provides a large selection of graphs that can be easily customized. 
+- Gauge charts implement processing fluency perfectly and as you can see here you can modify the e_gauge function in many ways. 
+  * We’re customizing the gauge to eliminate unnecessary complexity. 
+  * The color gradient visually reinforces the value 
+  * the detail function here gives you another option to further customize your chart. 
+  * Layout_column_wrap by bslib can be used to display multiple graphs in a neat and adaptable way. 
+:::
+
+## {echarts4r} Implementation: Context {background-color="#f9f9f9"}
+
+```{r}
+#| eval: false
+#| code-line-numbers: "2-21|23-29"
+
+# Packages: echarts4r, bslib
+# Create benchmark bar (Stage 4: Anchoring Effect)
+create_benchmark_bar <- function(value, title, benchmark = 50) {
+  e_charts() |>
+    e_title(title) |>
+    e_bar(
+      value,
+      legend = list(show = FALSE),
+      showBackground = TRUE,
+    ) |>
+    e_flip_coords() |>
+    e_labels(position = "inside") |>
+    e_y_axis(show = FALSE) |>
+    e_x_axis(show = FALSE, min = 0, max = 100) |>
+    e_hide_grid_lines() |>
+    e_mark_line(
+      data = list(yAxis = benchmark),
+      lineStyle = list(color = "#dd8500", type = "dashed", width = 2),
+      label = list(show = TRUE, formatter = "Benchmark")
+    )
+}
+
+# Usage in dashboard (or use purrr::map)
+layout_columns(
+  width = 1 / 3,
+  card(create_benchmark_bar(mean(music_data$popularity), "Popularity")),
+  card(create_benchmark_bar(mean(music_data$danceability), "Danceability")),
+  card(create_benchmark_bar(mean(music_data$energy), "Energy"))
+)
+```
+
+::: {.notes}
+**Reference Lines**: Highlight the Anchoring Effect implementation.
+
+- We implement the benchmark bar with an e_bar function that has only one value and add an e_mark_line. 
+  * Here you can decide the width and color of the line and if it should be dashed or solid for example. The benchmarks provide the context users need for proper interpretation and creates visual separation from the data. This simple addition dramatically improves decision quality. 
+  * Again, the layout columns from bslib can be used to align the graphs.
+:::
+
+## {echarts4r} Implementation: Framing {background-color="#f9f9f9"}
+
+```{r}
+#| eval: false
+#| code-line-numbers: "6-12|24|25-40|42-57"
+
+# Packages: shiny, echarts4r, dplyr, purrr, bslib
+# UI with framing toggle (Stage 4: Framing & Loss Aversion)
+ui <- fluidPage(
+  titlePanel("SoundPulse Dashboard"),
+  
+  # Stage 4: Framing toggle
+  radioButtons(
+    "framing", "Framing:", 
+    choices = c("Progress" = "progress", "Gap" = "gap"),
+    selected = "progress",
+    inline = TRUE
+  ),
+  
+  # Layout for charts using programmatically generated outputs
+  layout_column_wrap(
+    width = 1 / 3,
+    card(echarts4rOutput("chart_popularity")),
+    card(echarts4rOutput("chart_danceability")),
+    card(echarts4rOutput("chart_energy"))
+  )
+)
+
+# Server logic
+server <- function(input, output, session) {
+  # Reactive expression for framed data
+  framed_data <- reactive({
+    soundpulse_data |>
+      mutate(
+        display_value = if_else(
+          input$framing == "progress",
+          value,
+          abs(benchmark - value)
+        ),
+        title = if_else(
+          input$framing == "progress",
+          metric,
+          paste0(metric, " Gap")
+        )
+      )
+  })
+  
+  # Generate all chart outputs dynamically with purrr::walk()
+  kpi_col_names <- c("popularity", "danceability", "energy")
+  walk(kpi_col_names, function(kpi_col) {
+    output_id <- paste0("chart_", kpi_col)
+    
+    output[[output_id]] <- renderEcharts4r({
+      metric_data <- filter(framed_data(), metric == kpi_col)
+      
+      # Function from previous slide
+      create_benchmark_bar(
+        metric_data$display_value,
+        metric_data$title,
+        metric_data$benchmark
+      )
+    })
+  })
+}
+```
+
+::: {.notes}
+**Framing Toggle**: Emphasize the powerful psychological effect.
+
+- For the framing toggle we use radio buttons that trigger the server-side code [CLICK] to dynamically recalculate the values based on the framing perspective [CLICK]. Different teams at SoundPulse used different frames - marketing used Progress, product used Gap. This is psychological design directly impacting business decisions . 
+  * In the last part we loop [CLICK] over the different kpi columns (using a function from the purrr package) and update all charts dynamically with the function from the previous page.
+:::
+
+## How Framing Affects Decision Making {background-color="#e6f0ff"}
+
+:::: {.columns}
+
+::: {.column .r-fit-text .fragment}
+![](img/progress-frame.png){width="90%"}
+
+
+::: {.nonincremental}
+- **Progress (gain) Framing:**
+  * Motivates by highlighting achievement
+  * Creates positive momentum
+  * Supports incremental improvement
+:::
+:::
+
+::: {.column .r-fit-text .fragment}
+![](img/gap-frame.png){width="90%"}
+
+::: {.nonincremental}
+- **Gap (loss) Framing:**
+  * Creates urgency to address shortfall
+  * Highlights areas needing improvement
+  * May trigger risk-avoidance behaviors
+:::
+:::
+
+::::
+
+::: {.notes}
+**Framing Effect**: Drive home the practical impact.
+
+- This illustrates powerful psychological principles in action...we're showing identical underlying data but creating completely different mental states [CLICK]
+- In this example, progress (gain) framing shows the *relative difference* between the raw value and the benchmark...highlighting achievement and building confidence
+  * SoundPulse's marketing team preferred this approach for stakeholder presentations and showing the progress made [CLICK]
+- BUT...the gap (loss) framing shows the raw values vs. the benchmark...creating urgency and focusing on improvements needed 
+  * Their product teams used this view to prioritize development
+- This isn't just theory - classic research shows people react completely differently to identical medical outcomes presented as either a "90% survival rate" or a "10% mortality rate"
+- Think about your own dashboards - how might framing choices drive different decisions for your users?
+:::
+
+## From Framework to Workflow: {bidux} {.center background-color="#e6f0ff"}
+
+:::: {.columns .r-fit-text}
+
+::: {.column width="56%" .nonincremental .fragment}
+- **Current Features (Phase 1):**
+  * 📚 Concept browser
+    * `bid_concept("processing fluency")`
+  * 🧠 BID stage functions
+    * `bid_notice()` to `bid_validate()`
+:::
+
+::: {.column width="42%" .nonincremental .fragment}
+- **Coming Soon (Phases 2-4):**
+  * 🤖 LLM Integration 
+  * 🛠️ UI Component Library
+  * 📊 Testing and Validation Tools
+:::
+
+::::
+
+::: {.notes}
+**Package Introduction**: Generate excitement about practical tools.
+
+- We're not just sharing theories - we're giving you practical tools for immediate implementation
+- The `{bidux}` package directly implements the Behavior Insight Design framework
+- Each function maps to a specific stage and guides your thinking
+- Phase 1 is available today on GitHub with the conceptual foundation
+- Future phases will include LLM integration for suggesting implementations
+- We're also developing pre-built UI components embodying these principles
+- Think of `{bidux}` as your behavioral science assistant for Shiny development
+:::
+
+## What {bidux} Looks Like Today {background-color="#f9f9f9"}
+
+::: {.panel-tabset}
+
+### Notice
+
+::: {.fragment}
+```{r}
+library(bidux)
+
+# BID Notice stage
+notice_stage <- bid_notice(
+  problem = "Users overwhelmed by filtering options and dropdown menus",
+  # Theory parameter is optional - will auto-suggest appropriate theory if empty
+  evidence = "Feedback shows 65% of users abandon the dashboard after first use"
+)
+
+notice_stage$theory
+notice_stage$suggestions
+```
+:::
+
+### Concepts
+
+::: {.r-stack}
+::: {.fragment .fade-out}
+```{r}
+# Concept dictionary with fuzzy searching and case-insensitive lookup
+bid_concept("processing fluency")
+```
+:::
+
+::: {.fragment .fade-in-then-out}
+```{r}
+# Concept dictionary with fuzzy searching and case-insensitive lookup
+bid_concept("processing fluency")$description
+bid_concept("processing fluency")$implementation_tips
+```
+:::
+
+::: {.fragment .fade-in-then-out}
+```{r}
+# Concept dictionary with fuzzy searching and case-insensitive lookup
+cog_concepts <- bid_concepts("cog")
+paste("Found", nrow(cog_concepts), "cog-related concepts")
+```
+:::
+
+::: {.fragment}
+```{r}
+# BID Notice stage targeting cognitive load theory
+notice_stage <- bid_notice(
+  problem = "Users overwhelmed by filtering options and dropdown menus",
+  theory = "Cognitive Load Theory",
+  evidence = "Feedback shows 65% of users abandon the dashboard after first use"
+)
+
+notice_stage$theory
+notice_stage$suggestions
+```
+:::
+:::
+
+### Chained Stages
+
+::: {.r-stack}
+::: {.fragment .fade-out}
+```{r}
+# BID chained stages
+project_docs <- notice_stage |>
+  bid_interpret(
+    central_question = "How can we simplify the filtering experience?",
+    # More details are better, but the function will offer suggestions if needed
+    data_story = list(
+      hook = "Dashboard abandonment hurts decision-making",
+      context = "Current UI requires too many decisions before seeing results",
+      resolution = "Simplify filter UI with smart defaults",
+      audience = "Marketing team",
+      metrics = c("Time to insight", "Filter usage")
+    )
+  ) |>
+  bid_structure(
+    layout = "dual_process",
+    concepts = c("Principle of Proximity", "Default Effect")
+  )
+```
+:::
+
+::: {.fragment}
+```{r}
+# BID chained stages output
+project_docs
+project_docs$suggestions
+```
+:::
+:::
+
+### Components
+
+::: {.r-stack}
+::: {.fragment .fade-out}
+```{r}
+# Get component suggestions based on your BID application
+ui_suggestions <- bid_suggest_components(project_docs, package = "bslib")
+ui_suggestions
+```
+:::
+
+::: {.fragment .fade-in}
+```{r}
+# Component suggestions output
+ui_suggestions$component
+ui_suggestions$description
+ui_suggestions$code_example
+```
+:::
+:::
+
+:::
+
+::: {.fragment}
+More at: [github.com/jrwinget/bidux](https://github.com/jrwinget/bidux)
+:::
+
+::: {.notes}
+**Code Example**: Show practical usage of the package
+
+- Currently, `{bidux}` has helper functions for all 5 stages of the Behavior Insight Design framework [CLICK]
+- **Notice tab**
+  * `bid_notice` let's you begin by documenting user problems
+  * Here we document user problems like "overwhelming dropdown menus" leading to high dashboard abandonment
+  * Without specifying a theory, the package suggests one and provides actionable recommendations [SWITCH ON PRESENTATION SCREEN]
+- **Concepts tab**
+  * If you're unfamiliar with the concept or theory, you can use `bid_concepts` to look them up...[CLICK]...[CLICK]...[CLICK]...or search broadly (like "cog" for cognitive concepts)
+  * Maybe you want to update your project to use a difference concept (e.g, cognitive load theory) [CLICK]
+  * If so, you can go back and apply them directly in your workflow for new recommendations [SWITCH ON PRESENTATION SCREEN]
+- **Chained Stages tab**
+  * The real power though is piping through the entire framework
+  * We start with our noticed problem, interpret the user's needs, then structure the solution...[CLICK]...[CLICK]...all while getting tailored suggestions at each stage [SWITCH ON PRESENTATION SCREEN]
+- **Components tab**
+  * And finally, depending on the unique needs of your project, `bid_suggest_components` bridges theory to code with UI component recommendations and implementation examples...[CLICK]...[CLICK]
+- This is Phase 1 we're launching at ShinyConf today...[CLICK]...check our GitHub repo for updates
+:::
+
+## Real-World Impact: SoundPulse Results {.center background-color="#4682b4"}
+
+:::: {.columns}
+::: {.column width="50%" .fragment}
+<blockquote style="color: #ffca90;">
+  <p>"The BID framework transformed how we approach our dashboards. What once took weeks of refinement now has clear direction from day one."</p>
+  <p>— Maya Chen, SoundPulse Research Director</p>
+</blockquote>
+:::
+
+::: {.column width="50%" .nonincremental .fragment}
+- Dramatically faster decision-making
+- Substantial increase in insights per session
+- Stakeholder satisfaction transformed from frustration to enthusiasm
+- Significantly streamlined implementation of new metrics
+:::
+::::
+
+::: {.notes}
+**Results Summary**: Emphasize real-world impact.
+
+- The results speak for themselves
+- While quantitative metrics are still being collected, qualitative feedback has been overwhelmingly positive
+- Users who previously abandoned dashboards now rely on them daily
+- Decisions that took days now happen in minutes
+- The emerging message is clear: this framework transforms how teams interact with their data
+- "Remember, this wasn't just about visual improvements - this was a fundamental shift in how our users...and developers...approached the dashboard"
+:::
+
+## Key Takeaways {.center background-color="#4682b4"}
+
+::: {.nonincremental}
+1. **BID** helps reduce friction and improve decision-making
+2. **`{reactable}` + `{echarts4r}`** help bring BID to life
+3. **`{bidux}`** supports you in applying BID at every stage<br>(try it today!)
+4. Build dashboards that guide — not fry — your users
+:::
+
+::: {.notes}
+**Wrap-Up**: Reinforce key messages with energy.
+
+- "BID reduces friction between users and insights by applying psychological principles in a systematic way"
+- "The tools we've shown today - reactable and echarts4r - give you everything you need to get started"
+- "The bidux package makes these principles accessible to every R developer, guiding you through each stage"
+- Build dashboards that guide — not fry — your users
+- "Every dropdown you eliminate or visual cue you add helps someone make a better decision"
+:::
+
+## {data-background-image="img/thank-you.png" data-background-size="100% 100%"}
+
+<!-- TODO: replace background image with css and brand elements in img -->
+
+<br>
+<br>
+
+:::: {.columns}
+::: {.column width="55%" .r-fit-text}
+### Milena Eickhoff {style="color: white;"}
+![](img/headshot-eickhoff.jpg){width="80px" height="80px" style="border-radius: 50%;"}
+![](img/qr-linkedin-eickhoff.svg){width="80px" height="80px"}
+
+### Jeremy Winget, PhD {style="color: white; margin-top: 10px;"}
+![](img/headshot-winget.jpg){width="80px" height="80px" style="border-radius: 50%;"}
+![](img/qr-linkedin-winget.svg){width="80px" height="80px"}
+
+![](img/lets-connect.png){width="50%" margin-top="10px"}
+
+<span style="color:white">Slides available at</span> <a href="https://github.com/jrwinget/bid-framework/tree/main/conference-materials/2025_shiny-conf" style="color: #ff9000;">our GitHub repo</a>
+:::
+::::
+
+::: {.notes}
+**Q&A Setup**: Prepare for questions.
+
+- We'd love to hear about your dashboard challenges"
+- Connect with us on LinkedIn/GitHub for updates on {bidux} development
+- Feel free to reach out for questions or deeper discussions
+- Quick answers to likely questions:
+  * "How do you measure success?" → "Start with user testing and session analytics; we're building telemetry tools to help quantify impact"
+  * "Does this work for technical audiences?" → "Absolutely, technical users appreciate clarity too - in fact, they often have the highest cognitive load due to the complexity of their work"
+  * "How long does implementation take?" → "Start small - even one principle makes a difference. A complete BID implementation can take 1-2 sprints depending on dashboard complexity"
+  * "How does this apply to domains beyond music?" → "We've successfully applied these principles in healthcare, finance, and retail dashboards - the psychological principles are universal"
+:::
