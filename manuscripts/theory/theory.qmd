@@ -1,84 +1,333 @@
 ---
-title: "Behavioral Insight Design: A Psychological Framework for Designing Data-Driven Decision Support Systems"
+title: "The Behavior Insight Design Framework: A Theoretical Integration for Advancing Applied Psychology in Interactive Systems"
 subtitle: Behavioral Insight Design
 author:
-  - name: Jeremy R. Winget
+  - name: Jeremy R. Winget, PhD
     email: contact@jrwinget.com
     affiliations: 
-        - id: some-tech
-          name: Some Institute of Technology
-          department: Department Name
-          address: Street Address
-          city: City
-          state: State
-          postal-code: Postal Code
+        - id: independent
+          name: Independent Researcher
+          city: Chicago
+          state: IL
+          postal-code: 60660
     attributes:
         corresponding: true
-    note: This is the first author footnote.
   - name: Milena Eickhoff
     email: m.eickhoff@skimgroup.com
     affiliations:
-        - id: another-u
-          name: Another University
-          department: Department Name
-          address: Street Address
-          city: City
-          state: State
-          postal-code: Postal Code
+        - id: skim
+          name: SKIM
+          department: Development
+          address: 'Weena 695, B6.036'
+          city: Rotterdam
+          country: The Netherlands
+          postal-code: 3013 AM
     note: |
-      Another author footnote, this is a very long footnote and it should be a really long footnote. But this footnote is not yet sufficiently long enough to make two lines of footnote text.
+      M.E. is employed by SKIM, a market research company. J.R.W. and M.E. were colleagues at SKIM during the initial development of the BID framework, but the theory and research presented was conducted independently and does not represent SKIM's official positions.
 abstract: |
-  This is the abstract. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum augue turpis, dictum non malesuada a, volutpat eget velit. Nam placerat turpis purus, eu tristique ex tincidunt et. Mauris sed augue eget turpis ultrices tincidunt. Sed et mi in leo porta egestas. Aliquam non laoreet velit. Nunc quis ex vitae eros aliquet auctor nec ac libero. Duis laoreet sapien eu mi luctus, in bibendum leo molestie. Sed hendrerit diam diam, ac dapibus nisl volutpat vitae. Aliquam bibendum varius libero, eu efficitur justo rutrum at. Sed at tempus elit.
+  Applied psychology faces a fundamental challenge in translating laboratory-derived principles to complex, real-world contexts where multiple psychological mechanisms operate simultaneously. The Behavior Insight Design (BID) framework addresses this theoretical gap through systematic integration of established psychological principles, advancing our understanding of how cognitive mechanisms interact in naturalistic environments. The framework operationalizes psychological theory through five sequential stages (Notice, Interpret, Structure, Anticipate, Validate) that map to fundamental phases of human information processing while enabling empirical investigation of mechanism interactions previously inaccessible through traditional isolated studies. BID advances psychological science in three critical ways: providing a structured platform for testing psychological predictions in ecologically valid environments, revealing novel interactions between cognitive load and bias susceptibility that emerge only in complex decision contexts, and demonstrating how established principles operate when combined in realistic environments. The framework contributes methodologically by enabling systematic investigation of multi-mechanism interactions, longitudinal process dynamics, and individual differences in naturalistic contexts while maintaining experimental rigor. Hypothetical study designs illustrate how BID enables investigation of cognitive load-bias interactions, expertise-dependent organizational effects, and individual-group optimization trade-offs that advance theoretical understanding beyond conventional experimental approaches. Rather than simply applying psychology to design, BID generates new theoretical insights about psychological processes while providing methodological innovations for conducting naturalistic psychological research that simultaneously advances basic science and practical application.
 keywords: 
-  - keyword1
-  - keyword2
+  - cognitive load
+  - dual-process theory
+  - decision making
+  - bias susceptibility
+  - individual differences
 date: last-modified
 bibliography: bibliography.bib
 format:
   elsevier-pdf:
     keep-tex: true
     journal:
-      name: Journal Name
+      name: Journal of Applied Psychology
       formatting: preprint
       # model: 3p # Don't set a model with preprint
       cite-style: authoryear
----
+--- 
 
-# Abstract 
-- Define the Behavioral Insight Design (BID) framework. 
-- Highlight theoretical foundations (cognitive psychology, behavioral economics, dual-process theories). 
-- Emphasize its operationalization of psychological theory into practical design principles. 
-- State its interdisciplinary value between psychology and UX/HCI. 
+The Behavior Insight Design Framework: A Theoretical Integration for Advancing Applied Psychology in Interactive Systems
 
-# Introduction 
-- Motivation: increased cognitive demands in data-rich environments. 
-- Identify the gap: lack of structured psychological frameworks in UX/HCI. 
-- Introduce BID as a synthesis of established psychological theories. 
+Applied psychology faces a fundamental challenge: while laboratory research has established robust principles governing cognition, decision-making, and social behavior, these insights often fail to translate effectively into complex, real-world contexts where multiple psychological mechanisms operate simultaneously. This translation gap represents more than a practical limitation: it reveals theoretical limitations in our understanding of how psychological principles interact under naturalistic conditions.
 
-# Theoretical Background 
-Summarize foundational theories relevant to BID: 
-- Cognitive Load Theory (Sweller, 1988) 
-- Dual-Process Theory (Kahneman & Tversky) 
-- Cognitive Biases (Anchoring, Framing, Confirmation Bias) 
-- Information Processing and Visual Perception (Gestalt principles, Tufte) 
-- Peak–End Rule & Aesthetic–Usability Effect (Dion et al., 1972; Norman, 2002) 
+Contemporary cognitive psychology has largely studied individual mechanisms in isolation: cognitive load theory examines working memory limitations, bias research focuses on specific judgment errors, and social psychology investigates group dynamics. However, real-world environments require users to manage cognitive load while navigating decision biases and coordinating with others, all simultaneously. The absence of integrative theoretical frameworks limits both our scientific understanding of these interactions and our ability to predict psychological outcomes in applied contexts.
 
-# The Behavioral Insight Design (BID) Framework 
-Outline BID’s 5-stage model explicitly mapping psychological theories to each: 
-- Stage 1: Notice (Cognitive Load, Hick’s Law, Visual Hierarchy) 
-- Stage 2: Interpret (Data Storytelling, Processing Fluency, Emotional Framing) 
-- Stage 3: Structure (Gestalt Principles, Dual-Processing, Default Effects) 
-- Stage 4: Anticipate (Anchoring, Framing, Confirmation Bias, Risk Perception) 
-- Stage 5: Validate & Empower (Peak–End Rule, Beautiful-is-Good, Cooperation & Coordination) 
+The Behavior Insight Design (BID) framework addresses this theoretical gap by providing a systematic integration of established psychological principles that advances our understanding of how cognitive mechanisms interact in complex environments. Rather than simply applying psychology to design, BID creates new theoretical insights about psychological processes by revealing how established principles operate when combined in realistic contexts.
 
-# Discussion: Theoretical Implications & Innovations 
-- How BID operationalizes psychological concepts into UX steps. 
-- Novelty in explicitly anticipating and mitigating biases within design phases. 
-- Potential as a tool for cognitive/behavioral psychology experimentation. 
+This theoretical integration serves psychological science in three critical ways. First, it provides a structured platform for testing psychological predictions in ecologically valid environments, addressing longstanding concerns about laboratory-to-field generalizability. Second, it reveals novel interactions between psychological mechanisms that emerge only in complex, multi-stage decision contexts. Third, it advances theoretical understanding by demonstrating how cognitive load, bias susceptibility, and social coordination mutually influence each other in ways not captured by studying these mechanisms independently.
 
-# Future Directions 
-- Propose empirical studies testing BID-derived predictions. 
-- Suggest deeper investigations into psychological mechanisms influencing dashboard efficacy (e.g., cognitive load, memory retention, decision accuracy). 
+The framework's five-stage structure reflects fundamental phases of human information processing and decision-making, providing both theoretical coherence and empirical tractability. Each stage maps to specific psychological mechanisms while the overall sequence captures the dynamic process through which complex judgments and decisions unfold in realistic contexts.
+
+# Theoretical Background & Critical Evaluation
+
+## Cognitive Load Theory: Advances & Limitations
+
+Cognitive Load Theory (Sweller, 1988) provides foundational insights into working memory limitations, establishing that human cognitive architecture constrains information processing capacity through three distinct load types: intrinsic complexity inherent to tasks, extraneous load imposed by poor instructional design, and germane load supporting learning processes. However, recent research reveals important boundary conditions that limit the theory's predictive scope. Contemporary work by Kalyuga and Singh (2016) demonstrates that cognitive load effects are highly context-dependent and interact significantly with expertise levels and task characteristics, while comprehensive reviews (Paas & van Merriënboer, 2020; Paas et al., 2003) highlight inconsistent findings across domains. Sweller, van Merriënboer, and Paas (2019) have refined our understanding of how cognitive architecture principles should inform instructional design, building upon earlier foundational work (Chandler & Sweller, 1991) on extraneous load management.
+
+The BID framework advances cognitive load theory by examining how load management strategies affect bias susceptibility, a relationship largely unexplored in traditional cognitive load research. The framework's initial stage provides operational methods for detecting cognitive friction in realistic environments, while preliminary evidence suggests that high extraneous cognitive load increases reliance on heuristic processing, potentially amplifying bias effects in ways not predicted by either theory independently. This integration reveals that cognitive load and bias mechanisms interact dynamically rather than operating as independent factors affecting decision quality.
+
+## Dual-Process Theory: Evolution & Controversies
+
+Dual-process models distinguishing automatic (System 1) and controlled (System 2) processing have faced significant theoretical challenges. Kruglanski and Gigerenzer (2011) argue that these processing modes reflect manifestations of a single cognitive principle rather than constituting a strict binary divide, while neuroscience evidence and reasoning research suggest more fluid, continuous processing mechanisms (Evans & Stanovich, 2013). These theoretical developments indicate that dual-process mechanisms operate along a dynamic continuum rather than as discrete cognitive systems.
+
+BID incorporates these theoretical developments by treating dual-process mechanisms as dynamic rather than categorical, examining how environmental factors systematically shift users between processing modes. This approach contributes to theoretical understanding of dual-process flexibility while providing practical guidance for supporting appropriate processing engagement. The framework's structure enables investigation of how contextual factors influence the transition between automatic and controlled processing, advancing theoretical understanding beyond traditional binary conceptualizations.
+
+## Bias Research: Replication Challenges & Theoretical Refinement
+
+Research on judgment biases including anchoring, framing, and confirmation effects has long been considered theoretically robust, but replication studies increasingly demonstrate smaller effect sizes and inconsistent reproducibility, particularly when assessed through confidence intervals (Open Science Collaboration, 2015; Simmons & Nelson, 2006). These discrepancies are exacerbated by publication bias including p-hacking and file-drawer effects, which inflate effect sizes and skew the research record toward significant findings.
+
+Methodological shifts further complicate replication efforts. Changes in participant populations, such as the evolving composition of Mechanical Turk samples, introduce cultural and procedural variability that contributes to inconsistent findings across studies. Research on individual differences reveals that bias susceptibility is not uniform across populations but correlates with reasoning dispositions including cognitive reflection and conflict detection abilities (Simmons & Nelson, 2006). This evidence highlights the need to account for systematic variability rather than treating bias effects as monolithic phenomena affecting all individuals equally.
+
+The BID framework addresses these challenges by examining bias effects within realistic decision contexts rather than isolated experimental paradigms. This approach has revealed that bias mitigation strategies effective in laboratory settings may fail in complex environments where multiple biases operate simultaneously, a finding with important theoretical implications for understanding bias mechanisms. The framework enables systematic investigation of bias interactions that occur naturally in complex decision environments, advancing theoretical understanding beyond what has been achievable through traditional single-bias studies.
+
+## Information Processing: Beyond Gestalt Principles
+
+While Gestalt principles provide valuable guidance for visual organization, contemporary vision science reveals more complex mechanisms governing attention and perception than captured by traditional organizational laws. Change blindness research and studies of inattentional blindness demonstrate that perceptual organization principles interact with attention allocation in ways not predicted by classical Gestalt theory. Rensink, O'Regan, and Clark (1997) demonstrated that large scene changes can go unnoticed without directed attention, revealing complex interactions between perceptual organization and attentional allocation that extend beyond simple organizational principles.
+
+BID integrates these advances by examining how attention management strategies affect information processing throughout extended decision sequences, revealing novel insights about attention sustainability and the dynamic relationship between perceptual organization and cognitive load. The framework's structure stage provides systematic approaches for testing how multiple organizational principles interact in complex information environments, advancing theoretical understanding of visual information processing beyond traditional single-principle studies.
+
+# Distinguishing BID from Existing Frameworks
+
+The BID framework represents a significant departure from existing applied psychology and human-computer interaction models through its systematic integration of multiple psychological domains. Norman's (2003) Emotional Design framework operates primarily at aesthetic and usability levels, focusing on visceral, behavioral, and reflective responses to individual design elements. While influential in design practice, Norman's approach treats emotional responses as outcomes rather than examining the underlying cognitive mechanisms that generate these responses, limiting its theoretical contributions to psychological science.
+
+Traditional cognitive engineering frameworks like GOMS (Goals, Operators, Methods, Selection Rules) provide detailed models of expert performance but focus on isolated task sequences rather than dynamic interactions between multiple psychological mechanisms. GOMS models assume skilled performance with minimal unexpected interruptions and treat cognitive processes as predictable sequences (Card, Moran & Newell, 1983), limiting their applicability to complex, real-world environments where multiple psychological factors interact unpredictably. Extensions like SGOMS (West & Nagy, 2007) begin to address macrocognitive complexity, but lack the fully integrated multi-mechanism perspective that BID provides through its stage-based coupling approach.
+
+BID's theoretical innovation lies in its systematic integration of multiple psychological domains through development-stage coupling, enabling three unique contributions that distinguish it from existing frameworks. *Mechanism Integration* examines how cognitive load, bias susceptibility, information processing, and social coordination interact dynamically rather than treating them as independent factors, revealing emergent properties not captured by studying individual mechanisms in isolation. *Development-Stage Coupling* systematically connects psychological principles to specific technical implementation decisions, creating a bridge between theoretical understanding and practical application that enables empirical validation in realistic contexts. *Dynamic Process Modeling* treats psychological mechanisms as evolving processes throughout extended decision sequences rather than static characteristics, examining how early-stage interventions affect later-stage processing in ways not captured by traditional cross-sectional approaches.
+
+These distinctions position BID as a theoretical framework for psychological science rather than simply an applied design methodology, enabling investigation of psychological complexity while maintaining the empirical rigor necessary for scientific advancement.
+
+# The Behavior Insight Design Framework: Theoretical Integration
+
+The BID framework operationalizes psychological theory through five sequential stages, each explicitly grounded in established psychological principles and providing specific guidance for technical implementation decisions. This structured approach ensures systematic consideration of psychological factors throughout the development process rather than relegating them to post-hoc considerations, enabling systematic investigation of psychological mechanism interactions in realistic contexts.
+
+## Stage 1: Cognitive Friction Detection (Notice)
+
+The Notice stage advances cognitive load theory by providing operational methods for detecting cognitive friction in realistic environments rather than relying on subjective load ratings or secondary task paradigms that may not capture the complexity of naturalistic cognitive demands. This stage identifies specific user interface characteristics that predict cognitive overload based on established cognitive architecture principles, enabling systematic assessment of cognitive load sources in complex environments.
+
+**Theoretical Contribution:** This stage extends cognitive load theory by examining how multiple load sources interact in realistic contexts. Traditional research examines load types independently, but naturalistic environments involve simultaneous intrinsic complexity, interface-induced extraneous load, and social coordination demands. The Notice stage provides a systematic framework for measuring these load interactions, revealing how different load sources combine to affect overall cognitive performance.
+
+**Operational Framework:**
+
+- Hick's Law violation detection: Choice structures exceeding logarithmic complexity thresholds
+- Visual hierarchy disruption measurement: Attention pattern deviation from optimal information processing sequences
+- Cognitive load accumulation assessment: Multi-source load interaction effects
+
+**Theoretical Prediction:** The Notice stage will will reveal threshold effects where additional load sources produce non-linear performance degradation, a prediction not derivable from single-source cognitive load studies. This prediction advances theoretical understanding by suggesting that cognitive load effects may be cumulative rather than additive, with implications for how cognitive architecture responds to multiple simultaneous demands.
+
+## Stage 2: Cognitive Goal Mapping (Interpret)
+
+The Interpret stage advances understanding of how narrative processing affects complex decision-making by examining the integration of story comprehension mechanisms with decision-making processes. While research has examined story comprehension and decision-making separately, little work has investigated how narrative structure affects information integration in decision contexts, representing a significant gap in theoretical understanding.
+
+**Theoretical Contribution:** This stage tests whether data storytelling frameworks derived from narrative psychology actually improve decision quality in realistic contexts rather than simply improving comprehension or engagement. The framework predicts that information organized as coherent narratives will reduce cognitive load while improving decision accuracy, a testable hypothesis bridging cognitive psychology and decision science that has important implications for how information structure affects cognitive performance.
+
+**Operational Framework:**
+
+- Central question clarity measurement: Information alignment with user cognitive goals
+- Narrative coherence assessment: Story structure effectiveness for information integration
+- User cognitive model validation: Persona accuracy for predicting information processing patterns
+
+**Theoretical Prediction:** Narrative structure will interact with cognitive load to produce non-additive effects on decision quality, with optimal benefits occurring at moderate cognitive load levels. This prediction suggests that narrative benefits may depend on available cognitive resources, advancing theoretical understanding of how story processing interacts with cognitive architecture constraints.
+
+## Stage 3: Information Architecture Optimization (Structure)
+
+The Structure stage provides a systematic framework for testing how multiple organizational principles interact to affect information processing efficiency. While individual principles like proximity and hierarchy have been studied separately, their combined effects in complex information environments remain largely unexplored, limiting our theoretical understanding of how visual organization affects cognitive performance.
+
+**Theoretical Contribution:** This stage examines how Gestalt principles, dual-process engagement, and default effects interact to influence information processing patterns. The framework predicts specific interaction effects between organizational principles that advance theoretical understanding of visual information processing beyond what has been achievable through studying individual principles in isolation.
+
+**Operational Framework:**
+
+- Gestalt principle optimization: Systematic application of proximity, similarity, and closure for information grouping
+- Dual-process engagement design: Interface elements optimized for appropriate System 1/System 2 activation
+- Default effect implementation: Strategic choice architecture based on decision context analysis
+
+**Theoretical Prediction:** Organizational principles will show complementary rather than additive effects, with optimal combinations varying based on user expertise and task complexity. This prediction advances theoretical understanding by suggesting that visual organization principles interact dynamically rather than operating independently, with implications for how perceptual processing adapts to different cognitive demands.
+
+## Stage 4: Bias Interaction Management (Anticipate)
+
+The Anticipate stage represents the framework's most significant theoretical contribution, systematically examining how multiple cognitive biases interact in realistic decision contexts. Traditional bias research studies individual biases in isolation, but realistic decisions involve multiple potential bias sources operating simultaneously, creating interaction effects that have been largely unexplored in psychological research.
+
+**Theoretical Contribution:** This stage advances bias research by examining bias interaction effects and testing whether mitigation strategies effective for individual biases remain effective when multiple biases are present. The framework predicts that bias interactions will produce non-linear effects on decision quality that cannot be predicted from studying individual biases independently, representing a significant advance in theoretical understanding of judgment processes.
+
+**Operational Framework:**
+
+- Anchoring mitigation through multiple reference points: Testing effectiveness of comparative reference strategies
+- Framing flexibility implementation: Dynamic perspective switching to reduce framing bias susceptibility
+- Confirmation bias intervention: Systematic presentation of contradictory evidence and alternative scenarios
+
+**Theoretical Prediction:** Bias mitigation strategies will show interference effects when multiple biases are addressed simultaneously, requiring integrated rather than independent intervention approaches. This prediction advances theoretical understanding by suggesting that bias mechanisms may compete for cognitive resources or conflict at processing levels, with implications for how judgment processes operate under realistic complexity.
+
+## Stage 5: Outcome Consolidation & Coordination (Validate)
+
+The Validate stage tests Peak-End Rule predictions in extended interactive contexts while examining how collaborative features affect individual and group decision-making processes. This integration of individual memory consolidation with group coordination represents a novel theoretical integration that has been difficult to investigate through traditional experimental approaches.
+
+**Theoretical Contribution:** This stage examines how individual cognitive principles (e.g., Peak-End Rule, episodic memory consolidation) interact with social psychological mechanisms including group coordination in realistic collaborative contexts. The framework predicts that experience optimization strategies will affect both individual satisfaction and group decision quality, but these effects may not align in ways that optimize overall outcomes.
+
+**Operational Framework:**
+
+- Peak moment identification and enhancement: Systematic creation of positive cognitive experiences at decision points
+- Conclusion optimization: Experience design to maximize retention and satisfaction with decision processes
+- Collaborative decision support: Integration of individual optimization with group coordination mechanisms
+
+**Theoretical Prediction:** Experience optimization will show differential effects for individual versus group contexts, with some strategies beneficial for individuals but detrimental to group performance. This prediction advances theoretical understanding by suggesting that individual and group-level psychological mechanisms may operate according to different optimization principles, with implications for how collaborative systems should balance individual and collective outcomes.
+
+# Empirical Instantiation: Hypothetical Study Designs
+
+To demonstrate the framework's empirical tractability, we present three hypothetical study designs that illustrate how BID enables systematic investigation of psychological mechanism interactions in naturalistic contexts while maintaining experimental rigor necessary for causal inference.
+
+## Study 1: Cognitive Load-Bias Interaction in Financial Dashboard Design
+
+**Research Question:** How do cognitive load reduction strategies affect bias susceptibility in complex financial decision contexts, and do these effects vary based on individual differences in expertise and cognitive capacity?
+
+**Design:** Randomized controlled experiment with 2x3 factorial design crossing cognitive load condition (high versus reduced) with bias intervention strategy (control, sequential mitigation, integrated mitigation), enabling systematic investigation of load-bias interactions while controlling for individual difference factors.
+
+**Participants:** 180 financial advisors recruited from investment firms, randomly assigned to conditions with stratification based on experience level and cognitive capacity measures to ensure balanced representation across experimental conditions.
+
+**Materials:** Interactive financial dashboard presenting client portfolio data with embedded decision scenarios designed to elicit anchoring, framing, and confirmation biases while maintaining ecological validity through realistic financial decision contexts.
+
+**BID Implementation** uses the Notice stage through systematic removal of Hick's Law violations and visual hierarchy disruptions in the reduced load condition, and the Anticipate stage through implementation of anchoring mitigation using multiple reference points, framing flexibility through dynamic perspective switching, and confirmation bias intervention through contradictory evidence presentation.
+
+**Telemetry Data Collection** includes eye tracking for fixation patterns, attention allocation, and visual search efficiency measures, interaction logs capturing click sequences, decision timing, and information access patterns, and cognitive load indicators including pupil dilation, task switching frequency, and error rates that provide objective measures of cognitive demand.
+
+**Dependent Variables** include decision accuracy assessed through expert panel ratings of recommendation quality, bias susceptibility measured through magnitude of anchoring, framing, and confirmation effects, and cognitive load assessed through NASA-TLX ratings and secondary task performance measures.
+
+**Predicted Interactions:** anticipate that cognitive load reduction will decrease bias susceptibility more effectively than bias-specific interventions alone, sequential bias mitigation will show interference effects not present in integrated approaches, and telemetry patterns will reveal attention allocation changes that mediate load-bias interactions.
+
+**Theoretical Implications:** This study would test the novel prediction that cognitive load and bias mechanisms interact in ways not captured by studying either independently, advancing theoretical understanding of dual-process flexibility under realistic complexity while providing empirical evidence for integrated intervention approaches.
+
+## Study 2: Information Architecture and Expertise Interactions in Medical Diagnosis
+
+**Research Question:** How do Gestalt principle applications interact with medical expertise to affect diagnostic accuracy and confidence, and what are the mechanisms underlying expertise-dependent framework effectiveness?
+
+**Design:** Mixed factorial design with expertise level (novice residents versus experienced physicians) as between-subjects factor and information organization strategy (traditional hierarchy, Gestalt-optimized, dual-process targeted) as within-subjects factor, enabling investigation of expertise-framework interactions while controlling for individual learning effects.
+
+**Participants:** 90 medical professionals including 45 residents and 45 attending physicians recruited from academic medical centers, with balanced representation across specialties and experience levels to ensure generalizability of findings.
+
+**Materials:** Electronic health record interface presenting complex cases with identical information organized according to different BID principles, maintaining clinical authenticity while enabling systematic manipulation of organizational variables.
+
+**BID Implementation** uses the Structure stage through systematic application of proximity and similarity principles for symptom clustering and closure principles for differential diagnosis organization, and the Interpret stage through interface elements designed to promote appropriate System 1 pattern recognition and System 2 analytical reasoning based on case complexity.
+
+**Longitudinal Assessment** includes baseline expertise measurement through diagnostic skill assessments and working memory capacity testing, performance tracking examining diagnostic accuracy, time to decision, and confidence ratings across multiple cases, and learning effects assessment examining skill development over repeated exposures to different organizational strategies.
+
+**Dependent Variables** include diagnostic accuracy measured through concordance with expert panel consensus, processing efficiency assessed through time to reach decision and information access patterns, and confidence calibration examining accuracy of confidence judgments relative to actual performance.
+
+**Predicted Interactions** anticipate that organizational principles will show differential benefits based on expertise level, novice physicians will benefit more from dual-process support than expert physicians, and Gestalt optimization will improve pattern recognition for experienced physicians but potentially overwhelm novices with excessive visual complexity.
+
+**Theoretical Implications:** This study would advance understanding of how organizational principles interact with domain expertise, testing predictions about expertise-dependent framework effectiveness while revealing mechanisms underlying individual differences in visual information processing.
+
+## Study 3: Social Coordination and Individual Experience Optimization
+
+**Research Question:** How does optimizing individual user experience affect group decision quality in collaborative contexts, and what are the trade-offs between individual satisfaction and collective performance?
+
+**Design:** Multi-level experimental design with groups of 4 participants assigned to collaborative decision tasks using interfaces optimized for individual experience, group coordination, or integrated optimization, enabling investigation of individual-group interactions while maintaining realistic collaborative complexity.
+
+**Participants:** 240 participants organized into 60 groups recruited from university and professional populations, with balanced representation across demographic characteristics and collaborative experience levels to ensure broad applicability of findings.
+
+**Materials:** Collaborative decision support system for complex resource allocation tasks requiring both individual analysis and group coordination, maintaining task authenticity while enabling systematic manipulation of optimization strategies.
+
+**BID Implementation** uses the Validate stage through Peak-End Rule optimization for individual satisfaction and memory consolidation, and group awareness tools, perspective sharing mechanisms, and conflict resolution support that enable systematic investigation of individual-group optimization interactions.
+
+**Multi-Level Data Collection** includes individual level measures of experience ratings, memory for decision process, and satisfaction with outcomes, group level measures of decision quality ratings, coordination efficiency, and consensus building effectiveness, and process level measures of communication patterns, role emergence, and conflict resolution strategies.
+
+**Dependent Variables** include individual outcomes of satisfaction, learning, and memory consolidation, group outcomes of decision quality, process efficiency, and member commitment, and interaction patterns including communication frequency, information sharing, and influence dynamics.
+
+**Predicted Trade-offs** anticipate that individual experience optimization will improve satisfaction but potentially harm group decision quality, integrated optimization will reveal optimal balance points between individual and group benefits, and social coordination features will moderate individual experience effects in ways that depend on task complexity and group composition.
+
+**Theoretical Implications:** This study would test novel predictions about individual-group optimization trade-offs, advancing understanding of how individual cognitive principles interact with social psychological mechanisms while revealing optimal approaches for balancing individual and collective outcomes in collaborative contexts.
+
+# Theoretical Implications and Advances
+
+## Integration of Previously Isolated Mechanisms
+
+The BID framework's primary theoretical contribution lies in demonstrating how cognitive mechanisms that have been studied independently interact in systematic, predictable ways that generate emergent effects not captured by traditional single-mechanism studies. The preliminary evidence for cognitive load-bias interactions and bias interference effects represents novel theoretical insights that advance scientific understanding beyond what has been achievable through isolated laboratory investigations.
+
+This integration approach reveals that psychological mechanisms operate as interconnected systems rather than independent modules, with implications for how we understand cognitive architecture and its constraints. The framework demonstrates that cognitive load affects bias susceptibility, bias interactions create interference effects that limit mitigation strategy effectiveness, and expertise moderates organizational principle benefits in ways not predicted by studying any mechanism independently.
+
+## Ecological Validity Enhancement
+
+By providing a structured framework for testing psychological predictions in realistic contexts, BID addresses longstanding concerns about laboratory-to-field generalizability in psychological research. The concept of "ecological validity" has lacked precision despite its theoretical importance, creating challenges for researchers attempting to balance experimental control with real-world relevance. BID's structured field-testing approach integrates experimental control with naturalistic complexity, addressing the internal-external validity tensions identified by Dipboye and Flanagan (1979) and operationalizing Bronfenbrenner's (1977) ecological systems perspective within experimental frameworks.
+
+The framework enables systematic investigation of how laboratory-derived principles operate under naturalistic complexity while maintaining experimental rigor necessary for causal inference. This methodological advance represents a significant contribution to psychological research methodology, providing structured approaches for conducting research that is both scientifically rigorous and practically relevant.
+
+## Dynamic Process Understanding
+
+Traditional cognitive psychology often treats psychological mechanisms as static characteristics rather than dynamic processes that change based on context and task demands. The BID framework advances theoretical understanding by examining how psychological mechanisms evolve throughout extended decision sequences and how early-stage interventions affect later-stage processing in ways not captured by traditional cross-sectional approaches.
+
+This dynamic perspective aligns with emerging theoretical frameworks in cognitive science, including Decision Field Theory (Busemeyer & Townsend, 1993) and empirical neurodynamics of learning (Bassett et al., 2010), that emphasize temporal evolution of cognitive processes. The framework's potential for capturing these temporal dynamics represents an important theoretical advance that opens new avenues for understanding how psychological mechanisms unfold over time in realistic contexts.
+
+## Individual Differences Integration
+
+The framework's systematic attention to user characteristics including expertise, cognitive style, and social context advances theoretical understanding of when and why psychological principles show variable effects across individuals and contexts. This contribution addresses a significant limitation in traditional psychological research that often treats individual differences as error variance rather than theoretically meaningful factors that provide insights into underlying mechanisms.
+
+Empirical evidence demonstrates that individual traits like working memory capacity and personality factors meaningfully modulate bias susceptibility and attention patterns (Furnham & McClelland, 2012), supporting BID's focus on theoretically relevant individual differences. The framework's integration of individual difference factors enables investigation of boundary conditions for psychological principles while revealing mechanisms underlying individual variation in cognitive performance.
+
+# Methodological Contributions to Psychological Science
+
+## Naturalistic Experimental Platforms
+
+The BID framework provides a structured methodology for conducting psychological research in naturalistic contexts while maintaining experimental control, addressing the persistent challenge of balancing ecological validity with internal validity that has constrained psychological research. By embedding structured manipulations directly within real-world environments, the framework explicitly bridges the traditional gap between internal and external validity, operationalizing longstanding recommendations in experimental psychology (Dipboye & Flanagan, 1979) while implementing Bronfenbrenner's ecological systems perspective (1977) within experimental frameworks.
+
+The framework's staged structure enables systematic manipulation of psychological variables within realistic task environments rather than abstracting away contextual complexity. This approach embraces environmental complexity while providing theoretical structure for understanding how psychological mechanisms operate under naturalistic conditions, enabling robust causal inference in contexts that maintain practical relevance.
+
+## Multi-Mechanism Investigation
+
+The framework enables systematic investigation of how multiple psychological mechanisms interact, addressing a significant limitation in traditional research that typically studies mechanisms in isolation due to experimental complexity constraints. BID's multi-stage approach creates structured opportunities for examining how different psychological mechanisms including cognitive load and biases interact dynamically across stages of user engagement.
+
+These emergent interaction effects follow theoretical predictions from cognitive control literature and neural network models of bias, highlighting the value of integrated investigations for revealing psychological complexity. This methodological advance opens new avenues for understanding how psychological mechanisms operate as integrated systems rather than independent modules, with implications for theoretical models of cognitive architecture.
+
+## Longitudinal Process Investigation
+
+Unlike traditional cross-sectional approaches that provide snapshots of psychological processes, the BID framework supports investigation of how psychological mechanisms evolve over extended time periods and how interventions at different stages affect overall process outcomes. The framework supports sophisticated temporal modeling approaches, tracking intervention impacts over time through techniques like latent growth curves and cross-lagged analysis that mirror approaches in dynamic decision modeling and align with formal dynamic frameworks such as Decision Field Theory (Busemeyer & Townsend, 1993).
+
+The framework's developmental structure enables investigation of temporal dynamics in psychological processes, revealing how early-stage cognitive load affects later-stage bias susceptibility and how bias mitigation strategies influence final outcome satisfaction. This longitudinal perspective represents an important methodological advance that enables investigation of psychological processes as they naturally unfold over time rather than as isolated momentary phenomena.
+
+# Future Directions for Psychological Research
+
+## Cognitive Load-Bias Interaction Studies
+
+The preliminary evidence for cognitive load-bias interactions suggests a productive research program examining how working memory limitations affect different types of bias susceptibility in ways not predicted by studying either mechanism independently. Specific investigations should examine whether different types of cognitive load including intrinsic versus extraneous load show differential effects on bias susceptibility (Lavie et al., 2004), how individual differences in working memory capacity moderate load-bias interactions, and whether cognitive load reduction strategies can serve as general bias mitigation approaches that are more effective than bias-specific interventions.
+
+## Bias Interaction Mechanism Research
+
+The evidence for bias interference effects opens investigation into how multiple biases interact at cognitive and neural levels, advancing theoretical understanding of judgment processes beyond traditional single-bias studies. Research should examine whether bias interactions reflect competition for cognitive resources or fundamental conflicts between judgment strategies, how the sequence of bias exposure affects overall decision quality, and whether some bias combinations show synergistic rather than interference effects that could inform optimal intervention design.
+
+## Expertise-Framework Interaction Studies
+
+The expertise-dependent framework effects suggest systematic investigation of how psychological principles operate differently across knowledge levels, with implications for understanding both expertise development and principle boundary conditions. Research should examine whether expertise effects reflect changes in cognitive architecture or strategic adaptation to task demands, how domain-specific versus general expertise affects psychological principle effectiveness, and whether expertise can be systematically developed to optimize psychological principle benefits through targeted training interventions.
+
+## Dynamic Process Modeling
+
+Future research should develop computational models that capture how psychological mechanisms evolve throughout extended decision sequences, incorporating feedback loops between different psychological mechanisms, predicting when interventions at different stages will be most effective, and accounting for individual differences in psychological mechanism engagement. These models would advance theoretical understanding by providing formal frameworks for understanding psychological complexity while enabling precise predictions about intervention effectiveness.
+
+# Limitations and Boundary Conditions
+
+## Framework Scope
+
+The BID framework was developed primarily in contexts involving complex information processing and decision-making tasks that require sustained cognitive engagement. Its applicability to other psychological domains including learning, memory consolidation, and social interaction requires systematic investigation to establish boundary conditions and identify necessary modifications for different application contexts.
+
+## Cultural and Individual Difference Considerations
+
+The framework draws primarily from research conducted in Western, educated populations, creating potential limitations for cross-cultural applicability. Cross-cultural validation is necessary to establish boundary conditions and cultural moderators of framework effectiveness, particularly given evidence that cognitive processes and bias susceptibility vary across cultural contexts in theoretically meaningful ways.
+
+## Implementation Complexity
+
+The framework requires substantial psychological knowledge for effective implementation, which initially presented accessibility challenges for practitioners without extensive psychological training. To address this limitation, we have developed an open-source R package, called `{bidux}`, that operationalizes the framework's principles through computational tools accessible to developers, data scientists, and other applied practitioners (Winget, 2025). The package is currently hosted at https://github.com/jrwinget/bidux and has been submitted to the Comprehensive R Archive Network (CRAN) for broader distribution.
+
+The `{bidux}` package translates complex psychological principles into structured analytical workflows, enabling practitioners to implement BID methodologies while maintaining theoretical fidelity. The computational approach addresses implementation complexity by providing automated assessment tools for cognitive friction detection, standardized templates for bias interaction analysis, and guided frameworks for multi-mechanism investigation. This technological solution enables broader application of the framework while preserving the psychological rigor necessary for valid implementation.
+
+Future research should examine how computational tools affect implementation quality compared to expert-guided application, whether automated assessment tools maintain measurement validity across diverse contexts, and how technological mediation influences the framework's theoretical contributions to psychological understanding.
+
+## Measurement Challenges
+
+Some framework components, particularly cognitive load assessment and bias detection in naturalistic contexts, require sophisticated measurement approaches that may limit practical applicability. Development of simpler assessment tools that maintain measurement validity while improving practical accessibility represents an important research priority for framework development.
 
 # Conclusion
-- Restate BID’s theoretical contribution as a coherent synthesis of psychology into design methodology. 
+
+The Behavior Insight Design framework advances psychological science by providing systematic integration of established principles that reveals novel insights about psychological mechanism interactions in complex, realistic contexts. Rather than simply applying psychology to design problems, BID generates new theoretical understanding about how cognitive load, decision-making biases, information processing, and social coordination operate when combined in naturalistic environments where multiple psychological factors interact dynamically.
+
+The framework's primary contribution to psychological science lies in demonstrating that mechanisms studied independently in laboratory settings interact in systematic, predictable ways that generate emergent effects not captured by traditional single-mechanism studies. The hypothetical studies presented illustrate how the framework enables investigation of cognitive load-bias interactions, expertise-dependent organizational effects, and individual-group optimization trade-offs that advance theoretical understanding beyond what has been achievable through conventional experimental approaches.
+
+By providing a structured platform for testing psychological predictions in ecologically valid contexts, BID addresses persistent concerns about laboratory-to-field generalizability while maintaining experimental rigor necessary for scientific advancement. The framework enables investigation of psychological complexity while preserving the theoretical precision required for advancing scientific understanding of human cognitive and social processes.
+
+The framework contributes methodologically by providing structured approaches for conducting naturalistic psychological research, investigating multi-mechanism interactions, and examining psychological processes over extended time periods. These methodological advances open new avenues for psychological research that have been difficult to pursue with traditional experimental approaches, enabling investigation of psychological complexity while maintaining scientific rigor.
+
+Future development of the BID framework will reveal additional theoretical insights about psychological mechanism interactions while refining our understanding of when and how established principles operate in complex environments. The framework's systematic structure provides a foundation for continued theoretical advancement through empirical investigation in realistic contexts that maintain both scientific validity and practical relevance.
+
+Most importantly, BID demonstrates how applied psychological research can advance basic theoretical understanding rather than simply translating existing knowledge to practical contexts. By revealing how psychological mechanisms interact under naturalistic complexity, the framework contributes to fundamental psychological science while addressing practical needs for psychologically-informed design methodology. This integration represents a model for how psychological research can simultaneously advance theoretical understanding and practical application, creating synergistic relationships between basic science and applied investigation that benefit both scientific knowledge and professional practice.
