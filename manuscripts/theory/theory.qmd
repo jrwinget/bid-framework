@@ -1,6 +1,5 @@
 ---
 title: "The Behavior Insight Design Framework: A Theoretical Integration for Advancing Applied Psychology in Interactive Systems"
-subtitle: Behavioral Insight Design
 author:
   - name: Jeremy R. Winget, PhD
     email: contact@jrwinget.com
@@ -12,18 +11,6 @@ author:
           postal-code: 60660
     attributes:
         corresponding: true
-  - name: Milena Eickhoff
-    email: m.eickhoff@skimgroup.com
-    affiliations:
-        - id: skim
-          name: SKIM
-          department: Development
-          address: 'Weena 695, B6.036'
-          city: Rotterdam
-          country: The Netherlands
-          postal-code: 3013 AM
-    note: |
-      M.E. is employed by SKIM, a market research company. J.R.W. and M.E. were colleagues at SKIM during the initial development of the BID framework, but the theory and research presented was conducted independently and does not represent SKIM's official positions.
 abstract: |
   Applied psychology faces a fundamental challenge in translating laboratory-derived principles to complex, real-world contexts where multiple psychological mechanisms operate simultaneously. The Behavior Insight Design (BID) framework addresses this theoretical gap through systematic integration of established psychological principles, advancing our understanding of how cognitive mechanisms interact in naturalistic environments. The framework operationalizes psychological theory through five sequential stages (Notice, Interpret, Structure, Anticipate, Validate) that map to fundamental phases of human information processing while enabling empirical investigation of mechanism interactions previously inaccessible through traditional isolated studies. BID advances psychological science in three critical ways: providing a structured platform for testing psychological predictions in ecologically valid environments, revealing novel interactions between cognitive load and bias susceptibility that emerge only in complex decision contexts, and demonstrating how established principles operate when combined in realistic environments. The framework contributes methodologically by enabling systematic investigation of multi-mechanism interactions, longitudinal process dynamics, and individual differences in naturalistic contexts while maintaining experimental rigor. Hypothetical study designs illustrate how BID enables investigation of cognitive load-bias interactions, expertise-dependent organizational effects, and individual-group optimization trade-offs that advance theoretical understanding beyond conventional experimental approaches. Rather than simply applying psychology to design, BID generates new theoretical insights about psychological processes while providing methodological innovations for conducting naturalistic psychological research that simultaneously advances basic science and practical application.
 keywords: 
@@ -97,6 +84,8 @@ These distinctions position BID as a theoretical framework for psychological sci
 # The Behavior Insight Design Framework: Theoretical Integration
 
 The BID framework operationalizes psychological theory through five sequential stages, each explicitly grounded in established psychological principles and providing specific guidance for technical implementation decisions. This structured approach ensures systematic consideration of psychological factors throughout the development process rather than relegating them to post-hoc considerations, enabling systematic investigation of psychological mechanism interactions in realistic contexts.
+
+![The Behavior Insight Design Framework](./bid-framework.png)
 
 ## Stage 1: Cognitive Friction Detection (Notice)
 
