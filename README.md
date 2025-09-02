@@ -1,40 +1,43 @@
-# 📘 5-Stage Behavior Insight Design (BID) Framework  
-**Understanding & Applying Behavioral Insights for More Effective Application Design**  
+# 📘 5-Stage Behavior Insight Design (BID) Framework
+**Understanding & Applying Behavioral Insights for More Effective Application Design**
 
 ---
 
-## 📝 Overview  
+## 📝 Overview
 The **5-Stage Behavior Insight Design (BID) Framework** is a structured approach for developing intuitive, bias-aware, and user-centered dashboards. Grounded in behavioral science and cognitive psychology, this framework guides developers through **five key stages** to enhance user experience and decision-making:
 
-![](https://github.com/user-attachments/assets/2f235720-8db5-4ec6-92dc-97e2229819fe)
+![](https://github.com/jrwinget/bid-framework/raw/main/conference-materials/2025_shiny-conf/img/bid-framework.png)
 
-1️⃣ **Notice** → Identify cognitive friction & usability challenges  
-2️⃣ **Interpret** → Understand the core user needs & data story  
-3️⃣ **Structure** → Build an intuitive, bias-aware dashboard layout  
-4️⃣ **Anticipate** → Consider cognitive biases & decision-making patterns  
-5️⃣ **Validate** → Ensure clarity, confidence, and effective user engagement  
+1️⃣ **Interpret** → Understand the core user needs & data story
+2️⃣ **Notice** → Identify cognitive friction & usability challenges
+3️⃣ **Anticipate** → Consider cognitive biases & decision-making patterns
+4️⃣ **Structure** → Build an intuitive, bias-aware dashboard layout
+5️⃣ **Validate** → Ensure clarity, confidence, and effective user engagement
 
-This repository contains all materials related to the BID Framework, including:  
-✔ **Manuscripts & Research Papers** 📄  
-✔ **Conference Presentations** 🎤  
-✔ **Example Implementations in R Shiny** 💻  
-✔ **Supplementary Reading & References** 📚  
+This repository contains all materials related to the BID Framework, including:
+✔ **Manuscripts & Research Papers** 📄
+✔ **Conference Presentations** 🎤
+✔ **Example Implementations in R Shiny** 💻
+✔ **Supplementary Reading & References** 📚
 
 ---
 
-## 📂 Repository Structure  
+## 📂 Repository Structure
 
 ```
 📦 bid-framework
  ┣ 📜 README.md                  # Overview & documentation
  ┣ 📂 manuscript                 # Whitepapers, articles, etc.
- ┃ ┣ 📜 bid-framework-paper.qmd 
+ ┃ ┣ 📜 bid-framework-paper.qmd
  ┃ ┣ 📄 bid-framework-paper.pdf
  ┃ ┗ 📝 references.bib
  ┣ 📂 conference-materials       # Slides, abstracts, etc.
+ ┃ ┣ 📂 2025_posit-conf
+ ┃ ┃ ┣ 🎤 slides.qmd
+ ┃ ┃ ┗ 📄 slides.pdf
  ┃ ┣ 📂 2025_shiny-conf
  ┃ ┃ ┣ 🎤 slides.qmd
- ┃ ┃ ┣ 📄 abstract.pdf
+ ┃ ┃ ┗ 📄 slides.pdf
  ┣ 📂 examples                   # BID framework implementations
  ┃ ┣ 📂 shiny-dashboard
  ┃ ┃ ┣ 📜 app.R
@@ -52,44 +55,34 @@ This repository contains all materials related to the BID Framework, including:
 
 ---
 
-## 🏗 How to Use This Repository  
+## 🏗 How to Use This Repository
 
-### 📖 Read the BID Framework Manuscript  
-The full manuscript and references are located in `manuscript/`.  
+### 📖 Read the BID Framework Manuscript
+The full manuscript and references are located in `manuscript/`.
 
-### 🎤 Conference Materials  
-Find slides, abstracts, and speaker notes under `conference-materials/`.  
+### 🎤 Conference Materials
+Find slides, abstracts, and speaker notes under `conference-materials/`.
 
-### 💻 Example Implementations  
-Explore BID-aligned UI/UX optimizations in **Shiny apps** inside `examples/`.  
+### 💻 Example Implementations
+Explore BID-aligned UI/UX optimizations in **Shiny apps** inside `examples/`.
 
-### 🔍 Additional Resources  
-Background research, supporting theories, and key cognitive biases are in `resources/`.  
-
----
-
-## 🤝 Contributing  
-We welcome feedback, discussion, and contributions!  
-- 📌 If you spot an issue or want to propose improvements, please open an **Issue**.  
-- 🔗 Want to contribute? See our [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.  
+### 🔍 Additional Resources
+Background research, supporting theories, and key cognitive biases are in `resources/`.
 
 ---
 
-## 📜 License  
-This project is licensed under **Creative Commons Attribution 4.0**—feel free to use, modify, and distribute with attribution. See `LICENSE` for details.  
+## 🤝 Contributing
+We welcome feedback, discussion, and contributions!
+- 📌 If you spot an issue or want to propose improvements, please open an **Issue**.
+- 🔗 Want to contribute? See our [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ---
 
-## 🔗 Related Work  
-- 📖 Original BID Framework Paper: [Link to Manuscript]()  
-- 🎤 Shiny Conf 2025 Presentation: [Link to Slides]()  
-- 🔬 Key Research References: [List of Papers]()  
+## 📜 License
+This project is licensed under **Creative Commons Attribution 4.0**. See `LICENSE` for details.
 
 ---
 
-## ✉ Contact  
-For inquiries, collaboration, or speaking engagements, reach out via:  
-📧 [contact@jrwinget.com](mailto:contact@jrwinget.com) | 🌐 [https://jrwinget.com/]  
-📧 [eickhoff.milena@gmx.de](mailto:eickhoff.milena@gmx.de) | 🌐 [https://milenaeickhoff.com/]  
-
----
+## ✉ Contact
+For inquiries, collaboration, or speaking engagements, reach out via:
+📧 [contact@jrwinget.com](mailto:contact@jrwinget.com) | 🌐 [https://jrwinget.com/]
