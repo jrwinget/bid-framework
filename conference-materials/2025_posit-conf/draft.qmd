@@ -1,0 +1,258 @@
+---
+title: "Death by Dropdown? Use Behavioral Science To Engineer Shiny Apps Instead"
+author: "Jeremy Winget, PhD"
+execute:
+  echo: true
+format:
+  revealjs:
+    theme: default
+    css: custom.css
+    slide-number: true
+    transition: fade
+---
+
+## The Problem {.center background-color="#4682b4"}
+
+::: {.large}
+**Ever open a Shiny app, see 18 filters across 6 tabs, and just...close your laptop?**
+:::
+
+::: {.fragment}
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGMxamprcTF2OWgzc2YxeXp0dndlbHNkdHN0NjJhd2JwcWJsbXJncCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kHU8W94VS329y/giphy.gif)
+:::
+
+::: {.notes}
+- Say it like a confession → quick laugh
+- Tag: "death by dropdown → dashboard rot"
+- Transition: "I saw a *human* problem, not a tech problem"
+:::
+
+## Why me?
+
+- *Applied social psychologist → full-stack dev*
+- I've led Shiny teams; I study how people process info & decide
+- **Core idea:** Apply behavioral science through the **Behavior Insight Design (BID)** framework and the **`{bidux}`** R package to build user-centered apps that improve decision-making
+
+## Museum Tour Analogy
+
+:::: {.columns}
+::: {.column}
+### BID as a Tour
+
+1. INTERPRET: clarify story
+2. NOTICE: find friction
+3. ANTICIPATE: guard against misread
+4. STRUCTURE: design the path
+5. VALIDATE: end with action
+:::
+
+::: {.column}
+![](img/bid-framework.png)
+
+<!-- ![placeholder for museum/path]() -->
+:::
+::::
+
+## BEFORE: A Familiar Screen
+
+![](img/before-overload.png)
+
+- 18 filters • 6 tabs • no story • all data
+
+## INTERPRET: Clarify Story {background-color="#4682b4"}
+
+<!-- ![placeholder for museum analogy]() -->
+
+## INTERPRET: Clarify Story
+
+:::: {.columns}
+::: {.column}
+- **Audience:** Product managers
+- **Question:** "What changed that matters?"
+- **Story arc:** Hook → Tension → Resolution
+:::
+
+::: {.column}
+![](img/interpret-story.png)
+<!-- keep image above? could use it to help build intuition for why this is important; this function forces you to think through the difference audiences you have; and if you don't know, that is a good time to have a conversation with your client/end users -->
+:::
+::::
+
+## INTERPRET: With {bidux}
+
+```{r}
+library(bidux)
+
+interpret <- bid_interpret(
+  previous_stage = NULL,
+  central_question = "Are we on track this quarter?",
+  data_story = list(
+    hook = "Performance looks strong at first glance",
+    context = "New product launched last quarter",
+    tension = "But churn is rising in key segments",
+    resolution = "Focus on where decline is sharpest",
+    audience = "First-time dashboard users"
+  )
+)
+
+summary(interpret)
+```
+
+## NOTICE: Identify Friction {background-color="#4682b4"}
+
+<!-- ![placeholder for museum analogy]() -->
+
+## NOTICE: Identify Friction
+
+![](img/notice-markup.png)
+
+- Hidden cost: **choice overload**
+- Slow path to insight; unused inputs
+
+## NOTICE: With {bidux}
+
+```{r}
+notice <- bid_notice(
+  previous_stage = interpret,
+  problem = "Too many filters overwhelm new users",
+  evidence = "65% of sessions end without any selection"
+)
+
+summary(notice)
+```
+
+## ANTICIPATE: Guard Against Misread {background-color="#4682b4"}
+
+<!-- ![placeholder for museum analogy]() -->
+
+## ANTICIPATE: Guard Against Misread
+
+<!-- ![framing toggle: "Progress to Goal" vs "Gap to Goal"](img/framing-toggle.png) -->
+
+- Framing (progress vs gap) changes perception
+- Anchors bias interpretations
+- Add reference lines, captions, unit labels
+
+## ANTICIPATE: Telemetry-Driven Example
+
+:::: {.columns}
+::: {.column}
+- **Signal:** Users hover on baseline; misread slope
+- **Mitigation:** Auto-surface reference line + annotation
+:::
+
+::: {.column}
+![chart with auto reference line, annotation on hover](img/telemetry-insight.png)
+:::
+::::
+
+```{r}
+anticipate <- bid_anticipate(
+  previous_stage = notice,
+  include_accessibility = TRUE
+)
+
+summary(anticipate)
+```
+
+## STRUCTURE: Design the Path {background-color="#4682b4"}
+
+<!-- ![placeholder for museum analogy]() -->
+
+## STRUCTURE: Design the Path
+
+::: {.large}
+**Main exhibits first. Side rooms later.**
+:::
+
+<!-- ![placeholder for suggestions from notice/interpret]() -->
+
+- Smart defaults that answer the core question
+- Group related controls near their visuals
+- Progressive disclosure for details
+
+## STRUCTURE: Before → After
+
+:::: {.columns}
+::: {.column}
+### Before
+
+![](img/before-overload.png)
+
+- Filters scattered
+- Competing charts
+- No defaults
+:::
+
+::: {.column}
+### After
+
+<!-- ![placeholder for suggestions from notice]() -->
+
+- **Hero: answer hook first**
+- One big chart, guided facets
+- Sensible defaults, fewer choices
+:::
+::::
+
+## STRUCTURE: With {bidux}
+
+```{r}
+structure <- bid_structure(previous_stage = anticipate)
+
+summary(structure)
+```
+
+## VALIDATE: End with Actions {background-color="#4682b4"}
+
+<!-- ![placeholder for museum analogy]() -->
+
+## VALIDATE: End with Actions
+
+<!-- ![action panel: "What this means" + 2–3 next steps](img/validate-actions.png) -->
+
+- Summary in plain language
+- 2–3 recommended actions
+- Optional: one-click report export
+
+```{r}
+final <- bid_validate(
+  previous_stage = structure,
+  summary_panel = "Hidden churn risks",
+  include_telemetry = TRUE,
+  include_empower_tools = TRUE
+)
+
+summary(final)
+```
+
+## Final BEFORE → AFTER
+
+:::: {.columns}
+::: {.column}
+### Before
+
+![](img/before-overload.png)
+:::
+
+::: {.column}
+### After
+
+<!-- ![placeholder for suggestions from validate]() -->
+:::
+::::
+
+## Takeaways
+
+1. Ground design in behavioral science → less friction
+2. Structure is the work: path to insight first
+3. Telemetry reveals hidden misreads
+4. `{bidux}` = behavioral scientist in your console
+
+## Call to Action
+
+**Try `{bidux}`: start with one stage on one app**
+
+CRAN • GitHub • Contact
+
+<!-- ![qr placeholder](img/qr.png) -->

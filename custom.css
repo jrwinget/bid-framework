@@ -1,0 +1,226 @@
+/* ========== tokens: colors, typography, spacing ========== */
+:root {
+    /* palette */
+    --indigo: #5B6BBF;
+    /* cognition */
+    --coral: #FF8B94;
+    /* empathy */
+    --teal: #5FBDB0;
+    /* system integrity */
+    --indigo-dark: #4A5AAE;
+    --indigo-light: #7B8BDF;
+    --coral-dark: #E67B84;
+    --coral-light: #FFB5BC;
+    --teal-dark: #4FA99C;
+    --teal-light: #7FD5C8;
+    --warm-white: #FDFCFA;
+    --warm-gray: #F8F6F3;
+    --dark-blue: #2C3E50;
+    --medium-gray: #5A6C7D;
+    --amber: #FFB347;
+
+    /* typography */
+    --font-sans: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, sans-serif;
+    --font-mono: 'SF Mono', 'Cascadia Code', Monaco, monospace;
+
+    /* type scale */
+    --fs-display: 56px;
+    --lh-display: 1.2;
+    --fs-h1: 38px;
+    --lh-h1: 1.3;
+    --fs-h2: 30px;
+    --lh-h2: 1.3;
+    --fs-h3: 22px;
+    --lh-h3: 1.4;
+    --fs-body: 16px;
+    --lh-body: 1.6;
+    --fs-small: 14px;
+    --lh-small: 1.5;
+    --fs-button: 15px;
+    --lh-button: 1;
+
+    /* spacing scale */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
+    --space-8: 64px;
+
+    /* radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-pill: 24px;
+
+    /* motion */
+    --ease-standard: ease-in-out;
+    --duration-fast: 200ms;
+    --duration-base: 300ms;
+}
+
+/* base styles */
+body {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    color: var(--dark-blue);
+    background-color: var(--warm-gray);
+}
+
+h1,
+h2,
+h3 {
+    color: var(--indigo);
+}
+
+a {
+    color: var(--indigo-light);
+}
+
+a:hover {
+    color: var(--indigo-dark);
+}
+
+/* buttons */
+.btn-primary {
+    background-color: var(--coral);
+    color: var(--warm-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--coral-dark);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--indigo);
+    color: var(--indigo);
+}
+
+.btn-secondary:hover {
+    background-color: var(--indigo-light);
+    color: var(--warm-white);
+}
+
+/* cards */
+.card {
+    background: var(--warm-white);
+    border: 1px solid var(--warm-gray);
+    border-radius: var(--radius-md);
+}
+
+.card .title {
+    color: var(--indigo);
+}
+
+.card .meta {
+    color: var(--medium-gray);
+}
+
+/* form elements */
+label {
+    color: var(--indigo-dark);
+}
+
+input,
+textarea,
+select {
+    background: var(--warm-gray);
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--radius-md);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--indigo-light);
+    background: var(--warm-white);
+}
+
+/* diagram stages */
+.stage-interpret {
+    background: var(--indigo);
+    color: var(--warm-white);
+}
+
+.stage-notice {
+    background: var(--indigo-dark);
+    color: var(--warm-white);
+}
+
+.stage-anticipate {
+    background: var(--coral);
+    color: var(--warm-white);
+}
+
+.stage-structure {
+    background: var(--teal);
+    color: var(--warm-white);
+}
+
+.stage-validate {
+    background: var(--indigo-light);
+    color: var(--dark-blue);
+}
+
+/* arrows */
+.diagram-arrow-on-dark {
+    color: var(--warm-white);
+}
+
+.diagram-arrow-on-light {
+    color: var(--dark-blue);
+}
+
+/* data viz */
+.data-primary {
+    color: var(--indigo);
+}
+
+.data-secondary {
+    color: var(--teal);
+}
+
+.data-highlight {
+    color: var(--coral);
+}
+
+.data-annotation {
+    color: var(--medium-gray);
+}
+
+.data-grid-bg {
+    background-color: var(--warm-gray);
+}
+
+/* code blocks */
+pre,
+code.block {
+    background: var(--warm-gray);
+    color: var(--dark-blue);
+}
+
+.token.keyword {
+    color: var(--teal-dark);
+}
+
+.token.string {
+    color: var(--coral-dark);
+}
+
+.token.function {
+    color: var(--indigo);
+}
+
+.line-numbers {
+    color: var(--medium-gray);
+}
+
+/* footer */
+.site-footer {
+    background: var(--dark-blue);
+    color: var(--warm-white);
+}
