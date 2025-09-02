@@ -1,5 +1,5 @@
 ---
-title: "The Behavior Insight Design Framework: A Theoretical Integration for Advancing Applied Psychology in Interactive Systems"
+title: "The Behavior Insight Design Framework: A Theoretical Integration for Applied Psychology in Interactive Systems"
 author:
   - name: Jeremy R. Winget, PhD
     email: contact@jrwinget.com
@@ -22,10 +22,10 @@ keywords:
 date: last-modified
 bibliography: bibliography.bib
 format:
-  elsevier-pdf:
+  elsevier-docx:
     keep-tex: true
     journal:
-      name: Journal of Applied Psychology
+      name: xxx
       formatting: preprint
       # model: 3p # Don't set a model with preprint
       cite-style: authoryear
