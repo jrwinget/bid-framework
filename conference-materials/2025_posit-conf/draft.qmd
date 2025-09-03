@@ -18,7 +18,7 @@ format:
 :::
 
 ::: {.fragment}
-![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGMxamprcTF2OWgzc2YxeXp0dndlbHNkdHN0NjJhd2JwcWJsbXJncCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kHU8W94VS329y/giphy.gif)
+<div class="tenor-gif-embed" data-postid="17038619" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%"><a href="https://tenor.com/view/ron-swanson-parks-and-recreation-parks-and-rec-computer-dumpster-gif-17038619">Ron Swanson Parks And Recreation GIF</a>from <a href="https://tenor.com/search/ron+swanson-gifs">Ron Swanson GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 :::
 
 ::: {.notes}
@@ -133,7 +133,7 @@ I-N-A-S-V = Your roadmap to better dashboards
 ## Every Shiny Developer's First Dashboard
 
 ::: {.fragment}
-![](https://i.redd.it/h7t0kz1234567.jpg)<br>
+![](img/this-is-fine.jpg)<br>
 *"But it has ALL the features!"*
 :::
 
@@ -170,6 +170,7 @@ Write the travel guide before packing the car
 
 ```{r}
 #| eval: false
+
 library(bidux)
 
 # Define your destination and purpose
@@ -186,13 +187,6 @@ interpret_stage <- bid_interpret(
     secondary = "Executives reviewing quarterly trends"
   )
 )
-
-# Auto-generates checklist and suggestions
-print(interpret_stage)
-#> ✓ Central question defined
-#> ✓ Data story structured with clear arc
-#> ✓ User personas identified
-#> → Suggestion: Consider adding success metrics
 ```
 
 ## NOTICE: Check the Warning Lights ⚠️ {background-color="#4682b4"}
@@ -201,9 +195,9 @@ print(interpret_stage)
 **Spot the mechanical issues before leaving the driveway**
 :::
 
-## The Developer's Dilemma
+## When the client asks for "just one more filter"
 
-![When the client asks for "just one more filter"](https://i.imgflip.com/8z456x.jpg)
+![](img/anakin.jpg)
 
 ::: {.fragment}
 **Spoiler:** It's never just one more
@@ -231,10 +225,11 @@ print(interpret_stage)
 :::
 ::::
 
-## NOTICE: With {bidux} + Telemetry
+## NOTICE: With {bidux}
 
 ```{r}
 #| eval: false
+
 # Real telemetry data reveals hidden friction
 notice_stage <- bid_notice(
   previous_stage = interpret_stage,
@@ -243,16 +238,8 @@ notice_stage <- bid_notice(
     quantitative = "65% abandonment rate; 4.3 min to first click",
     qualitative = "Users report feeling overwhelmed",
     telemetry = "Heatmap shows 80% ignore bottom filters"
-  ),
-  behavioral_theory = "choice_overload"  # Auto-suggests if omitted
+  )
 )
-
-# Telemetry-driven insights
-notice_stage$get_telemetry_insights()
-#> 🔍 Telemetry Analysis:
-#> • Hover patterns show confusion over filter interactions
-#> • Click sequences reveal users reset filters 3x on average
-#> • Suggestion: Implement smart defaults based on user role
 ```
 
 ## ANTICIPATE: Pack for Weather Changes 🌦️ {background-color="#4682b4"}
@@ -290,23 +277,11 @@ notice_stage$get_telemetry_insights()
 
 ```{r}
 #| eval: false
+
 anticipate_stage <- bid_anticipate(
   previous_stage = notice_stage,
   include_accessibility = TRUE
 )
-
-# Real-time bias detection
-anticipate_stage$add_telemetry_rule(
-  trigger = "user_hovers_baseline_3_seconds",
-  action = "surface_reference_annotation",
-  rationale = "Prevent slope misinterpretation"
-)
-
-# Example output from production dashboard
-#> 📊 Telemetry Alert (2024-03-15):
-#> • Pattern detected: Users consistently misread trend direction
-#> • Auto-intervention: Added directional arrows + % change labels
-#> • Result: 47% reduction in misinterpretation (n=234 sessions)
 ```
 
 ## STRUCTURE: Map the Scenic Route 🛣️ {background-color="#4682b4"}
@@ -317,7 +292,7 @@ anticipate_stage$add_telemetry_rule(
 
 ## The Universal Truth of Dashboard Design
 
-![](https://i.imgflip.com/8z457m.jpg)
+![](img/oprah.jpg)
 
 ::: {.fragment}
 **Pro tip:** If everything's important, nothing is
@@ -375,25 +350,8 @@ anticipate_stage$add_telemetry_rule(
 
 ```{r}
 #| eval: false
+
 structure_stage <- bid_structure(previous_stage = anticipate_stage)
-
-# Generate Shiny UI code with behavioral principles baked in
-structure_stage$generate_ui_scaffold()
-#> Generated UI with:
-#> ✓ F-pattern scanning optimization
-#> ✓ 7±2 chunking for controls
-#> ✓ Progressive disclosure triggers
-#> ✓ Gestalt grouping principles
-
-# Real production example
-structure_stage$apply_telemetry_layout(
-  heatmap_data = user_interaction_logs,
-  optimize_for = "first_time_users"
-)
-#> 🎯 Layout optimized based on 1,247 user sessions
-#> • Moved key metric to position (100, 50)
-#> • Grouped filters by 73% co-selection rate
-#> • Hidden advanced options (used by <5% users)
 ```
 
 ## VALIDATE: Confirm Safe Arrival ✅ {background-color="#4682b4"}
@@ -430,7 +388,7 @@ Like the GPS saying "You have arrived at your destination"
 
 ## When Users Finally Find What They Need
 
-![The moment of dashboard enlightenment](https://media.giphy.com/media/OK27wINdQS5YQ/giphy.gif)
+![](https://media.giphy.com/media/OK27wINdQS5YQ/giphy.gif)
 
 ::: {.fragment}
 **This is what we're optimizing for!**
@@ -448,19 +406,6 @@ validate_stage <- bid_validate(
 )
 
 summary(validate_stage)
-
-# Production telemetry example
-#> 📈 Session Analysis (User #4821):
-#> • Journey time: 2.3 minutes (↓ from 4.3 min average)
-#> • Insights discovered: 3 key findings
-#> • Actions taken: Exported report, shared with team
-#>
-#> Generated Summary:
-#> "Churn in enterprise segment requires immediate attention.
-#>  Recommended actions:
-#>  1. Schedule retention calls with top 10 at-risk accounts
-#>  2. Adjust pricing for mid-tier enterprise plans
-#>  3. Review Q4 product roadmap for enterprise features"
 ```
 
 ## The Complete Journey: Before → After
@@ -470,6 +415,7 @@ summary(validate_stage)
 ### Before: Lost Driver 😰
 
 ![](img/before-overload.png)
+
 - 18 filters, 6 tabs
 - No clear path
 - 65% abandonment
@@ -480,6 +426,7 @@ summary(validate_stage)
 ### After: Smooth Highway 🚗
 
 ![](img/after-complete.png)
+
 - 3 smart filters
 - Guided journey
 - 85% completion
@@ -491,10 +438,9 @@ summary(validate_stage)
 
 ```{r}
 #| eval: false
-# Actual telemetry from bidux-powered dashboards
-library(bidux)
 
-bid_telemetry_report(
+# Actual telemetry from bidux-powered dashboards
+bid_report(
   app_id = "quarterly_kpi_dashboard",
   period = "2024_Q4"
 )
@@ -545,10 +491,14 @@ bid_telemetry_report(
 
 ::: {.column width="40%"}
 ::: {.fragment}
-![Write it down, stick it on your monitor]()
+<div class="tenor-gif-embed" data-postid="5313946" data-share-method="host" data-aspect-ratio="1.3" data-width="100%"><a href="https://tenor.com/view/writethatdown-gif-5313946">Writethatdown GIF</a>from <a href="https://tenor.com/search/writethatdown-gifs">Writethatdown GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 :::
 :::
 ::::
+
+::: {.notes}
+- for gif: "Write that down! Stick it to your monitor!"
+:::
 
 ## Your Action Items 🚀 {background-color="#27ae60"}
 
@@ -560,12 +510,12 @@ bid_telemetry_report(
 
 ::: {.incremental}
 1. **Download {bidux}** → `install.packages("bidux")`
-2. **Try ONE stage** on your worst dashboard → `bid_quickstart("interpret")`
+2. **Try a some of the auto-suggestions** on a completed/WIP dashboard
 3. **Connect with me** to share your before/after → [@jrwinget](https://bsky.app/profile/jrwinget.bsky.social)
 :::
 
 ::: {.fragment}
-**Bonus:** First 10 people to share their transformation get free 1:1 dashboard review! 🎁
+**Bonus:** First 5 people to share their transformation get free 1:1 dashboard review! 🎁
 :::
 
 ## Let's Connect! 🤝 {.center background-color="#2c3e50"}
@@ -594,7 +544,7 @@ bid_telemetry_report(
 
 ::: {.notes}
 - Remind about mnemonic: "Interfaces Need A Smart Vision"
-- Mention I'll be at the Shiny booth with laptop for live demos
+- Feel free to reach out if you'd like to connect and chat further
 - Thank organizers
 - Quick reminder about the free dashboard reviews
 :::
