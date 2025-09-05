@@ -31,92 +31,83 @@ format:
 - Who's built a Shiny app with 10+ filters?
 - Who's had a user ask for "just one more dropdown"?
 - Who's dashboard has more `selectInput()` than actual insights?
-- Who's secretly proud of that 47-tab monstrosity you built in 2019?
 :::
 
 ::: {.fragment}
-**Welcome to Dashboard Anonymous. You're among friends.** 😅
+**Welcome to my impromptu Dashboard Support Group. You're among friends.** 😅
 :::
 
 ::: {.notes}
-- Get audience engaged early
-- Build connection through shared pain
-- Light self-deprecation works well
+- Confession time...
+- Who's built a one of those dashboards? ...me
+- Who's been forced to build one bc the client just kept asking for one more filter? ...me
+- Who's ever used selectInput more than they probably should have? ...me
+- You're not alone!
 :::
 
 ## Why Me? {background-color="#2c3e50"}
 
 :::: {.columns}
 ::: {.column width="60%"}
-### Applied Social Psychologist → Full-Stack Developer
+### Applied Social Psychologist → Full-Stack Engineer
 
-- **PhD in behavioral science** studying how people process information
-- **Led Shiny teams** at scale (100+ dashboards)
-- **Core insight:** Most dashboard failures aren't technical—they're psychological
+- **PhD in Applied Psychology** studying how people process information
+- **Led Shiny teams** at scale, providing enterprise dashboards
+- **Core insight:** Most dashboard failures aren't technical, they're psychological
 :::
 
 ::: {.column width="40%"}
 ::: {.fragment}
-*"As a behavioral scientist in the tech world, I've seen firsthand how a dash of psychology can rescue users from **'death by dropdown'"***
+*"As a behavioral scientist in the tech world, I've seen firsthand how a dash of psychology can rescue users from that feeling of **'death by dropdown'"***
 :::
 :::
 ::::
 
-## Your Dashboard Journey 🚗 {.center}
+## Your Dashboard = A Road Trip 🚗 {.center}
 
-::: {.large}
-**Building a dashboard is like planning a road trip for your users**
+:::: {.columns}
+::: {.column width="50%"}
+### You wouldn't make a long drive without:
+- **I**nterpreting travel guides
+- **N**oticing any mechanical problems
+- **A**nticipating roadblocks ahead
+- **S**tructuring the best route
+- **V**alidating everyone arrived happy
 :::
 
+::: {.column width="50%"}
 ::: {.fragment}
-You wouldn't start driving without:
+### So why build dashboards without:
+- **I**nterpreting user needs
+- **N**oticing friction points
+- **A**nticipating behavior
+- **S**tructuring a journey
+- **V**alidating understanding
+:::
+:::
+::::
 
-- Knowing your destination
-- Checking the car
-- Planning for weather
-- Mapping the route
-- Confirming arrival
+::: {.notes}
+- 20 seconds
+- "This is the BID framework"
+- Transition: "Let me show you the GPS"
 :::
 
 ## The BID Framework: Your GPS for Dashboard Design
 
 ![](img/bid-framework.png)
 
+**"Interfaces Need A Smart Vision"** - Remember: I-N-A-S-V
+
 ::: {.fragment}
-**Behavior Insight Design (BID)**: Not just UX advice—it's behavioral science integrated into your development workflow
+**Behavioral Insight Design (BID)**: *Not just UX advice - it's behavioral science in your dev workflow*
 :::
 
 ::: {.notes}
-- We stand on UX giants' shoulders
-- BID's differentiator: evidence-based psychology at each step
-- Like having a behavioral scientist in the console
+- 30-45 seconds MAX
+- "Today we focus on the middle three - where psychology transforms dashboards"
+- Quick transition to stages
 :::
-
-## The Road Trip Journey 🚗
-
-:::: {.columns}
-::: {.column width="50%"}
-### The 5 Stages
-
-1. **INTERPRET** 🗺️ Plan your destination
-2. **NOTICE** ⚠️ Check the dashboard warnings
-3. **ANTICIPATE** 🌦️ Pack for weather changes
-4. **STRUCTURE** 🛣️ Map the scenic route
-5. **VALIDATE** ✅ Confirm safe arrival
-:::
-
-::: {.column width="50%"}
-::: {.fragment}
-### Mnemonic Device 🧠
-
-**"Interfaces Need A Smart Vision"**
-
-I-N-A-S-V = Your roadmap to better dashboards
-
-*Tattoo this on your keyboard hand* 😄
-:::
-:::
-::::
 
 ## BEFORE: A Familiar Nightmare
 
