@@ -1,5 +1,5 @@
 ---
-title: "Death by Dropdown? Use Behavioral Science To Engineer Insightful Shiny Apps"
+title: "Death by Dropdown? Engineer Insightful Shiny Apps with Behavioral Science"
 author: "Jeremy Winget, PhD"
 execute:
   echo: true
@@ -14,17 +14,15 @@ format:
 ## The Problem {.center background-color="#4682b4"}
 
 ::: {.large}
-**Ever open a Shiny app, see 18 filters across 6 tabs, and just...close your laptop?**
+**Ever open a dashboard, see 18 filters across 6 tabs, and then...close your laptop?**
 :::
 
-::: {.fragment}
+::: {.fragment .large}
+**Or just get the urge to...**<br>
 <div class="tenor-gif-embed" data-postid="17038619" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%"><a href="https://tenor.com/view/ron-swanson-parks-and-recreation-parks-and-rec-computer-dumpster-gif-17038619">Ron Swanson Parks And Recreation GIF</a>from <a href="https://tenor.com/search/ron+swanson-gifs">Ron Swanson GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 :::
 
 ::: {.notes}
-- Say it like a confession → quick laugh
-- Tag: "death by dropdown → dashboard rot"
-- Transition: "I saw a *human* problem, not a tech problem"
 :::
 
 ## Quick Show of Hands 🙋 {.center background-color="#34495e"}
