@@ -119,12 +119,10 @@ format:
 - **Result:** 65% abandon rate in first 30 seconds
 :::
 
-## Every Shiny Developer's First Dashboard
+## Every Dev's First Dashboard
 
-::: {.fragment}
 ![](img/this-is-fine.jpg)<br>
 *"But it has ALL the features!"*
-:::
 
 ## INTERPRET: Plan Your Destination 🗺️ {background-color="#4682b4"}
 
