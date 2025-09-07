@@ -126,7 +126,7 @@ format:
 
 ## INTERPRET: Plan Your Destination 🗺️ {background-color="#4682b4"}
 
-```{r}
+```{r, interpret-stg}
 library(dplyr)
 library(bidux)
 
@@ -171,7 +171,15 @@ summary(interpret_stage)
 
 ## NOTICE: The Warning Lights You're Ignoring ⚠️ {background-color="#e74c3c"}
 
+:::: {.columns}
+::: {.column width="50%"}
 ![](img/telemetry-heatmap.png)
+:::
+
+::: {.column width="50%"}
+![](img/telemetry-sessions-heatmap.png)
+:::
+::::
 
 ::: {.incremental}
 - **Your assumption:** "They need all 18 filters"
@@ -186,7 +194,7 @@ summary(interpret_stage)
 
 ## NOTICE: What Telemetry Reveals
 
-```{r}
+```{r, telemetry-data}
 #| echo: false
 
 conn_telemetry_db <- function(db_path = "telemetry.sqlite") {
@@ -313,7 +321,7 @@ conn_telemetry_db <- function(db_path = "telemetry.sqlite") {
 }
 ```
 
-```{r}
+```{r, notice-stg}
 # Using production telemetry
 telemetry_path <- conn_telemetry_db("dashboard_telemetry.sqlite")
 
@@ -386,7 +394,8 @@ summary(notice_stage)
 **Users don't see data. They see stories.**
 :::
 
-![](https://media.giphy.com/media/l0IykOsxLECVejOzm/giphy.gif)<br>
+![](https://media.giphy.com/media/l0IykOsxLECVejOzm/giphy.gif)
+
 *Users interpreting your carefully crafted visualizations*
 
 ::: {.fragment}
@@ -404,6 +413,7 @@ summary(notice_stage)
 :::: {.columns}
 ::: {.column width="50%"}
 ### Anchoring Bias
+
 ```{r}
 #| eval: false
 
@@ -417,6 +427,7 @@ valueBox(value = "+15% YTD", subtitle = "Despite -5 this week")
 
 ::: {.column width="50%"}
 ### Framing Effects
+
 ```{r}
 # Don't specify bias_mitigations - let {bidux} suggest them!
 anticipate_stage <- bid_anticipate(
@@ -435,7 +446,7 @@ anticipate_stage <- bid_anticipate(
 
 ## ANTICIPATE: Confirmation Bias Protection
 
-![](img/confirmation-bias-toggle.png)
+<!-- ![](img/confirmation-bias-toggle.png) -->
 
 ::: {.fragment}
 **Result:** 74% reduction in misinterpretation
@@ -464,10 +475,12 @@ anticipate_stage <- bid_anticipate(
 
 ```{r}
 flags <- bid_flags(issues)
+
 structure_stage <- bid_structure(
   previous_stage = anticipate_stage,
   telemetry_flags = flags
 )
+
 structure_stage$suggestions
 ```
 
@@ -494,6 +507,7 @@ all_suggestions <- c(
   anticipate_stage$suggestions,
   structure_stage$suggestions
 )
+
 all_suggestions
 ```
 
@@ -505,7 +519,7 @@ all_suggestions
 :::: {.columns}
 ::: {.column width="50%"}
 ### Before: Chaos
-![](img/before-overload.png)
+<!-- ![](img/before-overload.png) -->
 
 - All options visible
 - Competing for attention
@@ -514,7 +528,7 @@ all_suggestions
 
 ::: {.column width="50%"}
 ### After: Journey
-![](img/after-structured.png)
+<!-- ![](img/after-structured.png) -->
 
 - Start with one question
 - Reveal complexity gradually
@@ -530,7 +544,7 @@ all_suggestions
 ## VALIDATE: Confirm Safe Arrival ✅ {background-color="#27ae60"}
 
 ::: {.fragment}
-![](img/validate-summary.png)
+![](img/summary-report.png)
 
 **The GPS moment:** "You've arrived at your insight"
 :::
@@ -588,27 +602,12 @@ all_suggestions
 ::: {.fragment}
 **🎁 First 5 transformations get free 1:1 dashboard review!**
 
-![QR for contact](img/qr-combined.png)
+<!-- ![QR for contact](img/qr-combined.png) -->
 :::
 
 ::: {.notes}
 - 1 minute close
 - "No more death by dropdown!"
 - "Questions?"
-- Thank organizers if time
-:::
-
-## Bonus: Quick Reference Card
-
-| Stage | Problem | Solution | {bidux} Function |
-|-------|---------|----------|------------------|
-| **I**nterpret | No clear question | Define destination | `bid_interpret()` |
-| **N**otice | Hidden friction | Telemetry reveals | `bid_notice()` |
-| **A**nticipate | Cognitive biases | Guard rails | `bid_anticipate()` |
-| **S**tructure | Chaos overwhelms | Progressive disclosure | `bid_structure()` |
-| **V**alidate | Unclear outcomes | Plain language | `bid_validate()` |
-
-::: {.notes}
-- Only show if someone asks for summary
-- "Email me for full guide"
+- Thank organizers
 :::
