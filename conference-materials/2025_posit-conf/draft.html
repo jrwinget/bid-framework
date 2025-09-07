@@ -96,7 +96,6 @@
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="draft_files/libs/revealjs/dist/theme/quarto-8b15755e4aaf03c54c0897acee0a5dcd.css">
-  <link rel="stylesheet" href="custom.css">
   <link href="draft_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="draft_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="draft_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -211,7 +210,7 @@ Jeremy Winget, PhD
 <p><strong>Ever open a dashboard, see 18 filters across 6 tabs, and then…close your laptop?</strong></p>
 </div>
 <div class="fragment large">
-<strong>Or just get the urge to…</strong><br>
+<p><strong>Or just get the urge to…</strong></p>
 <div class="tenor-gif-embed" data-postid="17038619" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%">
 <a href="https://tenor.com/view/ron-swanson-parks-and-recreation-parks-and-rec-computer-dumpster-gif-17038619">Ron Swanson Parks And Recreation GIF</a>from <a href="https://tenor.com/search/ron+swanson-gifs">Ron Swanson GIFs</a>
 </div>
@@ -359,45 +358,6 @@ Jeremy Winget, PhD
 </section>
 <section id="interpret-plan-your-destination" class="slide level2" data-background-color="#4682b4">
 <h2>INTERPRET: Plan Your Destination 🗺️</h2>
-<div class="large">
-<p><strong>Before starting the engine, know where you’re going and why</strong></p>
-</div>
-</section>
-<section id="interpret-clarity-through-story" class="slide level2">
-<h2>INTERPRET: Clarity Through Story</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="key-questions">Key Questions</h3>
-<ul>
-<li><strong>Who’s driving?</strong> Product managers</li>
-<li><strong>Where are we going?</strong> “Are we on track this quarter?”</li>
-<li><strong>Why this route?</strong> Tell a data story</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<h3 id="the-data-story-arc">The Data Story Arc</h3>
-<ol type="1">
-<li><strong>Hook:</strong> “Performance looks strong…”</li>
-<li><strong>Context:</strong> “New product launched”</li>
-<li><strong>Tension:</strong> “But churn is rising”</li>
-<li><strong>Resolution:</strong> “Focus on key segments”</li>
-</ol>
-</div></div>
-<aside class="notes">
-<p>Write the travel guide before packing the car</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="interpret-with-bidux" class="slide level2">
-<h2>INTERPRET: With {bidux}</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">library</span>(bidux)</span>
 <span id="cb1-2"><a href=""></a></span>
@@ -414,182 +374,24 @@ Jeremy Winget, PhD
 <span id="cb1-13"><a href=""></a>    <span class="at">primary =</span> <span class="st">"Product managers checking weekly KPIs"</span>,</span>
 <span id="cb1-14"><a href=""></a>    <span class="at">secondary =</span> <span class="st">"Executives reviewing quarterly trends"</span></span>
 <span id="cb1-15"><a href=""></a>  )</span>
-<span id="cb1-16"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-16"><a href=""></a>)</span>
+<span id="cb1-17"><a href=""></a></span>
+<span id="cb1-18"><a href=""></a><span class="co"># Quick destination check - devs often skip this</span></span>
+<span id="cb1-19"><a href=""></a><span class="fu">bid_interpret</span>(</span>
+<span id="cb1-20"><a href=""></a>  <span class="at">central_question =</span> <span class="st">"Are we on track this quarter?"</span>,</span>
+<span id="cb1-21"><a href=""></a>  <span class="at">user_persona =</span> <span class="st">"PM checking weekly KPIs"</span>  <span class="co"># ← Most forget this</span></span>
+<span id="cb1-22"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="notice-check-the-warning-lights" class="slide level2" data-background-color="#4682b4">
-<h2>NOTICE: Check the Warning Lights ⚠️</h2>
-<div class="large">
-<p><strong>Spot the mechanical issues before leaving the driveway</strong></p>
+<div class="fragment">
+<p><strong>Key insight:</strong> If you can’t write the question in 10 words, users won’t find answers in 100 filters</p>
 </div>
-</section>
-<section id="when-the-client-asks-for-just-one-more-filter" class="slide level2">
-<h2>When the client asks for “just one more filter”</h2>
-
-<img data-src="img/anakin.jpg" class="r-stretch"><div class="fragment">
-<p><strong>Spoiler:</strong> It’s never just one more</p>
-</div>
-</section>
-<section id="notice-identify-the-real-problems" class="slide level2">
-<h2>NOTICE: Identify the Real Problems</h2>
-
-<img data-src="img/notice-markup.png" class="r-stretch"><div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="warning-lights-on">Warning Lights On</h3>
-<ul>
-<li><strong>Choice overload:</strong> 18 filters = paralysis</li>
-<li><strong>No clear path:</strong> Where to click first?</li>
-<li><strong>Hidden costs:</strong> Cognitive burden</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<h3 id="diagnostic-results">Diagnostic Results</h3>
-<ul>
-<li>65% of sessions end without selection</li>
-<li>Average time to first insight: 4.3 minutes</li>
-<li>Most used filters: Only 3 of 18</li>
-</ul>
-</div></div>
-</section>
-<section id="notice-with-bidux" class="slide level2">
-<h2>NOTICE: With {bidux}</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="co"># Real telemetry data reveals hidden friction</span></span>
-<span id="cb2-2"><a href=""></a>notice_stage <span class="ot">&lt;-</span> <span class="fu">bid_notice</span>(</span>
-<span id="cb2-3"><a href=""></a>  <span class="at">previous_stage =</span> interpret_stage,</span>
-<span id="cb2-4"><a href=""></a>  <span class="at">problem =</span> <span class="st">"Analysis paralysis from filter overload"</span>,</span>
-<span id="cb2-5"><a href=""></a>  <span class="at">evidence =</span> <span class="fu">list</span>(</span>
-<span id="cb2-6"><a href=""></a>    <span class="at">quantitative =</span> <span class="st">"65% abandonment rate; 4.3 min to first click"</span>,</span>
-<span id="cb2-7"><a href=""></a>    <span class="at">qualitative =</span> <span class="st">"Users report feeling overwhelmed"</span>,</span>
-<span id="cb2-8"><a href=""></a>    <span class="at">telemetry =</span> <span class="st">"Heatmap shows 80% ignore bottom filters"</span></span>
-<span id="cb2-9"><a href=""></a>  )</span>
-<span id="cb2-10"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="anticipate-pack-for-weather-changes" class="slide level2" data-background-color="#4682b4">
-<h2>ANTICIPATE: Pack for Weather Changes 🌦️</h2>
-<div class="large">
-<p><strong>Prepare for the cognitive detours ahead</strong></p>
-</div>
-</section>
-<section id="anticipate-guard-against-misinterpretation" class="slide level2">
-<h2>ANTICIPATE: Guard Against Misinterpretation</h2>
-<p><img data-src="https://media.giphy.com/media/l0IykOsxLECVejOzm/giphy.gif"><br> <em>Users interpreting your carefully crafted visualizations</em></p>
-<div class="fragment columns">
-<div class="column" style="width:50%;">
-<h3 id="common-cognitive-hazards">Common Cognitive Hazards</h3>
-<ul>
-<li><strong>Anchoring bias:</strong> First number sticks</li>
-<li><strong>Framing effects:</strong> Progress vs.&nbsp;gap</li>
-<li><strong>Confirmation bias:</strong> Cherry-picking data</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<h3 id="mitigation-strategies">Mitigation Strategies</h3>
-<p><img data-src="img/framing-toggle.png"></p>
-<ul>
-<li>Toggle: “75% to goal” ↔︎ “25% gap”</li>
-<li>Reference lines with context</li>
-<li>Uncertainty indicators</li>
-</ul>
-</div></div>
-</section>
-<section id="anticipate-telemetry-driven-example" class="slide level2">
-<h2>ANTICIPATE: Telemetry-Driven Example</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>anticipate_stage <span class="ot">&lt;-</span> <span class="fu">bid_anticipate</span>(</span>
-<span id="cb3-2"><a href=""></a>  <span class="at">previous_stage =</span> notice_stage,</span>
-<span id="cb3-3"><a href=""></a>  <span class="at">include_accessibility =</span> <span class="cn">TRUE</span></span>
-<span id="cb3-4"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="structure-map-the-scenic-route" class="slide level2" data-background-color="#4682b4">
-<h2>STRUCTURE: Map the Scenic Route 🛣️</h2>
-<div class="large">
-<p><strong>Design the journey, not just the destination</strong></p>
-</div>
-</section>
-<section id="the-universal-truth-of-dashboard-design" class="slide level2">
-<h2>The Universal Truth of Dashboard Design</h2>
-
-<img data-src="img/oprah.jpg" class="r-stretch"><div class="fragment">
-<p><strong>Pro tip:</strong> If everything’s important, nothing is</p>
-</div>
-</section>
-<section id="structure-the-path-to-insight" class="slide level2">
-<h2>STRUCTURE: The Path to Insight</h2>
-<div class="large">
-<p><strong>Main highway first. Scenic detours later.</strong></p>
-</div>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="highway-design">Highway Design</h3>
-<ul>
-<li><strong>Smart defaults</strong> answer 80% of questions</li>
-<li><strong>Progressive disclosure</strong> for complexity</li>
-<li><strong>Visual hierarchy</strong> guides the eye</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<h3 id="rest-stops">Rest Stops</h3>
-<ul>
-<li>Group related controls</li>
-<li>Breathing room between sections</li>
-<li>Clear signposts at decision points</li>
-</ul>
-</div></div>
-</section>
-<section id="structure-before-after-transformation" class="slide level2">
-<h2>STRUCTURE: Before → After Transformation</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="before-lost-in-the-wilderness">Before: Lost in the Wilderness</h3>
-<p><img data-src="img/before-overload.png"></p>
-<ul>
-<li>Filters scattered like roadside litter</li>
-<li>Competing charts = conflicting GPS voices</li>
-<li>No defaults = starting from nowhere</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<h3 id="after-scenic-highway">After: Scenic Highway</h3>
-<p><img data-src="img/after-structured.png"></p>
-<ul>
-<li><strong>Hero metric</strong> answers the hook first</li>
-<li><strong>Guided facets</strong> for exploration</li>
-<li><strong>Smart defaults</strong> = instant value</li>
-</ul>
-</div></div>
-</section>
-<section id="structure-with-bidux" class="slide level2">
-<h2>STRUCTURE: With {bidux}</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>structure_stage <span class="ot">&lt;-</span> <span class="fu">bid_structure</span>(<span class="at">previous_stage =</span> anticipate_stage)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="validate-confirm-safe-arrival" class="slide level2" data-background-color="#4682b4">
-<h2>VALIDATE: Confirm Safe Arrival ✅</h2>
-<div class="large">
-<p><strong>End the journey with clarity and next steps</strong></p>
-</div>
-</section>
-<section id="validate-the-destination-check" class="slide level2">
-<h2>VALIDATE: The Destination Check</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="did-we-arrive">Did We Arrive?</h3>
-<ul>
-<li>Plain language summary</li>
-<li>Key insights highlighted</li>
-<li>Confidence indicators</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<h3 id="whats-next">What’s Next?</h3>
-<p><img data-src="img/validate-actions.png"></p>
-<ul>
-<li>2-3 recommended actions</li>
-<li>One-click report export</li>
-<li>Share with team button</li>
-</ul>
-</div></div>
 <aside class="notes">
-<p>Like the GPS saying “You have arrived at your destination”</p>
+<ul>
+<li>1.5 minutes TOTAL for Interpret</li>
+<li>“You think you do this, but telemetry says otherwise”</li>
+<li>“Most jump straight to filters”</li>
+<li>Transition: “But here’s what you’re missing…”</li>
+</ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -602,193 +404,503 @@ Jeremy Winget, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="when-users-finally-find-what-they-need" class="slide level2">
-<h2>When Users Finally Find What They Need</h2>
+<section id="notice-the-warning-lights-youre-ignoring" class="slide level2" data-background-color="#e74c3c">
+<h2>NOTICE: The Warning Lights You’re Ignoring ⚠️</h2>
 
-<img data-src="https://media.giphy.com/media/OK27wINdQS5YQ/giphy.gif" class="r-stretch"><div class="fragment">
-<p><strong>This is what we’re optimizing for!</strong></p>
-</div>
-</section>
-<section id="validate-with-bidux" class="slide level2">
-<h2>VALIDATE: With {bidux}</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>validate_stage <span class="ot">&lt;-</span> <span class="fu">bid_validate</span>(</span>
-<span id="cb5-2"><a href=""></a>  <span class="at">previous_stage =</span> structure_stage,</span>
-<span id="cb5-3"><a href=""></a>  <span class="at">summary_style =</span> <span class="st">"Executive Brief"</span>,</span>
-<span id="cb5-4"><a href=""></a>  <span class="at">include_telemetry =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb5-5"><a href=""></a>  <span class="at">include_empower_tools =</span> <span class="cn">TRUE</span></span>
-<span id="cb5-6"><a href=""></a>)</span>
-<span id="cb5-7"><a href=""></a></span>
-<span id="cb5-8"><a href=""></a><span class="fu">summary</span>(validate_stage)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="the-complete-journey-before-after" class="slide level2">
-<h2>The Complete Journey: Before → After</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="before-lost-driver">Before: Lost Driver 😰</h3>
-<p><img data-src="img/before-overload.png"></p>
-<ul>
-<li>18 filters, 6 tabs</li>
-<li>No clear path</li>
-<li>65% abandonment</li>
-<li>4.3 min to insight</li>
+<img data-src="img/telemetry-heatmap.png" class="r-stretch"><ul>
+<li class="fragment"><strong>Your assumption:</strong> “They need all 18 filters”</li>
+<li class="fragment"><strong>Reality:</strong> 82% use only 3 filters</li>
+<li class="fragment"><strong>Hidden cost:</strong> 4.3 minutes to first click</li>
 </ul>
-</div><div class="column" style="width:50%;">
-<h3 id="after-smooth-highway">After: Smooth Highway 🚗</h3>
-<p><img data-src="img/after-complete.png"></p>
+<aside class="notes">
 <ul>
-<li>3 smart filters</li>
-<li>Guided journey</li>
-<li>85% completion</li>
-<li>45 sec to insight</li>
+<li>START 3-minute NOTICE section</li>
+<li>“This is where behavioral science starts”</li>
 </ul>
-</div></div>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="real-production-results" class="slide level2">
-<h2>Real Production Results</h2>
+<section id="notice-what-telemetry-reveals" class="slide level2">
+<h2>NOTICE: What Telemetry Reveals</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="co"># Actual telemetry from bidux-powered dashboards</span></span>
-<span id="cb6-2"><a href=""></a><span class="fu">bid_report</span>(</span>
-<span id="cb6-3"><a href=""></a>  <span class="at">app_id =</span> <span class="st">"quarterly_kpi_dashboard"</span>,</span>
-<span id="cb6-4"><a href=""></a>  <span class="at">period =</span> <span class="st">"2024_Q4"</span></span>
-<span id="cb6-5"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="co"># Actual production telemetry</span></span>
+<span id="cb2-2"><a href=""></a>notice_results <span class="ot">&lt;-</span> <span class="fu">bid_notice</span>(<span class="at">telemetry_data =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-3"><a href=""></a></span>
+<span id="cb2-4"><a href=""></a><span class="fu">summary</span>(notice_results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
-<h3 id="impact-metrics">Impact Metrics 📊</h3>
+<p><strong>The “Just One More Filter” Death Spiral:</strong></p>
+<p><img data-src="img/anakin.jpg"></p>
+</div>
+<aside class="notes">
+<ul>
+<li>“Telemetry is your behavioral microscope”</li>
+<li>“Every hover tells a story of confusion”</li>
+<li>Transition: “Now let’s talk about what happens in their heads”</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="notice-cognitive-load-measurement" class="slide level2">
+<h2>NOTICE: Cognitive Load Measurement</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="youre-measuring">You’re Measuring:</h3>
+<ul>
+<li>Click-through rates</li>
+<li>Time on page</li>
+<li>Completions</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="you-should-measure">You Should Measure:</h3>
+<ul>
+<li><strong>Decision fatigue points</strong></li>
+<li><strong>Paradox of choice moments</strong></li>
+<li><strong>Cognitive overflow indicators</strong></li>
+</ul>
+</div></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="co"># update example based on actual bidux code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<aside class="notes">
+<ul>
+<li>“This is behavioral science in action”</li>
+<li>End NOTICE section (3 min total)</li>
+<li>Transition: “Once you spot problems, anticipate how users will cope”</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="anticipate-pack-for-cognitive-weather" class="slide level2" data-background-color="#f39c12">
+<h2>ANTICIPATE: Pack for Cognitive Weather 🌦️</h2>
+<div class="large">
+<p><strong>Users don’t see data. They see stories.</strong></p>
+</div>
+<p><img data-src="https://media.giphy.com/media/l0IykOsxLECVejOzm/giphy.gif"><br> <em>Users interpreting your carefully crafted visualizations</em></p>
+<div class="fragment">
+<p><em>And they’ll write their own story if you don’t guide them</em></p>
+</div>
+<aside class="notes">
+<ul>
+<li>START 3-minute ANTICIPATE section</li>
+<li>“This is pure psychology”</li>
+<li>So we need to prepare for cognitive detours</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="anticipate-the-biases-youre-not-defending-against" class="slide level2">
+<h2>ANTICIPATE: The Biases You’re Not Defending Against</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="anchoring-bias">Anchoring Bias</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="co"># Bad: First number sticks</span></span>
+<span id="cb4-2"><a href=""></a><span class="fu">valueBox</span>(<span class="at">value =</span> <span class="sc">-</span><span class="dv">5</span>, <span class="at">subtitle =</span> <span class="st">"Change"</span>)</span>
+<span id="cb4-3"><a href=""></a></span>
+<span id="cb4-4"><a href=""></a><span class="co"># Good: Context first</span></span>
+<span id="cb4-5"><a href=""></a><span class="fu">valueBox</span>(<span class="at">value =</span> <span class="st">"+15% YTD"</span>, <span class="at">subtitle =</span> <span class="st">"Despite -5 this week"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:50%;">
+<h3 id="framing-effects">Framing Effects</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="co"># bidux suggests toggle</span></span>
+<span id="cb5-2"><a href=""></a><span class="fu">bid_anticipate</span>() <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a href=""></a>  <span class="fu">add_framing_toggle</span>(</span>
+<span id="cb5-4"><a href=""></a>    <span class="at">positive =</span> <span class="st">"75% to goal"</span>,</span>
+<span id="cb5-5"><a href=""></a>    <span class="at">negative =</span> <span class="st">"25% gap remaining"</span></span>
+<span id="cb5-6"><a href=""></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+<aside class="notes">
+<ul>
+<li>“Small changes, massive perception shifts”</li>
+<li>“This is what behavioral scientists know that devs don’t”</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="anticipate-confirmation-bias-protection" class="slide level2">
+<h2>ANTICIPATE: Confirmation Bias Protection</h2>
+
+<img data-src="img/confirmation-bias-toggle.png" class="r-stretch"><div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="co"># update with actual bidux code and set eval to TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p><strong>Result:</strong> 74% reduction in misinterpretation</p>
+</div>
+<aside class="notes">
+<ul>
+<li>“Protect users from themselves”</li>
+<li>End ANTICIPATE (3 min total)</li>
+<li>Transition: “Now structure the journey”</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="structure-the-scenic-route" class="slide level2" data-background-color="#16a085">
+<h2>STRUCTURE: The Scenic Route 🛣️</h2>
+
+<img data-src="img/oprah.jpg" class="r-stretch"><div class="fragment">
+<p><strong>If everything’s important, nothing is.</strong></p>
+</div>
+<aside class="notes">
+<ul>
+<li>START 3.5-minute STRUCTURE section</li>
+<li>“This is where psychology meets code”</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="structure-progressive-disclosure-that-works" class="slide level2">
+<h2>STRUCTURE: Progressive Disclosure That Works</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="before-chaos">Before: Chaos</h3>
+<p><img data-src="img/before-overload.png"></p>
+<ul>
+<li>All options visible</li>
+<li>Competing for attention</li>
+<li>Analysis paralysis</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="after-journey">After: Journey</h3>
+<p><img data-src="img/after-structured.png"></p>
+<ul>
+<li>Start with one question</li>
+<li>Reveal complexity gradually</li>
+<li>Cognitive scaffolding</li>
+</ul>
+</div></div>
+<aside class="notes">
+<ul>
+<li>“Structure IS the user experience”</li>
+<li>“Every pixel placement is a psychological choice”</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="structure-the-behavioral-science-hierarchy" class="slide level2">
+<h2>STRUCTURE: The Behavioral Science Hierarchy</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="co"># update with actual bidux code and set eval to TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<h3 id="the-f-pattern-reading-path">The F-Pattern Reading Path</h3>
+<p><img data-src="img/f-pattern-heatmap.png"></p>
+<p><em>Place critical info where eyes naturally go</em></p>
+</div>
+<aside class="notes">
+<ul>
+<li>“Eye tracking shows F-pattern on dashboards”</li>
+<li>“Top-left = highest value real estate”</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="structure-smart-defaults-from-telemetry" class="slide level2">
+<h2>STRUCTURE: Smart Defaults from Telemetry</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="co"># update with actual bidux code and set eval to TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p><strong>Before:</strong> User configures dashboard<br> <strong>After:</strong> Dashboard anticipates user</p>
+</div>
+<aside class="notes">
+<ul>
+<li>End STRUCTURE (3.5 min total)</li>
+<li>Transition: “Quick validation check”</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="validate-confirm-safe-arrival" class="slide level2" data-background-color="#27ae60">
+<h2>VALIDATE: Confirm Safe Arrival ✅</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="co"># update with actual bidux code and set eval to TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p><img data-src="img/validate-summary.png"></p>
+<p><strong>The GPS moment:</strong> “You’ve arrived at your insight”</p>
+</div>
+<aside class="notes">
+<ul>
+<li>1.5 minutes TOTAL for Validate</li>
+<li>“Devs know summaries, but miss the psychology”</li>
+<li>“Plain language = cognitive relief”</li>
+<li>Transition: “Let’s see the impact”</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-transformation-proven-results" class="slide level2">
+<h2>The Transformation: Proven Results 📊</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="before-bid">Before BID</h3>
+<ul>
+<li>18 filters, 6 tabs</li>
+<li>4.3 min to insight</li>
+<li>65% abandonment</li>
+<li>31% misinterpret data</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="after-bid">After BID</h3>
+<ul>
+<li>3 smart filters</li>
+<li>45 sec to insight (-82%)</li>
+<li>85% completion (+143%)</li>
+<li>8% misinterpret (-74%)</li>
+</ul>
+</div></div>
+<div class="fragment">
+<h3 id="one-teams-story">One Team’s Story:</h3>
+<p><em>“We thought users wanted more options. Telemetry showed they wanted more guidance. BID framework + {bidux} = 224% increase in weekly active users”</em></p>
+</div>
+<aside class="notes">
+<ul>
+<li>1.5 minutes for results</li>
+<li>“This isn’t theory - it’s production data”</li>
+<li>Transition: “Here’s how to start”</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="your-roadmap-forward" class="slide level2 center" data-background-color="#2c3e50">
+<h2>Your Roadmap Forward 🚀</h2>
+<div class="r-fit-text">
+<p><strong>“Interfaces Need A Smart Vision”</strong></p>
+</div>
+<h3 id="this-weeks-challenge">This Week’s Challenge:</h3>
+<ol type="1">
+<li><strong>Install {bidux}:</strong> <code>install.packages("bidux")</code></li>
+<li><strong>Run telemetry on ONE dashboard:</strong> <code>bid_notice(telemetry = TRUE)</code></li>
+<li><strong>Share your before/after:</strong> <a href="https://bsky.app/profile/jrwinget.bsky.social"><span class="citation" data-cites="jrwinget">@jrwinget</span></a></li>
+</ol>
+<div class="fragment">
+<p><strong>🎁 First 5 transformations get free 1:1 dashboard review!</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/qr-combined.png"></p>
+<figcaption>QR for contact</figcaption>
+</figure>
+</div>
+</div>
+<aside class="notes">
+<ul>
+<li>1 minute close</li>
+<li>“No more death by dropdown!”</li>
+<li>“Questions?”</li>
+<li>Thank organizers if time</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="bonus-slide-the-bidux-toolkit" class="slide level2 smaller">
+<h2>Bonus Slide: The {bidux} Toolkit</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="co"># For those who want to dive deep</span></span>
+<span id="cb10-2"><a href=""></a><span class="fu">library</span>(bidux)</span>
+<span id="cb10-3"><a href=""></a></span>
+<span id="cb10-4"><a href=""></a><span class="co"># Full workflow in 5 lines</span></span>
+<span id="cb10-5"><a href=""></a>my_dashboard <span class="sc">|&gt;</span></span>
+<span id="cb10-6"><a href=""></a>  <span class="fu">bid_interpret</span>(<span class="at">question =</span> <span class="st">"What's our KPI status?"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-7"><a href=""></a>  <span class="fu">bid_notice</span>(<span class="at">telemetry =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-8"><a href=""></a>  <span class="fu">bid_anticipate</span>(<span class="at">guard_biases =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-9"><a href=""></a>  <span class="fu">bid_structure</span>(<span class="at">progressive =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-10"><a href=""></a>  <span class="fu">bid_validate</span>(<span class="at">empower_users =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb10-11"><a href=""></a></span>
+<span id="cb10-12"><a href=""></a><span class="co"># Generate full behavioral report</span></span>
+<span id="cb10-13"><a href=""></a><span class="fu">bid_report</span>(my_dashboard, <span class="at">output =</span> <span class="st">"behavioral_insights.html"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<aside class="notes">
+<ul>
+<li>Only if extra time in Q&amp;A</li>
+<li>“Full framework in your console”</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="bonus-quick-reference-card" class="slide level2">
+<h2>Bonus: Quick Reference Card</h2>
 <table class="caption-top">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 20%">
+<col style="width: 22%">
+<col style="width: 40%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Metric</th>
-<th>Before BID</th>
-<th>After BID</th>
-<th>Change</th>
+<th>Stage</th>
+<th>Problem</th>
+<th>Solution</th>
+<th>{bidux} Function</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Time to First Insight</td>
-<td>4.3 min</td>
-<td>45 sec</td>
-<td><strong>-82%</strong></td>
+<td><strong>I</strong>nterpret</td>
+<td>No clear question</td>
+<td>Define destination</td>
+<td><code>bid_interpret()</code></td>
 </tr>
 <tr class="even">
-<td>Session Completion</td>
-<td>35%</td>
-<td>85%</td>
-<td><strong>+143%</strong></td>
+<td><strong>N</strong>otice</td>
+<td>Hidden friction</td>
+<td>Telemetry reveals</td>
+<td><code>bid_notice()</code></td>
 </tr>
 <tr class="odd">
-<td>User Satisfaction (NPS)</td>
-<td>23</td>
-<td>67</td>
-<td><strong>+44 pts</strong></td>
+<td><strong>A</strong>nticipate</td>
+<td>Cognitive biases</td>
+<td>Guard rails</td>
+<td><code>bid_anticipate()</code></td>
 </tr>
 <tr class="even">
-<td>Misinterpretation Rate</td>
-<td>31%</td>
-<td>8%</td>
-<td><strong>-74%</strong></td>
+<td><strong>S</strong>tructure</td>
+<td>Chaos overwhelms</td>
+<td>Progressive disclosure</td>
+<td><code>bid_structure()</code></td>
 </tr>
 <tr class="odd">
-<td>Weekly Active Users</td>
-<td>127</td>
-<td>412</td>
-<td><strong>+224%</strong></td>
+<td><strong>V</strong>alidate</td>
+<td>Unclear outcomes</td>
+<td>Plain language</td>
+<td><code>bid_validate()</code></td>
 </tr>
 </tbody>
 </table>
-</div>
-</section>
-<section id="key-takeaways" class="slide level2">
-<h2>Key Takeaways 🎯</h2>
-<ol type="1">
-<li class="fragment"><p><strong>Ground design in behavioral science</strong> → Less user friction, more insights</p></li>
-<li class="fragment"><p><strong>Structure is the work</strong> → The path matters more than the features</p></li>
-<li class="fragment"><p><strong>Telemetry reveals hidden problems</strong> → What users do &gt; what they say</p></li>
-<li class="fragment"><p><strong>Tools implement the science</strong> → reactable, echarts4r, plotly + {bidux} guidance</p></li>
-<li class="fragment"><p><strong>{bidux} = behavioral scientist in your console</strong> → Evidence-based decisions at each step</p></li>
-</ol>
-</section>
-<section id="and-remember" class="slide level2 center" data-background-color="#2c3e50">
-<h2>And Remember! 🧠</h2>
-<div class="r-fit-text">
-<p><strong>“Interfaces Need A Smart Vision”</strong></p>
-</div>
-<div class="columns">
-<div class="column" style="width:60%;">
-<h3 id="the-bid-journey-recap">The BID Journey Recap 🚗</h3>
-<ul>
-<li><strong>I</strong>nterpret → Plan your destination</li>
-<li><strong>N</strong>otice → Check warning lights</li>
-<li><strong>A</strong>nticipate → Pack for weather</li>
-<li><strong>S</strong>tructure → Map the route</li>
-<li><strong>V</strong>alidate → Confirm arrival</li>
-</ul>
-</div><div class="column" style="width:40%;">
-<div class="fragment">
-<div class="tenor-gif-embed" data-postid="5313946" data-share-method="host" data-aspect-ratio="1.3" data-width="100%">
-<a href="https://tenor.com/view/writethatdown-gif-5313946">Writethatdown GIF</a>from <a href="https://tenor.com/search/writethatdown-gifs">Writethatdown GIFs</a>
-</div>
-<script type="text/javascript" async="" src="https://tenor.com/embed.js"></script>
-</div>
-</div></div>
 <aside class="notes">
 <ul>
-<li>for gif: “Write that down! Stick it to your monitor!”</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="your-action-items" class="slide level2" data-background-color="#27ae60">
-<h2>Your Action Items 🚀</h2>
-<div class="r-fit-text">
-<p><strong>Stop death by dropdown!</strong></p>
-</div>
-<h3 id="three-things-to-do-this-week">Three Things to Do This Week:</h3>
-<ol type="1">
-<li class="fragment"><strong>Download {bidux}</strong> → <code>install.packages("bidux")</code></li>
-<li class="fragment"><strong>Try a some of the auto-suggestions</strong> on a completed/WIP dashboard</li>
-<li class="fragment"><strong>Connect with me</strong> to share your before/after → <a href="https://bsky.app/profile/jrwinget.bsky.social"><span class="citation" data-cites="jrwinget">@jrwinget</span></a></li>
-</ol>
-<div class="fragment">
-<p><strong>Bonus:</strong> First 5 people to share their transformation get free 1:1 dashboard review! 🎁</p>
-</div>
-</section>
-<section id="lets-connect" class="slide level2 center" data-background-color="#2c3e50">
-<h2>Let’s Connect! 🤝</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/qr-winget.png"></p>
-<figcaption>QR Code for my info</figcaption>
-</figure>
-</div>
-<div class="columns">
-<div class="column" style="width:33%;">
-<h3 id="get-bidux">📦 Get {bidux}</h3>
-<p><code>install.packages("bidux")</code></p>
-</div><div class="column" style="width:33%;">
-<h3 id="share-your-story">💬 Share Your Story</h3>
-<p><a href="https://bsky.app/profile/jrwinget.bsky.social"><span class="citation" data-cites="jrwinget">@jrwinget</span></a></p>
-</div><div class="column" style="width:33%;">
-<h3 id="questions">📧 Questions?</h3>
-<p><img data-src="https://media.giphy.com/media/3o7btZ1Gm7ZL25pLMs/giphy.gif"></p>
-</div></div>
-<aside class="notes">
-<ul>
-<li>Remind about mnemonic: “Interfaces Need A Smart Vision”</li>
-<li>Feel free to reach out if you’d like to connect and chat further</li>
-<li>Thank organizers</li>
-<li>Quick reminder about the free dashboard reviews</li>
+<li>Only show if someone asks for summary</li>
+<li>“Email me for full guide”</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {

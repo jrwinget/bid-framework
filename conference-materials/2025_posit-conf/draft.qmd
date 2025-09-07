@@ -6,7 +6,6 @@ execute:
 format:
   revealjs:
     theme: default
-    css: custom.css
     slide-number: true
     transition: fade
 ---
@@ -18,7 +17,8 @@ format:
 :::
 
 ::: {.fragment .large}
-**Or just get the urge to...**<br>
+**Or just get the urge to...**
+
 <div class="tenor-gif-embed" data-postid="17038619" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%"><a href="https://tenor.com/view/ron-swanson-parks-and-recreation-parks-and-rec-computer-dumpster-gif-17038619">Ron Swanson Parks And Recreation GIF</a>from <a href="https://tenor.com/search/ron+swanson-gifs">Ron Swanson GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 :::
 
@@ -97,7 +97,7 @@ format:
 
 ![](img/bid-framework.png)
 
-**"Interfaces Need A Smart Vision"** - Remember: I-N-A-S-V
+**Remember - "Interfaces Need A Smart Vision"**
 
 ::: {.fragment}
 **Behavioral Insight Design (BID)**: *Not just UX advice - it's behavioral science in your dev workflow*
@@ -126,35 +126,6 @@ format:
 
 ## INTERPRET: Plan Your Destination 🗺️ {background-color="#4682b4"}
 
-::: {.large}
-**Before starting the engine, know where you're going and why**
-:::
-
-## INTERPRET: Clarity Through Story
-
-:::: {.columns}
-::: {.column width="50%"}
-### Key Questions
-- **Who's driving?** Product managers
-- **Where are we going?** "Are we on track this quarter?"
-- **Why this route?** Tell a data story
-:::
-
-::: {.column width="50%"}
-### The Data Story Arc
-1. **Hook:** "Performance looks strong..."
-2. **Context:** "New product launched"
-3. **Tension:** "But churn is rising"
-4. **Resolution:** "Focus on key segments"
-:::
-::::
-
-::: {.notes}
-Write the travel guide before packing the car
-:::
-
-## INTERPRET: With {bidux}
-
 ```{r}
 #| eval: false
 
@@ -174,364 +145,359 @@ interpret_stage <- bid_interpret(
     secondary = "Executives reviewing quarterly trends"
   )
 )
+
+# Quick destination check - devs often skip this
+bid_interpret(
+  central_question = "Are we on track this quarter?",
+  user_persona = "PM checking weekly KPIs"  # ← Most forget this
+)
 ```
 
-## NOTICE: Check the Warning Lights ⚠️ {background-color="#4682b4"}
-
-::: {.large}
-**Spot the mechanical issues before leaving the driveway**
-:::
-
-## When the client asks for "just one more filter"
-
-![](img/anakin.jpg)
-
 ::: {.fragment}
-**Spoiler:** It's never just one more
+**Key insight:** If you can't write the question in 10 words, users won't find answers in 100 filters
 :::
 
-## NOTICE: Identify the Real Problems
-
-![](img/notice-markup.png)
-
-:::: {.columns}
-::: {.column width="50%"}
-### Warning Lights On
-
-- **Choice overload:** 18 filters = paralysis
-- **No clear path:** Where to click first?
-- **Hidden costs:** Cognitive burden
+::: {.notes}
+- 1.5 minutes TOTAL for Interpret
+- "You think you do this, but telemetry says otherwise"
+- "Most jump straight to filters"
+- Transition: "But here's what you're missing..."
 :::
 
-::: {.column width="50%"}
-### Diagnostic Results
+## NOTICE: The Warning Lights You're Ignoring ⚠️ {background-color="#e74c3c"}
 
-- 65% of sessions end without selection
-- Average time to first insight: 4.3 minutes
-- Most used filters: Only 3 of 18
+![](img/telemetry-heatmap.png)
+
+::: {.incremental}
+- **Your assumption:** "They need all 18 filters"
+- **Reality:** 82% use only 3 filters
+- **Hidden cost:** 4.3 minutes to first click
 :::
-::::
 
-## NOTICE: With {bidux}
+::: {.notes}
+- START 3-minute NOTICE section
+- "This is where behavioral science starts"
+:::
+
+## NOTICE: What Telemetry Reveals
 
 ```{r}
 #| eval: false
 
-# Real telemetry data reveals hidden friction
-notice_stage <- bid_notice(
-  previous_stage = interpret_stage,
-  problem = "Analysis paralysis from filter overload",
-  evidence = list(
-    quantitative = "65% abandonment rate; 4.3 min to first click",
-    qualitative = "Users report feeling overwhelmed",
-    telemetry = "Heatmap shows 80% ignore bottom filters"
-  )
-)
+# Actual production telemetry
+notice_results <- bid_notice(telemetry_data = TRUE)
+
+summary(notice_results)
 ```
 
-## ANTICIPATE: Pack for Weather Changes 🌦️ {background-color="#4682b4"}
+::: {.fragment}
+**The "Just One More Filter" Death Spiral:**
 
-::: {.large}
-**Prepare for the cognitive detours ahead**
+![](img/anakin.jpg)
 :::
 
-## ANTICIPATE: Guard Against Misinterpretation
+::: {.notes}
+- "Telemetry is your behavioral microscope"
+- "Every hover tells a story of confusion"
+- Transition: "Now let's talk about what happens in their heads"
+:::
+
+## NOTICE: Cognitive Load Measurement
+
+:::: {.columns}
+::: {.column width="50%"}
+### You're Measuring:
+- Click-through rates
+- Time on page
+- Completions
+:::
+
+::: {.column width="50%"}
+### You Should Measure:
+- **Decision fatigue points**
+- **Paradox of choice moments**
+- **Cognitive overflow indicators**
+:::
+::::
+
+```{r}
+#| eval: false
+
+# update example based on actual bidux code
+```
+
+::: {.notes}
+- "This is behavioral science in action"
+- End NOTICE section (3 min total)
+- Transition: "Once you spot problems, anticipate how users will cope"
+:::
+
+## ANTICIPATE: Pack for Cognitive Weather 🌦️ {background-color="#f39c12"}
+
+::: {.large}
+**Users don't see data. They see stories.**
+:::
 
 ![](https://media.giphy.com/media/l0IykOsxLECVejOzm/giphy.gif)<br>
 *Users interpreting your carefully crafted visualizations*
 
-:::: {.fragment .columns}
-::: {.column width="50%"}
-### Common Cognitive Hazards
-
-- **Anchoring bias:** First number sticks
-- **Framing effects:** Progress vs. gap
-- **Confirmation bias:** Cherry-picking data
-:::
-
-::: {.column width="50%"}
-### Mitigation Strategies
-
-![](img/framing-toggle.png)
-
-- Toggle: "75% to goal" ↔ "25% gap"
-- Reference lines with context
-- Uncertainty indicators
-:::
-::::
-
-## ANTICIPATE: Telemetry-Driven Example
-
-```{r}
-#| eval: false
-
-anticipate_stage <- bid_anticipate(
-  previous_stage = notice_stage,
-  include_accessibility = TRUE
-)
-```
-
-## STRUCTURE: Map the Scenic Route 🛣️ {background-color="#4682b4"}
-
-::: {.large}
-**Design the journey, not just the destination**
-:::
-
-## The Universal Truth of Dashboard Design
-
-![](img/oprah.jpg)
-
 ::: {.fragment}
-**Pro tip:** If everything's important, nothing is
+*And they'll write their own story if you don't guide them*
 :::
 
-## STRUCTURE: The Path to Insight
-
-::: {.large}
-**Main highway first. Scenic detours later.**
+::: {.notes}
+- START 3-minute ANTICIPATE section
+- "This is pure psychology"
+- So we need to prepare for cognitive detours
 :::
+
+## ANTICIPATE: The Biases You're Not Defending Against
 
 :::: {.columns}
 ::: {.column width="50%"}
-### Highway Design
-
-- **Smart defaults** answer 80% of questions
-- **Progressive disclosure** for complexity
-- **Visual hierarchy** guides the eye
-:::
-
-::: {.column width="50%"}
-### Rest Stops
-
-- Group related controls
-- Breathing room between sections
-- Clear signposts at decision points
-:::
-::::
-
-## STRUCTURE: Before → After Transformation
-
-:::: {.columns}
-::: {.column width="50%"}
-### Before: Lost in the Wilderness
-
-![](img/before-overload.png)
-
-- Filters scattered like roadside litter
-- Competing charts = conflicting GPS voices
-- No defaults = starting from nowhere
-:::
-
-::: {.column width="50%"}
-### After: Scenic Highway
-
-![](img/after-structured.png)
-
-- **Hero metric** answers the hook first
-- **Guided facets** for exploration
-- **Smart defaults** = instant value
-:::
-::::
-
-## STRUCTURE: With {bidux}
-
+### Anchoring Bias
 ```{r}
 #| eval: false
 
-structure_stage <- bid_structure(previous_stage = anticipate_stage)
+# Bad: First number sticks
+valueBox(value = -5, subtitle = "Change")
+
+# Good: Context first
+valueBox(value = "+15% YTD", subtitle = "Despite -5 this week")
 ```
-
-## VALIDATE: Confirm Safe Arrival ✅ {background-color="#4682b4"}
-
-::: {.large}
-**End the journey with clarity and next steps**
-:::
-
-## VALIDATE: The Destination Check
-
-:::: {.columns}
-::: {.column width="50%"}
-### Did We Arrive?
-
-- Plain language summary
-- Key insights highlighted
-- Confidence indicators
 :::
 
 ::: {.column width="50%"}
-### What's Next?
+### Framing Effects
+```{r}
+#| eval: false
 
-![](img/validate-actions.png)
-
-- 2-3 recommended actions
-- One-click report export
-- Share with team button
+# bidux suggests toggle
+bid_anticipate() |>
+  add_framing_toggle(
+    positive = "75% to goal",
+    negative = "25% gap remaining"
+  )
+```
 :::
 ::::
 
 ::: {.notes}
-Like the GPS saying "You have arrived at your destination"
+- "Small changes, massive perception shifts"
+- "This is what behavioral scientists know that devs don't"
 :::
 
-## When Users Finally Find What They Need
+## ANTICIPATE: Confirmation Bias Protection
 
-![](https://media.giphy.com/media/OK27wINdQS5YQ/giphy.gif)
-
-::: {.fragment}
-**This is what we're optimizing for!**
-:::
-
-## VALIDATE: With {bidux}
+![](img/confirmation-bias-toggle.png)
 
 ```{r}
 #| eval: false
-validate_stage <- bid_validate(
-  previous_stage = structure_stage,
-  summary_style = "Executive Brief",
-  include_telemetry = TRUE,
-  include_empower_tools = TRUE
-)
 
-summary(validate_stage)
+# update with actual bidux code and set eval to TRUE
 ```
 
-## The Complete Journey: Before → After
+::: {.fragment}
+**Result:** 74% reduction in misinterpretation
+:::
+
+::: {.notes}
+- "Protect users from themselves"
+- End ANTICIPATE (3 min total)
+- Transition: "Now structure the journey"
+:::
+
+## STRUCTURE: The Scenic Route 🛣️ {background-color="#16a085"}
+
+![](img/oprah.jpg)
+
+::: {.fragment}
+**If everything's important, nothing is.**
+:::
+
+::: {.notes}
+- START 3.5-minute STRUCTURE section
+- "This is where psychology meets code"
+:::
+
+## STRUCTURE: Progressive Disclosure That Works
 
 :::: {.columns}
 ::: {.column width="50%"}
-### Before: Lost Driver 😰
-
+### Before: Chaos
 ![](img/before-overload.png)
 
-- 18 filters, 6 tabs
-- No clear path
-- 65% abandonment
-- 4.3 min to insight
+- All options visible
+- Competing for attention
+- Analysis paralysis
 :::
 
 ::: {.column width="50%"}
-### After: Smooth Highway 🚗
+### After: Journey
+![](img/after-structured.png)
 
-![](img/after-complete.png)
-
-- 3 smart filters
-- Guided journey
-- 85% completion
-- 45 sec to insight
+- Start with one question
+- Reveal complexity gradually
+- Cognitive scaffolding
 :::
 ::::
 
-## Real Production Results
+::: {.notes}
+- "Structure IS the user experience"
+- "Every pixel placement is a psychological choice"
+:::
+
+## STRUCTURE: The Behavioral Science Hierarchy
 
 ```{r}
 #| eval: false
 
-# Actual telemetry from bidux-powered dashboards
-bid_report(
-  app_id = "quarterly_kpi_dashboard",
-  period = "2024_Q4"
-)
+# update with actual bidux code and set eval to TRUE
 ```
 
 ::: {.fragment}
-### Impact Metrics 📊
+### The F-Pattern Reading Path
+![](img/f-pattern-heatmap.png)
 
-| Metric | Before BID | After BID | Change |
-|--------|-----------|-----------|---------|
-| Time to First Insight | 4.3 min | 45 sec | **-82%** |
-| Session Completion | 35% | 85% | **+143%** |
-| User Satisfaction (NPS) | 23 | 67 | **+44 pts** |
-| Misinterpretation Rate | 31% | 8% | **-74%** |
-| Weekly Active Users | 127 | 412 | **+224%** |
+*Place critical info where eyes naturally go*
 :::
 
-## Key Takeaways 🎯
-
-::: {.incremental}
-1. **Ground design in behavioral science** → Less user friction, more insights
-
-2. **Structure is the work** → The path matters more than the features
-
-3. **Telemetry reveals hidden problems** → What users do > what they say
-
-4. **Tools implement the science** → reactable, echarts4r, plotly + {bidux} guidance
-
-5. **{bidux} = behavioral scientist in your console** → Evidence-based decisions at each step
+::: {.notes}
+- "Eye tracking shows F-pattern on dashboards"
+- "Top-left = highest value real estate"
 :::
 
-## And Remember! 🧠 {.center background-color="#2c3e50"}
+## STRUCTURE: Smart Defaults from Telemetry
+
+```{r}
+#| eval: false
+
+# update with actual bidux code and set eval to TRUE
+```
+
+::: {.fragment}
+**Before:** User configures dashboard<br>
+**After:** Dashboard anticipates user
+:::
+
+::: {.notes}
+- End STRUCTURE (3.5 min total)
+- Transition: "Quick validation check"
+:::
+
+## VALIDATE: Confirm Safe Arrival ✅ {background-color="#27ae60"}
+
+```{r}
+#| eval: false
+
+# update with actual bidux code and set eval to TRUE
+```
+
+::: {.fragment}
+![](img/validate-summary.png)
+
+**The GPS moment:** "You've arrived at your insight"
+:::
+
+::: {.notes}
+- 1.5 minutes TOTAL for Validate
+- "Devs know summaries, but miss the psychology"
+- "Plain language = cognitive relief"
+- Transition: "Let's see the impact"
+:::
+
+## The Transformation: Proven Results 📊
+
+:::: {.columns}
+::: {.column width="50%"}
+### Before BID
+- 18 filters, 6 tabs
+- 4.3 min to insight
+- 65% abandonment
+- 31% misinterpret data
+:::
+
+::: {.column width="50%"}
+### After BID
+- 3 smart filters
+- 45 sec to insight (-82%)
+- 85% completion (+143%)
+- 8% misinterpret (-74%)
+:::
+::::
+
+::: {.fragment}
+### One Team's Story:
+*"We thought users wanted more options. Telemetry showed they wanted more guidance. BID framework + {bidux} = 224% increase in weekly active users"*
+:::
+
+::: {.notes}
+- 1.5 minutes for results
+- "This isn't theory - it's production data"
+- Transition: "Here's how to start"
+:::
+
+## Your Roadmap Forward 🚀 {.center background-color="#2c3e50"}
 
 ::: {.r-fit-text}
 **"Interfaces Need A Smart Vision"**
 :::
 
-:::: {.columns}
-::: {.column width="60%"}
-### The BID Journey Recap 🚗
+### This Week's Challenge:
 
-- **I**nterpret → Plan your destination
-- **N**otice → Check warning lights
-- **A**nticipate → Pack for weather
-- **S**tructure → Map the route
-- **V**alidate → Confirm arrival
-:::
-
-::: {.column width="40%"}
-::: {.fragment}
-<div class="tenor-gif-embed" data-postid="5313946" data-share-method="host" data-aspect-ratio="1.3" data-width="100%"><a href="https://tenor.com/view/writethatdown-gif-5313946">Writethatdown GIF</a>from <a href="https://tenor.com/search/writethatdown-gifs">Writethatdown GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-:::
-:::
-::::
-
-::: {.notes}
-- for gif: "Write that down! Stick it to your monitor!"
-:::
-
-## Your Action Items 🚀 {background-color="#27ae60"}
-
-::: {.r-fit-text}
-**Stop death by dropdown!**
-:::
-
-### Three Things to Do This Week:
-
-::: {.incremental}
-1. **Download {bidux}** → `install.packages("bidux")`
-2. **Try a some of the auto-suggestions** on a completed/WIP dashboard
-3. **Connect with me** to share your before/after → [@jrwinget](https://bsky.app/profile/jrwinget.bsky.social)
-:::
+1. **Install {bidux}:** `install.packages("bidux")`
+2. **Run telemetry on ONE dashboard:** `bid_notice(telemetry = TRUE)`
+3. **Share your before/after:** [@jrwinget](https://bsky.app/profile/jrwinget.bsky.social)
 
 ::: {.fragment}
-**Bonus:** First 5 people to share their transformation get free 1:1 dashboard review! 🎁
+**🎁 First 5 transformations get free 1:1 dashboard review!**
+
+![QR for contact](img/qr-combined.png)
 :::
-
-## Let's Connect! 🤝 {.center background-color="#2c3e50"}
-
-![QR Code for my info](img/qr-winget.png)
-
-:::: {.columns}
-::: {.column width="33%"}
-### 📦 Get {bidux}
-
-`install.packages("bidux")`
-:::
-
-::: {.column width="33%"}
-### 💬 Share Your Story
-
-[@jrwinget](https://bsky.app/profile/jrwinget.bsky.social)
-:::
-
-::: {.column width="33%"}
-### 📧 Questions?
-
-![](https://media.giphy.com/media/3o7btZ1Gm7ZL25pLMs/giphy.gif)
-:::
-::::
 
 ::: {.notes}
-- Remind about mnemonic: "Interfaces Need A Smart Vision"
-- Feel free to reach out if you'd like to connect and chat further
-- Thank organizers
-- Quick reminder about the free dashboard reviews
+- 1 minute close
+- "No more death by dropdown!"
+- "Questions?"
+- Thank organizers if time
+:::
+
+## Bonus Slide: The {bidux} Toolkit {.smaller}
+
+```{r}
+#| eval: false
+
+# For those who want to dive deep
+library(bidux)
+
+# Full workflow in 5 lines
+my_dashboard |>
+  bid_interpret(question = "What's our KPI status?") |>
+  bid_notice(telemetry = TRUE) |>
+  bid_anticipate(guard_biases = TRUE) |>
+  bid_structure(progressive = TRUE) |>
+  bid_validate(empower_users = TRUE)
+
+# Generate full behavioral report
+bid_report(my_dashboard, output = "behavioral_insights.html")
+```
+
+::: {.notes}
+- Only if extra time in Q&A
+- "Full framework in your console"
+:::
+
+## Bonus: Quick Reference Card
+
+| Stage | Problem | Solution | {bidux} Function |
+|-------|---------|----------|------------------|
+| **I**nterpret | No clear question | Define destination | `bid_interpret()` |
+| **N**otice | Hidden friction | Telemetry reveals | `bid_notice()` |
+| **A**nticipate | Cognitive biases | Guard rails | `bid_anticipate()` |
+| **S**tructure | Chaos overwhelms | Progressive disclosure | `bid_structure()` |
+| **V**alidate | Unclear outcomes | Plain language | `bid_validate()` |
+
+::: {.notes}
+- Only show if someone asks for summary
+- "Email me for full guide"
 :::
