@@ -22,47 +22,70 @@ generate_telemetry_db <- function(db_path = "telemetry.sqlite") {
   # Create telemetry events with proper columns expected by bid_telemetry
   events <- data.frame()
 
-  for(i in 1:n_sessions) {
+  for (i in 1:n_sessions) {
     session_id <- paste0("session_", i)
     user_id <- paste0("user_", sample(1:200, 1))
-    session_start <- Sys.time() - runif(1, 0, 30*24*60*60)  # Random time in last 30 days
-    session_duration <- rexp(1, rate = 1/260)  # avg 4.3 minutes
+    session_start <- Sys.time() - runif(1, 0, 30 * 24 * 60 * 60) # Random time in last 30 days
+    session_duration <- rexp(1, rate = 1 / 260) # avg 4.3 minutes
 
     # Navigation events (page views)
     visited_tabs <- sample(
-      c("Revenue Analysis", "Customer Insights", "Operations",
-        "Product Performance", "Marketing Analytics", "Executive Summary"),
+      c(
+        "Revenue Analysis",
+        "Customer Insights",
+        "Operations",
+        "Product Performance",
+        "Marketing Analytics",
+        "Executive Summary"
+      ),
       sample(1:3, 1),
       prob = c(0.35, 0.25, 0.15, 0.10, 0.10, 0.05)
     )
 
-    for(tab in visited_tabs) {
-      events <- rbind(events, data.frame(
-        timestamp = format(session_start + runif(1, 0, session_duration), "%Y-%m-%d %H:%M:%S"),
-        session_id = session_id,
-        user_id = user_id,
-        event_type = "navigation",
-        navigation_id = tab,
-        input_id = NA,
-        value = NA,
-        error_message = NA,
-        output_id = NA,
-        stringsAsFactors = FALSE
-      ))
+    for (tab in visited_tabs) {
+      events <- rbind(
+        events,
+        data.frame(
+          timestamp = format(
+            session_start + runif(1, 0, session_duration),
+            "%Y-%m-%d %H:%M:%S"
+          ),
+          session_id = session_id,
+          user_id = user_id,
+          event_type = "navigation",
+          navigation_id = tab,
+          input_id = NA,
+          value = NA,
+          error_message = NA,
+          output_id = NA,
+          stringsAsFactors = FALSE
+        )
+      )
     }
 
     # Input interaction events
     all_inputs <- c(
-      "year", "quarter", "region",  # Used by 82%
-      "rev_product", "rev_category", "rev_channel",
-      "cust_segment", "cust_source", "cust_campaign",
-      "ops_team", "ops_priority", "ops_status",
-      "prod_product", "prod_compare",
-      "mkt_campaign", "mkt_channel",
-      "exec_metric", "exec_view"
+      "year",
+      "quarter",
+      "region", # Used by 82%
+      "rev_product",
+      "rev_category",
+      "rev_channel",
+      "cust_segment",
+      "cust_source",
+      "cust_campaign",
+      "ops_team",
+      "ops_priority",
+      "ops_status",
+      "prod_product",
+      "prod_compare",
+      "mkt_campaign",
+      "mkt_channel",
+      "exec_metric",
+      "exec_view"
     )
 
-    if(runif(1) < 0.82) {
+    if (runif(1) < 0.82) {
       # 82% use only first 3 filters
       used_inputs <- sample(all_inputs[1:3], sample(1:3, 1))
     } else {
@@ -71,23 +94,29 @@ generate_telemetry_db <- function(db_path = "telemetry.sqlite") {
       used_inputs <- sample(all_inputs, n_filters)
     }
 
-    for(input in used_inputs) {
-      events <- rbind(events, data.frame(
-        timestamp = format(session_start + runif(1, 0, session_duration), "%Y-%m-%d %H:%M:%S"),
-        session_id = session_id,
-        user_id = user_id,
-        event_type = "input",
-        navigation_id = NA,
-        input_id = input,
-        value = sample(c("Option1", "Option2", "All"), 1),
-        error_message = NA,
-        output_id = NA,
-        stringsAsFactors = FALSE
-      ))
+    for (input in used_inputs) {
+      events <- rbind(
+        events,
+        data.frame(
+          timestamp = format(
+            session_start + runif(1, 0, session_duration),
+            "%Y-%m-%d %H:%M:%S"
+          ),
+          session_id = session_id,
+          user_id = user_id,
+          event_type = "input",
+          navigation_id = NA,
+          input_id = input,
+          value = sample(c("Option1", "Option2", "All"), 1),
+          error_message = NA,
+          output_id = NA,
+          stringsAsFactors = FALSE
+        )
+      )
     }
 
     # Error events (31% misinterpretation rate)
-    if(runif(1) < 0.31) {
+    if (runif(1) < 0.31) {
       error_messages <- c(
         "Filter combination produced no results",
         "Chart rendering failed",
@@ -95,33 +124,45 @@ generate_telemetry_db <- function(db_path = "telemetry.sqlite") {
         "Data not available for selection"
       )
 
-      events <- rbind(events, data.frame(
-        timestamp = format(session_start + runif(1, 60, session_duration), "%Y-%m-%d %H:%M:%S"),
-        session_id = session_id,
-        user_id = user_id,
-        event_type = "error",
-        navigation_id = NA,
-        input_id = NA,
-        value = NA,
-        error_message = sample(error_messages, 1),
-        output_id = sample(c("revenuePlot", "satisfactionPlot", "revenueTable"), 1),
-        stringsAsFactors = FALSE
-      ))
+      events <- rbind(
+        events,
+        data.frame(
+          timestamp = format(
+            session_start + runif(1, 60, session_duration),
+            "%Y-%m-%d %H:%M:%S"
+          ),
+          session_id = session_id,
+          user_id = user_id,
+          event_type = "error",
+          navigation_id = NA,
+          input_id = NA,
+          value = NA,
+          error_message = sample(error_messages, 1),
+          output_id = sample(
+            c("revenuePlot", "satisfactionPlot", "revenueTable"),
+            1
+          ),
+          stringsAsFactors = FALSE
+        )
+      )
     }
 
     # Login event at session start
-    events <- rbind(events, data.frame(
-      timestamp = format(session_start, "%Y-%m-%d %H:%M:%S"),
-      session_id = session_id,
-      user_id = user_id,
-      event_type = "login",
-      navigation_id = NA,
-      input_id = NA,
-      value = NA,
-      error_message = NA,
-      output_id = NA,
-      stringsAsFactors = FALSE
-    ))
+    events <- rbind(
+      events,
+      data.frame(
+        timestamp = format(session_start, "%Y-%m-%d %H:%M:%S"),
+        session_id = session_id,
+        user_id = user_id,
+        event_type = "login",
+        navigation_id = NA,
+        input_id = NA,
+        value = NA,
+        error_message = NA,
+        output_id = NA,
+        stringsAsFactors = FALSE
+      )
+    )
   }
 
   # Sort events by timestamp
@@ -150,8 +191,8 @@ issues <- bid_telemetry(telemetry_path)
 print(issues) # bidux automatically categorizes and prioritizes issues!
 
 # Filter for critical issues
-critical_issues <- issues %>%
-  filter(severity == "critical") %>%
+critical_issues <- issues |>
+  filter(severity == "critical") |>
   slice_head(n = 3)
 
 cat("\n⚠️  CRITICAL ISSUES AUTO-DETECTED BY BIDUX:\n")
@@ -401,8 +442,14 @@ cat("  • Provided actionable implementation steps\n")
 cat("  • Set up measurement framework for validation\n")
 
 # Save the complete analysis
-saveRDS(validate_result, "bid_complete_analysis.rds")
-saveRDS(all_suggestions, "bid_all_suggestions.rds")
+saveRDS(
+  validate_result,
+  "conference-materials/2025_posit-conf/R/bid_complete_analysis.rds"
+)
+saveRDS(
+  all_suggestions,
+  "conference-materials/2025_posit-conf/R/bid_all_suggestions.rds"
+)
 
 # Generate a full BID report
 cat("\n📄 GENERATING COMPREHENSIVE BID REPORT...\n")

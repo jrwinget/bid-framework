@@ -143,15 +143,19 @@ interpret_stage <- bid_interpret(
     list(
       name = "Product Managers",
       goals = "Monitor weekly KPIs",
+      pain_points = "Too many filters to find important insights",
       technical_level = "Moderate"
     ),
     list(
       name = "Executives",
       goals = "Review quarterly trends",
+      pain_points = "Overwhelmed by data, need clear takeaways",
       technical_level = "Basic"
     )
   )
 )
+
+summary(interpret_stage)
 ```
 
 ::: {.fragment}

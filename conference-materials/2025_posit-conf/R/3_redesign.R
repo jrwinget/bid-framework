@@ -15,8 +15,12 @@ library(reactable)
 library(shinyWidgets)
 
 # Load BID recommendations if available
-if (file.exists("bid_recommendations.rds")) {
-  bid_recommendations <- readRDS("bid_recommendations.rds")
+if (
+  file.exists("conference-materials/2025_posit-conf/R/bid_recommendations.rds")
+) {
+  bid_recommendations <- readRDS(
+    "conference-materials/2025_posit-conf/R/bid_recommendations.rds"
+  )
   cat("✓ Loaded BID recommendations\n")
 }
 
@@ -302,14 +306,14 @@ ui <- page_navbar(
 server <- function(input, output, session) {
   # Reactive for filtered data
   filteredData <- reactive({
-    df <- data %>%
+    df <- data |>
       filter(Year == current_year, Quarter == current_quarter)
 
     if (input$product_filter != "All") {
-      df <- df %>% filter(Product == input$product_filter)
+      df <- df |> filter(Product == input$product_filter)
     }
     if (input$region_filter != "All") {
-      df <- df %>% filter(Region == input$region_filter)
+      df <- df |> filter(Region == input$region_filter)
     }
 
     df
@@ -323,16 +327,16 @@ server <- function(input, output, session) {
     avg_satisfaction <- round(mean(df$Satisfaction), 1)
 
     # Identify patterns
-    problem_region <- df %>%
-      group_by(Region) %>%
-      summarise(Satisfaction = mean(Satisfaction)) %>%
-      arrange(Satisfaction) %>%
+    problem_region <- df |>
+      group_by(Region) |>
+      summarize(Satisfaction = mean(Satisfaction)) |>
+      arrange(Satisfaction) |>
       slice(1)
 
-    top_product <- df %>%
-      group_by(Product) %>%
-      summarise(Revenue = sum(Revenue)) %>%
-      arrange(desc(Revenue)) %>%
+    top_product <- df |>
+      group_by(Product) |>
+      summarize(Revenue = sum(Revenue)) |>
+      arrange(desc(Revenue)) |>
       slice(1)
 
     # Generate contextual summary
@@ -377,9 +381,9 @@ server <- function(input, output, session) {
     df <- filteredData()
 
     if (input$region_filter == "All") {
-      plot_data <- df %>%
-        group_by(Region) %>%
-        summarise(
+      plot_data <- df |>
+        group_by(Region) |>
+        summarize(
           Revenue = sum(Revenue),
           Target = first(Revenue_Target),
           Gap = first(Revenue_Gap),
@@ -388,24 +392,24 @@ server <- function(input, output, session) {
 
       if (input$framing == "negative") {
         # Show gap to target
-        plot_data %>%
-          e_charts(Region) %>%
-          e_bar(Gap, name = "Gap to Target", color = "#F44336") %>%
-          e_tooltip(trigger = "axis", formatter = "{b}<br/>Gap: ${c}") %>%
-          e_title("Revenue Gap to Target") %>%
-          e_legend(show = FALSE) %>%
+        plot_data |>
+          e_charts(Region) |>
+          e_bar(Gap, name = "Gap to Target", color = "#F44336") |>
+          e_tooltip(trigger = "axis", formatter = "{b}<br/>Gap: ${c}") |>
+          e_title("Revenue Gap to Target") |>
+          e_legend(show = FALSE) |>
           e_y_axis(formatter = e_axis_formatter("currency"))
       } else {
         # Show progress achieved with color coding
-        plot_data %>%
+        plot_data |>
           mutate(
             Color = case_when(
               Region == "West" ~ "#FFA726",
               Revenue > Target ~ "#4CAF50",
               TRUE ~ "#2196F3"
             )
-          ) %>%
-          e_charts(Region) %>%
+          ) |>
+          e_charts(Region) |>
           e_bar(
             Revenue,
             name = "Revenue",
@@ -418,13 +422,13 @@ server <- function(input, output, session) {
             }"
               )
             )
-          ) %>%
+          ) |>
           e_line(
             Target,
             name = "Target",
             color = "#666",
             lineStyle = list(type = "dashed")
-          ) %>%
+          ) |>
           e_tooltip(
             trigger = "axis",
             formatter = htmlwidgets::JS(
@@ -438,23 +442,23 @@ server <- function(input, output, session) {
                        'Progress: ' + percent + '%';
               }"
             )
-          ) %>%
-          e_title("Revenue Performance") %>%
-          e_legend(top = 30) %>%
+          ) |>
+          e_title("Revenue Performance") |>
+          e_legend(top = 30) |>
           e_y_axis(formatter = e_axis_formatter("currency"))
       }
     } else {
       # Single region - show by product
-      plot_data <- df %>%
-        group_by(Product) %>%
-        summarise(Revenue = sum(Revenue))
+      plot_data <- df |>
+        group_by(Product) |>
+        summarize(Revenue = sum(Revenue))
 
-      plot_data %>%
-        e_charts(Product) %>%
-        e_bar(Revenue, name = "Revenue", color = "#4CAF50") %>%
-        e_tooltip(trigger = "axis", formatter = "{b}<br/>Revenue: ${c}") %>%
-        e_title(paste("Revenue by Product -", input$region_filter)) %>%
-        e_legend(show = FALSE) %>%
+      plot_data |>
+        e_charts(Product) |>
+        e_bar(Revenue, name = "Revenue", color = "#4CAF50") |>
+        e_tooltip(trigger = "axis", formatter = "{b}<br/>Revenue: ${c}") |>
+        e_title(paste("Revenue by Product -", input$region_filter)) |>
+        e_legend(show = FALSE) |>
         e_y_axis(formatter = e_axis_formatter("currency"))
     }
   })
@@ -464,19 +468,19 @@ server <- function(input, output, session) {
     df <- filteredData()
 
     if (input$region_filter == "All") {
-      plot_data <- df %>%
-        group_by(Region) %>%
-        summarise(Satisfaction = round(mean(Satisfaction), 1))
+      plot_data <- df |>
+        group_by(Region) |>
+        summarize(Satisfaction = round(mean(Satisfaction), 1))
 
-      plot_data %>%
+      plot_data |>
         mutate(
           Color = case_when(
             Satisfaction < 70 ~ "#F44336",
             Satisfaction < 75 ~ "#FFA726",
             TRUE ~ "#4CAF50"
           )
-        ) %>%
-        e_charts(Region) %>%
+        ) |>
+        e_charts(Region) |>
         e_bar(
           Satisfaction,
           name = "Satisfaction",
@@ -489,27 +493,27 @@ server <- function(input, output, session) {
           }"
             )
           )
-        ) %>%
+        ) |>
         e_line(
           serie = rep(75, nrow(plot_data)),
           name = "Target",
           color = "#666",
           lineStyle = list(type = "dashed")
-        ) %>%
+        ) |>
         e_tooltip(
           trigger = "axis",
           formatter = "{b}<br/>Satisfaction: {c}%"
-        ) %>%
-        e_title("Customer Satisfaction") %>%
-        e_legend(top = 30) %>%
-        e_y_axis(min = 0, max = 100, formatter = "{value}%") %>%
+        ) |>
+        e_title("Customer Satisfaction") |>
+        e_legend(top = 30) |>
+        e_y_axis(min = 0, max = 100, formatter = "{value}%") |>
         e_mark_area(
           data = list(
             list(yAxis = 0, itemStyle = list(color = "rgba(255, 0, 0, 0.05)")),
             list(yAxis = 70)
           ),
           silent = TRUE
-        ) %>%
+        ) |>
         e_mark_area(
           data = list(
             list(
@@ -519,7 +523,7 @@ server <- function(input, output, session) {
             list(yAxis = 75)
           ),
           silent = TRUE
-        ) %>%
+        ) |>
         e_mark_area(
           data = list(
             list(yAxis = 75, itemStyle = list(color = "rgba(0, 255, 0, 0.05)")),
@@ -529,19 +533,19 @@ server <- function(input, output, session) {
         )
     } else {
       # Single region - show by product
-      plot_data <- df %>%
-        group_by(Product) %>%
-        summarise(Satisfaction = round(mean(Satisfaction), 1))
+      plot_data <- df |>
+        group_by(Product) |>
+        summarize(Satisfaction = round(mean(Satisfaction), 1))
 
-      plot_data %>%
-        e_charts(Product) %>%
-        e_bar(Satisfaction, name = "Satisfaction") %>%
+      plot_data |>
+        e_charts(Product) |>
+        e_bar(Satisfaction, name = "Satisfaction") |>
         e_tooltip(
           trigger = "axis",
           formatter = "{b}<br/>Satisfaction: {c}%"
-        ) %>%
-        e_title(paste("Satisfaction by Product -", input$region_filter)) %>%
-        e_legend(show = FALSE) %>%
+        ) |>
+        e_title(paste("Satisfaction by Product -", input$region_filter)) |>
+        e_legend(show = FALSE) |>
         e_y_axis(min = 0, max = 100, formatter = "{value}%")
     }
   })
@@ -572,10 +576,10 @@ server <- function(input, output, session) {
   output$satisfactionInsight <- renderUI({
     df <- filteredData()
     avg_sat <- round(mean(df$Satisfaction), 1)
-    below_target <- df %>%
-      group_by(Region) %>%
-      summarise(Sat = mean(Satisfaction)) %>%
-      filter(Sat < 75) %>%
+    below_target <- df |>
+      group_by(Region) |>
+      summarize(Sat = mean(Satisfaction)) |>
+      filter(Sat < 75) |>
       nrow()
 
     if (below_target > 0) {
@@ -597,15 +601,15 @@ server <- function(input, output, session) {
     df <- filteredData()
 
     # Analyze patterns
-    low_satisfaction <- df %>%
-      group_by(Region) %>%
-      summarise(Satisfaction = mean(Satisfaction)) %>%
+    low_satisfaction <- df |>
+      group_by(Region) |>
+      summarize(Satisfaction = mean(Satisfaction)) |>
       filter(Satisfaction < 70)
 
-    high_revenue <- df %>%
-      group_by(Product) %>%
-      summarise(Revenue = sum(Revenue)) %>%
-      arrange(desc(Revenue)) %>%
+    high_revenue <- df |>
+      group_by(Product) |>
+      summarize(Revenue = sum(Revenue)) |>
+      arrange(desc(Revenue)) |>
       slice(1)
 
     recommendations <- list()
@@ -649,9 +653,9 @@ server <- function(input, output, session) {
 
   # Performance table with reactable (bidux recommendation)
   output$performanceTable <- renderReactable({
-    df <- filteredData() %>%
-      group_by(Region, Product) %>%
-      summarise(
+    df <- filteredData() |>
+      group_by(Region, Product) |>
+      summarize(
         Revenue = sum(Revenue),
         Satisfaction = round(mean(Satisfaction), 1),
         YoY_Growth = round(mean(Revenue_YoY, na.rm = TRUE), 1),
@@ -744,39 +748,39 @@ server <- function(input, output, session) {
 
   # Trend plot
   output$trendPlot <- renderEcharts4r({
-    trend_data <- data %>%
-      filter(Year == current_year) %>%
-      group_by(Quarter) %>%
-      summarise(
+    trend_data <- data |>
+      filter(Year == current_year) |>
+      group_by(Quarter) |>
+      summarize(
         Revenue = sum(Revenue),
         Satisfaction = mean(Satisfaction)
       )
 
-    trend_data %>%
-      e_charts(Quarter) %>%
-      e_line(Revenue, name = "Revenue", y_index = 0, color = "#4CAF50") %>%
+    trend_data |>
+      e_charts(Quarter) |>
+      e_line(Revenue, name = "Revenue", y_index = 0, color = "#4CAF50") |>
       e_line(
         Satisfaction,
         name = "Satisfaction",
         y_index = 1,
         color = "#2196F3"
-      ) %>%
-      e_tooltip(trigger = "axis") %>%
-      e_title("Quarterly Trends") %>%
-      e_legend(top = 30) %>%
-      e_y_axis(index = 0, formatter = e_axis_formatter("currency")) %>%
+      ) |>
+      e_tooltip(trigger = "axis") |>
+      e_title("Quarterly Trends") |>
+      e_legend(top = 30) |>
+      e_y_axis(index = 0, formatter = e_axis_formatter("currency")) |>
       e_y_axis(index = 1, max = 100, formatter = "{value}%")
   })
 
   # Performance matrix plot
   output$matrixPlot <- renderEcharts4r({
-    matrix_data <- data %>%
-      filter(Year == current_year, Quarter == current_quarter) %>%
-      group_by(Region) %>%
-      summarise(
+    matrix_data <- data |>
+      filter(Year == current_year, Quarter == current_quarter) |>
+      group_by(Region) |>
+      summarize(
         Revenue = sum(Revenue),
         Satisfaction = mean(Satisfaction)
-      ) %>%
+      ) |>
       mutate(
         Size = Revenue / 1000, # Scale for bubble size
         Category = case_when(
@@ -790,8 +794,8 @@ server <- function(input, output, session) {
         )
       )
 
-    matrix_data %>%
-      e_charts(Revenue) %>%
+    matrix_data |>
+      e_charts(Revenue) |>
       e_scatter(
         Satisfaction,
         size = Size,
@@ -803,7 +807,7 @@ server <- function(input, output, session) {
           ),
           position = "top"
         )
-      ) %>%
+      ) |>
       e_tooltip(
         formatter = htmlwidgets::JS(
           "function(params) {
@@ -812,13 +816,13 @@ server <- function(input, output, session) {
                    'Satisfaction: ' + params.data[1].toFixed(1) + '%';
           }"
         )
-      ) %>%
-      e_title("Performance Matrix") %>%
+      ) |>
+      e_title("Performance Matrix") |>
       e_x_axis(
         name = "Revenue ($)",
         formatter = e_axis_formatter("currency")
-      ) %>%
-      e_y_axis(name = "Satisfaction (%)", max = 100) %>%
+      ) |>
+      e_y_axis(name = "Satisfaction (%)", max = 100) |>
       e_visual_map(
         min = 60,
         max = 90,
