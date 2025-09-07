@@ -321,7 +321,7 @@ Jeremy Winget, PhD
 <section id="the-bid-framework-your-gps-for-dashboard-design" class="slide level2">
 <h2>The BID Framework: Your GPS for Dashboard Design</h2>
 
-<img data-src="img/bid-framework.png" class="r-stretch"><p><strong>“Interfaces Need A Smart Vision”</strong> - Remember: I-N-A-S-V</p>
+<img data-src="img/bid-framework.png" class="r-stretch"><p><strong>Remember - “Interfaces Need A Smart Vision”</strong></p>
 <div class="fragment">
 <p><strong>Behavioral Insight Design (BID)</strong>: <em>Not just UX advice - it’s behavioral science in your dev workflow</em></p>
 </div>
@@ -359,28 +359,38 @@ Jeremy Winget, PhD
 <section id="interpret-plan-your-destination" class="slide level2" data-background-color="#4682b4">
 <h2>INTERPRET: Plan Your Destination 🗺️</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">library</span>(bidux)</span>
-<span id="cb1-2"><a href=""></a></span>
-<span id="cb1-3"><a href=""></a><span class="co"># Define your destination and purpose</span></span>
-<span id="cb1-4"><a href=""></a>interpret_stage <span class="ot">&lt;-</span> <span class="fu">bid_interpret</span>(</span>
-<span id="cb1-5"><a href=""></a>  <span class="at">central_question =</span> <span class="st">"Are we on track this quarter?"</span>,</span>
-<span id="cb1-6"><a href=""></a>  <span class="at">data_story =</span> <span class="fu">list</span>(</span>
-<span id="cb1-7"><a href=""></a>    <span class="at">hook =</span> <span class="st">"Q3 performance exceeds targets by 15%"</span>,</span>
-<span id="cb1-8"><a href=""></a>    <span class="at">context =</span> <span class="st">"Following our new product launch"</span>,</span>
-<span id="cb1-9"><a href=""></a>    <span class="at">tension =</span> <span class="st">"However, churn increased 8% in enterprise segment"</span>,</span>
-<span id="cb1-10"><a href=""></a>    <span class="at">resolution =</span> <span class="st">"Focus retention efforts on high-value accounts"</span></span>
-<span id="cb1-11"><a href=""></a>  ),</span>
-<span id="cb1-12"><a href=""></a>  <span class="at">user_personas =</span> <span class="fu">list</span>(</span>
-<span id="cb1-13"><a href=""></a>    <span class="at">primary =</span> <span class="st">"Product managers checking weekly KPIs"</span>,</span>
-<span id="cb1-14"><a href=""></a>    <span class="at">secondary =</span> <span class="st">"Executives reviewing quarterly trends"</span></span>
-<span id="cb1-15"><a href=""></a>  )</span>
-<span id="cb1-16"><a href=""></a>)</span>
-<span id="cb1-17"><a href=""></a></span>
-<span id="cb1-18"><a href=""></a><span class="co"># Quick destination check - devs often skip this</span></span>
-<span id="cb1-19"><a href=""></a><span class="fu">bid_interpret</span>(</span>
-<span id="cb1-20"><a href=""></a>  <span class="at">central_question =</span> <span class="st">"Are we on track this quarter?"</span>,</span>
-<span id="cb1-21"><a href=""></a>  <span class="at">user_persona =</span> <span class="st">"PM checking weekly KPIs"</span>  <span class="co"># ← Most forget this</span></span>
-<span id="cb1-22"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-2"><a href=""></a><span class="fu">library</span>(bidux)</span>
+<span id="cb1-3"><a href=""></a></span>
+<span id="cb1-4"><a href=""></a><span class="co"># Define the destination and goals</span></span>
+<span id="cb1-5"><a href=""></a>interpret_stage <span class="ot">&lt;-</span> <span class="fu">bid_interpret</span>(</span>
+<span id="cb1-6"><a href=""></a>  <span class="at">central_question =</span> <span class="st">"Which markets are driving performance, and where are we lagging?"</span>,</span>
+<span id="cb1-7"><a href=""></a>  <span class="at">data_story =</span> <span class="fu">list</span>(</span>
+<span id="cb1-8"><a href=""></a>    <span class="at">hook =</span> <span class="st">"Q4 revenue hit record high, but satisfaction dipped"</span>,</span>
+<span id="cb1-9"><a href=""></a>    <span class="at">context =</span> <span class="st">"After aggressive marketing across all regions"</span>,</span>
+<span id="cb1-10"><a href=""></a>    <span class="at">tension =</span> <span class="st">"West region satisfaction fell 10 points"</span>,</span>
+<span id="cb1-11"><a href=""></a>    <span class="at">resolution =</span> <span class="st">"Focus retention efforts on underperforming regions"</span></span>
+<span id="cb1-12"><a href=""></a>  ),</span>
+<span id="cb1-13"><a href=""></a>  <span class="at">user_personas =</span> <span class="fu">list</span>(</span>
+<span id="cb1-14"><a href=""></a>    <span class="fu">list</span>(</span>
+<span id="cb1-15"><a href=""></a>      <span class="at">name =</span> <span class="st">"Product Managers"</span>,</span>
+<span id="cb1-16"><a href=""></a>      <span class="at">goals =</span> <span class="st">"Monitor weekly KPIs"</span>,</span>
+<span id="cb1-17"><a href=""></a>      <span class="at">technical_level =</span> <span class="st">"Moderate"</span></span>
+<span id="cb1-18"><a href=""></a>    ),</span>
+<span id="cb1-19"><a href=""></a>    <span class="fu">list</span>(</span>
+<span id="cb1-20"><a href=""></a>      <span class="at">name =</span> <span class="st">"Executives"</span>,</span>
+<span id="cb1-21"><a href=""></a>      <span class="at">goals =</span> <span class="st">"Review quarterly trends"</span>,</span>
+<span id="cb1-22"><a href=""></a>      <span class="at">technical_level =</span> <span class="st">"Basic"</span></span>
+<span id="cb1-23"><a href=""></a>    )</span>
+<span id="cb1-24"><a href=""></a>  )</span>
+<span id="cb1-25"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Stage 1 (Interpret) completed.
+  - Central question: Which markets are driving performance, and where are we lagg...
+  - Your data story has all key elements. Focus on making each component compelling and relevant.
+  - Your central question is appropriately scoped.
+  - User personas: 2 defined </code></pre>
+</div>
 </div>
 <div class="fragment">
 <p><strong>Key insight:</strong> If you can’t write the question in 10 words, users won’t find answers in 100 filters</p>
@@ -432,10 +442,287 @@ Jeremy Winget, PhD
 <section id="notice-what-telemetry-reveals" class="slide level2">
 <h2>NOTICE: What Telemetry Reveals</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="co"># Actual production telemetry</span></span>
-<span id="cb2-2"><a href=""></a>notice_results <span class="ot">&lt;-</span> <span class="fu">bid_notice</span>(<span class="at">telemetry_data =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb2-3"><a href=""></a></span>
-<span id="cb2-4"><a href=""></a><span class="fu">summary</span>(notice_results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="co"># Using production telemetry</span></span>
+<span id="cb3-2"><a href=""></a>telemetry_path <span class="ot">&lt;-</span> <span class="fu">conn_telemetry_db</span>(<span class="st">"dashboard_telemetry.sqlite"</span>)</span>
+<span id="cb3-3"><a href=""></a></span>
+<span id="cb3-4"><a href=""></a><span class="co"># bid_telemetry automatically categorizes and prioritizes issues!</span></span>
+<span id="cb3-5"><a href=""></a>issues <span class="ot">&lt;-</span> <span class="fu">bid_telemetry</span>(telemetry_path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Stage 1 (Interpret) completed.
+  - Central question: How can we reduce user interaction delays?
+  - Your data story has all key elements. Focus on making each component compelling and relevant.
+  - Your central question is appropriately scoped.
+  - No user personas defined 
+Auto-suggested theory: Cognitive Load Theory (confidence: 90%)
+Stage 2 (Notice) completed. (40% complete)
+  - Problem: Users take a long time before making their first interact...
+  - Theory: Cognitive Load Theory (auto-suggested)
+  - Evidence: Median time to first input is 18 seconds, and 38% of sess...
+  - Theory confidence: 90%
+  - Next: Use bid_anticipate() for Stage 3 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Stage 1 (Interpret) completed.
+  - Central question: How can we reduce user errors and confusion?
+  - Your data story has all key elements. Focus on making each component compelling and relevant.
+  - Your central question is appropriately scoped.
+  - No user personas defined 
+Auto-suggested theory: Cognitive Load Theory (confidence: 90%)
+Stage 2 (Notice) completed. (40% complete)
+  - Problem: Users encounter errors when using the dashboard
+  - Theory: Cognitive Load Theory (auto-suggested)
+  - Evidence: Error 'Filter combination produced no results' occurred 3...
+  - Theory confidence: 90%
+  - Next: Use bid_anticipate() for Stage 3 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Stage 1 (Interpret) completed.
+  - Central question: How can we reduce user errors and confusion?
+  - Your data story has all key elements. Focus on making each component compelling and relevant.
+  - Your central question is appropriately scoped.
+  - No user personas defined 
+Auto-suggested theory: Cognitive Load Theory (confidence: 90%)
+Stage 2 (Notice) completed. (40% complete)
+  - Problem: Users encounter errors when using the dashboard
+  - Theory: Cognitive Load Theory (auto-suggested)
+  - Evidence: Error 'Incorrect time period selected' occurred 34 times ...
+  - Theory confidence: 90%
+  - Next: Use bid_anticipate() for Stage 3 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Stage 1 (Interpret) completed.
+  - Central question: How can we reduce user errors and confusion?
+  - Your data story has all key elements. Focus on making each component compelling and relevant.
+  - Your central question is appropriately scoped.
+  - No user personas defined 
+Auto-suggested theory: Cognitive Load Theory (confidence: 90%)
+Stage 2 (Notice) completed. (40% complete)
+  - Problem: Users encounter errors when using the dashboard
+  - Theory: Cognitive Load Theory (auto-suggested)
+  - Evidence: Error 'Chart rendering failed' occurred 30 times in 3% of...
+  - Theory confidence: 90%
+  - Next: Use bid_anticipate() for Stage 3 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Stage 1 (Interpret) completed.
+  - Central question: How can we reduce user errors and confusion?
+  - Your data story has all key elements. Focus on making each component compelling and relevant.
+  - Your central question is appropriately scoped.
+  - No user personas defined 
+Auto-suggested theory: Cognitive Load Theory (confidence: 90%)
+Stage 2 (Notice) completed. (40% complete)
+  - Problem: Users encounter errors when using the dashboard
+  - Theory: Cognitive Load Theory (auto-suggested)
+  - Evidence: Error 'Data not available for selection' occurred 29 time...
+  - Theory confidence: 90%
+  - Next: Use bid_anticipate() for Stage 3 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Stage 1 (Interpret) completed.
+  - Central question: How can we reduce user errors and confusion?
+  - Your data story has all key elements. Focus on making each component compelling and relevant.
+  - Your central question is appropriately scoped.
+  - No user personas defined 
+Auto-suggested theory: Cognitive Load Theory (confidence: 90%)
+Stage 2 (Notice) completed. (40% complete)
+  - Problem: Users encounter errors when using the dashboard
+  - Theory: Cognitive Load Theory (auto-suggested)
+  - Evidence: Error 'Incorrect time period selected' occurred 29 times ...
+  - Theory confidence: 90%
+  - Next: Use bid_anticipate() for Stage 3 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Stage 1 (Interpret) completed.
+  - Central question: How can we reduce user errors and confusion?
+  - Your data story has all key elements. Focus on making each component compelling and relevant.
+  - Your central question is appropriately scoped.
+  - No user personas defined 
+Auto-suggested theory: Cognitive Load Theory (confidence: 90%)
+Stage 2 (Notice) completed. (40% complete)
+  - Problem: Users encounter errors when using the dashboard
+  - Theory: Cognitive Load Theory (auto-suggested)
+  - Evidence: Error 'Chart rendering failed' occurred 26 times in 3% of...
+  - Theory confidence: 90%
+  - Next: Use bid_anticipate() for Stage 3 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Stage 1 (Interpret) completed.
+  - Central question: How can we reduce user errors and confusion?
+  - Your data story has all key elements. Focus on making each component compelling and relevant.
+  - Your central question is appropriately scoped.
+  - No user personas defined 
+Auto-suggested theory: Cognitive Load Theory (confidence: 90%)
+Stage 2 (Notice) completed. (40% complete)
+  - Problem: Users encounter errors when using the dashboard
+  - Theory: Cognitive Load Theory (auto-suggested)
+  - Evidence: Error 'Filter combination produced no results' occurred 2...
+  - Theory confidence: 90%
+  - Next: Use bid_anticipate() for Stage 3 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Stage 1 (Interpret) completed.
+  - Central question: How can we reduce user errors and confusion?
+  - Your data story has all key elements. Focus on making each component compelling and relevant.
+  - Your central question is appropriately scoped.
+  - No user personas defined 
+Auto-suggested theory: Cognitive Load Theory (confidence: 90%)
+Stage 2 (Notice) completed. (40% complete)
+  - Problem: Users encounter errors when using the dashboard
+  - Theory: Cognitive Load Theory (auto-suggested)
+  - Evidence: Error 'Data not available for selection' occurred 25 time...
+  - Theory confidence: 90%
+  - Next: Use bid_anticipate() for Stage 3 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Stage 1 (Interpret) completed.
+  - Central question: How can we reduce user errors and confusion?
+  - Your data story has all key elements. Focus on making each component compelling and relevant.
+  - Your central question is appropriately scoped.
+  - No user personas defined 
+Auto-suggested theory: Cognitive Load Theory (confidence: 90%)
+Stage 2 (Notice) completed. (40% complete)
+  - Problem: Users encounter errors when using the dashboard
+  - Theory: Cognitive Load Theory (auto-suggested)
+  - Evidence: Error 'Data not available for selection' occurred 24 time...
+  - Theory confidence: 90%
+  - Next: Use bid_anticipate() for Stage 3 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Stage 1 (Interpret) completed.
+  - Central question: How can we reduce user errors and confusion?
+  - Your data story has all key elements. Focus on making each component compelling and relevant.
+  - Your central question is appropriately scoped.
+  - No user personas defined 
+Auto-suggested theory: Cognitive Load Theory (confidence: 90%)
+Stage 2 (Notice) completed. (40% complete)
+  - Problem: Users encounter errors when using the dashboard
+  - Theory: Cognitive Load Theory (auto-suggested)
+  - Evidence: Error 'Chart rendering failed' occurred 23 times in 2% of...
+  - Theory confidence: 90%
+  - Next: Use bid_anticipate() for Stage 3 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Stage 1 (Interpret) completed.
+  - Central question: How can we reduce user errors and confusion?
+  - Your data story has all key elements. Focus on making each component compelling and relevant.
+  - Your central question is appropriately scoped.
+  - No user personas defined 
+Auto-suggested theory: Cognitive Load Theory (confidence: 90%)
+Stage 2 (Notice) completed. (40% complete)
+  - Problem: Users encounter errors when using the dashboard
+  - Theory: Cognitive Load Theory (auto-suggested)
+  - Evidence: Error 'Incorrect time period selected' occurred 22 times ...
+  - Theory confidence: 90%
+  - Next: Use bid_anticipate() for Stage 3 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Stage 1 (Interpret) completed.
+  - Central question: How can we reduce user errors and confusion?
+  - Your data story has all key elements. Focus on making each component compelling and relevant.
+  - Your central question is appropriately scoped.
+  - No user personas defined 
+Auto-suggested theory: Cognitive Load Theory (confidence: 90%)
+Stage 2 (Notice) completed. (40% complete)
+  - Problem: Users encounter errors when using the dashboard
+  - Theory: Cognitive Load Theory (auto-suggested)
+  - Evidence: Error 'Filter combination produced no results' occurred 1...
+  - Theory confidence: 90%
+  - Next: Use bid_anticipate() for Stage 3 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Stage 1 (Interpret) completed.
+  - Central question: How can we improve user navigation flow?
+  - Your data story has all key elements. Focus on making each component compelling and relevant.
+  - Your central question is appropriately scoped.
+  - No user personas defined 
+Auto-suggested theory: Cognitive Load Theory (confidence: 90%)
+Stage 2 (Notice) completed. (40% complete)
+  - Problem: The 'Executive Summary' page/tab is rarely visited by users
+  - Theory: Cognitive Load Theory (auto-suggested)
+  - Evidence: Only 115 sessions (11.5%) visited 'Executive Summary'
+  - Theory confidence: 90%
+  - Next: Use bid_anticipate() for Stage 3 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a><span class="fu">head</span>(issues)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 10
+  issue_id    issue_type severity affected_sessions impact_rate problem evidence
+  &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt;                &lt;int&gt;       &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   
+1 delayed_in… delayed_i… critical               300       0.3   Users … Median …
+2 error_1     error_pat… critical               319       0.319 Users … Error '…
+3 error_2     error_pat… critical               319       0.319 Users … Error '…
+4 error_3     error_pat… critical               319       0.319 Users … Error '…
+5 error_4     error_pat… critical               319       0.319 Users … Error '…
+6 error_5     error_pat… critical               319       0.319 Users … Error '…
+# ℹ 3 more variables: theory &lt;chr&gt;, stage &lt;chr&gt;, created_at &lt;dttm&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a><span class="co"># if we have telemetry, let bidux convert issues to Notice stages</span></span>
+<span id="cb20-2"><a href=""></a>critical_issues <span class="ot">&lt;-</span> issues <span class="sc">|&gt;</span></span>
+<span id="cb20-3"><a href=""></a>  <span class="fu">filter</span>(severity <span class="sc">==</span> <span class="st">"critical"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb20-4"><a href=""></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">3</span>)</span>
+<span id="cb20-5"><a href=""></a></span>
+<span id="cb20-6"><a href=""></a>notices <span class="ot">&lt;-</span> <span class="fu">bid_notices</span>(</span>
+<span id="cb20-7"><a href=""></a>  <span class="at">issues =</span> critical_issues,</span>
+<span id="cb20-8"><a href=""></a>  <span class="at">previous_stage =</span> interpret_stage</span>
+<span id="cb20-9"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Stage 2 (Notice) completed. (40% complete)
+  - Problem: Users take a long time before making their first interact...
+  - Theory: Cognitive Load Theory
+  - Evidence: Median time to first input is 18 seconds, and 38% of sess...
+  - Next: Use bid_anticipate() for Stage 3 
+Stage 2 (Notice) completed. (40% complete)
+  - Problem: Users encounter errors when using the dashboard
+  - Theory: Cognitive Load Theory
+  - Evidence: Error 'Filter combination produced no results' occurred 3...
+  - Next: Use bid_anticipate() for Stage 3 
+Stage 2 (Notice) completed. (40% complete)
+  - Problem: Users encounter errors when using the dashboard
+  - Theory: Cognitive Load Theory
+  - Evidence: Error 'Incorrect time period selected' occurred 34 times ...
+  - Next: Use bid_anticipate() for Stage 3 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a>notice_stage <span class="ot">&lt;-</span> notices[[<span class="dv">1</span>]]</span>
+<span id="cb22-2"><a href=""></a></span>
+<span id="cb22-3"><a href=""></a><span class="co"># Using observations/feedback</span></span>
+<span id="cb22-4"><a href=""></a>notice_stage <span class="ot">&lt;-</span> <span class="fu">bid_notice</span>(</span>
+<span id="cb22-5"><a href=""></a>  <span class="at">previous_stage =</span> interpret_stage,</span>
+<span id="cb22-6"><a href=""></a>  <span class="at">problem =</span> <span class="st">"Users overwhelmed by 18 filters across 6 tabs"</span>,</span>
+<span id="cb22-7"><a href=""></a>  <span class="at">evidence =</span> <span class="st">"82% of sessions use only 3 filters; 4.3 min to first insight"</span></span>
+<span id="cb22-8"><a href=""></a>  <span class="co"># </span><span class="al">NOTE</span><span class="co">: No theory specified - bidux will suggest one!</span></span>
+<span id="cb22-9"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Auto-suggested theory: Cognitive Load Theory (confidence: 90%)
+Stage 2 (Notice) completed. (40% complete)
+  - Problem: Users overwhelmed by 18 filters across 6 tabs
+  - Theory: Cognitive Load Theory (auto-suggested)
+  - Evidence: 82% of sessions use only 3 filters; 4.3 min to first insight
+  - Theory confidence: 90%
+  - Next: Use bid_anticipate() for Stage 3 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a><span class="fu">summary</span>(notice_stage)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>=== BID Framework: Notice Stage Summary ===
+
+Metadata:
+   stage_number : 2 
+   total_stages : 5 
+   validation_status : completed 
+   auto_suggested_theory : Yes 
+   theory_confidence : 90% 
+   problem_length : 45 
+   evidence_length : 60 
+   custom_mappings_used : No 
+
+Stage Data:
+   stage : Notice 
+   problem : Users overwhelmed by 18 filters across 6 tabs 
+   theory : Cognitive Load Theory 
+   evidence : 82% of sessions use only 3 filters; 4.3 min to first insight 
+   suggestions : Ensure your problem description is specific and supported by strong evidence 
+
+Generated: 2025-09-07 14:12:54 </code></pre>
+</div>
 </div>
 <div class="fragment">
 <p><strong>The “Just One More Filter” Death Spiral:</strong></p>
@@ -477,9 +764,6 @@ Jeremy Winget, PhD
 <li><strong>Cognitive overflow indicators</strong></li>
 </ul>
 </div></div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="co"># update example based on actual bidux code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <aside class="notes">
 <ul>
 <li>“This is behavioral science in action”</li>
@@ -531,21 +815,27 @@ Jeremy Winget, PhD
 <div class="column" style="width:50%;">
 <h3 id="anchoring-bias">Anchoring Bias</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="co"># Bad: First number sticks</span></span>
-<span id="cb4-2"><a href=""></a><span class="fu">valueBox</span>(<span class="at">value =</span> <span class="sc">-</span><span class="dv">5</span>, <span class="at">subtitle =</span> <span class="st">"Change"</span>)</span>
-<span id="cb4-3"><a href=""></a></span>
-<span id="cb4-4"><a href=""></a><span class="co"># Good: Context first</span></span>
-<span id="cb4-5"><a href=""></a><span class="fu">valueBox</span>(<span class="at">value =</span> <span class="st">"+15% YTD"</span>, <span class="at">subtitle =</span> <span class="st">"Despite -5 this week"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href=""></a><span class="co"># Bad: First number sticks</span></span>
+<span id="cb26-2"><a href=""></a><span class="fu">valueBox</span>(<span class="at">value =</span> <span class="sc">-</span><span class="dv">5</span>, <span class="at">subtitle =</span> <span class="st">"Change"</span>)</span>
+<span id="cb26-3"><a href=""></a></span>
+<span id="cb26-4"><a href=""></a><span class="co"># Good: Context first</span></span>
+<span id="cb26-5"><a href=""></a><span class="fu">valueBox</span>(<span class="at">value =</span> <span class="st">"+15% YTD"</span>, <span class="at">subtitle =</span> <span class="st">"Despite -5 this week"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <h3 id="framing-effects">Framing Effects</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="co"># bidux suggests toggle</span></span>
-<span id="cb5-2"><a href=""></a><span class="fu">bid_anticipate</span>() <span class="sc">|&gt;</span></span>
-<span id="cb5-3"><a href=""></a>  <span class="fu">add_framing_toggle</span>(</span>
-<span id="cb5-4"><a href=""></a>    <span class="at">positive =</span> <span class="st">"75% to goal"</span>,</span>
-<span id="cb5-5"><a href=""></a>    <span class="at">negative =</span> <span class="st">"25% gap remaining"</span></span>
-<span id="cb5-6"><a href=""></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a><span class="co"># Don't specify bias_mitigations - let {bidux} suggest them!</span></span>
+<span id="cb27-2"><a href=""></a>anticipate_stage <span class="ot">&lt;-</span> <span class="fu">bid_anticipate</span>(</span>
+<span id="cb27-3"><a href=""></a>  <span class="at">previous_stage =</span> notice_stage,</span>
+<span id="cb27-4"><a href=""></a>  <span class="co"># bias_mitigations = NULL,</span></span>
+<span id="cb27-5"><a href=""></a>  <span class="at">include_accessibility =</span> <span class="cn">TRUE</span></span>
+<span id="cb27-6"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Stage 3 (Anticipate) completed.
+  - Bias mitigations: 4 defined
+  - Accessibility considerations included
+  - Key suggestions: anchoring mitigation: Always show reference points like previous period, budget, or industry average., framing mitigation: Toggle between progress (65% complete) and gap (35% remaining) framing., confirmation bias mitigation: Include alternative views that might challenge the main narrative. </code></pre>
+</div>
 </div>
 </div></div>
 <aside class="notes">
@@ -568,10 +858,7 @@ Jeremy Winget, PhD
 <section id="anticipate-confirmation-bias-protection" class="slide level2">
 <h2>ANTICIPATE: Confirmation Bias Protection</h2>
 
-<img data-src="img/confirmation-bias-toggle.png" class="r-stretch"><div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="co"># update with actual bidux code and set eval to TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="fragment">
+<img data-src="img/confirmation-bias-toggle.png" class="r-stretch"><div class="fragment">
 <p><strong>Result:</strong> 74% reduction in misinterpretation</p>
 </div>
 <aside class="notes">
@@ -615,8 +902,347 @@ Jeremy Winget, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="structure-progressive-disclosure-that-works" class="slide level2">
-<h2>STRUCTURE: Progressive Disclosure That Works</h2>
+<section id="structure-the-behavioral-science-hierarchy" class="slide level2">
+<h2>STRUCTURE: The Behavioral Science Hierarchy</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a>flags <span class="ot">&lt;-</span> <span class="fu">bid_flags</span>(issues)</span>
+<span id="cb29-2"><a href=""></a>structure_stage <span class="ot">&lt;-</span> <span class="fu">bid_structure</span>(</span>
+<span id="cb29-3"><a href=""></a>  <span class="at">previous_stage =</span> anticipate_stage,</span>
+<span id="cb29-4"><a href=""></a>  <span class="at">telemetry_flags =</span> flags</span>
+<span id="cb29-5"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Stage 4 (Structure) completed.
+  - Auto-selected layout: breathable
+  - Concept groups generated: 3
+  - Total concepts: 3 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a>structure_stage<span class="sc">$</span>suggestions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[[1]]$concept
+[1] "Cognitive Load Theory"
+
+[[1]]$suggestions
+[[1]]$suggestions[[1]]
+[[1]]$suggestions[[1]]$title
+[1] "Limit initial choices"
+
+[[1]]$suggestions[[1]]$details
+[1] "Show only core filters by default; defer advanced options to secondary views or accordions."
+
+[[1]]$suggestions[[1]]$components
+[1] "bslib::accordion"            "shiny::conditionalPanel"    
+[3] "shiny::updateSelectizeInput"
+
+[[1]]$suggestions[[1]]$rationale
+[1] "Reduces initial cognitive load for new users while preserving functionality."
+
+[[1]]$suggestions[[1]]$score
+[1] 1
+
+
+[[1]]$suggestions[[2]]
+[[1]]$suggestions[[2]]$title
+[1] "Use progressive complexity"
+
+[[1]]$suggestions[[2]]$details
+[1] "Start with simple views and allow users to add complexity incrementally."
+
+[[1]]$suggestions[[2]]$components
+[1] "shiny::tabsetPanel"  "bslib::accordion"    "shiny::actionButton"
+
+[[1]]$suggestions[[2]]$rationale
+[1] "Prevents overwhelming users with too many options at once."
+
+[[1]]$suggestions[[2]]$score
+[1] 0.91
+
+
+[[1]]$suggestions[[3]]
+[[1]]$suggestions[[3]]$title
+[1] "Provide smart defaults"
+
+[[1]]$suggestions[[3]]$details
+[1] "Pre-select commonly used filters and settings to reduce decision fatigue."
+
+[[1]]$suggestions[[3]]$components
+[1] "shiny::selectInput"   "shiny::checkboxInput" "bslib::input_switch" 
+
+[[1]]$suggestions[[3]]$rationale
+[1] "Leverages the Default Effect to reduce cognitive burden."
+
+[[1]]$suggestions[[3]]$score
+[1] 0.88
+
+
+
+
+[[2]]
+[[2]]$concept
+[1] "Visual Hierarchy"
+
+[[2]]$suggestions
+[[2]]$suggestions[[1]]
+[[2]]$suggestions[[1]]$title
+[1] "Establish clear information priority"
+
+[[2]]$suggestions[[1]]$details
+[1] "Use size, color, and spacing to guide attention to key metrics first."
+
+[[2]]$suggestions[[1]]$components
+[1] "bslib::card"      "shiny::h1"        "shiny::h2"        "bslib::value_box"
+
+[[2]]$suggestions[[1]]$rationale
+[1] "Helps users quickly identify what matters most in the interface."
+
+[[2]]$suggestions[[1]]$score
+[1] 0.9
+
+
+[[2]]$suggestions[[2]]
+[[2]]$suggestions[[2]]$title
+[1] "Group related content visually"
+
+[[2]]$suggestions[[2]]$details
+[1] "Use consistent spacing and visual containers to show relationships."
+
+[[2]]$suggestions[[2]]$components
+[1] "bslib::layout_columns" "bslib::card"           "shiny::fluidRow"      
+
+[[2]]$suggestions[[2]]$rationale
+[1] "Leverages Gestalt principles to reduce cognitive processing."
+
+[[2]]$suggestions[[2]]$score
+[1] 0.87
+
+
+
+
+[[3]]
+[[3]]$concept
+[1] "Progressive Disclosure"
+
+[[3]]$suggestions
+[[3]]$suggestions[[1]]
+[[3]]$suggestions[[1]]$title
+[1] "Use collapsible advanced filters"
+
+[[3]]$suggestions[[1]]$details
+[1] "Place seldom-used filters in accordion sections or 'Show more' toggles."
+
+[[3]]$suggestions[[1]]$components
+[1] "bslib::accordion"        "shiny::conditionalPanel"
+
+[[3]]$suggestions[[1]]$rationale
+[1] "Reveals complexity on demand without overwhelming the interface."
+
+[[3]]$suggestions[[1]]$score
+[1] 0.88
+
+
+[[3]]$suggestions[[2]]
+[[3]]$suggestions[[2]]$title
+[1] "Implement drill-down navigation"
+
+[[3]]$suggestions[[2]]$details
+[1] "Allow users to start with summaries and progressively reveal details."
+
+[[3]]$suggestions[[2]]$components
+[1] "shiny::actionButton"  "DT::datatable"        "reactable::reactable"
+
+[[3]]$suggestions[[2]]$rationale
+[1] "Matches user mental models of exploration from general to specific."
+
+[[3]]$suggestions[[2]]$score
+[1] 0.84</code></pre>
+</div>
+</div>
+<div class="fragment">
+<h3 id="the-f-pattern-reading-path">The F-Pattern Reading Path</h3>
+<p><img data-src="img/f-pattern-heatmap.png"></p>
+<p><em>Place critical info where eyes naturally go</em></p>
+</div>
+<aside class="notes">
+<ul>
+<li>“Structure IS the user experience”</li>
+<li>“Every pixel placement is a psychological choice”</li>
+<li>“Eye tracking shows F-pattern on dashboards”</li>
+<li>“Top-left = highest value real estate”</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="structure-smart-defaults-from-telemetry" class="slide level2">
+<h2>STRUCTURE: Smart Defaults from Telemetry</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href=""></a>all_suggestions <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb33-2"><a href=""></a>  interpret_stage<span class="sc">$</span>suggestions,</span>
+<span id="cb33-3"><a href=""></a>  notice_stage<span class="sc">$</span>suggestions,</span>
+<span id="cb33-4"><a href=""></a>  anticipate_stage<span class="sc">$</span>suggestions,</span>
+<span id="cb33-5"><a href=""></a>  structure_stage<span class="sc">$</span>suggestions</span>
+<span id="cb33-6"><a href=""></a>)</span>
+<span id="cb33-7"><a href=""></a>all_suggestions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] "Your data story has all key elements. Focus on making each component compelling and relevant. Your central question is appropriately scoped. You've defined 2 persona(s). Ensure your design addresses the specific needs of each."
+
+[[2]]
+[1] "Ensure your problem description is specific and supported by strong evidence"
+
+[[3]]
+[1] "anchoring mitigation: Always show reference points like previous period, budget, or industry average. framing mitigation: Toggle between progress (65% complete) and gap (35% remaining) framing. confirmation bias mitigation: Include alternative views that might challenge the main narrative. accessibility mitigation: Test color combinations with WebAIM's contrast checker to meet WCAG standards. Consider also addressing these common biases: confirmation accessibility considerations have been included in bias mitigations."
+
+[[4]]
+[[4]]$concept
+[1] "Cognitive Load Theory"
+
+[[4]]$suggestions
+[[4]]$suggestions[[1]]
+[[4]]$suggestions[[1]]$title
+[1] "Limit initial choices"
+
+[[4]]$suggestions[[1]]$details
+[1] "Show only core filters by default; defer advanced options to secondary views or accordions."
+
+[[4]]$suggestions[[1]]$components
+[1] "bslib::accordion"            "shiny::conditionalPanel"    
+[3] "shiny::updateSelectizeInput"
+
+[[4]]$suggestions[[1]]$rationale
+[1] "Reduces initial cognitive load for new users while preserving functionality."
+
+[[4]]$suggestions[[1]]$score
+[1] 1
+
+
+[[4]]$suggestions[[2]]
+[[4]]$suggestions[[2]]$title
+[1] "Use progressive complexity"
+
+[[4]]$suggestions[[2]]$details
+[1] "Start with simple views and allow users to add complexity incrementally."
+
+[[4]]$suggestions[[2]]$components
+[1] "shiny::tabsetPanel"  "bslib::accordion"    "shiny::actionButton"
+
+[[4]]$suggestions[[2]]$rationale
+[1] "Prevents overwhelming users with too many options at once."
+
+[[4]]$suggestions[[2]]$score
+[1] 0.91
+
+
+[[4]]$suggestions[[3]]
+[[4]]$suggestions[[3]]$title
+[1] "Provide smart defaults"
+
+[[4]]$suggestions[[3]]$details
+[1] "Pre-select commonly used filters and settings to reduce decision fatigue."
+
+[[4]]$suggestions[[3]]$components
+[1] "shiny::selectInput"   "shiny::checkboxInput" "bslib::input_switch" 
+
+[[4]]$suggestions[[3]]$rationale
+[1] "Leverages the Default Effect to reduce cognitive burden."
+
+[[4]]$suggestions[[3]]$score
+[1] 0.88
+
+
+
+
+[[5]]
+[[5]]$concept
+[1] "Visual Hierarchy"
+
+[[5]]$suggestions
+[[5]]$suggestions[[1]]
+[[5]]$suggestions[[1]]$title
+[1] "Establish clear information priority"
+
+[[5]]$suggestions[[1]]$details
+[1] "Use size, color, and spacing to guide attention to key metrics first."
+
+[[5]]$suggestions[[1]]$components
+[1] "bslib::card"      "shiny::h1"        "shiny::h2"        "bslib::value_box"
+
+[[5]]$suggestions[[1]]$rationale
+[1] "Helps users quickly identify what matters most in the interface."
+
+[[5]]$suggestions[[1]]$score
+[1] 0.9
+
+
+[[5]]$suggestions[[2]]
+[[5]]$suggestions[[2]]$title
+[1] "Group related content visually"
+
+[[5]]$suggestions[[2]]$details
+[1] "Use consistent spacing and visual containers to show relationships."
+
+[[5]]$suggestions[[2]]$components
+[1] "bslib::layout_columns" "bslib::card"           "shiny::fluidRow"      
+
+[[5]]$suggestions[[2]]$rationale
+[1] "Leverages Gestalt principles to reduce cognitive processing."
+
+[[5]]$suggestions[[2]]$score
+[1] 0.87
+
+
+
+
+[[6]]
+[[6]]$concept
+[1] "Progressive Disclosure"
+
+[[6]]$suggestions
+[[6]]$suggestions[[1]]
+[[6]]$suggestions[[1]]$title
+[1] "Use collapsible advanced filters"
+
+[[6]]$suggestions[[1]]$details
+[1] "Place seldom-used filters in accordion sections or 'Show more' toggles."
+
+[[6]]$suggestions[[1]]$components
+[1] "bslib::accordion"        "shiny::conditionalPanel"
+
+[[6]]$suggestions[[1]]$rationale
+[1] "Reveals complexity on demand without overwhelming the interface."
+
+[[6]]$suggestions[[1]]$score
+[1] 0.88
+
+
+[[6]]$suggestions[[2]]
+[[6]]$suggestions[[2]]$title
+[1] "Implement drill-down navigation"
+
+[[6]]$suggestions[[2]]$details
+[1] "Allow users to start with summaries and progressively reveal details."
+
+[[6]]$suggestions[[2]]$components
+[1] "shiny::actionButton"  "DT::datatable"        "reactable::reactable"
+
+[[6]]$suggestions[[2]]$rationale
+[1] "Matches user mental models of exploration from general to specific."
+
+[[6]]$suggestions[[2]]$score
+[1] 0.84</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p><strong>Before:</strong> User configures dashboard<br> <strong>After:</strong> Dashboard anticipates user</p>
+</div>
 <div class="columns">
 <div class="column" style="width:50%;">
 <h3 id="before-chaos">Before: Chaos</h3>
@@ -637,58 +1263,6 @@ Jeremy Winget, PhD
 </div></div>
 <aside class="notes">
 <ul>
-<li>“Structure IS the user experience”</li>
-<li>“Every pixel placement is a psychological choice”</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="structure-the-behavioral-science-hierarchy" class="slide level2">
-<h2>STRUCTURE: The Behavioral Science Hierarchy</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="co"># update with actual bidux code and set eval to TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="fragment">
-<h3 id="the-f-pattern-reading-path">The F-Pattern Reading Path</h3>
-<p><img data-src="img/f-pattern-heatmap.png"></p>
-<p><em>Place critical info where eyes naturally go</em></p>
-</div>
-<aside class="notes">
-<ul>
-<li>“Eye tracking shows F-pattern on dashboards”</li>
-<li>“Top-left = highest value real estate”</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="structure-smart-defaults-from-telemetry" class="slide level2">
-<h2>STRUCTURE: Smart Defaults from Telemetry</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="co"># update with actual bidux code and set eval to TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="fragment">
-<p><strong>Before:</strong> User configures dashboard<br> <strong>After:</strong> Dashboard anticipates user</p>
-</div>
-<aside class="notes">
-<ul>
 <li>End STRUCTURE (3.5 min total)</li>
 <li>Transition: “Quick validation check”</li>
 </ul>
@@ -706,9 +1280,6 @@ Jeremy Winget, PhD
 </section>
 <section id="validate-confirm-safe-arrival" class="slide level2" data-background-color="#27ae60">
 <h2>VALIDATE: Confirm Safe Arrival ✅</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="co"># update with actual bidux code and set eval to TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <div class="fragment">
 <p><img data-src="img/validate-summary.png"></p>
 <p><strong>The GPS moment:</strong> “You’ve arrived at your insight”</p>
@@ -800,40 +1371,6 @@ Jeremy Winget, PhD
 <li>“No more death by dropdown!”</li>
 <li>“Questions?”</li>
 <li>Thank organizers if time</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="bonus-slide-the-bidux-toolkit" class="slide level2 smaller">
-<h2>Bonus Slide: The {bidux} Toolkit</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="co"># For those who want to dive deep</span></span>
-<span id="cb10-2"><a href=""></a><span class="fu">library</span>(bidux)</span>
-<span id="cb10-3"><a href=""></a></span>
-<span id="cb10-4"><a href=""></a><span class="co"># Full workflow in 5 lines</span></span>
-<span id="cb10-5"><a href=""></a>my_dashboard <span class="sc">|&gt;</span></span>
-<span id="cb10-6"><a href=""></a>  <span class="fu">bid_interpret</span>(<span class="at">question =</span> <span class="st">"What's our KPI status?"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb10-7"><a href=""></a>  <span class="fu">bid_notice</span>(<span class="at">telemetry =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb10-8"><a href=""></a>  <span class="fu">bid_anticipate</span>(<span class="at">guard_biases =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb10-9"><a href=""></a>  <span class="fu">bid_structure</span>(<span class="at">progressive =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb10-10"><a href=""></a>  <span class="fu">bid_validate</span>(<span class="at">empower_users =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb10-11"><a href=""></a></span>
-<span id="cb10-12"><a href=""></a><span class="co"># Generate full behavioral report</span></span>
-<span id="cb10-13"><a href=""></a><span class="fu">bid_report</span>(my_dashboard, <span class="at">output =</span> <span class="st">"behavioral_insights.html"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<aside class="notes">
-<ul>
-<li>Only if extra time in Q&amp;A</li>
-<li>“Full framework in your console”</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {

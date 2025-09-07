@@ -127,29 +127,30 @@ format:
 ## INTERPRET: Plan Your Destination 🗺️ {background-color="#4682b4"}
 
 ```{r}
-#| eval: false
-
+library(dplyr)
 library(bidux)
 
-# Define your destination and purpose
+# Define the destination and goals
 interpret_stage <- bid_interpret(
-  central_question = "Are we on track this quarter?",
+  central_question = "Which markets are driving performance, and where are we lagging?",
   data_story = list(
-    hook = "Q3 performance exceeds targets by 15%",
-    context = "Following our new product launch",
-    tension = "However, churn increased 8% in enterprise segment",
-    resolution = "Focus retention efforts on high-value accounts"
+    hook = "Q4 revenue hit record high, but satisfaction dipped",
+    context = "After aggressive marketing across all regions",
+    tension = "West region satisfaction fell 10 points",
+    resolution = "Focus retention efforts on underperforming regions"
   ),
   user_personas = list(
-    primary = "Product managers checking weekly KPIs",
-    secondary = "Executives reviewing quarterly trends"
+    list(
+      name = "Product Managers",
+      goals = "Monitor weekly KPIs",
+      technical_level = "Moderate"
+    ),
+    list(
+      name = "Executives",
+      goals = "Review quarterly trends",
+      technical_level = "Basic"
+    )
   )
-)
-
-# Quick destination check - devs often skip this
-bid_interpret(
-  central_question = "Are we on track this quarter?",
-  user_persona = "PM checking weekly KPIs"  # ← Most forget this
 )
 ```
 
@@ -182,12 +183,161 @@ bid_interpret(
 ## NOTICE: What Telemetry Reveals
 
 ```{r}
-#| eval: false
+#| echo: false
 
-# Actual production telemetry
-notice_results <- bid_notice(telemetry_data = TRUE)
+conn_telemetry_db <- function(db_path = "telemetry.sqlite") {
+  # Create SQLite database with telemetry data
+  con <- DBI::dbConnect(RSQLite::SQLite(), db_path)
 
-summary(notice_results)
+  set.seed(456)
+  n_sessions <- 1000
+
+  # Create telemetry events with proper columns expected by bid_telemetry
+  events <- data.frame()
+
+  for(i in 1:n_sessions) {
+    session_id <- paste0("session_", i)
+    user_id <- paste0("user_", sample(1:200, 1))
+    session_start <- Sys.time() - runif(1, 0, 30*24*60*60)  # Random time in last 30 days
+    session_duration <- rexp(1, rate = 1/260)  # avg 4.3 minutes
+
+    # Navigation events (page views)
+    visited_tabs <- sample(
+      c("Revenue Analysis", "Customer Insights", "Operations",
+        "Product Performance", "Marketing Analytics", "Executive Summary"),
+      sample(1:3, 1),
+      prob = c(0.35, 0.25, 0.15, 0.10, 0.10, 0.05)
+    )
+
+    for(tab in visited_tabs) {
+      events <- rbind(events, data.frame(
+        timestamp = format(session_start + runif(1, 0, session_duration), "%Y-%m-%d %H:%M:%S"),
+        session_id = session_id,
+        user_id = user_id,
+        event_type = "navigation",
+        navigation_id = tab,
+        input_id = NA,
+        value = NA,
+        error_message = NA,
+        output_id = NA,
+        stringsAsFactors = FALSE
+      ))
+    }
+
+    # Input interaction events
+    all_inputs <- c(
+      "year", "quarter", "region",  # Used by 82%
+      "rev_product", "rev_category", "rev_channel",
+      "cust_segment", "cust_source", "cust_campaign",
+      "ops_team", "ops_priority", "ops_status",
+      "prod_product", "prod_compare",
+      "mkt_campaign", "mkt_channel",
+      "exec_metric", "exec_view"
+    )
+
+    if(runif(1) < 0.82) {
+      # 82% use only first 3 filters
+      used_inputs <- sample(all_inputs[1:3], sample(1:3, 1))
+    } else {
+      # 18% use additional filters
+      n_filters <- sample(4:10, 1)
+      used_inputs <- sample(all_inputs, n_filters)
+    }
+
+    for(input in used_inputs) {
+      events <- rbind(events, data.frame(
+        timestamp = format(session_start + runif(1, 0, session_duration), "%Y-%m-%d %H:%M:%S"),
+        session_id = session_id,
+        user_id = user_id,
+        event_type = "input",
+        navigation_id = NA,
+        input_id = input,
+        value = sample(c("Option1", "Option2", "All"), 1),
+        error_message = NA,
+        output_id = NA,
+        stringsAsFactors = FALSE
+      ))
+    }
+
+    # Error events (31% misinterpretation rate)
+    if(runif(1) < 0.31) {
+      error_messages <- c(
+        "Filter combination produced no results",
+        "Chart rendering failed",
+        "Incorrect time period selected",
+        "Data not available for selection"
+      )
+
+      events <- rbind(events, data.frame(
+        timestamp = format(session_start + runif(1, 60, session_duration), "%Y-%m-%d %H:%M:%S"),
+        session_id = session_id,
+        user_id = user_id,
+        event_type = "error",
+        navigation_id = NA,
+        input_id = NA,
+        value = NA,
+        error_message = sample(error_messages, 1),
+        output_id = sample(c("revenuePlot", "satisfactionPlot", "revenueTable"), 1),
+        stringsAsFactors = FALSE
+      ))
+    }
+
+    # Login event at session start
+    events <- rbind(events, data.frame(
+      timestamp = format(session_start, "%Y-%m-%d %H:%M:%S"),
+      session_id = session_id,
+      user_id = user_id,
+      event_type = "login",
+      navigation_id = NA,
+      input_id = NA,
+      value = NA,
+      error_message = NA,
+      output_id = NA,
+      stringsAsFactors = FALSE
+    ))
+  }
+
+  # Sort events by timestamp
+  events <- events[order(events$timestamp), ]
+
+  # Write to SQLite database
+  DBI::dbWriteTable(con, "events", events, overwrite = TRUE)
+
+  DBI::dbDisconnect(con)
+
+  return(db_path)
+}
+```
+
+```{r}
+# Using production telemetry
+telemetry_path <- conn_telemetry_db("dashboard_telemetry.sqlite")
+
+# bid_telemetry automatically categorizes and prioritizes issues!
+issues <- bid_telemetry(telemetry_path)
+head(issues)
+
+# if we have telemetry, let bidux convert issues to Notice stages
+critical_issues <- issues |>
+  filter(severity == "critical") |>
+  slice_head(n = 3)
+
+notices <- bid_notices(
+  issues = critical_issues,
+  previous_stage = interpret_stage
+)
+
+notice_stage <- notices[[1]]
+
+# Using observations/feedback
+notice_stage <- bid_notice(
+  previous_stage = interpret_stage,
+  problem = "Users overwhelmed by 18 filters across 6 tabs",
+  evidence = "82% of sessions use only 3 filters; 4.3 min to first insight"
+  # NOTE: No theory specified - bidux will suggest one!
+)
+
+summary(notice_stage)
 ```
 
 ::: {.fragment}
@@ -219,12 +369,6 @@ summary(notice_results)
 - **Cognitive overflow indicators**
 :::
 ::::
-
-```{r}
-#| eval: false
-
-# update example based on actual bidux code
-```
 
 ::: {.notes}
 - "This is behavioral science in action"
@@ -270,14 +414,12 @@ valueBox(value = "+15% YTD", subtitle = "Despite -5 this week")
 ::: {.column width="50%"}
 ### Framing Effects
 ```{r}
-#| eval: false
-
-# bidux suggests toggle
-bid_anticipate() |>
-  add_framing_toggle(
-    positive = "75% to goal",
-    negative = "25% gap remaining"
-  )
+# Don't specify bias_mitigations - let {bidux} suggest them!
+anticipate_stage <- bid_anticipate(
+  previous_stage = notice_stage,
+  # bias_mitigations = NULL,
+  include_accessibility = TRUE
+)
 ```
 :::
 ::::
@@ -290,12 +432,6 @@ bid_anticipate() |>
 ## ANTICIPATE: Confirmation Bias Protection
 
 ![](img/confirmation-bias-toggle.png)
-
-```{r}
-#| eval: false
-
-# update with actual bidux code and set eval to TRUE
-```
 
 ::: {.fragment}
 **Result:** 74% reduction in misinterpretation
@@ -320,7 +456,47 @@ bid_anticipate() |>
 - "This is where psychology meets code"
 :::
 
-## STRUCTURE: Progressive Disclosure That Works
+## STRUCTURE: The Behavioral Science Hierarchy
+
+```{r}
+flags <- bid_flags(issues)
+structure_stage <- bid_structure(
+  previous_stage = anticipate_stage,
+  telemetry_flags = flags
+)
+structure_stage$suggestions
+```
+
+::: {.fragment}
+### The F-Pattern Reading Path
+![](img/f-pattern-heatmap.png)
+
+*Place critical info where eyes naturally go*
+:::
+
+::: {.notes}
+- "Structure IS the user experience"
+- "Every pixel placement is a psychological choice"
+- "Eye tracking shows F-pattern on dashboards"
+- "Top-left = highest value real estate"
+:::
+
+## STRUCTURE: Smart Defaults from Telemetry
+
+```{r}
+all_suggestions <- c(
+  interpret_stage$suggestions,
+  notice_stage$suggestions,
+  anticipate_stage$suggestions,
+  structure_stage$suggestions
+)
+all_suggestions
+```
+
+::: {.fragment}
+**Before:** User configures dashboard<br>
+**After:** Dashboard anticipates user
+:::
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -343,55 +519,11 @@ bid_anticipate() |>
 ::::
 
 ::: {.notes}
-- "Structure IS the user experience"
-- "Every pixel placement is a psychological choice"
-:::
-
-## STRUCTURE: The Behavioral Science Hierarchy
-
-```{r}
-#| eval: false
-
-# update with actual bidux code and set eval to TRUE
-```
-
-::: {.fragment}
-### The F-Pattern Reading Path
-![](img/f-pattern-heatmap.png)
-
-*Place critical info where eyes naturally go*
-:::
-
-::: {.notes}
-- "Eye tracking shows F-pattern on dashboards"
-- "Top-left = highest value real estate"
-:::
-
-## STRUCTURE: Smart Defaults from Telemetry
-
-```{r}
-#| eval: false
-
-# update with actual bidux code and set eval to TRUE
-```
-
-::: {.fragment}
-**Before:** User configures dashboard<br>
-**After:** Dashboard anticipates user
-:::
-
-::: {.notes}
 - End STRUCTURE (3.5 min total)
 - Transition: "Quick validation check"
 :::
 
 ## VALIDATE: Confirm Safe Arrival ✅ {background-color="#27ae60"}
-
-```{r}
-#| eval: false
-
-# update with actual bidux code and set eval to TRUE
-```
 
 ::: {.fragment}
 ![](img/validate-summary.png)
@@ -460,31 +592,6 @@ bid_anticipate() |>
 - "No more death by dropdown!"
 - "Questions?"
 - Thank organizers if time
-:::
-
-## Bonus Slide: The {bidux} Toolkit {.smaller}
-
-```{r}
-#| eval: false
-
-# For those who want to dive deep
-library(bidux)
-
-# Full workflow in 5 lines
-my_dashboard |>
-  bid_interpret(question = "What's our KPI status?") |>
-  bid_notice(telemetry = TRUE) |>
-  bid_anticipate(guard_biases = TRUE) |>
-  bid_structure(progressive = TRUE) |>
-  bid_validate(empower_users = TRUE)
-
-# Generate full behavioral report
-bid_report(my_dashboard, output = "behavioral_insights.html")
-```
-
-::: {.notes}
-- Only if extra time in Q&A
-- "Full framework in your console"
 :::
 
 ## Bonus: Quick Reference Card
