@@ -111,7 +111,7 @@ format:
 
 ## BEFORE: A Familiar Nightmare
 
-![](img/before-overload.png)
+![](img/ui-before.png)
 
 ::: {.incremental}
 - 18 filters • 6 tabs • no story • all data
@@ -177,7 +177,7 @@ summary(interpret_stage)
 :::
 
 ::: {.column width="50%"}
-![](img/telemetry-sessions-heatmap.png)
+![](img/telemetry-sessions.png)
 :::
 ::::
 
@@ -519,7 +519,7 @@ all_suggestions
 :::: {.columns}
 ::: {.column width="50%"}
 ### Before: Chaos
-<!-- ![](img/before-overload.png) -->
+<!-- ![](img/ui-before.png) -->
 
 - All options visible
 - Competing for attention
@@ -544,7 +544,7 @@ all_suggestions
 ## VALIDATE: Confirm Safe Arrival ✅ {background-color="#27ae60"}
 
 ::: {.fragment}
-![](img/summary-report.png)
+![](img/ui-summary.png)
 
 **The GPS moment:** "You've arrived at your insight"
 :::

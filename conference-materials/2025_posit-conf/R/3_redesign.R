@@ -1,8 +1,3 @@
-# Redesigned Shiny dashboard implementing BID-inspired improvements:
-# - Only 3 primary filters (Product, Region, Metric) instead of 18:contentReference[oaicite:12]{index=12}.
-# - Smart defaults (showing all regions & overall by default) and guided UI.
-# - Built-in bias mitigations: a framing toggle for revenue and a combined view of metrics when relevant.
-
 # Redesigned Shiny dashboard implementing BID framework recommendations
 # Uses echarts4r and reactable as suggested by bidux
 # Results: 45 second time to insight, 15% abandonment, 92% correct interpretation
@@ -13,16 +8,6 @@ library(dplyr)
 library(echarts4r)
 library(reactable)
 library(shinyWidgets)
-
-# Load BID recommendations if available
-if (
-  file.exists("conference-materials/2025_posit-conf/R/bid_recommendations.rds")
-) {
-  bid_recommendations <- readRDS(
-    "conference-materials/2025_posit-conf/R/bid_recommendations.rds"
-  )
-  cat("✓ Loaded BID recommendations\n")
-}
 
 # Use same data generation as original
 set.seed(123)
@@ -101,6 +86,7 @@ ui <- page_navbar(
     # Progressive Disclosure Level 1: Executive Summary (F-pattern placement)
     layout_columns(
       col_widths = 12,
+      min_height = "185px",
       card(
         card_header(
           class = "bg-success text-white",
@@ -115,65 +101,51 @@ ui <- page_navbar(
 
     # Progressive Disclosure Level 2: Only 3 Primary Filters (bidux recommendation)
     layout_columns(
-      col_widths = c(4, 4, 4),
+      col_widths = 12,
+      min_height = "175px",
       card(
         card_body(
-          selectInput(
-            "product_filter",
-            label = tags$span(icon("box"), "Product Focus"),
-            choices = c("All Products" = "All", products),
-            selected = "All"
-          ),
-          class = "p-3"
-        )
-      ),
-      card(
-        card_body(
-          selectInput(
-            "region_filter",
-            label = tags$span(icon("map"), "Region"),
-            choices = c("All Regions" = "All", regions),
-            selected = "All"
-          ),
-          class = "p-3"
-        )
-      ),
-      card(
-        card_body(
-          selectInput(
-            "metric_filter",
-            label = tags$span(icon("chart-bar"), "View"),
-            choices = c(
-              "Revenue & Satisfaction" = "both",
-              "Revenue Focus" = "revenue",
-              "Satisfaction Focus" = "satisfaction"
+          padding = 12,
+          gap = "12px",
+          layout_columns(
+            col_widths = c(4, 4, 4, 12),
+            row_heights = c(1, 1),
+            selectInput(
+              "product_filter",
+              label = tags$span(icon("box"), "Product Focus"),
+              choices = c("All Products" = "All", products),
+              selected = "All"
             ),
-            selected = "both"
-          ),
-          class = "p-3"
-        )
-      )
-    ),
-
-    # Cognitive Bias Mitigation: Framing Toggle (bidux suggestion)
-    conditionalPanel(
-      condition = "input.metric_filter != 'satisfaction'",
-      layout_columns(
-        col_widths = 12,
-        card(
-          card_body(
-            class = "py-2",
-            radioGroupButtons(
-              "framing",
-              label = "Perspective:",
+            selectInput(
+              "region_filter",
+              label = tags$span(icon("map"), "Region"),
+              choices = c("All Regions" = "All", regions),
+              selected = "All"
+            ),
+            selectInput(
+              "metric_filter",
+              label = tags$span(icon("chart-bar"), "View"),
               choices = c(
-                `<i class='fas fa-trophy'></i> Progress Achieved` = "positive",
-                `<i class='fas fa-target'></i> Gap to Target` = "negative"
+                "Revenue & Satisfaction" = "both",
+                "Revenue Focus" = "revenue",
+                "Satisfaction Focus" = "satisfaction"
               ),
-              selected = "positive",
-              status = "primary",
-              size = "sm",
-              justified = TRUE
+              selected = "both"
+            ),
+            conditionalPanel(
+              condition = "input.metric_filter != 'satisfaction'",
+              radioGroupButtons(
+                "framing",
+                label = "",
+                choices = c(
+                  `<i class='fas fa-trophy'></i> Progress Achieved` = "positive",
+                  `<i class='fas fa-target'></i> Gap to Target` = "negative"
+                ),
+                selected = "positive",
+                status = "primary",
+                size = "sm",
+                justified = TRUE
+              )
             )
           )
         )
@@ -416,8 +388,13 @@ server <- function(input, output, session) {
             itemStyle = list(
               color = htmlwidgets::JS(
                 "function(params) {
-              var colors = {'North': '#4CAF50', 'East': '#4CAF50',
-                           'South': '#2196F3', 'West': '#FFA726', 'Central': '#2196F3'};
+              var colors = {
+                'North': '#4CAF50',
+                'East': '#4CAF50',
+                'South': '#2196F3',
+                'West': '#FFA726',
+                'Central': '#2196F3'
+              };
               return colors[params.name];
             }"
               )
@@ -470,16 +447,13 @@ server <- function(input, output, session) {
     if (input$region_filter == "All") {
       plot_data <- df |>
         group_by(Region) |>
-        summarize(Satisfaction = round(mean(Satisfaction), 1))
+        summarize(
+          Satisfaction = round(mean(Satisfaction), 1),
+          .groups = "drop"
+        ) |>
+        mutate(Target = 75)
 
       plot_data |>
-        mutate(
-          Color = case_when(
-            Satisfaction < 70 ~ "#F44336",
-            Satisfaction < 75 ~ "#FFA726",
-            TRUE ~ "#4CAF50"
-          )
-        ) |>
         e_charts(Region) |>
         e_bar(
           Satisfaction,
@@ -487,15 +461,15 @@ server <- function(input, output, session) {
           itemStyle = list(
             color = htmlwidgets::JS(
               "function(params) {
-            if(params.value < 70) return '#F44336';
-            if(params.value < 75) return '#FFA726';
-            return '#4CAF50';
-          }"
+                if(params.value < 70) return '#F44336';
+                if(params.value < 75) return '#FFA726';
+                return '#4CAF50';
+              }"
             )
           )
         ) |>
         e_line(
-          serie = rep(75, nrow(plot_data)),
+          Target, # Now this column exists
           name = "Target",
           color = "#666",
           lineStyle = list(type = "dashed")
@@ -506,31 +480,7 @@ server <- function(input, output, session) {
         ) |>
         e_title("Customer Satisfaction") |>
         e_legend(top = 30) |>
-        e_y_axis(min = 0, max = 100, formatter = "{value}%") |>
-        e_mark_area(
-          data = list(
-            list(yAxis = 0, itemStyle = list(color = "rgba(255, 0, 0, 0.05)")),
-            list(yAxis = 70)
-          ),
-          silent = TRUE
-        ) |>
-        e_mark_area(
-          data = list(
-            list(
-              yAxis = 70,
-              itemStyle = list(color = "rgba(255, 165, 0, 0.05)")
-            ),
-            list(yAxis = 75)
-          ),
-          silent = TRUE
-        ) |>
-        e_mark_area(
-          data = list(
-            list(yAxis = 75, itemStyle = list(color = "rgba(0, 255, 0, 0.05)")),
-            list(yAxis = 100)
-          ),
-          silent = TRUE
-        )
+        e_y_axis(min = 0, max = 100, formatter = "{value}%")
     } else {
       # Single region - show by product
       plot_data <- df |>
@@ -746,14 +696,15 @@ server <- function(input, output, session) {
     )
   })
 
-  # Trend plot
+  # Trend plot - FIXED to add Target column
   output$trendPlot <- renderEcharts4r({
     trend_data <- data |>
       filter(Year == current_year) |>
       group_by(Quarter) |>
       summarize(
         Revenue = sum(Revenue),
-        Satisfaction = mean(Satisfaction)
+        Satisfaction = mean(Satisfaction),
+        .groups = "drop"
       )
 
     trend_data |>
@@ -834,24 +785,24 @@ server <- function(input, output, session) {
       )
   })
 
-  # Toggle details button
+  # Toggle details button - FIXED icon() usage
   observeEvent(input$toggle_details, {
     current_label <- ifelse(
       input$toggle_details %% 2 == 1,
       "Hide Details",
       "Show Details"
     )
-    current_icon <- ifelse(
+    current_icon_name <- ifelse(
       input$toggle_details %% 2 == 1,
-      icon("chevron-up"),
-      icon("chevron-down")
+      "chevron-up",
+      "chevron-down"
     )
 
     updateActionButton(
       session,
       "toggle_details",
       label = current_label,
-      icon = current_icon
+      icon = icon(current_icon_name) # Fixed: pass string to icon()
     )
   })
 
