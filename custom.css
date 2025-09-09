@@ -224,3 +224,10 @@ code.block {
     background: var(--dark-blue);
     color: var(--warm-white);
 }
+
+/* text box */
+.text-box-background {
+    background-color: var(--indigo-light);
+    padding: 15px;
+    border-radius: 5px;
+}

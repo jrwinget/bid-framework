@@ -1,31 +1,45 @@
 ---
 title: "Death by Dropdown? Engineer Insightful Shiny Apps with Behavioral Science"
+subtitle: "posit::conf(2025)"
 author: "Jeremy Winget, PhD"
+date: "2025-09-17"
 execute:
   echo: true
 format:
   revealjs:
-    theme: default
     slide-number: true
     transition: fade
+    footer: "posit::conf(2025) | jrwinget\\.com"
+    preview-links: auto
+    code-block-border-left: true
+    highlight-style: github
+    auto-animate: true
+    chalkboard: false
+    width: 1600
+    height: 900
 ---
 
-## The Problem {.center background-color="#4682b4"}
+## {.center background-color="#2c3e50" auto-animate=true}
 
-::: {.large}
-**Ever open a dashboard, see 18 filters across 6 tabs, and then...close your laptop?**
+::: {.r-fit-text}
+**Ever open a dashboard with 18 filters...**
 :::
 
-::: {.fragment .large}
-**Or just get the urge to...**
-
-<div class="tenor-gif-embed" data-postid="17038619" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%"><a href="https://tenor.com/view/ron-swanson-parks-and-recreation-parks-and-rec-computer-dumpster-gif-17038619">Ron Swanson Parks And Recreation GIF</a>from <a href="https://tenor.com/search/ron+swanson-gifs">Ron Swanson GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+:::: {.fragment}
+::: {.r-fit-text style="color: #e74c3c;"}
+**...and immediately close your laptop?**
 :::
+
+<div class="tenor-gif-embed" data-postid="17038619" data-share-method="host" data-aspect-ratio="1.77778" data-width="60%"><a href="https://tenor.com/view/ron-swanson-parks-and-recreation-parks-and-rec-computer-dumpster-gif-17038619">Ron Swanson Parks And Recreation GIF</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+::::
 
 ::: {.notes}
+- 15 seconds MAX
+- "We've ALL been there"
+- Transition: "Quick show of hands"
 :::
 
-## Quick Show of Hands 🙋 {.center background-color="#34495e"}
+## Dashboard Support Group 🙋 {.center background-color="#34495e" auto-animate=true}
 
 ::: {.incremental}
 - Who's built a Shiny app with 10+ filters?
@@ -34,62 +48,87 @@ format:
 :::
 
 ::: {.fragment}
-**Welcome to my impromptu Dashboard Support Group. You're among friends.** 😅
+### Welcome to my impromptu support group. You're among friends! 😅
+
+<br>
+
+👋 **I'm Jeremy! Behavioral psychologist turned engineer**<br>
+*Think of this space as our little therapy session for dropdown overload*
 :::
 
 ::: {.notes}
-- Confession time...
-- Who's built a one of those dashboards? ...me
-- Who's been forced to build one bc the client just kept asking for one more filter? ...me
-- Who's ever used selectInput more than they probably should have? ...me
-- You're not alone!
+- 30 seconds
+- Get laughs with "dashboard anonymous"
+- "Hi Jeremy" callback
+- Transition: "Let me properly introduce myself"
 :::
 
-## Why Me? {background-color="#2c3e50"}
+## Why Listen to Me? {background-color="#2c3e50"}
 
 :::: {.columns}
 ::: {.column width="60%"}
-### Applied Social Psychologist → Full-Stack Engineer
+### From Lab to Production
 
-- **PhD in Applied Psychology** studying how people process information
-- **Led Shiny teams** at scale, providing enterprise dashboards
-- **Core insight:** Most dashboard failures aren't technical, they're psychological
-:::
+![](img/hex-bidux.png){width="250" .absolute top=150 left=650}
 
-::: {.column width="40%"}
+- **PhD in Applied Psychology** <br>*Studied how individuals and groups process information and make decisions*
+
+- **Led Shiny teams at scale** <br>*Built enterprise dashboards that folks actually use*
+
+- **Created {bidux} package** <br>*Your behavioral scientist in the console*
+
 ::: {.fragment}
-*"As a behavioral scientist in the tech world, I've seen firsthand how a dash of psychology can rescue users from that feeling of **'death by dropdown'"***
+### What is Behavioral Science?
+*The study of how people **actually** make decisions (spoiler: not rationally)*
 :::
+:::
+
+::: {.column width="40%" .fragment}
+### My Core Insight
+
+> "Most dashboard failures aren't technical, they're psychological. We're building for computers, not humans."
+
+**Today:** Transform your dashboards using the science of human behavior
 :::
 ::::
 
-## Your Dashboard = A Road Trip 🚗 {.center}
+::: {.notes}
+- 45 seconds
+- "Behavioral science = how humans actually work"
+- "Not how we think they work"
+- Transition: "Let me show you the framework"
+:::
 
-:::: {.columns}
+## Your Dashboard = A Road Trip 🚗 {background-color="#34495e"}
+
+:::: {.columns .fragment}
 ::: {.column width="50%"}
 ### You wouldn't make a long drive without:
-- **I**nterpreting travel guides
-- **N**oticing any mechanical problems
-- **A**nticipating roadblocks ahead
-- **S**tructuring the best route
-- **V**alidating everyone arrived happy
+- 📍 **I**nterpreting travel guides
+- ⚠️ **N**oticing any mechanical problems
+- 🌦️ **A**nticipating roadblocks ahead
+- 🗺️ **S**tructuring the best route
+- ✅ **V**alidating everyone arrived happy
 :::
 
 ::: {.column width="50%"}
-::: {.fragment}
 ### So why build dashboards without:
-- **I**nterpreting user needs
-- **N**oticing friction points
-- **A**nticipating behavior
-- **S**tructuring a journey
-- **V**alidating understanding
+- 📍 **I**nterpreting user needs
+- ⚠️ **N**oticing friction points
+- 🌦️ **A**nticipating behavior
+- 🗺️ **S**tructuring a journey
+- ✅ **V**alidating understanding
 :::
+
+::: {.callout-tip}
+### Helpful mnemonic device:
+**"Interfaces Need A Smart Vision"**
 :::
 ::::
 
 ::: {.notes}
 - 20 seconds
-- "This is the BID framework"
+- "This is the core idea of the BID framework"
 - Transition: "Let me show you the GPS"
 :::
 
@@ -97,42 +136,44 @@ format:
 
 ![](img/bid-framework.png)
 
-**Remember - "Interfaces Need A Smart Vision"**
+**Behavioral Insight Design (BID)**: *Not just UX, it's behavioral science in your workflow*
 
-::: {.fragment}
-**Behavioral Insight Design (BID)**: *Not just UX advice - it's behavioral science in your dev workflow*
+::: {.notes}
+- 20 seconds MAX
+- "BID framework = your GPS"
+- "Today we focus on the middle three - where psychology transforms dashboards"
+- "Let's take a look at a example from a client I recently worked with"
+:::
+
+## The Problem: 18 Filters, 0 Insights {background-image="img/ui-before.png" background-size="contain" background-position="right"}
+
+::: {.fragment .absolute top=500 left=-40}
+### We gathered telemetry on behavior:
+- 😵 **65% abandon** in 30 seconds
+- ⏱️ **4.3 minutes** to first click
+- 🎯 **31% misinterpret** the data
+- 📊 **82% use only 3** of 18 filters
+:::
+
+::: {.fragment .absolute top=700 left=-40}
+**This is behavioral science *screaming* at us**
 :::
 
 ::: {.notes}
-- 30-45 seconds MAX
-- "Today we focus on the middle three - where psychology transforms dashboards"
-- Quick transition to stages
+- 45 seconds
+- "Let me show you what users actually do"
+- Transition to telemetry
 :::
 
-## BEFORE: A Familiar Nightmare
+## INTERPRET: Plan Your Destination 🗺️ {background-color="#3498db" auto-animate=true}
 
-![](img/ui-before.png)
-
-::: {.incremental}
-- 18 filters • 6 tabs • no story • all data
-- **User reaction:** "Where do I even start?"
-- **Result:** 65% abandon rate in first 30 seconds
-:::
-
-## Every Dev's First Dashboard
-
-![](img/this-is-fine.jpg)<br>
-*"But it has ALL the features!"*
-
-## INTERPRET: Plan Your Destination 🗺️ {background-color="#4682b4"}
-
-```{r, interpret-stg}
+```{r interpret-stg}
 library(dplyr)
 library(bidux)
 
 # Define the destination and goals
 interpret_stage <- bid_interpret(
-  central_question = "Which markets are driving performance, and where are we lagging?",
+  central_question = "Which markets are driving performance?",
   data_story = list(
     hook = "Q4 revenue hit record high, but satisfaction dipped",
     context = "After aggressive marketing across all regions",
@@ -141,16 +182,10 @@ interpret_stage <- bid_interpret(
   ),
   user_personas = list(
     list(
-      name = "Product Managers",
+      name = "Product Manager",
       goals = "Monitor weekly KPIs",
       pain_points = "Too many filters to find important insights",
       technical_level = "Moderate"
-    ),
-    list(
-      name = "Executives",
-      goals = "Review quarterly trends",
-      pain_points = "Overwhelmed by data, need clear takeaways",
-      technical_level = "Basic"
     )
   )
 )
@@ -158,18 +193,21 @@ interpret_stage <- bid_interpret(
 summary(interpret_stage)
 ```
 
-::: {.fragment}
-**Key insight:** If you can't write the question in 10 words, users won't find answers in 100 filters
+::: {.fragment .callout-tip}
+## The 10-Word Guideline:
+**Can't explain your dashboard's purpose in 10 words?**
+
+Users won't find answers in 100 filters
 :::
 
 ::: {.notes}
-- 1.5 minutes TOTAL for Interpret
-- "You think you do this, but telemetry says otherwise"
+- 30-45 seconds ONLY
+- "A lot of devs think they do this, but telemetry says otherwise"
 - "Most jump straight to filters"
-- Transition: "But here's what you're missing..."
+- Transition: "But here's what they're missing..."
 :::
 
-## NOTICE: The Warning Lights You're Ignoring ⚠️ {background-color="#e74c3c"}
+## NOTICE: The Telemetry Bombshell 💣 {background-color="#e74c3c" auto-animate=true}
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -177,303 +215,142 @@ summary(interpret_stage)
 :::
 
 ::: {.column width="50%"}
-![](img/telemetry-sessions.png)
+```{r}
+#| eval: false
+#| code-line-numbers: "4-5,9"
+# Actual production data
+bid_telemetry("dashboard.sqlite") |>
+  summary()
+#> 82% use only 3 filters
+#> 4.3 min to first insight
+#> 65% abandonment rate
+
+# Let bidux diagnose the problem
+bid_notice(telemetry = TRUE)
+#> Theory: Cognitive Load Theory
+#> Severity: CRITICAL
+```
 :::
 ::::
-
-::: {.incremental}
-- **Your assumption:** "They need all 18 filters"
-- **Reality:** 82% use only 3 filters
-- **Hidden cost:** 4.3 minutes to first click
-:::
-
-::: {.notes}
-- START 3-minute NOTICE section
-- "This is where behavioral science starts"
-:::
-
-## NOTICE: What Telemetry Reveals
-
-```{r, telemetry-data}
-#| echo: false
-
-conn_telemetry_db <- function(db_path = "telemetry.sqlite") {
-  # Create SQLite database with telemetry data
-  con <- DBI::dbConnect(RSQLite::SQLite(), db_path)
-
-  set.seed(456)
-  n_sessions <- 1000
-
-  # Create telemetry events with proper columns expected by bid_telemetry
-  events <- data.frame()
-
-  for(i in 1:n_sessions) {
-    session_id <- paste0("session_", i)
-    user_id <- paste0("user_", sample(1:200, 1))
-    session_start <- Sys.time() - runif(1, 0, 30*24*60*60)  # Random time in last 30 days
-    session_duration <- rexp(1, rate = 1/260)  # avg 4.3 minutes
-
-    # Navigation events (page views)
-    visited_tabs <- sample(
-      c("Revenue Analysis", "Customer Insights", "Operations",
-        "Product Performance", "Marketing Analytics", "Executive Summary"),
-      sample(1:3, 1),
-      prob = c(0.35, 0.25, 0.15, 0.10, 0.10, 0.05)
-    )
-
-    for(tab in visited_tabs) {
-      events <- rbind(events, data.frame(
-        timestamp = format(session_start + runif(1, 0, session_duration), "%Y-%m-%d %H:%M:%S"),
-        session_id = session_id,
-        user_id = user_id,
-        event_type = "navigation",
-        navigation_id = tab,
-        input_id = NA,
-        value = NA,
-        error_message = NA,
-        output_id = NA,
-        stringsAsFactors = FALSE
-      ))
-    }
-
-    # Input interaction events
-    all_inputs <- c(
-      "year", "quarter", "region",  # Used by 82%
-      "rev_product", "rev_category", "rev_channel",
-      "cust_segment", "cust_source", "cust_campaign",
-      "ops_team", "ops_priority", "ops_status",
-      "prod_product", "prod_compare",
-      "mkt_campaign", "mkt_channel",
-      "exec_metric", "exec_view"
-    )
-
-    if(runif(1) < 0.82) {
-      # 82% use only first 3 filters
-      used_inputs <- sample(all_inputs[1:3], sample(1:3, 1))
-    } else {
-      # 18% use additional filters
-      n_filters <- sample(4:10, 1)
-      used_inputs <- sample(all_inputs, n_filters)
-    }
-
-    for(input in used_inputs) {
-      events <- rbind(events, data.frame(
-        timestamp = format(session_start + runif(1, 0, session_duration), "%Y-%m-%d %H:%M:%S"),
-        session_id = session_id,
-        user_id = user_id,
-        event_type = "input",
-        navigation_id = NA,
-        input_id = input,
-        value = sample(c("Option1", "Option2", "All"), 1),
-        error_message = NA,
-        output_id = NA,
-        stringsAsFactors = FALSE
-      ))
-    }
-
-    # Error events (31% misinterpretation rate)
-    if(runif(1) < 0.31) {
-      error_messages <- c(
-        "Filter combination produced no results",
-        "Chart rendering failed",
-        "Incorrect time period selected",
-        "Data not available for selection"
-      )
-
-      events <- rbind(events, data.frame(
-        timestamp = format(session_start + runif(1, 60, session_duration), "%Y-%m-%d %H:%M:%S"),
-        session_id = session_id,
-        user_id = user_id,
-        event_type = "error",
-        navigation_id = NA,
-        input_id = NA,
-        value = NA,
-        error_message = sample(error_messages, 1),
-        output_id = sample(c("revenuePlot", "satisfactionPlot", "revenueTable"), 1),
-        stringsAsFactors = FALSE
-      ))
-    }
-
-    # Login event at session start
-    events <- rbind(events, data.frame(
-      timestamp = format(session_start, "%Y-%m-%d %H:%M:%S"),
-      session_id = session_id,
-      user_id = user_id,
-      event_type = "login",
-      navigation_id = NA,
-      input_id = NA,
-      value = NA,
-      error_message = NA,
-      output_id = NA,
-      stringsAsFactors = FALSE
-    ))
-  }
-
-  # Sort events by timestamp
-  events <- events[order(events$timestamp), ]
-
-  # Write to SQLite database
-  DBI::dbWriteTable(con, "events", events, overwrite = TRUE)
-
-  DBI::dbDisconnect(con)
-
-  return(db_path)
-}
-```
-
-```{r, notice-stg}
-# Using production telemetry
-telemetry_path <- conn_telemetry_db("dashboard_telemetry.sqlite")
-
-# bid_telemetry automatically categorizes and prioritizes issues!
-issues <- bid_telemetry(telemetry_path)
-head(issues)
-
-# if we have telemetry, let bidux convert issues to Notice stages
-critical_issues <- issues |>
-  filter(severity == "critical") |>
-  slice_head(n = 3)
-
-notices <- bid_notices(
-  issues = critical_issues,
-  previous_stage = interpret_stage
-)
-
-notice_stage <- notices[[1]]
-
-# Using observations/feedback
-notice_stage <- bid_notice(
-  previous_stage = interpret_stage,
-  problem = "Users overwhelmed by 18 filters across 6 tabs",
-  evidence = "82% of sessions use only 3 filters; 4.3 min to first insight"
-  # NOTE: No theory specified - bidux will suggest one!
-)
-
-summary(notice_stage)
-```
 
 ::: {.fragment}
-**The "Just One More Filter" Death Spiral:**
-
-![](img/anakin.jpg)
+![](img/anakin.jpg){.absolute top=400 right=50 width="400"}
 :::
 
 ::: {.notes}
-- "Telemetry is your behavioral microscope"
-- "Every hover tells a story of confusion"
-- Transition: "Now let's talk about what happens in their heads"
+- 2 minutes on NOTICE
+- "This is your behavioral microscope"
+- "Every hover tells a story"
 :::
 
-## NOTICE: Cognitive Load Measurement
+## NOTICE: What 1000 Sessions Reveal {background-color="#e74c3c"}
 
 :::: {.columns}
-::: {.column width="50%"}
-### You're Measuring:
-- Click-through rates
-- Time on page
-- Completions
+::: {.column width="60%"}
+![](img/telemetry-sessions.png)
 :::
 
-::: {.column width="50%"}
-### You Should Measure:
-- **Decision fatigue points**
-- **Paradox of choice moments**
-- **Cognitive overflow indicators**
+::: {.column width="40%"}
+### The Hidden Costs
+::: {.incremental}
+- **Hover time:** 3.2 sec before clicking
+- **Help icons:** 68% hover, 0% click
+- **Filter #7:** Abandonment spike
+- **Errors:** "No results" 319 times
+:::
+
+::: {.fragment}
+**Your users are drowning in choices**
+:::
 :::
 ::::
 
 ::: {.notes}
-- "This is behavioral science in action"
-- End NOTICE section (3 min total)
+- "Cognitive load is measurable"
 - Transition: "Once you spot problems, anticipate how users will cope"
+- Transition: "How do we do that?"
 :::
 
-## ANTICIPATE: Pack for Cognitive Weather 🌦️ {background-color="#f39c12"}
+## ANTICIPATE: Users Create Their Own Stories 🎭 {background-color="#f39c12"}
 
 ::: {.large}
 **Users don't see data. They see stories.**
 :::
 
-![](https://media.giphy.com/media/l0IykOsxLECVejOzm/giphy.gif)
-
-*Users interpreting your carefully crafted visualizations*
+<div class="tenor-gif-embed" data-postid="22483518" data-share-method="host" data-aspect-ratio="1.58416" data-width="50%"><a href="https://tenor.com/view/its-always-sunny-in-philadelphia-charlie-conspiracy-gif-22483518">Charlie Conspiracy GIF</a></div>
 
 ::: {.fragment}
-*And they'll write their own story if you don't guide them*
+**Without guidance, they'll find patterns that don't exist**
 :::
 
 ::: {.notes}
-- START 3-minute ANTICIPATE section
+- Start of 2 minutes on ANTICIPATE
 - "This is pure psychology"
-- So we need to prepare for cognitive detours
 :::
 
-## ANTICIPATE: The Biases You're Not Defending Against
+## ANTICIPATE: Same Data, Different Story {background-color="#f39c12" auto-animate=true}
 
 :::: {.columns}
 ::: {.column width="50%"}
-### Anchoring Bias
+### Marketing Sees Success 📈
+<!-- ![Placeholder: Dashboard showing "75% to Goal" with green progress bar](img/framing-positive-placeholder.png) -->
 
-```{r}
-#| eval: false
-
-# Bad: First number sticks
-valueBox(value = -5, subtitle = "Change")
-
-# Good: Context first
-valueBox(value = "+15% YTD", subtitle = "Despite -5 this week")
-```
+*"We're crushing it! Almost there!"*
 :::
 
 ::: {.column width="50%"}
-### Framing Effects
+### Finance Sees Risk 📉
+<!-- ![Placeholder: Same dashboard showing "25% Gap Remaining" with red deficit bar](img/framing-negative-placeholder.png) -->
 
-```{r}
-# Don't specify bias_mitigations - let {bidux} suggest them!
-anticipate_stage <- bid_anticipate(
-  previous_stage = notice_stage,
-  # bias_mitigations = NULL,
-  include_accessibility = TRUE
-)
-```
+*"We're behind! Need immediate action!"*
 :::
 ::::
 
-::: {.notes}
-- "Small changes, massive perception shifts"
-- "This is what behavioral scientists know that devs don't"
-:::
-
-## ANTICIPATE: Confirmation Bias Protection
-
-<!-- ![](img/confirmation-bias-toggle.png) -->
-
 ::: {.fragment}
-**Result:** 74% reduction in misinterpretation
+```{r}
+#| eval: false
+# One toggle, two perspectives
+bid_anticipate() |>
+  add_framing_toggle(
+    positive = "75% to goal",
+    negative = "25% gap remaining"
+  )
+```
+
+**Result: 74% reduction in misinterpretation**
 :::
 
 ::: {.notes}
-- "Protect users from themselves"
-- End ANTICIPATE (3 min total)
-- Transition: "Now structure the journey"
+- "Same data, opposite conclusions"
+- "Framing bias in action"
+- Transition: "Now...let's structure the experience"
 :::
 
-## STRUCTURE: The Scenic Route 🛣️ {background-color="#16a085"}
+## STRUCTURE: Stop the Filter Madness 🛑 {background-color="#16a085"}
 
-![](img/oprah.jpg)
+![](img/oprah.jpg){.absolute top=100 right=50 width="500"}
 
-::: {.fragment}
-**If everything's important, nothing is.**
-:::
-
-::: {.notes}
-- START 3.5-minute STRUCTURE section
-- "This is where psychology meets code"
-:::
-
-## STRUCTURE: The Behavioral Science Hierarchy
+:::: {.columns}
+::: {.column width="50%"}
+### Progressive Disclosure FTW
 
 ```{r}
+#| eval: false
+#| code-line-numbers: "2-4,6-7"
+bid_structure() |>
+  set_smart_defaults(based_on = "telemetry") |>
+  limit_initial_choices(n = 3) |>
+  defer_complexity()
+
+#> Smart defaults from 1000 sessions:
+#> Date: Last 30 days (87% usage)
+#> Product: All (72% default)
+#> Region: All (69% default)
+```
+<br>
+
+```{r}
+#| eval: false
 flags <- bid_flags(issues)
 
 structure_stage <- bid_structure(
@@ -483,62 +360,25 @@ structure_stage <- bid_structure(
 
 structure_stage$suggestions
 ```
+:::
+::::
 
-::: {.fragment}
-### The F-Pattern Reading Path
-![](img/f-pattern-heatmap.png)
+::: {.notes}
+- 2 minutes on STRUCTURE
+- "Let the F-pattern guide you"
+:::
+
+## STRUCTURE: The F-Pattern Is Your Friend {background-color="#16a085" auto-animate=true}
+
+![](img/f-pattern-heatmap.png){width="80%"}
 
 *Place critical info where eyes naturally go*
-:::
 
 ::: {.notes}
 - "Structure IS the user experience"
 - "Every pixel placement is a psychological choice"
 - "Eye tracking shows F-pattern on dashboards"
 - "Top-left = highest value real estate"
-:::
-
-## STRUCTURE: Smart Defaults from Telemetry
-
-```{r}
-all_suggestions <- c(
-  interpret_stage$suggestions,
-  notice_stage$suggestions,
-  anticipate_stage$suggestions,
-  structure_stage$suggestions
-)
-
-all_suggestions
-```
-
-::: {.fragment}
-**Before:** User configures dashboard<br>
-**After:** Dashboard anticipates user
-:::
-
-:::: {.columns}
-::: {.column width="50%"}
-### Before: Chaos
-<!-- ![](img/ui-before.png) -->
-
-- All options visible
-- Competing for attention
-- Analysis paralysis
-:::
-
-::: {.column width="50%"}
-### After: Journey
-<!-- ![](img/after-structured.png) -->
-
-- Start with one question
-- Reveal complexity gradually
-- Cognitive scaffolding
-:::
-::::
-
-::: {.notes}
-- End STRUCTURE (3.5 min total)
-- Transition: "Quick validation check"
 :::
 
 ## VALIDATE: Confirm Safe Arrival ✅ {background-color="#27ae60"}
@@ -550,64 +390,121 @@ all_suggestions
 :::
 
 ::: {.notes}
-- 1.5 minutes TOTAL for Validate
+- 20 minutes TOTAL for Validate
 - "Devs know summaries, but miss the psychology"
 - "Plain language = cognitive relief"
 - Transition: "Let's see the impact"
 :::
 
-## The Transformation: Proven Results 📊
+## The Transformation: Measurable Impact 📊 {auto-animate=true}
+
+![](img/summary-report.png){width="90%"}
+
+::: {.notes}
+- 1 minute
+- "This isn't theory - it's production data"
+:::
+
+## Live Demo: Before → After {.center background-color="#2c3e50"}
 
 :::: {.columns}
 ::: {.column width="50%"}
-### Before BID
-- 18 filters, 6 tabs
-- 4.3 min to insight
-- 65% abandonment
-- 31% misinterpret data
+### Before: Death by Dropdown
+```{r}
+#| eval: false
+# 1_init.R - The nightmare
+shinyApp(
+  ui = fluidPage(
+    sidebarPanel(
+      selectInput("year", choices = years),
+      selectInput("quarter", choices = quarters),
+      selectInput("region", choices = regions),
+      # ... 15 more filters
+    )
+  )
+)
+```
+![](img/ui-before.png)
 :::
 
-::: {.column width="50%"}
-### After BID
-- 3 smart filters
-- 45 sec to insight (-82%)
-- 85% completion (+143%)
-- 8% misinterpret (-74%)
+::: {.column width="50%" .fragment}
+### After: Guided Journey
+```{r}
+#| eval: false
+# 3_redesign.R - BID applied
+shinyApp(
+  ui = page_navbar(
+    card(
+      card_header("Executive Summary"),
+      uiOutput("executiveSummary")),
+    # Only 3 smart filters
+    # Progressive disclosure
+  )
+)
+```
+![](img/ui-after.png)
 :::
 ::::
 
-::: {.fragment}
-### One Team's Story:
-*"We thought users wanted more options. Telemetry showed they wanted more guidance. BID framework + {bidux} = 224% increase in weekly active users"*
-:::
-
 ::: {.notes}
-- 1.5 minutes for results
-- "This isn't theory - it's production data"
-- Transition: "Here's how to start"
+- 30 seconds
+- "Let me show you the actual apps"
+- Quick toggle between windows
 :::
 
-## Your Roadmap Forward 🚀 {.center background-color="#2c3e50"}
+## Your Implementation Roadmap 🚀 {.center background-color="#27ae60"}
+
+![](img/bid-framework.png){width="75%"}
 
 ::: {.r-fit-text}
 **"Interfaces Need A Smart Vision"**
 :::
 
-### This Week's Challenge:
-
 1. **Install {bidux}:** `install.packages("bidux")`
-2. **Run telemetry on ONE dashboard:** `bid_notice(telemetry = TRUE)`
+2. **Implement the BID framework** on one of your dashboards
 3. **Share your before/after:** [@jrwinget](https://bsky.app/profile/jrwinget.bsky.social)
-
-::: {.fragment}
-**🎁 First 5 transformations get free 1:1 dashboard review!**
-
-<!-- ![QR for contact](img/qr-combined.png) -->
-:::
+4. **Celebrate the end of death by dropdown!** 🎉
 
 ::: {.notes}
 - 1 minute close
 - "No more death by dropdown!"
+- Transition: "And with that...I want to thank you all for being here"
+:::
+
+## Thank You! {.center background-color="#2c3e50"}
+
+:::: {.columns}
+::: {.column width="33%"}
+![](img/hex-bidux.png)
+:::
+
+::: {.column width="33%"}
+### 📚 Resources
+- [github.com/jrwinget/bidux](https://github.com/jrwinget/bidux)
+- [github.com/jrwinget/bid-framework](https://github.com/jrwinget/bid-framework)
+:::
+
+::: {.column width="33%"}
+### 🤝 Connect
+- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bluesky" viewBox="0 0 16 16">
+  <path d="M3.468 1.948C5.303 3.325 7.276 6.118 8 7.616c.725-1.498 2.698-4.29 4.532-5.668C13.855.955 16 .186 16 2.632c0 .489-.28 4.105-.444 4.692-.572 2.04-2.653 2.561-4.504 2.246 3.236.551 4.06 2.375 2.281 4.2-3.376 3.464-4.852-.87-5.23-1.98-.07-.204-.103-.3-.103-.218 0-.081-.033.014-.102.218-.379 1.11-1.855 5.444-5.231 1.98-1.778-1.825-.955-3.65 2.28-4.2-1.85.315-3.932-.205-4.503-2.246C.28 6.737 0 3.12 0 2.632 0 .186 2.145.955 3.468 1.948"/>
+</svg> [@jrwinget](https://bsky.app/profile/jrwinget.bsky.social)
+- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+</svg> [@jrwinget](https://www.linkedin.com/in/jrwinget/)
+:::
+::::
+
+<br>
+
+::: {.fragment}
+### Special Thanks 🙏
+*To the posit::conf organizers for making this possible*<br>
+*To the Shiny team for the amazing framework*<br>
+*To you for caring about your users*
+:::
+
+::: {.notes}
+- "Thank you!"
 - "Questions?"
-- Thank organizers
 :::
