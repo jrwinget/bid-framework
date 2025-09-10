@@ -39,14 +39,16 @@ and immediately get the urge to close your laptop?**
 - "Welcome to dashboard therapy"
 :::
 
-## Dashboard Support Group {.center background-color="#2c3e50"}
+## Dashboard Support Group {background-color="#2c3e50"}
+
+<div style="margin: 5% 10%;">
 
 :::: {.columns}
 ::: {.column width="50%" .text-xl}
 ### Quick show of hands:
-- Who's built a Shiny app with 10+ filters?
-- Who's had a user ask for "just one more dropdown"?
-- Whose dashboard has more `selectInput()` than insights?
+- Built Shiny app 10+ filters?
+- User asked "one more dropdown"?
+- More `selectInput()` than insights?
 :::
 
 ::: {.column width="50%" .fragment .text-xl}
@@ -56,6 +58,8 @@ and immediately get the urge to close your laptop?**
 *Think of our time together as a little therapy session for dropdown overload*
 :::
 ::::
+
+</div>
 
 ::: {.notes}
 - 20 seconds
@@ -70,15 +74,17 @@ and immediately get the urge to close your laptop?**
 
 ## Why Listen to Me? {background-color="#2c3e50"}
 
+<div style="margin: 5% 10%;">
+
 :::: {.columns}
 ::: {.column width="50%"}
-**PhD in Applied Psychology**
+**PhD in Applied Psychology**<br>
 *How people actually process information*
 
-**Led Shiny teams at scale**
+**Led Shiny teams at scale**<br>
 *Built dashboards people use*
 
-**Created {bidux} package**
+**Created {bidux} package**<br>
 *Your behavioral scientist in the console*
 :::
 
@@ -88,6 +94,8 @@ and immediately get the urge to close your laptop?**
 > "Most dashboard failures aren't technical. They're psychological."
 :::
 ::::
+
+</div>
 
 ::: {.notes}
 - 30 seconds
@@ -101,10 +109,9 @@ and immediately get the urge to close your laptop?**
 
 ## The Problem is Real {background-image="img/ui-before.png" background-size="contain" background-position="right" background-color="#fff"}
 
-::: {.text-box-overlay style="position: absolute; left: 50px; top: 150px; width: 600px;"}
+::: {.absolute left="-50" bottom="200"}
 ### Real client. Real dashboard. Real failure.
 
-Their "comprehensive" solution:
 - 18 filters across 6 tabs
 - Every possible data view
 - Zero user adoption
@@ -222,7 +229,7 @@ ggplot(telemetry_data, aes(x = metric, y = percentage)) +
 
 ## Enter: Behavioral Science {background-color="#3498db"}
 
-<br>
+<div style="margin: 5% 10%;">
 
 ### What is it?
 
@@ -231,16 +238,16 @@ The interdisciplinary study of how people **actually** make decisions<br>
 (Spoiler: irrationally, predictably, consistently)
 :::
 
-<br>
-
 ::: {.fragment}
 ### Applied to Dashboards
 
-- **Cognitive Load Theory**: Too many choices → paralysis
+- **Cognitive Load**: Too many choices
 - **Progressive Disclosure**: Reveal complexity gradually
 - **Framing Effects**: Same data, different story
 - **Choice Architecture**: Guide without restricting
 :::
+
+</div>
 
 ::: {.notes}
 - 30 seconds
@@ -252,10 +259,10 @@ The interdisciplinary study of how people **actually** make decisions<br>
 
 ## The Solution: Your Dashboard Journey 🚗 {background-color="#34495e"}
 
-<br>
+<div style="margin: 5% 10%;">
 
 :::: {.columns}
-::: {.column width="50%"}
+::: {.column width="40%"}
 ### Think of it like a road trip
 
 📍 **Interpret** where you're going<br>
@@ -265,7 +272,7 @@ The interdisciplinary study of how people **actually** make decisions<br>
 ✅ **Validate** safe arrival
 :::
 
-::: {.column width="50%" .fragment}
+::: {.column width="40%" .fragment}
 ### The BID Framework
 
 📍 **Interpret** user needs<br>
@@ -274,9 +281,13 @@ The interdisciplinary study of how people **actually** make decisions<br>
 🗺️ **Structure** information flow<br>
 ✅ **Validate** understanding
 :::
+
+::: {.column width="20%"}
+![](img/bid-framework.png){width="100%"}
+:::
 ::::
 
-![](img/bid-framework.png){.absolute bottom="50" right="50" width="650"}
+</div>
 
 ::: {.notes}
 - 45 seconds
@@ -288,26 +299,24 @@ The interdisciplinary study of how people **actually** make decisions<br>
 
 ## What is {bidux}? {background-color="#2c3e50"}
 
-<br>
+<div style="margin: 5% 10%;">
 
 ### Your behavioral scientist in the console
-
-<br>
 
 ::: {.text-large}
 An R package that:
 
-- ✅ Works with ANY Shiny dashboard (existing or new)
-- ✅ Analyzes telemetry OR works without it
-- ✅ Auto-suggests improvements based on behavioral science
-- ✅ Lets you override with custom parameters
+- ✅ Works with ANY Shiny dashboard
+- ✅ Analyzes telemetry OR works without
+- ✅ Auto-suggests behavioral science improvements
+- ✅ Custom parameter overrides
 :::
 
-<br>
-
-::: {.fragment .text-xl}
+::: {.fragment .text-xl .center}
 **Think of it as your dashboard's therapist**
 :::
+
+</div>
 
 ::: {.notes}
 - 30 seconds
@@ -441,9 +450,9 @@ summary(anticipate_stage)
 :::
 
 ::: {.column width="50%"}
-![Marketing: "75% to goal!" 🎉](img/framing-positive-placeholder.png){style="margin-bottom: 20px;"}
+![Marketing: 🎉](img/ui-gain-frame.png){style="margin-bottom: 20px;"}
 
-![Finance: "25% gap!" 😱](img/framing-negative-placeholder.png)
+![Finance: 😱](img/ui-loss-frame.png)
 :::
 ::::
 
@@ -479,12 +488,20 @@ summary(structure_stage)
 
 ## VALIDATE: Plain Language Wins {background-color="#27ae60"}
 
+<div style="margin: 5% 10%;">
+
 ```{r}
 validate_stage <- bid_validate(previous_stage = structure_stage)
 
 # Generates validation checklist
 summary(validate_stage)
 ```
+
+::: {.fragment}
+![](img/ui-summary.png){.absolute bottom="50" right="100" width="650"}
+:::
+
+</div>
 
 ::: {.notes}
 - 1 minute
@@ -494,6 +511,8 @@ summary(validate_stage)
 :::
 
 ## The Complete Workflow {background-color="#8e44ad"}
+
+<div style="margin: 5% 10%;">
 
 ```{r}
 # Option A - with telemetry (SQLite or JSON)
@@ -518,6 +537,8 @@ report <- bid_interpret(central_question = "What do users need first?") |>
   bid_validate() |>
   bid_report(format = "text", include_diagrams = FALSE)
 ```
+
+</div>
 
 ::: {.notes}
 - 1 minute
@@ -647,6 +668,8 @@ ggplot(metrics_long, aes(x = Metric, y = Value, fill = State)) +
 
 ## Your Turn: Start Today {.center background-color="#3498db"}
 
+<div style="margin: 5% 10%;">
+
 ```{r}
 #| eval: false
 
@@ -674,8 +697,6 @@ bid_concepts("choice overload")
 result$next_steps
 ```
 
-<br>
-
 ::: {.fragment}
 ### Resources:
 - 🔬 **BID Framework**: [github.com/jrwinget/bid-framework](https://github.com/jrwinget/bid-framework)
@@ -689,6 +710,8 @@ result$next_steps
   - 📧 [contact@jrwinget.com](mailto:contact@jrwinget.com)
 :::
 
+</div>
+
 ::: {.notes}
 - 30 seconds
 - "Install from CRAN today"
@@ -700,11 +723,11 @@ result$next_steps
 
 ## One Thing to Remember {.center background-color="#2c3e50"}
 
-<br>
+<div style="margin: 5% 10%;">
 
-:::: {.columns style="text-align: center;"}
+:::: {.columns .center}
 
-::: {.column width="33%" .text-display}
+::: {.column width="40%" .text-display}
 **Dashboards don't need more features.**<br>
 **They need fewer obstacles.**
 
@@ -713,17 +736,18 @@ Let's fix that together!
 :::
 :::
 
-::: {.column width="33%" .fragment}
+::: {.column width="30%" .fragment}
 *Special thanks to the posit::conf organizers,<br>
 the Shiny community,<br>
 and all of you for caring about your users*
 :::
 
-::: {.column width="33%"}
-![](img/hex-bidux.png){class="hex-logo" width="250"}
+::: {.column width="30%"}
+![](img/hex-bidux.png){class="hex-logo" width="200"}
 :::
-
 ::::
+
+</div>
 
 
 ::: {.notes}

@@ -238,20 +238,22 @@ Jeremy Winget, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="dashboard-support-group" class="slide level2 center" data-background-color="#2c3e50">
+<section id="dashboard-support-group" class="slide level2" data-background-color="#2c3e50">
 <h2>Dashboard Support Group</h2>
+<div style="margin: 5% 10%;">
 <div class="columns">
 <div class="column text-xl" style="width:50%;">
 <h3 id="quick-show-of-hands">Quick show of hands:</h3>
 <ul>
-<li>Who’s built a Shiny app with 10+ filters?</li>
-<li>Who’s had a user ask for “just one more dropdown”?</li>
-<li>Whose dashboard has more <code>selectInput()</code> than insights?</li>
+<li>Built Shiny app 10+ filters?</li>
+<li>User asked “one more dropdown”?</li>
+<li>More <code>selectInput()</code> than insights?</li>
 </ul>
 </div><div class="column fragment text-xl" style="width:50%;">
 <h3 id="welcome-youre-among-friends">Welcome! You’re among friends</h3>
 <p>👋 <strong>Hi, I’m Jeremy! Social psychologist turned full stack engineer</strong><br> <em>Think of our time together as a little therapy session for dropdown overload</em></p>
 </div></div>
+</div>
 <aside class="notes">
 <ul>
 <li>20 seconds</li>
@@ -277,17 +279,19 @@ Jeremy Winget, PhD
 </section>
 <section id="why-listen-to-me" class="slide level2" data-background-color="#2c3e50">
 <h2>Why Listen to Me?</h2>
+<div style="margin: 5% 10%;">
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>PhD in Applied Psychology</strong> <em>How people actually process information</em></p>
-<p><strong>Led Shiny teams at scale</strong> <em>Built dashboards people use</em></p>
-<p><strong>Created {bidux} package</strong> <em>Your behavioral scientist in the console</em></p>
+<p><strong>PhD in Applied Psychology</strong><br> <em>How people actually process information</em></p>
+<p><strong>Led Shiny teams at scale</strong><br> <em>Built dashboards people use</em></p>
+<p><strong>Created {bidux} package</strong><br> <em>Your behavioral scientist in the console</em></p>
 </div><div class="column fragment" style="width:50%;">
 <h3 id="core-realization">Core Realization</h3>
 <blockquote>
 <p>“Most dashboard failures aren’t technical. They’re psychological.”</p>
 </blockquote>
 </div></div>
+</div>
 <aside class="notes">
 <ul>
 <li>30 seconds</li>
@@ -312,9 +316,13 @@ Jeremy Winget, PhD
 </section>
 <section id="the-problem-is-real" class="slide level2" data-background-image="img/ui-before.png" data-background-size="contain" data-background-position="right" data-background-color="#fff">
 <h2>The Problem is Real</h2>
-<section id="real-client.-real-dashboard.-real-failure." class="text-box-overlay" style="position: absolute; left: 50px; top: 150px; width: 600px;">
+<section id="real-client.-real-dashboard.-real-failure." class="absolute" style="left: -50px; bottom: 200px; ">
 <h3>Real client. Real dashboard. Real failure.</h3>
-<p>Their “comprehensive” solution: - 18 filters across 6 tabs - Every possible data view - Zero user adoption</p>
+<ul>
+<li>18 filters across 6 tabs</li>
+<li>Every possible data view</li>
+<li>Zero user adoption</li>
+</ul>
 <p><br></p>
 <div class="fragment">
 <p><strong>We ran telemetry for 30 days…</strong></p>
@@ -375,20 +383,20 @@ Jeremy Winget, PhD
 </section>
 <section id="enter-behavioral-science" class="slide level2" data-background-color="#3498db">
 <h2>Enter: Behavioral Science</h2>
-<p><br></p>
+<div style="margin: 5% 10%;">
 <h3 id="what-is-it">What is it?</h3>
 <div class="text-large">
 <p>The interdisciplinary study of how people <strong>actually</strong> make decisions<br> (Spoiler: irrationally, predictably, consistently)</p>
 </div>
-<p><br></p>
 <div class="fragment">
 <h3 id="applied-to-dashboards">Applied to Dashboards</h3>
 <ul>
-<li><strong>Cognitive Load Theory</strong>: Too many choices → paralysis</li>
+<li><strong>Cognitive Load</strong>: Too many choices</li>
 <li><strong>Progressive Disclosure</strong>: Reveal complexity gradually</li>
 <li><strong>Framing Effects</strong>: Same data, different story</li>
 <li><strong>Choice Architecture</strong>: Guide without restricting</li>
 </ul>
+</div>
 </div>
 <aside class="notes">
 <ul>
@@ -412,16 +420,18 @@ Jeremy Winget, PhD
 </section>
 <section id="the-solution-your-dashboard-journey" class="slide level2" data-background-color="#34495e">
 <h2>The Solution: Your Dashboard Journey 🚗</h2>
-<p><br></p>
+<div style="margin: 5% 10%;">
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:40%;">
 <h3 id="think-of-it-like-a-road-trip">Think of it like a road trip</h3>
 <p>📍 <strong>Interpret</strong> where you’re going<br> ⚠️ <strong>Notice</strong> the warning lights<br> 🌦️ <strong>Anticipate</strong> weather changes<br> 🗺️ <strong>Structure</strong> the best route<br> ✅ <strong>Validate</strong> safe arrival</p>
-</div><div class="column fragment" style="width:50%;">
+</div><div class="column fragment" style="width:40%;">
 <h3 id="the-bid-framework">The BID Framework</h3>
 <p>📍 <strong>Interpret</strong> user needs<br> ⚠️ <strong>Notice</strong> friction points<br> 🌦️ <strong>Anticipate</strong> cognitive biases<br> 🗺️ <strong>Structure</strong> information flow<br> ✅ <strong>Validate</strong> understanding</p>
+</div><div class="column" style="width:20%;">
+<p><img data-src="img/bid-framework.png" style="width:100.0%"></p>
 </div></div>
-<p><img data-src="img/bid-framework.png" class="absolute" style="bottom: 50px; right: 50px; width: 650px; "></p>
+</div>
 <aside class="notes">
 <ul>
 <li>45 seconds</li>
@@ -444,22 +454,21 @@ Jeremy Winget, PhD
 </section>
 <section id="what-is-bidux" class="slide level2" data-background-color="#2c3e50">
 <h2>What is {bidux}?</h2>
-<p><br></p>
-<h3 id="your-behavioral-scientist-in-the-console">Your behavioral scientist in the console</h3>
-<p><br></p>
+<section id="your-behavioral-scientist-in-the-console" style="margin: 5% 10%;">
+<h3>Your behavioral scientist in the console</h3>
 <div class="text-large">
 <p>An R package that:</p>
 <ul>
-<li>✅ Works with ANY Shiny dashboard (existing or new)</li>
-<li>✅ Analyzes telemetry OR works without it</li>
-<li>✅ Auto-suggests improvements based on behavioral science</li>
-<li>✅ Lets you override with custom parameters</li>
+<li>✅ Works with ANY Shiny dashboard</li>
+<li>✅ Analyzes telemetry OR works without</li>
+<li>✅ Auto-suggests behavioral science improvements</li>
+<li>✅ Custom parameter overrides</li>
 </ul>
 </div>
-<p><br></p>
-<div class="fragment text-xl">
+<div class="fragment text-xl center">
 <p><strong>Think of it as your dashboard’s therapist</strong></p>
 </div>
+</section>
 <aside class="notes">
 <ul>
 <li>30 seconds</li>
@@ -576,7 +585,7 @@ Stage Data:
    evidence : Users report confusion and telemetry shows low engagement 
    suggestions : Ensure your problem description is specific and supported by strong evidence 
 
-Generated: 2025-09-09 18:25:21 </code></pre>
+Generated: 2025-09-10 12:45:39 </code></pre>
 </div>
 </div>
 </div><div class="column" style="width:45%;">
@@ -648,20 +657,20 @@ Stage Data:
    previous_theory : Cognitive Load Theory 
    suggestions : anchoring mitigation: Always show reference points like previous period, budg... 
 
-Generated: 2025-09-09 18:25:22 </code></pre>
+Generated: 2025-09-10 12:45:39 </code></pre>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center" style="margin-bottom: 20px;">
 <figure>
-<p><img data-src="img/framing-positive-placeholder.png"></p>
-<figcaption>Marketing: “75% to goal!” 🎉</figcaption>
+<p><img data-src="img/ui-gain-frame.png"></p>
+<figcaption>Marketing: 🎉</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/framing-negative-placeholder.png"></p>
-<figcaption>Finance: “25% gap!” 😱</figcaption>
+<p><img data-src="img/ui-loss-frame.png"></p>
+<figcaption>Finance: 😱</figcaption>
 </figure>
 </div>
 </div></div>
@@ -717,7 +726,7 @@ Stage Data:
    previous_bias : anchoring: Consider how anchoring might affect user interpretation; framing: ... 
    suggestions : list(concept = "Cognitive Load Theory", suggestions = list(list(title = "Limi... 
 
-Generated: 2025-09-09 18:25:22 </code></pre>
+Generated: 2025-09-10 12:45:40 </code></pre>
 </div>
 </div>
 <div class="fragment">
@@ -745,6 +754,7 @@ Generated: 2025-09-09 18:25:22 </code></pre>
 </section>
 <section id="validate-plain-language-wins" class="slide level2" data-background-color="#27ae60">
 <h2>VALIDATE: Plain Language Wins</h2>
+<div style="margin: 5% 10%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a>validate_stage <span class="ot">&lt;-</span> <span class="fu">bid_validate</span>(<span class="at">previous_stage =</span> structure_stage)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -780,7 +790,11 @@ Stage Data:
    previous_concepts : Cognitive Load Theory, Visual Hierarchy, Progressive Disclosure 
    suggestions : Consider adding user empowerment tools to enhance collaboration 
 
-Generated: 2025-09-09 18:25:22 </code></pre>
+Generated: 2025-09-10 12:45:40 </code></pre>
+</div>
+</div>
+<div class="fragment">
+<p><img data-src="img/ui-summary.png" class="absolute" style="bottom: 50px; right: 100px; width: 650px; "></p>
 </div>
 </div>
 <aside class="notes">
@@ -804,6 +818,7 @@ Generated: 2025-09-09 18:25:22 </code></pre>
 </section>
 <section id="the-complete-workflow" class="slide level2" data-background-color="#8e44ad">
 <h2>The Complete Workflow</h2>
+<div style="margin: 5% 10%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a><span class="co"># Option A - with telemetry (SQLite or JSON)</span></span>
 <span id="cb19-2"><a href=""></a>issues <span class="ot">&lt;-</span> <span class="fu">bid_telemetry</span>(<span class="st">"dashboard_telemetry.sqlite"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1094,6 +1109,7 @@ Stage 2 (Notice) completed. (40% complete)
   - Consider adding user empowerment tools to enhance collaboration </code></pre>
 </div>
 </div>
+</div>
 <aside class="notes">
 <ul>
 <li>1 minute</li>
@@ -1236,6 +1252,7 @@ Stage 2 (Notice) completed. (40% complete)
 </section>
 <section id="your-turn-start-today" class="slide level2 center" data-background-color="#3498db">
 <h2>Your Turn: Start Today</h2>
+<div style="margin: 5% 10%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href=""></a><span class="co"># Install from CRAN</span></span>
 <span id="cb46-2"><a href=""></a><span class="fu">install.packages</span>(<span class="st">"bidux"</span>)</span>
@@ -1260,7 +1277,6 @@ Stage 2 (Notice) completed. (40% complete)
 <span id="cb46-21"><a href=""></a><span class="co"># Get your next steps</span></span>
 <span id="cb46-22"><a href=""></a>result<span class="sc">$</span>next_steps</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><br></p>
 <div class="fragment">
 <h3 id="resources">Resources:</h3>
 <ul>
@@ -1280,6 +1296,7 @@ Stage 2 (Notice) completed. (40% complete)
 <li>📧 <a href="mailto:contact@jrwinget.com">contact@jrwinget.com</a></li>
 </ul></li>
 </ul>
+</div>
 </div>
 <aside class="notes">
 <ul>
@@ -1304,18 +1321,19 @@ Stage 2 (Notice) completed. (40% complete)
 </section>
 <section id="one-thing-to-remember" class="slide level2 center" data-background-color="#2c3e50">
 <h2>One Thing to Remember</h2>
-<p><br></p>
-<div class="columns" style="text-align: center;">
-<div class="column text-display" style="width:33%;">
+<div style="margin: 5% 10%;">
+<div class="columns center">
+<div class="column text-display" style="width:40%;">
 <p><strong>Dashboards don’t need more features.</strong><br> <strong>They need fewer obstacles.</strong></p>
 <div class="fragment text-xl">
 <p>Let’s fix that together!</p>
 </div>
-</div><div class="column fragment" style="width:33%;">
+</div><div class="column fragment" style="width:30%;">
 <p><em>Special thanks to the posit::conf organizers,<br> the Shiny community,<br> and all of you for caring about your users</em></p>
-</div><div class="column" style="width:33%;">
-<p><img data-src="img/hex-bidux.png" class="hex-logo" width="250"></p>
+</div><div class="column" style="width:30%;">
+<p><img data-src="img/hex-bidux.png" class="hex-logo" width="200"></p>
 </div></div>
+</div>
 <aside class="notes">
 <ul>
 <li>20 seconds</li>

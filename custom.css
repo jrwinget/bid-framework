@@ -16,23 +16,29 @@
     --medium-gray: #5A6C7D;
     --amber: #FFB347;
 
+    --primary-text: var(--dark-blue);     /* dark neutral for main text and headings */
+    --secondary-bg: var(--warm-white);    /* light neutral for background balance */
+    --secondary-bg-alt: var(--warm-gray); /* alternative light neutral */
+    --accent-primary: var(--indigo);      /* brand color for emphasis */
+    --accent-secondary: var(--coral);     /* secondary accent for highlights */
+
     /* typography */
     --font-sans: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, sans-serif;
     --font-mono: 'SF Mono', 'Cascadia Code', Monaco, monospace;
 
-    /* presentation type scale - optimized for recording/mobile */
+    /* presentation type scale  */
     --fs-display: 72px;
-    --fs-h1: 56px;
-    --fs-h2: 42px;
-    --fs-h3: 32px;
-    --fs-body: 28px;
-    --fs-code: 22px;
-    --fs-small: 24px;
+    --fs-h1: 56px;     /* 40+ for headings */
+    --fs-h2: 42px;     /* 40+ for headings */
+    --fs-h3: 32px;     /* min 24pt, prefer higher for headings */
+    --fs-body: 30px;   /* prefer 28-32 for body text */
+    --fs-code: 24px;   /* min 20pt, increased to 24pt */
+    --fs-small: 24px;  /* min 24pt baseline */
 
-    /* line heights */
+    /* line heights - 1.2-1.4x for body text */
     --lh-display: 1.1;
     --lh-heading: 1.3;
-    --lh-body: 1.5;
+    --lh-body: 1.3;    /* within 1.2-1.4 range */
 
     /* spacing scale */
     --space-1: 4px;
@@ -74,13 +80,13 @@
     text-align: center;
 }
 
-/* headings */
+/* headings - 1.5-2 line spaces (~32-40px) before body text */
 .reveal h1 {
     font-size: var(--fs-h1) !important;
     line-height: var(--lh-heading) !important;
     color: var(--warm-white) !important;
     font-weight: 700 !important;
-    margin-bottom: var(--space-6) !important;
+    margin-bottom: var(--space-7) !important; /* 48px = 1.5-2 line spaces */
 }
 
 .reveal h2 {
@@ -88,7 +94,7 @@
     line-height: var(--lh-heading) !important;
     color: var(--warm-white) !important;
     font-weight: 600 !important;
-    margin-bottom: var(--space-5) !important;
+    margin-bottom: var(--space-6) !important; /* 32px = proper heading spacing */
 }
 
 .reveal h3 {
@@ -96,15 +102,16 @@
     line-height: var(--lh-heading) !important;
     color: var(--indigo-light) !important;
     font-weight: 600 !important;
-    margin-bottom: var(--space-4) !important;
+    margin-bottom: var(--space-6) !important; /* 32px = proper heading spacing */
 }
 
-/* body text */
+/* body text - prefer 28-32pt, line spacing 1.2-1.4x */
 .reveal p,
 .reveal li {
     font-size: var(--fs-body) !important;
     line-height: var(--lh-body) !important;
     margin-bottom: var(--space-4) !important;
+    color: var(--primary-text) !important;
 }
 
 .reveal .columns {
@@ -122,20 +129,21 @@
     margin-bottom: var(--space-3) !important;
 }
 
-/* code blocks */
+/* code blocks - min 20pt, visually distinct background */
 .reveal pre {
     font-size: var(--fs-code) !important;
-    background: var(--warm-gray) !important;
+    background: var(--secondary-bg-alt) !important;
     border-radius: var(--radius-md) !important;
-    padding: var(--space-4) !important;
+    padding: var(--space-5) !important; /* increased padding for better visual distinction */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    border-left: 4px solid var(--accent-primary) !important; /* accent color for visual emphasis */
 }
 
 .reveal code {
     font-family: var(--font-mono) !important;
     font-size: var(--fs-code) !important;
-    background: var(--warm-gray);
-    padding: 2px 6px;
+    background: var(--secondary-bg-alt);
+    padding: var(--space-1) var(--space-2); /* consistent spacing tokens */
     border-radius: var(--radius-sm);
 }
 
@@ -146,22 +154,22 @@
 
 /* blockquotes */
 .reveal blockquote {
-    background: var(--warm-gray);
-    border-left: 4px solid var(--indigo);
+    background: var(--secondary-bg-alt);
+    border-left: 4px solid var(--accent-primary);
     padding: var(--space-4) var(--space-5);
     font-style: italic;
     margin: var(--space-6) 0;
     border-radius: var(--radius-md);
 }
 
-/* links */
+/* links - using accent colors for emphasis */
 .reveal a {
     color: var(--indigo-light) !important;
     text-decoration: underline;
 }
 
 .reveal a:hover {
-    color: var(--coral) !important;
+    color: var(--accent-secondary) !important;
 }
 
 /* background color classes */
@@ -181,13 +189,13 @@
     background-color: var(--teal) !important;
 }
 
-/* txt on dark backgrounds */
+/* txt on dark backgrounds - WCAG AA compliant */
 .reveal section[data-background-color="#2C3E50"] h1,
 .reveal section[data-background-color="#2C3E50"] h2,
 .reveal section[data-background-color="#2C3E50"] h3,
 .reveal section[data-background-color="#2C3E50"] p,
 .reveal section[data-background-color="#2C3E50"] li {
-    color: var(--warm-white) !important;
+    color: var(--warm-white) !important; /* high contrast: #FDFCFA on #2C3E50 */
 }
 
 .reveal section[data-background-color="#3498db"] h1,
@@ -289,25 +297,26 @@
     font-weight: 700 !important;
 }
 
-/* callout boxes */
+/* callout boxes - WCAG AA compliant backgrounds */
 .reveal .callout {
-    background: var(--warm-gray);
-    border-left: 4px solid var(--indigo);
+    background: var(--secondary-bg-alt);
+    border-left: 4px solid var(--accent-primary);
     padding: var(--space-4) var(--space-5);
     margin: var(--space-5) 0;
     border-radius: var(--radius-md);
+    color: var(--primary-text) !important; /* ensure text contrast */
 }
 
 .reveal .callout-tip {
-    border-left-color: var(--teal);
+    border-left-color: var(--teal); /* sufficient contrast as accent border */
 }
 
 .reveal .callout-warning {
-    border-left-color: var(--amber);
+    border-left-color: var(--amber); /* sufficient contrast as accent border */
 }
 
 .reveal .callout-important {
-    border-left-color: var(--coral);
+    border-left-color: var(--accent-secondary); /* coral for important callouts */
 }
 
 /* slide buttons */
