@@ -50,7 +50,7 @@ data$Revenue_YoY <- ifelse(
   NA
 )
 
-data$Revenue_Target <- 150000
+data$Revenue_Target <- 530000
 data$Revenue_Gap <- data$Revenue_Target - data$Revenue
 data$Revenue_Progress <- round((data$Revenue / data$Revenue_Target) * 100, 1)
 
@@ -136,10 +136,10 @@ ui <- page_navbar(
               condition = "input.metric_filter != 'satisfaction'",
               radioGroupButtons(
                 "framing",
-                label = "",
+                label = "Framing",
                 choices = c(
-                  `<i class='fas fa-trophy'></i> Progress Achieved` = "positive",
-                  `<i class='fas fa-target'></i> Gap to Target` = "negative"
+                  "Progress (Gain)" = "positive",
+                  "Gap (Loss)" = "negative"
                 ),
                 selected = "positive",
                 status = "primary",
@@ -298,7 +298,6 @@ server <- function(input, output, session) {
     total_revenue <- sum(df$Revenue)
     avg_satisfaction <- round(mean(df$Satisfaction), 1)
 
-    # Identify patterns
     problem_region <- df |>
       group_by(Region) |>
       summarize(Satisfaction = mean(Satisfaction)) |>
@@ -311,7 +310,6 @@ server <- function(input, output, session) {
       arrange(desc(Revenue)) |>
       slice(1)
 
-    # Generate contextual summary
     if (avg_satisfaction < 70) {
       status_icon <- icon("exclamation-triangle", class = "text-danger")
       status_text <- "Urgent attention needed"
@@ -348,7 +346,7 @@ server <- function(input, output, session) {
     ))
   })
 
-  # Revenue Plot with echarts4r (bidux recommendation for interactivity)
+  # Revenue Plot with framing clarification
   output$revenuePlot <- renderEcharts4r({
     df <- filteredData()
 
@@ -358,53 +356,64 @@ server <- function(input, output, session) {
         summarize(
           Revenue = sum(Revenue),
           Target = first(Revenue_Target),
-          Gap = first(Revenue_Gap),
-          Progress = mean(Revenue_Progress)
+          .groups = "drop"
+        ) |>
+        mutate(
+          Progress = Revenue,
+          GapAbs = abs(Target - Revenue)
         )
 
       if (input$framing == "negative") {
-        # Show gap to target
+        # Loss frame (Gap)
         plot_data |>
-          e_charts(Region) |>
-          e_bar(Gap, name = "Gap to Target", color = "#F44336") |>
-          e_tooltip(trigger = "axis", formatter = "{b}<br/>Gap: ${c}") |>
-          e_title("Revenue Gap to Target") |>
-          e_legend(show = FALSE) |>
-          e_y_axis(formatter = e_axis_formatter("currency"))
-      } else {
-        # Show progress achieved with color coding
-        plot_data |>
-          mutate(
-            Color = case_when(
-              Region == "West" ~ "#FFA726",
-              Revenue > Target ~ "#4CAF50",
-              TRUE ~ "#2196F3"
-            )
-          ) |>
           e_charts(Region) |>
           e_bar(
-            Revenue,
-            name = "Revenue",
+            GapAbs,
+            name = "Revenue (Gap / loss frame)",
+            itemStyle = list(
+              color = htmlwidgets::JS("
+                function(params) {
+                  var gap = params.data[1];
+                  if(gap > 0) return '#FFA726'; // shortfall
+                  return '#4CAF50'; // surplus
+                }
+              ")
+            )
+          ) |>
+          e_tooltip(
+            trigger = "axis",
+            formatter = htmlwidgets::JS("
+              function(params) {
+                var gap = params[0].data[2]; // signed Gap
+                if(gap > 0) {
+                  return params[0].name + '<br/>Shortfall: $' + gap.toLocaleString();
+                } else if(gap < 0) {
+                  return params[0].name + '<br/>Surplus: $' + Math.abs(gap).toLocaleString();
+                } else {
+                  return params[0].name + '<br/>On Target';
+                }
+              }
+            ")
+          ) |>
+          e_title('Gap to Target (Loss Frame)') |>
+          e_legend(show = FALSE) |>
+          e_y_axis(formatter = e_axis_formatter('currency'))
+      } else {
+        # Gain frame (Progress)
+        plot_data |>
+          e_charts(Region) |>
+          e_bar(
+            Progress,
+            name = "Revenue (Progress / gain frame)",
             itemStyle = list(
               color = htmlwidgets::JS(
                 "function(params) {
-              var colors = {
-                'North': '#4CAF50',
-                'East': '#4CAF50',
-                'South': '#2196F3',
-                'West': '#FFA726',
-                'Central': '#2196F3'
-              };
-              return colors[params.name];
-            }"
+                  var original = params.data[1];
+                  if(original > 530000) return '#FFA726'; // shortfall
+                  return '#4CAF50';
+                }"
               )
             )
-          ) |>
-          e_line(
-            Target,
-            name = "Target",
-            color = "#666",
-            lineStyle = list(type = "dashed")
           ) |>
           e_tooltip(
             trigger = "axis",
@@ -420,12 +429,12 @@ server <- function(input, output, session) {
               }"
             )
           ) |>
-          e_title("Revenue Performance") |>
-          e_legend(top = 30) |>
+          e_title("Progress Achieved (Gain Frame)") |>
+          e_legend(show = FALSE) |>
           e_y_axis(formatter = e_axis_formatter("currency"))
       }
     } else {
-      # Single region - show by product
+      # Single region view
       plot_data <- df |>
         group_by(Product) |>
         summarize(Revenue = sum(Revenue))
@@ -440,7 +449,7 @@ server <- function(input, output, session) {
     }
   })
 
-  # Satisfaction Plot with echarts4r
+  # Satisfaction Plot
   output$satisfactionPlot <- renderEcharts4r({
     df <- filteredData()
 
@@ -451,38 +460,58 @@ server <- function(input, output, session) {
           Satisfaction = round(mean(Satisfaction), 1),
           .groups = "drop"
         ) |>
-        mutate(Target = 75)
+        mutate(
+          Target = 75,
+          Progress = Satisfaction,
+          GapAbs = abs(Target - Satisfaction)
+        )
 
-      plot_data |>
-        e_charts(Region) |>
-        e_bar(
-          Satisfaction,
-          name = "Satisfaction",
-          itemStyle = list(
-            color = htmlwidgets::JS(
-              "function(params) {
-                if(params.value < 70) return '#F44336';
-                if(params.value < 75) return '#FFA726';
-                return '#4CAF50';
-              }"
+
+      if (input$framing == "negative") {
+        # Loss frame (Gap)
+        plot_data |>
+          e_charts(Region) |>
+          e_bar(
+            GapAbs,
+            name = "Satisfaction (Gap / loss frame)",
+            itemStyle = list(
+              color = htmlwidgets::JS(
+                "function(params) {
+                  if(params.value < 0) return '#F44336';
+                  if(params.value < .1) return '#FFA726';
+                  return '#4CAF50';
+                }"
+              )
             )
-          )
-        ) |>
-        e_line(
-          Target, # Now this column exists
-          name = "Target",
-          color = "#666",
-          lineStyle = list(type = "dashed")
-        ) |>
-        e_tooltip(
-          trigger = "axis",
-          formatter = "{b}<br/>Satisfaction: {c}%"
-        ) |>
-        e_title("Customer Satisfaction") |>
-        e_legend(top = 30) |>
-        e_y_axis(min = 0, max = 100, formatter = "{value}%")
+          ) |>
+          e_tooltip(trigger = "axis", formatter = "{b}<br/>Satisfaction: {c}%") |>
+          e_title("Gap to Target (Loss Frame)") |>
+          e_legend(show = FALSE) |>
+          e_y_axis(min = 0, max = 100, formatter = "{value}%")
+      } else {
+        # Gain frame (Progress)
+        plot_data |>
+          e_charts(Region) |>
+          e_bar(
+            Progress,
+            name = "Satisfaction (Progress / gain frame)",
+            itemStyle = list(
+              color = htmlwidgets::JS(
+                "function(params) {
+                  if(params.value < 70) return '#F44336';
+                  if(params.value < 75) return '#FFA726';
+                  return '#4CAF50';
+                }"
+              )
+            )
+          ) |>
+          e_tooltip(trigger = "axis", formatter = "{b}<br/>Satisfaction: {c}%") |>
+          e_title("Progress Achieved (Gain Frame)") |>
+          e_legend(show = FALSE) |>
+          e_y_axis(min = 0, max = 100, formatter = "{value}%")
+      }
     } else {
-      # Single region - show by product
+      # Single region view
       plot_data <- df |>
         group_by(Product) |>
         summarize(Satisfaction = round(mean(Satisfaction), 1))
@@ -490,10 +519,7 @@ server <- function(input, output, session) {
       plot_data |>
         e_charts(Product) |>
         e_bar(Satisfaction, name = "Satisfaction") |>
-        e_tooltip(
-          trigger = "axis",
-          formatter = "{b}<br/>Satisfaction: {c}%"
-        ) |>
+        e_tooltip(trigger = "axis", formatter = "{b}<br/>Satisfaction: {c}%") |>
         e_title(paste("Satisfaction by Product -", input$region_filter)) |>
         e_legend(show = FALSE) |>
         e_y_axis(min = 0, max = 100, formatter = "{value}%")
@@ -520,6 +546,15 @@ server <- function(input, output, session) {
       as.character(change_icon),
       change_text
     ))
+  })
+
+  # Framing narrative (gain vs. loss) under chart
+  output$framingNarrative <- renderUI({
+    if (input$framing == "negative") {
+      HTML("<small><em>Loss Frame:</em> Highlights the remaining shortfall, often triggering urgency and risk-avoidance behaviors.</small>")
+    } else {
+      HTML("<small><em>Gain Frame:</em> Highlights progress toward goals, often motivating momentum and confidence.</small>")
+    }
   })
 
   # Contextual insights for satisfaction
@@ -550,7 +585,6 @@ server <- function(input, output, session) {
   output$recommendations <- renderUI({
     df <- filteredData()
 
-    # Analyze patterns
     low_satisfaction <- df |>
       group_by(Region) |>
       summarize(Satisfaction = mean(Satisfaction)) |>
@@ -601,7 +635,7 @@ server <- function(input, output, session) {
     tags$ul(class = "mb-0", recommendations)
   })
 
-  # Performance table with reactable (bidux recommendation)
+  # Performance table with reactable
   output$performanceTable <- renderReactable({
     df <- filteredData() |>
       group_by(Region, Product) |>
@@ -647,30 +681,6 @@ server <- function(input, output, session) {
             } else {
               list(color = "#FFA726")
             }
-          },
-          cell = function(value) {
-            width <- paste0(value, "%")
-            bar_color <- if (value >= 75) {
-              "#4CAF50"
-            } else if (value < 70) {
-              "#F44336"
-            } else {
-              "#FFA726"
-            }
-
-            div(
-              class = "d-flex align-items-center",
-              div(
-                style = list(
-                  background = bar_color,
-                  width = width,
-                  height = "20px",
-                  marginRight = "8px",
-                  borderRadius = "3px"
-                )
-              ),
-              span(paste0(value, "%"))
-            )
           }
         ),
         YoY_Growth = colDef(
@@ -696,7 +706,7 @@ server <- function(input, output, session) {
     )
   })
 
-  # Trend plot - FIXED to add Target column
+  # Trend plot
   output$trendPlot <- renderEcharts4r({
     trend_data <- data |>
       filter(Year == current_year) |>
@@ -710,12 +720,7 @@ server <- function(input, output, session) {
     trend_data |>
       e_charts(Quarter) |>
       e_line(Revenue, name = "Revenue", y_index = 0, color = "#4CAF50") |>
-      e_line(
-        Satisfaction,
-        name = "Satisfaction",
-        y_index = 1,
-        color = "#2196F3"
-      ) |>
+      e_line(Satisfaction, name = "Satisfaction", y_index = 1, color = "#2196F3") |>
       e_tooltip(trigger = "axis") |>
       e_title("Quarterly Trends") |>
       e_legend(top = 30) |>
@@ -723,7 +728,7 @@ server <- function(input, output, session) {
       e_y_axis(index = 1, max = 100, formatter = "{value}%")
   })
 
-  # Performance matrix plot
+  # Performance matrix
   output$matrixPlot <- renderEcharts4r({
     matrix_data <- data |>
       filter(Year == current_year, Quarter == current_quarter) |>
@@ -733,14 +738,11 @@ server <- function(input, output, session) {
         Satisfaction = mean(Satisfaction)
       ) |>
       mutate(
-        Size = Revenue / 1000, # Scale for bubble size
+        Size = Revenue / 1000,
         Category = case_when(
-          Revenue > median(Revenue) & Satisfaction > median(Satisfaction) ~
-            "Star",
-          Revenue > median(Revenue) & Satisfaction <= median(Satisfaction) ~
-            "Cash Cow",
-          Revenue <= median(Revenue) & Satisfaction > median(Satisfaction) ~
-            "Question Mark",
+          Revenue > median(Revenue) & Satisfaction > median(Satisfaction) ~ "Star",
+          Revenue > median(Revenue) & Satisfaction <= median(Satisfaction) ~ "Cash Cow",
+          Revenue <= median(Revenue) & Satisfaction > median(Satisfaction) ~ "Question Mark",
           TRUE ~ "Dog"
         )
       )
@@ -769,23 +771,18 @@ server <- function(input, output, session) {
         )
       ) |>
       e_title("Performance Matrix") |>
-      e_x_axis(
-        name = "Revenue ($)",
-        formatter = e_axis_formatter("currency")
-      ) |>
+      e_x_axis(name = "Revenue ($)", formatter = e_axis_formatter("currency")) |>
       e_y_axis(name = "Satisfaction (%)", max = 100) |>
       e_visual_map(
         min = 60,
         max = 90,
         dimension = 1,
         show = FALSE,
-        inRange = list(
-          color = c("#F44336", "#FFA726", "#4CAF50")
-        )
+        inRange = list(color = c("#F44336", "#FFA726", "#4CAF50"))
       )
   })
 
-  # Toggle details button - FIXED icon() usage
+  # Toggle details button
   observeEvent(input$toggle_details, {
     current_label <- ifelse(
       input$toggle_details %% 2 == 1,
@@ -802,11 +799,11 @@ server <- function(input, output, session) {
       session,
       "toggle_details",
       label = current_label,
-      icon = icon(current_icon_name) # Fixed: pass string to icon()
+      icon = icon(current_icon_name)
     )
   })
 
-  # Help modal with behavioral insights
+  # Help modal
   observeEvent(input$help, {
     showModal(modalDialog(
       title = "Dashboard Guide",
@@ -814,38 +811,15 @@ server <- function(input, output, session) {
       tags$div(
         tags$h5("This dashboard uses behavioral science principles:"),
         tags$ul(
-          tags$li(
-            tags$strong("Progressive Disclosure:"),
-            " Start with summary, reveal details on demand"
-          ),
-          tags$li(
-            tags$strong("Cognitive Load Reduction:"),
-            " Only 3 primary filters instead of 18"
-          ),
-          tags$li(
-            tags$strong("Framing Effects:"),
-            " Toggle between progress/gap perspectives"
-          ),
-          tags$li(
-            tags$strong("F-Pattern Reading:"),
-            " Key insights placed top-left"
-          ),
-          tags$li(
-            tags$strong("Narrative Bias:"),
-            " Plain language summaries tell a story"
-          )
+          tags$li(tags$strong("Progressive Disclosure:"), " Start with summary, reveal details on demand"),
+          tags$li(tags$strong("Cognitive Load Reduction:"), " Only 3 primary filters instead of 18"),
+          tags$li(tags$strong("Framing Effects:"), " Toggle between progress/gap perspectives"),
+          tags$li(tags$strong("F-Pattern Reading:"), " Key insights placed top-left"),
+          tags$li(tags$strong("Narrative Bias:"), " Plain language summaries tell a story")
         ),
         tags$hr(),
-        tags$p(
-          "Average time to insight: ",
-          tags$strong("45 seconds"),
-          " (reduced from 4.3 minutes)"
-        ),
-        tags$p(
-          "Powered by ",
-          tags$code("bidux"),
-          " behavioral insights framework"
-        )
+        tags$p("Average time to insight: ", tags$strong("45 seconds"), " (reduced from 4.3 minutes)"),
+        tags$p("Powered by ", tags$code("bidux"), " behavioral insights framework")
       ),
       footer = modalButton("Got it!")
     ))
@@ -860,6 +834,7 @@ server <- function(input, output, session) {
     )
   })
 }
+
 
 # Add custom CSS for better visual hierarchy (BID recommendation)
 shinyApp(
