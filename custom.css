@@ -16,11 +16,11 @@
     --medium-gray: #5A6C7D;
     --amber: #FFB347;
 
-    --primary-text: var(--dark-blue);     /* dark neutral for main text and headings */
-    --secondary-bg: var(--warm-white);    /* light neutral for background balance */
-    --secondary-bg-alt: var(--warm-gray); /* alternative light neutral */
-    --accent-primary: var(--indigo);      /* brand color for emphasis */
-    --accent-secondary: var(--coral);     /* secondary accent for highlights */
+    --primary-text: var(--dark-blue);
+    --secondary-bg: var(--warm-white);
+    --secondary-bg-alt: var(--warm-gray);
+    --accent-primary: var(--indigo);
+    --accent-secondary: var(--coral);
 
     /* typography */
     --font-sans: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, sans-serif;
@@ -38,7 +38,7 @@
     /* line heights - 1.2-1.4x for body text */
     --lh-display: 1.1;
     --lh-heading: 1.3;
-    --lh-body: 1.3;    /* within 1.2-1.4 range */
+    --lh-body: 1.3;
 
     /* spacing scale */
     --space-1: 4px;
@@ -63,7 +63,6 @@
 }
 
 /* ========== reveal.js overrides ========== */
-
 /* base styles */
 .reveal {
     font-family: var(--font-sans) !important;
@@ -73,6 +72,52 @@
 
 .reveal .slides {
     text-align: left;
+}
+
+/* title slide layout - right-aligned content */
+.reveal .quarto-title-block {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    text-align: center !important;
+    height: 100% !important;
+}
+
+.reveal .quarto-title-block h1.title {
+    font-size: var(--fs-h1) !important;
+    color: var(--warm-white) !important;
+    margin-bottom: var(--space-6) !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin-left: 45% !important;
+}
+
+.reveal .quarto-title-block .subtitle {
+    font-size: var(--fs-h2) !important;
+    color: var(--coral-light) !important;
+    margin-bottom: var(--space-5) !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin-left: 45% !important;
+}
+
+.reveal .quarto-title-block .quarto-title-authors {
+    font-size: var(--fs-body) !important;
+    color: var(--warm-white) !important;
+    margin-bottom: var(--space-4) !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin-left: 45% !important;
+}
+
+.reveal .quarto-title-block .date {
+    font-size: var(--fs-body) !important;
+    color: var(--coral-light) !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin-left: 45% !important;
 }
 
 .reveal .slides section.center,
@@ -86,7 +131,7 @@
     line-height: var(--lh-heading) !important;
     color: var(--warm-white) !important;
     font-weight: 700 !important;
-    margin-bottom: var(--space-7) !important; /* 48px = 1.5-2 line spaces */
+    margin-bottom: var(--space-6) !important;
 }
 
 .reveal h2 {
@@ -94,7 +139,7 @@
     line-height: var(--lh-heading) !important;
     color: var(--warm-white) !important;
     font-weight: 600 !important;
-    margin-bottom: var(--space-6) !important; /* 32px = proper heading spacing */
+    margin-bottom: var(--space-5) !important;
 }
 
 .reveal h3 {
@@ -102,7 +147,7 @@
     line-height: var(--lh-heading) !important;
     color: var(--indigo-light) !important;
     font-weight: 600 !important;
-    margin-bottom: var(--space-6) !important; /* 32px = proper heading spacing */
+    margin-bottom: var(--space-4) !important;
 }
 
 /* body text - prefer 28-32pt, line spacing 1.2-1.4x */
@@ -134,16 +179,16 @@
     font-size: var(--fs-code) !important;
     background: var(--secondary-bg-alt) !important;
     border-radius: var(--radius-md) !important;
-    padding: var(--space-5) !important; /* increased padding for better visual distinction */
+    padding: var(--space-5) !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
-    border-left: 4px solid var(--accent-primary) !important; /* accent color for visual emphasis */
+    border-left: 4px solid var(--accent-primary) !important;
 }
 
 .reveal code {
     font-family: var(--font-mono) !important;
     font-size: var(--fs-code) !important;
     background: var(--secondary-bg-alt);
-    padding: var(--space-1) var(--space-2); /* consistent spacing tokens */
+    padding: var(--space-1) var(--space-2);
     border-radius: var(--radius-sm);
 }
 
@@ -195,47 +240,64 @@
 .reveal section[data-background-color="#2C3E50"] h3,
 .reveal section[data-background-color="#2C3E50"] p,
 .reveal section[data-background-color="#2C3E50"] li {
-    color: var(--warm-white) !important; /* high contrast: #FDFCFA on #2C3E50 */
-}
-
-.reveal section[data-background-color="#3498db"] h1,
-.reveal section[data-background-color="#3498db"] h2,
-.reveal section[data-background-color="#3498db"] h3,
-.reveal section[data-background-color="#3498db"] p,
-.reveal section[data-background-color="#3498db"] li {
     color: var(--warm-white) !important;
 }
 
-.reveal section[data-background-color="#e74c3c"] h1,
-.reveal section[data-background-color="#e74c3c"] h2,
-.reveal section[data-background-color="#e74c3c"] h3,
-.reveal section[data-background-color="#e74c3c"] p,
-.reveal section[data-background-color="#e74c3c"] li {
+.reveal section[data-background-color="#2c3e50"] h1,
+.reveal section[data-background-color="#2c3e50"] h2,
+.reveal section[data-background-color="#2c3e50"] h3,
+.reveal section[data-background-color="#2c3e50"] p,
+.reveal section[data-background-color="#2c3e50"] li {
     color: var(--warm-white) !important;
 }
 
-.reveal section[data-background-color="#f39c12"] h1,
-.reveal section[data-background-color="#f39c12"] h2,
-.reveal section[data-background-color="#f39c12"] h3,
-.reveal section[data-background-color="#f39c12"] p,
-.reveal section[data-background-color="#f39c12"] li {
+/* text on indigo backgrounds */
+.reveal section[data-background-color="#5B6BBF"] h1,
+.reveal section[data-background-color="#5B6BBF"] h2,
+.reveal section[data-background-color="#5B6BBF"] h3,
+.reveal section[data-background-color="#5B6BBF"] p,
+.reveal section[data-background-color="#5B6BBF"] li {
     color: var(--warm-white) !important;
 }
 
-.reveal section[data-background-color="#16a085"] h1,
-.reveal section[data-background-color="#16a085"] h2,
-.reveal section[data-background-color="#16a085"] h3,
-.reveal section[data-background-color="#16a085"] p,
-.reveal section[data-background-color="#16a085"] li {
+.reveal section[data-background-color="#5b6bbf"] h1,
+.reveal section[data-background-color="#5b6bbf"] h2,
+.reveal section[data-background-color="#5b6bbf"] h3,
+.reveal section[data-background-color="#5b6bbf"] p,
+.reveal section[data-background-color="#5b6bbf"] li {
     color: var(--warm-white) !important;
 }
 
-.reveal section[data-background-color="#27ae60"] h1,
-.reveal section[data-background-color="#27ae60"] h2,
-.reveal section[data-background-color="#27ae60"] h3,
-.reveal section[data-background-color="#27ae60"] p,
-.reveal section[data-background-color="#27ae60"] li {
-    color: var(--warm-white) !important;
+/* code blocks on dark backgrounds */
+.reveal section[data-background-color="#2C3E50"] pre,
+.reveal section[data-background-color="#2c3e50"] pre,
+.reveal section[data-background-color="#5B6BBF"] pre,
+.reveal section[data-background-color="#5b6bbf"] pre {
+    background: rgba(253, 252, 250, 0.95) !important;
+    color: var(--dark-blue) !important;
+}
+
+.reveal section[data-background-color="#2C3E50"] code,
+.reveal section[data-background-color="#2c3e50"] code,
+.reveal section[data-background-color="#5B6BBF"] code,
+.reveal section[data-background-color="#5b6bbf"] code {
+    background: rgba(253, 252, 250, 0.95) !important;
+    color: var(--dark-blue) !important;
+}
+
+/* links on dark backgrounds */
+.reveal section[data-background-color="#2C3E50"] a,
+.reveal section[data-background-color="#2c3e50"] a,
+.reveal section[data-background-color="#5B6BBF"] a,
+.reveal section[data-background-color="#5b6bbf"] a {
+    color: var(--coral-light) !important;
+}
+
+.reveal section[data-background-color="#2C3E50"] a:hover,
+.reveal section[data-background-color="#2c3e50"] a:hover,
+.reveal section[data-background-color="#5B6BBF"] a:hover,
+.reveal section[data-background-color="#5b6bbf"] a:hover {
+    color: var(--teal-light) !important;
 }
 
 /* fragment */
@@ -273,8 +335,20 @@
 }
 
 /* footer */
-.reveal .footer {
+.reveal .footer,
+.reveal .footer-default,
+.reveal .footer-default p {
     font-size: var(--fs-small) !important;
+    color: var(--warm-white) !important;
+}
+
+/* footer contrast on light backgrounds */
+.reveal section[data-background-color="#fff"] .footer,
+.reveal section[data-background-color="#ffffff"] .footer,
+.reveal section[data-background-color="#fff"] .footer-default,
+.reveal section[data-background-color="#ffffff"] .footer-default,
+.reveal section[data-background-color="#fff"] .footer-default p,
+.reveal section[data-background-color="#ffffff"] .footer-default p {
     color: var(--medium-gray) !important;
 }
 
@@ -304,19 +378,54 @@
     padding: var(--space-4) var(--space-5);
     margin: var(--space-5) 0;
     border-radius: var(--radius-md);
-    color: var(--primary-text) !important; /* ensure text contrast */
+    color: var(--primary-text) !important;
 }
 
 .reveal .callout-tip {
-    border-left-color: var(--teal); /* sufficient contrast as accent border */
+    border-left-color: var(--teal);
 }
 
 .reveal .callout-warning {
-    border-left-color: var(--amber); /* sufficient contrast as accent border */
+    border-left-color: var(--amber);
 }
 
 .reveal .callout-important {
-    border-left-color: var(--accent-secondary); /* coral for important callouts */
+    border-left-color: var(--accent-secondary);
+}
+
+/* enhanced callouts for dark backgrounds */
+.reveal section[data-background-color="#2C3E50"] .callout,
+.reveal section[data-background-color="#2c3e50"] .callout,
+.reveal section[data-background-color="#5B6BBF"] .callout,
+.reveal section[data-background-color="#5b6bbf"] .callout {
+    background: rgba(253, 252, 250, 0.95) !important;
+    color: var(--dark-blue) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* highlight boxes for key insights */
+.reveal .insight-box {
+    background: linear-gradient(135deg, var(--coral-light), var(--coral)) !important;
+    color: var(--dark-blue) !important;
+    padding: var(--space-6) var(--space-7) !important;
+    margin: var(--space-6) 0 !important;
+    border-radius: var(--radius-lg) !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    box-shadow: 0 6px 25px rgba(255, 139, 148, 0.3) !important;
+}
+
+/* stat highlight boxes */
+.reveal .stat-highlight {
+    background: linear-gradient(135deg, var(--teal-light), var(--teal)) !important;
+    color: var(--dark-blue) !important;
+    padding: var(--space-5) var(--space-6) !important;
+    margin: var(--space-5) 0 !important;
+    border-radius: var(--radius-lg) !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    font-size: var(--fs-h3) !important;
+    box-shadow: 0 6px 25px rgba(95, 189, 176, 0.3) !important;
 }
 
 /* slide buttons */
@@ -360,10 +469,37 @@
 
 /* box with background for text over images */
 .text-box-overlay {
-    background: rgba(255, 255, 255, 0.95);
-    padding: var(--space-5);
+    background: rgba(253, 252, 250, 0.95);
+    padding: var(--space-6);
     border-radius: var(--radius-lg);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--dark-blue) !important;
+}
+
+/* enhanced text overlay for dark image backgrounds */
+.text-box-overlay-dark {
+    background: rgba(44, 62, 80, 0.95);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--warm-white) !important;
+}
+
+/* improve fragment visibility on dark backgrounds */
+.reveal section[data-background-color="#2C3E50"] .fragment,
+.reveal section[data-background-color="#2c3e50"] .fragment,
+.reveal section[data-background-color="#5B6BBF"] .fragment,
+.reveal section[data-background-color="#5b6bbf"] .fragment {
+    opacity: 0.3;
+}
+
+.reveal section[data-background-color="#2C3E50"] .fragment.visible,
+.reveal section[data-background-color="#2c3e50"] .fragment.visible,
+.reveal section[data-background-color="#5B6BBF"] .fragment.visible,
+.reveal section[data-background-color="#5b6bbf"] .fragment.visible {
+    opacity: 1;
 }
 
 /* print styles */

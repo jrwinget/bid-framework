@@ -350,7 +350,7 @@
     "bidux": {
       "Package": "bidux",
       "Version": "0.3.1",
-      "Source": "GitHub",
+      "Source": "Repository",
       "Title": "Behavioral Insight Design: A Toolkit for Integrating Behavioral Science in UI/UX Design",
       "Authors@R": "person( given = \"Jeremy\", family = \"Winget\", role = c(\"aut\", \"cre\"), email=\"contact@jrwinget.com\", comment = c(ORCID = \"0000-0002-3783-4354\") )",
       "Description": "Provides a framework and toolkit to guide 'shiny' developers in implementing the Behavioral Insight Design (BID) framework. The package offers functions for documenting each of the five stages (Notice, Interpret, Structure, Anticipate, and Validate), along with a comprehensive concept dictionary.",
@@ -359,7 +359,6 @@
       "Depends": [
         "R (>= 4.1.0)"
       ],
-      "Roxygen": "list(markdown = TRUE)",
       "RoxygenNote": "7.3.2",
       "Imports": [
         "cli",
@@ -385,16 +384,10 @@
       "Config/testthat/edition": "3",
       "Language": "en-US",
       "URL": "https://jrwinget.github.io/bidux/",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteRepo": "bidux",
-      "RemoteUsername": "jrwinget",
-      "RemotePkgRef": "jrwinget/bidux",
-      "RemoteRef": "HEAD",
-      "RemoteSha": "a7614e6fcebc737ecc40bd54d7cdf1046f1fb213",
       "NeedsCompilation": "no",
       "Author": "Jeremy Winget [aut, cre] (ORCID: <https://orcid.org/0000-0002-3783-4354>)",
-      "Maintainer": "Jeremy Winget <contact@jrwinget.com>"
+      "Maintainer": "Jeremy Winget <contact@jrwinget.com>",
+      "Repository": "CRAN"
     },
     "bit": {
       "Package": "bit",

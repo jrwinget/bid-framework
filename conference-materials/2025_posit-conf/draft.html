@@ -97,6 +97,7 @@
     code span.wa { color: #ff5555; } /* Warning */
   </style>
   <link rel="stylesheet" href="draft_files/libs/revealjs/dist/theme/quarto-8b15755e4aaf03c54c0897acee0a5dcd.css">
+  <link rel="stylesheet" href="../../custom.css">
   <link href="draft_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="draft_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="draft_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -193,9 +194,8 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Death by Dropdown? Engineer Insightful Shiny Apps with Behavioral Science</h1>
-  <p class="subtitle">posit::conf(2025)</p>
+<section id="title-slide" data-background-color="#213d4f" data-background-image="img/posit-conf.png" data-background-opacity="0.25" data-background-position="top left" data-background-repeat="no-repeat" data-background-size="45%" class="quarto-title-block center">
+  <h1 class="title">Death by Dropdown?<br>Engineer Insightful Shiny Apps<br>with Behavioral Science</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -205,26 +205,35 @@ Jeremy Winget, PhD
 </div>
 </div>
 
-  <p class="date">2025-09-17</p>
+  <p class="date">September 17, 2025</p>
 </section>
-<section id="section" class="slide level2 center" data-background-color="#2c3e50" data-auto-animate="true">
-<h2 data-id="quarto-animate-title"></h2>
+<section id="section" class="slide level2 center" data-background-color="#2c3e50">
+<h2></h2>
 <div class="r-fit-text">
-<p><strong>Ever open a dashboard with 18 filters across 6 tabs…<br> and immediately get the urge to close your laptop?</strong></p>
+<p><strong>Ever open a dashboard with 18 filters across 6 tabs…<br> and wonder where to even start?</strong></p>
 </div>
-<div class="fragment">
+<div class="columns fragment">
+<div class="column" style="width:45%;">
+<div class="tenor-gif-embed" data-postid="596341483704119392" data-share-method="host" data-aspect-ratio="1.32447" data-width="50%">
+<a href="https://tenor.com/view/monkey-computer-work-bug-developer-gif-596341483704119392">Monkey Computer GIF</a>from <a href="https://tenor.com/search/monkey-gifs">Monkey GIFs</a>
+</div>
+<script type="text/javascript" async="" src="https://tenor.com/embed.js"></script>
+</div><div class="column" style="width:45%;">
 <div class="tenor-gif-embed" data-postid="17038619" data-share-method="host" data-aspect-ratio="1.77778" data-width="60%">
 <a href="https://tenor.com/view/ron-swanson-parks-and-recreation-parks-and-rec-computer-dumpster-gif-17038619">Ron Swanson Parks And Recreation GIF</a>
 </div>
 <script type="text/javascript" async="" src="https://tenor.com/embed.js"></script>
-</div>
+</div></div>
 <aside class="notes">
 <ul>
 <li>10 seconds</li>
-<li>Ever open a dashboard with 18 filters across 6 tabs…and just get the urge to immediately close your laptop?</li>
-<li>[CLICK] ….or worse</li>
-<li>[PAUSE] I get the feeling I’m not alone…(OR maybe I am)</li>
-<li>“Welcome to dashboard therapy”</li>
+<li>Ever open a dashboard with 18 filters across 6 separate tabs…and try to figure out where to even start?</li>
+<li>I mean, that’s a lot of data and different ways slicing it to get a full understanding of what’s going on…so what do you do?</li>
+<li>That is…if you haven’t made your career out of exploring data sets like most executives making decisions…what do you do?</li>
+<li>[CLICK] Maybe you do something like this monkey….just start clicking randomly hoping something sticks</li>
+<li>[PAUSE]</li>
+<li>[CLICK] Or maybe your feelings are a bit more intense…</li>
+<li>I get the feeling I’m not the only one who’s been here before</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -243,58 +252,45 @@ Jeremy Winget, PhD
 <div style="margin: 5% 10%;">
 <div class="columns">
 <div class="column text-xl" style="width:50%;">
-<h3 id="quick-show-of-hands">Quick show of hands:</h3>
+<h3 id="raise-hand-if-youve-ever">Raise hand if you’ve ever:</h3>
 <ul>
-<li>Built Shiny app 10+ filters?</li>
-<li>User asked “one more dropdown”?</li>
-<li>More <code>selectInput()</code> than insights?</li>
+<li>Designed a UI with 10+ filters?</li>
+<li>Had a user ask for “one more dropdown”?</li>
+<li>Built a Shiny app with more <code>selectInput()</code> than insights?</li>
 </ul>
-</div><div class="column fragment text-xl" style="width:50%;">
+<div class="fragment">
 <h3 id="welcome-youre-among-friends">Welcome! You’re among friends</h3>
-<p>👋 <strong>Hi, I’m Jeremy! Social psychologist turned full stack engineer</strong><br> <em>Think of our time together as a little therapy session for dropdown overload</em></p>
-</div></div>
+<p><em>Think of our time together as a little therapy session for dropdown overload</em></p>
 </div>
-<aside class="notes">
-<ul>
-<li>20 seconds</li>
-<li>Raise hand if you’ve built a Shiny app with 10+ filters</li>
-<li>Or if you’ve had a user ask for “just one more dropdown”</li>
-<li>Or if you’ve added more <code>selectInput()</code>s to your dashboard than actual insights</li>
-<li>[CLICK] “Well if so…let me welcome you to my dashboard support group”</li>
-<li>You’re among friends here</li>
-<li>[PAUSE] Hi, I’m Jeremy! …social psych turned engineer</li>
-<li>Think of our time together today as a little therapy session for dropdown overload</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="why-listen-to-me" class="slide level2" data-background-color="#2c3e50">
-<h2>Why Listen to Me?</h2>
-<div style="margin: 5% 10%;">
-<div class="columns">
-<div class="column" style="width:50%;">
+</div><div class="column fragment text-xl" style="width:50%;">
+<h3 id="hi-im-jeremy">👋 **Hi, I’m Jeremy!</h3>
 <p><strong>PhD in Applied Psychology</strong><br> <em>How people actually process information</em></p>
 <p><strong>Led Shiny teams at scale</strong><br> <em>Built dashboards people use</em></p>
 <p><strong>Created {bidux} package</strong><br> <em>Your behavioral scientist in the console</em></p>
-</div><div class="column fragment" style="width:50%;">
+<p>I’m a psychologist by training — but not the kind you’re thinking of.**<br></p>
+<p><em>Contrary to popular belief, most psychologists work with data, not clients.</em><br></p>
+<p><strong>Academic → Tech trajectory</strong>: Applied psychology PhD → Full stack engineer</p>
+</div></div>
+<div class="fragment">
 <h3 id="core-realization">Core Realization</h3>
 <blockquote>
 <p>“Most dashboard failures aren’t technical. They’re psychological.”</p>
 </blockquote>
-</div></div>
+</div>
 </div>
 <aside class="notes">
 <ul>
-<li>30 seconds</li>
+<li>1 minute</li>
+<li>Quick show of hands…who’s created a user interface with more than 10 filters?</li>
+<li>Or if ever had a client/user ask for “just one more dropdown”</li>
+<li>Or built a Shiny app with more <code>selectInput()</code>s than insights</li>
+<li>[CLICK] If so…welcome you to my dashboard support group</li>
+<li>Think of our time together today as a little therapy session for dropdown overload</li>
+<li>[PAUSE] Hi, I’m Jeremy! I’m a psychologist by training…but not the kind you’re thinking of!</li>
+<li>Contrary to popular belief…there are many types of psychologists…and most of us with data, not clients!</li>
+<li>Clarify the therapy metaphor: support group hook connects our shared pain to therapeutic framing</li>
+<li>Most psychologists actually work with data, studying behavior patterns, not doing individual therapy</li>
+<li>My path: academic research → tech industry, bringing behavioral insights to engineering challenges</li>
 <li>“PhD in Applied Psych…studied how people/groups process information and make decisions”</li>
 <li>Transitioned from academia to industry…where I got involved leading Shiny teams at scale</li>
 <li>“Have nearly 10 years experience building enterprise apps/dashboards folks actually use”</li>
@@ -334,13 +330,15 @@ Jeremy Winget, PhD
 <li>“I worked with a client who had this ‘comprehensive’ dashboard”</li>
 <li>Blinded here for confidentiality…but incredibly close to the actual design</li>
 <li>“18 filters, 6 tabs, every possible view, nearly zero adoption”</li>
+<li>Why this matters: This represents thousands of developer hours and client budget wasted on technically perfect but psychologically broken software</li>
 <li>The client was frustrated bc they had spent months building this thing, but no one used it</li>
-<li>I had some immediate thoughts, but being a behavioral scientist, I wanted to validate this
+<li>As developers, we can relate - we’ve all built features nobody uses. But here’s why this matters more than frustration:
 <ol type="1">
-<li>So that the client’s time and efforts weren’t wasted</li>
-<li>And so I could show them data to back up my claims and explain why these weren’t just subjective issues</li>
+<li>Technical debt from unused complexity compounds over time</li>
+<li>User abandonment patterns replicate across similar projects</li>
+<li>Without data-driven insights, we keep making the same UX mistakes</li>
 </ol></li>
-<li>[CLICK] “So we ran telemetry for 30 days…”</li>
+<li>[CLICK] “So we ran telemetry for 30 days…” - This data changed everything about how I approach dashboard design</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -381,7 +379,7 @@ Jeremy Winget, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="enter-behavioral-science" class="slide level2" data-background-color="#3498db">
+<section id="enter-behavioral-science" class="slide level2" data-background-color="#5b6bbf">
 <h2>Enter: Behavioral Science</h2>
 <div style="margin: 5% 10%;">
 <h3 id="what-is-it">What is it?</h3>
@@ -418,27 +416,92 @@ Jeremy Winget, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="the-solution-your-dashboard-journey" class="slide level2" data-background-color="#34495e">
+<section id="classic-example-the-paradox-of-choice" class="slide level2" data-background-color="#5b6bbf">
+<h2>Classic Example: The Paradox of Choice</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+<figure>
+<p><img data-src="img/jam-study-behavioral.png" style="width:100.0%"></p>
+<figcaption>Jam Study Results</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<h3 id="sheena-iyengars-jam-study">Sheena Iyengar’s Jam Study</h3>
+<div class="text-large">
+<p><strong>24 varieties displayed</strong>: 60% stopped to look<br> <strong>6 varieties displayed</strong>: 40% stopped to look</p>
+<p>But…</p>
+<p><strong>24 varieties</strong>: Only 3% bought jam<br> <strong>6 varieties</strong>: 30% bought jam</p>
+</div>
+<div class="fragment text-xl" style="color: var(--coral); font-weight: 600; margin-top: 30px;">
+<p><strong>10x higher conversion with fewer options</strong></p>
+</div>
+</div></div>
+<aside class="notes">
+<ul>
+<li>45 seconds</li>
+<li>“Classic behavioral science example that perfectly mirrors our dashboard problem”</li>
+<li>“Sheena Iyengar’s famous jam study at Columbia University”</li>
+<li>Show image: Side-by-side grocery store displays - one with 24 jam varieties (crowded, overwhelming), one with 6 varieties (clean, organized). Include simple bar charts showing the dramatic difference in purchase rates.</li>
+<li>“More choice attracted browsers, but paralyzed buyers”</li>
+<li>[CLICK] “This is exactly what happens with dashboard filters - more options kill engagement”</li>
+<li>“This principle drives everything we’ll build with the BID framework”</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-solution-your-dashboard-journey" class="slide level2" data-background-color="#2c3e50">
 <h2>The Solution: Your Dashboard Journey 🚗</h2>
 <div style="margin: 5% 10%;">
 <div class="columns">
-<div class="column" style="width:40%;">
+<div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+<figure>
+<p><img data-src="img/roadtrip-journey.png" style="width:100.0%"></p>
+<figcaption>Road Trip Adventure</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:35%;">
 <h3 id="think-of-it-like-a-road-trip">Think of it like a road trip</h3>
 <p>📍 <strong>Interpret</strong> where you’re going<br> ⚠️ <strong>Notice</strong> the warning lights<br> 🌦️ <strong>Anticipate</strong> weather changes<br> 🗺️ <strong>Structure</strong> the best route<br> ✅ <strong>Validate</strong> safe arrival</p>
-</div><div class="column fragment" style="width:40%;">
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center" style="margin-top: 20px; border-radius: 8px;">
+<figure>
+<p><img data-src="img/vw-bus-adventure.png" style="width:80.0%"></p>
+<figcaption>VW Bus Spirit</figcaption>
+</figure>
+</div>
+</div>
+</div><div class="column fragment" style="width:35%;">
 <h3 id="the-bid-framework">The BID Framework</h3>
 <p>📍 <strong>Interpret</strong> user needs<br> ⚠️ <strong>Notice</strong> friction points<br> 🌦️ <strong>Anticipate</strong> cognitive biases<br> 🗺️ <strong>Structure</strong> information flow<br> ✅ <strong>Validate</strong> understanding</p>
-</div><div class="column" style="width:20%;">
-<p><img data-src="img/bid-framework.png" style="width:100.0%"></p>
+<div class="quarto-figure quarto-figure-center" style="margin-top: 20px;">
+<figure>
+<p><img data-src="img/bid-framework.png" style="width:80.0%"></p>
+<figcaption>BID Hex</figcaption>
+</figure>
+</div>
 </div></div>
 </div>
 <aside class="notes">
 <ul>
 <li>45 seconds</li>
+<li>Show image: Scenic road stretching toward mountains with modern car, representing the journey toward better UX. Should evoke adventure, possibility, and structured progress.</li>
 <li>“Think of building dashboards like you would a road trip”</li>
 <li>“You need to interpret where you’re going, notice warning lights…”</li>
+<li>[CLICK] Show image: Classic VW bus with hex-style stickers, embodying the “long strange trip” philosophy of exploration and community. Connects to Grateful Dead culture of innovation and shared journey.</li>
 <li>[CLICK] “This is the BID framework”</li>
 <li>“Five <em>iterative</em> stages to prevent dashboard disasters”</li>
+<li>“Like any good road trip, it’s not just about the destination - it’s about having the right framework to explore and discover along the way”</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -488,7 +551,7 @@ Jeremy Winget, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="interpret-start-with-why" class="slide level2" data-background-color="#3498db">
+<section id="interpret-start-with-why" class="slide level2" data-background-color="#5b6bbf">
 <h2>INTERPRET: Start with Why</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">library</span>(bidux)</span>
@@ -526,11 +589,18 @@ Jeremy Winget, PhD
 <li>1 minute</li>
 <li>“Start with why - what question does this dashboard answer?”</li>
 <li>[CLICK] “10 word rule”</li>
-<li>Why this is important - most devs think they do this, but telemetry says otherwise. Most jump straight to filters.</li>
-<li>But as devs and data scientists, we’re not the best at this. We think we know what users want…and if we’re not sure, we just add more filters/options</li>
-<li>But this is exactly what leads to cognitive overload</li>
-<li><code>bid_interpret</code> helps you clarify purpose, user needs, and data story…and if you don’t know any of those elements, it prompts you to think about them (which might be a good time to pause and actually chat with your users or client)</li>
-<li>On the back end, it’s creating an object that can be used later in the process to make smart suggestions for your specific users</li>
+<li>Why this matters for your daily work: Clear purpose drives every technical decision you make</li>
+<li>Most devs think they do this, but telemetry says otherwise. We jump straight to technical implementation</li>
+<li>The cost: Every filter you add without purpose increases cognitive load exponentially</li>
+<li>This isn’t just UX theory - it’s engineering efficiency. When you clarify purpose first:
+<ol type="1">
+<li>You write less code because you know what to exclude</li>
+<li>Your data queries are more focused and performant</li>
+<li>User testing becomes objective rather than subjective</li>
+<li>You can defend design decisions with evidence, not opinions</li>
+</ol></li>
+<li><code>bid_interpret</code> creates a structured object that feeds into later stages, making behavioral science actionable in your R workflow</li>
+<li>Think of it as writing better requirements that actually connect to user psychology</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -544,7 +614,7 @@ Jeremy Winget, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="notice-find-the-core-problems" class="slide level2" data-background-color="#e74c3c">
+<section id="notice-find-the-core-problems" class="slide level2" data-background-color="#5b6bbf">
 <h2>NOTICE: Find the Core Problems</h2>
 <div class="columns">
 <div class="column" style="width:55%;">
@@ -585,7 +655,7 @@ Stage Data:
    evidence : Users report confusion and telemetry shows low engagement 
    suggestions : Ensure your problem description is specific and supported by strong evidence 
 
-Generated: 2025-09-10 12:45:39 </code></pre>
+Generated: 2025-09-10 18:58:22 </code></pre>
 </div>
 </div>
 </div><div class="column" style="width:45%;">
@@ -603,10 +673,17 @@ Generated: 2025-09-10 12:45:39 </code></pre>
 <ul>
 <li>1 minute</li>
 <li>“Notice finds the concepts behind the friction points”</li>
-<li>“Minimal input gives maximum insight”</li>
-<li>Auto-suggests behavioral theories…or power users can override</li>
-<li>“Look at this heatmap - 14 filters completely ignored”</li>
-<li>“This is choice overload in action”</li>
+<li>Why this stage matters for developers: It turns user complaints into actionable engineering insights</li>
+<li>Look at this heatmap - 14 filters completely ignored. This isn’t just usage data, it’s technical debt visualization</li>
+<li>What this means for your codebase:
+<ol type="1">
+<li>Those unused filters are maintenance overhead with zero ROI</li>
+<li>Database queries are running for features nobody touches</li>
+<li>UI complexity is slowing render times without value</li>
+<li>Future feature requests will compound these problems</li>
+</ol></li>
+<li><code>bid_notice</code> auto-suggests behavioral theories to explain patterns, or power users can override</li>
+<li>This transforms “users don’t like it” into “choice overload is killing task completion” - now you have a specific problem to solve with code</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -620,7 +697,7 @@ Generated: 2025-09-10 12:45:39 </code></pre>
           display:block!important;
       }</style></aside>
 </section>
-<section id="anticipate-guard-against-biases" class="slide level2" data-background-color="#f39c12">
+<section id="anticipate-guard-against-biases" class="slide level2" data-background-color="#5b6bbf">
 <h2>ANTICIPATE: Guard Against Biases</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -657,7 +734,7 @@ Stage Data:
    previous_theory : Cognitive Load Theory 
    suggestions : anchoring mitigation: Always show reference points like previous period, budg... 
 
-Generated: 2025-09-10 12:45:39 </code></pre>
+Generated: 2025-09-10 18:58:23 </code></pre>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -695,7 +772,7 @@ Generated: 2025-09-10 12:45:39 </code></pre>
           display:block!important;
       }</style></aside>
 </section>
-<section id="structure-progressive-disclosure" class="slide level2" data-background-color="#16a085">
+<section id="structure-progressive-disclosure" class="slide level2" data-background-color="#5b6bbf">
 <h2>STRUCTURE: Progressive Disclosure</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a>structure_stage <span class="ot">&lt;-</span> <span class="fu">bid_structure</span>(<span class="at">previous_stage =</span> anticipate_stage)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -726,7 +803,7 @@ Stage Data:
    previous_bias : anchoring: Consider how anchoring might affect user interpretation; framing: ... 
    suggestions : list(concept = "Cognitive Load Theory", suggestions = list(list(title = "Limi... 
 
-Generated: 2025-09-10 12:45:40 </code></pre>
+Generated: 2025-09-10 18:58:23 </code></pre>
 </div>
 </div>
 <div class="fragment">
@@ -752,7 +829,7 @@ Generated: 2025-09-10 12:45:40 </code></pre>
           display:block!important;
       }</style></aside>
 </section>
-<section id="validate-plain-language-wins" class="slide level2" data-background-color="#27ae60">
+<section id="validate-plain-language-wins" class="slide level2" data-background-color="#5b6bbf">
 <h2>VALIDATE: Plain Language Wins</h2>
 <div style="margin: 5% 10%;">
 <div class="cell">
@@ -790,7 +867,7 @@ Stage Data:
    previous_concepts : Cognitive Load Theory, Visual Hierarchy, Progressive Disclosure 
    suggestions : Consider adding user empowerment tools to enhance collaboration 
 
-Generated: 2025-09-10 12:45:40 </code></pre>
+Generated: 2025-09-10 18:58:23 </code></pre>
 </div>
 </div>
 <div class="fragment">
@@ -816,7 +893,7 @@ Generated: 2025-09-10 12:45:40 </code></pre>
           display:block!important;
       }</style></aside>
 </section>
-<section id="the-complete-workflow" class="slide level2" data-background-color="#8e44ad">
+<section id="the-complete-workflow" class="slide level2" data-background-color="#2c3e50">
 <h2>The Complete Workflow</h2>
 <div style="margin: 5% 10%;">
 <div class="cell">
@@ -1227,16 +1304,21 @@ Stage 2 (Notice) completed. (40% complete)
           display:block!important;
       }</style></aside>
 </section>
-<section id="real-impact-across-industries" class="slide level2" data-background-color="#27ae60">
+<section id="real-impact-across-industries" class="slide level2" data-background-color="#5b6bbf">
 <h2>Real Impact Across Industries</h2>
 
 <img data-src="draft_files/figure-revealjs/unnamed-chunk-11-1.png" width="1344" class="r-stretch"><aside class="notes">
 <ul>
 <li>30 seconds</li>
 <li>“Real results from 12 enterprise deployments”</li>
-<li>“82% reduction in time to insight”</li>
-<li>“143% improvement in task completion”</li>
-<li>“This works across industries”</li>
+<li>Why these metrics matter for your engineering career:
+<ol type="1">
+<li>82% reduction in time to insight = users find value faster = better adoption metrics for your projects</li>
+<li>143% improvement in task completion = fewer support tickets = less maintenance overhead</li>
+<li>These improvements compound: happy users request thoughtful features, not band-aid fixes</li>
+</ol></li>
+<li>“This works across industries” - the psychological principles are universal, but implementation adapts to your specific R/Shiny tech stack</li>
+<li>Bottom line: Better user psychology = better engineering outcomes = more impactful projects in your portfolio</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1250,7 +1332,7 @@ Stage 2 (Notice) completed. (40% complete)
           display:block!important;
       }</style></aside>
 </section>
-<section id="your-turn-start-today" class="slide level2 center" data-background-color="#3498db">
+<section id="your-turn-start-today" class="slide level2 center" data-background-color="#5b6bbf">
 <h2>Your Turn: Start Today</h2>
 <div style="margin: 5% 10%;">
 <div class="cell">
@@ -1323,15 +1405,28 @@ Stage 2 (Notice) completed. (40% complete)
 <h2>One Thing to Remember</h2>
 <div style="margin: 5% 10%;">
 <div class="columns center">
-<div class="column text-display" style="width:40%;">
+<div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center" style="border-radius: 8px; opacity: 0.8;">
+<figure>
+<p><img data-src="img/posit-conf-community.png" style="width:100.0%"></p>
+<figcaption>Community Spirit</figcaption>
+</figure>
+</div>
+</div><div class="column text-display" style="width:40%;">
 <p><strong>Dashboards don’t need more features.</strong><br> <strong>They need fewer obstacles.</strong></p>
 <div class="fragment text-xl">
 <p>Let’s fix that together!</p>
 </div>
-</div><div class="column fragment" style="width:30%;">
-<p><em>Special thanks to the posit::conf organizers,<br> the Shiny community,<br> and all of you for caring about your users</em></p>
 </div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="img/hex-bidux.png" class="hex-logo" width="200"></p>
+<figcaption>BID Hex</figcaption>
+</figure>
+</div>
+<div class="fragment text-small" style="margin-top: 20px; color: var(--warm-white);">
+<p><em>Special thanks to the posit::conf organizers,<br> the Shiny community,<br> and all of you for caring about your users</em></p>
+</div>
 </div></div>
 </div>
 <aside class="notes">
@@ -1385,7 +1480,7 @@ Stage 2 (Notice) completed. (40% complete)
       // https://revealjs.com/config/
       Reveal.initialize({
 'controlsAuto': true,
-'previewLinksAuto': true,
+'previewLinksAuto': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1412,7 +1507,7 @@ Stage 2 (Notice) completed. (40% complete)
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: 'c/t',
+        slideNumber: false,
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
