@@ -76,44 +76,44 @@
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
-    width: 100% !important;
+    width: 100%;
     text-align: center !important;
-    height: 100% !important;
+    height: 100%;
 }
 
 .reveal .quarto-title-block h1.title {
     font-size: var(--fs-h1) !important;
     color: var(--warm-white) !important;
-    margin-bottom: var(--space-6) !important;
-    text-align: center !important;
-    width: 100% !important;
-    margin-left: 45% !important;
+    margin-bottom: var(--space-6);
+    text-align: center;
+    width: 100%;
+    margin-left: 45%;
 }
 
 .reveal .quarto-title-block .subtitle {
     font-size: var(--fs-h2) !important;
     color: var(--coral-light) !important;
-    margin-bottom: var(--space-5) !important;
-    text-align: center !important;
-    width: 100% !important;
-    margin-left: 45% !important;
+    margin-bottom: var(--space-5);
+    text-align: center;
+    width: 100%;
+    margin-left: 45%;
 }
 
 .reveal .quarto-title-block .quarto-title-authors {
     font-size: var(--fs-body) !important;
     color: var(--warm-white) !important;
-    margin-bottom: var(--space-4) !important;
-    text-align: center !important;
-    width: 100% !important;
-    margin-left: 45% !important;
+    margin-bottom: var(--space-4);
+    text-align: center;
+    width: 100%;
+    margin-left: 45%;
 }
 
 .reveal .quarto-title-block .date {
     font-size: var(--fs-body) !important;
     color: var(--coral-light) !important;
-    text-align: center !important;
-    width: 100% !important;
-    margin-left: 45% !important;
+    text-align: center;
+    width: 100%;
+    margin-left: 45%;
 }
 
 .reveal .slides section.center,
@@ -151,23 +151,23 @@
 .reveal li {
     font-size: var(--fs-body) !important;
     line-height: var(--lh-body) !important;
-    margin-bottom: var(--space-4) !important;
+    margin-bottom: var(--space-4);
     color: var(--primary-text) !important;
 }
 
 .reveal .columns {
-    margin-top: var(--space-5) !important;
+    margin-top: var(--space-5);
 }
 
 /* lists */
 .reveal ul,
 .reveal ol {
-    margin-left: var(--space-5) !important;
-    margin-bottom: var(--space-5) !important;
+    margin-left: var(--space-5);
+    margin-bottom: var(--space-5);
 }
 
 .reveal li {
-    margin-bottom: var(--space-3) !important;
+    margin-bottom: var(--space-3);
 }
 
 /* code blocks - min 20pt, visually distinct background */

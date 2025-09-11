@@ -34,11 +34,11 @@ and wonder where to even start?**
 
 :::: {.columns}
 ::: {.column width="45%" .fragment}
-<div class="tenor-gif-embed" data-postid="596341483704119392" data-share-method="host" data-aspect-ratio="1.32447" data-width="100%"><a href="https://tenor.com/view/monkey-computer-work-bug-developer-gif-596341483704119392">Monkey Computer GIF</a>from <a href="https://tenor.com/search/monkey-gifs">Monkey GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+<div class="tenor-gif-embed" data-postid="596341483704119392" data-share-method="host" data-aspect-ratio="1.32447" data-width="350px"><a href="https://tenor.com/view/monkey-computer-work-bug-developer-gif-596341483704119392">Monkey Computer GIF</a>from <a href="https://tenor.com/search/monkey-gifs">Monkey GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 :::
 
 ::: {.column width="45%" .fragment}
-<div class="tenor-gif-embed" data-postid="17038619" data-share-method="host" data-aspect-ratio="1.32447" data-width="100%"><a href="https://tenor.com/view/ron-swanson-parks-and-recreation-parks-and-rec-computer-dumpster-gif-17038619">Ron Swanson Parks And Recreation GIF</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+<div class="tenor-gif-embed" data-postid="17038619" data-share-method="host" data-aspect-ratio="1.32447" data-width="350px"><a href="https://tenor.com/view/ron-swanson-parks-and-recreation-parks-and-rec-computer-dumpster-gif-17038619">Ron Swanson Parks And Recreation GIF</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 :::
 ::::
 
@@ -56,29 +56,34 @@ and wonder where to even start?**
 ## Dashboard Support Group {background-color="#2c3e50"}
 
 :::: {.columns}
-::: {.column width="45%"}
-### Raise hand if you've ever:
+::: {.column width="50%"}
+### Raise hand if you've ever: {style="color: var(--teal-light) !important;"}
 - Designed a UI with 10+ filters?
 - Had a user ask for "one more dropdown"?
 - Built a Shiny app with more `selectInput()` than insights?
+:::
 
-::: {.fragment}
-### Welcome! You're among friends 😊
+::: {.column width="50%" .center}
+### Welcome! You're among friends 😊 {style="color: var(--coral-light) !important;"}
 
 *Think of our time together as a little therapy session for dropdown overload*
 :::
-:::
 
-::: {.column width="45%" .fragment}
-### 👋 Hi, I'm Jeremy!
+::: {.column width="50%" style="margin-top: var(--space-8);" .fragment}
+### 👋 Hi, I'm Jeremy! {style="color: var(--indigo-light) !important;"}
 
-**I'm a psychologist by training, but not the kind you're thinking of**
+**I'm a psychologist by training, but probably not the kind you're thinking of**
 
 *Contrary to popular belief, most psychologists work with data. Not clients.*
-
-::: {.fragment}
-**PhD in Applied Psychology** → **Led Shiny teams at scale** → **Created {bidux} package**
 :::
+
+::: {.column width="50%" style="margin-top: var(--space-8);" .fragment .center}
+### My Journey {style="color: var(--indigo-light) !important;"}
+
+**Applied Social Psychology** → <br>
+**Full Stack Engineer** → <br>
+**Led Shiny teams at scale** → <br>
+**Created {bidux} package**
 :::
 ::::
 
@@ -102,7 +107,7 @@ and wonder where to even start?**
 
 ## Core Realization {background-color="#5b6bbf"}
 
-::: {style="text-align: center; margin-top: 200px;"}
+::: {.insight-box style="margin-top: 300px !important;"}
 "Most dashboard failures aren't technical. They're psychological."
 :::
 
@@ -144,12 +149,13 @@ and wonder where to even start?**
 - This data changed everything about how we approached the dashboard design
 :::
 
-## Telemetry Unraveled the User Journey {background-color="#2c3e50"}
+## Telemetry Revealed the Journey {background-color="#2c3e50"}
 
 ```{r}
 #| echo: false
 #| fig-width: 14
 #| fig-height: 7
+#| fig.align: "center"
 
 library(ggplot2)
 library(dplyr)
@@ -222,7 +228,7 @@ ggplot(telemetry_data, aes(x = metric, y = percentage)) +
   ylim(0, 110)
 ```
 
-::: {.fragment .text-xl style="text-align: center; margin-top: 10px;"}
+::: {.fragment .text-xl style="text-align: center"}
 **92% of users failed to find what they needed**
 :::
 
@@ -238,31 +244,35 @@ ggplot(telemetry_data, aes(x = metric, y = percentage)) +
 
 ## Enter: Behavioral Science {background-color="#5b6bbf"}
 
-### What is it?
-
 ::: {.text-large}
-The interdisciplinary study of how people **actually** make decisions (Spoiler: irrationally, predictably, consistently)
+**What is it?** The interdisciplinary study of how people *actually* make decisions<br>
+(Spoiler: irrationally, yet predictably & consistently)
 :::
 
+::: { style="margin-top: var(--space-7);"}
 :::: {.columns}
-::: {.column width="50%"}
-### Classic Example: The Paradox of Choice
+::: {.column width="45%" .fragment}
+### Classic Example: The Paradox of Choice {style="color: var(--coral-light) !important;"}
 
 ::: {.text-large}
-- [study details here]
+- **Researchers**: Sheena Iyengar & Mark Lepper
+- **Setting**: Upscale grocery store sampling booth
+- **Design**: 24 jams vs. 6 jams display
+- **Key Finding**: More choice attracted browsers but paralyzed buyers
 :::
 :::
 
-::: {.column width="50%" .fragment}
-### Study Results
+::: {.column width="45%" .fragment}
+### Study Results {style="color: var(--teal-light) !important;"}
 
 ![](img/jam-study.png){width="100%" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"}
-
-::: {.fragment .text-xl style="color: var(--coral); font-weight: 600; margin-top: 30px;"}
-**10x higher conversion with fewer options**
-:::
 :::
 ::::
+:::
+
+::: {.fragment .center style="color: var(--coral); font-weight: 600; margin-top: 30px;"}
+**10x higher conversion with fewer options**
+:::
 
 ::: {.notes}
 - 1 minute
@@ -280,16 +290,43 @@ The interdisciplinary study of how people **actually** make decisions (Spoiler: 
 
 ## Applied to Dashboards {background-color="#5b6bbf"}
 
-- **Cognitive Load**: Too many choices
-- **Progressive Disclosure**: Reveal complexity gradually
-- **Framing Effects**: Same data, different story
-- **Choice Architecture**: Guide without restricting
+:::: {.columns}
+::: {.column width="45%"}
+### Core Concepts {style="color: var(--coral-light) !important;"}
+
+- **Cognitive Load**
+    - Too many choices overwhelm users' mental capacity
+- **Progressive Disclosure**
+    - Reveal complexity gradually as users need it
+- **Framing Effects**
+    - Same data can tell completely different stories
+- **Choice Architecture**
+    - Guide decisions without restricting options
+:::
+
+::: {.column width="45%" .fragment}
+### Dashboard Examples {style="color: var(--teal-light) !important;"}
+
+- **Cognitive Load**
+    - Start with 3 key filters, hide 15 advanced ones behind "More Options"
+- **Progressive Disclosure**
+    - Show summary → drill to details → reveal comparisons
+- **Framing Effects**
+    - "Revenue up 15%" vs "Revenue missed target by 5%"
+- **Choice Architecture**
+    - Smart defaults, logical grouping, visual hierarchy
+:::
+::::
 
 ::: {.notes}
-- 20 seconds
+- 30 seconds
 - Now the paradox of choice is just one of many behavioral science concepts that directly apply to dashboards
-- Taking this a step further...
-- These aren't just theories...they're tools
+- [CLICK] Let me show you specific examples of how these apply
+- Cognitive Load: Instead of 18 filters overwhelming users, start with 3 essential ones and hide advanced options
+- Progressive Disclosure: Show high-level KPIs first, then let users drill into details, then comparisons
+- Framing Effects: The same revenue number can be "up 15%" or "missed target by 5%" - completely different user reactions
+- Choice Architecture: Smart defaults, logical grouping, visual hierarchy guides users naturally
+- These aren't just theories...they're actionable engineering principles
 :::
 
 ## The Solution: Your Dashboard Journey {background-color="#2c3e50"}
@@ -297,9 +334,7 @@ The interdisciplinary study of how people **actually** make decisions (Spoiler: 
 :::: {.columns}
 ::: {.column width="30%"}
 ![](img/vw-bus.jpg){.r-stretch}
-:::
 
-::: {.column width="35%"}
 ### Think of it like a road trip
 
 📍 **Interpret** where you're going<br>
@@ -309,7 +344,7 @@ The interdisciplinary study of how people **actually** make decisions (Spoiler: 
 ✅ **Validate** safe arrival
 :::
 
-::: {.column width="35%" .fragment}
+::: {.column width="70%" .fragment}
 ### The BID Framework
 
 📍 **Interpret** user needs<br>
@@ -319,7 +354,7 @@ The interdisciplinary study of how people **actually** make decisions (Spoiler: 
 ✅ **Validate** understanding
 
 ::: {.fragment}
-![](img/bid-framework.png)
+![](img/bid-framework.png){style="box-shadow: none !important; width: 100%;"}
 :::
 :::
 ::::
@@ -360,6 +395,7 @@ An R package that:
 ## INTERPRET: Start with Why {background-color="#5b6bbf"}
 
 ```{r}
+#| code-line-numbers: "|3-5|6-10|11-17"
 library(bidux)
 
 interpret_stage <- bid_interpret(
@@ -381,15 +417,12 @@ interpret_stage <- bid_interpret(
 )
 ```
 
-::: {.fragment .text-xl style="text-align: center; margin-top: 30px;"}
-**If you can't explain your dashboard's purpose in 10 words,<br>
-users won't find answers in 100 filters**
-:::
-
 ::: {.notes}
 - 1 minute
 - "Start with why - what question does this dashboard answer?"
-- [CLICK] "10 word rule"
+- [CLICK] First highlight: central_question - this drives everything else
+- [CLICK] Second highlight: data_story - this creates narrative structure
+- [CLICK] Third highlight: user_personas - this grounds design in real needs
 - Why this matters for your daily work: Clear purpose drives every technical decision you make
 - Most devs think they do this, but telemetry says otherwise. We jump straight to technical implementation
 - The cost: Every filter you add without purpose increases cognitive load exponentially
@@ -407,6 +440,7 @@ users won't find answers in 100 filters**
 :::: {.columns}
 ::: {.column width="55%"}
 ```{r}
+#| code-line-numbers: "|2-6|8"
 # Minimal input → Maximum insight
 notice_stage <- bid_notice(
   previous_stage = interpret_stage,
@@ -482,7 +516,7 @@ ggplot(filters, aes(x = 1, y = filter, fill = usage)) +
 ## ANTICIPATE: Guard Against Biases {background-color="#5b6bbf"}
 
 :::: {.columns}
-::: {.column width="50%"}
+::: {.column width="40%"}
 ### Same Data, Different Story
 
 ```{r}
@@ -493,7 +527,7 @@ summary(anticipate_stage)
 ```
 :::
 
-::: {.column width="50%"}
+::: {.column width="60%"}
 ![Marketing: 🎉](img/ui-gain-frame.png){style="margin-bottom: 20px;"}
 
 ![Finance: 😱](img/ui-loss-frame.png)
@@ -552,19 +586,28 @@ summary(validate_stage)
 
 ## The Complete Workflow {background-color="#2c3e50"}
 
+::: {.panel-tabset}
+
+### With Telemetry
+
 ```{r}
-# Option A - with telemetry (SQLite or JSON)
+#| code-line-numbers: "|1-2|4-8|10"
+# Load and analyze existing usage data
 issues <- bid_telemetry("dashboard_telemetry.sqlite")
 count(issues, severity, sort = TRUE)
 
 report <- bid_interpret(central_question = "What do users need first?") |>
-  bid_notice_issue(issues[1, ]) |> # for use with telemetry
+  bid_notice_issue(issues[1, ]) |> # bridge from telemetry to BID
   bid_anticipate() |>
   bid_structure() |>
   bid_validate() |>
   bid_report(format = "html", include_diagrams = TRUE)
+```
 
-# Option B - without telemetry
+### Without Telemetry
+
+```{r}
+#| code-line-numbers: "|1-5|6-9|10"
 report <- bid_interpret(central_question = "What do users need first?") |>
   bid_notice(
     problem = "Too many filters, unclear defaults",
@@ -576,16 +619,23 @@ report <- bid_interpret(central_question = "What do users need first?") |>
   bid_report(format = "text", include_diagrams = FALSE)
 ```
 
+:::
+
 ::: {.notes}
 - 1 minute
-- "Complete workflow in one pipe"
-- "Works with or without telemetry"
-- bid_telemetry() provides a tidy tibble of issues compatible with dplyr.
-- bid_notice_issue() is the bridge from a single issue to a BID Notice stage.
-- The 5-stage chain (Interpret → Notice → Anticipate → Structure → Validate) culminates in bid_report(), which can produce text, HTML, or markdown.
-- Output is a concise text report you can paste into PRs or tickets.
-- Swap format = "html" if you want a styled artifact.
-- No telemetry? Start at Interpret + Notice manually, then continue the same way.
+- "Complete workflow in one pipe - works with or without telemetry"
+- [CLICK] With Telemetry tab first:
+- [CLICK] First highlight: Load and analyze existing data
+- [CLICK] Second highlight: The 5-stage BID pipeline
+- [CLICK] Third highlight: Generate report
+- [CLICK] Without Telemetry tab:
+- [CLICK] First highlight: Manual problem definition
+- [CLICK] Second highlight: Same 5-stage pipeline
+- [CLICK] Third highlight: Text output for tickets/PRs
+- bid_telemetry() provides a tidy tibble of issues compatible with dplyr
+- bid_notice_issue() is the bridge from a single issue to a BID Notice stage
+- The 5-stage chain culminates in bid_report(), which can produce text, HTML, or markdown
+- Output is a concise report you can paste into PRs or tickets
 - "Everything you need to fix your dashboard"
 :::
 
