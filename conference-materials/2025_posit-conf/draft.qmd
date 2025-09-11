@@ -1,7 +1,7 @@
 ---
 title: "Death by Dropdown?<br>Engineer Insightful Shiny Apps<br>with Behavioral Science"
 author: "Jeremy Winget, PhD"
-date: "September 17, 2025"
+date: "2025-09-07"
 date-format: "MMMM D, YYYY"
 execute:
   echo: true

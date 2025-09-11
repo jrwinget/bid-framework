@@ -6,7 +6,7 @@
 ## 📝 Overview
 The **5-Stage Behavior Insight Design (BID) Framework** is a structured approach for developing intuitive, bias-aware, and user-centered dashboards. Grounded in behavioral science and cognitive psychology, this framework guides developers through **five key stages** to enhance user experience and decision-making:
 
-![](https://github.com/jrwinget/bid-framework/raw/main/conference-materials/2025_shiny-conf/img/bid-framework.png)
+![](conference-materials/2025_posit-conf/img/bid-framework.png)
 
 1️⃣ **Interpret** → Understand the core user needs & data story
 2️⃣ **Notice** → Identify cognitive friction & usability challenges
