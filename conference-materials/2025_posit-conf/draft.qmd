@@ -32,13 +32,13 @@ format:
 and wonder where to even start?**
 :::
 
-:::: {.columns .fragment}
-::: {.column width="45%"}
-<div class="tenor-gif-embed" data-postid="596341483704119392" data-share-method="host" data-aspect-ratio="1.32447" data-width="50%"><a href="https://tenor.com/view/monkey-computer-work-bug-developer-gif-596341483704119392">Monkey Computer GIF</a>from <a href="https://tenor.com/search/monkey-gifs">Monkey GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+:::: {.columns}
+::: {.column width="45%" .fragment}
+<div class="tenor-gif-embed" data-postid="596341483704119392" data-share-method="host" data-aspect-ratio="1.32447" data-width="100%"><a href="https://tenor.com/view/monkey-computer-work-bug-developer-gif-596341483704119392">Monkey Computer GIF</a>from <a href="https://tenor.com/search/monkey-gifs">Monkey GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 :::
 
-::: {.column width="45%"}
-<div class="tenor-gif-embed" data-postid="17038619" data-share-method="host" data-aspect-ratio="1.77778" data-width="60%"><a href="https://tenor.com/view/ron-swanson-parks-and-recreation-parks-and-rec-computer-dumpster-gif-17038619">Ron Swanson Parks And Recreation GIF</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+::: {.column width="45%" .fragment}
+<div class="tenor-gif-embed" data-postid="17038619" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%"><a href="https://tenor.com/view/ron-swanson-parks-and-recreation-parks-and-rec-computer-dumpster-gif-17038619">Ron Swanson Parks And Recreation GIF</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 :::
 ::::
 
@@ -55,10 +55,8 @@ and wonder where to even start?**
 
 ## Dashboard Support Group {background-color="#2c3e50"}
 
-<div style="margin: 5% 10%;">
-
 :::: {.columns}
-::: {.column width="50%" .text-xl}
+::: {.column}
 ### Raise hand if you've ever:
 - Designed a UI with 10+ filters?
 - Had a user ask for "one more dropdown"?
@@ -71,85 +69,84 @@ and wonder where to even start?**
 :::
 :::
 
-::: {.column width="50%" .fragment .text-xl}
-### 👋 **Hi, I'm Jeremy!
+::: {.column .fragment}
+### 👋 Hi, I'm Jeremy!
 
-**PhD in Applied Psychology**<br>
-*How people actually process information*
+**I'm a psychologist by training, but not the kind you're thinking of**
 
-**Led Shiny teams at scale**<br>
-*Built dashboards people use*
+*Contrary to popular belief, most psychologists work with data. Not clients.*
 
-**Created {bidux} package**<br>
-*Your behavioral scientist in the console*
-
-I'm a psychologist by training — but not the kind you're thinking of.**<br>
-
-*Contrary to popular belief, most psychologists work with data, not clients.*<br>
-
-**Academic → Tech trajectory**: Applied psychology PhD → Full stack engineer
+::: {.fragment}
+- **PhD in Applied Psychology**: How people actually process information
+- **Led Shiny teams at scale**: *Built dashboards people use*
+- **Created {bidux} package**: *Your behavioral scientist in the console*
+:::
 :::
 ::::
 
-::: {.fragment}
-### Core Realization
-
-> "Most dashboard failures aren't technical. They're psychological."
-:::
-
-</div>
-
 ::: {.notes}
-- 1 minute
+- 45 seconds
 - Quick show of hands...who's created a user interface with more than 10 filters?
 - Or if ever had a client/user ask for "just one more dropdown"
 - Or built a Shiny app with more `selectInput()`s than insights
 - [CLICK] If so...welcome you to my dashboard support group
 - Think of our time together today as a little therapy session for dropdown overload
 - [PAUSE] Hi, I'm Jeremy! I'm a psychologist by training...but not the kind you're thinking of!
-- Contrary to popular belief...there are many types of psychologists...and most of us with data, not clients!
-- Clarify the therapy metaphor: support group hook connects our shared pain to therapeutic framing
-- Most psychologists actually work with data, studying behavior patterns, not doing individual therapy
-- My path: academic research → tech industry, bringing behavioral insights to engineering challenges
-- "PhD in Applied Psych...studied how people/groups process information and make decisions"
+- Contrary to popular belief...there are many types of psychologists...and most of us with data
+- Using it to studying behavior patterns...not doing individual therapy
+- PhD in Applied Psych...studied how people/groups process information and make decisions
 - Transitioned from academia to industry...where I got involved leading Shiny teams at scale
-- "Have nearly 10 years experience building enterprise apps/dashboards folks actually use"
+- Have nearly 10 years experience building enterprise apps/dashboards folks actually use
 - But it wasn't always that way...I've built MANY dashboards that flopped even though they were technically sound
-- This is what led to my core realization: Most dashboard failures aren't technical, they're psychological
-- "Let me show you what I mean"
+    - All of these definitely apply to me
+- This is what led to my core realization...
 :::
 
-## The Problem is Real {background-image="img/ui-before.png" background-size="contain" background-position="right" background-color="#fff"}
+## Core Realization {background-color="#5b6bbf"}
 
-::: {.absolute left="-50" bottom="200"}
-### Real client. Real dashboard. Real failure.
+::: {.r-fit-text}
+"Most dashboard failures aren't technical. They're psychological."
+:::
+
+::: {.notes}
+- 15 seconds
+- Most dashboard failures aren't technical, they're psychological
+- That might sound obvious, but it's a critical distinction...and one that we as developers can also easily address in our workflows
+- Let me show you what I mean...and how technically great products can still fail spectacularly
+:::
+
+## {background-image="img/ui-before.png" background-size="contain" background-position="right" background-color="#2c3e50"}
+
+::: {.text-box-overlay-dark .absolute left="-150" bottom="165" .fragment}
+### Real client. Real dashboard. Real problems.
 
 - 18 filters across 6 tabs
 - Every possible data view
 - Zero user adoption
 
-<br>
-
 ::: {.fragment}
 **We ran telemetry for 30 days...**
 :::
+
 :::
 
 ::: {.notes}
 - 45 seconds
-- "I worked with a client who had this 'comprehensive' dashboard"
+- I worked with a client who had this 'comprehensive' dashboard
 - Blinded here for confidentiality...but incredibly close to the actual design
-- "18 filters, 6 tabs, every possible view, nearly zero adoption"
+- 18 filters, 6 tabs, every possible view, nearly zero adoption
 - Why this matters: This represents thousands of developer hours and client budget wasted on technically perfect but psychologically broken software
 - The client was frustrated bc they had spent months building this thing, but no one used it
-- As developers, we can relate - we've all built features nobody uses. But here's why this matters more than frustration:
+- As developers, we can relate...we've all built features nobody uses
+- But here's why this matters more than frustration:
     1. Technical debt from unused complexity compounds over time
     2. User abandonment patterns replicate across similar projects
     3. Without data-driven insights, we keep making the same UX mistakes
-- [CLICK] "So we ran telemetry for 30 days..." - This data changed everything about how I approach dashboard design
+- [CLICK] So we ran telemetry for 30 days...
+- This data changed everything about how we approached the dashboard design
 :::
 
-## The Telemetry Revealed Everything
+## Telemetry Unraveled the User Journey {background-color="#2c3e50"}
 
 ```{r}
 #| echo: false
@@ -205,7 +202,6 @@ ggplot(telemetry_data, aes(x = metric, y = percentage)) +
     alpha = 0.3
   ) +
   labs(
-    title = "The User Journey of Despair",
     subtitle = "1,847 sessions tracked over 30 days",
     x = "",
     y = "Percentage of Users"
@@ -234,16 +230,15 @@ ggplot(telemetry_data, aes(x = metric, y = percentage)) +
 
 ::: {.notes}
 - 45 seconds
-- "Look at this journey of despair"
-- "100% open, only 35% click anything"
-- Only 8% succeed in finding what they needed...and we didn't collected data on this..but I would hypothesize that many of those folks were a bit more data savvy and just knew where to look
+- Look at this journey of despair
+- 100% open, only 35% click anything
+- Only 8% succeed in finding what they needed
+- And we didn't collected data on this..but I would hypothesize that many of those folks were a bit more data savvy and just knew where to look
 - [CLICK] Overall...this was essentially 92% failure rate on a product that cost the client thousands of dollars to build
-- This is behavioral science screaming at us that something is wrong here
+- This is behavioral science **screaming** at us that something is wrong here
 :::
 
 ## Enter: Behavioral Science {background-color="#5b6bbf"}
-
-<div style="margin: 5% 10%;">
 
 ### What is it?
 
@@ -252,28 +247,9 @@ The interdisciplinary study of how people **actually** make decisions<br>
 (Spoiler: irrationally, predictably, consistently)
 :::
 
-::: {.fragment}
-### Applied to Dashboards
+:::: {.columns .fragment}
+### Classic Example: The Paradox of Choice
 
-- **Cognitive Load**: Too many choices
-- **Progressive Disclosure**: Reveal complexity gradually
-- **Framing Effects**: Same data, different story
-- **Choice Architecture**: Guide without restricting
-:::
-
-</div>
-
-::: {.notes}
-- 30 seconds
-- "Behavioral science studies how people actually make decisions"
-- "Irrationally but predictably"
-- [CLICK] "Applied to dashboards"
-- "These aren't just theories, they're tools"
-:::
-
-## Classic Example: The Paradox of Choice {background-color="#5b6bbf"}
-
-:::: {.columns}
 ::: {.column width="50%"}
 ![Jam Study Results](img/jam-study-behavioral.png){width="100%" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"}
 :::
@@ -298,7 +274,9 @@ But...
 ::::
 
 ::: {.notes}
-- 45 seconds
+- 1 minute
+- Behavioral science studies how people think, feel, and act...often in the context of decision making
+- "Irrationally but predictably"
 - "Classic behavioral science example that perfectly mirrors our dashboard problem"
 - "Sheena Iyengar's famous jam study at Columbia University"
 - Show image: Side-by-side grocery store displays - one with 24 jam varieties (crowded, overwhelming), one with 6 varieties (clean, organized). Include simple bar charts showing the dramatic difference in purchase rates.
@@ -307,9 +285,20 @@ But...
 - "This principle drives everything we'll build with the BID framework"
 :::
 
-## The Solution: Your Dashboard Journey 🚗 {background-color="#2c3e50"}
+## Applied to Dashboards {background-color="#5b6bbf"}
 
-<div style="margin: 5% 10%;">
+- **Cognitive Load**: Too many choices
+- **Progressive Disclosure**: Reveal complexity gradually
+- **Framing Effects**: Same data, different story
+- **Choice Architecture**: Guide without restricting
+
+::: {.notes}
+- 20 seconds
+- "Applied to dashboards"
+- "These aren't just theories, they're tools"
+:::
+
+## The Solution: Your Dashboard Journey 🚗 {background-color="#2c3e50"}
 
 :::: {.columns}
 ::: {.column width="30%"}
@@ -343,8 +332,6 @@ But...
 :::
 ::::
 
-</div>
-
 ::: {.notes}
 - 45 seconds
 - Show image: Scenic road stretching toward mountains with modern car, representing the journey toward better UX. Should evoke adventure, possibility, and structured progress.
@@ -358,8 +345,6 @@ But...
 
 ## What is {bidux}? {background-color="#2c3e50"}
 
-<div style="margin: 5% 10%;">
-
 ### Your behavioral scientist in the console
 
 ::: {.text-large}
@@ -370,12 +355,6 @@ An R package that:
 - ✅ Auto-suggests behavioral science improvements
 - ✅ Custom parameter overrides
 :::
-
-::: {.fragment .text-xl .center}
-**Think of it as your dashboard's therapist**
-:::
-
-</div>
 
 ::: {.notes}
 - 30 seconds
@@ -557,8 +536,6 @@ summary(structure_stage)
 
 ## VALIDATE: Plain Language Wins {background-color="#5b6bbf"}
 
-<div style="margin: 5% 10%;">
-
 ```{r}
 validate_stage <- bid_validate(previous_stage = structure_stage)
 
@@ -570,8 +547,6 @@ summary(validate_stage)
 ![](img/ui-summary.png){.absolute bottom="50" right="100" width="650"}
 :::
 
-</div>
-
 ::: {.notes}
 - 1 minute
 - "Validate ensures understanding"
@@ -580,8 +555,6 @@ summary(validate_stage)
 :::
 
 ## The Complete Workflow {background-color="#2c3e50"}
-
-<div style="margin: 5% 10%;">
 
 ```{r}
 # Option A - with telemetry (SQLite or JSON)
@@ -607,8 +580,6 @@ report <- bid_interpret(central_question = "What do users need first?") |>
   bid_report(format = "text", include_diagrams = FALSE)
 ```
 
-</div>
-
 ::: {.notes}
 - 1 minute
 - "Complete workflow in one pipe"
@@ -627,7 +598,9 @@ report <- bid_interpret(central_question = "What do users need first?") |>
 :::: {.columns}
 ::: {.column width="50%"}
 ### Before
+
 ![](img/ui-before.png)
+
 
 ```{r}
 #| echo: false
@@ -644,7 +617,9 @@ knitr::kable(metrics_before, col.names = c("Metric", "Value"),
 
 ::: {.column width="50%"}
 ### After
+
 ![](img/ui-after.png)
+
 
 ```{r}
 #| echo: false
@@ -740,8 +715,6 @@ ggplot(metrics_long, aes(x = Metric, y = Value, fill = State)) +
 
 ## Your Turn: Start Today {.center background-color="#5b6bbf"}
 
-<div style="margin: 5% 10%;">
-
 ```{r}
 #| eval: false
 
@@ -782,8 +755,6 @@ result$next_steps
   - 📧 [contact@jrwinget.com](mailto:contact@jrwinget.com)
 :::
 
-</div>
-
 ::: {.notes}
 - 30 seconds
 - "Install from CRAN today"
@@ -794,8 +765,6 @@ result$next_steps
 :::
 
 ## One Thing to Remember {.center background-color="#2c3e50"}
-
-<div style="margin: 5% 10%;">
 
 :::: {.columns .center}
 
@@ -822,8 +791,6 @@ and all of you for caring about your users*
 :::
 :::
 ::::
-
-</div>
 
 
 ::: {.notes}
