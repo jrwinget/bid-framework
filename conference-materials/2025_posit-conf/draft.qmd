@@ -27,7 +27,7 @@ format:
 
 ## {.center background-color="#2c3e50"}
 
-::: {.r-fit-text}
+::: {.text-xl}
 **Ever open a dashboard with 18 filters across 6 tabs...<br>
 and wonder where to even start?**
 :::
@@ -38,7 +38,7 @@ and wonder where to even start?**
 :::
 
 ::: {.column width="45%" .fragment}
-<div class="tenor-gif-embed" data-postid="17038619" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%"><a href="https://tenor.com/view/ron-swanson-parks-and-recreation-parks-and-rec-computer-dumpster-gif-17038619">Ron Swanson Parks And Recreation GIF</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+<div class="tenor-gif-embed" data-postid="17038619" data-share-method="host" data-aspect-ratio="1.32447" data-width="100%"><a href="https://tenor.com/view/ron-swanson-parks-and-recreation-parks-and-rec-computer-dumpster-gif-17038619">Ron Swanson Parks And Recreation GIF</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 :::
 ::::
 
@@ -49,27 +49,27 @@ and wonder where to even start?**
 - That is...if you haven't made your career out of exploring data sets like most executives making decisions...what do you do?
 - [CLICK] Maybe you do something like this monkey....just start clicking randomly hoping something sticks
 - [PAUSE]
-- [CLICK] Or maybe your feelings are a bit more intense...
+- [CLICK] Or maybe your feelings are a a little bigger...
 - I get the feeling I'm not the only one who's been here before
 :::
 
 ## Dashboard Support Group {background-color="#2c3e50"}
 
 :::: {.columns}
-::: {.column}
+::: {.column width="45%"}
 ### Raise hand if you've ever:
 - Designed a UI with 10+ filters?
 - Had a user ask for "one more dropdown"?
 - Built a Shiny app with more `selectInput()` than insights?
 
 ::: {.fragment}
-### Welcome! You're among friends
+### Welcome! You're among friends 😊
 
 *Think of our time together as a little therapy session for dropdown overload*
 :::
 :::
 
-::: {.column .fragment}
+::: {.column width="45%" .fragment}
 ### 👋 Hi, I'm Jeremy!
 
 **I'm a psychologist by training, but not the kind you're thinking of**
@@ -77,9 +77,7 @@ and wonder where to even start?**
 *Contrary to popular belief, most psychologists work with data. Not clients.*
 
 ::: {.fragment}
-- **PhD in Applied Psychology**: How people actually process information
-- **Led Shiny teams at scale**: *Built dashboards people use*
-- **Created {bidux} package**: *Your behavioral scientist in the console*
+**PhD in Applied Psychology** → **Led Shiny teams at scale** → **Created {bidux} package**
 :::
 :::
 ::::
@@ -104,7 +102,7 @@ and wonder where to even start?**
 
 ## Core Realization {background-color="#5b6bbf"}
 
-::: {.r-fit-text}
+::: {style="text-align: center; margin-top: 200px;"}
 "Most dashboard failures aren't technical. They're psychological."
 :::
 
@@ -243,29 +241,22 @@ ggplot(telemetry_data, aes(x = metric, y = percentage)) +
 ### What is it?
 
 ::: {.text-large}
-The interdisciplinary study of how people **actually** make decisions<br>
-(Spoiler: irrationally, predictably, consistently)
+The interdisciplinary study of how people **actually** make decisions (Spoiler: irrationally, predictably, consistently)
 :::
 
-:::: {.columns .fragment}
+:::: {.columns}
+::: {.column width="50%"}
 ### Classic Example: The Paradox of Choice
 
-::: {.column width="50%"}
-![Jam Study Results](img/jam-study-behavioral.png){width="100%" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"}
-:::
-
-::: {.column width="50%"}
-### Sheena Iyengar's Jam Study
-
 ::: {.text-large}
-**24 varieties displayed**: 60% stopped to look<br>
-**6 varieties displayed**: 40% stopped to look
-
-But...
-
-**24 varieties**: Only 3% bought jam<br>
-**6 varieties**: 30% bought jam
+- [study details here]
 :::
+:::
+
+::: {.column width="50%" .fragment}
+### Study Results
+
+![](img/jam-study.png){width="100%" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"}
 
 ::: {.fragment .text-xl style="color: var(--coral); font-weight: 600; margin-top: 30px;"}
 **10x higher conversion with fewer options**
@@ -276,13 +267,15 @@ But...
 ::: {.notes}
 - 1 minute
 - Behavioral science studies how people think, feel, and act...often in the context of decision making
-- "Irrationally but predictably"
-- "Classic behavioral science example that perfectly mirrors our dashboard problem"
-- "Sheena Iyengar's famous jam study at Columbia University"
-- Show image: Side-by-side grocery store displays - one with 24 jam varieties (crowded, overwhelming), one with 6 varieties (clean, organized). Include simple bar charts showing the dramatic difference in purchase rates.
-- "More choice attracted browsers, but paralyzed buyers"
-- [CLICK] "This is exactly what happens with dashboard filters - more options kill engagement"
-- "This principle drives everything we'll build with the BID framework"
+- Surprise...we're not rational...but we are still predictable and fairly consistent when we pay attention to the right drivers
+- Let me show you a classic example that mirrors our dashboard problem...Sheena Iyengar & Mark Lepper’s famous jam study at Columbia
+- They studied people in the field at a fancy grocery store...think Whole Foods or Trader Joe's
+- These shoppers walked by a display stand with either 24 jams...(extensive choice condition)...or 6 jams (limited choice condition)
+- More choice drew people in...60% stopped at the big display vs. 40% at the small one
+- But fewer choices drove action...nearly 30% bought jam after the 6-jam booth, compared to only 3% after the 24-jam booth
+- More choice attracted browsers...but paralyzed buyers
+- So what do we learn from this?
+    - Too many options look appealing but kill follow-through...exactly what happens with dashboards overloaded with filters
 :::
 
 ## Applied to Dashboards {background-color="#5b6bbf"}
@@ -294,15 +287,16 @@ But...
 
 ::: {.notes}
 - 20 seconds
-- "Applied to dashboards"
-- "These aren't just theories, they're tools"
+- Now the paradox of choice is just one of many behavioral science concepts that directly apply to dashboards
+- Taking this a step further...
+- These aren't just theories...they're tools
 :::
 
-## The Solution: Your Dashboard Journey 🚗 {background-color="#2c3e50"}
+## The Solution: Your Dashboard Journey {background-color="#2c3e50"}
 
 :::: {.columns}
 ::: {.column width="30%"}
-![Road Trip Adventure](img/roadtrip-journey.png){width="100%" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"}
+![](img/vw-bus.jpg){.r-stretch}
 :::
 
 ::: {.column width="35%"}
@@ -313,10 +307,6 @@ But...
 🌦️ **Anticipate** weather changes<br>
 🗺️ **Structure** the best route<br>
 ✅ **Validate** safe arrival
-
-::: {.fragment}
-![VW Bus Spirit](img/vw-bus-adventure.png){width="80%" style="margin-top: 20px; border-radius: 8px;"}
-:::
 :::
 
 ::: {.column width="35%" .fragment}
@@ -328,26 +318,25 @@ But...
 🗺️ **Structure** information flow<br>
 ✅ **Validate** understanding
 
-![BID Hex](img/bid-framework.png){width="80%" style="margin-top: 20px;"}
+::: {.fragment}
+![](img/bid-framework.png)
+:::
 :::
 ::::
 
 ::: {.notes}
 - 45 seconds
-- Show image: Scenic road stretching toward mountains with modern car, representing the journey toward better UX. Should evoke adventure, possibility, and structured progress.
-- "Think of building dashboards like you would a road trip"
-- "You need to interpret where you're going, notice warning lights..."
-- [CLICK] Show image: Classic VW bus with hex-style stickers, embodying the "long strange trip" philosophy of exploration and community. Connects to Grateful Dead culture of innovation and shared journey.
+- Think of building dashboards like you would a road trip
+- You need to interpret where you're going, notice warning lights...
 - [CLICK] "This is the BID framework"
-- "Five *iterative* stages to prevent dashboard disasters"
-- "Like any good road trip, it's not just about the destination - it's about having the right framework to explore and discover along the way"
+- [CLICK] "Five *iterative* stages to prevent dashboard disasters"
+- Like any good road trip, it's not just about the destination...it's about having the right framework to explore and discover along the way
 :::
 
 ## What is {bidux}? {background-color="#2c3e50"}
 
-### Your behavioral scientist in the console
-
-::: {.text-large}
+:::: {.columns}
+::: {.column width="45%" .text-large}
 An R package that:
 
 - ✅ Works with ANY Shiny dashboard
@@ -356,11 +345,16 @@ An R package that:
 - ✅ Custom parameter overrides
 :::
 
+::: {.column width="45%" .fragment .text-xl style="text-align: center; margin-top: 30px;"}
+*Your behavioral scientist in the console*
+:::
+::::
+
 ::: {.notes}
 - 30 seconds
 - "bidux is your behavioral scientist in the console"
 - "Works with any Shiny app, telemetry optional, auto-suggests improvements"
-- [CLICK] "Think of it as your dashboard's therapist"
+- [CLICK] "Think of it as your behavioral scientist in the console"
 :::
 
 ## INTERPRET: Start with Why {background-color="#5b6bbf"}
@@ -471,16 +465,18 @@ ggplot(filters, aes(x = 1, y = filter, fill = usage)) +
 
 ::: {.notes}
 - 1 minute
-- "Notice finds the concepts behind the friction points"
-- Why this stage matters for developers: It turns user complaints into actionable engineering insights
-- Look at this heatmap - 14 filters completely ignored. This isn't just usage data, it's technical debt visualization
+- Notice finds the concepts behind the friction points
+- Why this stage matters for developers...It turns user complaints into actionable engineering insights
+- Look at this heatmap...14 filters basically going unused...4 are completely ignored
+- This isn't just usage data...it's technical debt visualization
 - What this means for your codebase:
     1. Those unused filters are maintenance overhead with zero ROI
-    2. Database queries are running for features nobody touches
-    3. UI complexity is slowing render times without value
-    4. Future feature requests will compound these problems
-- `bid_notice` auto-suggests behavioral theories to explain patterns, or power users can override
-- This transforms "users don't like it" into "choice overload is killing task completion" - now you have a specific problem to solve with code
+    2. Database queries could be running for features nobody touches
+    3. UI complexity is slowing rendering times without value
+    4. Future feature requests will compound these problems over time
+- `bid_notice` auto-suggests behavioral theories to explain patterns...or power users can override them with specific concepts
+- This transforms "users don't like it" into "choice overload is killing task completion"
+- Now you have a specific problem to solve with code
 :::
 
 ## ANTICIPATE: Guard Against Biases {background-color="#5b6bbf"}
@@ -764,31 +760,26 @@ result$next_steps
 - "Join the community" and feel free to connect with me on Bluesky, LinkedIn, or email
 :::
 
-## One Thing to Remember {.center background-color="#2c3e50"}
+## One Thing to Remember {background-color="#2c3e50"}
 
 :::: {.columns .center}
-
 ::: {.column width="30%"}
-![Community Spirit](img/posit-conf-community.png){width="100%" style="border-radius: 8px; opacity: 0.8;"}
+![](img/hex-bidux.png)
 :::
 
 ::: {.column width="40%" .text-display}
 **Dashboards don't need more features.**<br>
 **They need fewer obstacles.**
 
-::: {.fragment .text-xl}
+::: {.fragment .text-xl style="margin-top: 50px"}
 Let's fix that together!
 :::
 :::
 
-::: {.column width="30%"}
-![BID Hex](img/hex-bidux.png){class="hex-logo" width="200"}
-
-::: {.fragment .text-small style="margin-top: 20px; color: var(--warm-white);"}
+::: {.column width="30%" .fragment}
 *Special thanks to the posit::conf organizers,<br>
 the Shiny community,<br>
 and all of you for caring about your users*
-:::
 :::
 ::::
 

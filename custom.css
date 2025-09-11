@@ -70,10 +70,6 @@
     color: var(--dark-blue) !important;
 }
 
-.reveal .slides {
-    text-align: left;
-}
-
 /* title slide layout - right-aligned content */
 .reveal .quarto-title-block {
     display: flex !important;
