@@ -1,4 +1,4 @@
-/* ========== tokens: colors, typography, spacing ========== */
+/* ========== base theme: colors, typography, spacing ========== */
 :root {
     /* palette */
     --indigo: #5B6BBF;
@@ -63,11 +63,12 @@
 }
 
 /* ========== reveal.js overrides ========== */
+
 /* base styles */
 .reveal {
-    font-family: var(--font-sans) !important;
-    font-size: var(--fs-body) !important;
-    color: var(--dark-blue) !important;
+    font-family: var(--font-sans);
+    font-size: var(--fs-body);
+    color: var(--dark-blue);
 }
 
 /* title slide layout - right-aligned content */
@@ -82,8 +83,8 @@
 }
 
 .reveal .quarto-title-block h1.title {
-    font-size: var(--fs-h1) !important;
-    color: var(--warm-white) !important;
+    font-size: var(--fs-h1);
+    color: var(--warm-white);
     margin-bottom: var(--space-6);
     text-align: center;
     width: 100%;
@@ -91,8 +92,8 @@
 }
 
 .reveal .quarto-title-block .subtitle {
-    font-size: var(--fs-h2) !important;
-    color: var(--coral-light) !important;
+    font-size: var(--fs-h2);
+    color: var(--coral-light);
     margin-bottom: var(--space-5);
     text-align: center;
     width: 100%;
@@ -100,8 +101,8 @@
 }
 
 .reveal .quarto-title-block .quarto-title-authors {
-    font-size: var(--fs-body) !important;
-    color: var(--warm-white) !important;
+    font-size: var(--fs-body);
+    color: var(--warm-white);
     margin-bottom: var(--space-4);
     text-align: center;
     width: 100%;
@@ -109,8 +110,8 @@
 }
 
 .reveal .quarto-title-block .date {
-    font-size: var(--fs-body) !important;
-    color: var(--coral-light) !important;
+    font-size: var(--fs-body);
+    color: var(--coral-light);
     text-align: center;
     width: 100%;
     margin-left: 45%;
@@ -123,36 +124,36 @@
 
 /* headings - 1.5-2 line spaces (~32-40px) before body text */
 .reveal h1 {
-    font-size: var(--fs-h1) !important;
-    line-height: var(--lh-heading) !important;
+    font-size: var(--fs-h1);
+    line-height: var(--lh-heading);
     color: var(--warm-white) !important;
-    font-weight: 700 !important;
-    margin-bottom: var(--space-6) !important;
+    font-weight: 700;
+    margin-bottom: var(--space-6);
 }
 
 .reveal h2 {
-    font-size: var(--fs-h2) !important;
-    line-height: var(--lh-heading) !important;
+    font-size: var(--fs-h2);
+    line-height: var(--lh-heading);
     color: var(--warm-white) !important;
-    font-weight: 600 !important;
-    margin-bottom: var(--space-5) !important;
+    font-weight: 600;
+    margin-bottom: var(--space-5);
 }
 
 .reveal h3 {
-    font-size: var(--fs-h3) !important;
-    line-height: var(--lh-heading) !important;
+    font-size: var(--fs-h3);
+    line-height: var(--lh-heading);
     color: var(--indigo-light) !important;
-    font-weight: 600 !important;
-    margin-bottom: var(--space-4) !important;
+    font-weight: 600;
+    margin-bottom: var(--space-4);
 }
 
 /* body text - prefer 28-32pt, line spacing 1.2-1.4x */
 .reveal p,
 .reveal li {
-    font-size: var(--fs-body) !important;
-    line-height: var(--lh-body) !important;
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
     margin-bottom: var(--space-4);
-    color: var(--primary-text) !important;
+    color: var(--primary-text);
 }
 
 .reveal .columns {
@@ -170,40 +171,46 @@
     margin-bottom: var(--space-3);
 }
 
-/* code blocks - min 20pt, visually distinct background */
+/* code blocks - min 20pt, distinct terminal */
 .reveal pre {
-    font-size: var(--fs-code) !important;
-    background: var(--secondary-bg-alt) !important;
-    border-radius: var(--radius-md) !important;
-    padding: var(--space-5) !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
-    border-left: 4px solid var(--accent-primary) !important;
+    font-size: var(--fs-code);
+    background: var(--secondary-bg-alt);
+    border-radius: var(--radius-md);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .reveal code {
-    font-family: var(--font-mono) !important;
-    font-size: var(--fs-code) !important;
+    font-family: var(--font-mono);
+    font-size: var(--fs-code);
     background: var(--secondary-bg-alt);
-    padding: var(--space-1) var(--space-2);
     border-radius: var(--radius-sm);
 }
 
 .reveal pre code {
-    background: transparent !important;
-    padding: 0 !important;
+    background: transparent;
+    padding: 0;
 }
 
-/* blockquotes */
-.reveal blockquote {
-    background: var(--secondary-bg-alt);
-    border-left: 4px solid var(--accent-primary);
-    padding: var(--space-4) var(--space-5);
-    font-style: italic;
-    margin: var(--space-6) 0;
-    border-radius: var(--radius-md);
+/* block quotes - styling with serif font */
+.reveal section blockquote {
+    font-family: "Verdana", Arial, sans-serif; /* Prioritize Verdana, then Arial, then any sans-serif */
+    font-size: 1.2em; /* Adjust size as needed */
+    line-height: 1.5; /* Improve readability with line spacing */
+    font-style: italic; /* Commonly used for quotes */
+    font-weight: bold;
+    color: var(--warm-white);
+    margin: 1em 2em; /* Indent for visual distinction */
+    padding-left: 1em;
+    border-left: 4px solid var(--warm-white); /* Add a visual indicator */
+    background: transparent;
+    width: 100%;
+    position: absolute;
+    top: 35%;
+    left: 55%;
+    transform: translate(-50%, -50%);
 }
 
-/* links - using accent colors for emphasis */
+/* links - using accent colors */
 .reveal a {
     color: var(--indigo-light) !important;
     text-decoration: underline;
@@ -348,23 +355,47 @@
     color: var(--medium-gray) !important;
 }
 
+/* code output styling - visually distinct from input code */
+.reveal .cell-output,
+.reveal .cell-output pre,
+.reveal .cell-output code {
+    font-size: var(--fs-code);
+    font-family: var(--font-mono);
+}
+
+.reveal .cell-output pre {
+    margin: var(--space-2) 0;
+    padding: var(--space-3) var(--space-4);
+    background: var(--warm-gray);
+    border-left: 4px solid var(--teal);
+    border-radius: var(--radius-md);
+    position: relative;
+}
+
+/* Add ">" prefix to output lines */
+.reveal .cell-output pre::before {
+    content: "> ";
+    color: var(--teal);
+    font-weight: bold;
+}
+
 /* util classes */
 .text-large {
-    font-size: calc(var(--fs-body) * 1.25) !important;
+    font-size: calc(var(--fs-body) * 1.25);
 }
 
 .text-xl {
-    font-size: calc(var(--fs-body) * 1.5) !important;
+    font-size: calc(var(--fs-body) * 1.5);
 }
 
 .text-xxl {
-    font-size: calc(var(--fs-body) * 2) !important;
+    font-size: calc(var(--fs-body) * 2);
 }
 
 .text-display {
-    font-size: var(--fs-display) !important;
-    line-height: var(--lh-display) !important;
-    font-weight: 700 !important;
+    font-size: var(--fs-display);
+    line-height: var(--lh-display);
+    font-weight: 700;
 }
 
 /* callout boxes - WCAG AA compliant backgrounds */
@@ -443,13 +474,6 @@
     color: var(--indigo) !important;
 }
 
-/* slide numbers */
-.reveal .slide-number {
-    font-size: var(--fs-small) !important;
-    color: var(--medium-gray) !important;
-    background: transparent !important;
-}
-
 /* formatting for bidux hex logo */
 .hex-logo {
     width: 250px;
@@ -484,35 +508,81 @@
 }
 
 /* improve fragment visibility on dark backgrounds */
-.reveal section[data-background-color="#2C3E50"] .fragment,
-.reveal section[data-background-color="#2c3e50"] .fragment,
 .reveal section[data-background-color="#5B6BBF"] .fragment,
 .reveal section[data-background-color="#5b6bbf"] .fragment {
     opacity: 0.3;
 }
 
-.reveal section[data-background-color="#2C3E50"] .fragment.visible,
-.reveal section[data-background-color="#2c3e50"] .fragment.visible,
 .reveal section[data-background-color="#5B6BBF"] .fragment.visible,
 .reveal section[data-background-color="#5b6bbf"] .fragment.visible {
     opacity: 1;
 }
 
+/* Three-column layout improvements - better centering */
+.reveal .slides section .columns.center {
+    height: 80vh;
+    align-items: center;
+    display: flex;
+}
+
+.reveal .slides section .columns.center .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
+/* Fix text display issues on final slide */
+.reveal .slides section .text-display {
+    color: var(--warm-white);
+    display: block;
+    visibility: visible;
+}
+
+
+/* Ensure final slide fragment text is visible */
+.reveal section[data-background-color="#2c3e50"] .fragment {
+    opacity: 0.7;
+}
+
+.reveal section[data-background-color="#2c3e50"] .fragment.visible {
+    opacity: 1;
+}
+
+/* Override for coral text in final slide - needs higher specificity than the dark background rule */
+.reveal section[data-background-color="#2c3e50"] .columns.center .column:last-child p {
+    color: var(--coral-light) !important;
+}
+
+/* Indigo text for center column on final slide */
+.reveal section[data-background-color="#2c3e50"] .columns.center .column.text-display p {
+    color: var(--indigo-light) !important;
+}
+
+/* Shift BID Framework text block to center over the image on Dashboard Journey slide */
+.reveal section[data-background-color="#2c3e50"] .columns .column[style*="width:70%"] h3,
+.reveal section[data-background-color="#2c3e50"] .columns .column[style*="width:70%"] > p:first-of-type {
+    margin-left: 25%;
+    max-width: 75%;
+}
+
 /* print styles */
 @media print {
     .reveal {
-        font-size: 20pt !important;
+        font-size: 20pt;
     }
 
     .reveal h1 {
-        font-size: 36pt !important;
+        font-size: 36pt;
     }
 
     .reveal h2 {
-        font-size: 28pt !important;
+        font-size: 28pt;
     }
 
     .reveal h3 {
-        font-size: 24pt !important;
+        font-size: 24pt;
     }
 }

@@ -29,16 +29,16 @@ format:
 
 ::: {.text-xl}
 **Ever open a dashboard with 18 filters across 6 tabs...<br>
-and wonder where to even start?**
+and wonder where to even begin?**
 :::
 
-:::: {.columns}
-::: {.column width="45%" .fragment}
-<div class="tenor-gif-embed" data-postid="596341483704119392" data-share-method="host" data-aspect-ratio="1.32447" data-width="350px"><a href="https://tenor.com/view/monkey-computer-work-bug-developer-gif-596341483704119392">Monkey Computer GIF</a>from <a href="https://tenor.com/search/monkey-gifs">Monkey GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+:::: {.columns .center}
+::: {.column width="45%" .fragment .center}
+<div class="tenor-gif-embed" data-postid="596341483704119392" data-share-method="host" data-aspect-ratio="1.32447" data-width="700px"><a href="https://tenor.com/view/monkey-computer-work-bug-developer-gif-596341483704119392">Monkey Computer GIF</a>from <a href="https://tenor.com/search/monkey-gifs">Monkey GIFs</a></div><script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 :::
 
-::: {.column width="45%" .fragment}
-<div class="tenor-gif-embed" data-postid="17038619" data-share-method="host" data-aspect-ratio="1.32447" data-width="350px"><a href="https://tenor.com/view/ron-swanson-parks-and-recreation-parks-and-rec-computer-dumpster-gif-17038619">Ron Swanson Parks And Recreation GIF</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+::: {.column width="45%" .fragment .center}
+<div class="tenor-gif-embed" data-postid="17038619" data-share-method="host" data-aspect-ratio="1.32447" data-width="925px"><a href="https://tenor.com/view/ron-swanson-parks-and-recreation-parks-and-rec-computer-dumpster-gif-17038619">Ron Swanson Parks And Recreation GIF</a></div><script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 :::
 ::::
 
@@ -47,9 +47,9 @@ and wonder where to even start?**
 - Ever open a dashboard with 18 filters across 6 separate tabs...and try to figure out where to even start?
 - I mean, that's a lot of data and different ways slicing it to get a full understanding of what's going on...so what do you do?
 - That is...if you haven't made your career out of exploring data sets like most executives making decisions...what do you do?
-- [CLICK] Maybe you do something like this monkey....just start clicking randomly hoping something sticks
+- [CLICK] Maybe you feel a bit like this...
 - [PAUSE]
-- [CLICK] Or maybe your feelings are a a little bigger...
+- [CLICK] Or maybe you have some bigger feelings about it...
 - I get the feeling I'm not the only one who's been here before
 :::
 
@@ -89,29 +89,24 @@ and wonder where to even start?**
 
 ::: {.notes}
 - 45 seconds
-- Quick show of hands...who's created a user interface with more than 10 filters?
-- Or if ever had a client/user ask for "just one more dropdown"
-- Or built a Shiny app with more `selectInput()`s than insights
-- [CLICK] If so...welcome you to my dashboard support group
-- Think of our time together today as a little therapy session for dropdown overload
-- [PAUSE] Hi, I'm Jeremy! I'm a psychologist by training...but not the kind you're thinking of!
-- Contrary to popular belief...there are many types of psychologists...and most of us with data
-- Using it to studying behavior patterns...not doing individual therapy
-- PhD in Applied Psych...studied how people/groups process information and make decisions
-- Transitioned from academia to industry...where I got involved leading Shiny teams at scale
-- Have nearly 10 years experience building enterprise apps/dashboards folks actually use
-- But it wasn't always that way...I've built MANY dashboards that flopped even though they were technically sound
-    - All of these definitely apply to me
-- This is what led to my core realization...
+- Alright, let's get honest with each other for a moment. Quick show of hands - who here has created a user interface with more than 10 filters? Don't be shy!
+- How about this one - who's ever had a client or user ask for "just one more dropdown" when you knew it would make things worse?
+- Or here's my personal favorite - who's built a Shiny app with more selectInput() functions than actual insights?
+- [CLICK] If any of these sound familiar, then welcome to what I like to call my dashboard support group! You're among friends here.
+- Seriously, think of our time together today as a little group therapy session for dropdown overload. We've all been there, and there's no judgment in this room.
+- [PAUSE] Let me introduce myself properly - Hi, I'm Jeremy! I'm a psychologist by training, but probably not the kind you're thinking of.
+- Here's something that surprises people - contrary to popular belief, most psychologists work with data, not individual clients. We use it to study behavior patterns, understand how people make decisions, and figure out why humans do the puzzling things we do.
+- I have a PhD in Applied Psychology where I specifically studied how people and groups process information and make decisions under pressure - which, it turns out, is exactly what happens when someone opens your dashboard!
+- I transitioned from academia into industry where I got involved in leading Shiny teams at scale, and I've spent nearly 10 years building enterprise apps and dashboards that people actually use and find valuable.
+- But I have to be honest - it wasn't always that way. I've built MANY dashboards that flopped spectacularly, even though they were technically perfect. Every single one of those problems I mentioned? Yeah, I've made them all.
+- And that's exactly what led me to my core realization about why dashboards succeed or fail...
 :::
 
 ## Core Realization {background-color="#5b6bbf"}
 
-<!-- ::: {.insight-box style="margin-top: 300px !important;"}
-"Most dashboard failures aren't technical. They're psychological."
-::: -->
-
-> "Most dashboard failures aren't technical. They're psychological."
+> Most dashboard failures aren't technical...
+>
+> They're psychological.
 
 ::: {.notes}
 - 15 seconds
@@ -247,7 +242,7 @@ ggplot(telemetry_data, aes(x = metric, y = percentage)) +
 ## Enter: Behavioral Science {background-color="#5b6bbf"}
 
 ::: {.text-large}
-**What is it?** The interdisciplinary study of how people *actually* make decisions<br>
+**What is it?** The interdisciplinary study of how people make decisions<br>
 (Spoiler: irrationally, yet predictably & consistently)
 :::
 
@@ -293,7 +288,7 @@ ggplot(telemetry_data, aes(x = metric, y = percentage)) +
 ## Applied to Dashboards {background-color="#5b6bbf"}
 
 :::: {.columns}
-::: {.column width="45%"}
+::: {.column width="45%" style="margin-top: var(--space-8);"}
 ### Core Concepts {style="color: var(--coral-light) !important;"}
 
 - **Cognitive Load**
@@ -306,15 +301,15 @@ ggplot(telemetry_data, aes(x = metric, y = percentage)) +
     - Guide decisions without restricting options
 :::
 
-::: {.column width="45%" .fragment}
+::: {.column width="45%" .fragment style="margin-top: var(--space-8);"}
 ### Dashboard Examples {style="color: var(--teal-light) !important;"}
 
 - **Cognitive Load**
-    - Start with 3 key filters, hide 15 advanced ones behind "More Options"
+    - Start with 3 key filters, hide 15 advanced ones
 - **Progressive Disclosure**
-    - Show summary → drill to details → reveal comparisons
+    - Show summary → detailed dive → comparisons
 - **Framing Effects**
-    - "Revenue up 15%" vs "Revenue missed target by 5%"
+    - "Revenue up 15%" vs "Revenue missed by 5%"
 - **Choice Architecture**
     - Smart defaults, logical grouping, visual hierarchy
 :::
@@ -335,8 +330,6 @@ ggplot(telemetry_data, aes(x = metric, y = percentage)) +
 
 :::: {.columns}
 ::: {.column width="30%"}
-![](img/vw-bus.jpg){.r-stretch}
-
 ### Think of it like a road trip
 
 📍 **Interpret** where you're going<br>
@@ -344,6 +337,8 @@ ggplot(telemetry_data, aes(x = metric, y = percentage)) +
 🌦️ **Anticipate** weather changes<br>
 🗺️ **Structure** the best route<br>
 ✅ **Validate** safe arrival
+
+![](img/vw-bus.jpg){.r-stretch}
 :::
 
 ::: {.column width="70%" .fragment}
@@ -355,20 +350,18 @@ ggplot(telemetry_data, aes(x = metric, y = percentage)) +
 🗺️ **Structure** information flow<br>
 ✅ **Validate** understanding
 
-::: {.fragment}
 ![](img/bid-framework.png){style="box-shadow: none !important; width: 100%;"}
-:::
 :::
 ::::
 
 ::: {.notes}
 - 45 seconds
-- Think of building dashboards like you would a road trip
-- reference grateful dead fans....people are a long strange trip joke here (related to journey theme; it's a brief point to implicitly reference the VM road image on the slide, and sets them up for understanding the hex logo imagery by the end of the talk)
-- You need to interpret where you're going, notice warning lights...
-- [CLICK] "This is the BID framework"
-- [CLICK] "Five *iterative* stages to prevent dashboard disasters"
-- Like any good road trip, it's not just about the destination...it's about having the right framework to explore and discover along the way
+- Think of building dashboards like planning the perfect road trip with friends. You know that feeling when you're mapping out an adventure - equal parts excitement and careful preparation?
+- And speaking of adventures - for those Grateful Dead fans in the audience, building user-friendly dashboards really can be a "long, strange trip." But unlike Jerry Garcia's journeys, ours actually have a clear destination and users who need to get there!
+- Just like any road trip, you need to interpret where you're going, notice those warning lights on the dashboard, anticipate weather changes...
+- [CLICK] This is what I call the BID framework - your roadmap for dashboard success
+- Five iterative stages that prevent those dashboard disasters we've all experienced. Think of it as your GPS for user experience.
+- Like any memorable road trip, it's not just about reaching your destination - it's about creating a framework that makes the journey enjoyable and the discoveries along the way meaningful for your users.
 :::
 
 ## What is {bidux}? {background-color="#2c3e50"}
@@ -390,9 +383,9 @@ An R package that:
 
 ::: {.notes}
 - 30 seconds
-- "bidux is your behavioral scientist in the console"
-- "Works with any Shiny app, telemetry optional, auto-suggests improvements"
-- [CLICK] "Think of it as your behavioral scientist in the console"
+- So what exactly is bidux? Think of it as having a friendly behavioral scientist sitting right there in your console, ready to help whenever you're building dashboards.
+- It works with any Shiny app you've already built - no need to start over. Whether you have telemetry data or not, it can still provide valuable insights and auto-suggest improvements based on solid behavioral science principles.
+- [CLICK] The best part? It translates all those academic psychology concepts into practical, actionable code suggestions that you can implement today. It's like having a psychology PhD on your development team, but one that actually speaks R!
 :::
 
 ## INTERPRET: Start with Why {background-color="#5b6bbf"}
@@ -753,9 +746,9 @@ ggplot(metrics_long, aes(x = Metric, y = Value, fill = State)) +
 - Bottom line: Better user psychology = better engineering outcomes = more impactful projects in your portfolio
 :::
 
-## Your Turn: Start Today {.center background-color="#5b6bbf"}
+## Your Turn: Start Today {background-color="#5b6bbf"}
 
-:::: {.columns}
+:::: {.columns .center}
 ::: {.column width="65%"}
 ```{r}
 #| eval: false
@@ -801,30 +794,29 @@ result$next_steps
 
 ::: {.notes}
 - 30 seconds
-- "Install from CRAN today"
-- "Works immediately without telemetry"
-- [CLICK] "Resources available"
-- These slides will be in the BID framework repo...and I'll post them on my website as well
-- "Join the community" and feel free to connect with me on Bluesky, LinkedIn, or email
+- Here's the exciting part - you can get started with bidux right now! It's available on CRAN, so installation is as simple as any other R package.
+- The beautiful thing is it works immediately, even without telemetry data. You can start getting insights and suggestions for your existing dashboards today.
+- [CLICK] I've also prepared plenty of resources to support your journey. These slides will be available in the BID framework repository, and I'll be posting them on my website as well.
+- I genuinely believe the R and Shiny community is one of the most supportive and collaborative communities out there, so please join us! Feel free to connect with me on Bluesky, LinkedIn, or email - I'd love to hear about your experiences and learn from your dashboard challenges too.
 :::
 
 ## One Thing to Remember {background-color="#2c3e50"}
 
 :::: {.columns .center}
-::: {.column width="20%"}
-![](img/hex-bidux.png){style="box-shadow: none !important; border: none !important; margin-top: 50px;"}
+::: {.column width="25%" .center}
+![](img/hex-bidux.png){style="box-shadow: none !important;"}
 :::
 
-::: {.column width="40%" .text-display style="margin-top: 200px;"}
+::: {.column width="50%" .text-display .center}
 **Dashboards don't need more features.**<br>
 **They need fewer obstacles.**
 
-::: {.fragment .text-xl style="margin-top: 50px"}
+::: {.fragment}
 Let's fix that together!
 :::
 :::
 
-::: {.column width="20%" .fragment}
+::: {.column width="25%" .fragment .center}
 *Special thanks to posit::conf organizers,<br>
 the Shiny community,<br>
 and all of you for caring about your users*
@@ -834,9 +826,9 @@ and all of you for caring about your users*
 
 ::: {.notes}
 - 20 seconds
-- Dashboards don't need more features
-- They need fewer obstacles
-- [CLICK] "Let's fix that together"
-- [CLICK] Special thanks to the posit::conf organizers...the Shiny community...and all of you for caring about your users
-- "Questions?"
+- If you take away just one thing from our time together today, let it be this: Dashboards don't need more features - they need fewer obstacles.
+- Every dropdown, every filter, every choice we add should bring users closer to insight, not further from it.
+- [CLICK] And here's the thing - we can absolutely fix this together. The tools exist, the knowledge exists, and most importantly, you all clearly care about creating better experiences for your users.
+- [CLICK] Before I close, I want to offer my heartfelt thanks to the posit::conf organizers for creating this incredible space for learning, to the broader Shiny community for pushing the boundaries of what's possible with data visualization, and most importantly, to all of you for caring enough about your users to be here learning how to serve them better.
+- Now, I'd love to hear your questions and learn about the dashboard challenges you're facing!
 :::
