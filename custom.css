@@ -522,8 +522,7 @@
 /* shift BID Framework text block over the framework image */
 .reveal section[data-background-color="#2c3e50"] .columns .column[style*="width:70%"] h3,
 .reveal section[data-background-color="#2c3e50"] .columns .column[style*="width:70%"] > p:first-of-type {
-    margin-left: 25%;
-    max-width: 75%;
+    margin-left: 40%;
 }
 
 /* print styles */

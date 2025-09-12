@@ -115,9 +115,9 @@ and wonder where to even begin?**
 - Let me show you what I mean...and how technically great products can still fail spectacularly
 :::
 
-## {background-image="img/ui-before.png" background-size="contain" background-position="right" background-color="#2c3e50"}
+## {background-image="img/ui-before.png" background-size="contain" background-color="#2c3e50"}
 
-::: {.text-box-overlay-dark .absolute left="-150" bottom="165" .fragment}
+::: {.text-box-overlay-dark .absolute left="-200" bottom="100" .fragment}
 ### Real client. Real dashboard. Real problems.
 
 - 18 filters across 6 tabs
@@ -247,35 +247,41 @@ ggplot(telemetry_data, aes(x = metric, y = percentage)) +
 :::
 
 ::: { style="margin-top: var(--space-7);"}
-:::: {.columns}
+:::: {.columns .fragment}
+
+### Classic Example: The Paradox of Choice {style="text-align: center; color: var(--coral-light) !important;"}
+
 ::: {.column width="45%" .fragment}
-### Classic Example: The Paradox of Choice {style="color: var(--coral-light) !important;"}
 
 ::: {.text-large}
-- **Researchers**: Sheena Iyengar & Mark Lepper
-- **Setting**: Upscale grocery store sampling booth
-- **Design**: 24 jams vs. 6 jams display
-- **Key Finding**: More choice attracted browsers but paralyzed buyers
+**Researchers**: Sheena Iyengar & Mark Lepper
+
+**Setting**: Upscale grocery store sampling booth
+
+**Design**: 24 jams vs. 6 jams display
 :::
 :::
 
-::: {.column width="45%" .fragment}
-### Study Results {style="color: var(--teal-light) !important;"}
+::: {.column width="45%"}
+::: {.r-stack}
+![](img/jam-study-blur.png){.fragment width="100%" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"}
 
-![](img/jam-study.png){width="100%" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"}
+![](img/jam-study.png){.fragment width="100%" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"}
 :::
+:::
+
 ::::
 :::
 
-::: {.fragment .center style="font-weight: 600; margin-top: 30px;"}
-**10x higher conversion with fewer options**
+::: {.fragment .center style="margin-top: 30px;"}
+### **10x higher conversion with fewer options** {style="color: var(--teal-light) !important;"}
 :::
 
 ::: {.notes}
 - 1 minute
 - Behavioral science studies how people think, feel, and act...often in the context of decision making
 - Surprise...we're not rational...but we are still predictable and fairly consistent when we pay attention to the right drivers
-- Let me show you a classic example that mirrors our dashboard problem...Sheena Iyengar & Mark Lepper’s famous jam study at Columbia
+- Let me show you a classic example that mirrors our dashboard problem...Sheena Iyengar & Mark Lepper's famous jam study at Columbia
 - They studied people in the field at a fancy grocery store...think Whole Foods or Trader Joe's
 - These shoppers walked by a display stand with either 24 jams...(extensive choice condition)...or 6 jams (limited choice condition)
 - More choice drew people in...60% stopped at the big display vs. 40% at the small one
@@ -330,7 +336,7 @@ ggplot(telemetry_data, aes(x = metric, y = percentage)) +
 
 :::: {.columns}
 ::: {.column width="30%"}
-### Think of it like a road trip
+### Think of it like a road trip {style="color: var(--coral-light) !important;"}
 
 📍 **Interpret** where you're going<br>
 ⚠️ **Notice** the warning lights<br>
@@ -342,7 +348,7 @@ ggplot(telemetry_data, aes(x = metric, y = percentage)) +
 :::
 
 ::: {.column width="70%" .fragment}
-### The BID Framework
+### The BID Framework {style="color: var(--indigo-light) !important;"}
 
 📍 **Interpret** user needs<br>
 ⚠️ **Notice** friction points<br>
@@ -350,7 +356,7 @@ ggplot(telemetry_data, aes(x = metric, y = percentage)) +
 🗺️ **Structure** information flow<br>
 ✅ **Validate** understanding
 
-![](img/bid-framework.png){style="box-shadow: none !important; width: 100%;"}
+![](img/bid-framework.png){style="box-shadow: none !important; margin-left: 10%"}
 :::
 ::::
 
@@ -368,7 +374,7 @@ ggplot(telemetry_data, aes(x = metric, y = percentage)) +
 
 :::: {.columns}
 ::: {.column width="45%" .text-large}
-An R package that:
+### An R package that: {style="color: var(--teal-light) !important;"}
 
 - ✅ Works with ANY Shiny dashboard
 - ✅ Analyzes telemetry OR works without
@@ -383,7 +389,7 @@ An R package that:
 :::
 
 ::: {.column width="45%" .fragment style="margin-top: 150px;"}
-### *Your behavioral scientist in the console* {style="text-align: center !important; color: var(--teal-light) !important;"}
+### *Your behavioral scientist in the console* {style="text-align: center !important; color: var(--indigo-light) !important;"}
 :::
 ::::
 
