@@ -302,9 +302,12 @@ Jeremy Winget, PhD
 </section>
 <section id="core-realization" class="slide level2" data-background-color="#5b6bbf">
 <h2>Core Realization</h2>
-<div class="insight-box" style="margin-top: 300px !important;">
+<!-- ::: {.insight-box style="margin-top: 300px !important;"}
+"Most dashboard failures aren't technical. They're psychological."
+::: -->
+<blockquote>
 <p>“Most dashboard failures aren’t technical. They’re psychological.”</p>
-</div>
+</blockquote>
 <aside class="notes">
 <ul>
 <li>15 seconds</li>
@@ -648,7 +651,17 @@ Jeremy Winget, PhD
 <section id="notice-find-the-core-problems" class="slide level2" data-background-color="#5b6bbf">
 <h2>NOTICE: Find the Core Problems</h2>
 <div class="columns">
-<div class="column" style="width:55%;">
+<div class="column" style="width:45%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="draft_files/figure-revealjs/unnamed-chunk-3-1.png" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:55%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3" data-code-line-numbers="|2-6|8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="co"># Minimal input → Maximum insight</span></span>
 <span id="cb3-2"><a href=""></a>notice_stage <span class="ot">&lt;-</span> <span class="fu">bid_notice</span>(</span>
@@ -686,17 +699,7 @@ Stage Data:
    evidence : Users report confusion and telemetry shows low engagement 
    suggestions : Ensure your problem description is specific and supported by strong evidence 
 
-Generated: 2025-09-11 16:41:26 </code></pre>
-</div>
-</div>
-</div><div class="column" style="width:45%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="draft_files/figure-revealjs/unnamed-chunk-4-1.png" width="576"></p>
-</figure>
-</div>
+Generated: 2025-09-12 10:59:23 </code></pre>
 </div>
 </div>
 </div></div>
@@ -732,9 +735,7 @@ Generated: 2025-09-11 16:41:26 </code></pre>
 </section>
 <section id="anticipate-guard-against-biases" class="slide level2" data-background-color="#5b6bbf">
 <h2>ANTICIPATE: Guard Against Biases</h2>
-<div class="columns">
-<div class="column" style="width:40%;">
-<h3 id="same-data-different-story">Same Data, Different Story</h3>
+<div class="r-stack">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>anticipate_stage <span class="ot">&lt;-</span> <span class="fu">bid_anticipate</span>(<span class="at">previous_stage =</span> notice_stage)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -767,23 +768,15 @@ Stage Data:
    previous_theory : Cognitive Load Theory 
    suggestions : anchoring mitigation: Always show reference points like previous period, budg... 
 
-Generated: 2025-09-11 16:41:27 </code></pre>
+Generated: 2025-09-12 10:59:24 </code></pre>
 </div>
 </div>
-</div><div class="column" style="width:60%;">
-<div class="quarto-figure quarto-figure-center" style="margin-bottom: 20px;">
-<figure>
-<p><img data-src="img/ui-gain-frame.png"></p>
-<figcaption>Marketing: 🎉</figcaption>
-</figure>
+<p><img data-src="img/ui-gain-frame.png" class="fragment"></p>
+<p><img data-src="img/ui-loss-frame.png" class="fragment"></p>
+<div class="text-box-overlay-dark fragment">
+<p><strong>Same Data, Different Story</strong></p>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/ui-loss-frame.png"></p>
-<figcaption>Finance: 😱</figcaption>
-</figure>
 </div>
-</div></div>
 <aside class="notes">
 <ul>
 <li>1 minute</li>
@@ -836,7 +829,7 @@ Stage Data:
    previous_bias : anchoring: Consider how anchoring might affect user interpretation; framing: ... 
    suggestions : list(concept = "Cognitive Load Theory", suggestions = list(list(title = "Limi... 
 
-Generated: 2025-09-11 16:41:27 </code></pre>
+Generated: 2025-09-12 10:59:24 </code></pre>
 </div>
 </div>
 <div class="fragment">
@@ -899,7 +892,7 @@ Stage Data:
    previous_concepts : Cognitive Load Theory, Visual Hierarchy, Progressive Disclosure 
    suggestions : Consider adding user empowerment tools to enhance collaboration 
 
-Generated: 2025-09-11 16:41:27 </code></pre>
+Generated: 2025-09-12 10:59:24 </code></pre>
 </div>
 </div>
 <div class="fragment">
@@ -1258,76 +1251,45 @@ Stage 2 (Notice) completed. (40% complete)
 </section>
 <section id="the-transformation" class="slide level2 center" data-background-color="#2c3e50">
 <h2>The Transformation</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="before">Before</h3>
+<div class="r-stack">
 <p><img data-src="img/ui-before.png"></p>
-<div class="cell">
-<div class="cell-output-display">
+<p><img data-src="img/ui-after.png" class="fragment"></p>
+<div class="text-box-overlay-dark fragment">
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th style="text-align: left;">Metric</th>
-<th style="text-align: right;">Value</th>
+<th>Metric</th>
+<th style="text-align: center;">Before</th>
+<th style="text-align: center;">After</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Filters</td>
-<td style="text-align: right;">18</td>
+<td>Filters</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">3 (+15 advanced)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Success Rate</td>
-<td style="text-align: right;">8%</td>
+<td>Success Rate</td>
+<td style="text-align: center;">8%</td>
+<td style="text-align: center;">85%</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Time to Insight</td>
-<td style="text-align: right;">258s</td>
+<td>Time to Insight</td>
+<td style="text-align: center;">258s</td>
+<td style="text-align: center;">45s</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Return Rate</td>
-<td style="text-align: right;">12%</td>
+<td>Return Rate</td>
+<td style="text-align: center;">12%</td>
+<td style="text-align: center;">67%</td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<h3 id="after">After</h3>
-<p><img data-src="img/ui-after.png"></p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Metric</th>
-<th style="text-align: right;">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Filters</td>
-<td style="text-align: right;">3 (+15 advanced)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Success Rate</td>
-<td style="text-align: right;">85%</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Time to Insight</td>
-<td style="text-align: right;">45s</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Return Rate</td>
-<td style="text-align: right;">67%</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div></div>
-<div class="fragment text-xl" style="text-align: center; margin-top: 30px;">
+<div class="fragment text-xl" style="margin-top: 30px;">
 <p><strong>Same data. Same goals. 10x better outcomes.</strong></p>
+</div>
+</div>
 </div>
 <aside class="notes">
 <ul>
@@ -1351,7 +1313,7 @@ Stage 2 (Notice) completed. (40% complete)
 <section id="real-impact-across-industries" class="slide level2" data-background-color="#5b6bbf">
 <h2>Real Impact Across Industries</h2>
 
-<img data-src="draft_files/figure-revealjs/unnamed-chunk-12-1.png" width="1344" class="r-stretch"><aside class="notes">
+<img data-src="draft_files/figure-revealjs/unnamed-chunk-10-1.png" width="1344" class="r-stretch"><aside class="notes">
 <ul>
 <li>30 seconds</li>
 <li>“Real results from 12 enterprise deployments”</li>
@@ -1378,6 +1340,8 @@ Stage 2 (Notice) completed. (40% complete)
 </section>
 <section id="your-turn-start-today" class="slide level2 center" data-background-color="#5b6bbf">
 <h2>Your Turn: Start Today</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href=""></a><span class="co"># Install from CRAN</span></span>
 <span id="cb46-2"><a href=""></a><span class="fu">install.packages</span>(<span class="st">"bidux"</span>)</span>
@@ -1402,7 +1366,7 @@ Stage 2 (Notice) completed. (40% complete)
 <span id="cb46-21"><a href=""></a><span class="co"># Get your next steps</span></span>
 <span id="cb46-22"><a href=""></a>result<span class="sc">$</span>next_steps</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="fragment">
+</div><div class="column fragment" style="width:35%;">
 <h3 id="resources">Resources:</h3>
 <ul>
 <li>🔬 <strong>BID Framework</strong>: <a href="https://github.com/jrwinget/bid-framework">github.com/jrwinget/bid-framework</a></li>
@@ -1421,7 +1385,7 @@ Stage 2 (Notice) completed. (40% complete)
 <li>📧 <a href="mailto:contact@jrwinget.com">contact@jrwinget.com</a></li>
 </ul></li>
 </ul>
-</div>
+</div></div>
 <aside class="notes">
 <ul>
 <li>30 seconds</li>
@@ -1446,15 +1410,15 @@ Stage 2 (Notice) completed. (40% complete)
 <section id="one-thing-to-remember" class="slide level2" data-background-color="#2c3e50">
 <h2>One Thing to Remember</h2>
 <div class="columns center">
-<div class="column" style="width:30%;">
-<p><img data-src="img/hex-bidux.png"></p>
-</div><div class="column text-display" style="width:40%;">
+<div class="column" style="width:20%;">
+<p><img data-src="img/hex-bidux.png" style="box-shadow: none !important; border: none !important; margin-top: 50px;"></p>
+</div><div class="column text-display" style="margin-top: 200px;">
 <p><strong>Dashboards don’t need more features.</strong><br> <strong>They need fewer obstacles.</strong></p>
 <div class="fragment text-xl" style="margin-top: 50px">
 <p>Let’s fix that together!</p>
 </div>
-</div><div class="column fragment" style="width:30%;">
-<p><em>Special thanks to the posit::conf organizers,<br> the Shiny community,<br> and all of you for caring about your users</em></p>
+</div><div class="column fragment" style="width:20%;">
+<p><em>Special thanks to posit::conf organizers,<br> the Shiny community,<br> and all of you for caring about your users</em></p>
 </div></div>
 <aside class="notes">
 <ul>
