@@ -267,7 +267,7 @@ ggplot(telemetry_data, aes(x = metric, y = percentage)) +
 ::::
 :::
 
-::: {.fragment .center style="color: var(--coral); font-weight: 600; margin-top: 30px;"}
+::: {.fragment .center style="font-weight: 600; margin-top: 30px;"}
 **10x higher conversion with fewer options**
 :::
 
@@ -376,8 +376,14 @@ An R package that:
 - ✅ Custom parameter overrides
 :::
 
-::: {.column width="45%" .fragment .text-xl style="text-align: center; margin-top: 30px;"}
-*Your behavioral scientist in the console*
+::: {.column width="45%"}
+:::
+
+::: {.column width="45%" style="margin-top: 150px;"}
+:::
+
+::: {.column width="45%" .fragment style="margin-top: 150px;"}
+### *Your behavioral scientist in the console* {style="text-align: center !important; color: var(--teal-light) !important;"}
 :::
 ::::
 
@@ -391,7 +397,9 @@ An R package that:
 ## INTERPRET: Start with Why {background-color="#5b6bbf"}
 
 ```{r}
-#| code-line-numbers: "|3-5|6-10|11-17"
+#| code-line-numbers: "3|4|5-10|11-18"
+#| output-location: fragment
+
 library(bidux)
 
 interpret_stage <- bid_interpret(
@@ -434,7 +442,7 @@ interpret_stage <- bid_interpret(
 ## NOTICE: Find the Core Problems {background-color="#5b6bbf"}
 
 :::: {.columns}
-::: {.column width="45%"}
+::: {.column width="40%"}
 ```{r}
 #| echo: false
 #| fig-width: 6
@@ -478,17 +486,13 @@ ggplot(filters, aes(x = 1, y = filter, fill = usage)) +
 ```
 :::
 
-::: {.column width="55%"}
+::: {.column width="60%" .fragment}
 ```{r}
-#| code-line-numbers: "|2-6|8"
-# Minimal input → Maximum insight
 notice_stage <- bid_notice(
   previous_stage = interpret_stage,
   problem = "Users are struggling to find key insights",
-  evidence = "Users report confusion and telemetry shows low engagement"
+  evidence = "Telemetry shows over 75% of filters are rarely used"
 )
-
-summary(notice_stage)
 ```
 :::
 ::::
@@ -512,18 +516,25 @@ summary(notice_stage)
 ## ANTICIPATE: Guard Against Biases {background-color="#5b6bbf"}
 
 :::: {.r-stack}
+::: {.fragment .fade-in-then-out}
 ```{r}
 anticipate_stage <- bid_anticipate(previous_stage = notice_stage)
-
-# Auto-generates bias mitigations
-summary(anticipate_stage)
 ```
+:::
 
-![](img/ui-gain-frame.png){.fragment}
+::: {.fragment .fade-in-then-out}
 
-![](img/ui-loss-frame.png){.fragment}
+```{r}
+# Auto-generates bias mitigations
+anticipate_stage$bias_mitigations
+```
+:::
 
-::: {.text-box-overlay-dark .fragment}
+![](img/ui-gain-frame.png){.fragment auto-animate=true}
+
+![](img/ui-loss-frame.png){.fragment auto-animate=true}
+
+::: {.text-box-overlay-dark .fragment .fade-up}
 **Same Data, Different Story**
 :::
 ::::
@@ -539,16 +550,25 @@ summary(anticipate_stage)
 
 ## STRUCTURE: Progressive Disclosure {background-color="#5b6bbf"}
 
+:::: {.r-stack}
+::: {.fragment .fade-in-then-out}
 ```{r}
 structure_stage <- bid_structure(previous_stage = anticipate_stage)
-
-# Provides suggestions how how to implement
-summary(structure_stage)
 ```
-
-::: {.fragment}
-![](img/f-pattern-heatmap.png){.absolute bottom="50" right="100" width="650"}
 :::
+
+::: {.fragment .fade-in}
+
+```{r}
+# Provides suggestions how how to implement
+str(structure_stage$suggestions[[1]])
+```
+:::
+
+::: {.fragment .fade-left style="width: 70%"}
+![](img/f-pattern-heatmap.png)
+:::
+::::
 
 ::: {.notes}
 - 1.5 minutes
@@ -560,16 +580,17 @@ summary(structure_stage)
 
 ## VALIDATE: Plain Language Wins {background-color="#5b6bbf"}
 
+:::: {.r-stack}
+::: {.fragment .fade-in}
 ```{r}
 validate_stage <- bid_validate(previous_stage = structure_stage)
-
-# Generates validation checklist
-summary(validate_stage)
 ```
-
-::: {.fragment}
-![](img/ui-summary.png){.absolute bottom="50" right="100" width="650"}
 :::
+
+::: {.fragment .fade-up style="width: 70%"}
+![](img/ui-summary.png)
+:::
+::::
 
 ::: {.notes}
 - 1 minute
@@ -578,42 +599,79 @@ summary(validate_stage)
 - "Auto-generates checklist"
 :::
 
-## The Complete Workflow {background-color="#2c3e50"}
+## Complete Workflow {background-color="#2c3e50"}
 
-::: {.panel-tabset}
-
-### With Telemetry
+``` {r}
+#| echo: false
+invisible({
+  capture.output({
+    issues <- bid_telemetry("dashboard_telemetry.sqlite")
+  })
+})
+```
 
 ```{r}
-#| code-line-numbers: "|1-2|4-8|10"
-# Load and analyze existing usage data
-issues <- bid_telemetry("dashboard_telemetry.sqlite")
-count(issues, severity, sort = TRUE)
+#| eval: false
+#| code-line-numbers: "1-2|4-6|7|8-10|11"
 
-report <- bid_interpret(central_question = "What do users need first?") |>
+# Using telemetry data
+issues <- bid_telemetry("dashboard_telemetry.sqlite")
+
+report <- filter(issues, severity == "critical") |>
+  slice_head(n = 1) |>
+  bid_interpret(central_question = "Which markets are driving performance?") |>
   bid_notice_issue(issues[1, ]) |> # bridge from telemetry to BID
   bid_anticipate() |>
   bid_structure() |>
   bid_validate() |>
-  bid_report(format = "html", include_diagrams = TRUE)
+  bid_report(format = "markdown", include_diagrams = TRUE)
 ```
 
-### Without Telemetry
+::: {.notes}
+- 1 minute
+- "Complete workflow in one pipe - works with or without telemetry"
+- [CLICK] With Telemetry tab first:
+- [CLICK] First highlight: Load and analyze existing data
+- [CLICK] Second highlight: The 5-stage BID pipeline
+- [CLICK] Third highlight: Generate report
+- [CLICK] Without Telemetry tab:
+- [CLICK] First highlight: Manual problem definition
+- [CLICK] Second highlight: Same 5-stage pipeline
+- [CLICK] Third highlight: Text output for tickets/PRs
+- bid_telemetry() provides a tidy tibble of issues compatible with dplyr
+- bid_notice_issue() is the bridge from a single issue to a BID Notice stage
+- The 5-stage chain culminates in bid_report(), which can produce text, HTML, or markdown
+- Output is a concise report you can paste into PRs or tickets
+- "Everything you need to fix your dashboard"
+:::
+
+## Complete Workflow {background-color="#2c3e50"}
 
 ```{r}
-#| code-line-numbers: "|1-5|6-9|10"
-report <- bid_interpret(central_question = "What do users need first?") |>
+#| code-line-numbers: "1|2-10|11-14|15-17|18|19"
+#| output-location: fragment
+
+# Without telemetry data
+report <- bid_interpret(
+    central_question = "Which markets are driving performance?",
+    data_story = list(
+      hook = "Q4 revenue hit record high, but satisfaction dipped",
+      context = "After aggressive marketing across all regions",
+      tension = "West region satisfaction fell 10 points",
+      resolution = "Focus retention efforts on underperforming regions"
+    )
+  ) |>
   bid_notice(
-    problem = "Too many filters, unclear defaults",
-    evidence = "User feedback and slow engagement"
+    problem = "Users are struggling to find key insights",
+    evidence = "Users report not knowing where to start"
   ) |>
   bid_anticipate() |>
   bid_structure() |>
   bid_validate() |>
   bid_report(format = "text", include_diagrams = FALSE)
-```
 
-:::
+print(report)
+```
 
 ::: {.notes}
 - 1 minute
@@ -635,11 +693,20 @@ report <- bid_interpret(central_question = "What do users need first?") |>
 
 ## The Transformation {.center background-color="#2c3e50"}
 
-:::: {.r-stack}
-
 ![](img/ui-before.png)
 
-![](img/ui-after.png){.fragment}
+::: {.notes}
+- 45 seconds
+- "Before: 18 filters, 8% success"
+- "After: 3 smart filters, 85% success"
+- [CLICK] "Same data, 10x better outcomes"
+:::
+
+## The Transformation {.center background-color="#2c3e50"}
+
+:::: {.r-stack}
+
+![](img/ui-after.png)
 
 ::: {.text-box-overlay-dark .fragment}
 | Metric          | Before     | After              |
@@ -752,12 +819,11 @@ ggplot(metrics_long, aes(x = Metric, y = Value, fill = State)) +
 ::: {.column width="65%"}
 ```{r}
 #| eval: false
+#| code-line-numbers: "1-2|4-11|13|15|17"
 
-# Install from CRAN
 install.packages("bidux")
 library(bidux)
 
-# Quick diagnosis without telemetry
 result <- bid_interpret("What do users need?") |>
   bid_notice(
     problem = "Death by dropdown",
@@ -767,13 +833,10 @@ result <- bid_interpret("What do users need?") |>
   bid_structure() |>
   bid_validate()
 
-# View structure recommendations
-result$suggestions
+summary(result)
 
-# Learn specific concepts (fuzzy matching works!)
 bid_concepts("choice overload")
 
-# Get your next steps
 result$next_steps
 ```
 :::
@@ -803,11 +866,11 @@ result$next_steps
 ## One Thing to Remember {background-color="#2c3e50"}
 
 :::: {.columns .center}
-::: {.column width="25%" .center}
+::: {.column width="20%" .center}
 ![](img/hex-bidux.png){style="box-shadow: none !important;"}
 :::
 
-::: {.column width="50%" .text-display .center}
+::: {.column width="60%" .text-display .center}
 **Dashboards don't need more features.**<br>
 **They need fewer obstacles.**
 
@@ -816,13 +879,13 @@ Let's fix that together!
 :::
 :::
 
-::: {.column width="25%" .fragment .center}
-*Special thanks to posit::conf organizers,<br>
-the Shiny community,<br>
+::: {.column width="20%" .fragment .center}
+*Special thanks to the<br>
+posit::conf organizers,<br>
+Shiny community,<br>
 and all of you for caring about your users*
 :::
 ::::
-
 
 ::: {.notes}
 - 20 seconds

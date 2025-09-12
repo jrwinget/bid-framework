@@ -78,7 +78,7 @@
     justify-content: center !important;
     align-items: center !important;
     width: 100%;
-    text-align: center !important;
+    text-align: center;
     height: 100%;
 }
 
@@ -184,11 +184,6 @@
     font-size: var(--fs-code);
     background: var(--secondary-bg-alt);
     border-radius: var(--radius-sm);
-}
-
-.reveal pre code {
-    background: transparent;
-    padding: 0;
 }
 
 /* block quotes - styling with serif font */
@@ -301,15 +296,6 @@
 .reveal section[data-background-color="#5B6BBF"] a:hover,
 .reveal section[data-background-color="#5b6bbf"] a:hover {
     color: var(--teal-light) !important;
-}
-
-/* fragment */
-.reveal .fragment {
-    opacity: 0.4;
-}
-
-.reveal .fragment.visible {
-    opacity: 1;
 }
 
 /* img */
@@ -507,18 +493,7 @@
     color: var(--warm-white) !important;
 }
 
-/* improve fragment visibility on dark backgrounds */
-.reveal section[data-background-color="#5B6BBF"] .fragment,
-.reveal section[data-background-color="#5b6bbf"] .fragment {
-    opacity: 0.3;
-}
-
-.reveal section[data-background-color="#5B6BBF"] .fragment.visible,
-.reveal section[data-background-color="#5b6bbf"] .fragment.visible {
-    opacity: 1;
-}
-
-/* Three-column layout improvements - better centering */
+/* three-column layout - centering */
 .reveal .slides section .columns.center {
     height: 80vh;
     align-items: center;
@@ -534,24 +509,7 @@
     text-align: center;
 }
 
-/* Fix text display issues on final slide */
-.reveal .slides section .text-display {
-    color: var(--warm-white);
-    display: block;
-    visibility: visible;
-}
-
-
-/* Ensure final slide fragment text is visible */
-.reveal section[data-background-color="#2c3e50"] .fragment {
-    opacity: 0.7;
-}
-
-.reveal section[data-background-color="#2c3e50"] .fragment.visible {
-    opacity: 1;
-}
-
-/* Override for coral text in final slide - needs higher specificity than the dark background rule */
+/* override in final slide - color needs higher specificity than dark background rule */
 .reveal section[data-background-color="#2c3e50"] .columns.center .column:last-child p {
     color: var(--coral-light) !important;
 }
@@ -561,7 +519,7 @@
     color: var(--indigo-light) !important;
 }
 
-/* Shift BID Framework text block to center over the image on Dashboard Journey slide */
+/* shift BID Framework text block over the framework image */
 .reveal section[data-background-color="#2c3e50"] .columns .column[style*="width:70%"] h3,
 .reveal section[data-background-color="#2c3e50"] .columns .column[style*="width:70%"] > p:first-of-type {
     margin-left: 25%;
