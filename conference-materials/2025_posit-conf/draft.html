@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.7.31">
 
   <meta name="author" content="Jeremy Winget, PhD">
-  <meta name="dcterms.date" content="2025-09-07">
+  <meta name="dcterms.date" content="2025-09-17">
   <title>Death by Dropdown? Engineer Insightful Shiny Apps with Behavioral Science</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -194,7 +194,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-color="#213d4f" data-background-image="img/posit-conf.png" data-background-opacity="0.25" data-background-position="top left" data-background-repeat="no-repeat" data-background-size="45%" class="quarto-title-block center">
+<section id="title-slide" data-background-color="#213d4f" data-background-image="img/posit-conf.png" data-background-opacity="0.25" data-background-position="top left" data-background-repeat="no-repeat" data-background-size="45%" data-notes="<p>[10 seconds; smile warmly at audience] Good morning everyone! Let’s jump right in…</p>" class="quarto-title-block center">
   <h1 class="title">Death by Dropdown?<br>Engineer Insightful Shiny Apps<br>with Behavioral Science</h1>
 
 <div class="quarto-title-authors">
@@ -205,7 +205,7 @@ Jeremy Winget, PhD
 </div>
 </div>
 
-  <p class="date">September 7, 2025</p>
+  <p class="date">September 17, 2025</p>
 </section>
 <section id="section" class="slide level2 center" data-background-color="#2c3e50">
 <h2></h2>
@@ -226,14 +226,15 @@ Jeremy Winget, PhD
 </div></div>
 <aside class="notes">
 <ul>
-<li>10 seconds</li>
-<li>Ever open a dashboard with 18 filters across 6 separate tabs…and try to figure out where to even start?</li>
-<li>I mean, that’s a lot of data and different ways slicing it to get a full understanding of what’s going on…so what do you do?</li>
-<li>That is…if you haven’t made your career out of exploring data sets like most executives making decisions…what do you do?</li>
-<li>[CLICK] Maybe you feel a bit like this…</li>
-<li>[PAUSE]</li>
-<li>[CLICK] Or maybe you have some bigger feelings about it…</li>
-<li>I get the feeling I’m not the only one who’s been here before</li>
+<li>[30 seconds]</li>
+<li>Who here has opened a dashboard with 18 filters across 6 tabs…and wondered where to even start?</li>
+<li>Or maybe what they were even looking at?</li>
+<li>I see some knowing looks</li>
+<li>Now imagine you’re NOT a data scientist…You’re an executive who needs to make a decision in the next 10 mins</li>
+<li>[CLICK] This might be you…frantically clicking, hoping something makes sense</li>
+<li>[CLICK] Or maybe you have some…bigger feelings</li>
+<li>The truth is…we’ve all probably been there…and it’s never a great experience</li>
+<li>[end by 40 secs]</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -261,27 +262,25 @@ Jeremy Winget, PhD
 <h3 style="color: var(--coral-light) !important;" id="welcome-youre-among-friends">Welcome! You’re among friends 😊</h3>
 <p><em>Think of our time together as a little therapy session for dropdown overload</em></p>
 </div><div class="column fragment" style="margin-top: var(--space-8);">
-<h3 style="color: var(--indigo-light) !important;" id="hi-im-jeremy">👋 Hi, I’m Jeremy!</h3>
+<h3 style="color: #8D9CEF !important;" id="hi-im-jeremy">👋 Hi, I’m Jeremy!</h3>
 <p><strong>I’m a psychologist by training, but probably not the kind you’re thinking of</strong></p>
-<p><em>Contrary to popular belief, most psychologists work with data. Not clients.</em></p>
+<p><em>The public sees therapists, but the discipline is powered by data.</em></p>
 </div><div class="column fragment center" style="margin-top: var(--space-8);">
-<h3 style="color: var(--indigo-light) !important;" id="my-journey">My Journey</h3>
-<p><strong>Applied Social Psychology</strong> → <br> <strong>Full Stack Engineer</strong> → <br> <strong>Led Shiny teams at scale</strong> → <br> <strong>Created {bidux} package</strong></p>
+<h3 style="color: #8D9CEF !important;" id="my-journey">My Journey</h3>
+<p><strong>Applied Social Psychology</strong> → <br> <strong>Full Stack Engineer</strong> → <br> <strong>Led Shiny teams at scale</strong> → <br> <strong>Researcher / OSS Developer</strong></p>
 </div></div>
 <aside class="notes">
 <ul>
-<li>45 seconds</li>
-<li>Alright, let’s get honest with each other for a moment. Quick show of hands - who here has created a user interface with more than 10 filters? Don’t be shy!</li>
-<li>How about this one - who’s ever had a client or user ask for “just one more dropdown” when you knew it would make things worse?</li>
-<li>Or here’s my personal favorite - who’s built a Shiny app with more selectInput() functions than actual insights?</li>
-<li>[CLICK] If any of these sound familiar, then welcome to what I like to call my dashboard support group! You’re among friends here.</li>
-<li>Seriously, think of our time together today as a little group therapy session for dropdown overload. We’ve all been there, and there’s no judgment in this room.</li>
-<li>[PAUSE] Let me introduce myself properly - Hi, I’m Jeremy! I’m a psychologist by training, but probably not the kind you’re thinking of.</li>
-<li>Here’s something that surprises people - contrary to popular belief, most psychologists work with data, not individual clients. We use it to study behavior patterns, understand how people make decisions, and figure out why humans do the puzzling things we do.</li>
-<li>I have a PhD in Applied Psychology where I specifically studied how people and groups process information and make decisions under pressure - which, it turns out, is exactly what happens when someone opens your dashboard!</li>
-<li>I transitioned from academia into industry where I got involved in leading Shiny teams at scale, and I’ve spent nearly 10 years building enterprise apps and dashboards that people actually use and find valuable.</li>
-<li>But I have to be honest - it wasn’t always that way. I’ve built MANY dashboards that flopped spectacularly, even though they were technically perfect. Every single one of those problems I mentioned? Yeah, I’ve made them all.</li>
-<li>And that’s exactly what led me to my core realization about why dashboards succeed or fail…</li>
+<li>[45 seconds]</li>
+<li>Welcome to dashboard support group! Let’s do a quick check-in.</li>
+<li>Raise your hand if you’ve designed a UI with 10+ filters. Keep it up if you’ve gone over 20. Anyone brave enough to admit to 30?</li>
+<li>How about this…who’s had a user ask for “just one more dropdown” when you KNEW it would break the camel’s back?</li>
+<li>[CLICK] If you’re nodding along, you’re among friends. No judgment here…this is a safe space for dropdown addiction</li>
+<li>[CLICK] I’m Jeremy, and I’m a recovering complexity addict. I’m a psychologist by training, but probably not the kind you’re thinking</li>
+<li>See, a lot of folks think psychology is all about couches and therapy.</li>
+<li>But the discipline? It’s powered by data, statistics, and understanding human behavior at scale</li>
+<li>[CLICK] My journey took me from studying how groups make terrible decisions under pressure, to building the systems that caused that pressure, to finally figuring out how to fix them</li>
+<li>[end by 1:25 mins]</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -298,15 +297,17 @@ Jeremy Winget, PhD
 <section id="core-realization" class="slide level2" data-background-color="#5b6bbf">
 <h2>Core Realization</h2>
 <blockquote>
-<p>Most dashboard failures aren’t technical…</p>
+<p>A lot of dashboard failures aren’t technical…</p>
 <p>They’re psychological.</p>
 </blockquote>
 <aside class="notes">
 <ul>
-<li>15 seconds</li>
-<li>Most dashboard failures aren’t technical, they’re psychological</li>
-<li>That might sound obvious, but it’s a critical distinction…and one that we as developers can also easily address in our workflows</li>
-<li>Let me show you what I mean…and how technically great products can still fail spectacularly</li>
+<li>25 seconds</li>
+<li>After years of building dashboards that were technical masterpieces but user experience disasters, I had this realization</li>
+<li>A lot dashboard failures aren’t because we chose the wrong chart type or database</li>
+<li>They fail because we forgot that humans…wonderfully irrational, predictably overwhelmed humans…need to use them</li>
+<li>And here’s the thing: we can engineer for psychology just as precisely as we engineer for performance</li>
+<li>[end by 1:50 mins]</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -338,22 +339,18 @@ Jeremy Winget, PhD
 </div>
 <aside class="notes">
 <ul>
-<li>45 seconds</li>
-<li>I worked with a client who had this ‘comprehensive’ dashboard</li>
-<li>Blinded here for confidentiality…but incredibly close to the actual design</li>
-<li>18 filters, 6 tabs, every possible view, nearly zero adoption</li>
-<li>Why this matters: This represents thousands of developer hours and client budget wasted on technically perfect but psychologically broken software</li>
-<li>The client was frustrated bc they had spent months building this thing, but no one used it</li>
-<li>Users were initially curious, but quickly overwhelmed…and eventually, they just vanished</li>
-<li>As developers, we can relate…we’ve all built features nobody uses</li>
-<li>But here’s why this matters more than frustration:
-<ol type="1">
-<li>Technical debt from unused complexity compounds over time</li>
-<li>User abandonment patterns replicate across similar projects</li>
-<li>Without data-driven insights, we keep making the same UX mistakes</li>
-</ol></li>
-<li>[CLICK] So we ran telemetry for 30 days…</li>
-<li>This data changed everything about how we approached the dashboard design</li>
+<li>[45 seconds]</li>
+<li>This is from an actual client…details anonymized but painfully accurate</li>
+<li>They had built a really impressive dashboard…technically speaking</li>
+<li>Lots of filters…customized views…and some really cool visualizations for deep dives</li>
+<li>The client was proud…“users can analyze anything!”</li>
+<li>Except…they didn’t. Initial curiosity lasted about 3 clicks before users fled like the building was on fire</li>
+<li>The client had spent 6 months and considerable budget on this.</li>
+<li>Technical debt was mounting.</li>
+<li>Users were finding creative workarounds like…Excel</li>
+<li>[CLICK] So we instrumented it with telemetry for 30 days to get a clear picture of what users were actually doing</li>
+<li>If you’re not familiar, telemetry is a process of collecting anonymous usage data to understand what a user is clicking, how long they stay, and where they drop off</li>
+<li>[end by 2:35]</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -372,10 +369,15 @@ Jeremy Winget, PhD
 
 <img data-src="draft_files/figure-revealjs/unnamed-chunk-1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="1344"><aside class="notes">
 <ul>
-<li>45 seconds</li>
-<li>Look at this journey of despair</li>
-<li>[update notes here]</li>
-<li>This is behavioral science <strong>screaming</strong> at us that something is wrong here</li>
+<li>[30 seconds]</li>
+<li>Look at this cliff dive of despair</li>
+<li>95% visited the URL…great! They’re interested!</li>
+<li>88% actually opened it…still good!</li>
+<li>But only 52% managed to apply even ONE filter. One!</li>
+<li>And returning users? 20%. That’s not adoption, that’s abandonment</li>
+<li>This chart is behavioral science screaming “STOP DOING THIS TO PEOPLE”</li>
+<li>Every dropout represents a decision unmade, an insight undiscovered, a user who now thinks your data is “too complicated”</li>
+<li>[end by 3:05]</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -415,19 +417,21 @@ Jeremy Winget, PhD
 </div>
 <aside class="notes">
 <ul>
-<li>1 minute</li>
-<li>Behavioral science studies how people think, feel, and act…often in the context of decision making</li>
-<li>Surprise…we’re not rational…but we are still predictable and fairly consistent when we pay attention to the right drivers</li>
-<li>Let me show you a classic example that mirrors our dashboard problem…Sheena Iyengar &amp; Mark Lepper’s famous jam study at Columbia</li>
-<li>They studied people in the field at a fancy grocery store…think Whole Foods or Trader Joe’s</li>
-<li>These shoppers walked by a display stand with either 24 jams…(extensive choice condition)…or 6 jams (limited choice condition)</li>
-<li>More choice drew people in…60% stopped at the big display vs.&nbsp;40% at the small one</li>
-<li>But fewer choices drove action…nearly 30% bought jam after the 6-jam booth, compared to only 3% after the 24-jam booth</li>
-<li>More choice attracted browsers…but paralyzed buyers</li>
-<li>So what do we learn from this?
-<ul>
-<li>Too many options look appealing but kill follow-through…exactly what happens with dashboards overloaded with filters</li>
-</ul></li>
+<li>[75 seconds]</li>
+<li>Behavioral science studies how humans think, feel and act…often in the context of decision making</li>
+<li>The field itself is a blend of psychology, economics, neuroscience, and sociology…and a common theme is that people are often irrational…but in surprisingly consistent ways</li>
+<li>For us as developers, this is actually great news. It means user behavior is predictable and we can design for it</li>
+<li>[CLICK] Let me share the famous jam study that mirrors our dashboard problem perfectly</li>
+<li>Researchers set up a fancy grocery store display with either 24 or 6 jam varieties</li>
+<li>The big display attracted browsers…60% stopped to look versus 40% for the small display</li>
+<li>[CLICK] But here’s the kicker…only 3% bought jam after seeing 24 options, while 30% bought after seeing just 6</li>
+<li>[CLICK] That’s a 10x conversion difference!</li>
+<li>More choice attracted attention but paralyzed action</li>
+<li>Sound familiar? That’s exactly what our 18-filter dashboard was doing</li>
+<li>And here’s what this means for your development workflow: every filter you add isn’t just a feature…it’s a cognitive tax on your users</li>
+<li>When we understand these psychological principles, we can predict which features will actually get used versus which ones will just add to your maintenance burden</li>
+<li>This isn’t soft science…it’s engineering intelligence that saves you from building things nobody will use</li>
+<li>[end by 4:20]</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -487,14 +491,19 @@ Jeremy Winget, PhD
 </div></div>
 <aside class="notes">
 <ul>
-<li>30 seconds</li>
+<li>[55 seconds]</li>
 <li>Now the paradox of choice is just one of many behavioral science concepts that directly apply to dashboards</li>
-<li>[CLICK] Let me show you specific examples of how these apply</li>
-<li>Cognitive Load: Instead of 18 filters overwhelming users, start with 3 essential ones and hide advanced options</li>
-<li>Progressive Disclosure: Show high-level KPIs first, then let users drill into details, then comparisons</li>
-<li>Framing Effects: The same revenue number can be “up 15%” or “missed target by 5%” - completely different user reactions</li>
-<li>Choice Architecture: Smart defaults, logical grouping, visual hierarchy guides users naturally</li>
-<li>These aren’t just theories…they’re actionable engineering principles</li>
+<li>But the cool thing is that these aren’t abstract theories…they’re engineering principles</li>
+<li>Cognitive Load…Your users’ brains have RAM limits. Every filter costs processing power. And unlike computer RAM, you can’t just add more</li>
+<li>Progressive Disclosure…Nobody reads the manual. Show the basics, then reveal complexity as needed. Think of it like lazy loading for human cognition</li>
+<li>Framing Effects…“Revenue up 15%” versus “Missed target by 5%”…same data, vastly different user reactions. Your PM sees success, your CFO sees failure</li>
+<li>Choice Architecture…You’re not limiting options, you’re creating a path through them. Like good API design…guide the happy path</li>
+<li>[CLICK] In practice, this means starting with 3 filters not 18, showing summaries before details, and using smart defaults</li>
+<li>For Shiny developers specifically, this means using updateSelectInput() to dynamically adjust options based on user behavior, not showing everything upfront</li>
+<li>It means conditional panels that appear when needed, not cluttering the initial view</li>
+<li>And it means your reactive expressions should anticipate common user paths, pre-computing likely next steps</li>
+<li>This is engineering the experience as carefully as the backend</li>
+<li>[end by 5:15]</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -516,19 +525,23 @@ Jeremy Winget, PhD
 <p>📍 <strong>Interpret</strong> where you’re going<br> ⚠️ <strong>Notice</strong> the warning lights<br> 🌦️ <strong>Anticipate</strong> weather changes<br> 🗺️ <strong>Structure</strong> the best route<br> ✅ <strong>Validate</strong> safe arrival</p>
 <img data-src="img/vw-bus.jpg" class="r-stretch">
 </div><div class="column fragment" style="width:70%;">
-<h3 style="color: var(--indigo-light) !important;" id="the-bid-framework">The BID Framework</h3>
+<h3 style="color: #8D9CEF !important;" id="the-bid-framework">The BID Framework</h3>
 <p>📍 <strong>Interpret</strong> user needs<br> ⚠️ <strong>Notice</strong> friction points<br> 🌦️ <strong>Anticipate</strong> cognitive biases<br> 🗺️ <strong>Structure</strong> information flow<br> ✅ <strong>Validate</strong> understanding</p>
-<p><img data-src="img/bid-framework.png" style="box-shadow: none !important; margin-left: 10%"></p>
+<p><img data-src="img/bid-framework.png" style="width: 80%; box-shadow: none !important; margin-left: 20%"></p>
 </div></div>
 <aside class="notes">
 <ul>
-<li>45 seconds</li>
-<li>Think of building dashboards like planning the perfect road trip with friends. You know that feeling when you’re mapping out an adventure - equal parts excitement and careful preparation?</li>
-<li>And speaking of adventures - for those Grateful Dead fans in the audience, building user-friendly dashboards really can be a “long, strange trip.” But unlike Jerry Garcia’s journeys, ours actually have a clear destination and users who need to get there!</li>
-<li>Just like any road trip, you need to interpret where you’re going, notice those warning lights on the dashboard, anticipate weather changes…</li>
-<li>[CLICK] This is what I call the BID framework - your roadmap for dashboard success</li>
-<li>Five iterative stages that prevent those dashboard disasters we’ve all experienced. Think of it as your GPS for user experience.</li>
-<li>Like any memorable road trip, it’s not just about reaching your destination - it’s about creating a framework that makes the journey enjoyable and the discoveries along the way meaningful for your users.</li>
+<li>[45 seconds]</li>
+<li>Building great dashboards is like planning a road trip</li>
+<li>You need to know where you’re going, watch for hazards, and make sure everyone arrives safely</li>
+<li>[CLICK] Enter the BID framework…your behavioral science GPS</li>
+<li>Five stages that prevent those dashboard disasters we’ve all experienced</li>
+<li>Here’s what’s powerful about this approach…it’s not another design philosophy or abstract UX theory</li>
+<li>It’s a concrete, implementable framework based on decades of research</li>
+<li>Each stage builds on the previous one, creating a feedback loop that continuously improves your dashboard</li>
+<li>Best part? I’ve packaged it all into an R package that does the heavy lifting for you</li>
+<li>This isn’t another UI library or component framework…it’s a thinking tool that helps you make better design decisions</li>
+<li>[end by 6:00]</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -558,14 +571,20 @@ Jeremy Winget, PhD
 </div><div class="column" style="margin-top: 150px;">
 
 </div><div class="column fragment" style="margin-top: 150px;">
-<h3 style="text-align: center !important; color: var(--indigo-light) !important;" id="your-behavioral-scientist-in-the-console"><em>Your behavioral scientist in the console</em></h3>
+<h3 style="text-align: center !important; color: #8D9CEF !important;" id="your-behavioral-scientist-in-the-console"><em>Your behavioral scientist in the console</em></h3>
 </div></div>
 <aside class="notes">
 <ul>
-<li>30 seconds</li>
-<li>So what exactly is bidux? Think of it as having a friendly behavioral scientist sitting right there in your console, ready to help whenever you’re building dashboards.</li>
-<li>It works with any Shiny app you’ve already built - no need to start over. Whether you have telemetry data or not, it can still provide valuable insights and auto-suggest improvements based on solid behavioral science principles.</li>
-<li>[CLICK] The best part? It translates all those academic psychology concepts into practical, actionable code suggestions that you can implement today. It’s like having a psychology PhD on your development team, but one that actually speaks R!</li>
+<li>[45 seconds]</li>
+<li>And bidux is that R package…designed specifically for our workflow as Shiny developers</li>
+<li>Works with ANY Shiny dashboard you’ve already built…no need to refactor or start over</li>
+<li>It can analyze telemetry if you have it, providing data-driven insights about actual user behavior</li>
+<li>But…it also works without telemetry, using established behavioral principles</li>
+<li>Auto-suggests improvements based on behavioral principles…and I mean specific suggestions like “replace this selectInput with radioButtons” or “group these filters using bslib::accordion”</li>
+<li>[CLICK] Think of it as a behavioral scientist in your console…one that’s always available, never judges, and doesn’t charge by the hour</li>
+<li>It translates the science into practical suggestions like “use bslib::accordion here” or “reduce these 8 filters to 3”</li>
+<li>It’s not just about better UX…it’s about reducing technical debt…improving maintainability…and building dashboards that support our users</li>
+<li>[end by 6:45]</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -613,23 +632,32 @@ Jeremy Winget, PhD
 </div>
 <aside class="notes">
 <ul>
-<li>1 minute</li>
-<li>“Start with why - what question does this dashboard answer?”</li>
-<li>[CLICK] First highlight: central_question - this drives everything else</li>
-<li>[CLICK] Second highlight: data_story - this creates narrative structure</li>
-<li>[CLICK] Third highlight: user_personas - this grounds design in real needs</li>
-<li>Why this matters for your daily work: Clear purpose drives every technical decision you make</li>
-<li>Most devs think they do this, but telemetry says otherwise. We jump straight to technical implementation</li>
-<li>The cost: Every filter you add without purpose increases cognitive load exponentially</li>
-<li>This isn’t just UX theory - it’s engineering efficiency. When you clarify purpose first:
-<ol type="1">
-<li>You write less code because you know what to exclude</li>
-<li>Your data queries are more focused and performant</li>
-<li>User testing becomes objective rather than subjective</li>
-<li>You can defend design decisions with evidence, not opinions</li>
-</ol></li>
-<li><code>bid_interpret</code> creates a structured object that feeds into later stages, making behavioral science actionable in your R workflow</li>
-<li>Think of it as writing better requirements that actually connect to user psychology</li>
+<li>[75 seconds]</li>
+<li>First stage: Interpret user needs.</li>
+<li>What question does this dashboard answer? And I mean specifically</li>
+<li>[CLICK] The central question drives everything.</li>
+<li>If you can’t state it in one sentence…users won’t find it in a bunch of dropdowns</li>
+<li>This is where most dashboards fail…we build for “everything” instead of “the right thing”</li>
+<li>[CLICK] The data story creates helps create narrative structure for this</li>
+<li>Humans are hardwired for stories, not pivot tables</li>
+<li>Hook, context, tension, resolution…same structure Hollywood uses, same structure your brain expects</li>
+<li>[CLICK] User personas ground us in reality.</li>
+<li>That Product Manager isn’t you…they don’t think in SQL queries…They think in business outcomes.</li>
+<li>So the dashboard needs to bridge that gap</li>
+<li>[CLICK] Look at that output…the package validates your inputs and provides feedback if anything is missing
+<ul>
+<li>Which could potentially indicate a good time to check in with your stakeholders if you can’t answer these questions</li>
+</ul></li>
+<li>Now here’s why this matters for your daily work</li>
+<li>Every filter without clear purpose multiplies cognitive load…not just for the user…but for you as the developer as well</li>
+<li>At it’s core, this is about engineering efficiency</li>
+<li>Clear purpose means less code to write…faster queries to run…and clearer testing metrics
+<ul>
+<li>Which translates to less time spent debugging and more time delivering value</li>
+</ul></li>
+<li>bid_interpret packages this information into an object that feeds into later stages…maintaining context throughout the analysis</li>
+<li>Think of it as requirements engineering that actually connects to user psychology</li>
+<li>[end by 8:00]</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -676,21 +704,25 @@ Stage 2 (Notice) completed. (40% complete)
 </div></div>
 <aside class="notes">
 <ul>
-<li>1 minute</li>
-<li>Notice finds the concepts behind the friction points</li>
-<li>Why this stage matters for developers…It turns user complaints into actionable engineering insights</li>
-<li>Look at this heatmap…14 filters basically going unused…4 are completely ignored</li>
-<li>This isn’t just usage data…it’s technical debt visualization</li>
-<li>What this means for your codebase:
-<ol type="1">
-<li>Those unused filters are maintenance overhead with zero ROI</li>
-<li>Database queries could be running for features nobody touches</li>
-<li>UI complexity is slowing rendering times without value</li>
-<li>Future feature requests will compound these problems over time</li>
-</ol></li>
-<li><code>bid_notice</code> auto-suggests behavioral theories to explain patterns…or power users can override them with specific concepts</li>
-<li>This transforms “users don’t like it” into “choice overload is killing task completion”</li>
-<li>Now you have a specific problem to solve with code</li>
+<li>[60 seconds]</li>
+<li>When we don’t plan for psychology…we actually end up BUILDING critical friction points into our dashboards</li>
+<li>If we go back to that opening example I showed you…here’s what the filter usage looked like</li>
+<li>14 them basically unused, and 4 virtually ignored.</li>
+<li>This is essentially their technical debt visualized</li>
+<li>Each unused filter is maintenance overhead with zero ROI</li>
+<li>Database queries running for nothing</li>
+<li>UI complexity slowing renders</li>
+<li>Future feature requests will compound this mess…you know how it goes, “just add it next to the other filters”</li>
+<li>That’s why the Notice stage focuses on finding these friction points systematically</li>
+<li>[CLICK] The package auto-suggests relevant behavioral theories with confidence scores</li>
+<li>Here, 90% confidence it’s Cognitive Load Theory…too many choices paralyzing users</li>
+<li>But it might also suggest Choice Overload, Analysis Paralysis, or Decision Fatigue</li>
+<li>Each theory comes with specific, implementable solutions</li>
+<li>This transforms vague complaints like “it’s confusing” into specific engineering problems</li>
+<li>“Confusing” becomes “cognitive load exceeds working memory capacity”…now you can fix that</li>
+<li>The package links each theory to specific Shiny components and patterns that address it</li>
+<li>You’re not guessing what to fix anymore…you’re addressing identified psychological barriers with targeted code changes</li>
+<li>[end by 9:00]</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -735,12 +767,20 @@ Stage 2 (Notice) completed. (40% complete)
 </div>
 <aside class="notes">
 <ul>
-<li>1 minute</li>
-<li>“Anticipate cognitive biases”</li>
-<li>“Same data tells different stories”</li>
-<li>“Marketing sees progress, Finance sees gap”</li>
-<li>“bidux auto-generates these guards”</li>
-<li>“Framing changes everything”</li>
+<li>[45 seconds]</li>
+<li>Stage three: Anticipate how biases affect interpretation</li>
+<li>This is where behavioral science gets really practical for dashboards</li>
+<li>[CLICK] The package auto-generates bias mitigations based on your specific dashboard context and user personas</li>
+<li>[CLICK] Look at the specific suggestions…anchoring, framing, confirmation bias</li>
+<li>These aren’t abstract concepts…they’re bugs in human cognition that affect every user</li>
+<li>[CLICK] Same dashboard, gain framing…“We’re making progress!” Optimistic, forward-looking</li>
+<li>[CLICK] Loss framing…“We’re behind target!” Creates urgency, drives action</li>
+<li>Same data, completely different psychological impact</li>
+<li>Marketing sees growth opportunities, Finance sees risk exposure…both are right, both need different framing</li>
+<li>bidux helps you present both perspectives fairly, or choose the right frame for your audience</li>
+<li>It also suggests things like reference lines for anchoring, confidence intervals to combat overconfidence, and alternative views to fight confirmation bias</li>
+<li>This is proactive debugging for human psychology</li>
+<li>[end by 9:45]</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -803,11 +843,25 @@ Stage 2 (Notice) completed. (40% complete)
 </div>
 <aside class="notes">
 <ul>
-<li>1.5 minutes</li>
-<li>“Structure provides implementation roadmap”</li>
-<li>“Specific code recommendations”</li>
-<li>“Progressive disclosure reduces cognitive load”</li>
-<li>[CLICK] “Follow natural eye patterns”</li>
+<li>[65 seconds]</li>
+<li>Stage four: Structure for human cognition…this is where psychology becomes architecture</li>
+<li>[CLICK] Look at these implementation suggestions…specific bslib and shiny components</li>
+<li>Not just “reduce complexity” but “use bslib::accordion for progressive disclosure” with actual code examples…(with more detailed suggestions coming soon!)</li>
+<li>The package knows which components map to which psychological principles</li>
+<li>[CLICK] See this F-pattern heatmap? This is how users tend scan dashboards…though this is culturally dependent</li>
+<li>Top-left gets 100% attention because that’s where Western readers start</li>
+<li>Bottom-right might as well not exist…that’s where you hide the details nobody sees</li>
+<li>Structure stage puts your most important insights where eyes naturally go</li>
+<li>It suggests information hierarchy based on your central question and user personas</li>
+<li>Critical KPIs go top-left, supporting details follow the F-pattern, deep-dive options progressively disclosed</li>
+<li>This isn’t just layout…it’s cognitive engineering</li>
+<li>You’re literally structuring information to match how the human brain processes visual data</li>
+<li>For those building with bslib, this integrates nicely with cards() and layout_columns()</li>
+<li>It suggests specific breakpoints for responsive design based on cognitive load research</li>
+<li>And it even recommends loading sequences…what to compute first, what can be lazy-loaded, what should be pre-cached</li>
+<li>This isn’t just about making things pretty…it’s about making your reactive graph match human attention patterns</li>
+<li>Your most expensive computations should align with where users actually look</li>
+<li>[end by 10:50]</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -824,7 +878,7 @@ Stage 2 (Notice) completed. (40% complete)
 <section id="validate-plain-language-wins" class="slide level2" data-background-color="#5b6bbf">
 <h2>VALIDATE: Plain Language Wins</h2>
 <div class="r-stack">
-<div class="fragment fade-in">
+<div class="fragment fade-in-then-out">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a>validate_stage <span class="ot">&lt;-</span> <span class="fu">bid_validate</span>(<span class="at">previous_stage =</span> structure_stage)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -836,16 +890,23 @@ Stage 2 (Notice) completed. (40% complete)
 </div>
 </div>
 </div>
-<div class="fragment fade-up" style="width: 70%">
-<p><img data-src="img/ui-summary.png"></p>
+<div class="fragment fade-up">
+<img data-src="img/ui-summary.png" class="r-stretch">
 </div>
 </div>
 <aside class="notes">
 <ul>
-<li>1 minute</li>
-<li>“Validate ensures understanding”</li>
-<li>“Plain language summaries”</li>
-<li>“Auto-generates checklist”</li>
+<li>[40 seconds]</li>
+<li>Final stage: Validate understanding…this is helps both you know the dashboard is working as intended…and your users know what to do next</li>
+<li>[couple lines about next steps for developers to test changes and iterate with the workflow]</li>
+<li>[CLICK] Look at that executive summary…clear, actionable, no jargon</li>
+<li>Revenue number, specific concern, required action…everything a decision-maker needs</li>
+<li>If your users can’t explain what they learned in one sentence, you haven’t validated understanding</li>
+<li>This stage generates checklists, ensures accessibility, creates those “aha” moments</li>
+<li>It’s the difference between users saying “I looked at the dashboard” and “I know exactly what to do”</li>
+<li>Validation isn’t the end…it feeds back to Interpret, creating continuous improvement</li>
+<li>Now let’s take a look at the full transformation</li>
+<li>[end by 11:30]</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -861,14 +922,16 @@ Stage 2 (Notice) completed. (40% complete)
 </section>
 <section id="the-transformation" class="slide level2 center" data-background-color="#2c3e50">
 <h2>The Transformation</h2>
-
-<img data-src="img/ui-before2.png" class="r-stretch"><aside class="notes">
+<img data-src="img/ui-before2.png" class="r-stretch">
+<aside class="notes">
 <ul>
-<li>45 seconds</li>
-<li>[update notes here]</li>
-<li>“Δ (pp)”” is absolute percentage-point change</li>
-<li>Relative change is After/Before - 1, then rounded</li>
-<li>[CLICK] More users. Deeper engagement. Stronger retention.</li>
+<li>[25 seconds]</li>
+<li>Here’s our problem child again…18 filters, 6 tabs, information overload incarnate</li>
+<li>Technically perfect…every edge case handled, every possible view available</li>
+<li>Psychologically broken…users spent more time figuring out the interface than finding insights</li>
+<li>This dashboard had everything except users</li>
+<li>Let’s see what behavioral science can do…</li>
+<li>[end by 12:00]</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -885,7 +948,7 @@ Stage 2 (Notice) completed. (40% complete)
 <section id="the-transformation-1" class="slide level2 center" data-background-color="#2c3e50">
 <h2>The Transformation</h2>
 <div class="r-stack">
-<p><img data-src="img/ui-after.png"></p>
+<img data-src="img/ui-after.png" class="r-stretch">
 <div class="text-box-overlay-dark fragment">
 <table class="caption-top" style="width:100%;">
 <colgroup>
@@ -942,11 +1005,26 @@ Stage 2 (Notice) completed. (40% complete)
 </div>
 <aside class="notes">
 <ul>
-<li>45 seconds</li>
-<li>[update notes here]</li>
-<li>“Δ (pp)”” is absolute percentage-point change</li>
-<li>Relative change is After/Before - 1, then rounded</li>
-<li>[CLICK] More users. Deeper engagement. Stronger retention.</li>
+<li>[60 seconds]</li>
+<li>Same functionality…but a transformed user experience</li>
+<li>Clean executive summary at the top…users know immediately what matters and what to do about it</li>
+<li>Progressive disclosure…complexity is available but not required</li>
+<li>Smart defaults based on actual usage patterns…not assumptions or just making everything available</li>
+<li>[CLICK] Now look at these metrics…this is the ROI of behavioral science</li>
+<li>Filter usage up 38%…people are actually exploring data…not just abandoning ship</li>
+<li>Return rate up 75%…they’re coming back!
+<ul>
+<li>That’s the difference between a proper tool and simple shelfware</li>
+</ul></li>
+<li>This isn’t magic…and it’s not AI…it’s engineering for how humans actually think</li>
+<li>We reduced cognitive load, aligned with mental models, and created clear information hierarchy</li>
+<li>[CLICK] More users, deeper engagement, stronger retention…because we removed obstacles instead of adding features</li>
+<li>And here’s what this means for you as a developer…</li>
+<li>Less support tickets because users can figure it out themselves</li>
+<li>Fewer feature requests because they’re finding what they need</li>
+<li>Better performance reviews because your dashboards driving decisions</li>
+<li>This is the difference between building features and building products people love</li>
+<li>[end by 13:00]</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -965,16 +1043,19 @@ Stage 2 (Notice) completed. (40% complete)
 
 <img data-src="draft_files/figure-revealjs/unnamed-chunk-10-1.png" width="1344" class="r-stretch"><aside class="notes">
 <ul>
-<li>30 seconds</li>
-<li>“Real results from 12 enterprise deployments”</li>
-<li>Why these metrics matter for your engineering career:
-<ol type="1">
-<li>82% reduction in time to insight = users find value faster = better adoption metrics for your projects</li>
-<li>143% improvement in task completion = fewer support tickets = less maintenance overhead</li>
-<li>These improvements compound: happy users request thoughtful features, not band-aid fixes</li>
-</ol></li>
-<li>“This works across industries” - the psychological principles are universal, but implementation adapts to your specific R/Shiny tech stack</li>
-<li>Bottom line: Better user psychology = better engineering outcomes = more impactful projects in your portfolio</li>
+<li>[45 seconds]</li>
+<li>And here are just some data to back that up</li>
+<li>These aren’t cherry-picked results…they the 12 enterprise deployments across industries I’ve worked on in the last year using the BID framework</li>
+<li>65 seconds faster to first insight…that’s over a minute saved per user, per session</li>
+<li>Multiply that by hundreds of users, daily visits…you’re saving hours of collective time</li>
+<li>Task completion up from 48% to 62%…nearly a third more decisions actually getting made</li>
+<li>User satisfaction up 27%…that’s the difference between “I have to use this” and “I want to use this”</li>
+<li>Why does this work across industries?…Because human psychology doesn’t change across domains</li>
+<li>Your finance users have the same 7±2 working memory slots as healthcare users</li>
+<li>They all suffer from choice overload…they all need progressive disclosure…they all have biases that affect interpretation</li>
+<li>The framework adapts to your domain…but the principles remain constant</li>
+<li>Better psychology equals better engineering equals happier developers and users</li>
+<li>[end by 14:45]</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1005,21 +1086,18 @@ Stage 2 (Notice) completed. (40% complete)
 </div>
 <aside class="notes">
 <ul>
-<li>1 minute</li>
-<li>“Complete workflow in one pipe - works with or without telemetry”</li>
-<li>[CLICK] With Telemetry tab first:</li>
-<li>[CLICK] First highlight: Load and analyze existing data</li>
-<li>[CLICK] Second highlight: The 5-stage BID pipeline</li>
-<li>[CLICK] Third highlight: Generate report</li>
-<li>[CLICK] Without Telemetry tab:</li>
-<li>[CLICK] First highlight: Manual problem definition</li>
-<li>[CLICK] Second highlight: Same 5-stage pipeline</li>
-<li>[CLICK] Third highlight: Text output for tickets/PRs</li>
-<li>bid_telemetry() provides a tidy tibble of issues compatible with dplyr</li>
-<li>bid_notice_issue() is the bridge from a single issue to a BID Notice stage</li>
-<li>The 5-stage chain culminates in bid_report(), which can produce text, HTML, or markdown</li>
-<li>Output is a concise report you can paste into PRs or tickets</li>
-<li>“Everything you need to fix your dashboard”</li>
+<li>[40 seconds]</li>
+<li>Here’s the really nice part..implementing all this psychology is just a few lines of code</li>
+<li>[CLICK] If you have it, load telemetry with bid_telemetry…and it reads standard formats or your custom schema</li>
+<li>[CLICK] Here, I’m just filtering to 1 of the critical issues identified</li>
+<li>[CLICK] Adding a simple question the dashboard is trying to answer to contextualize everything that follows</li>
+<li>[CLICK] Then I use bid_notice_issues…which is a bridge function from telemetry to behavioral insights…it will auto-populate the the following stages based on the issue details</li>
+<li>[CLICK] Run through the remaining stages…each one building on the previous</li>
+<li>[CLICK] Generate a markdown report ready for your PR or documentation</li>
+<li>The report includes specific code suggestions, component recommendations, even CSS snippets</li>
+<li>It’s not just analysis…it’s your implementation roadmap</li>
+<li>This fits right into your existing workflow…use it in your development, your CI/CD, even your documentation</li>
+<li>[end by 15:25]</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1057,21 +1135,19 @@ Stage 2 (Notice) completed. (40% complete)
 </div>
 <aside class="notes">
 <ul>
-<li>1 minute</li>
-<li>“Complete workflow in one pipe - works with or without telemetry”</li>
-<li>[CLICK] With Telemetry tab first:</li>
-<li>[CLICK] First highlight: Load and analyze existing data</li>
-<li>[CLICK] Second highlight: The 5-stage BID pipeline</li>
-<li>[CLICK] Third highlight: Generate report</li>
-<li>[CLICK] Without Telemetry tab:</li>
-<li>[CLICK] First highlight: Manual problem definition</li>
-<li>[CLICK] Second highlight: Same 5-stage pipeline</li>
-<li>[CLICK] Third highlight: Text output for tickets/PRs</li>
-<li>bid_telemetry() provides a tidy tibble of issues compatible with dplyr</li>
-<li>bid_notice_issue() is the bridge from a single issue to a BID Notice stage</li>
-<li>The 5-stage chain culminates in bid_report(), which can produce text, HTML, or markdown</li>
-<li>Output is a concise report you can paste into PRs or tickets</li>
-<li>“Everything you need to fix your dashboard”</li>
+<li>[45 seconds]</li>
+<li>No telemetry? No problem…behavioral principles still apply</li>
+<li>[CLICK] Just define your problem manually based on user feedback or your observations</li>
+<li>[CLICK] Create your data story…this structures your dashboard’s narrative</li>
+<li>[CLICK] Identify the friction…even without data…you probably know where users struggle</li>
+<li>[CLICK] Same five-stage pipeline…same actionable insights</li>
+<li>[CLICK] Generate text output perfect for tickets, documentation, or stakeholder communication</li>
+<li>The framework guides you whether you have tons of telemetry or just gut feelings</li>
+<li>It’s behavioral science made practical for your daily workflow</li>
+<li>You can run this during development…not just after deployment</li>
+<li>Catch psychological issues before they become user complaints</li>
+<li>This is shift-left for UX…fixing problems before they’re problems</li>
+<li>[end by 16:10]</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1131,11 +1207,20 @@ Stage 2 (Notice) completed. (40% complete)
 </div></div>
 <aside class="notes">
 <ul>
-<li>30 seconds</li>
-<li>Here’s the exciting part - you can get started with bidux right now! It’s available on CRAN, so installation is as simple as any other R package.</li>
-<li>The beautiful thing is it works immediately, even without telemetry data. You can start getting insights and suggestions for your existing dashboards today.</li>
-<li>[CLICK] I’ve also prepared plenty of resources to support your journey. These slides will be available in the BID framework repository, and I’ll be posting them on my website as well.</li>
-<li>I genuinely believe the R and Shiny community is one of the most supportive and collaborative communities out there, so please join us! Feel free to connect with me on Bluesky, LinkedIn, or email - I’d love to hear about your experiences and learn from your dashboard challenges too.</li>
+<li>[45 seconds]</li>
+<li>You can literally start using this today</li>
+<li>It’s available on CRAN, so installation is as simple as any other R package</li>
+<li>[CLICK] Install &amp; load the library…you know the drill</li>
+<li>[CLICK] Run through the five stages…even with minimal input, you get valuable suggestions</li>
+<li>[CLICK] Use bid_concepts to explore specific behavioral principles…it’s like having a psychology textbook on hand for further reading</li>
+<li>Want to understand choice overload? bid_concepts(“choice overload”) gives you theory, impact, and solutions</li>
+<li>[CLICK] Check the next_steps for actionable improvements…prioritized by impact</li>
+<li>[CLICK] I’ve created extensive resources…docs, discussions, examples, all designed for the R/Shiny community</li>
+<li>These slides will be available in the BID framework repository…and I’ll be posting them on my website as well</li>
+<li>This community is incredible at sharing and learning together…so please connect with me on Bluesky, LinkedIn, or email</li>
+<li>I’d love to hear about your experiences and learn from your dashboard challenges too</li>
+<li>And if you implement this and see results, please share them!</li>
+<li>[end by 16:55]</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1157,19 +1242,20 @@ Stage 2 (Notice) completed. (40% complete)
 </div><div class="column text-display center" style="width:60%;">
 <p><strong>Dashboards don’t need more features.</strong><br> <strong>They need fewer obstacles.</strong></p>
 <div class="fragment">
-<p>Let’s fix that together!</p>
+<p>Let’s do that together!</p>
 </div>
 </div><div class="column fragment center" style="width:20%;">
 <p><em>Special thanks to the<br> posit::conf organizers,<br> Shiny community,<br> and all of you for caring about your users</em></p>
 </div></div>
 <aside class="notes">
 <ul>
-<li>20 seconds</li>
-<li>If you take away just one thing from our time together today, let it be this: Dashboards don’t need more features - they need fewer obstacles.</li>
-<li>Every dropdown, every filter, every choice we add should bring users closer to insight, not further from it.</li>
-<li>[CLICK] And here’s the thing - we can absolutely fix this together. The tools exist, the knowledge exists, and most importantly, you all clearly care about creating better experiences for your users.</li>
-<li>[CLICK] Before I close, I want to offer my heartfelt thanks to the posit::conf organizers for creating this incredible space for learning, to the broader Shiny community for pushing the boundaries of what’s possible with data visualization, and most importantly, to all of you for caring enough about your users to be here learning how to serve them better.</li>
+<li>[35 seconds]</li>
+<li>If you remember just one thing from our time together today…Dashboards don’t need more features, they need fewer obstacles</li>
+<li>Every dropdown, every filter, should bring users closer to insight, not further from it</li>
+<li>[CLICK] And we can do this together…the tools exist, the knowledge exists…and it’s clear from all the head nods today that you all care about creating better experiences for your users</li>
+<li>[CLICK] Before I close, I want to offer my heartfelt thanks to the posit::conf organizers for creating this incredible space…to the broader Shiny community for pushing the boundaries of what’s possible…and most importantly, to all of you…for taking the time to be here today and for caring about your users</li>
 <li>Now, I’d love to hear your questions and learn about the dashboard challenges you’re facing!</li>
+<li>[end by 17:30]</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
