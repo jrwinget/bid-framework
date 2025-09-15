@@ -24,8 +24,8 @@ format:
       data-background-opacity: "0.25"
       data-background-size: "45%"
       data-notes: |
-        [10 seconds; smile warmly at audience]
-        Good morning everyone! Let's jump right in...
+        - [10 seconds; smile warmly at audience]
+        - Good morning everyone! Let's jump right in...
 ---
 
 ## {.center background-color="#2c3e50"}
@@ -47,13 +47,13 @@ and wonder where to even begin?**
 
 ::: {.notes}
 - [30 seconds]
-- Who here has opened a dashboard with 18 filters across 6 tabs...and wondered where to even start?
-- Or maybe what they were even looking at?
+- Who here has opened a dashboard with 18 filters across 6 tabs...and wondered where to even start?...Or maybe what they were even looking at?
 - I see some knowing looks
-- Now imagine you're NOT a data scientist...You're an executive who needs to make a decision in the next 10 mins
+- Now I'd like you to imagine you're NOT a data scientist...
+- You're an executive who needs to make a decision in the next 10 mins
 - [CLICK] This might be you...frantically clicking, hoping something makes sense
 - [CLICK] Or maybe you have some...bigger feelings
-- The truth is...we've all probably been there...and it's never a great experience
+- The truth is...we've all probably felt this way towards a dashboard...and it's never a good feeling
 - [end by 40 secs]
 :::
 
@@ -92,16 +92,18 @@ and wonder where to even begin?**
 ::::
 
 ::: {.notes}
-- [45 seconds]
-- Welcome to dashboard support group! Let's do a quick check-in.
-- Raise your hand if you've designed a UI with 10+ filters. Keep it up if you've gone over 20. Anyone brave enough to admit to 30?
-- How about this...who's had a user ask for "just one more dropdown" when you KNEW it would break the camel's back?
-- [CLICK] If you're nodding along, you're among friends. No judgment here...this is a safe space for dropdown addiction
-- [CLICK] I'm Jeremy, and I'm a recovering complexity addict. I'm a psychologist by training, but probably not the kind you're thinking
-- See, a lot of folks think psychology is all about couches and therapy.
-- But the discipline? It's powered by data, statistics, and understanding human behavior at scale
-- [CLICK] My journey took me from studying how groups make terrible decisions under pressure, to building the systems that caused that pressure, to finally figuring out how to fix them
-- [end by 1:25 mins]
+- [60 seconds]
+- So...welcome to my dashboard support group!...Let's do a quick check-in
+- Raise your hand if you've designed a UI with 10+ filters
+    - Keep it up if you've gone over 20?
+- How about this...who's had a user ask for "just one more dropdown" when you KNEW it was just too much?
+- [CLICK] If you're nodding along...you're among friends...No judgment here
+- [CLICK] I'm Jeremy...and I've been there too
+- I'm a psychologist by training...but probably not the kind you're thinking of
+- See...a lot of folks think psychology is all about couches and therapy...but the discipline is powered by data
+- [CLICK] My journey took me from studying how groups make decisions under pressure...to building the systems that caused that pressure...to finally figuring out how to fix them
+- And after years of building dashboards that were technically great...but didn't seem to land with users...I had this realization
+- [end by 1:40 mins]
 :::
 
 ## Core Realization {background-color="#5b6bbf"}
@@ -111,17 +113,18 @@ and wonder where to even begin?**
 > They're psychological.
 
 ::: {.notes}
-- 25 seconds
-- After years of building dashboards that were technical masterpieces but user experience disasters, I had this realization
-- A lot dashboard failures aren't because we chose the wrong chart type or database
-- They fail because we forgot that humans...wonderfully irrational, predictably overwhelmed humans...need to use them
-- And here's the thing: we can engineer for psychology just as precisely as we engineer for performance
-- [end by 1:50 mins]
+- 20 seconds
+- A lot of dashboard failures aren't technical...They're psychological
+- They don't fail bc of the wrong chart type or database
+- They fail because humans need to use them...and humans are complicated
+- But we can engineer for psychology just as precisely as we engineer for performance
+- Let me show you what I mean
+- [end by 2:00 mins]
 :::
 
 ## {background-image="img/ui-before1.png" background-size="contain" background-color="#2c3e50"}
 
-::: {.text-box-overlay-dark .absolute left="-200" bottom="100" .fragment}
+::: {.text-box-overlay-dark .absolute left="-200" bottom="100"}
 ### Real client. Real dashboard. Real problems.
 
 - 18 filters across 6 tabs
@@ -137,17 +140,15 @@ and wonder where to even begin?**
 
 ::: {.notes}
 - [45 seconds]
-- This is from an actual client...details anonymized but painfully accurate
-- They had built a really impressive dashboard...technically speaking
+- This is a dashboard from an actual client...details blinded of course, but still accurate
+- They had built a really impressive dashboard...
 - Lots of filters...customized views...and some really cool visualizations for deep dives
-- The client was proud..."users can analyze anything!"
-- Except...they didn't. Initial curiosity lasted about 3 clicks before users fled like the building was on fire
-- The client had spent 6 months and considerable budget on this.
-- Technical debt was mounting.
-- Users were finding creative workarounds like...Excel
-- [CLICK] So we instrumented it with telemetry for 30 days to get a clear picture of what users were actually doing
-- If you're not familiar, telemetry is a process of collecting anonymous usage data to understand what a user is clicking, how long they stay, and where they drop off
-- [end by 2:35]
+- The client loved this bc..."users can analyze anything they want!"
+- Except...they never did
+- The opened the app...but didn't stay long before they completely deserted it
+- They were finding creative workarounds...like Excel
+- [CLICK] So we decided to roll out a minor update and collect anonymous usage data with telemetry for 30 days to get a better idea of what users were actually doing
+- [end by 2:45]
 :::
 
 ## Telemetry Revealed the Journey {background-color="#2c3e50"}
@@ -201,15 +202,15 @@ journey |>
 ```
 
 ::: {.notes}
-- [30 seconds]
-- Look at this cliff dive of despair
-- 95% visited the URL...great! They're interested!
-- 88% actually opened it...still good!
-- But only 52% managed to apply even ONE filter. One!
-- And returning users? 20%. That's not adoption, that's abandonment
-- This chart is behavioral science screaming "STOP DOING THIS TO PEOPLE"
-- Every dropout represents a decision unmade, an insight undiscovered, a user who now thinks your data is "too complicated"
-- [end by 3:05]
+- [35 seconds]
+- And in this case...it painted a user journey like this cliff of despair
+- 95% of users visited the URL...fantastic! Shows people are interested
+- 88% opened the dashboard...also good...they're getting past the landing page
+- But here's where it gets brutal...only 52% applied even one filter. Just one!
+- And only 20% returned within 7 days
+- This chart is behavioral science screaming "STOP DOING THIS!"
+- But what needs fixing...and how do we do it?
+- [end by 3:20]
 :::
 
 ## Enter: Behavioral Science {background-color="#5b6bbf"}
@@ -252,20 +253,19 @@ journey |>
 
 ::: {.notes}
 - [75 seconds]
-- Behavioral science studies how humans think, feel and act...often in the context of decision making
-- The field itself is a blend of psychology, economics, neuroscience, and sociology...and a common theme is that people are often irrational...but in surprisingly consistent ways
-- For us as developers, this is actually great news. It means user behavior is predictable and we can design for it
-- [CLICK] Let me share the famous jam study that mirrors our dashboard problem perfectly
-- Researchers set up a fancy grocery store display with either 24 or 6 jam varieties
-- The big display attracted browsers...60% stopped to look versus 40% for the small display
-- [CLICK] But here's the kicker...only 3% bought jam after seeing 24 options, while 30% bought after seeing just 6
+- With behavioral science!...which is the study of how humans think, feel and act...often in the context of decision making
+- The field itself is a blend of psychology, economics, neuroscience, and others...
+- But across all those areas we find people are often irrational...but in consistent ways
+- For us as developers...this is actually great news!
+- It means user behavior is predictable...and we can design for it
+- [CLICK] Let me share a study that demonstrates our death by dropdown problem perfectly
+- [CLICK] In this study...two researchers set up a sampling booth at a grocery store...and they varied the number of jams they on display
+- [CLICK] In the big display condition...there was were 24 jams on the table...and in the small display condition...there were 6 jams
+- [CLICK] The big display with 24 jams attracted more shoppers than the small display with 6 jams
+- BUT...only 3% of folks who stopped at the larger display bought jam...whereas 30% of people bought jam in the small display condition
 - [CLICK] That's a 10x conversion difference!
-- More choice attracted attention but paralyzed action
-- Sound familiar? That's exactly what our 18-filter dashboard was doing
-- And here's what this means for your development workflow: every filter you add isn't just a feature...it's a cognitive tax on your users
-- When we understand these psychological principles, we can predict which features will actually get used versus which ones will just add to your maintenance burden
-- This isn't soft science...it's engineering intelligence that saves you from building things nobody will use
-- [end by 4:20]
+- So more choice attracted attention but paralyzed action...and filter-heavy dashboards do the exact same thing
+- [end by 4:30]
 :::
 
 ## Applied to Dashboards {background-color="#5b6bbf"}
@@ -299,19 +299,24 @@ journey |>
 ::::
 
 ::: {.notes}
-- [55 seconds]
-- Now the paradox of choice is just one of many behavioral science concepts that directly apply to dashboards
-- But the cool thing is that these aren't abstract theories...they're engineering principles
-- Cognitive Load...Your users' brains have RAM limits. Every filter costs processing power. And unlike computer RAM, you can't just add more
-- Progressive Disclosure...Nobody reads the manual. Show the basics, then reveal complexity as needed. Think of it like lazy loading for human cognition
-- Framing Effects..."Revenue up 15%" versus "Missed target by 5%"...same data, vastly different user reactions. Your PM sees success, your CFO sees failure
-- Choice Architecture...You're not limiting options, you're creating a path through them. Like good API design...guide the happy path
-- [CLICK] In practice, this means starting with 3 filters not 18, showing summaries before details, and using smart defaults
-- For Shiny developers specifically, this means using updateSelectInput() to dynamically adjust options based on user behavior, not showing everything upfront
-- It means conditional panels that appear when needed, not cluttering the initial view
-- And it means your reactive expressions should anticipate common user paths, pre-computing likely next steps
-- This is engineering the experience as carefully as the backend
-- [end by 5:15]
+- [75 seconds]
+- Now...the paradox of choice is just one of many behavioral science concepts we can apply to dashboards
+- But these aren't abstract theories...they're actually engineering principles we can leverage
+- Cognitive Load...this means too many choices overwhelm users' mental capacity
+    - Like RAM...your users' brains have processing limits...every filter costs processing power
+- Progressive Disclosure...this means revealing complexity gradually as users need it
+    - Show vital information first...and reveal more as needed
+    - Like lazy loading for human cognition
+- Framing Effects...this is how the same data can tell completely different stories
+    - "Revenue up 15%" versus "Missed target by 5%"
+    - Identical data...but the Proj Manager might see success while the CFO sees failure
+- Choice Architecture...this means guiding the user without restricting them
+    - Hide rarely used filters, use smart defaults
+    - Like good API design...guide users down the happy path
+- [CLICK] In practice...this means starting with 3 filters not 18...showing summaries before details...and using smart defaults
+- This is how we engineer the user experience as carefully as we would the backend
+- But what if you don't know behavioral science?
+- [end by 5:35]
 :::
 
 ## The Solution: Your Dashboard Journey {background-color="#2c3e50"}
@@ -344,16 +349,17 @@ journey |>
 
 ::: {.notes}
 - [45 seconds]
-- Building great dashboards is like planning a road trip
-- You need to know where you're going, watch for hazards, and make sure everyone arrives safely
-- [CLICK] Enter the BID framework...your behavioral science GPS
-- Five stages that prevent those dashboard disasters we've all experienced
-- Here's what's powerful about this approach...it's not another design philosophy or abstract UX theory
-- It's a concrete, implementable framework based on decades of research
-- Each stage builds on the previous one, creating a feedback loop that continuously improves your dashboard
-- Best part? I've packaged it all into an R package that does the heavy lifting for you
-- This isn't another UI library or component framework...it's a thinking tool that helps you make better design decisions
-- [end by 6:00]
+- Well...I bet you do know something about road trips
+- And engineering apps with behavioral science is a lot like planning a road trip
+- You need to know your destination...anticipate the hazards...and make sure everyone gets there in one piece
+- That's where the Behavioral Insight Design (BID) framework comes in...[CLICK]
+    - It's like having GPS for your behavioral science journey
+- Five simple stages that guide you through the process...and help prevent those dashboard disasters we've all seen
+- What makes BID different is it's not some abstract design theory
+- It's a concrete...step-by-step framework built on decades of research
+- Each stage feeds into the next...creating this continuous feedback loop that keeps improving your dashboard
+- Plus...the whole thing is already bundled into an R package that handles the heavy lifting
+- [end by 6:20]
 :::
 
 ## What is {bidux}? {background-color="#2c3e50"}
@@ -381,15 +387,14 @@ journey |>
 
 ::: {.notes}
 - [45 seconds]
-- And bidux is that R package...designed specifically for our workflow as Shiny developers
-- Works with ANY Shiny dashboard you've already built...no need to refactor or start over
-- It can analyze telemetry if you have it, providing data-driven insights about actual user behavior
-- But...it also works without telemetry, using established behavioral principles
-- Auto-suggests improvements based on behavioral principles...and I mean specific suggestions like "replace this selectInput with radioButtons" or "group these filters using bslib::accordion"
-- [CLICK] Think of it as a behavioral scientist in your console...one that's always available, never judges, and doesn't charge by the hour
-- It translates the science into practical suggestions like "use bslib::accordion here" or "reduce these 8 filters to 3"
-- It's not just about better UX...it's about reducing technical debt...improving maintainability...and building dashboards that support our users
-- [end by 6:45]
+- Meet bidux...designed specifically for our workflows as Shiny developers
+- It works with any dashboard you've already built...no refactoring, no starting over
+- Got telemetry? Great, it'll analyze actual user behavior and give you data-driven insights
+- Or...if you don't have telemetry data...you can use simple verbal descriptions during the process
+- Whatever inputs you provide...it will use them to auto-suggest improvements based on real research
+- [CLICK] Think of it as having a behavioral scientist right in your console...always available, never judges, and doesn't charge by the hour
+- Now...let me show you what this process actually looks like
+- [end by 7:05]
 :::
 
 ## INTERPRET: Start with Why {background-color="#5b6bbf"}
@@ -420,28 +425,20 @@ interpret_stage <- bid_interpret(
 ```
 
 ::: {.notes}
-- [75 seconds]
-- First stage: Interpret user needs.
-- What question does this dashboard answer? And I mean specifically
-- [CLICK] The central question drives everything.
-- If you can't state it in one sentence...users won't find it in a bunch of dropdowns
-- This is where most dashboards fail...we build for "everything" instead of "the right thing"
-- [CLICK] The data story creates helps create narrative structure for this
-- Humans are hardwired for stories, not pivot tables
-- Hook, context, tension, resolution...same structure Hollywood uses, same structure your brain expects
-- [CLICK] User personas ground us in reality.
-- That Product Manager isn't you...they don't think in SQL queries...They think in business outcomes.
+- [65 seconds]
+- First...we start with the INTERPRET stage...the why behind the dashboard
+- What question does this dashboard answer?
+- [CLICK] Because the central question drives the focus for your users
+- If you can't state it in one simple sentence...they won't find it in a bunch of dropdowns
+- [CLICK] And the data story helps create narrative structure for this
+- Humans are hardwired for stories...not pivot tables
+- Hook, context, tension, resolution...is the same structure folks are looking for with their key insights...so we build that in from the start
+- [CLICK] And finally...the user personas help us devs take the user perspective
+- The Product Manager isn't you...they don't think in SQL queries...They think in business outcomes
 - So the dashboard needs to bridge that gap
-- [CLICK] Look at that output...the package validates your inputs and provides feedback if anything is missing
-    - Which could potentially indicate a good time to check in with your stakeholders if you can't answer these questions
-- Now here's why this matters for your daily work
-- Every filter without clear purpose multiplies cognitive load...not just for the user...but for you as the developer as well
-- At it's core, this is about engineering efficiency
-- Clear purpose means less code to write...faster queries to run...and clearer testing metrics
-    - Which translates to less time spent debugging and more time delivering value
-- bid_interpret packages this information into an object that feeds into later stages...maintaining context throughout the analysis
-- Think of it as requirements engineering that actually connects to user psychology
-- [end by 8:00]
+- [CLICK] And when we put it all of that information together...the function creates a summary for you to review before moving on
+- If it tells you anything is missing...it could also be a good time to check in with your users
+- [end by 8:10]
 :::
 
 ## NOTICE: Find the Core Problems {background-color="#5b6bbf"}
@@ -504,25 +501,21 @@ notice_stage <- bid_notice(
 ::::
 
 ::: {.notes}
-- [60 seconds]
-- When we don't plan for psychology...we actually end up BUILDING critical friction points into our dashboards
-- If we go back to that opening example I showed you...here's what the filter usage looked like
-- 14 them basically unused, and 4 virtually ignored.
-- This is essentially their technical debt visualized
-- Each unused filter is maintenance overhead with zero ROI
-- Database queries running for nothing
-- UI complexity slowing renders
-- Future feature requests will compound this mess...you know how it goes, "just add it next to the other filters"
-- That's why the Notice stage focuses on finding these friction points systematically
+- [75 seconds]
+- Bc when we don't consider that context...we end up building critical friction points into our dashboards
+- Going back to that opening example...here's what filter usage looked like
+- 14 filters basically unused...4 virtually ignored
+- This is technical debt visualized
+- Each unused filter is maintenance overhead...and there are probably database queries running for nothing
+- That's why the NOTICE stage focuses on finding these friction points systematically
 - [CLICK] The package auto-suggests relevant behavioral theories with confidence scores
-- Here, 90% confidence it's Cognitive Load Theory...too many choices paralyzing users
-- But it might also suggest Choice Overload, Analysis Paralysis, or Decision Fatigue
+- Here...90% confidence it's Cognitive Load Theory...too many choices paralyzing users
+- But it might suggest Choice Overload...Analysis Paralysis...or Decision Fatigue
 - Each theory comes with specific, implementable solutions
-- This transforms vague complaints like "it's confusing" into specific engineering problems
-- "Confusing" becomes "cognitive load exceeds working memory capacity"...now you can fix that
-- The package links each theory to specific Shiny components and patterns that address it
-- You're not guessing what to fix anymore...you're addressing identified psychological barriers with targeted code changes
-- [end by 9:00]
+- This transforms "it's confusing" into specific engineering problems...like "cognitive load exceeds working memory"
+- The package also links each theory to specific Shiny components that address it
+- So you're not guessing anymore...you're addressing identified psychological barriers with targeted code changes
+- [end by 9:25]
 :::
 
 ## ANTICIPATE: Guard Against Biases {background-color="#5b6bbf"}
@@ -553,19 +546,17 @@ anticipate_stage$bias_mitigations
 
 ::: {.notes}
 - [45 seconds]
-- Stage three: Anticipate how biases affect interpretation
-- This is where behavioral science gets really practical for dashboards
 - [CLICK] The package auto-generates bias mitigations based on your specific dashboard context and user personas
 - [CLICK] Look at the specific suggestions...anchoring, framing, confirmation bias
 - These aren't abstract concepts...they're bugs in human cognition that affect every user
 - [CLICK] Same dashboard, gain framing..."We're making progress!" Optimistic, forward-looking
 - [CLICK] Loss framing..."We're behind target!" Creates urgency, drives action
-- Same data, completely different psychological impact
-- Marketing sees growth opportunities, Finance sees risk exposure...both are right, both need different framing
-- bidux helps you present both perspectives fairly, or choose the right frame for your audience
-- It also suggests things like reference lines for anchoring, confidence intervals to combat overconfidence, and alternative views to fight confirmation bias
+- Same data...but different psychological impact
+- Marketing sees growth opportunities...Finance sees risk exposure...both are right, both need different framing
+- bidux helps you present both perspectives fairly...or choose the right frame for your audience
+- It also suggests things like reference lines for anchoring...confidence intervals to combat overconfidence...and alternative views to fight confirmation bias
 - This is proactive debugging for human psychology
-- [end by 9:45]
+- [end by 10:10]
 :::
 
 ## STRUCTURE: Progressive Disclosure {background-color="#5b6bbf"}
@@ -592,24 +583,18 @@ str(structure_stage$suggestions[[1]])
 
 ::: {.notes}
 - [65 seconds]
-- Stage four: Structure for human cognition...this is where psychology becomes architecture
+- At this point...we know what the dashboard is for, what problems to fix, and what biases to guard against
+- Now it's time to STRUCTURE the information flow
 - [CLICK] Look at these implementation suggestions...specific bslib and shiny components
 - Not just "reduce complexity" but "use bslib::accordion for progressive disclosure" with actual code examples...(with more detailed suggestions coming soon!)
 - The package knows which components map to which psychological principles
-- [CLICK] See this F-pattern heatmap? This is how users tend scan dashboards...though this is culturally dependent
-- Top-left gets 100% attention because that's where Western readers start
-- Bottom-right might as well not exist...that's where you hide the details nobody sees
+- [CLICK] See this F-pattern heatmap? This is how users scan dashboards in Western cultures
+- Top-left gets 100% attention...bottom-right might as well not exist
 - Structure stage puts your most important insights where eyes naturally go
-- It suggests information hierarchy based on your central question and user personas
-- Critical KPIs go top-left, supporting details follow the F-pattern, deep-dive options progressively disclosed
-- This isn't just layout...it's cognitive engineering
-- You're literally structuring information to match how the human brain processes visual data
-- For those building with bslib, this integrates nicely with cards() and layout_columns()
-- It suggests specific breakpoints for responsive design based on cognitive load research
-- And it even recommends loading sequences...what to compute first, what can be lazy-loaded, what should be pre-cached
-- This isn't just about making things pretty...it's about making your reactive graph match human attention patterns
+- Critical KPIs or Summaries go on the top...supporting details follow the F-pattern...deep-dive options progressively disclosed
+- This is cognitive engineering...you're structuring information to match how the human brain processes visual data
 - Your most expensive computations should align with where users actually look
-- [end by 10:50]
+- [end by 11:15]
 :::
 
 ## VALIDATE: Plain Language Wins {background-color="#5b6bbf"}
@@ -628,16 +613,15 @@ validate_stage <- bid_validate(previous_stage = structure_stage)
 
 ::: {.notes}
 - [40 seconds]
--  Final stage: Validate understanding...this is helps both you know the dashboard is working as intended...and your users know what to do next
-- [couple lines about next steps for developers to test changes and iterate with the workflow]
-- [CLICK] Look at that executive summary...clear, actionable, no jargon
-- Revenue number, specific concern, required action...everything a decision-maker needs
-- If your users can't explain what they learned in one sentence, you haven't validated understanding
-- This stage generates checklists, ensures accessibility, creates those "aha" moments
-- It's the difference between users saying "I looked at the dashboard" and "I know exactly what to do"
-- Validation isn't the end...it feeds back to Interpret, creating continuous improvement
+- Finally...we reach the last stage: validate and empower users
+- This helps you know the dashboard works as intended...and helps users know what to do next
+- It guides you through testing changes and iterating...but also suggests ways to empower user engagement
+- For example...executive summaries tailored to personas...detailed wording for analysts, high-level for execs
+- This stage generates checklists...checks accessibility...and creates those "aha" moments
+- It's the difference between "I looked at the dashboard" and "I know exactly what to do now"
+- But Validation isn't the end...it feeds back to Interpret...creating continuous improvement that you can always revisit as needed
 - Now let's take a look at the full transformation
-- [end by 11:30]
+- [end by 11:55]
 :::
 
 ## The Transformation {.center background-color="#2c3e50"}
@@ -646,12 +630,12 @@ validate_stage <- bid_validate(previous_stage = structure_stage)
 
 ::: {.notes}
 - [25 seconds]
-- Here's our problem child again...18 filters, 6 tabs, information overload incarnate
+- Here's our dashboard disaster again...18 filters, 6 tabs, information overload incarnate
 - Technically perfect...every edge case handled, every possible view available
 - Psychologically broken...users spent more time figuring out the interface than finding insights
 - This dashboard had everything except users
 - Let's see what behavioral science can do...
-- [end by 12:00]
+- [end by 12:20]
 :::
 
 ## The Transformation {.center background-color="#2c3e50"}
@@ -675,24 +659,24 @@ validate_stage <- bid_validate(previous_stage = structure_stage)
 ::::
 
 ::: {.notes}
-- [60 seconds]
+- [65 seconds]
 - Same functionality...but a transformed user experience
 - Clean executive summary at the top...users know immediately what matters and what to do about it
 - Progressive disclosure...complexity is available but not required
-- Smart defaults based on actual usage patterns...not assumptions or just making everything available
+- Smart defaults based on actual usage patterns...not assumptions
 - [CLICK] Now look at these metrics...this is the ROI of behavioral science
-- Filter usage up 38%...people are actually exploring data...not just abandoning ship
+- Filter usage up 38%...people are actually exploring data instead of abandoning ship
 - Return rate up 75%...they're coming back!
-    - That's the difference between a proper tool and simple shelfware
-- This isn't magic...and it's not AI...it's engineering for how humans actually think
-- We reduced cognitive load, aligned with mental models, and created clear information hierarchy
-- [CLICK] More users, deeper engagement, stronger retention...because we removed obstacles instead of adding features
-- And here's what this means for you as a developer...
-- Less support tickets because users can figure it out themselves
-- Fewer feature requests because they're finding what they need
-- Better performance reviews because your dashboards driving decisions
-- This is the difference between building features and building products people love
-- [end by 13:00]
+- That's the difference between a proper tool and shelfware
+- This isn't magic...or AI...it's engineering for how humans actually think
+- We reduced cognitive load...aligned with mental models...and created clear information hierarchy
+- [CLICK] More users...deeper engagement...stronger retention...because we removed obstacles instead of adding features
+- And as a developer...this also means...
+    - Less support tickets because users can figure it out themselves
+    - Fewer feature requests because they're finding what they need
+    - Better performance reviews because your dashboards driving value
+- And that's the difference between building features and products people love
+- [end by 13:25]
 :::
 
 ## Real Impact Across Industries {background-color="#5b6bbf"}
@@ -789,10 +773,10 @@ ggplot(metrics_long, aes(x = Metric, y = Value, fill = State)) +
 - User satisfaction up 27%...that's the difference between "I have to use this" and "I want to use this"
 - Why does this work across industries?...Because human psychology doesn't change across domains
 - Your finance users have the same 7±2 working memory slots as healthcare users
-- They all suffer from choice overload...they all need progressive disclosure...they all have biases that affect interpretation
+- They all suffer from choice overload...
 - The framework adapts to your domain...but the principles remain constant
 - Better psychology equals better engineering equals happier developers and users
-- [end by 14:45]
+- [end by 14:10]
 :::
 
 ## Simplified UX Workflows {background-color="#2c3e50"}
@@ -816,17 +800,14 @@ report <- filter(issues, severity == "critical") |>
 
 ::: {.notes}
 - [40 seconds]
-- Here's the really nice part..implementing all this psychology is just a few lines of code
-- [CLICK] If you have it, load telemetry with bid_telemetry...and it reads standard formats or your custom schema
-- [CLICK] Here, I'm just filtering to 1 of the critical issues identified
-- [CLICK] Adding a simple question the dashboard is trying to answer to contextualize everything that follows
-- [CLICK] Then I use bid_notice_issues...which is a bridge function from telemetry to behavioral insights...it will auto-populate the the following stages based on the issue details
-- [CLICK] Run through the remaining stages...each one building on the previous
-- [CLICK] Generate a markdown report ready for your PR or documentation
-- The report includes specific code suggestions, component recommendations, even CSS snippets
-- It's not just analysis...it's your implementation roadmap
-- This fits right into your existing workflow...use it in your development, your CI/CD, even your documentation
-- [end by 15:25]
+- Here's the really nice part...implementing all this psychology is just a few lines of code
+- [CLICK] If you have telemetry...simply load it with bid_telemetry
+- [CLICK] Here...I'm filtering to to one of the critical issues identified
+- [CLICK] Then adding a simple question the dashboard is trying to answer to contextualize everything that follows
+- [CLICK] And then I use bid_notice_issues...a bridge function from telemetry to behavioral insights that auto-populates the following stages
+- [CLICK] From there...it's running through the remaining stages...
+- [CLICK] And ending with bid_report to optionally generate a markdown report ready for your PR or documentation
+- [end by 14:50]
 :::
 
 ## Simplified UX Workflows {background-color="#2c3e50"}
@@ -856,19 +837,19 @@ report <- bid_interpret(
 ```
 
 ::: {.notes}
-- [45 seconds]
-- No telemetry? No problem...behavioral principles still apply
+- [50 seconds]
+- And if you don't have telemetry...that's not a problem either
 - [CLICK] Just define your problem manually based on user feedback or your observations
-- [CLICK] Create your data story...this structures your dashboard's narrative
-- [CLICK] Identify the friction...even without data...you probably know where users struggle
+- [CLICK] Create your data story...to structure the dashboard's narrative
+- [CLICK] Identify the friction points...even without data...you probably know where users struggle
 - [CLICK] Same five-stage pipeline...same actionable insights
 - [CLICK] Generate text output perfect for tickets, documentation, or stakeholder communication
-- The framework guides you whether you have tons of telemetry or just gut feelings
+- The framework guides you whether you have tons of telemetry or simple user feedback
 - It's behavioral science made practical for your daily workflow
 - You can run this during development...not just after deployment
 - Catch psychological issues before they become user complaints
 - This is shift-left for UX...fixing problems before they're problems
-- [end by 16:10]
+- [end by 15:40]
 :::
 
 ## Your Turn: Start Today {background-color="#5b6bbf"}
@@ -915,7 +896,7 @@ result$next_steps
 ::::
 
 ::: {.notes}
-- [45 seconds]
+- [60 seconds]
 - You can literally start using this today
 - It's available on CRAN, so installation is as simple as any other R package
 - [CLICK] Install & load the library...you know the drill
@@ -928,7 +909,7 @@ result$next_steps
 - This community is incredible at sharing and learning together...so please connect with me on Bluesky, LinkedIn, or email
 - I'd love to hear about your experiences and learn from your dashboard challenges too
 - And if you implement this and see results, please share them!
-- [end by 16:55]
+- [end by 16:40]
 :::
 
 ## One Thing to Remember {background-color="#2c3e50"}
@@ -956,11 +937,11 @@ and all of you for caring about your users*
 ::::
 
 ::: {.notes}
-- [35 seconds]
+- [40 seconds]
 - If you remember just one thing from our time together today...Dashboards don't need more features, they need fewer obstacles
 - Every dropdown, every filter, should bring users closer to insight, not further from it
 - [CLICK] And we can do this together...the tools exist, the knowledge exists...and it's clear from all the head nods today that you all care about creating better experiences for your users
 - [CLICK] Before I close, I want to offer my heartfelt thanks to the posit::conf organizers for creating this incredible space...to the broader Shiny community for pushing the boundaries of what's possible...and most importantly, to all of you...for taking the time to be here today and for caring about your users
 - Now, I'd love to hear your questions and learn about the dashboard challenges you're facing!
-- [end by 17:30]
+- [end by 17:20]
 :::
