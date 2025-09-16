@@ -194,10 +194,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-color="#213d4f" data-background-image="img/posit-conf.png" data-background-opacity="0.25" data-background-position="top left" data-background-repeat="no-repeat" data-background-size="45%" data-notes="<ul>
-<li>[10 seconds; smile warmly at audience]</li>
-<li>Good morning everyone! Let’s jump right in…</li>
-</ul>" class="quarto-title-block center">
+<section id="title-slide" data-background-color="#213d4f" data-background-image="img/posit-conf.png" data-background-opacity="0.25" data-background-position="top left" data-background-repeat="no-repeat" data-background-size="45%" data-notes="<p>[10 seconds; smile] Good morning everyone! Let’s jump right in…</p>" class="quarto-title-block center">
   <h1 class="title">Death by Dropdown?<br>Engineer Insightful Shiny Apps<br>with Behavioral Science</h1>
 
 <div class="quarto-title-authors">
@@ -217,12 +214,12 @@ Jeremy Winget, PhD
 </div>
 <div class="columns center">
 <div class="column fragment center" style="width:45%;">
-<div class="tenor-gif-embed" data-postid="596341483704119392" data-share-method="host" data-aspect-ratio="1.32447" data-width="700px">
+<div class="tenor-gif-embed" data-postid="596341483704119392" data-share-method="host" data-aspect-ratio="1.32447" data-width="100%">
 <a href="https://tenor.com/view/monkey-computer-work-bug-developer-gif-596341483704119392">Monkey Computer GIF</a>from <a href="https://tenor.com/search/monkey-gifs">Monkey GIFs</a>
 </div>
 <script type="text/javascript" async="" src="https://tenor.com/embed.js"></script>
 </div><div class="column fragment center" style="width:45%;">
-<div class="tenor-gif-embed" data-postid="17038619" data-share-method="host" data-aspect-ratio="1.32447" data-width="925px">
+<div class="tenor-gif-embed" data-postid="17038619" data-share-method="host" data-aspect-ratio="1.32447" data-width="100%">
 <a href="https://tenor.com/view/ron-swanson-parks-and-recreation-parks-and-rec-computer-dumpster-gif-17038619">Ron Swanson Parks And Recreation GIF</a>
 </div>
 <script type="text/javascript" async="" src="https://tenor.com/embed.js"></script>
@@ -232,8 +229,7 @@ Jeremy Winget, PhD
 <li>[30 seconds]</li>
 <li>Who here has opened a dashboard with 18 filters across 6 tabs…and wondered where to even start?…Or maybe what they were even looking at?</li>
 <li>I see some knowing looks</li>
-<li>Now I’d like you to imagine you’re NOT a data scientist…</li>
-<li>You’re an executive who needs to make a decision in the next 10 mins</li>
+<li>Now I’d like you to imagine you’re NOT a data scientist…You’re an executive who needs to make a decision in the next 10 mins</li>
 <li>[CLICK] This might be you…frantically clicking, hoping something makes sense</li>
 <li>[CLICK] Or maybe you have some…bigger feelings</li>
 <li>The truth is…we’ve all probably felt this way towards a dashboard…and it’s never a good feeling</li>
@@ -282,8 +278,8 @@ Jeremy Winget, PhD
 </ul></li>
 <li>How about this…who’s had a user ask for “just one more dropdown” when you KNEW it was just too much?</li>
 <li>[CLICK] If you’re nodding along…you’re among friends…No judgment here</li>
-<li>[CLICK] I’m Jeremy…and I’ve been there too</li>
-<li>I’m a psychologist by training…but probably not the kind you’re thinking of</li>
+<li>[CLICK] …I’m Jeremy…and I’ve been there too</li>
+<li>I’m a psychologist by training…but probably not the kind that first comes to mind</li>
 <li>See…a lot of folks think psychology is all about couches and therapy…but the discipline is powered by data</li>
 <li>[CLICK] My journey took me from studying how groups make decisions under pressure…to building the systems that caused that pressure…to finally figuring out how to fix them</li>
 <li>And after years of building dashboards that were technically great…but didn’t seem to land with users…I had this realization</li>
@@ -311,11 +307,11 @@ Jeremy Winget, PhD
 <ul>
 <li>20 seconds</li>
 <li>A lot of dashboard failures aren’t technical…They’re psychological</li>
-<li>They don’t fail bc of the wrong chart type or database</li>
+<li>They don’t fail bc of the wrong chart type</li>
 <li>They fail because humans need to use them…and humans are complicated</li>
-<li>But we can engineer for psychology just as precisely as we engineer for performance</li>
+<li>But…we can engineer for psychology just like we engineer for performance</li>
 <li>Let me show you what I mean</li>
-<li>[end by 2:00 mins]</li>
+<li>[end by 2:00]</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -329,33 +325,29 @@ Jeremy Winget, PhD
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-1" class="slide level2" data-background-image="img/ui-before1.png" data-background-size="contain" data-background-color="#2c3e50">
-<h2></h2>
-<section id="real-client.-real-dashboard.-real-problems." class="text-box-overlay-dark absolute" style="left: -200px; bottom: 100px; ">
-<h3>Real client. Real dashboard. Real problems.</h3>
+<section id="real-client.-real-problems." class="slide level2" data-background-image="img/ui-before1.png" data-background-size="contain" data-background-color="#2c3e50">
+<h2>Real client. Real problems.</h2>
+<div class="text-box-overlay-dark absolute" style="left: -200px; bottom: 100px; ">
 <ul>
 <li>18 filters across 6 tabs</li>
 <li>Every possible data view</li>
-<li>Users’ curiosity quickly vanished
-<ul>
-<li>And so did their visits</li>
-</ul></li>
+<li>Curiosity quickly vanished. So did visits.</li>
 </ul>
 <div class="fragment">
 <p><strong>We ran telemetry for 30 days…</strong></p>
 </div>
-</section>
+</div>
 <aside class="notes">
 <ul>
 <li>[45 seconds]</li>
-<li>This is a dashboard from an actual client…details blinded of course, but still accurate</li>
+<li>This is a dashboard from a client of mine…details blinded of course</li>
 <li>They had built a really impressive dashboard…</li>
 <li>Lots of filters…customized views…and some really cool visualizations for deep dives</li>
-<li>The client loved this bc…“users can analyze anything they want!”</li>
+<li>The client loved it bc…“users could analyze anything they want!”</li>
 <li>Except…they never did</li>
-<li>The opened the app…but didn’t stay long before they completely deserted it</li>
+<li>The opened the app…but and shortly after…completely deserted it</li>
 <li>They were finding creative workarounds…like Excel</li>
-<li>[CLICK] So we decided to roll out a minor update and collect anonymous usage data with telemetry for 30 days to get a better idea of what users were actually doing</li>
+<li>[CLICK] So we decided to roll out a minor update…and collect anonymous usage data with telemetry for 30 days..to get a better idea of what users were actually doing</li>
 <li>[end by 2:45]</li>
 </ul>
 <style type="text/css">
@@ -376,13 +368,18 @@ Jeremy Winget, PhD
 <img data-src="draft_files/figure-revealjs/unnamed-chunk-1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="1344"><aside class="notes">
 <ul>
 <li>[35 seconds]</li>
-<li>And in this case…it painted a user journey like this cliff of despair</li>
-<li>95% of users visited the URL…fantastic! Shows people are interested</li>
+<li>And…it painted this user journey cliff of despair</li>
+<li>95% of users visited the URL…fantastic! Shows people are interested
+<ul>
 <li>88% opened the dashboard…also good…they’re getting past the landing page</li>
-<li>But here’s where it gets brutal…only 52% applied even one filter. Just one!</li>
-<li>And only 20% returned within 7 days</li>
-<li>This chart is behavioral science screaming “STOP DOING THIS!”</li>
-<li>But what needs fixing…and how do we do it?</li>
+</ul></li>
+<li>But here’s where it gets brutal…</li>
+<li>Only half applied a single filter…Just one!
+<ul>
+<li>And only 1/5 returned within 7 days</li>
+</ul></li>
+<li>This chart is behavioral science screaming “STOP DOING THIS TO YOUR USERS!”</li>
+<li>But how do we know what needs fixing?</li>
 <li>[end by 3:20]</li>
 </ul>
 <style type="text/css">
@@ -424,18 +421,24 @@ Jeremy Winget, PhD
 <aside class="notes">
 <ul>
 <li>[75 seconds]</li>
-<li>With behavioral science!…which is the study of how humans think, feel and act…often in the context of decision making</li>
-<li>The field itself is a blend of psychology, economics, neuroscience, and others…</li>
-<li>But across all those areas we find people are often irrational…but in consistent ways</li>
-<li>For us as developers…this is actually great news!</li>
-<li>It means user behavior is predictable…and we can design for it</li>
-<li>[CLICK] Let me share a study that demonstrates our death by dropdown problem perfectly</li>
-<li>[CLICK] In this study…two researchers set up a sampling booth at a grocery store…and they varied the number of jams they on display</li>
-<li>[CLICK] In the big display condition…there was were 24 jams on the table…and in the small display condition…there were 6 jams</li>
-<li>[CLICK] The big display with 24 jams attracted more shoppers than the small display with 6 jams</li>
+<li>With behavioral science!…which is the science of how humans think, feel and act…often in terms of decision making</li>
+<li>And decades of research shows people are often irrational…but in consistent ways</li>
+<li>For us as developers…this means our strange user behaviors are predictable…and we can design for them</li>
+<li>Here’s a classic study that illustrates what I mean</li>
+<li>[CLICK] Researchers set up a tasting booth at a grocery store…and they varied the number of jams they had on display</li>
+<li>[CLICK] In the big display condition…there were 24 jams on the table
+<ul>
+<li>And in the small display condition…there were 6 jams</li>
+</ul></li>
+<li>[CLICK] The big display with 24 jams attracted more shoppers than the small display with 6 jams
+<ul>
 <li>BUT…only 3% of folks who stopped at the larger display bought jam…whereas 30% of people bought jam in the small display condition</li>
+</ul></li>
 <li>[CLICK] That’s a 10x conversion difference!</li>
-<li>So more choice attracted attention but paralyzed action…and filter-heavy dashboards do the exact same thing</li>
+<li>So more choice attracted attention but paralyzed action…
+<ul>
+<li>And filter-heavy dashboards do the exact same thing</li>
+</ul></li>
 <li>[end by 4:30]</li>
 </ul>
 <style type="text/css">
@@ -468,10 +471,6 @@ Jeremy Winget, PhD
 <ul>
 <li>Same data can tell completely different stories</li>
 </ul></li>
-<li><strong>Choice Architecture</strong>
-<ul>
-<li>Guide decisions without restricting options</li>
-</ul></li>
 </ul>
 </div><div class="column fragment" style="margin-top: var(--space-8);">
 <h3 style="color: var(--teal-light) !important;" id="dashboard-examples">Dashboard Examples</h3>
@@ -487,10 +486,6 @@ Jeremy Winget, PhD
 <li><strong>Framing Effects</strong>
 <ul>
 <li>“Revenue up 15%” vs “Revenue missed by 5%”</li>
-</ul></li>
-<li><strong>Choice Architecture</strong>
-<ul>
-<li>Smart defaults, logical grouping, visual hierarchy</li>
 </ul></li>
 </ul>
 </div></div>
@@ -512,11 +507,6 @@ Jeremy Winget, PhD
 <ul>
 <li>“Revenue up 15%” versus “Missed target by 5%”</li>
 <li>Identical data…but the Proj Manager might see success while the CFO sees failure</li>
-</ul></li>
-<li>Choice Architecture…this means guiding the user without restricting them
-<ul>
-<li>Hide rarely used filters, use smart defaults</li>
-<li>Like good API design…guide users down the happy path</li>
 </ul></li>
 <li>[CLICK] In practice…this means starting with 3 filters not 18…showing summaries before details…and using smart defaults</li>
 <li>This is how we engineer the user experience as carefully as we would the backend</li>
@@ -553,15 +543,11 @@ Jeremy Winget, PhD
 <li>Well…I bet you do know something about road trips</li>
 <li>And engineering apps with behavioral science is a lot like planning a road trip</li>
 <li>You need to know your destination…anticipate the hazards…and make sure everyone gets there in one piece</li>
-<li>That’s where the Behavioral Insight Design (BID) framework comes in…[CLICK]
-<ul>
-<li>It’s like having GPS for your behavioral science journey</li>
-</ul></li>
+<li>That’s where the Behavioral Insight Design (BID) framework comes in…[CLICK]</li>
 <li>Five simple stages that guide you through the process…and help prevent those dashboard disasters we’ve all seen</li>
-<li>What makes BID different is it’s not some abstract design theory</li>
-<li>It’s a concrete…step-by-step framework built on decades of research</li>
+<li>What makes the BID framework different from other UX advice is that it’s a concrete…step-by-step framework built on decades of research</li>
 <li>Each stage feeds into the next…creating this continuous feedback loop that keeps improving your dashboard</li>
-<li>Plus…the whole thing is already bundled into an R package that handles the heavy lifting</li>
+<li>Plus…the whole thing is bundled into an R package that handles the heavy lifting for you</li>
 <li>[end by 6:20]</li>
 </ul>
 <style type="text/css">
@@ -599,7 +585,10 @@ Jeremy Winget, PhD
 <li>[45 seconds]</li>
 <li>Meet bidux…designed specifically for our workflows as Shiny developers</li>
 <li>It works with any dashboard you’ve already built…no refactoring, no starting over</li>
-<li>Got telemetry? Great, it’ll analyze actual user behavior and give you data-driven insights</li>
+<li>If you have telemetry?…Great!
+<ul>
+<li>It’ll analyze actual user behavior and give you data-driven insights</li>
+</ul></li>
 <li>Or…if you don’t have telemetry data…you can use simple verbal descriptions during the process</li>
 <li>Whatever inputs you provide…it will use them to auto-suggest improvements based on real research</li>
 <li>[CLICK] Think of it as having a behavioral scientist right in your console…always available, never judges, and doesn’t charge by the hour</li>
@@ -654,16 +643,20 @@ Jeremy Winget, PhD
 <ul>
 <li>[65 seconds]</li>
 <li>First…we start with the INTERPRET stage…the why behind the dashboard</li>
-<li>What question does this dashboard answer?</li>
-<li>[CLICK] Because the central question drives the focus for your users</li>
-<li>If you can’t state it in one simple sentence…they won’t find it in a bunch of dropdowns</li>
+<li>[CLICK] Because the central question drives the focus for your users
+<ul>
+<li>It’s what they’re coming to the dashboard for in the first place</li>
+</ul></li>
 <li>[CLICK] And the data story helps create narrative structure for this</li>
 <li>Humans are hardwired for stories…not pivot tables</li>
-<li>Hook, context, tension, resolution…is the same structure folks are looking for with their key insights…so we build that in from the start</li>
-<li>[CLICK] And finally…the user personas help us devs take the user perspective</li>
-<li>The Product Manager isn’t you…they don’t think in SQL queries…They think in business outcomes</li>
+<li>Hook, context, tension, resolution…
+<ul>
+<li>It’s the structure folks are looking for with their key insights…so we build it in from the start</li>
+</ul></li>
+<li>[CLICK] And finally…user personas help us devs take the user perspective</li>
+<li>The Product Manager probably doesn’t think in SQL queries…They think in business outcomes</li>
 <li>So the dashboard needs to bridge that gap</li>
-<li>[CLICK] And when we put it all of that information together…the function creates a summary for you to review before moving on</li>
+<li>[CLICK] And putting all of that together…the function creates a summary for you to review before moving on</li>
 <li>If it tells you anything is missing…it could also be a good time to check in with your users</li>
 <li>[end by 8:10]</li>
 </ul>
@@ -713,16 +706,15 @@ Stage 2 (Notice) completed. (40% complete)
 <aside class="notes">
 <ul>
 <li>[75 seconds]</li>
-<li>Bc when we don’t consider that context…we end up building critical friction points into our dashboards</li>
-<li>Going back to that opening example…here’s what filter usage looked like</li>
-<li>14 filters basically unused…4 virtually ignored</li>
+<li>Bc when we don’t consider their perspective…we end up building friction points into our dashboards</li>
+<li>Going back to my client’s dashboard…here’s what the filter usage looked like</li>
+<li>14 filters hardly ever used…and 4 virtually ignored</li>
 <li>This is technical debt visualized</li>
-<li>Each unused filter is maintenance overhead…and there are probably database queries running for nothing</li>
+<li>Each unused filter is maintenance overhead…and there are probably database queries running for nothing bc of those unused filters</li>
 <li>That’s why the NOTICE stage focuses on finding these friction points systematically</li>
 <li>[CLICK] The package auto-suggests relevant behavioral theories with confidence scores</li>
-<li>Here…90% confidence it’s Cognitive Load Theory…too many choices paralyzing users</li>
-<li>But it might suggest Choice Overload…Analysis Paralysis…or Decision Fatigue</li>
-<li>Each theory comes with specific, implementable solutions</li>
+<li>Here…90% confidence Cognitive Load Theory is relevant…too many choices paralyzing users</li>
+<li>But it could suggest Choice Overload…Analysis Paralysis…or Decision Fatigue…depending on your context</li>
 <li>This transforms “it’s confusing” into specific engineering problems…like “cognitive load exceeds working memory”</li>
 <li>The package also links each theory to specific Shiny components that address it</li>
 <li>So you’re not guessing anymore…you’re addressing identified psychological barriers with targeted code changes</li>
@@ -772,15 +764,16 @@ Stage 2 (Notice) completed. (40% complete)
 <aside class="notes">
 <ul>
 <li>[45 seconds]</li>
-<li>[CLICK] The package auto-generates bias mitigations based on your specific dashboard context and user personas</li>
-<li>[CLICK] Look at the specific suggestions…anchoring, framing, confirmation bias</li>
-<li>These aren’t abstract concepts…they’re bugs in human cognition that affect every user</li>
-<li>[CLICK] Same dashboard, gain framing…“We’re making progress!” Optimistic, forward-looking</li>
-<li>[CLICK] Loss framing…“We’re behind target!” Creates urgency, drives action</li>
-<li>Same data…but different psychological impact</li>
-<li>Marketing sees growth opportunities…Finance sees risk exposure…both are right, both need different framing</li>
-<li>bidux helps you present both perspectives fairly…or choose the right frame for your audience</li>
-<li>It also suggests things like reference lines for anchoring…confidence intervals to combat overconfidence…and alternative views to fight confirmation bias</li>
+<li>[CLICK] The package also suggests bias mitigations based on the dashboard context and user personas</li>
+<li>[CLICK] Look at theses suggestions…anchoring, framing, confirmation bias</li>
+<li>These are the bugs in human cognition that affect every user…but now we can guard for them</li>
+<li>In my client’s case…they had multiple stakeholders with different perspectives
+<ul>
+<li>So we focused a lot on framing</li>
+</ul></li>
+<li>[CLICK] The progress (gain) frame shows the <em>relative difference</em> between the raw value and the benchmark…which highlighted the achievements the marketing team was interested in</li>
+<li>[CLICK] BUT…the gap (loss) framing shows the raw values vs.&nbsp;the benchmark…which focused on the improvements still needed that the product teams wanted</li>
+<li>[CLICK] Same data…but different psychological impact</li>
 <li>This is proactive debugging for human psychology</li>
 <li>[end by 10:10]</li>
 </ul>
@@ -846,17 +839,17 @@ Stage 2 (Notice) completed. (40% complete)
 <aside class="notes">
 <ul>
 <li>[65 seconds]</li>
-<li>At this point…we know what the dashboard is for, what problems to fix, and what biases to guard against</li>
+<li>Okay…at this point…we know what the dashboard is for…the problems to fix…and what biases to guard against</li>
 <li>Now it’s time to STRUCTURE the information flow</li>
-<li>[CLICK] Look at these implementation suggestions…specific bslib and shiny components</li>
-<li>Not just “reduce complexity” but “use bslib::accordion for progressive disclosure” with actual code examples…(with more detailed suggestions coming soon!)</li>
-<li>The package knows which components map to which psychological principles</li>
-<li>[CLICK] See this F-pattern heatmap? This is how users scan dashboards in Western cultures</li>
+<li>[CLICK] And using bid_structure we get these specific implementation suggestions…</li>
+<li>Not just “reduce complexity” but “use bslib::accordion for progressive disclosure”</li>
+<li>The package knows which components map to which psychological principles…and gives multiple options to try</li>
+<li>For example…</li>
+<li>[CLICK] See this F-pattern heatmap? This is how most users scan dashboards in Western cultures</li>
 <li>Top-left gets 100% attention…bottom-right might as well not exist</li>
-<li>Structure stage puts your most important insights where eyes naturally go</li>
-<li>Critical KPIs or Summaries go on the top…supporting details follow the F-pattern…deep-dive options progressively disclosed</li>
-<li>This is cognitive engineering…you’re structuring information to match how the human brain processes visual data</li>
-<li>Your most expensive computations should align with where users actually look</li>
+<li>The Structure stage puts your most important insights where eyes naturally go</li>
+<li>So critical KPIs or summaries are placed at the top…supporting details follow the F-pattern…deep-dive options progressively disclosed</li>
+<li>This is cognitive engineering…we’re structuring information to match how the human brain processes visual data</li>
 <li>[end by 11:15]</li>
 </ul>
 <style type="text/css">
@@ -893,13 +886,17 @@ Stage 2 (Notice) completed. (40% complete)
 <aside class="notes">
 <ul>
 <li>[40 seconds]</li>
-<li>Finally…we reach the last stage: validate and empower users</li>
+<li>Finally…we reach the last stage…validate and empower users</li>
 <li>This helps you know the dashboard works as intended…and helps users know what to do next</li>
-<li>It guides you through testing changes and iterating…but also suggests ways to empower user engagement</li>
-<li>For example…executive summaries tailored to personas…detailed wording for analysts, high-level for execs</li>
-<li>This stage generates checklists…checks accessibility…and creates those “aha” moments</li>
-<li>It’s the difference between “I looked at the dashboard” and “I know exactly what to do now”</li>
+<li>It guides devs through testing changes and iterating…but also suggests ways to empower user engagement</li>
+<li>For example…executive summaries tailored to personas…
+<ul>
+<li>Maybe we use more technical wording for analysts…but high-level for execs</li>
+</ul></li>
+<li>This stage also generates checklists…checks accessibility…and creates those “aha” moments</li>
+<li>It’s the difference between “I looked at the dashboard”…and “I know exactly what to do now”</li>
 <li>But Validation isn’t the end…it feeds back to Interpret…creating continuous improvement that you can always revisit as needed</li>
+<li>[PAUSE]</li>
 <li>Now let’s take a look at the full transformation</li>
 <li>[end by 11:55]</li>
 </ul>
@@ -922,10 +919,9 @@ Stage 2 (Notice) completed. (40% complete)
 <ul>
 <li>[25 seconds]</li>
 <li>Here’s our dashboard disaster again…18 filters, 6 tabs, information overload incarnate</li>
-<li>Technically perfect…every edge case handled, every possible view available</li>
-<li>Psychologically broken…users spent more time figuring out the interface than finding insights</li>
-<li>This dashboard had everything except users</li>
-<li>Let’s see what behavioral science can do…</li>
+<li>Technically perfect…but psychologically broken</li>
+<li>The dashboard that had everything…except users</li>
+<li>Let’s see what behavioral science can do to turn this around…</li>
 <li>[end by 12:20]</li>
 </ul>
 <style type="text/css">
@@ -942,9 +938,8 @@ Stage 2 (Notice) completed. (40% complete)
 </section>
 <section id="the-transformation-1" class="slide level2 center" data-background-color="#2c3e50">
 <h2>The Transformation</h2>
-<div class="r-stack">
 <img data-src="img/ui-after.png" class="r-stretch">
-<div class="text-box-overlay-dark fragment">
+<div class="text-box-overlay-dark fragment absolute" style="left: 288px; bottom: 200px; ">
 <table class="caption-top" style="width:100%;">
 <colgroup>
 <col style="width: 36%">
@@ -959,7 +954,7 @@ Stage 2 (Notice) completed. (40% complete)
 <th style="text-align: center;">Before (%)</th>
 <th style="text-align: center;">After (%)</th>
 <th style="text-align: center;">Δ</th>
-<th style="text-align: left;">Relative change</th>
+<th style="text-align: center;">Relative change</th>
 </tr>
 </thead>
 <tbody>
@@ -968,28 +963,28 @@ Stage 2 (Notice) completed. (40% complete)
 <td style="text-align: center;">95</td>
 <td style="text-align: center;">97</td>
 <td style="text-align: center;">+2</td>
-<td style="text-align: left;">+2%</td>
+<td style="text-align: center;">+2%</td>
 </tr>
 <tr class="even">
 <td>Opened dashboard</td>
 <td style="text-align: center;">88</td>
 <td style="text-align: center;">95</td>
 <td style="text-align: center;">+7</td>
-<td style="text-align: left;">+8%</td>
+<td style="text-align: center;">+8%</td>
 </tr>
 <tr class="odd">
 <td>Applied ≥1 filter</td>
 <td style="text-align: center;">52</td>
 <td style="text-align: center;">72</td>
 <td style="text-align: center;">+20</td>
-<td style="text-align: left;">+38%</td>
+<td style="text-align: center;">+38%</td>
 </tr>
 <tr class="even">
 <td>Returning within 1 week</td>
 <td style="text-align: center;">20</td>
 <td style="text-align: center;">35</td>
 <td style="text-align: center;">+15</td>
-<td style="text-align: left;">+75%</td>
+<td style="text-align: center;">+75%</td>
 </tr>
 </tbody>
 </table>
@@ -997,19 +992,18 @@ Stage 2 (Notice) completed. (40% complete)
 <p><strong>More users. Deeper engagement. Stronger retention.</strong></p>
 </div>
 </div>
-</div>
 <aside class="notes">
 <ul>
 <li>[65 seconds]</li>
-<li>Same functionality…but a transformed user experience</li>
+<li>Here’s the same dashboard…but with a transformed user experience</li>
 <li>Clean executive summary at the top…users know immediately what matters and what to do about it</li>
 <li>Progressive disclosure…complexity is available but not required</li>
 <li>Smart defaults based on actual usage patterns…not assumptions</li>
-<li>[CLICK] Now look at these metrics…this is the ROI of behavioral science</li>
+<li>[CLICK] And here are the data</li>
 <li>Filter usage up 38%…people are actually exploring data instead of abandoning ship</li>
 <li>Return rate up 75%…they’re coming back!</li>
-<li>That’s the difference between a proper tool and shelfware</li>
-<li>This isn’t magic…or AI…it’s engineering for how humans actually think</li>
+<li>This is the ROI of behavioral science</li>
+<li>It’s not magic…or AI…it’s engineering for how humans actually think</li>
 <li>We reduced cognitive load…aligned with mental models…and created clear information hierarchy</li>
 <li>[CLICK] More users…deeper engagement…stronger retention…because we removed obstacles instead of adding features</li>
 <li>And as a developer…this also means…
@@ -1039,17 +1033,16 @@ Stage 2 (Notice) completed. (40% complete)
 <img data-src="draft_files/figure-revealjs/unnamed-chunk-10-1.png" width="1344" class="r-stretch"><aside class="notes">
 <ul>
 <li>[45 seconds]</li>
-<li>And here are just some data to back that up</li>
-<li>These aren’t cherry-picked results…they the 12 enterprise deployments across industries I’ve worked on in the last year using the BID framework</li>
-<li>65 seconds faster to first insight…that’s over a minute saved per user, per session</li>
-<li>Multiply that by hundreds of users, daily visits…you’re saving hours of collective time</li>
-<li>Task completion up from 48% to 62%…nearly a third more decisions actually getting made</li>
-<li>User satisfaction up 27%…that’s the difference between “I have to use this” and “I want to use this”</li>
-<li>Why does this work across industries?…Because human psychology doesn’t change across domains</li>
-<li>Your finance users have the same 7±2 working memory slots as healthcare users</li>
-<li>They all suffer from choice overload…</li>
+<li>And here are the results from 12 deployments I’ve worked on in the last year using the BID framework</li>
+<li>On average, session duration increased on by 2.6 minutes…which is the difference between “I have to use this” and “I want to use this”</li>
+<li>Faster load times…</li>
+<li>Multiply that by hundreds of users, daily visits…that’s hours of collective time saved</li>
+<li>Daily active users increased by 85…</li>
+<li>Query success rate went up from 76% to 87%…</li>
+<li>And the reason this works is because human psychology is predictable</li>
+<li>Your finance users have the same working memory slots as your healthcare users</li>
 <li>The framework adapts to your domain…but the principles remain constant</li>
-<li>Better psychology equals better engineering equals happier developers and users</li>
+<li>Engineering for psychology = better dashboard engineering = happier developers and users</li>
 <li>[end by 14:10]</li>
 </ul>
 <style type="text/css">
@@ -1083,12 +1076,12 @@ Stage 2 (Notice) completed. (40% complete)
 <ul>
 <li>[40 seconds]</li>
 <li>Here’s the really nice part…implementing all this psychology is just a few lines of code</li>
-<li>[CLICK] If you have telemetry…simply load it with bid_telemetry</li>
+<li>If you have telemetry…simply load it with the bid_telemetry function</li>
 <li>[CLICK] Here…I’m filtering to to one of the critical issues identified</li>
-<li>[CLICK] Then adding a simple question the dashboard is trying to answer to contextualize everything that follows</li>
-<li>[CLICK] And then I use bid_notice_issues…a bridge function from telemetry to behavioral insights that auto-populates the following stages</li>
-<li>[CLICK] From there…it’s running through the remaining stages…</li>
-<li>[CLICK] And ending with bid_report to optionally generate a markdown report ready for your PR or documentation</li>
+<li>[CLICK] Then adding the central question to contextualize everything that follows</li>
+<li>[CLICK] And then I use bid_notice_issues…a bridge function for the telemetry data that auto-populates the following stages</li>
+<li>[CLICK] From there…just through the remaining stages…</li>
+<li>[CLICK] And optionally end with bid_report to create a markdown report ready for a PR or documentation</li>
 <li>[end by 14:50]</li>
 </ul>
 <style type="text/css">
@@ -1129,16 +1122,14 @@ Stage 2 (Notice) completed. (40% complete)
 <ul>
 <li>[50 seconds]</li>
 <li>And if you don’t have telemetry…that’s not a problem either</li>
-<li>[CLICK] Just define your problem manually based on user feedback or your observations</li>
-<li>[CLICK] Create your data story…to structure the dashboard’s narrative</li>
-<li>[CLICK] Identify the friction points…even without data…you probably know where users struggle</li>
+<li>Just define your problem manually based on user feedback or your observations</li>
+<li>[CLICK] Start by creating your data story to structure the dashboard’s narrative</li>
+<li>[CLICK] Identify the friction points…bc even without data…you probably know where users struggle</li>
 <li>[CLICK] Same five-stage pipeline…same actionable insights</li>
-<li>[CLICK] Generate text output perfect for tickets, documentation, or stakeholder communication</li>
+<li>[CLICK] Generate text output perfect for tickets…documentation…or stakeholder communication</li>
 <li>The framework guides you whether you have tons of telemetry or simple user feedback</li>
-<li>It’s behavioral science made practical for your daily workflow</li>
-<li>You can run this during development…not just after deployment</li>
-<li>Catch psychological issues before they become user complaints</li>
-<li>This is shift-left for UX…fixing problems before they’re problems</li>
+<li>…And you can run this during the early stages of development too!</li>
+<li>It’s a shift-left for user experience…fixing problems before they’re problems</li>
 <li>[end by 15:40]</li>
 </ul>
 <style type="text/css">
@@ -1170,11 +1161,9 @@ Stage 2 (Notice) completed. (40% complete)
 <span id="cb17-10"><a href=""></a>  <span class="fu">bid_structure</span>() <span class="sc">|&gt;</span></span>
 <span id="cb17-11"><a href=""></a>  <span class="fu">bid_validate</span>()</span>
 <span id="cb17-12"><a href=""></a></span>
-<span id="cb17-13"><a href=""></a><span class="fu">summary</span>(result)</span>
+<span id="cb17-13"><a href=""></a><span class="fu">bid_concepts</span>(<span class="st">"choice overload"</span>)</span>
 <span id="cb17-14"><a href=""></a></span>
-<span id="cb17-15"><a href=""></a><span class="fu">bid_concepts</span>(<span class="st">"choice overload"</span>)</span>
-<span id="cb17-16"><a href=""></a></span>
-<span id="cb17-17"><a href=""></a>result<span class="sc">$</span>next_steps</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-15"><a href=""></a>result<span class="sc">$</span>next_steps</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column fragment" style="width:35%;">
 <h3 id="resources">Resources:</h3>
@@ -1200,18 +1189,15 @@ Stage 2 (Notice) completed. (40% complete)
 <aside class="notes">
 <ul>
 <li>[60 seconds]</li>
-<li>You can literally start using this today</li>
-<li>It’s available on CRAN, so installation is as simple as any other R package</li>
-<li>[CLICK] Install &amp; load the library…you know the drill</li>
-<li>[CLICK] Run through the five stages…even with minimal input, you get valuable suggestions</li>
-<li>[CLICK] Use bid_concepts to explore specific behavioral principles…it’s like having a psychology textbook on hand for further reading</li>
-<li>Want to understand choice overload? bid_concepts(“choice overload”) gives you theory, impact, and solutions</li>
+<li>bidux is currently available on CRAN…so installation is as simple as any other R package</li>
+<li>[CLICK] Install &amp; load the library…</li>
+<li>[CLICK] Run through the five stages…bc even with minimal input…you get valuable suggestions</li>
+<li>[CLICK] There’s also a bid_concepts function to explore specific behavioral principles you may not be familiar with…it’s like having a psychology textbook on hand for further reading</li>
 <li>[CLICK] Check the next_steps for actionable improvements…prioritized by impact</li>
-<li>[CLICK] I’ve created extensive resources…docs, discussions, examples, all designed for the R/Shiny community</li>
-<li>These slides will be available in the BID framework repository…and I’ll be posting them on my website as well</li>
-<li>This community is incredible at sharing and learning together…so please connect with me on Bluesky, LinkedIn, or email</li>
-<li>I’d love to hear about your experiences and learn from your dashboard challenges too</li>
-<li>And if you implement this and see results, please share them!</li>
+<li>[CLICK] And…I’ve created a bunch of resources…all designed for the R/Shiny community</li>
+<li>These slides will also be available in the BID framework repository…and you can find links to everything on my website too</li>
+<li>I love how this community shares and learns together…so please feel free to connect with me on Bluesky, LinkedIn, or email</li>
+<li>I’d love to hear about your experiences…and learn from your dashboard challenges too!</li>
 <li>[end by 16:40]</li>
 </ul>
 <style type="text/css">
@@ -1234,7 +1220,7 @@ Stage 2 (Notice) completed. (40% complete)
 </div><div class="column text-display center" style="width:60%;">
 <p><strong>Dashboards don’t need more features.</strong><br> <strong>They need fewer obstacles.</strong></p>
 <div class="fragment">
-<p>Let’s do that together!</p>
+<p>Let’s fix that together!</p>
 </div>
 </div><div class="column fragment center" style="width:20%;">
 <p><em>Special thanks to the<br> posit::conf organizers,<br> Shiny community,<br> and all of you for caring about your users</em></p>
@@ -1242,11 +1228,11 @@ Stage 2 (Notice) completed. (40% complete)
 <aside class="notes">
 <ul>
 <li>[40 seconds]</li>
-<li>If you remember just one thing from our time together today…Dashboards don’t need more features, they need fewer obstacles</li>
-<li>Every dropdown, every filter, should bring users closer to insight, not further from it</li>
-<li>[CLICK] And we can do this together…the tools exist, the knowledge exists…and it’s clear from all the head nods today that you all care about creating better experiences for your users</li>
-<li>[CLICK] Before I close, I want to offer my heartfelt thanks to the posit::conf organizers for creating this incredible space…to the broader Shiny community for pushing the boundaries of what’s possible…and most importantly, to all of you…for taking the time to be here today and for caring about your users</li>
-<li>Now, I’d love to hear your questions and learn about the dashboard challenges you’re facing!</li>
+<li>If you remember just one thing from our time together today…Dashboards don’t need more features…they need fewer obstacles</li>
+<li>Every dropdown…every filter…should bring users closer to insight…not further from it</li>
+<li>[CLICK] And we can do this together…the tools exist…the knowledge exists…and it’s clear from all the head nods today that you all care about creating better experiences for your users</li>
+<li>[CLICK] Before I close…I want to offer my heartfelt thanks to the posit::conf organizers for creating this incredible space…to the Shiny community for pushing the boundaries of what’s possible…and most importantly, to all of you…for taking the time to be here today and for caring about your users</li>
+<li>Now…I think we have some time for some questions still…dashboard challenges you’re facing!</li>
 <li>[end by 17:20]</li>
 </ul>
 <style type="text/css">

@@ -493,11 +493,12 @@
     color: var(--warm-white) !important;
 }
 
-/* three-column layout - centering */
+/* two-column layout - responsive centering */
 .reveal .slides section .columns.center {
-    height: 80vh;
     align-items: center;
     display: flex;
+    gap: var(--space-5);
+    padding: var(--space-5) 0;
 }
 
 .reveal .slides section .columns.center .column {
@@ -505,8 +506,56 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
     text-align: center;
+}
+
+/* Responsive Tenor GIF styling */
+.reveal .tenor-gif-embed {
+    width: 100% !important;
+    margin: var(--space-4) auto !important;
+    border-radius: var(--radius-lg) !important;
+    overflow: hidden !important;
+}
+
+.reveal .tenor-gif-embed iframe {
+    width: 100% !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* Responsive adjustments for different screen sizes */
+@media screen and (min-width: 1200px) {
+    .reveal .tenor-gif-embed {
+        max-width: 650px !important;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .reveal .tenor-gif-embed {
+        max-width: 750px !important;
+    }
+}
+
+/* Ensure GIFs stay above footer on large screens */
+@media screen and (min-height: 1000px) {
+    .reveal .slides section .columns.center {
+        padding: var(--space-6) 0 var(--space-8);
+        max-height: 80vh;
+    }
+}
+
+/* Ensure proper spacing on large screens */
+@media screen and (min-height: 900px) {
+    .reveal .slides section .columns.center {
+        padding: var(--space-7) 0;
+    }
+}
+
+@media screen and (min-height: 1200px) {
+    .reveal .slides section .columns.center {
+        padding: var(--space-8) 0;
+    }
 }
 
 /* override in final slide - color needs higher specificity than dark background rule */
