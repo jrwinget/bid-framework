@@ -1,0 +1,594 @@
+/* ========== base theme: colors, typography, spacing ========== */
+:root {
+    /* palette */
+    --indigo: #5B6BBF;
+    --coral: #FF8B94;
+    --teal: #5FBDB0;
+    --indigo-dark: #4A5AAE;
+    --indigo-light: #7B8BDF;
+    --coral-dark: #E67B84;
+    --coral-light: #FFB5BC;
+    --teal-dark: #4FA99C;
+    --teal-light: #7FD5C8;
+    --warm-white: #FDFCFA;
+    --warm-gray: #F8F6F3;
+    --dark-blue: #2C3E50;
+    --medium-gray: #5A6C7D;
+    --amber: #FFB347;
+
+    --primary-text: var(--dark-blue);
+    --secondary-bg: var(--warm-white);
+    --secondary-bg-alt: var(--warm-gray);
+    --accent-primary: var(--indigo);
+    --accent-secondary: var(--coral);
+
+    /* typography */
+    --font-sans: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, sans-serif;
+    --font-mono: 'SF Mono', 'Cascadia Code', Monaco, monospace;
+
+    /* presentation type scale  */
+    --fs-display: 72px;
+    --fs-h1: 56px;     /* 40+ for headings */
+    --fs-h2: 42px;     /* 40+ for headings */
+    --fs-h3: 32px;     /* min 24pt, prefer higher for headings */
+    --fs-body: 30px;   /* prefer 28-32 for body text */
+    --fs-code: 24px;   /* min 20pt, increased to 24pt */
+    --fs-small: 24px;  /* min 24pt baseline */
+
+    /* line heights - 1.2-1.4x for body text */
+    --lh-display: 1.1;
+    --lh-heading: 1.3;
+    --lh-body: 1.3;
+
+    /* spacing scale */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
+    --space-8: 64px;
+
+    /* radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-pill: 24px;
+
+    /* motion */
+    --ease-standard: ease-in-out;
+    --duration-fast: 200ms;
+    --duration-base: 300ms;
+}
+
+/* ========== reveal.js overrides ========== */
+
+/* base styles */
+.reveal {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body);
+    color: var(--dark-blue);
+}
+
+/* title slide layout - right-aligned content */
+.reveal .quarto-title-block {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+}
+
+.reveal .quarto-title-block h1.title {
+    font-size: var(--fs-h1);
+    color: var(--warm-white);
+    margin-bottom: var(--space-6);
+    text-align: center;
+    width: 100%;
+    margin-left: 45%;
+}
+
+.reveal .quarto-title-block .subtitle {
+    font-size: var(--fs-h2);
+    color: var(--coral-light);
+    margin-bottom: var(--space-5);
+    text-align: center;
+    width: 100%;
+    margin-left: 45%;
+}
+
+.reveal .quarto-title-block .quarto-title-authors {
+    font-size: var(--fs-body);
+    color: var(--warm-white);
+    margin-bottom: var(--space-4);
+    text-align: center;
+    width: 100%;
+    margin-left: 45%;
+}
+
+.reveal .quarto-title-block .date {
+    font-size: var(--fs-body);
+    color: var(--coral-light);
+    text-align: center;
+    width: 100%;
+    margin-left: 45%;
+}
+
+.reveal .slides section.center,
+.reveal .slides section .center {
+    text-align: center;
+}
+
+/* headings - 1.5-2 line spaces (~32-40px) before body text */
+.reveal h1 {
+    font-size: var(--fs-h1);
+    line-height: var(--lh-heading);
+    color: var(--warm-white) !important;
+    font-weight: 700;
+    margin-bottom: var(--space-6);
+}
+
+.reveal h2 {
+    font-size: var(--fs-h2);
+    line-height: var(--lh-heading);
+    color: var(--warm-white) !important;
+    font-weight: 600;
+    margin-bottom: var(--space-5);
+}
+
+.reveal h3 {
+    font-size: var(--fs-h3);
+    line-height: var(--lh-heading);
+    color: var(--indigo-light) !important;
+    font-weight: 600;
+    margin-bottom: var(--space-4);
+}
+
+/* body text - prefer 28-32pt, line spacing 1.2-1.4x */
+.reveal p,
+.reveal li {
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    margin-bottom: var(--space-4);
+    color: var(--primary-text);
+}
+
+.reveal .columns {
+    margin-top: var(--space-5);
+}
+
+/* lists */
+.reveal ul,
+.reveal ol {
+    margin-left: var(--space-5);
+    margin-bottom: var(--space-5);
+}
+
+.reveal li {
+    margin-bottom: var(--space-3);
+}
+
+/* code blocks - min 20pt, distinct terminal */
+.reveal pre {
+    font-size: var(--fs-code);
+    background: var(--secondary-bg-alt);
+    border-radius: var(--radius-md);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reveal code {
+    font-family: var(--font-mono);
+    font-size: var(--fs-code);
+    background: var(--secondary-bg-alt);
+    border-radius: var(--radius-sm);
+}
+
+/* block quotes - styling with serif font */
+.reveal section blockquote {
+    font-family: "Verdana", Arial, sans-serif; /* Prioritize Verdana, then Arial, then any sans-serif */
+    font-size: 1.2em; /* Adjust size as needed */
+    line-height: 1.5; /* Improve readability with line spacing */
+    font-style: italic; /* Commonly used for quotes */
+    font-weight: bold;
+    color: var(--warm-white);
+    margin: 1em 2em; /* Indent for visual distinction */
+    padding-left: 1em;
+    border-left: 4px solid var(--warm-white); /* Add a visual indicator */
+    background: transparent;
+    width: 100%;
+    position: absolute;
+    top: 35%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+}
+
+/* links - using accent colors */
+.reveal a {
+    color: var(--indigo-light) !important;
+    text-decoration: underline;
+}
+
+.reveal a:hover {
+    color: var(--accent-secondary) !important;
+}
+
+/* background color classes */
+.reveal .slide-background.bg-dark-blue {
+    background-color: var(--dark-blue) !important;
+}
+
+.reveal .slide-background.bg-indigo {
+    background-color: var(--indigo) !important;
+}
+
+.reveal .slide-background.bg-coral {
+    background-color: var(--coral) !important;
+}
+
+.reveal .slide-background.bg-teal {
+    background-color: var(--teal) !important;
+}
+
+/* txt on dark backgrounds - WCAG AA compliant */
+.reveal section[data-background-color="#2C3E50"] h1,
+.reveal section[data-background-color="#2C3E50"] h2,
+.reveal section[data-background-color="#2C3E50"] h3,
+.reveal section[data-background-color="#2C3E50"] p,
+.reveal section[data-background-color="#2C3E50"] li {
+    color: var(--warm-white) !important;
+}
+
+.reveal section[data-background-color="#2c3e50"] h1,
+.reveal section[data-background-color="#2c3e50"] h2,
+.reveal section[data-background-color="#2c3e50"] h3,
+.reveal section[data-background-color="#2c3e50"] p,
+.reveal section[data-background-color="#2c3e50"] li {
+    color: var(--warm-white) !important;
+}
+
+/* text on indigo backgrounds */
+.reveal section[data-background-color="#5B6BBF"] h1,
+.reveal section[data-background-color="#5B6BBF"] h2,
+.reveal section[data-background-color="#5B6BBF"] h3,
+.reveal section[data-background-color="#5B6BBF"] p,
+.reveal section[data-background-color="#5B6BBF"] li {
+    color: var(--warm-white) !important;
+}
+
+.reveal section[data-background-color="#5b6bbf"] h1,
+.reveal section[data-background-color="#5b6bbf"] h2,
+.reveal section[data-background-color="#5b6bbf"] h3,
+.reveal section[data-background-color="#5b6bbf"] p,
+.reveal section[data-background-color="#5b6bbf"] li {
+    color: var(--warm-white) !important;
+}
+
+/* code blocks on dark backgrounds */
+.reveal section[data-background-color="#2C3E50"] pre,
+.reveal section[data-background-color="#2c3e50"] pre,
+.reveal section[data-background-color="#5B6BBF"] pre,
+.reveal section[data-background-color="#5b6bbf"] pre {
+    background: rgba(253, 252, 250, 0.95) !important;
+    color: var(--dark-blue) !important;
+}
+
+.reveal section[data-background-color="#2C3E50"] code,
+.reveal section[data-background-color="#2c3e50"] code,
+.reveal section[data-background-color="#5B6BBF"] code,
+.reveal section[data-background-color="#5b6bbf"] code {
+    background: rgba(253, 252, 250, 0.95) !important;
+    color: var(--dark-blue) !important;
+}
+
+/* links on dark backgrounds */
+.reveal section[data-background-color="#2C3E50"] a,
+.reveal section[data-background-color="#2c3e50"] a,
+.reveal section[data-background-color="#5B6BBF"] a,
+.reveal section[data-background-color="#5b6bbf"] a {
+    color: var(--coral-light) !important;
+}
+
+.reveal section[data-background-color="#2C3E50"] a:hover,
+.reveal section[data-background-color="#2c3e50"] a:hover,
+.reveal section[data-background-color="#5B6BBF"] a:hover,
+.reveal section[data-background-color="#5b6bbf"] a:hover {
+    color: var(--teal-light) !important;
+}
+
+/* img */
+.reveal section img {
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    border-radius: var(--radius-md) !important;
+}
+
+/* tables */
+.reveal table {
+    font-size: var(--fs-small) !important;
+    margin: var(--space-5) auto !important;
+}
+
+.reveal table th {
+    background: var(--indigo) !important;
+    color: var(--warm-white) !important;
+    padding: var(--space-3) var(--space-4) !important;
+    font-weight: 600 !important;
+}
+
+.reveal table td {
+    padding: var(--space-3) var(--space-4) !important;
+    border: 1px solid var(--warm-gray) !important;
+}
+
+/* footer */
+.reveal .footer,
+.reveal .footer-default,
+.reveal .footer-default p {
+    font-size: var(--fs-small) !important;
+    color: var(--warm-white) !important;
+}
+
+/* footer contrast on light backgrounds */
+.reveal section[data-background-color="#fff"] .footer,
+.reveal section[data-background-color="#ffffff"] .footer,
+.reveal section[data-background-color="#fff"] .footer-default,
+.reveal section[data-background-color="#ffffff"] .footer-default,
+.reveal section[data-background-color="#fff"] .footer-default p,
+.reveal section[data-background-color="#ffffff"] .footer-default p {
+    color: var(--medium-gray) !important;
+}
+
+/* code output styling - visually distinct from input code */
+.reveal .cell-output,
+.reveal .cell-output pre,
+.reveal .cell-output code {
+    font-size: var(--fs-code);
+    font-family: var(--font-mono);
+}
+
+.reveal .cell-output pre {
+    margin: var(--space-2) 0;
+    padding: var(--space-3) var(--space-4);
+    background: var(--warm-gray);
+    border-left: 4px solid var(--teal);
+    border-radius: var(--radius-md);
+    position: relative;
+}
+
+/* Add ">" prefix to output lines */
+.reveal .cell-output pre::before {
+    content: "> ";
+    color: var(--teal);
+    font-weight: bold;
+}
+
+/* util classes */
+.text-large {
+    font-size: calc(var(--fs-body) * 1.25);
+}
+
+.text-xl {
+    font-size: calc(var(--fs-body) * 1.5);
+}
+
+.text-xxl {
+    font-size: calc(var(--fs-body) * 2);
+}
+
+.text-display {
+    font-size: var(--fs-display);
+    line-height: var(--lh-display);
+    font-weight: 700;
+}
+
+/* callout boxes - WCAG AA compliant backgrounds */
+.reveal .callout {
+    background: var(--secondary-bg-alt);
+    border-left: 4px solid var(--accent-primary);
+    padding: var(--space-4) var(--space-5);
+    margin: var(--space-5) 0;
+    border-radius: var(--radius-md);
+    color: var(--primary-text) !important;
+}
+
+.reveal .callout-tip {
+    border-left-color: var(--teal);
+}
+
+.reveal .callout-warning {
+    border-left-color: var(--amber);
+}
+
+.reveal .callout-important {
+    border-left-color: var(--accent-secondary);
+}
+
+/* enhanced callouts for dark backgrounds */
+.reveal section[data-background-color="#2C3E50"] .callout,
+.reveal section[data-background-color="#2c3e50"] .callout,
+.reveal section[data-background-color="#5B6BBF"] .callout,
+.reveal section[data-background-color="#5b6bbf"] .callout {
+    background: rgba(253, 252, 250, 0.95) !important;
+    color: var(--dark-blue) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* highlight boxes for key insights */
+.reveal .insight-box {
+    background: linear-gradient(135deg, var(--coral-light), var(--coral)) !important;
+    color: var(--dark-blue) !important;
+    padding: var(--space-6) var(--space-7) !important;
+    margin: var(--space-6) 0 !important;
+    border-radius: var(--radius-lg) !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    box-shadow: 0 6px 25px rgba(255, 139, 148, 0.3) !important;
+}
+
+/* stat highlight boxes */
+.reveal .stat-highlight {
+    background: linear-gradient(135deg, var(--teal-light), var(--teal)) !important;
+    color: var(--dark-blue) !important;
+    padding: var(--space-5) var(--space-6) !important;
+    margin: var(--space-5) 0 !important;
+    border-radius: var(--radius-lg) !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    font-size: var(--fs-h3) !important;
+    box-shadow: 0 6px 25px rgba(95, 189, 176, 0.3) !important;
+}
+
+/* slide buttons */
+.reveal .btn {
+    font-size: var(--fs-body) !important;
+    padding: var(--space-3) var(--space-5) !important;
+    border-radius: var(--radius-md) !important;
+    font-weight: 600 !important;
+}
+
+/* progress bar */
+.reveal .progress {
+    color: var(--indigo) !important;
+    height: 4px !important;
+}
+
+/* controls */
+.reveal .controls {
+    color: var(--indigo) !important;
+}
+
+/* formatting for bidux hex logo */
+.hex-logo {
+    width: 250px;
+    height: auto;
+    margin: var(--space-5) auto;
+    display: block;
+}
+
+/* absolute positioning */
+.reveal .absolute {
+    position: absolute !important;
+}
+
+/* box with background for text over images */
+.text-box-overlay {
+    background: rgba(253, 252, 250, 0.95);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--dark-blue) !important;
+}
+
+/* enhanced text overlay for dark image backgrounds */
+.text-box-overlay-dark {
+    background: rgba(44, 62, 80, 0.95);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--warm-white) !important;
+}
+
+/* two-column layout - responsive centering */
+.reveal .slides section .columns.center {
+    align-items: center;
+    display: flex;
+    gap: var(--space-5);
+    padding: var(--space-5) 0;
+}
+
+.reveal .slides section .columns.center .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Responsive Tenor GIF styling */
+.reveal .tenor-gif-embed {
+    width: 100% !important;
+    margin: var(--space-4) auto !important;
+    border-radius: var(--radius-lg) !important;
+    overflow: hidden !important;
+}
+
+.reveal .tenor-gif-embed iframe {
+    width: 100% !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* Responsive adjustments for different screen sizes */
+@media screen and (min-width: 1200px) {
+    .reveal .tenor-gif-embed {
+        max-width: 650px !important;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .reveal .tenor-gif-embed {
+        max-width: 750px !important;
+    }
+}
+
+/* Ensure GIFs stay above footer on large screens */
+@media screen and (min-height: 1000px) {
+    .reveal .slides section .columns.center {
+        padding: var(--space-6) 0 var(--space-8);
+        max-height: 80vh;
+    }
+}
+
+/* Ensure proper spacing on large screens */
+@media screen and (min-height: 900px) {
+    .reveal .slides section .columns.center {
+        padding: var(--space-7) 0;
+    }
+}
+
+@media screen and (min-height: 1200px) {
+    .reveal .slides section .columns.center {
+        padding: var(--space-8) 0;
+    }
+}
+
+/* override in final slide - color needs higher specificity than dark background rule */
+.reveal section[data-background-color="#2c3e50"] .columns.center .column:last-child p {
+    color: var(--coral-light) !important;
+}
+
+/* Indigo text for center column on final slide */
+.reveal section[data-background-color="#2c3e50"] .columns.center .column.text-display p {
+    color: #8D9CEF !important;
+}
+
+/* shift BID Framework text block over the framework image */
+.reveal section[data-background-color="#2c3e50"] .columns .column[style*="width:70%"] h3,
+.reveal section[data-background-color="#2c3e50"] .columns .column[style*="width:70%"] > p:first-of-type {
+    margin-left: 40%;
+}
+
+/* print styles */
+@media print {
+    .reveal {
+        font-size: 20pt;
+    }
+
+    .reveal h1 {
+        font-size: 36pt;
+    }
+
+    .reveal h2 {
+        font-size: 28pt;
+    }
+
+    .reveal h3 {
+        font-size: 24pt;
+    }
+}

@@ -1,0 +1,53 @@
+color:
+  palette:
+    indigo: "#5B6BBF"  # cognition
+    indigo-dark: "#4A5AAE"
+    indigo-light: "#7B8BDF"
+    coral: "#FF8B94"   # empathy
+    coral-dark: "#E67B84"
+    coral-light: "#FFB5BC"
+    teal: "#5FBDB0"    # system integrity
+    teal-dark: "#4FA99C"
+    teal-light: "#7FD5C8"
+    sky: "#6BD5FF"  # accessibility
+    dark-blue:      "#2C3E50"
+    warm-white: "#FDFCFA"
+    warm-gray: "#F8F6F3"
+    medium-gray:    "#5A6C7D"
+    amber:         "#FFB347"
+  primary:    coral-light
+  secondary:  indigo-light
+  success:    teal-light
+  info:       amber
+  warning:    coral-dark
+  light:      warm-white
+  dark:       dark-blue
+
+typography:
+  fonts:
+    - family: Roboto
+      source: google
+      weight: [400,600,700]
+      display: swap
+    - family: "SF Mono"
+      source: system
+      weight: [400]
+      display: swap
+  base:
+    family: Roboto
+    size: 16px
+    line-height: 1.6
+    weight: 400
+  headings:
+    family: Roboto
+  monospace:
+    family: "'SF Mono', 'Cascadia Code', Monaco, monospace"
+    size: 14px
+    weight: 400
+  link:
+    decoration: underline
+    color: sky
+
+meta:
+  name: "CrossStack Society"
+  description: "Democratizing access to scientific truth, amplifying marginalized voices, and revolutionizing developer team dynamics through behavioral science-informed technology."
