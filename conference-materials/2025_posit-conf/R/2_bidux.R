@@ -11,7 +11,6 @@ cat("   BIDUX: Your Behavioral Science Expert in a Package     \n")
 cat("===========================================================\n\n")
 
 # Generate realistic telemetry data showing user behavior patterns
-# Generate realistic telemetry data showing user behavior patterns
 generate_telemetry_db <- function(db_path = "telemetry.sqlite") {
   # Create SQLite database with telemetry data
   con <- DBI::dbConnect(RSQLite::SQLite(), db_path)

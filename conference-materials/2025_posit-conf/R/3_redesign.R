@@ -581,7 +581,7 @@ server <- function(input, output, session) {
     }
   })
 
-  # AI-powered recommendations (bidux suggestion)
+  # User-specific recommendations (bidux suggestion)
   output$recommendations <- renderUI({
     df <- filteredData()
 
