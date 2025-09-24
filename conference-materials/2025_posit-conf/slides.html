@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="slides_files/libs/clipboard/clipboard.min.js"></script>
+<script src="slides_files/libs/quarto-html/tabby.min.js"></script>
+<script src="slides_files/libs/quarto-html/popper.min.js"></script>
+<script src="slides_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting-4a990d8dcb58f517c7c86712b8f2ac7c.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.31">
+
+  <meta name="author" content="Jeremy Winget, PhD">
+  <meta name="dcterms.date" content="2025-09-17">
+  <title>Death by Dropdown? Engineer Insightful Shiny Apps with Behavioral Science</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-8b15755e4aaf03c54c0897acee0a5dcd.css">
+  <link rel="stylesheet" href="../../custom.css">
+  <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="slides_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-color="#213d4f" data-background-image="img/posit-conf.png" data-background-opacity="0.25" data-background-position="top left" data-background-repeat="no-repeat" data-background-size="45%" data-notes="<p>[10 seconds; smile] Good morning everyone! Let’s jump right in…</p>" class="quarto-title-block center">
+  <h1 class="title">Death by Dropdown?<br>Engineer Insightful Shiny Apps<br>with Behavioral Science</h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Jeremy Winget, PhD 
+</div>
+</div>
+</div>
+
+  <p class="date">September 17, 2025</p>
+</section>
+<section id="section" class="slide level2 center" data-background-color="#2c3e50">
+<h2></h2>
+<div class="text-xl">
+<p><strong>Ever open a dashboard with 18 filters across 6 tabs…<br> and wonder where to even begin?</strong></p>
+</div>
+<div class="columns center">
+<div class="column fragment center" style="width:45%;">
+<div class="tenor-gif-embed" data-postid="596341483704119392" data-share-method="host" data-aspect-ratio="1.32447" data-width="100%">
+<a href="https://tenor.com/view/monkey-computer-work-bug-developer-gif-596341483704119392">Monkey Computer GIF</a>from <a href="https://tenor.com/search/monkey-gifs">Monkey GIFs</a>
+</div>
+</div><div class="column fragment center" style="width:45%;">
+<div class="tenor-gif-embed" data-postid="17038619" data-share-method="host" data-aspect-ratio="1.32447" data-width="100%">
+<a href="https://tenor.com/view/ron-swanson-parks-and-recreation-parks-and-rec-computer-dumpster-gif-17038619">Ron Swanson Parks And Recreation GIF</a>
+</div>
+<script type="text/javascript" async="" src="https://tenor.com/embed.js"></script>
+</div></div>
+<aside class="notes">
+<ul>
+<li>[30 seconds]</li>
+<li>Who here has opened a dashboard with 18 filters across 6 tabs…and wondered where to even start?…Or maybe what they were even looking at?</li>
+<li>I see some knowing looks</li>
+<li>Now I’d like you to imagine you’re NOT a data scientist…You’re an executive who needs to make a decision in the next 10 mins</li>
+<li>[CLICK] This might be you…frantically clicking, hoping something makes sense</li>
+<li>[CLICK] Or maybe you have some…bigger feelings</li>
+<li>The truth is…we’ve all probably felt this way towards a dashboard…and it’s never a good feeling</li>
+<li>[end by 40 secs]</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="dashboard-support-group" class="slide level2" data-background-color="#2c3e50">
+<h2>Dashboard Support Group</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 style="color: var(--teal-light) !important;" id="raise-hand-if-youve-ever">Raise hand if you’ve ever:</h3>
+<ul>
+<li>Designed a UI with 10+ filters?</li>
+<li>Had a user ask for “one more dropdown”?</li>
+<li>Built a Shiny app with more <code>selectInput()</code> than insights?</li>
+</ul>
+</div><div class="column center fragment" style="width:50%;">
+<h3 style="color: var(--coral-light) !important;" id="welcome-youre-among-friends">Welcome! You’re among friends 😊</h3>
+<p><em>Think of our time together as a little therapy session for dropdown overload</em></p>
+</div><div class="column fragment" style="margin-top: var(--space-8);">
+<h3 style="color: #8D9CEF !important;" id="hi-im-jeremy">👋 Hi, I’m Jeremy!</h3>
+<p><strong>I’m a psychologist by training, but probably not the kind you’re thinking of</strong></p>
+<p><em>The public sees therapists, but the discipline is powered by data.</em></p>
+</div><div class="column fragment center" style="margin-top: var(--space-8);">
+<h3 style="color: #8D9CEF !important;" id="my-journey">My Journey</h3>
+<p><strong>Applied Social Psychology</strong> → <br> <strong>Full Stack Engineer</strong> → <br> <strong>Led Shiny teams at scale</strong> → <br> <strong>Researcher / OSS Developer</strong></p>
+</div></div>
+<aside class="notes">
+<ul>
+<li>[60 seconds]</li>
+<li>So…welcome to my dashboard support group!…Let’s do a quick check-in</li>
+<li>Raise your hand if you’ve designed a UI with 10+ filters
+<ul>
+<li>Keep it up if you’ve gone over 20?</li>
+</ul></li>
+<li>How about this…who’s had a user ask for “just one more dropdown” when you KNEW it was just too much?</li>
+<li>[CLICK] If you’re nodding along…No judgment here…you’re among friends</li>
+<li>[CLICK] My name is Jeremy…and I’ve been there too</li>
+<li>I’m a psychologist by training…but probably not the kind that first comes to mind</li>
+<li>See…a lot of folks think psychology is all about couches and therapy…but the discipline is powered by data</li>
+<li>[CLICK] My journey took me from studying how groups make decisions under pressure…to building the systems that caused that pressure…to finally figuring out how to fix them</li>
+<li>And after years of building dashboards that were technically great…but didn’t seem to land with users…I had this realization</li>
+<li>[end by 1:40 mins]</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="core-realization" class="slide level2" data-background-color="#5b6bbf">
+<h2>Core Realization</h2>
+<blockquote>
+<p>A lot of dashboard failures aren’t technical…</p>
+<p>They’re psychological.</p>
+</blockquote>
+<aside class="notes">
+<ul>
+<li>20 seconds</li>
+<li>A lot of dashboard failures aren’t technical…They’re psychological</li>
+<li>They don’t fail bc of the wrong chart type</li>
+<li>They fail because humans need to use them…and humans are complicated</li>
+<li>But…we can engineer for psychology just like we engineer for performance</li>
+<li>Let me show you what I mean</li>
+<li>[end by 2:00]</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="real-client.-real-problems." class="slide level2" data-background-image="img/ui-before1.png" data-background-size="contain" data-background-color="#2c3e50">
+<h2>Real client. Real problems.</h2>
+<div class="text-box-overlay-dark fragment absolute" style="left: -50px; bottom: 100px; ">
+<ul>
+<li>18 filters across 6 tabs</li>
+<li>Every possible data view</li>
+<li>Curiosity quickly vanished. So did visits.</li>
+</ul>
+<div class="fragment">
+<p><strong>We ran telemetry for 30 days…</strong></p>
+</div>
+</div>
+<aside class="notes">
+<ul>
+<li>[45 seconds]</li>
+<li>This is a dashboard from a client of mine…details blinded of course</li>
+<li>They had built a really impressive dashboard…</li>
+<li>Lots of filters…customized views…and some really cool visualizations for deep dives</li>
+<li>[CLICK] The client loved it bc…“users could analyze anything they want!”</li>
+<li>Except…they never did</li>
+<li>The opened the app…but and shortly after…completely deserted it</li>
+<li>They were finding creative workarounds…like Excel</li>
+<li>[CLICK] So we decided to roll out a minor update…and collect anonymous usage data with telemetry for 30 days..to get a better idea of what users were actually doing</li>
+<li>[end by 2:45]</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="telemetry-revealed-the-journey" class="slide level2" data-background-color="#2c3e50">
+<h2>Telemetry Revealed the Journey</h2>
+
+<img data-src="slides_files/figure-revealjs/unnamed-chunk-1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="1344"><aside class="notes">
+<ul>
+<li>[35 seconds]</li>
+<li>And…it painted this user journey cliff of despair</li>
+<li>95% of users visited the URL…fantastic! Shows people are interested
+<ul>
+<li>88% opened the dashboard…also good…they’re getting past the landing page</li>
+</ul></li>
+<li>But here’s where it gets brutal…</li>
+<li>Only half applied a single filter…Just one!
+<ul>
+<li>And only 1/5 returned within 7 days</li>
+</ul></li>
+<li>This chart is screaming “STOP DOING THIS TO YOUR USERS!”</li>
+<li>But how do we know what needs fixing?</li>
+<li>[end by 3:20]</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="enter-behavioral-science" class="slide level2" data-background-color="#5b6bbf">
+<h2>Enter: Behavioral Science</h2>
+<div class="text-large">
+<p><strong>What is it?</strong> The interdisciplinary study of how people make decisions<br> (Spoiler: irrationally, yet predictably &amp; consistently)</p>
+</div>
+<div style="margin-top: var(--space-7);">
+<div class="columns fragment">
+<h3 style="text-align: center; color: var(--coral-light) !important;" id="classic-example-the-paradox-of-choice">Classic Example: The Paradox of Choice</h3>
+<div class="column fragment" style="width:45%;">
+<div class="text-large">
+<p><strong>Researchers</strong>: Sheena Iyengar &amp; Mark Lepper</p>
+<p><strong>Setting</strong>: Upscale grocery store sampling booth</p>
+<p><strong>Design</strong>: 24 jams vs.&nbsp;6 jams display</p>
+</div>
+</div><div class="column" style="width:45%;">
+<div class="r-stack">
+<p><img data-src="img/jam-study-blur.png" class="fragment" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);;width:100.0%"></p>
+<p><img data-src="img/jam-study.png" class="fragment" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);;width:100.0%"></p>
+</div>
+</div></div>
+</div>
+<div class="fragment center" style="margin-top: 30px;">
+<h3 style="color: var(--teal-light) !important;" id="x-higher-conversion-with-fewer-options"><strong>10x higher conversion with fewer options</strong></h3>
+</div>
+<aside class="notes">
+<ul>
+<li>[75 seconds]</li>
+<li>With behavioral science!…which is the science of how humans think, feel and act…often in terms of decision making</li>
+<li>And decades of research shows people are often irrational…but in surprisingly predictable ways</li>
+<li>For us as developers…this means our strange user behaviors are understandable…and we can design for them</li>
+<li>Here’s a classic study that illustrates what I mean</li>
+<li>[CLICK] Researchers set up a tasting booth at a grocery store…and they varied the number of jams they had on display</li>
+<li>[CLICK] In the big display condition…there were 24 jams on the table
+<ul>
+<li>And in the small display condition…there were 6 jams</li>
+</ul></li>
+<li>[CLICK] The big display with 24 jams attracted more shoppers than the small display with 6 jams
+<ul>
+<li>BUT…only 3% of folks who stopped at the larger display bought jam…whereas 30% of people bought jam in the small display condition</li>
+</ul></li>
+<li>[CLICK] That’s a 10x conversion difference!</li>
+<li>So more choice attracted attention but paralyzed action…
+<ul>
+<li>And filter-heavy dashboards do the exact same thing</li>
+</ul></li>
+<li>[end by 4:30]</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="applied-to-dashboards" class="slide level2" data-background-color="#5b6bbf">
+<h2>Applied to Dashboards</h2>
+<div class="columns">
+<div class="column" style="margin-top: var(--space-8);">
+<h3 style="color: var(--coral-light) !important;" id="core-concepts">Core Concepts</h3>
+<ul>
+<li><strong>Cognitive Load</strong>
+<ul>
+<li>Too many choices overwhelm users’ mental capacity</li>
+</ul></li>
+<li><strong>Progressive Disclosure</strong>
+<ul>
+<li>Reveal complexity gradually as users need it</li>
+</ul></li>
+<li><strong>Framing Effects</strong>
+<ul>
+<li>Same data can tell completely different stories</li>
+</ul></li>
+</ul>
+</div><div class="column fragment" style="margin-top: var(--space-8);">
+<h3 style="color: var(--teal-light) !important;" id="dashboard-examples">Dashboard Examples</h3>
+<ul>
+<li><strong>Cognitive Load</strong>
+<ul>
+<li>Start with 3 key filters, hide 15 advanced ones</li>
+</ul></li>
+<li><strong>Progressive Disclosure</strong>
+<ul>
+<li>Show summary → detailed dive → comparisons</li>
+</ul></li>
+<li><strong>Framing Effects</strong>
+<ul>
+<li>“Revenue up 15%” vs “Revenue missed by 5%”</li>
+</ul></li>
+</ul>
+</div></div>
+<aside class="notes">
+<ul>
+<li>[75 seconds]</li>
+<li>Now…the paradox of choice is just one of many behavioral science concepts we can apply to dashboards</li>
+<li>And we don’t have nearly enough time to cover them all</li>
+<li>But I wanted to pull out a couple to illustrate how these aren’t just theories…they’re engineering principles we can leverage</li>
+<li>Cognitive Load…this means too many choices overwhelm users’ mental capacity
+<ul>
+<li>Like RAM…your users’ brains have processing limits…every filter costs processing power</li>
+</ul></li>
+<li>Progressive Disclosure…this means revealing complexity gradually as users need it
+<ul>
+<li>Show vital information first…and reveal more later on</li>
+<li>Like lazy loading for human cognition</li>
+</ul></li>
+<li>Framing Effects…this is how the same data can tell completely different stories
+<ul>
+<li>“Revenue up 15%” versus “Missed target by 5%”</li>
+<li>Identical data…but the Proj Manager might see success while the CFO sees failure</li>
+</ul></li>
+<li>[CLICK] In practice…this means starting with 3 filters not 18…showing summaries before details…and using smart defaults</li>
+<li>This is how we engineer the user experience as carefully as we would the backend</li>
+<li>But what if you don’t know anything about behavioral science?</li>
+<li>[end by 5:35]</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-solution-your-dashboard-journey" class="slide level2" data-background-color="#2c3e50">
+<h2>The Solution: Your Dashboard Journey</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<h3 style="color: var(--coral-light) !important;" id="think-of-it-like-a-road-trip">Think of it like a road trip</h3>
+<p>📍 <strong>Interpret</strong> where you’re going<br> ⚠️ <strong>Notice</strong> the warning lights<br> 🌦️ <strong>Anticipate</strong> weather changes<br> 🗺️ <strong>Structure</strong> the best route<br> ✅ <strong>Validate</strong> safe arrival</p>
+<img data-src="img/vw-bus.jpg" class="r-stretch">
+</div><div class="column fragment" style="width:70%;">
+<h3 style="color: #8D9CEF !important;" id="the-bid-framework">The BID Framework</h3>
+<p>📍 <strong>Interpret</strong> user needs<br> ⚠️ <strong>Notice</strong> friction points<br> 🌦️ <strong>Anticipate</strong> cognitive biases<br> 🗺️ <strong>Structure</strong> information flow<br> ✅ <strong>Validate</strong> understanding</p>
+<p><img data-src="img/bid-framework.png" style="width: 80%; box-shadow: none !important; margin-left: 20%"></p>
+</div></div>
+<aside class="notes">
+<ul>
+<li>[45 seconds]</li>
+<li>Well…I bet you do know something about road trips</li>
+<li>And engineering apps with behavioral science is a lot like planning a road trip</li>
+<li>You need to know your destination…anticipate the hazards…and make sure everyone gets there in one piece</li>
+<li>That’s where the Behavioral Insight Design (BID) framework comes in…[CLICK]</li>
+<li>Five simple stages that guide you through the process…and help prevent those dashboard disasters we’ve all seen</li>
+<li>What makes the BID framework different from other UX advice is that it’s a concrete…step-by-step framework built on decades of research</li>
+<li>Each stage feeds into the next…creating this continuous feedback loop that keeps improving your dashboard</li>
+<li>Plus…the whole thing is bundled into an R package that handles the heavy lifting for you</li>
+<li>[end by 6:20]</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="what-is-bidux" class="slide level2" data-background-color="#2c3e50">
+<h2>What is {bidux}?</h2>
+<div class="columns">
+<div class="column text-large" style="width:45%;">
+<h3 style="color: var(--teal-light) !important;" id="an-r-package-that">An R package that:</h3>
+<ul>
+<li>✅ Works with ANY Shiny dashboard</li>
+<li>✅ Analyzes telemetry OR works without</li>
+<li>✅ Auto-suggests behavioral science improvements</li>
+<li>✅ Custom parameter overrides</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<p><img data-src="img/hex-bidux.png" width="250"></p>
+</div><div class="column" style="margin-top: 150px;">
+
+</div><div class="column fragment" style="margin-top: 150px;">
+<h3 style="text-align: center !important; color: #8D9CEF !important;" id="your-behavioral-scientist-in-the-console"><em>Your behavioral scientist in the console</em></h3>
+</div></div>
+<aside class="notes">
+<ul>
+<li>[45 seconds]</li>
+<li>Meet bidux…designed specifically for our workflows as Shiny developers</li>
+<li>It works with any dashboard you’ve already built…no refactoring, no starting over</li>
+<li>If you have telemetry?…Great!
+<ul>
+<li>It’ll analyze actual user behavior and give you data-driven insights</li>
+</ul></li>
+<li>Or…if you don’t have telemetry data…you can use simple verbal descriptions during the process</li>
+<li>Whatever inputs you provide…it will use them to auto-suggest improvements based on real research</li>
+<li>[CLICK] Think of it as having a behavioral scientist right in your console…always available, never judges, and doesn’t charge by the hour</li>
+<li>Now…let me show you what this process actually looks like</li>
+<li>[end by 7:05]</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="interpret-start-with-why" class="slide level2" data-background-color="#5b6bbf">
+<h2>INTERPRET: Start with Why</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" data-code-line-numbers="3|4|5-10|11-18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">library</span>(bidux)</span>
+<span id="cb1-2"><a href=""></a></span>
+<span id="cb1-3"><a href=""></a>interpret_stage <span class="ot">&lt;-</span> <span class="fu">bid_interpret</span>(</span>
+<span id="cb1-4"><a href=""></a>  <span class="at">central_question =</span> <span class="st">"Which markets are driving performance?"</span>,</span>
+<span id="cb1-5"><a href=""></a>  <span class="at">data_story =</span> <span class="fu">list</span>(</span>
+<span id="cb1-6"><a href=""></a>    <span class="at">hook =</span> <span class="st">"Q4 revenue hit record high, but satisfaction dipped"</span>,</span>
+<span id="cb1-7"><a href=""></a>    <span class="at">context =</span> <span class="st">"After aggressive marketing across all regions"</span>,</span>
+<span id="cb1-8"><a href=""></a>    <span class="at">tension =</span> <span class="st">"West region satisfaction fell 10 points"</span>,</span>
+<span id="cb1-9"><a href=""></a>    <span class="at">resolution =</span> <span class="st">"Focus retention efforts on underperforming regions"</span></span>
+<span id="cb1-10"><a href=""></a>  ),</span>
+<span id="cb1-11"><a href=""></a>  <span class="at">user_personas =</span> <span class="fu">list</span>(</span>
+<span id="cb1-12"><a href=""></a>    <span class="fu">list</span>(</span>
+<span id="cb1-13"><a href=""></a>      <span class="at">name =</span> <span class="st">"Product Manager"</span>,</span>
+<span id="cb1-14"><a href=""></a>      <span class="at">goals =</span> <span class="st">"Monitor weekly KPIs"</span>,</span>
+<span id="cb1-15"><a href=""></a>      <span class="at">pain_points =</span> <span class="st">"Too many filters to find important insights"</span>,</span>
+<span id="cb1-16"><a href=""></a>      <span class="at">technical_level =</span> <span class="st">"Moderate"</span></span>
+<span id="cb1-17"><a href=""></a>    )</span>
+<span id="cb1-18"><a href=""></a>  )</span>
+<span id="cb1-19"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>Stage 1 (Interpret) completed.
+  - Central question: Which markets are driving performance?
+  - Your data story has all key elements. Focus on making each component compelling and relevant.
+  - Your central question is appropriately scoped.
+  - User personas: 1 defined </code></pre>
+</div>
+</div>
+<aside class="notes">
+<ul>
+<li>[65 seconds]</li>
+<li>First…we start with the INTERPRET stage…the why behind the dashboard</li>
+<li>[CLICK] Because the central question drives the focus for your users
+<ul>
+<li>It’s what they’re coming to the dashboard for in the first place</li>
+</ul></li>
+<li>[CLICK] And the data story helps create narrative structure for this</li>
+<li>Humans are hardwired for stories…not pivot tables</li>
+<li>Hook, context, tension, resolution…
+<ul>
+<li>It’s the structure folks are looking for with their key insights…so we build it in from the start</li>
+</ul></li>
+<li>[CLICK] And finally…user personas help us devs take the user perspective</li>
+<li>The Product Manager probably doesn’t think in SQL queries…They think in business outcomes</li>
+<li>So the dashboard needs to bridge that gap</li>
+<li>[CLICK] And putting all of that together…the function creates a summary for you to review before moving on</li>
+<li>If it tells you anything is missing…it could also be a good time to check in with your users to make sure you’re capturing their perspective</li>
+<li>Bc when we don’t consider their perspective…we end up building friction points into our dashboards</li>
+<li>[end by 8:10]</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="notice-find-the-core-problems" class="slide level2" data-background-color="#5b6bbf">
+<h2>NOTICE: Find the Core Problems</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="slides_files/figure-revealjs/unnamed-chunk-3-1.png" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column fragment" style="width:60%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>notice_stage <span class="ot">&lt;-</span> <span class="fu">bid_notice</span>(</span>
+<span id="cb3-2"><a href=""></a>  <span class="at">previous_stage =</span> interpret_stage,</span>
+<span id="cb3-3"><a href=""></a>  <span class="at">problem =</span> <span class="st">"Users are struggling to find key insights"</span>,</span>
+<span id="cb3-4"><a href=""></a>  <span class="at">evidence =</span> <span class="st">"Telemetry shows over 75% of filters are rarely used"</span></span>
+<span id="cb3-5"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Auto-suggested theory: Cognitive Load Theory (confidence: 90%)
+Stage 2 (Notice) completed. (40% complete)
+  - Problem: Users are struggling to find key insights
+  - Theory: Cognitive Load Theory (auto-suggested)
+  - Evidence: Telemetry shows over 75% of filters are rarely used
+  - Theory confidence: 90%
+  - Next: Use bid_anticipate() for Stage 3 </code></pre>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<ul>
+<li>[75 seconds]</li>
+<li>Going back to my client’s dashboard…here’s what the filter usage looked like</li>
+<li>14 filters hardly ever used…and half of those were hardly touched</li>
+<li>This is technical debt visualized…Each unused filter is maintenance overhead</li>
+<li>There might even be database queries running for nothing bc of those unused filters</li>
+<li>That’s why the NOTICE stage focuses on finding these friction points systematically</li>
+<li>[CLICK] The package auto-suggests relevant behavioral theories with confidence scores</li>
+<li>Here…it suggests Cognitive Load Theory with 90% confidence</li>
+<li>But it could also suggest Choice Overload…or Decision Fatigue…depending on the context</li>
+<li>This transforms “it’s confusing” into specific engineering problems…like “cognitive load exceeds working memory”</li>
+<li>So you’re not guessing anymore…you’re addressing identified psychological barriers with targeted code changes</li>
+<li>[end by 9:25]</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="anticipate-guard-against-biases" class="slide level2" data-background-color="#5b6bbf">
+<h2>ANTICIPATE: Guard Against Biases</h2>
+<div class="r-stack">
+<div class="fragment fade-in-then-out">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>anticipate_stage <span class="ot">&lt;-</span> <span class="fu">bid_anticipate</span>(<span class="at">previous_stage =</span> notice_stage)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Stage 3 (Anticipate) completed.
+  - Bias mitigations: 4 defined
+  - Accessibility considerations included
+  - Key suggestions: anchoring mitigation: Always show reference points like previous period, budget, or industry average., framing mitigation: Toggle between progress (65% complete) and gap (35% remaining) framing., confirmation bias mitigation: Include alternative views that might challenge the main narrative. </code></pre>
+</div>
+</div>
+</div>
+<div class="fragment fade-in-then-out">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="co"># Auto-generates bias mitigations</span></span>
+<span id="cb7-2"><a href=""></a>anticipate_stage<span class="sc">$</span>bias_mitigations</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "anchoring: Consider how anchoring might affect user interpretation; framing: Consider how framing might affect user interpretation; confirmation bias: Consider how confirmation bias might affect user interpretation; accessibility: provide clear focus indicators, sufficient color contrast, and screen reader support"</code></pre>
+</div>
+</div>
+</div>
+<p><img data-src="img/ui-gain-frame.png" class="fragment" data-auto-animate="true"></p>
+<p><img data-src="img/ui-loss-frame.png" class="fragment" data-auto-animate="true"></p>
+<div class="text-box-overlay-dark fragment fade-up">
+<p><strong>Same Data, Different Story</strong></p>
+</div>
+</div>
+<aside class="notes">
+<ul>
+<li>[45 seconds]</li>
+<li>[CLICK] The package also suggests bias mitigations based on the dashboard context and user personas</li>
+<li>Using the information from the previous stages…it will suggest specific information processing biases…and ways to mitigate them in the dashboard</li>
+<li>[CLICK] In this case we’re getting…anchoring, framing, confirmation bias</li>
+<li>These are bugs in human cognition that affect every user…but now we can guard for them</li>
+<li>In my client’s case…they had multiple stakeholders with different perspectives
+<ul>
+<li>So we focused a lot on framing</li>
+</ul></li>
+<li>[CLICK] The progress (gain) frame shows the <em>relative difference</em> between the raw value and the benchmark…which highlighted the achievements the marketing team was interested in</li>
+<li>[CLICK] BUT…the gap (loss) framing shows the raw values vs.&nbsp;the benchmark…which focused on the improvements still needed that the product teams wanted</li>
+<li>[CLICK] Same data…but different psychological impact</li>
+<li>This is proactive debugging for human psychology</li>
+<li>[end by 10:10]</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="structure-progressive-disclosure" class="slide level2" data-background-color="#5b6bbf">
+<h2>STRUCTURE: Progressive Disclosure</h2>
+<div class="r-stack">
+<div class="fragment fade-in-then-out">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a>structure_stage <span class="ot">&lt;-</span> <span class="fu">bid_structure</span>(<span class="at">previous_stage =</span> anticipate_stage)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Stage 4 (Structure) completed.
+  - Auto-selected layout: breathable
+  - Concept groups generated: 3
+  - Total concepts: 3 </code></pre>
+</div>
+</div>
+</div>
+<div class="fragment fade-in">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="co"># Provides suggestions how how to implement</span></span>
+<span id="cb11-2"><a href=""></a><span class="fu">str</span>(structure_stage<span class="sc">$</span>suggestions[[<span class="dv">1</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>List of 2
+ $ concept    : chr "Cognitive Load Theory"
+ $ suggestions:List of 3
+  ..$ :List of 5
+  .. ..$ title     : chr "Limit initial choices"
+  .. ..$ details   : chr "Show only core filters by default; defer advanced options to secondary views or accordions."
+  .. ..$ components: chr [1:3] "bslib::accordion" "shiny::conditionalPanel" "shiny::updateSelectizeInput"
+  .. ..$ rationale : chr "Reduces initial cognitive load for new users while preserving functionality."
+  .. ..$ score     : num 1
+  ..$ :List of 5
+  .. ..$ title     : chr "Use progressive complexity"
+  .. ..$ details   : chr "Start with simple views and allow users to add complexity incrementally."
+  .. ..$ components: chr [1:3] "shiny::tabsetPanel" "bslib::accordion" "shiny::actionButton"
+  .. ..$ rationale : chr "Prevents overwhelming users with too many options at once."
+  .. ..$ score     : num 0.91
+  ..$ :List of 5
+  .. ..$ title     : chr "Provide smart defaults"
+  .. ..$ details   : chr "Pre-select commonly used filters and settings to reduce decision fatigue."
+  .. ..$ components: chr [1:3] "shiny::selectInput" "shiny::checkboxInput" "bslib::input_switch"
+  .. ..$ rationale : chr "Leverages the Default Effect to reduce cognitive burden."
+  .. ..$ score     : num 0.88</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment fade-left" style="width: 70%">
+<p><img data-src="img/f-pattern-heatmap.png"></p>
+</div>
+</div>
+<aside class="notes">
+<ul>
+<li>[65 seconds]</li>
+<li>Okay…at this point…we know what the dashboard is for…the problems to fix…and what biases to guard against</li>
+<li>Now it’s time to STRUCTURE the information flow</li>
+<li>[CLICK] And using bid_structure we get these specific implementation suggestions…</li>
+<li>Not just “reduce complexity” but “use bslib::accordion for progressive disclosure”</li>
+<li>The package knows which components map to which psychological principles…and gives multiple options to try</li>
+<li>For example…</li>
+<li>[CLICK] See this F-pattern heatmap? This is how most users scan dashboards in Western cultures</li>
+<li>Top-left gets 100% attention…bottom-right might as well not exist</li>
+<li>The Structure stage puts your most important insights where eyes naturally go</li>
+<li>So critical KPIs or summaries are placed at the top…the supporting details follow the F-pattern…and deep-dive options progressively disclosed towards the bottom</li>
+<li>This is cognitive engineering…we’re structuring information to match how the human brain processes visual data</li>
+<li>[end by 11:15]</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="validate-plain-language-wins" class="slide level2" data-background-color="#5b6bbf">
+<h2>VALIDATE: Plain Language Wins</h2>
+<div class="r-stack">
+<div class="fragment fade-in-then-out">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a>validate_stage <span class="ot">&lt;-</span> <span class="fu">bid_validate</span>(<span class="at">previous_stage =</span> structure_stage)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Stage 5 (Validate) completed.
+  - Summary panel: Dashboard provides clear summary of key insight...
+  - Collaboration: Enable team sharing and collaborative decision-...
+  - Next steps: 11 items defined
+  - Consider adding user empowerment tools to enhance collaboration </code></pre>
+</div>
+</div>
+</div>
+<div class="fragment fade-up">
+<img data-src="img/ui-summary.png" class="r-stretch">
+</div>
+</div>
+<aside class="notes">
+<ul>
+<li>[40 seconds]</li>
+<li>Finally…we reach the last stage…validate and empower users</li>
+<li>[CLICK] This helps you know the dashboard works as intended…and helps users know what to do next</li>
+<li>It guides devs through testing changes and iterating…but also suggests ways to empower user engagement</li>
+<li>For example…executive summaries tailored to personas…which is what we used in my client’s case
+<ul>
+<li>We had high level summaries targeting key actions for different user personas</li>
+</ul></li>
+<li>But the validate state generates other checklists and accessibility checks…to help you create those “aha” moments for your users</li>
+<li>But Validation isn’t the end…it feeds back to Interpret…creating continuous improvement that you can always revisit as needed</li>
+<li>[PAUSE]</li>
+<li>Now let’s take a look at the full transformation</li>
+<li>[end by 11:55]</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-transformation" class="slide level2 center" data-background-color="#2c3e50">
+<h2>The Transformation</h2>
+<img data-src="img/ui-before2.png" class="r-stretch">
+<aside class="notes">
+<ul>
+<li>[25 seconds]</li>
+<li>Here’s our dashboard disaster again…</li>
+<li>Technically perfect…but psychologically broken</li>
+<li>The dashboard that had everything…except users</li>
+<li>Let’s see what behavioral science can do to turn this around…</li>
+<li>[end by 12:20]</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-transformation-1" class="slide level2 center" data-background-color="#2c3e50">
+<h2>The Transformation</h2>
+<img data-src="img/ui-after.png" class="r-stretch">
+<div class="text-box-overlay-dark fragment absolute" style="left: 288px; bottom: 200px; ">
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 15%">
+<col style="width: 14%">
+<col style="width: 9%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Metric</th>
+<th style="text-align: center;">Before (%)</th>
+<th style="text-align: center;">After (%)</th>
+<th style="text-align: center;">Δ</th>
+<th style="text-align: center;">Relative change</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Visited app URL</td>
+<td style="text-align: center;">95</td>
+<td style="text-align: center;">97</td>
+<td style="text-align: center;">+2</td>
+<td style="text-align: center;">+2%</td>
+</tr>
+<tr class="even">
+<td>Opened dashboard</td>
+<td style="text-align: center;">88</td>
+<td style="text-align: center;">95</td>
+<td style="text-align: center;">+7</td>
+<td style="text-align: center;">+8%</td>
+</tr>
+<tr class="odd">
+<td>Applied ≥1 filter</td>
+<td style="text-align: center;">52</td>
+<td style="text-align: center;">72</td>
+<td style="text-align: center;">+20</td>
+<td style="text-align: center;">+38%</td>
+</tr>
+<tr class="even">
+<td>Returning within 1 week</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">35</td>
+<td style="text-align: center;">+15</td>
+<td style="text-align: center;">+75%</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment text-xl" style="margin-top: 30px;">
+<p><strong>More users. Deeper engagement. Stronger retention.</strong></p>
+</div>
+</div>
+<aside class="notes">
+<ul>
+<li>[65 seconds]</li>
+<li>Here’s the same dashboard…but with a transformed user experience</li>
+<li>Clean executive summary at the top…users know immediately what matters and what to do about it</li>
+<li>Progressive disclosure…complexity is available but not required</li>
+<li>Smart defaults based on actual usage patterns…not assumptions</li>
+<li>[CLICK] And here are the data</li>
+<li>Filter usage up 38%…people are actually exploring data instead of abandoning ship</li>
+<li>Return rate up 75%…they’re coming back!</li>
+<li>This is the ROI of behavioral science</li>
+<li>It’s not magic…or AI…it’s engineering for how humans actually think</li>
+<li>We reduced cognitive load…aligned with mental models…and created clear information hierarchy</li>
+<li>[CLICK] More users…deeper engagement…stronger retention…because we removed obstacles instead of adding features</li>
+<li>And as a developer…this also means…
+<ul>
+<li>Less support tickets and feature requests because users can figure it out themselves</li>
+<li>Better performance reviews because your dashboards driving value</li>
+</ul></li>
+<li>It’s the difference between building features…and products people love</li>
+<li>[end by 13:25]</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="real-impact-across-industries" class="slide level2" data-background-color="#5b6bbf">
+<h2>Real Impact Across Industries</h2>
+
+<img data-src="slides_files/figure-revealjs/unnamed-chunk-10-1.png" width="1344" class="r-stretch"><aside class="notes">
+<ul>
+<li>[45 seconds]</li>
+<li>And here are the results from 12 deployments I’ve worked on in the last year using the BID framework</li>
+<li>On average, people are engaging with the dashboard longer…it’s performing better because we’re getting rid of unneeded processes…and we’re seeing more user traffic</li>
+<li>This works is because human psychology is predictable</li>
+<li>Your finance users have the same working memory slots as your healthcare users</li>
+<li>The framework adapts to your domain…but the principles remain constant</li>
+<li>[end by 14:10]</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="simplified-ux-workflows" class="slide level2" data-background-color="#2c3e50">
+<h2>Simplified UX Workflows</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15" data-code-line-numbers="1-2|4-5|6|7|8-10|11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="co"># Using telemetry data</span></span>
+<span id="cb15-2"><a href=""></a>issues <span class="ot">&lt;-</span> <span class="fu">bid_telemetry</span>(<span class="st">"dashboard_telemetry.sqlite"</span>)</span>
+<span id="cb15-3"><a href=""></a></span>
+<span id="cb15-4"><a href=""></a>report <span class="ot">&lt;-</span> <span class="fu">filter</span>(issues, severity <span class="sc">==</span> <span class="st">"critical"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-5"><a href=""></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-6"><a href=""></a>  <span class="fu">bid_interpret</span>(<span class="at">central_question =</span> <span class="st">"Which markets are driving performance?"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-7"><a href=""></a>  <span class="fu">bid_notice_issue</span>(issues[<span class="dv">1</span>, ]) <span class="sc">|&gt;</span> <span class="co"># bridge from telemetry to BID</span></span>
+<span id="cb15-8"><a href=""></a>  <span class="fu">bid_anticipate</span>() <span class="sc">|&gt;</span></span>
+<span id="cb15-9"><a href=""></a>  <span class="fu">bid_structure</span>() <span class="sc">|&gt;</span></span>
+<span id="cb15-10"><a href=""></a>  <span class="fu">bid_validate</span>() <span class="sc">|&gt;</span></span>
+<span id="cb15-11"><a href=""></a>  <span class="fu">bid_report</span>(<span class="at">format =</span> <span class="st">"markdown"</span>, <span class="at">include_diagrams =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<aside class="notes">
+<ul>
+<li>[40 seconds]</li>
+<li>And here’s the really nice part…implementing all this psychology is just a few lines of code</li>
+<li>If you have telemetry…simply load it with the bid_telemetry function</li>
+<li>[CLICK] Here…I’m filtering to to one of the critical issues identified</li>
+<li>[CLICK] Then adding the central question to contextualize everything that follows</li>
+<li>[CLICK] And then I use bid_notice_issues…a bridge function for the telemetry data that auto-populates the following stages</li>
+<li>[CLICK] From there…just through the remaining stages…</li>
+<li>[CLICK] And optionally end with bid_report to create a markdown report ready for a PR or documentation</li>
+<li>[end by 14:50]</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="simplified-ux-workflows-1" class="slide level2" data-background-color="#2c3e50">
+<h2>Simplified UX Workflows</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16" data-code-line-numbers="1|2-10|11-14|15-17|18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="co"># Without telemetry data</span></span>
+<span id="cb16-2"><a href=""></a>report <span class="ot">&lt;-</span> <span class="fu">bid_interpret</span>(</span>
+<span id="cb16-3"><a href=""></a>    <span class="at">central_question =</span> <span class="st">"Which markets are driving performance?"</span>,</span>
+<span id="cb16-4"><a href=""></a>    <span class="at">data_story =</span> <span class="fu">list</span>(</span>
+<span id="cb16-5"><a href=""></a>      <span class="at">hook =</span> <span class="st">"Q4 revenue hit record high, but satisfaction dipped"</span>,</span>
+<span id="cb16-6"><a href=""></a>      <span class="at">context =</span> <span class="st">"After aggressive marketing across all regions"</span>,</span>
+<span id="cb16-7"><a href=""></a>      <span class="at">tension =</span> <span class="st">"West region satisfaction fell 10 points"</span>,</span>
+<span id="cb16-8"><a href=""></a>      <span class="at">resolution =</span> <span class="st">"Focus retention efforts on underperforming regions"</span></span>
+<span id="cb16-9"><a href=""></a>    )</span>
+<span id="cb16-10"><a href=""></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb16-11"><a href=""></a>  <span class="fu">bid_notice</span>(</span>
+<span id="cb16-12"><a href=""></a>    <span class="at">problem =</span> <span class="st">"Users are struggling to find key insights"</span>,</span>
+<span id="cb16-13"><a href=""></a>    <span class="at">evidence =</span> <span class="st">"Users report not knowing where to start"</span></span>
+<span id="cb16-14"><a href=""></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb16-15"><a href=""></a>  <span class="fu">bid_anticipate</span>() <span class="sc">|&gt;</span></span>
+<span id="cb16-16"><a href=""></a>  <span class="fu">bid_structure</span>() <span class="sc">|&gt;</span></span>
+<span id="cb16-17"><a href=""></a>  <span class="fu">bid_validate</span>() <span class="sc">|&gt;</span></span>
+<span id="cb16-18"><a href=""></a>  <span class="fu">bid_report</span>(<span class="at">format =</span> <span class="st">"text"</span>, <span class="at">include_diagrams =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<aside class="notes">
+<ul>
+<li>[50 seconds]</li>
+<li>And if you don’t have telemetry…that’s not a problem either</li>
+<li>Just define your problem manually based on user feedback or your observations</li>
+<li>[CLICK] Start by creating your data story to structure the dashboard’s narrative</li>
+<li>[CLICK] Identify the friction points…bc even without data…you probably know where users struggle</li>
+<li>[CLICK] Same five-stage pipeline…same actionable insights</li>
+<li>[CLICK] Generate text output perfect for tickets…documentation…or stakeholder communication</li>
+<li>The framework guides you whether you have tons of telemetry or simple user feedback</li>
+<li>And you can run this during the early stages of development too!…to fix problem before they’re problems</li>
+<li>[end by 15:40]</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="your-turn-start-today" class="slide level2" data-background-color="#5b6bbf">
+<h2>Your Turn: Start Today</h2>
+<div class="columns center">
+<div class="column" style="width:65%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17" data-code-line-numbers="1-2|4-11|13|15|17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="fu">install.packages</span>(<span class="st">"bidux"</span>)</span>
+<span id="cb17-2"><a href=""></a><span class="fu">library</span>(bidux)</span>
+<span id="cb17-3"><a href=""></a></span>
+<span id="cb17-4"><a href=""></a>result <span class="ot">&lt;-</span> <span class="fu">bid_interpret</span>(<span class="st">"What do users need?"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb17-5"><a href=""></a>  <span class="fu">bid_notice</span>(</span>
+<span id="cb17-6"><a href=""></a>    <span class="at">problem =</span> <span class="st">"Death by dropdown"</span>,</span>
+<span id="cb17-7"><a href=""></a>    <span class="at">evidence =</span> <span class="st">"User complaints"</span></span>
+<span id="cb17-8"><a href=""></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb17-9"><a href=""></a>  <span class="fu">bid_anticipate</span>() <span class="sc">|&gt;</span></span>
+<span id="cb17-10"><a href=""></a>  <span class="fu">bid_structure</span>() <span class="sc">|&gt;</span></span>
+<span id="cb17-11"><a href=""></a>  <span class="fu">bid_validate</span>()</span>
+<span id="cb17-12"><a href=""></a></span>
+<span id="cb17-13"><a href=""></a><span class="fu">bid_concepts</span>(<span class="st">"choice overload"</span>)</span>
+<span id="cb17-14"><a href=""></a></span>
+<span id="cb17-15"><a href=""></a>result<span class="sc">$</span>next_steps</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column fragment" style="width:35%;">
+<h3 id="resources">Resources:</h3>
+<ul>
+<li>🔬 <strong>BID Framework</strong>: <a href="https://github.com/jrwinget/bid-framework">github.com/jrwinget/bid-framework</a></li>
+<li>📚 <strong>{bidux} Docs</strong>: <a href="https://github.com/jrwinget/bidux">github.com/jrwinget/bidux</a></li>
+<li>💬 <strong>Community</strong>: <a href="https://github.com/jrwinget/bidux/discussions">github.com/jrwinget/bidux/discussions</a></li>
+<li>🤝 <strong>Let’s Connect!</strong>
+<ul>
+<li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bluesky" viewbox="0 0 16 16">
+<path d="M3.468 1.948C5.303 3.325 7.276 6.118 8 7.616c.725-1.498 2.698-4.29 4.532-5.668C13.855.955 16 .186 16 2.632c0 .489-.28 4.105-.444 4.692-.572 2.04-2.653 2.561-4.504 2.246 3.236.551 4.06 2.375 2.281 4.2-3.376 3.464-4.852-.87-5.23-1.98-.07-.204-.103-.3-.103-.218 0-.081-.033.014-.102.218-.379 1.11-1.855 5.444-5.231 1.98-1.778-1.825-.955-3.65 2.28-4.2-1.85.315-3.932-.205-4.503-2.246C.28 6.737 0 3.12 0 2.632 0 .186 2.145.955 3.468 1.948"></path>
+</svg>
+<a href="https://bsky.app/profile/jrwinget.bsky.social"><span class="citation" data-cites="jrwinget">@jrwinget</span></a></li>
+<li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewbox="0 0 16 16">
+<path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"></path>
+</svg>
+<a href="https://www.linkedin.com/in/jrwinget/"><span class="citation" data-cites="jrwinget">@jrwinget</span></a></li>
+<li>🌐 <a href="https://www.jrwinget.com">jrwinget.com</a></li>
+<li>📧 <a href="mailto:contact@jrwinget.com">contact@jrwinget.com</a></li>
+</ul></li>
+</ul>
+</div></div>
+<aside class="notes">
+<ul>
+<li>[60 seconds]</li>
+<li>bidux is currently available on CRAN…so installation is as simple as any other R package</li>
+<li>[CLICK] Install &amp; load the library…</li>
+<li>[CLICK] Run through the five stages…bc even with minimal input…you get valuable suggestions</li>
+<li>[CLICK] There’s also a bid_concepts function to explore specific you may not be familiar with…it’s like having a psychology textbook in the console</li>
+<li>[CLICK] Check the next_steps for actionable improvements…prioritized by impact</li>
+<li>[CLICK] And…I’ve created a bunch of resources…all designed for the R/Shiny community</li>
+<li>These slides will also be available in the BID framework repository…and you can find links to everything on my website too</li>
+<li>I love how this community shares and learns together…so please feel free to connect with me on Bluesky, LinkedIn, or email</li>
+<li>I’d love to hear about your experiences…and learn from your dashboard challenges too!</li>
+<li>[end by 16:40]</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="one-thing-to-remember" class="slide level2" data-background-color="#2c3e50">
+<h2>One Thing to Remember</h2>
+<div class="columns center">
+<div class="column center" style="width:20%;">
+<p><img data-src="img/hex-bidux.png" style="box-shadow: none !important;"></p>
+</div><div class="column text-display center" style="width:60%;">
+<p><strong>Dashboards don’t need more features.</strong><br> <strong>They need fewer obstacles.</strong></p>
+<div class="fragment">
+<p>Let’s fix that together!</p>
+</div>
+</div><div class="column fragment center" style="width:20%;">
+<p><em>Special thanks to the<br> posit::conf organizers,<br> Shiny community,<br> and all of you for caring about your users</em></p>
+</div></div>
+<aside class="notes">
+<ul>
+<li>[40 seconds]</li>
+<li>If you remember just one thing from our time together today…Dashboards don’t need more features…they need fewer obstacles</li>
+<li>Every dropdown…every filter…should bring users closer to insight…not further from it</li>
+<li>[CLICK] And we can do this together…the tools exist…the knowledge exists…and it’s clear from all the head nods today that you all care about creating better experiences for your users</li>
+<li>[CLICK] Before I close…I want to offer my heartfelt thanks to the Posit and the conf organizers for creating this incredible space…to the Shiny community for pushing the boundaries of what’s possible…and most importantly, to all of you…for taking the time to be here today and for caring about your users</li>
+<li>Now…I think we have some time for some questions still…dashboard challenges you’re facing!</li>
+<li>[end by 17:20]</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>posit::conf(2025) | jrwinget.com</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="slides_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="slides_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1600,
+
+        height: 900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

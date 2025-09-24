@@ -3,3 +3,7 @@ project:
 
 format:
   elsevier-pdf: default
+  html:
+    css: custom.css
+  revealjs:
+    css: custom.css
